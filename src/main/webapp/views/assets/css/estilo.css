@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+	background: #000;
+}
+
+video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background: url('/EquipeAR/views/assets/css/img/bg.jpg') no-repeat;
+	background-size: cover;
+	transition: 1s opacity;
+}
+
+.stopfade {
+	opacity: .5;
+}
+
+#regis {
+	font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow,
+		sans-serif;
+	font-weight: 100;
+	background: rgba(255, 255, 255, 0.3);
+	color: white;
+	padding: 2rem;
+	width: 33%;
+	font-size: 1.2rem;
+}
+
+#regis img {
+	width: 100%;
+	display: block;
+}
+
+@media screen and (max-width: 500px) {
+	div {
+		width: 70%;
+	}
+}
+
+@media screen and (max-device-width: 800px) {
+	html {
+		height: 100%;
+		background: url('/EquipeAR/views/assets/css/img/bg.jpg') #000 no-repeat	center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	#bgvid {
+		display: none;
+	}
+	
+	#regis {
+		width: 50%;
+	}
+}
