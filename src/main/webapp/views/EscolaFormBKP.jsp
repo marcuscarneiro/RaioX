@@ -1,0 +1,232 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/dropzone.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/style.css" />
+
+<script	src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
+<script	src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>
+
+<!-- Custom styles for this template -->
+<style type="text/css">
+body {
+	padding-top: 70px;
+}
+</style>
+</head>
+<body>
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Mudar navegação</span> <span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="menu">Equipe André Régis</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="menu">Home</a></li>
+					<li class="active">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Escolas<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="listaEscolas">Cadastro de escolas</a></li>
+							<li><a href="listaVisitas">Cadastro de visitas</a></li>
+							<li><a href="listaIdeb">Histórico do IDEB</a></li>
+							<li><a href="listaProvaBrasil">Prova Brasil</a></li>
+							<li role="separator" class="divider"></li>
+							<li class="dropdown-header">Cadastros auxiliares</li>
+							<li><a href="listaFormacoes">Formação educacional</a></li>
+							<li><a href="listaLikert">Escala Likert</a></li>
+							<li><a href="#">...</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Raio-X das Escolas</a></li>
+					<li><a href="projetos">Requerimento Online</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="container" id="formContainer">
+				<form:form class="form-horizontal dropzone-form" action="salvaEscola" method="post" modelAttribute="escola" enctype="multipart/form-data">
+					<fieldset>
+
+						<!-- Form Name -->
+						<h1>Escola</h1>
+						
+						<hr>
+						
+						<form:input type="hidden" path="id" />
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="numero"><strong>Nome</strong></label>
+							<div class="col-sm-4">
+								<form:input id="nome" name="nome" type="text" class="form-control" required="true" path="nome"/>
+							</div>
+						</div>
+						
+						<!-- TROCAR POR UM BOTÃO DE UPLOAD -->
+						<div class="form-group">
+						<label class="col-sm-3 control-label" for="fotoEscola"><strong>Foto da capa</strong></label>
+							<div id="fotoEscola" class="col-sm-4">
+								<div class="dz-message-escola">Solte a foto aqui
+									<br>
+									<div>(ou clique aqui)</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- TROCAR POR UM BOTÃO DE UPLOAD -->
+						<div class="form-group">
+						<label class="col-sm-3 control-label" for="relatorios"><strong>Relatórios</strong></label>
+							<div id="relatorios" class="col-sm-4">
+								<div class="dz-message-relatorios">Solte o(s) arquivo(s) aqui
+									<br>
+									<div>(ou clique aqui)</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="rpa"><strong>RPA</strong></label>
+							<div class="col-sm-4">
+								<form:input id="rpa"
+									name="rpa" type="number" path="rpa"
+									class="form-control"/>
+							</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="latitude"><strong>Latitude</strong></label>
+							<div class="col-sm-4">
+								<form:input id="latitude"
+									name="latitude" type="text" path="latitude"
+									class="form-control"/>
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="longitude"><strong>Longitude</strong></label>
+							<div class="col-sm-4">
+								<form:input id="longitude"
+									name="longitude" type="text" path="longitude"
+									class="form-control"/>
+							</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="logradouro"><strong>Logradouro</strong></label>
+							<div class="col-sm-4">
+								<form:input id="logradouro"
+									name="logradouro" type="text" path="logradouro"
+									class="form-control"/>
+							</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="numeroEnd"><strong>Número</strong></label>
+							<div class="col-sm-4">
+								<form:input id="numeroEnd"
+									name="numeroEnd" type="text" path="numeroEnd"
+									class="form-control"/>
+							</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="complemento"><strong>Complemento</strong></label>
+							<div class="col-sm-4">
+								<form:input id="complemento"
+									name="complemento" type="text" path="complemento"
+									class="form-control"/>
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="bairro"><strong>Bairro</strong></label>
+							<div class="col-sm-4">
+								<form:input id="bairro"
+									name="bairro" type="text" path="bairro"
+									class="form-control"/>
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="cep"><strong>CEP</strong></label>
+							<div class="col-sm-4">
+								<form:input id="cep"
+									name="cep" type="text" path="cep"
+									class="form-control"/>
+							</div>
+						</div>
+
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="telefone"><strong>Telefone</strong></label>
+							<div class="col-sm-4">
+								<form:input id="telefone"
+									name="telefone" type="text" path="telefone"
+									class="form-control"/>
+							</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
+								for="codMec"><strong>Código do MEC</strong></label>
+							<div class="col-sm-4">
+								<form:input id="codMec"
+									name="codMec" type="text" path="codMec"
+									class="form-control"/>
+							</div>
+						</div>
+						
+						<!-- Button -->
+						<div class="form-group">
+							<div class="col-sm-7">
+								<div class="pull-right">
+									<button id="cancelar" type="reset" class="btn btn-default" title="Retorna ao estado inicial">Cancelar</button>
+									<button id="gravar" type="submit" name="gravar"
+										class="btn btn-primary">Gravar</button>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form:form>
+			</div>
+		</div>
+	</div>
+	
+	<script	src="<%=request.getContextPath()%>/views/assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap-dialog.min.js"></script>
+	<script src="<%=request.getContextPath()%>/views/assets/js/dropzone.js"></script>
+	<script src="<%=request.getContextPath()%>/views/assets/js/app.js"></script>
+	<script src="<%=request.getContextPath()%>/views/assets/js/EscolaForm.js"></script>
+</body>
+</html>
