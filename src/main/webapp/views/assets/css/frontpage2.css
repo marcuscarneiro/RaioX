@@ -1,0 +1,113 @@
+body {position: relative;}
+footer
+{
+	box-shadow: rgba(0,0,0,.1) 0 0 10px;
+/* 	background: #fff; */
+	background: -moz-linear-gradient(top, #fff, #cdcdcd) repeat-X;
+	height: 65px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9;
+	display: block;
+	opacity: 0.8;
+}
+
+.footer-filtros
+{
+	float: left;
+	
+}
+
+.filtro-rpa
+{
+	margin: 24px 13px 0 120px;
+	float: left;
+}
+
+li.box-numeros {
+	padding: 20px 15px 18px;
+	background: -moz-linear-gradient(top, #fff, #cdcdcd) repeat-X;
+	color: #333;
+	border-left: 1px solid #e6e6e6;
+}
+
+
+li.box-numeros:hover {
+	background: #fff;
+	color: #3b5088;
+	padding: 20px 15px 18px;
+	border-top: 1px solid #3b5088;
+}
+
+.legenda
+{
+	float: right;
+	height: 65px;
+}
+
+.legenda span {
+    padding: 25px 12px 0 0;
+    float: left;
+    }
+
+.lista-legenda
+{
+	list-style: none;
+	display: inline-block;
+	padding: 23px 13px 0 0 ;
+	float: left;
+}
+
+.legenda-item
+{
+	float: left;
+	padding: 0 3px 0;
+}
+
+
+.redes-sociais {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+}
+
+ul.lista-rpas {
+    margin-bottom: 0 !important;
+}
+
+
+
+.fa-list, .fa-th-large {color:#333;}
+.fa-list:hover,
+.fa-th-large:hover {color:#3b5088;}
+
+.fa-close {font-size: 1.3em !important; color: #333;} 
+.fa-close:hover {color: #883b3b;}
+
+.logo
+{
+	width: 140px;
+	position: absolute;
+	left: 150px;
+	top: 0px;
+	margin-top: 40px;
+}
+
+.logo img
+{
+	position:absolute;
+	width: 100%;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.logo img.top:hover
+{
+	opacity: 0;
+}
+
+.leaflet-control
+{
+	display: none;
+}
