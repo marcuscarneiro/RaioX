@@ -22,6 +22,7 @@ import br.com.marcus.dao.AvaliacaoPublicaDao;
 import br.com.marcus.dao.CrecheDao;
 import br.com.marcus.dao.DadosIdebDao;
 import br.com.marcus.dao.EscolaDao;
+import br.com.marcus.dao.NotasCrecheDao;
 import br.com.marcus.dao.ProvaBrasilDao;
 import br.com.marcus.dao.RpaDao;
 import br.com.marcus.dao.UserDao;
@@ -31,6 +32,7 @@ import br.com.marcus.dao.impl.AvaliacaoPublicaDaoImpl;
 import br.com.marcus.dao.impl.CrecheDaoImpl;
 import br.com.marcus.dao.impl.DadosIdebDaoImpl;
 import br.com.marcus.dao.impl.EscolaDaoImpl;
+import br.com.marcus.dao.impl.NotasCrecheDaoImpl;
 import br.com.marcus.dao.impl.ProvaBrasilDaoImpl;
 import br.com.marcus.dao.impl.RpaDaoImpl;
 import br.com.marcus.dao.impl.UserDaoImpl;
@@ -96,6 +98,12 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 	@Bean(name = "dadosIdebDao")
 	public DadosIdebDao getDadosIdebDao(SessionFactory sessionFactory) {
 		return new DadosIdebDaoImpl(sessionFactory);
+	}
+
+	@Autowired
+	@Bean(name = "notasCrecheDao")
+	public NotasCrecheDao getNotasCrecheDao(SessionFactory sessionFactory) {
+		return new NotasCrecheDaoImpl(sessionFactory);
 	}
 	
 	@Autowired
