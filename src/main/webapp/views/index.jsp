@@ -40,7 +40,7 @@
 							<div class="profile"><img src="<%=request.getContextPath()%>/views/assets/images/profile1.jpg" alt="RaioX Escolas"></div>
 							<h1>
 								<span>RaioX Escolas </span>
-								<span><a href="http://www.reioxdaeducacao.com.br/escolas"> Acesse o Sistema</a></span>
+								<span><a href="http://www.reioxdaeducacao.com.br/raiox/escolas"> Acesse o Sistema</a></span>
 								
 							</h1>
 						</div>
@@ -50,7 +50,7 @@
 						<div class="intro-content">
 							<div class="profile"><img src="<%=request.getContextPath()%>/views/assets/images/profile2.jpg" alt="RaioX Creches"></div>
 							<h1><span>RaioX Creches </span>
-							<span><a href="http://www.reioxdaeducacao.com.br/creches"> Acesse o Sistema</a></span>
+							<span><a href="http://www.reioxdaeducacao.com.br/raiox/creches"> Acesse o Sistema</a></span>
 							</h1>
 						</div>
 						<div class="overlay"></div>
@@ -63,7 +63,7 @@
 							<h2>RaioX das Creches</h2>
 							<p>Sistema desenvolvido pela equipe do vereador do Recife André Régis. O RaioX das Creches, tem como finalidade, apresentar a sociedade a situação que se encontra as creches do Recife.</p>
 							
-							<p><a href="http://www.reioxdaeducacao.com.br/creches">ACESSE O SISTEMA</a>.</p>
+							<p><a href="http://www.reioxdaeducacao.com.br/raiox/creches">ACESSE O SISTEMA</a>.</p>
 					
 						</section>
 					</div><!-- /page-inner -->
@@ -73,7 +73,7 @@
 						<section>
 							<h2>RaioX das Escolas</h2>
 							<p> O RaioX das Escolas, tem como finalidade, apresentar a sociedade a situação que se encontra as escolas do Recife, comparando-as e apresentando dados atualizados do IDEB. Sistema desenvolvido pela equipe do vereador do Recife André Régis.</p>
-							<p><a href="http://www.reioxdaeducacao.com.br/escolas">ACESSE O SISTEMA</a>.</p>
+							<p><a href="http://www.reioxdaeducacao.com.br/raiox/escolas">ACESSE O SISTEMA</a>.</p>
 						</section>
 					</div><!-- /page-inner -->
 				</div><!-- /page-left -->

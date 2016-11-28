@@ -36,7 +36,7 @@ import br.com.marcus.modelo.ProvaBrasil;
 import br.com.marcus.modelo.Visita;
 
 @Controller
-public class IndexController {
+public class MapaEscolasController {
 	
 	@Autowired
     private VisitaDao visitaDao;
@@ -59,39 +59,6 @@ public class IndexController {
         sdf.setLenient(true);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
     }
-	
-	@RequestMapping("/")
-	public String index() {
-		
-		return "index";
-	}
-	
-	@RequestMapping("/escolas")
-	public String escolas() {
-		
-		return "mapaEscola";
-	}
-	
-	@RequestMapping("/creches")
-	public String creches() {
-		
-		return "mapaCreche";
-	}
-
-	@RequestMapping("/painel")
-	public String painel() {
-		return "painel";
-	}
-
-	@RequestMapping("/menu")
-	public String menu() {
-		return "painel";
-	}
-	
-//	@RequestMapping("/admin")
-//	public String admin() {
-//		return "admin";
-//	}
 	
 	@RequestMapping(value="/carregaEscolas", method=RequestMethod.GET, produces={"application/json; charset=UTF-8"})
 	public @ResponseBody()
@@ -125,7 +92,7 @@ public class IndexController {
 
 		return escolaDao.getEscolasComparativo(id1, id2);
 	}
-//	id1=63&id2=201
+	
 	@RequestMapping(value = "/consultaIdebComparativo", headers = {"Content-type=application/json"}, produces={"application/json; charset=UTF-8"}, method = RequestMethod.POST)
 	@ResponseBody
 	public List<DadosIdeb> consultaIdebComparativo(

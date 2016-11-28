@@ -46,6 +46,7 @@ function resetMap(){
 var bgLayer = L.circle([-8.069677, -34.901499], 100000, bg_options).addTo(map);
 bgLayer.on('click', function(e)
 {
+	escondeDados();
 	resetMap();
 	replotMap();
 	rpaAtual = 0;
@@ -127,6 +128,7 @@ function setRpa1(click){
 	rpa1Layer.setStyle({'fillColor': '#ccff00', 'fillOpacity': 0.4, 'weight': 1});
 	rpa1Layer.on('click', function(e)
 	{
+		escondeDados();
 		resetActualMarker();
 		map.setView(e.layer.getBounds().getCenter(), 13);
 		showCreche(e.layer.feature.properties.RPA, null);
@@ -158,7 +160,8 @@ function setRpa2(click){
 	rpa2Layer.setStyle({'fillColor': '#66cc99', 'fillOpacity': 0.4, 'weight': 1});
 	rpa2Layer.on('click', function(e)
 	{
-//		resetActualMarker();
+		escondeDados();
+		resetActualMarker();
 		map.setView(e.layer.getBounds().getCenter(), 13);
 		showCreche(e.layer.feature.properties.RPA, null);
 	});
@@ -190,7 +193,8 @@ function setRpa3(click){
 	rpa3Layer.setStyle({'fillColor': '#cc9933', 'fillOpacity': 0.4, 'weight': 1});
 	rpa3Layer.on('click', function(e)
 	{
-//		resetActualMarker();
+		escondeDados();
+		resetActualMarker();
 		map.setView(e.layer.getBounds().getCenter(), 12);
 		showCreche(e.layer.feature.properties.RPA, null);
 	});
@@ -222,7 +226,8 @@ function setRpa4(click){
 	rpa4Layer.setStyle({'fillColor': '#cc3366', 'fillOpacity': 0.4, 'weight': 1});
 	rpa4Layer.on('click', function(e)
 	{
-//		resetActualMarker();
+		escondeDados();
+		resetActualMarker();
 		map.setView(e.layer.getBounds().getCenter(), 13);
 		showCreche(e.layer.feature.properties.RPA, null);
 	});
@@ -254,7 +259,8 @@ function setRpa5(click){
 	rpa5Layer.setStyle({'fillColor': '#6666cc', 'fillOpacity': 0.4, 'weight': 1});
 	rpa5Layer.on('click', function(e)
 	{
-//		resetActualMarker();
+		escondeDados();
+		resetActualMarker();
 		map.setView(e.layer.getBounds().getCenter(), 13);
 		showCreche(e.layer.feature.properties.RPA, null);
 	});
@@ -286,7 +292,8 @@ function setRpa6(click){
 	rpa6Layer.setStyle({'fillColor': '#ff6633', 'fillOpacity': 0.4, 'weight': 1});
 	rpa6Layer.on('click', function(e)
 	{
-//		resetActualMarker();
+		escondeDados();
+		resetActualMarker();
 		map.setView(e.layer.getBounds().getCenter(), 13);
 		showCreche(e.layer.feature.properties.RPA, null);
 	});
@@ -357,6 +364,50 @@ function crechesMouseOut(){
 
 crechesMouseOut();
 
+function highlightMarker(e){
+	var marker = e.layer;
+	if(modo === 'all' || modo === "meta" || modo === "novas"){
+		marker.setIcon(L.icon({
+			iconUrl: contextPath + '/views/assets/css/img/m-' + marker.feature.properties.COR + '.png',
+			iconSize: [20, 50]
+		}));
+	} else if(modo === 'quadras'){
+		if(marker.feature.properties.POSSUIQUADRA === 1){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/m-black.png',
+				iconSize: [20, 50]
+			}));
+		} else if(marker.feature.properties.POSSUIQUADRA === 2){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/m-yellow.png',
+				iconSize: [20, 50]
+			}));
+		} else if(marker.feature.properties.POSSUIQUADRA === 3){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/m-blue.png',
+				iconSize: [20, 50]
+			}));
+		}
+	} else if(modo === 'acessibilidade'){
+		if(marker.feature.properties.ACESSIBILIDADE === 2){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/m-yellow.png',
+				iconSize: [20, 50]
+			}));
+		} else if(marker.feature.properties.ACESSIBILIDADE === 3){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/m-blue.png',
+				iconSize: [20, 50]
+			}));
+		} else {
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/m-black.png',
+				iconSize: [20, 50]
+			}));
+		}
+	}
+}
+
 function definePopup(marker){
 	var feature = marker.feature,
 		foto;
@@ -375,6 +426,50 @@ function definePopup(marker){
 		closeButton: true,
 		minWidth: 320
 	});
+}
+
+function resetMarker(e){
+	var marker = e.layer;
+	if(modo === 'all' || modo === "meta" || modo === "novas"){
+		marker.setIcon(L.icon({
+			iconUrl: contextPath + '/views/assets/css/img/s-' + marker.feature.properties.COR + '.png',
+			iconSize: [15, 38]
+		}));
+	} else if(modo === 'quadras'){
+		if(marker.feature.properties.POSSUIQUADRA === 1){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-black.png',
+				iconSize: [15, 38]
+			}));
+		} else if(marker.feature.properties.POSSUIQUADRA === 2){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-yellow.png',
+				iconSize: [15, 38]
+			}));
+		} else if(marker.feature.properties.POSSUIQUADRA === 3){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-blue.png',
+				iconSize: [15, 38]
+			}));
+		}
+	} else if(modo === 'acessibilidade'){
+		if(marker.feature.properties.ACESSIBILIDADE === 2){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-yellow.png',
+				iconSize: [15, 38]
+			}));
+		} else if(marker.feature.properties.ACESSIBILIDADE === 3){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-blue.png',
+				iconSize: [15, 38]
+			}));
+		} else {
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-black.png',
+				iconSize: [15, 38]
+			}));
+		}
+	}
 }
 
 function resizeMarker(marker){
@@ -504,6 +599,11 @@ function goToPoint(marker){
 	}
 }
 
+function fechar()
+{
+	e.layer.closePopup();
+};
+
 function changeMarkers(){
 	$('#marker-list').remove();
 	var body = document.body;
@@ -533,6 +633,10 @@ function changeMarkers(){
 				'</div>'+
 			'</li>');
 				
+		if(marker.feature.properties.ID === 262){
+			marker.setZIndexOffset(9999);
+		}
+		
 		marker.setIcon(L.icon({
 			iconUrl: contextPath + '/views/assets/css/img/s-' + marker.feature.properties.COR + '.png',
 			iconSize: [15, 38]
@@ -559,6 +663,77 @@ function changeMarkers(){
 	crechesClick();
 };
 
+function preencheCreches(){
+	$.each(crechesListCompare, function(i, creche){
+		$("#listaCreche1").append('<li id="'+creche.value+'" class="crecheItem list-group-item" onclick="escolheCreche1('+creche.value+')"><span>'+ creche.label +'</span></li>');
+		$("#listaCreche2").append('<li id="'+creche.value+'" class="crecheItem list-group-item" onclick="escolheCreche2('+creche.value+')"><span>'+ creche.label +'</span></li>');
+	});
+}
+
+function escolheCreche1(id){
+	var cre1;
+	$.each(crechesListCompare, function(i, cre){
+	if(cre.value == id){
+			cre1 = cre.label;
+		}
+	});
+	
+	$("#compareId1").val(id);
+	$("#compareEnt1").val(cre1);
+}
+
+function escolheCreche2(id){
+	var cre2;
+	$.each(crechesListCompare, function(i, cre){
+	if(cre.value == id){
+			cre2 = cre.label;
+		}
+	});
+	
+	$("#compareId2").val(id);
+	$("#compareEnt2").val(cre2);
+}
+
+function comparaCreches(comp1, comp2){
+
+	$.ajax({
+		url: 'consultaCrechesComparativo',
+		type: "POST",
+		data: {
+			"id1" : comp1,
+			"id2" : comp2
+		},
+		contentType: 'application/json',
+		async: false,
+		success: function(data) {
+			exibeCompCreches(data, comp1, comp2);
+		},
+		error: function(xhr, ajaxOptions, thrownError){
+			alert(xhr.status);
+	        alert(thrownError);
+		}
+	});
+}
+
+function exibeCompCreches(data, comp1, comp2){
+	var creNome1, creNome2;
+	
+	$.each(data, function(i, creche){
+		if(i == 0){
+			creNome1 = creche.nome;
+		} else {
+			creNome2 = creche.nome;
+		}
+	});
+	
+	$(".compare-titulo-creche1").text(creNome1);
+	$(".compare-titulo-creche2").text(creNome2);
+	
+	compareIdeb(comp1, comp2, creNome1, creNome2);
+	compareAprendizado(comp1, comp2, creNome1, creNome2);
+	compareVisita(comp1, comp2, creNome1, creNome2);
+}
+
 $(document).ready(function()
 {
 	$('.search').submit(function(e)
@@ -575,13 +750,51 @@ function showCreche(cre, id){
 	$(".foto-fachada img").attr("src",fotoFachada);
 	if(id != null){
 		
+		$(".fiscalizacao").show();
+		$(".comentarios").show();
+		consultaDadosIdeb(id);
+		consultaProvaBrasil(id);
 		$(".fiscalizacao-datas li").remove();
 		mapVisita = new Object();
 		ordemAtual = 0;
 		consultaVisitas(id);
+		consultaAvaliacaoPublica(id);
 		abrePainel('creche');
 	}
 };
+
+function consultaDadosIdeb(id){
+	$.ajax({
+		url: 'consultaDadosIdeb',
+		type: "POST",
+		data: JSON.stringify({ id: id }),
+		contentType: 'application/json',
+		async: false,
+		success: function(data) {
+			if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null){
+				updateIdeb(data);
+			} else {
+				idebVazio();
+			}
+		},
+		error: function(xhr, ajaxOptions, thrownError){
+		}
+	});
+}
+
+function consultaProvaBrasil(id){
+	$.ajax({
+		url: 'consultaProvaBrasil',
+		type: "POST",
+		data: JSON.stringify({ id: id }),
+		contentType: 'application/json',
+		success: function(data) {
+			updateAprendizado(data);
+		},
+		error: function(xhr, ajaxOptions, thrownError){
+		}
+	});
+}
 
 //CRIA MAPA PARA AS VISITAS
 var mapVisita = new Object(); // or var map = {};
@@ -782,6 +995,21 @@ function updateVisitas(visita){
 	}
 }
 
+function consultaAvaliacaoPublica(id){
+	$.ajax({
+		url: 'consultaAvaliacaoPublica',
+		type: "POST",
+		data: JSON.stringify({ id: id }),
+		contentType: 'application/json',
+		async: false,
+		success: function(data) {
+			updateComentarios(data);
+		},
+		error: function(xhr, ajaxOptions, thrownError){
+		}
+	});
+}
+
 function updateFotos(data){
 	for (var i = 0; i <= 10; i++) {
 		$("#foto-visita-"+i).fadeOut();
@@ -797,6 +1025,12 @@ function updateFotos(data){
 				$("#foto-visita-"+i + " img").attr('src', contextPath + foto.localizacao);
 			}
 		}
+	})
+}
+
+function updateComentarios(data){
+	$.each(data, function(i, comentario){
+		
 	})
 }
 
@@ -986,12 +1220,25 @@ function changeMarkersAcess(){
 	crechesClick();
 };
 
+function escondeDados(){
+
+	$(".fiscalizacao").slideUp();
+	$(".fiscalizacao").css("visibility", "none");
+	
+	$(".comentarios").slideUp();
+	$(".comentarios").css("visibility", "none");
+	
+	$(".creche-title").slideDown();
+	$(".creche-title").css("visibility", "block");
+}
+
 function focusRpa(rpa){
 	rpaAtual = rpa;
 	actualMarker = undefined;
 	if(rpa === 0){
 		$(".menu-ui a").removeClass('active');
 		$("#todas").addClass('active');
+		escondeDados();
 		replotMap();
 		removeAllRpaLayers();
 		setAllRpaLayers();
@@ -1001,6 +1248,7 @@ function focusRpa(rpa){
 	} else {
 		removeAllRpaLayers();
 		map.removeLayer(crechesLayer);
+		escondeDados();
 		if(rpa == 1) { setRpa1(true); };
 		if(rpa == 2) { setRpa2(true); };
 		if(rpa == 3) { setRpa3(true); };
@@ -1058,43 +1306,12 @@ function setAllRpaLayers(){
 	setRpa6(false);
 }
 
-function comparaCreches(comp1, comp2){
-	
-	$.ajax({
-		url: 'consultaCrechesComparativo',
-		type: "POST",
-		data: {
-			"id1" : comp1,
-			"id2" : comp2
-		},
-		contentType: 'application/json',
-		async: false,
-		success: function(data) {
-			exibeCompCreches(data, comp1, comp2);
-		},
-		error: function(xhr, ajaxOptions, thrownError){
-			alert(xhr.status);
-	        alert(thrownError);
-		}
-	});
-}
-
-function exibeCompCreches(data, comp1, comp2){
-	var creNome1, creNome2;
-	
-	$.each(data, function(i, creche){
-		if(i == 0){
-			creNome1 = creche.nome;
-		} else {
-			creNome2 = creche.nome;
-		}
-	});
-	
-	$(".compare-titulo-creche1").text(creNome1);
-	$(".compare-titulo-creche").text(creNome2);
-	
-	compareVisita(comp1, comp2, creNome1, creNome2);
-}
+$('#listaCreche1').btsListFilter('#compareEnt1', {
+	itemChild: 'span',
+	initial: false});
+$('#listaCreche2').btsListFilter('#compareEnt2', {
+	itemChild: 'span',
+	initial: false});
 
 function compareVisita(comp1, comp2, creNome1, creNome2){
 	$("#galcre1 a").hide();
@@ -1261,10 +1478,12 @@ var spans = $('.logo span');
 var scrlld = false;
 
 function closeComparativo(){
+	escondeDados();
 	replotMap();
 	removeAllRpaLayers();
 	setAllRpaLayers();
 	resetMap();
+	$(".creche-title h2").html("RECIFE");
 }
 
 function recarregaMapa(){
@@ -1272,10 +1491,13 @@ function recarregaMapa(){
 	actualMarker = undefined;
 	modo = 'all';
 	$(".menu-ui a").removeClass('active');
+	$("#todas").addClass('active');
+	escondeDados();
 	replotMap();
 	removeAllRpaLayers();
 	setAllRpaLayers();
 	resetMap();
+	$(".creche-title h2").html("RECIFE");
 }
 
 function compareFotosVisita(visId, ordem){

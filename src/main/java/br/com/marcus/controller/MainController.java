@@ -16,6 +16,34 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
+	
+	@RequestMapping("/")
+	public String index() {
+		
+		return "index";
+	}
+	
+	@RequestMapping("/creches")
+	public String creches() {
+		
+		return "mapaCreche";
+	}
+
+	@RequestMapping("/escolas")
+	public String escolas() {
+		
+		return "mapaEscola";
+	}
+
+	@RequestMapping("/painel")
+	public String painel() {
+		return "painel";
+	}
+
+	@RequestMapping("/menu")
+	public String menu() {
+		return "painel";
+	}
 
 	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
 	public ModelAndView adminPage() {
