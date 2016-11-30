@@ -11,8 +11,8 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/jquery.fancybox.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/hover.css">
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapa.css" />
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpage.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapaCreches.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpageCreches.css" />
 		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
 
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
@@ -35,7 +35,7 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/rpa6.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.simpleslider.package.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/map.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/mapCreche.js"></script>
 		
 		<title>Raio-X da Educação Municipal do Recife - Vereador André Régis</title>
 		
@@ -185,41 +185,377 @@
 					<h2 class="creche-nome"></h2>
 				</div>
 				
-				
-				<!-- Quadro de dados do IDEB -->
-				<div class="dados ideb">
-					<span id="fecha-ideb" class="painel-close" onclick="fechaPaineis()">
-						<i class="fa fa-close fa-2x"></i>
-					</span>
-					<header class="ideb-intro">
-						<h2>DADOS DO IDEB</h2>
-					</header>
-		
-					<div id="linha1" class="linha col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="coluna col-esq col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
-						</div>
-						<div class="coluna col-dir col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
-						</div>
-					</div>
+				<div class="nota-geral">
 					
-					<div id="linha2" class="linha col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="coluna col-esq col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
-						</div>
-						<div class="coluna col-dir col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
-						</div>
-					</div>
 				</div>
+				
+				<hr>
+				
+				<h3 class="titulo-questionario">Questionário aplicado</h3>
+				<table class="table table-condensed fiscalizacao-questionario" style="border-collapse:collapse;">
+				    <tbody>
+				        <tr data-toggle="collapse" data-target="#gerais" class="accordion-toggle">
+				            <td class="titulo-modulo">INFORMAÇÕES GERAIS</td>
+				            <td class="nota-modulo"> </td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6" class="hiddenRow">
+				                <div class="accordian-body collapse" id="gerais">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qrpa">
+				                            <span>Região Político-Administrativa (RPA):</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qendereco">
+				                            <span>Endereço:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qtelefone">
+				                            <span>Telefone:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qnova">
+				                            <span>Creche entregue recentemente?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qdata">
+				                            <span>Data da coleta:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsituacao">
+				                            <span>Situação do prédio:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				
+				                        <hr>
+				                        
+				                        <li class="questao" id="qger1">
+				                            <span>Total de Alunos:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qger2">
+				                            <span>Número de salas:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qger3">
+				                            <span>Turmas oferecidas:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qger4">
+				                            <span>Há deficiência no quadro de funcionários?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qger4o">
+				                            <span>Observações:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qgerinf">
+				                            <span>Mais informações:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+				                </div>
+				            </td>
+				        </tr>
+				        <tr data-toggle="collapse" data-target="#sala" class="accordion-toggle">
+				            <td class="titulo-modulo">SALA DE AULA</td>
+				            <td class="nota-modulo" id="notaSala"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6" class="hiddenRow">
+				                <div id="sala" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qsal1">
+				                            <span>Quantas salas são climatizadas?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsal2">
+				                            <span>Quantas salas possuem temperatura entre 20 e 26ºC?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsal3">
+				                            <span>Quantas salas têm iluminação abaixo de 200 ou acima de 750 Lux?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsal4">
+				                            <span>Qual o aspecto de conservação do mobiliário em sala de aula?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsalinf">
+				                            <span>Mais informações:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+				                </div>
+				            </td>
+				        </tr>
+				        <tr data-toggle="collapse" data-target="#bercario" class="accordion-toggle">
+				            <td class="titulo-modulo">BERÇÁRIO</td>
+				            <td class="nota-modulo" id="notaBercario"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="bercario" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qber2">
+				                            <span>O berçário apresenta temperatura entre 20 e 26ºC?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qber3">
+				                            <span>O berçário apresenta luminosidade entre 200 e 750Lux?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qber4">
+				                            <span>Os berços estão em quantidade suficiente e em boas condições de uso?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qber5">
+				                            <span>Existe lactário?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qber6">
+				                            <span>Existe fraldário?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qber7">
+				                            <span>Existe risco de acidente no fraldário?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qber8">
+				                            <span>Há chuveiro elétrico funcionando no fraldário?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qberinf">
+				                            <span>Mais informações:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+				                </div>
+				            </td>
+				        </tr>
+				        
+				        <tr data-toggle="collapse" data-target="#banheiros" class="accordion-toggle">
+				            <td class="titulo-modulo">BANHEIROS</td>
+				            <td class="nota-modulo" id="notaBanheiros"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="banheiros" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+								</div>
+							</td>
+						</tr>
+						
+				        <tr data-toggle="collapse" data-target="#espacosAlternativos" class="accordion-toggle">
+				            <td class="titulo-modulo">ESPAÇOS ALTERNATIVOS DE APRENDIZAGEM E LAZER</td>
+				            <td class="nota-modulo" id="notaEspacosAlternativos"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="espacosAlternativos" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+								</div>
+							</td>
+						</tr>
+						
+				        <tr data-toggle="collapse" data-target="#acessibilidade" class="accordion-toggle">
+				            <td class="titulo-modulo">ACESSIBILIDADE E ATENDIMENTO EDUCACIONAL ESPECIALIZADO</td>
+				            <td class="nota-modulo" id="notaAcessibilidade"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="acessibilidade" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+								</div>
+							</td>
+						</tr>
+						
+				        <tr data-toggle="collapse" data-target="#servicosEssenciais" class="accordion-toggle">
+				            <td class="titulo-modulo">SERVIÇOS ESSENCIAIS / ESTRUTURA BÁSICA</td>
+				            <td class="nota-modulo" id="notaServicosEssenciais"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="servicosEssenciais" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+								</div>
+							</td>
+						</tr>
+						
+				        <tr data-toggle="collapse" data-target="#materiais" class="accordion-toggle">
+				            <td class="titulo-modulo">MATERIAIS</td>
+				            <td class="nota-modulo" id="notaMateriais"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="materiais" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+								</div>
+							</td>
+						</tr>
+						
+				        <tr data-toggle="collapse" data-target="#alimentacao" class="accordion-toggle">
+				            <td class="titulo-modulo">ALIMENTAÇÃO</td>
+				            <td class="nota-modulo" id="notaAlimentacao"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="alimentacao" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+								</div>
+							</td>
+						</tr>
+						
+				        <tr data-toggle="collapse" data-target="#lavanderia" class="accordion-toggle">
+				            <td class="titulo-modulo">LAVANDERIA</td>
+				            <td class="nota-modulo" id="notaLavanderia"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="lavanderia" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+								</div>
+							</td>
+						</tr>
+						
+				        <tr data-toggle="collapse" data-target="#saude" class="accordion-toggle">
+				            <td class="titulo-modulo">SAÚDE</td>
+				            <td class="nota-modulo" id="notaSaude"></td>
+				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				        </tr>
+				        <tr>
+				            <td colspan="6"  class="hiddenRow">
+				                <div id="saude" class="accordian-body collapse">
+				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				                        <li class="questao" id="qber1">
+				                            <span>Existe berçário na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                    </ul>
+								</div>
+							</td>
+						</tr>
+				    </tbody>
+				</table>
+				
+				<hr>
+				
+				<div class="fiscalicazaoRelatorio">
+					<span class="btn-relatorio">RELATÓRIO COMPLETO</span>
+					<a target="_blank" href="#" class="btn-relatorio">RELATÓRIO COMPLETO</a>
+				</div>
+				
+				<hr>
+				
+				<h3 class="fotos-vistoria">Fotos da Vistoria</h3>
+				
+				<a id="foto-vistoria-1" class="fancybox big-box" href="#" rel="fotocreche" title="#">
+					<img src="#">
+				</a>
+				<ul class="fiscalizacao-fotos">
+					<li>
+						<a id="foto-vistoria-2" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+					<li>
+						<a id="foto-vistoria-3" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+					<li>
+						<a id="foto-vistoria-4" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+					<li>
+						<a id="foto-vistoria-5" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+					<li>
+						<a id="foto-vistoria-6" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+					<li>
+						<a id="foto-vistoria-7" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+					<li>
+						<a id="foto-vistoria-8" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+					<li>
+						<a id="foto-vistoria-9" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+					<li>
+						<a id="foto-vistoria-10" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+							<img src="#">
+						</a>
+					</li>
+				</ul>
+	
 			</div>
 			
 		</div>
 		
 		<div class="painel painel-compare">
 			<div class="dados-compare">
-				<span id="fecha-compare" class="painel-close" onclick="fechaPainelCompare()">
+				<span id="fecha-compare" class="painel-close" onclick="fechaPainelCompareCreche()">
 					<i class="fa fa-close fa-2x"></i>
 				</span>
 				<div class="cabecalho-compare">
@@ -258,7 +594,7 @@
 				<span id="fecha-resultado-compare" class="painel-close" onclick="fechaPainelResultadoCompare()">
 					<i class="fa fa-close fa-2x"></i>
 				</span>
-				<span id="fecha-compare-desk" class="painel-close" onclick="fechaPainelCompare()">
+				<span id="fecha-compare-desk" class="painel-close" onclick="fechaPainelCompareCreche()">
 					<i class="fa fa-close fa-2x"></i>
 				</span>
 				<header class="compare-header">

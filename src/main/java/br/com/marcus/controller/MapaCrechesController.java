@@ -61,7 +61,7 @@ public class MapaCrechesController {
 		return getCrechesGeoJSON(crecheDao.list()).toString();
 	}
 	
-	@RequestMapping(value = "/consultaVistoriaCreches", headers = {"Content-type=application/json"}, produces={"application/json; charset=UTF-8"}, method = RequestMethod.POST)
+	@RequestMapping(value = "/consultaVistorias", headers = {"Content-type=application/json"}, produces={"application/json; charset=UTF-8"}, method = RequestMethod.POST)
 	public @ResponseBody
 	List<VistoriaCreche> consultaCreche(@RequestBody Creche creche) {
 		String id = creche.getId().toString();
@@ -74,6 +74,19 @@ public class MapaCrechesController {
 				return null;
 			}
 		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	@RequestMapping(value = "/consultaNotas", headers = {"Content-type=application/json"}, produces={"application/json; charset=UTF-8"}, method = RequestMethod.POST)
+	public @ResponseBody
+		NotasCreche consultaNotas(@RequestBody Creche creche) {
+		String id = creche.getId().toString();
+		Creche cre = crecheDao.get(Long.parseLong(id));
+		NotasCreche notas = notasCrecheDao.getByCreche(cre);
+		if(notas != null){
+			return notas;
+		} else {
 			return null;
 		}
 	}
