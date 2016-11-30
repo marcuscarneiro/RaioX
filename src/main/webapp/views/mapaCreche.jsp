@@ -967,23 +967,27 @@
 				<span>Legenda</span>
 				<ul class="lista-legenda">
 					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Superou a meta IDEB e ficou acima de 6">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/verde-15.png">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel1-15.png">
 					</li>
-					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/azul-15.png">
-					</li>
+
+
+<%-- 	NÃO SEI PORQUE ESSE NAO APARECE				<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel2-15.png">
+					</li> --%>
+
+
 					<li class="legenda-item">
-						<img id="pin-amarelo" src="<%=request.getContextPath()%>/views/assets/css/img/amarelo-15.png" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
+						<img id="pin-amarelo" src="<%=request.getContextPath()%>/views/assets/css/img/nivel2-15.png" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
 					</li>
 					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Não atingiu a meta do IDEB">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/vermelho-15.png">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel3-15.png">
 					</li>
 					<li id="pin-cinza" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Sem dados do IDEB">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/cinza-15.png">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel4-15.png">
 					</li>
-					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
+<%-- 	NEM ESSE				<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/preto-15.png">
-					</li>
+					</li> --%> 
 				</ul>
 				<span class="copyright">© Todos os direitos reservados</span>
 			</div>
