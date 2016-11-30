@@ -1340,15 +1340,15 @@ function updateNotas(data){
 		'</div>'
 	);
 	
-	$("#notaSala").html(data.sala);
-	$("#notaBercario").html(data.bercario);
-	$("#notaBanheiros").html(data.banheiros);
-	$("#notaEspacosAlternativos").html(data.espacosAlternativos);
-	$("#notaAcessibilidade").html(data.acessibilidade);
-	$("#notaServicosEssenciais").html(data.servicosEssenciais);
-	$("#notaMateriais").html(data.materiais);
-	$("#notaAlimentacao").html(data.alimentacao);
-	$("#notaLavanderia").html(data.lavanderia);
-	$("#notaSaude").html(data.saude);
+	$("#notaSala").html('Nota: ' + data.sala);
+	$("#notaBercario").html('Nota: ' + data.bercario);
+	$("#notaBanheiros").html('Nota: ' + data.banheiros);
+	$("#notaEspacosAlternativos").html('Nota: ' + data.espacosAlternativos);
+	$("#notaAcessibilidade").html('Nota: ' + data.acessibilidade);
+	$("#notaServicosEssenciais").html('Nota: ' + data.servicosEssenciais);
+	$("#notaMateriais").html('Nota: ' + data.materiais);
+	$("#notaAlimentacao").html('Nota: ' + data.alimentacao);
+	$("#notaLavanderia").html('Nota: ' + data.lavanderia);
+	$("#notaSaude").html('Nota: ' + data.saude);
 		
 }

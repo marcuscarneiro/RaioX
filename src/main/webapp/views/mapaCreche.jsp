@@ -122,7 +122,7 @@
 				<span class="painel-close" onclick="fechaPaineis()">
 					<i class="fa fa-close fa-2x"></i>
 				</span>
-				<div class="cabecalho">
+				<div class="cabecalho-pesquisa">
 					<h2>Pesquisa de creches</h2>
 					<div class="busca">
 						<span class="busca-icone">
@@ -177,10 +177,10 @@
 		</div>
 		
 		<div class="painel painel-creche">
-			<span id="fecha-creche" class="painel-close" onclick="fechaPaineis()">
-				<i class="fa fa-close fa-2x"></i>
-			</span>
 			<div class="detalhe-creche detalhe">
+				<span id="fecha-creche" class="painel-close" onclick="fechaPaineis()">
+					<i class="fa fa-close fa-2x"></i>
+				</span>
 				<div class="creche-cabecalho cabecalho">
 					<h2 class="creche-nome"></h2>
 				</div>
@@ -195,7 +195,7 @@
 				        <tr data-toggle="collapse" data-target="#gerais" class="accordion-toggle">
 				            <td class="titulo-modulo">INFORMAÇÕES GERAIS</td>
 				            <td class="nota-modulo"> </td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6" class="hiddenRow">
@@ -257,7 +257,7 @@
 				        <tr data-toggle="collapse" data-target="#sala" class="accordion-toggle">
 				            <td class="titulo-modulo">SALA DE AULA</td>
 				            <td class="nota-modulo" id="notaSala"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6" class="hiddenRow">
@@ -290,7 +290,7 @@
 				        <tr data-toggle="collapse" data-target="#bercario" class="accordion-toggle">
 				            <td class="titulo-modulo">BERÇÁRIO</td>
 				            <td class="nota-modulo" id="notaBercario"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -340,7 +340,7 @@
 				        <tr data-toggle="collapse" data-target="#banheiros" class="accordion-toggle">
 				            <td class="titulo-modulo">BANHEIROS</td>
 				            <td class="nota-modulo" id="notaBanheiros"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -358,7 +358,7 @@
 				        <tr data-toggle="collapse" data-target="#espacosAlternativos" class="accordion-toggle">
 				            <td class="titulo-modulo">ESPAÇOS ALTERNATIVOS DE APRENDIZAGEM E LAZER</td>
 				            <td class="nota-modulo" id="notaEspacosAlternativos"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -376,7 +376,7 @@
 				        <tr data-toggle="collapse" data-target="#acessibilidade" class="accordion-toggle">
 				            <td class="titulo-modulo">ACESSIBILIDADE E ATENDIMENTO EDUCACIONAL ESPECIALIZADO</td>
 				            <td class="nota-modulo" id="notaAcessibilidade"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -394,7 +394,7 @@
 				        <tr data-toggle="collapse" data-target="#servicosEssenciais" class="accordion-toggle">
 				            <td class="titulo-modulo">SERVIÇOS ESSENCIAIS / ESTRUTURA BÁSICA</td>
 				            <td class="nota-modulo" id="notaServicosEssenciais"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -412,7 +412,7 @@
 				        <tr data-toggle="collapse" data-target="#materiais" class="accordion-toggle">
 				            <td class="titulo-modulo">MATERIAIS</td>
 				            <td class="nota-modulo" id="notaMateriais"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -430,7 +430,7 @@
 				        <tr data-toggle="collapse" data-target="#alimentacao" class="accordion-toggle">
 				            <td class="titulo-modulo">ALIMENTAÇÃO</td>
 				            <td class="nota-modulo" id="notaAlimentacao"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -448,7 +448,7 @@
 				        <tr data-toggle="collapse" data-target="#lavanderia" class="accordion-toggle">
 				            <td class="titulo-modulo">LAVANDERIA</td>
 				            <td class="nota-modulo" id="notaLavanderia"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -466,7 +466,7 @@
 				        <tr data-toggle="collapse" data-target="#saude" class="accordion-toggle">
 				            <td class="titulo-modulo">SAÚDE</td>
 				            <td class="nota-modulo" id="notaSaude"></td>
-				            <td><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+				            <td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
 				        </tr>
 				        <tr>
 				            <td colspan="6"  class="hiddenRow">
@@ -700,7 +700,7 @@
 				<span class="painel-close" onclick="fechaPainelFiltro()">
 					<i class="fa fa-close fa-2x"></i>
 				</span>
-				<div class="cabecalho">
+				<div class="cabecalho-filtro">
 					<h2>Filtros das creches</h2>
 					<span class="filtro-opcoes">Marque abaixo o filtro que deseja aplicar no mapa</span>
 				</div>
