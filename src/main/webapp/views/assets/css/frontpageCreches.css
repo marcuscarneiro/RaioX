@@ -186,7 +186,6 @@ html, body
 	left: 100px;
 	bottom: 65px;
 	overflow-y: auto;
-	margin: 2%;
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -232,9 +231,8 @@ html, body
 
 
 .detalhe-creche table {
-	margin: 2% 4%;
-	width: auto;
-	max-width: 94%;
+	margin: 2% 10%;
+	width: 80%;
 
 }
 .detalhe-numeros .cabecalho
