@@ -32,10 +32,6 @@
 	
 						</header>
 
-
-
-
-
 						<div class="intro-content">
 							<div class="profile"><img src="<%=request.getContextPath()%>/views/assets/images/profile1.jpg" alt="RaioX Escolas"></div>
 							<h1>

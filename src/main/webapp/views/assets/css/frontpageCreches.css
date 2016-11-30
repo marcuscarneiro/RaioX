@@ -186,6 +186,7 @@ html, body
 	left: 100px;
 	bottom: 65px;
 	overflow-y: auto;
+	margin: 2%;
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -205,6 +206,8 @@ html, body
 	width: calc(40% - 100px);
 }
 
+
+
 .creche-left
 {
 	width: calc(40% + 1px);
@@ -222,11 +225,18 @@ html, body
 	padding: 6%;
 }
 
-.cabecalho
+/* .cabecalho
 {
 	margin: 6%;
-}
+} */
 
+
+.detalhe-creche table {
+	margin: 2% 4%;
+	width: auto;
+	max-width: 94%;
+
+}
 .detalhe-numeros .cabecalho
 {
 	margin: 3%;
@@ -945,6 +955,10 @@ li.box-numeros:hover
 #fecha-creche, #fecha-compare, #fecha-resultado-compare{
 	display: none;
 }
+
+
+
+
 
 /* MENU MOBILE */
 #mobile-menu, #home-mob

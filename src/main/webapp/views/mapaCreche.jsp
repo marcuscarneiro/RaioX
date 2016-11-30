@@ -497,57 +497,60 @@
 				<hr>
 				
 				<h3 class="fotos-vistoria">Fotos da Vistoria</h3>
-				
-				<a id="foto-vistoria-1" class="fancybox big-box" href="#" rel="fotocreche" title="#">
-					<img src="#">
-				</a>
-				<ul class="fiscalizacao-fotos">
-					<li>
-						<a id="foto-vistoria-2" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+				<div class="galeria-fotos">
+					<div class="foto-galeria">
+						<a id="foto-vistoria-1" class="fancybox big-box" href="#" rel="fotocreche" title="#">
 							<img src="#">
 						</a>
-					</li>
-					<li>
-						<a id="foto-vistoria-3" class="fancybox boxes" href="#" rel="fotocreche" title="#">
-							<img src="#">
-						</a>
-					</li>
-					<li>
-						<a id="foto-vistoria-4" class="fancybox boxes" href="#" rel="fotocreche" title="#">
-							<img src="#">
-						</a>
-					</li>
-					<li>
-						<a id="foto-vistoria-5" class="fancybox boxes" href="#" rel="fotocreche" title="#">
-							<img src="#">
-						</a>
-					</li>
-					<li>
-						<a id="foto-vistoria-6" class="fancybox boxes" href="#" rel="fotocreche" title="#">
-							<img src="#">
-						</a>
-					</li>
-					<li>
-						<a id="foto-vistoria-7" class="fancybox boxes" href="#" rel="fotocreche" title="#">
-							<img src="#">
-						</a>
-					</li>
-					<li>
-						<a id="foto-vistoria-8" class="fancybox boxes" href="#" rel="fotocreche" title="#">
-							<img src="#">
-						</a>
-					</li>
-					<li>
-						<a id="foto-vistoria-9" class="fancybox boxes" href="#" rel="fotocreche" title="#">
-							<img src="#">
-						</a>
-					</li>
-					<li>
-						<a id="foto-vistoria-10" class="fancybox boxes" href="#" rel="fotocreche" title="#">
-							<img src="#">
-						</a>
-					</li>
-				</ul>
+					</div>
+					<ul class="fiscalizacao-fotos">
+						<li>
+							<a id="foto-vistoria-2" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-vistoria-3" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-vistoria-4" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-vistoria-5" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-vistoria-6" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-vistoria-7" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-vistoria-8" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-vistoria-9" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-vistoria-10" class="fancybox boxes" href="#" rel="fotocreche" title="#">
+								<img src="#">
+							</a>
+						</li>
+					</ul>
+			</div>
 	
 			</div>
 			
