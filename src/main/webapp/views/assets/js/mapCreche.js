@@ -61,6 +61,7 @@ function fechaPainelCompareCreche() {
 	$(".compare-header h2").html("SELECIONE AO LADO AS CRECHES QUE DESEJA COMPARAR");
 	$(".compare-titulo-creche1").html("");
 	$(".compare-titulo-creche2").html("");
+	$(".compare-creche").slideUp();
 	$(".compare-galerias").slideUp();
 	$(".tabela-comparativo").slideUp();
 	if($(window).width() <= 1024){
@@ -77,6 +78,7 @@ function fechaPainelResultadoCompare() {
 	$(".compare-titulo-creche1").html("");
 	$(".compare-titulo-creche2").html("");
 	$(".compare").slideUp();
+	$(".compare-creche").slideUp();
 	$(".compare-galerias").slideUp();
 	$(".tabela-comparativo").slideUp();
 	if($(window).width() <= 1024){

@@ -1154,127 +1154,171 @@ function compareVistoria(comp1, comp2, creNome1, creNome2){
 				$(".compare-creche h3").hide();
 				$.each(data, function(i, vistoria){
 					if(vistoria.creche.id === parseInt(comp1)){
-						$(".compare-creche .questao-1 #qcre1").html(vistoria.sa1);
-						$(".compare-creche .questao-2 #qcre1").html(vistoria.sa4a + 'ºC');
-						$(".compare-creche .questao-3 #qcre1").html(vistoria.sa5a + ' lux');
-						
-						if(vistoria.sa6 != null){
-							$(".compare-creche .questao-4 #qcre1").html(vistoria.sa6);
+						if(vistoria.ger1 != null){
+							$(".compare-creche .questao-1 #qcre1").html(vistoria.ger1);
 						} else {
-							$(".compare-creche .questao-4 #qcre1").html('0');
+							$(".compare-creche .questao-1 #qcre1").html("Sem informação");
 						}
 						
-						if(vistoria.bib1 == 'true'){
+						if(vistoria.ger2 != null){
+							$(".compare-creche .questao-2 #qcre1").html(vistoria.ger2);
+						} else {
+							$(".compare-creche .questao-2 #qcre1").html("Sem informação");
+						}
+						
+						if(vistoria.eaa1h == true){
+							$(".compare-creche .questao-3 #qcre1").html("Não");
+						} else if(vistoria.eaa1h == false){
+							$(".compare-creche .questao-3 #qcre1").html("Sim");
+						} else {
+							$(".compare-creche .questao-3 #qcre1").html("Sem informação");
+						}
+						
+						if(vistoria.ber1 == true){
+							$(".compare-creche .questao-4 #qcre1").html("Não");
+						} else if(vistoria.ber1 == false){
+							$(".compare-creche .questao-4 #qcre1").html("Sim");
+						} else {
+							$(".compare-creche .questao-4 #qcre1").html("Sem informação");
+						}
+						
+						if(vistoria.aae6 == true){
 							$(".compare-creche .questao-5 #qcre1").html("Não");
-						} else if(vistoria.bib1 != 'false'){
+						} else if(vistoria.aae6 == false){
 							$(".compare-creche .questao-5 #qcre1").html("Sim");
 						} else {
 							$(".compare-creche .questao-5 #qcre1").html("Sem informação");
 						}
 						
-						if(vistoria.ace5 == 'true'){
-							$(".compare-creche .questao-6 #qcre1").html("Sim");
-						} else if(vistoria.ace5 == 'false'){
-							$(".compare-creche .questao-6 #qcre1").html("Não");
+						if(vistoria.ali9 == 1){
+							$(".compare-creche .questao-6 #qcre1").html("Nunca");
+						} else if(vistoria.ali9 == 2){
+							$(".compare-creche .questao-6 #qcre1").html("Raramente");
+						} else if(vistoria.ali9 == 3){
+							$(".compare-creche .questao-6 #qcre1").html("Indiferente");
+						} else if(vistoria.ali9 == 4){
+							$(".compare-creche .questao-6 #qcre1").html("De vez em quando");
+						} else if(vistoria.ali9 == 5){
+							$(".compare-creche .questao-6 #qcre1").html("Sempre");
 						} else {
 							$(".compare-creche .questao-6 #qcre1").html("Sem informação");
 						}
 						
-						if(vistoria.se2 == 'true'){
-							$(".compare-creche .questao-7 #qcre1").html("Sim");
-						} else if(vistoria.se2 == 'false'){
+						if(vistoria.mat8 == true){
 							$(".compare-creche .questao-7 #qcre1").html("Não");
+						} else if(vistoria.mat8 == false){
+							$(".compare-creche .questao-7 #qcre1").html("Sim");
 						} else {
 							$(".compare-creche .questao-7 #qcre1").html("Sem informação");
 						}
 						
-						if(vistoria.sp1 == 'true'){
-							$(".compare-creche .questao-8 #qcre1").html("Sim");
-						} else if(vistoria.sp1 == 'false'){
+						if(vistoria.see13 == true){
 							$(".compare-creche .questao-8 #qcre1").html("Não");
+						} else if(vistoria.see13 == false){
+							$(".compare-creche .questao-8 #qcre1").html("Sim");
 						} else {
 							$(".compare-creche .questao-8 #qcre1").html("Sem informação");
 						}
 						
-						if(vistoria.alim1 == 1){
-							$(".compare-creche .questao-9 #qcre1").html("Sala de aula");
-						} else if(vistoria.alim1 == 2) {
-							$(".compare-creche .questao-9 #qcre1").html("Outros");
-						} else if(vistoria.alim1 == 3){
-							$(".compare-creche .questao-9 #qcre1").html("Refeitório");
+						if(vistoria.mat4 == true){
+							$(".compare-creche .questao-9 #qcre1").html("Não");
+						} else if(vistoria.mat4 == false){
+							$(".compare-creche .questao-9 #qcre1").html("Sim");
 						} else {
 							$(".compare-creche .questao-9 #qcre1").html("Sem informação");
 						}
 						
-						if(vistoria.mdf2b == 'true'){
-							$(".compare-creche .questao-10 #qcre1").html("Sim");
-						} else if(vistoria.mdf2b == 'false'){
+						if(vistoria.mat3 == true){
 							$(".compare-creche .questao-10 #qcre1").html("Não");
+						} else if(vistoria.mat3 == false){
+							$(".compare-creche .questao-10 #qcre1").html("Sim");
 						} else {
 							$(".compare-creche .questao-10 #qcre1").html("Sem informação");
 						}
-						
+												
 						$("#galcre1 h4").html("Fotos da " + creNome1);
 						compareFotosVisita(vistoria.id, 1);
 						
 					} else if(vistoria.creche.id === parseInt(comp2)){
 						
-						$(".compare-creche .questao-1 #qcre2").html(vistoria.sa1);
-						$(".compare-creche .questao-2 #qcre2").html(vistoria.sa4a + 'ºC');
-						$(".compare-creche .questao-3 #qcre2").html(vistoria.sa5a + ' lux');
-						
-						if(vistoria.sa6 != null){
-							$(".compare-creche .questao-4 #qcre2").html(vistoria.sa6);
+						if(vistoria.ger1 != null){
+							$(".compare-creche .questao-1 #qcre2").html(vistoria.ger1);
 						} else {
-							$(".compare-creche .questao-4 #qcre2").html('0');
+							$(".compare-creche .questao-1 #qcre2").html("Sem informação");
 						}
 						
-						if(vistoria.bib1 == 'true'){
+						if(vistoria.ger2 != null){
+							$(".compare-creche .questao-2 #qcre2").html(vistoria.ger2);
+						} else {
+							$(".compare-creche .questao-2 #qcre2").html("Sem informação");
+						}
+						
+						if(vistoria.eaa1h == true){
+							$(".compare-creche .questao-3 #qcre2").html("Não");
+						} else if(vistoria.eaa1h == false){
+							$(".compare-creche .questao-3 #qcre2").html("Sim");
+						} else {
+							$(".compare-creche .questao-3 #qcre2").html("Sem informação");
+						}
+						
+						if(vistoria.ber1 == true){
+							$(".compare-creche .questao-4 #qcre2").html("Não");
+						} else if(vistoria.ber1 == false){
+							$(".compare-creche .questao-4 #qcre2").html("Sim");
+						} else {
+							$(".compare-creche .questao-4 #qcre2").html("Sem informação");
+						}
+						
+						if(vistoria.aae6 == true){
 							$(".compare-creche .questao-5 #qcre2").html("Não");
-						} else if(vistoria.bib1 != 'false'){
+						} else if(vistoria.aae6 == false){
 							$(".compare-creche .questao-5 #qcre2").html("Sim");
 						} else {
 							$(".compare-creche .questao-5 #qcre2").html("Sem informação");
 						}
 						
-						if(vistoria.ace5 == 'true'){
-							$(".compare-creche .questao-6 #qcre2").html("Sim");
-						} else if(vistoria.ace5 == 'false'){
-							$(".compare-creche .questao-6 #qcre2").html("Não");
+						if(vistoria.ali9 == 1){
+							$(".compare-creche .questao-6 #qcre2").html("Nunca");
+						} else if(vistoria.ali9 == 2){
+							$(".compare-creche .questao-6 #qcre2").html("Raramente");
+						} else if(vistoria.ali9 == 3){
+							$(".compare-creche .questao-6 #qcre2").html("Indiferente");
+						} else if(vistoria.ali9 == 4){
+							$(".compare-creche .questao-6 #qcre2").html("De vez em quando");
+						} else if(vistoria.ali9 == 5){
+							$(".compare-creche .questao-6 #qcre2").html("Sempre");
 						} else {
 							$(".compare-creche .questao-6 #qcre2").html("Sem informação");
 						}
 						
-						if(vistoria.se2 == 'true'){
-							$(".compare-creche .questao-7 #qcre2").html("Sim");
-						} else if(vistoria.se2 == 'false'){
+						if(vistoria.mat8 == true){
 							$(".compare-creche .questao-7 #qcre2").html("Não");
+						} else if(vistoria.mat8 == false){
+							$(".compare-creche .questao-7 #qcre2").html("Sim");
 						} else {
 							$(".compare-creche .questao-7 #qcre2").html("Sem informação");
 						}
 						
-						if(vistoria.sp1 == 'true'){
-							$(".compare-creche .questao-8 #qcre2").html("Sim");
-						} else if(vistoria.sp1 == 'false'){
+						if(vistoria.see13 == true){
 							$(".compare-creche .questao-8 #qcre2").html("Não");
+						} else if(vistoria.see13 == false){
+							$(".compare-creche .questao-8 #qcre2").html("Sim");
 						} else {
 							$(".compare-creche .questao-8 #qcre2").html("Sem informação");
 						}
 						
-						if(vistoria.alim1 == 1){
-							$(".compare-creche .questao-9 #qcre2").html("Sala de aula");
-						} else if(vistoria.alim1 == 2) {
-							$(".compare-creche .questao-9 #qcre2").html("Outros");
-						} else if(vistoria.alim1 == 3){
-							$(".compare-creche .questao-9 #qcre2").html("Refeitório");
+						if(vistoria.mat4 == true){
+							$(".compare-creche .questao-9 #qcre2").html("Não");
+						} else if(vistoria.mat4 == false){
+							$(".compare-creche .questao-9 #qcre2").html("Sim");
 						} else {
 							$(".compare-creche .questao-9 #qcre2").html("Sem informação");
 						}
 						
-						if(vistoria.mdf2b == 'true'){
-							$(".compare-creche .questao-10 #qcre2").html("Sim");
-						} else if(vistoria.mdf2b == 'false'){
+						if(vistoria.mat3 == true){
 							$(".compare-creche .questao-10 #qcre2").html("Não");
+						} else if(vistoria.mat3 == false){
+							$(".compare-creche .questao-10 #qcre2").html("Sim");
 						} else {
 							$(".compare-creche .questao-10 #qcre2").html("Sem informação");
 						}

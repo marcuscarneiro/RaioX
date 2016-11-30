@@ -63,7 +63,6 @@
 
 .galeria
 {
-	margin-top: 30px;
 	width: 50%;
 	display: table;
 	margin: 50 auto;
@@ -839,7 +838,7 @@ input.pesquisa-input
 .compare-creche > h4
 {
 	font-size: 28px;
-	margin: 20px;
+	margin: 40px;
 }
 
 .compare-galerias a
