@@ -410,13 +410,12 @@ input.pesquisa-input
 .fiscalizacao-questionario li {
 	list-style: none;
 	font-size: 12px;
-	margin-bottom: -1px !important;
 	float: left;
 	width: 100%;
-	border-bottom: 1px solid #E9E9E9;
-	padding-bottom: 8px;
-	border-top: 1px solid #E9E9E9;
-	padding-top: 8px;
+	/* border-bottom: 1px solid #E9E9E9; */
+	border-top: 1px solid #fff;
+	padding: 10px;
+	background: #EDF9FF;
 }
 
 .fiscalizacao-questionario li span {
@@ -985,6 +984,15 @@ input.pesquisa-input
 	margin: 30px auto;
 	display: none;
 }
+
+/*Ajustes de cor na tabela*/
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td { border: none;}
+
+tr.accordion-toggle {
+    background: #E9F3FC;
+}
+
 
 @media screen and (max-width: 1024px){
 	
