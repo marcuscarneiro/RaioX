@@ -34,6 +34,32 @@
 
 }
 
+
+/*Galeria de video*/
+
+.galeria-fotos {
+    width: 99%;
+    float: left;
+}
+
+.foto-galeria {
+  	width: 100%;
+  	height: 500px;
+  	overflow: hidden;
+  	position: relative;
+  	margin: 2% 0;
+
+}
+
+.big-box img {width: 100%}
+
+.big-box
+{
+	width: auto;
+	height: 500px;
+	margin-top: -250px; /* metade da altura */
+}
+
 .galeria
 {
 	margin-top: 30px;
@@ -53,7 +79,7 @@
 	height: 55px;
 }
 
-.boxes, .big-box
+.boxes
 {
 	/* border: 5px solid #FFF !important; */
 /* 	webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -73,13 +99,6 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); */
 	border: none !important;
 }
 
-.big-box
-{
-	width: 98%;
-	height: 300px;
-	margin-top: 40px;
-	margin-left: 4px;
-}
 
 .boxes img
 {
@@ -228,6 +247,7 @@ input.pesquisa-input
 .nota-geral, .titulo-questionario, .fotos-vistoria
 {
 	text-align: center;
+	text-transform: uppercase;
 }
 
 .nota-creche
@@ -930,4 +950,18 @@ input.pesquisa-input
 .leaflet-popup
 {
 	bottom: 10px !important;
+}
+
+
+@media screen and (max-width: 640px){
+
+	.big-box
+	{
+		width: auto;
+		height: 260px;
+		margin-top: -130px; /* metade da altura */
+	}
+
+	.foto-galeria {height: 260px;}
+
 }
