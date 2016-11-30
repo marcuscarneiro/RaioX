@@ -67,6 +67,34 @@
 							</div>
 						</div>
 						
+						<!-- TROCAR POR UM BOTÃO DE UPLOAD -->
+						<div class="form-group">
+						<label class="col-sm-3 control-label" for="relatorio"><strong>Relatório</strong></label>
+							<div id="relatorio" class="col-sm-4">
+								<input type="file" name="relatorioUpload" size="50" />
+							</div>
+						</div>
+ 
+ 						<c:if test="${not empty vistoriaCreche.relatorio}">
+							<div class="form-group">
+							<label class="col-sm-3 control-label" for="relatorio"><strong>Relatório atual</strong></label>
+								<div id="relatorio" class="col-sm-4">
+									<a href="<%=request.getContextPath()%>${vistoriaCreche.relatorio}" 	class="btn btn-primary" role="button">
+										Baixar relatório
+									</a>
+								</div>
+							</div>
+						</c:if>
+						
+						<c:if test="${empty vistoriaCreche.relatorio}">
+							<div class="form-group">
+							<label class="col-sm-3 control-label" for="relatorio"><strong>Relatório atual</strong></label>
+								<div id="relatorioEmpty" class="col-sm-4">
+									<span>Ainda sem relatório</span>
+								</div>
+							</div>
+						</c:if>
+						
 						<!-- Text input-->
 						<div class="form-group">
 							<label class="col-sm-3 control-label" for="gestor"><strong>Gestor</strong></label>

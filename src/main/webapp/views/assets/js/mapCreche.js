@@ -65,7 +65,7 @@ function fechaPainelCompareCreche() {
 	if($(window).width() <= 1024){
 		$(".compare-resultado").slideDown();
 	}
-	ordenaEscolas();
+	ordenaCreches();
 }
 
 function fechaPainelResultadoCompare() {
@@ -80,7 +80,7 @@ function fechaPainelResultadoCompare() {
 	if($(window).width() <= 1024){
 		$(".compare-resultado").slideDown();
 	}
-	ordenaEscolas();
+	ordenaCreches();
 }
 
 //FILTRO
@@ -113,7 +113,7 @@ function addCompara(cre){
 				compareLi.fadeIn(250, function(){
 					var comp1 = $(".compare-selecionados li").first().attr('cre');;
 					var comp2 = $(".compare-selecionados li").last().attr('cre');
-					comparaEscolas(comp1, comp2);
+					comparaCreches(comp1, comp2);
 					$(".compare-header h2").html("COMPARATIVO");
 					$(".compare-creche").slideDown();
 					$(".compare-galerias").slideDown();
@@ -126,7 +126,7 @@ function addCompara(cre){
 			var lastLi = $(".compare-selecionados li").last();
 			lastLi.fadeOut(250, function(){
 				$(".compare-lista").append(lastLi);
-				ordenaEscolas();
+				ordenaCreches();
 				lastLi.fadeIn(250);
 			});
 			compareLi.fadeOut(250, function() {
@@ -134,7 +134,7 @@ function addCompara(cre){
 				compareLi.fadeIn(250, function(){
 					var comp1 = $(".compare-selecionados li").first().attr('cre');;
 					var comp2 = $(".compare-selecionados li").last().attr('cre');
-					comparaEscolas(comp1, comp2);
+					comparaCreches(comp1, comp2);
 				});
 				
 			});
@@ -152,7 +152,7 @@ function addCompara(cre){
 				$(".compare-resultado").slideDown();
 			}
 			$(".compare-lista").append(compareLi);
-			ordenaEscolas();
+			ordenaCreches();
 			compareLi.fadeIn(250);
 		});
 	}	
@@ -229,7 +229,7 @@ $(document).ready(function(){
 		return ret;
 	};
 	
-	$('#pesquisaEscola').keyup(function(){
+	$('#pesquisaCreche').keyup(function(){
 		var that = this, $allListElements = $('.pesquisa-lista > li');
 	    var $matchingListElements = $allListElements.filter(function(i, li){
 	    	
@@ -243,7 +243,7 @@ $(document).ready(function(){
 });
 
 //ABRE ESCOLA DA PESQUISA
-function abreEscola(id, nome){
+function abreCreche(id, nome){
 	creId = id;
 	creNome = nome;
 	$("#"+id).click();
@@ -260,7 +260,7 @@ setInterval(function(){
 	}, 20000);
 
 //ORDENA ESCOLAS
-function ordenaEscolas() {
+function ordenaCreches() {
 	var listaComp = $('.compare-lista');
 	var listaitems = listaComp.children('li').get();
 	listaitems.sort(function(a, b) {

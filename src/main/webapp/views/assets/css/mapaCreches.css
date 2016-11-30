@@ -38,8 +38,10 @@
 /*Galeria de video*/
 
 .galeria-fotos {
-    width: 99%;
+    width: 100%;
     float: left;
+    padding-left: 10%;
+    padding-right: 10%; 
 }
 
 .foto-galeria {
@@ -248,6 +250,21 @@ input.pesquisa-input
 {
 	text-align: center;
 	text-transform: uppercase;
+}
+
+.titulo-questionario
+{
+	float: left;
+	width: 100%;
+}
+
+.notas
+{
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #E9E9E9;
+	padding-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .nota-creche
@@ -893,13 +910,18 @@ input.pesquisa-input
 
 .fiscalicazaoRelatorio
 {
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #E9E9E9;
+	border-top: 1px solid #E9E9E9;
 	text-align: center;
     font: inherit;
     font-size: 100%;
-    margin: 0;
-    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     vertical-align: baseline;
-    border: 0;
     display: none;
 }
 

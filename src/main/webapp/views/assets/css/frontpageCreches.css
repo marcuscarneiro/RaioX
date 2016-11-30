@@ -186,7 +186,10 @@ html, body
 	left: 100px;
 	bottom: 65px;
 	overflow-y: auto;
+<<<<<<< HEAD
 	margin: 2% 0 2% 2%;
+=======
+>>>>>>> origin/master
 	-webkit-overflow-scrolling: touch;
 }
 
