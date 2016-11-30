@@ -1085,18 +1085,62 @@ function exibeCompCreches(data, comp1, comp2){
 	});
 	
 	$(".compare-titulo-creche1").text(creNome1);
-	$(".compare-titulo-creche").text(creNome2);
+	$(".compare-titulo-creche2").text(creNome2);
+	$(".comp-cre1").text(creNome1);
+	$(".comp-cre2").text(creNome2);
 	
-	compareVisita(comp1, comp2, creNome1, creNome2);
+	compareNotas(comp1, comp2, creNome1, creNome2);
+	compareVistoria(comp1, comp2, creNome1, creNome2);
 }
 
-function compareVisita(comp1, comp2, creNome1, creNome2){
+function compareNotas(cre1Id, cre2Id, nome1, nome2){
+	$.ajax({
+		url: 'consultaNotasComparativo',
+		type: "POST",
+		data: {
+			"id1" : cre1Id,
+			"id2" : cre2Id
+		},
+		contentType: 'application/json',
+		success: function(data) {
+			if(data != null & data != ''){
+				$.each(data, function(i, nota){
+					if(parseInt(nota.creche.id) === parseInt(cre1Id)){
+						$(".comp-sala-cre1").text(nota.sala);
+						$(".comp-bercario-cre1").text(nota.bercario);
+						$(".comp-banheiros-cre1").text(nota.banheiros);
+						$(".comp-espacos-cre1").text(nota.espacosAlternativos);
+						$(".comp-acessibilidade-cre1").text(nota.acessibilidade);
+						$(".comp-servicos-cre1").text(nota.servicosEssenciais);
+						$(".comp-materiais-cre1").text(nota.materiais);
+						$(".comp-alimentacao-cre1").text(nota.alimentacao);
+						$(".comp-lavanderia-cre1").text(nota.lavanderia);
+						$(".comp-saude-cre1").text(nota.saude);
+					} else if(parseInt(nota.creche.id) === parseInt(cre2Id)){
+						$(".comp-sala-cre2").text(nota.sala);
+						$(".comp-bercario-cre2").text(nota.bercario);
+						$(".comp-banheiros-cre2").text(nota.banheiros);
+						$(".comp-espacos-cre2").text(nota.espacosAlternativos);
+						$(".comp-acessibilidade-cre2").text(nota.acessibilidade);
+						$(".comp-servicos-cre2").text(nota.servicosEssenciais);
+						$(".comp-materiais-cre2").text(nota.materiais);
+						$(".comp-alimentacao-cre2").text(nota.alimentacao);
+						$(".comp-lavanderia-cre2").text(nota.lavanderia);
+						$(".comp-saude-cre2").text(nota.saude);
+					}
+				});
+			}
+		}
+	});
+}
+
+function compareVistoria(comp1, comp2, creNome1, creNome2){
 	$("#galcre1 a").hide();
 	$("#galcre1 h4").hide();
 	$("#galcre2 a").hide();
 	$("#galcre2 h4").hide();
 	$.ajax({
-		url: 'consultaVisitaComparativo',
+		url: 'consultaVistoriaCrecheComparativo',
 		type: "POST",
 		data: {
 			"id1" : comp1,
@@ -1274,7 +1318,7 @@ function recarregaMapa(){
 
 function compareFotosVisita(visId, ordem){
 	$.ajax({
-		url: 'consultaFotosVisita',
+		url: 'consultaFotosVistoriaCreche',
 		type: "POST",
 		data: JSON.stringify({ id: visId }),
 		contentType: 'application/json',

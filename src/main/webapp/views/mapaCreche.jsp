@@ -595,11 +595,70 @@
 				<header class="compare-header">
 					<h2>SELECIONE AO LADO AS CRECHES QUE DESEJA COMPARAR</h2>
 				</header>
-				<div class="compare-titulos">
-					<h4 class="compare-titulo-creche1"></h4>
-					<h4 class="compare-titulo-creche2"></h4>
+				<div class="tabela-comparativo">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Módulo</th>
+								<th class="comp-cre1"></th>
+								<th class="comp-cre2"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="comp-modulo">SALA DE AULA</td>
+								<td class="comp-sala-cre1"></td>
+								<td class="comp-sala-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">BERÇÁRIO</td>
+								<td class="comp-bercario-cre1"></td>
+								<td class="comp-bercario-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">BANHEIROS</td>
+								<td class="comp-banheiros-cre1"></td>
+								<td class="comp-banheiros-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">ESPAÇOS ALTERNATIVOS DE APRENDIZAGEM E LAZER</td>
+								<td class="comp-espacos-cre1"></td>
+								<td class="comp-espacos-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">ACESSIBILIDADE E ATENDIMENTO EDUCACIONAL ESPECIALIZADO</td>
+								<td class="comp-acessibilidade-cre1"></td>
+								<td class="comp-acessibilidade-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">SERVIÇOS ESSENCIAIS / ESTRUTURA BÁSICA</td>
+								<td class="comp-servicos-cre1"></td>
+								<td class="comp-servicos-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">MATERIAIS</td>
+								<td class="comp-materiais-cre1"></td>
+								<td class="comp-materiais-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">ALIMENTAÇÃO</td>
+								<td class="comp-alimentacao-cre1"></td>
+								<td class="comp-alimentacao-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">LAVANDERIA</td>
+								<td class="comp-lavanderia-cre1"></td>
+								<td class="comp-lavanderia-cre2"></td>
+							</tr>
+							<tr>
+								<td class="comp-modulo">SAÚDE</td>
+								<td class="comp-saude-cre1"></td>
+								<td class="comp-saude-cre2"></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-				
+
 				<div class="compare-creche">
 					<h3>Ainda não existem dados de vistorias para estas creches</h3>
 					
@@ -643,9 +702,9 @@
 						</div>
 					</div>
 				</div>
-				
+					
 				<hr>
-				
+					
 				<div class="compare-galerias">
 					<h4>Galeria de fotos da última vistoria</h4>
 					<div id="galcre1" class="galeria">
