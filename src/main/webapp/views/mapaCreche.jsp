@@ -189,8 +189,6 @@
 					
 				</div>
 				
-				<hr>
-				
 				<h3 class="titulo-questionario">Questionário aplicado</h3>
 				<table class="table table-condensed fiscalizacao-questionario" style="border-collapse:collapse;">
 				    <tbody>
@@ -227,9 +225,7 @@
 				                            <span>Situação do prédio:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
-				
-				                        <hr>
-				                        
+				                        <br>				
 				                        <li class="questao" id="qger1">
 				                            <span>Total de Alunos:</span>
 				                            <span class="questao-info"></span>
@@ -487,14 +483,10 @@
 				    </tbody>
 				</table>
 				
-				<hr>
-				
 				<div class="fiscalicazaoRelatorio">
 					<span class="btn-relatorio">RELATÓRIO COMPLETO</span>
 					<a target="_blank" href="#" class="btn-relatorio">RELATÓRIO COMPLETO</a>
 				</div>
-				
-				<hr>
 				
 				<h3 class="fotos-vistoria">Fotos da Vistoria</h3>
 				<div class="galeria-fotos">
