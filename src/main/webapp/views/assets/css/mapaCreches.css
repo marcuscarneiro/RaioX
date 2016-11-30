@@ -843,6 +843,17 @@ input.pesquisa-input
 	margin: 20px;
 }
 
+.compare-galerias a
+{
+	width: 80%;
+	margin: 5px;
+}
+
+.comp-modulo
+{
+	text-align: left;
+}
+
 .social-item
 {
 	display: inline;
@@ -966,6 +977,12 @@ input.pesquisa-input
 .leaflet-popup
 {
 	bottom: 10px !important;
+}
+
+.tabela-comparativo
+{
+	width: 90%;
+	margin: 30px auto;
 }
 
 @media screen and (max-width: 1024px){

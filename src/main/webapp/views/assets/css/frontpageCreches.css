@@ -240,9 +240,8 @@ html, body
 }
 
 .detalhe-creche table {
-	margin: 2% 4%;
-	width: auto;
-	max-width: 94%;
+	margin: 2% 10%;
+ 	width: 80%;
 
 }
 .detalhe-numeros .cabecalho
