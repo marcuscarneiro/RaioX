@@ -229,6 +229,11 @@ html, body
 	margin: 6%;
 } */
 
+.detalhe-creche
+{
+	padding-left: 2%;
+	padding-right: 2%;
+}
 
 .detalhe-creche table {
 	margin: 2% 10%;
@@ -256,7 +261,7 @@ html, body
 	color: #565656;
 }
 
-.cabecalho-compare
+.cabecalho-compare, .cabecalho-pesquisa, .cabecalho-filtro
 {
 	left: 100px;
 	margin: 10%;
@@ -950,12 +955,9 @@ li.box-numeros:hover
 	display: block;
 }
 
-#fecha-creche, #fecha-compare, #fecha-resultado-compare{
+#fecha-compare, #fecha-resultado-compare{
 	display: none;
 }
-
-
-
 
 
 /* MENU MOBILE */
@@ -1022,6 +1024,12 @@ li.box-numeros:hover
 		width: 33%;
 		padding: 2%;
 	}
+	
+	.detalhe-creche
+{
+	padding-left: 2%;
+	padding-right: 2%;
+}
 
 	.cabecalho-compare {
         margin: 5%;
@@ -1060,11 +1068,6 @@ li.box-numeros:hover
 	
 	.redes-sociais, .footer-filtros, .copyright, .side-menu, #fecha-ideb, #fecha-compare-desk {
 		display: none;
-	}
-	
-	.boxes {
-	    width: 37px;
-	    height: 37px;
 	}
 	
 	.logo {
