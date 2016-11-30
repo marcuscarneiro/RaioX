@@ -575,13 +575,29 @@ function showCreche(cre, id){
 	$(".foto-fachada img").attr("src",fotoFachada);
 	if(id != null){
 		
+		consultaNotas(id);
 		$(".fiscalizacao-datas li").remove();
 		mapVisita = new Object();
 		ordemAtual = 0;
-		consultaVisitas(id);
+		consultaVistorias(id);
 		abrePainel('creche');
 	}
 };
+
+function consultaNotas(id){
+	$.ajax({
+		url: 'consultaNotas',
+		type: "POST",
+		data: JSON.stringify({ id: id }),
+		contentType: 'application/json',
+		async: false,
+		success: function(data) {
+			updateNotas(data);
+		},
+		error: function(xhr, ajaxOptions, thrownError){
+		}
+	});
+}
 
 //CRIA MAPA PARA AS VISITAS
 var mapVisita = new Object(); // or var map = {};
@@ -590,21 +606,21 @@ function getVisita(k) {
     return mapVisita[k];
 }
 
-function changeVisita(visita){
-	consultaFotos(visita.id);
-	updateVisitas(visita);
+function changeVistoria(vistoria){
+	consultaFotos(vistoria.id);
+	updateVistorias(vistoria);
 }
 
-function consultaVisitas(id){
+function consultaVistorias(id){
 	$.ajax({
-		url: 'consultaVisitas',
+		url: 'consultaVistorias',
 		type: "POST",
 		data: JSON.stringify({ id: id }),
 		contentType: 'application/json',
 		async: false,
 		success: function(data) {
 			if(data != null & data != ''){
-				processaVisitas(data);
+				processaVistorias(data);
 			} else {
 				visitasVazias();
 				mapVisita = null;
@@ -615,7 +631,7 @@ function consultaVisitas(id){
 	});
 }
 
-function processaVisitas(data){
+function processaVistorias(data){
 	$(".fiscalizacao-datas").show();
 	var qtd = data.length;
 	var indice = 1;
@@ -627,12 +643,12 @@ function processaVisitas(data){
 		}
 		indice++;
 	}
-	$.each(data, function(i, visita){
+	$.each(data, function(i, vistoria){
 		var ordem = i+1;
 		if(ordem === qtd){
-			changeVisita(visita);
+			changeVistoria(vistoria);
 		}
-		mapVisita[ordem] = visita;
+		mapVisita[ordem] = vistoria;
 	});
 }
 
@@ -656,7 +672,7 @@ function alteraVistoria(ordem){
 	
 	if(vistoria.sa1){
 		if(ordemAtual != ordem){
-			changeVisita(vistoria);
+			changeVistoria(vistoria);
 			ordemAtual = ordem;
 		}
 
@@ -674,7 +690,7 @@ $('.fiscalicazaoRelatorio span').on('click', function(){
 
 function consultaFotos(id){
 	$.ajax({
-		url: 'consultaFotosVisita',
+		url: 'consultaFotosVistoriaCreche',
 		type: "POST",
 		data: JSON.stringify({ id: id }),
 		contentType: 'application/json',
@@ -696,19 +712,18 @@ function visitasVazias(){
 	rel = false;
 };
 
-function updateVisitas(visita){
+function updateVistorias(vistoria){
 	$(".fiscalizacao-header h2").text("FISCALIZAÇÃO");
 	$(".fiscalizacao-datas").show();
 	$(".fiscalizacao-fotos").show();
 	$(".fiscalizacao-questionario").show();
-	
-	
-	if(visita.relatorio != null){
+
+	if(vistoria.relatorio != null){
 		rel = true;
 		$(".fiscalicazaoRelatorio").css('display', 'block');
 		$(".fiscalicazaoRelatorio span").css('display', 'none');
 		$(".fiscalicazaoRelatorio a").css('display', 'inline-block');
-		$(".fiscalicazaoRelatorio a").attr('href', contextPath + visita.relatorio);
+		$(".fiscalicazaoRelatorio a").attr('href', contextPath + vistoria.relatorio);
 		
 	} else {
 		rel = false;
@@ -717,84 +732,63 @@ function updateVisitas(visita){
 		$(".fiscalicazaoRelatorio span").css('display', 'inline-block');
 	}
 	
-	var dateOri = visita.data;
+	var dateOri = vistoria.data;
 	var dateAr = dateOri.split('-');
 	var finalDate = dateAr[2] + '/' + dateAr[1] + '/' + dateAr[0];
-	$(".data-vistoria span").html(finalDate);
-	$(".questao-1 .questao-info").html(visita.sa1);
-	$(".questao-2 .questao-info").html(visita.sa4a + 'ºC');
-	$(".questao-3 .questao-info").html(visita.sa5a + ' lux');
+	$("#qdata .questao-info").html(finalDate);
+	$("#qrpa .questao-info").html(vistoria.creche.rpa);
+	$("#qendereco .questao-info").html(vistoria.creche.logradouro + ', ' + vistoria.creche.numero + ' - ' + vistoria.creche.bairro + '. CEP: ' + vistoria.creche.cep);
+	$("#qtelefone .questao-info").html(vistoria.creche.telefone);
+	$("#qnova .questao-info").html(vistoria.creche.nova);
 	
-	if(visita.sa6 != null){
-		$(".questao-4 .questao-info").html(visita.sa6);
+	if(vistoria.situacao != null && vistoria.situacao != ""){
+		$("#qsituacao .questao-info").html(vistoria.situacao);
 	} else {
-		$(".questao-4 .questao-info").html('0');
+		$("#qsituacao .questao-info").html("Sem informação");
 	}
 	
-	if(visita.bib1 == 'true'){
-		$(".questao-5 .questao-info").html("Sim");
-	} else if(visita.bib1 == 'false'){
-		$(".questao-5 .questao-info").html("Não");
+	if(vistoria.ger1 != null){
+		$("#qger1 .questao-info").html(vistoria.ger1);
 	} else {
-		$(".questao-5 .questao-info").html("Sem informação");
+		$("#qger1 .questao-info").html("Sem informação");
 	}
 	
-	if(visita.ace5 == 'true'){
-		$(".questao-6 .questao-info").html("Sim");
-	} else if(visita.ace5 == 'false'){
-		$(".questao-6 .questao-info").html("Não");
+	if(vistoria.ger2 != null){
+		$("#qger2 .questao-info").html(vistoria.ger2);
 	} else {
-		$(".questao-6 .questao-info").html("Sem informação");
+		$("#qger2 .questao-info").html("Sem informação");
 	}
 	
-	if(visita.se2 == 'true'){
-		$(".questao-7 .questao-info").html("Sim");
-	} else if(visita.se2 == 'false'){
-		$(".questao-7 .questao-info").html("Não");
+	if(vistoria.ger3 != null){
+		$("#qger3 .questao-info").html(vistoria.ger3);
 	} else {
-		$(".questao-7 .questao-info").html("Sem informação");
+		$("#qger3 .questao-info").html("Sem informação");
 	}
 	
-	if(visita.sp1 == 'true'){
-		$(".questao-8 .questao-info").html("Sim");
-	} else if(visita.sp1 == 'false'){
-		$(".questao-8 .questao-info").html("Não");
-	} else {
-		$(".questao-8 .questao-info").html("Sem informação");
-	}
-	
-	if(visita.alim1 == 1){
+	if(vistoria.alim1 == 1){
 		$(".questao-9 .questao-info").html("Sala de aula");
-	} else if(visita.alim1 == 2) {
+	} else if(vistoria.alim1 == 2) {
 		$(".questao-9 .questao-info").html("Outros");
-	} else if(visita.alim1 == 3){
+	} else if(vistoria.alim1 == 3){
 		$(".questao-9 .questao-info").html("Refeitório");
 	} else {
 		$(".questao-9 .questao-info").html("Sem informação");
-	}
-	
-	if(visita.mdf2b == 'true'){
-		$(".questao-10 .questao-info").html("Sim");
-	} else if(visita.mdf2b == 'false'){
-		$(".questao-10 .questao-info").html("Não");
-	} else {
-		$(".questao-10 .questao-info").html("Sem informação");
 	}
 }
 
 function updateFotos(data){
 	for (var i = 0; i <= 10; i++) {
-		$("#foto-visita-"+i).fadeOut();
+		$("#foto-vistoria-"+i).fadeOut();
 	}
 	
 	$.each(data, function(i, foto){
 		if(foto.localizacao != null){
 			if(i <= 10){
 				i++;
-				$("#foto-visita-"+i).fadeIn();
-				$("#foto-visita-"+i).attr('href', contextPath + foto.localizacao);
-				$("#foto-visita-"+i).attr('title', foto.nome);
-				$("#foto-visita-"+i + " img").attr('src', contextPath + foto.localizacao);
+				$("#foto-vistoria-"+i).fadeIn();
+				$("#foto-vistoria-"+i).attr('href', contextPath + foto.localizacao);
+				$("#foto-vistoria-"+i).attr('title', foto.nome);
+				$("#foto-vistoria-"+i + " img").attr('src', contextPath + foto.localizacao);
 			}
 		}
 	})
@@ -823,7 +817,7 @@ $(document).ready(function() {
 	});
 	
 	for (var i = 0; i <= 10; i++) {
-		$("#foto-visita-"+i).fadeOut();
+		$("#foto-vistoria-"+i).fadeOut();
 	}
 });
 
@@ -1318,4 +1312,43 @@ function compareFotosVisita(visId, ordem){
 		error: function(xhr, ajaxOptions, thrownError){
 		}
 	});
+}
+
+
+//NOTAS DAS CRECHES
+function updateNotas(data){
+	
+	$('.nota-geral').html(
+		'<div class="notas">'+	
+			'<h3>Nota Geral</h3>'+
+			'<div class="nota-creche col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
+				'<div class="nota-creche-circle">'+
+					'<div class="inner-notas">'+
+						'<span>Creche</span>'+
+						'<h4>'+data.geral+'</h4>'+
+					'</div>'+
+				'</div>'+
+			'</div>'+
+			'<div class="nota-recife col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
+				'<div class="nota-recife-circle">'+
+					'<div class="inner-notas">'+
+						'<span>Recife</span>'+
+						'<h4>'+3.5+'</h4>'+
+					'</div>'+
+				'</div>'+
+			'</div>'+
+		'</div>'
+	);
+	
+	$("#notaSala").html(data.sala);
+	$("#notaBercario").html(data.bercario);
+	$("#notaBanheiros").html(data.banheiros);
+	$("#notaEspacosAlternativos").html(data.espacosAlternativos);
+	$("#notaAcessibilidade").html(data.acessibilidade);
+	$("#notaServicosEssenciais").html(data.servicosEssenciais);
+	$("#notaMateriais").html(data.materiais);
+	$("#notaAlimentacao").html(data.alimentacao);
+	$("#notaLavanderia").html(data.lavanderia);
+	$("#notaSaude").html(data.saude);
+		
 }

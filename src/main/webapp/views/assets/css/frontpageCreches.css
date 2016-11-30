@@ -148,7 +148,7 @@ html, body
 	-webkit-transform: translateZ(0);
 }
 
-.painel-escola, .painel-numeros
+.painel-creche, .painel-numeros
 {
 	-moz-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
 	-webkit-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
@@ -189,7 +189,7 @@ html, body
 	-webkit-overflow-scrolling: touch;
 }
 
-.dados-compare, .escola-left
+.dados-compare, .creche-left
 {
 	position: absolute;
 	top: 0;
@@ -205,7 +205,7 @@ html, body
 	width: calc(40% - 100px);
 }
 
-.escola-left
+.creche-left
 {
 	width: calc(40% + 1px);
 	border-right: 1px solid #dadada;
@@ -331,7 +331,7 @@ html, body
 	height: 35px;
 }
 
-.pesquisa-escola-caixas, .compare-escola-caixas
+.pesquisa-creche-caixas, .compare-creche-caixas
 {
 	width: 100%;
     float: left;
@@ -342,7 +342,7 @@ html, body
     position: relative;
 }
 
-.pesquisa-escola-lista, .compare-escola-lista
+.pesquisa-creche-lista, .compare-creche-lista
 {
 	width: 100%;
     display: block;
@@ -355,7 +355,7 @@ html, body
     cursor: pointer;
 }
 
-.escola-header
+.creche-header
 {
 	width: 100%;
 }
@@ -365,7 +365,7 @@ html, body
     color: #888;
 }
 
-/* Titulo das escolas  */
+/* Titulo das creches  */
 
 .pesquisa-nome, .compare-nome {
     font-size: 14px;
@@ -476,7 +476,7 @@ li.compare-item:hover {background: #E7F3F3;}
 	border: 1px solid transparent;
 }
 
-.escola-cabecalho h2
+.creche-cabecalho h2
 {
 	border-bottom: 1px solid #efeeec;
 	padding-bottom: 10px;
@@ -942,7 +942,7 @@ li.box-numeros:hover
 	display: block;
 }
 
-#fecha-escola, #fecha-compare, #fecha-resultado-compare{
+#fecha-creche, #fecha-compare, #fecha-resultado-compare{
 	display: none;
 }
 
@@ -1006,7 +1006,7 @@ li.box-numeros:hover
   		height: auto;
   	}
   	
-	.pesquisa-escola-caixas, .compare-escola-caixas {
+	.pesquisa-creche-caixas, .compare-creche-caixas {
 		width: 33%;
 		padding: 2%;
 	}
@@ -1023,7 +1023,7 @@ li.box-numeros:hover
 		font-size: 20px;
 	}
 
-	.ideb, .escola-left, .dados-compare, .compare {
+	.ideb, .creche-left, .dados-compare, .compare {
 		width: 100%;
 		float: left;
 		position: relative;
@@ -1038,7 +1038,7 @@ li.box-numeros:hover
 		width: 100%;
 	}
 	
-	#mobile-menu, #fecha-escola, #fecha-compare, #fecha-resultado-compare, #home-mob {
+	#mobile-menu, #fecha-creche, #fecha-compare, #fecha-resultado-compare, #home-mob {
 		display: block;
 	}
 	
@@ -1092,7 +1092,7 @@ li.box-numeros:hover
     	font-size: 16px;
 	}
 
-	.pesquisa-escola-caixas, .compare-escola-caixas {
+	.pesquisa-creche-caixas, .compare-creche-caixas {
 		width: 50%;
 		padding: 2%;
 	}
@@ -1105,7 +1105,7 @@ li.box-numeros:hover
     	font-size: 16px;
 	}
 
-	.pesquisa-escola-caixas, .compare-escola-caixas {
+	.pesquisa-creche-caixas, .compare-creche-caixas {
 		width: 100%;
 		padding: 4%;
 	}

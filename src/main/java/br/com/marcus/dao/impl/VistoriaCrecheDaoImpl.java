@@ -58,7 +58,7 @@ public class VistoriaCrecheDaoImpl implements VistoriaCrecheDao {
     
     @Transactional
     public List<VistoriaCreche> getByCreche(Creche creche) {
-        String hql = "from VistoriaCreche where esc_id=" + creche.getId() + " order by data asc";
+        String hql = "from VistoriaCreche where cre_id=" + creche.getId() + " order by data asc";
         Query query = sessionFactory.getCurrentSession().createQuery(hql);
          
         @SuppressWarnings("unchecked")
@@ -73,7 +73,7 @@ public class VistoriaCrecheDaoImpl implements VistoriaCrecheDao {
     
     @Transactional
     public VistoriaCreche getUltimaByCreche(Long id) {
-        String hql = "from VistoriaCreche where esc_id=" + id + " order by data desc";
+        String hql = "from VistoriaCreche where cre_id=" + id + " order by data desc";
         Query query = sessionFactory.getCurrentSession().createQuery(hql);
          
         @SuppressWarnings("unchecked")
