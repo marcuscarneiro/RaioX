@@ -658,6 +658,8 @@
 						</tbody>
 					</table>
 				</div>
+				
+				<hr>
 
 				<div class="compare-creche">
 					<h3>Ainda não existem dados de vistorias para estas creches</h3>
@@ -671,34 +673,34 @@
 	
 					<div class="questoes">
 						<div class="questao-1">
-							<b id="qcre1"></b> <span> - Total de Alunos - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Número de alunos - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-2">
-							<b id="qcre1"></b> <span> - Temperatura de sala mais alta - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Número de professores - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-3">
-							<b id="qcre1"></b> <span> - Luminosidade mais baixa - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Possui parquinho? - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-4">
-							<b id="qcre1"></b> <span> - Quantas salas de aula são climatizadas - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Existe berçário na unidade? - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-5">
-							<b id="qcre1"></b> <span> - Existe Biblioteca? - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Há banheiros infantis plenamente adaptados para cadeirantes? - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-6">
-							<b id="qcre1"></b> <span> - A escola dispõe de rampas de acesso para a acessibilidade de todos os espaços aos alunos? - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Os alimentos estão sendo recebidos? - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-7">
-							<b id="qcre1"></b> <span> - Há saneamento básico na escola? - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Os fardamentos foram distribuídos em quantidade suficiente para atender à demanda? - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-8">
-							<b id="qcre1"></b> <span> - Há sala dos professores? - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Há infiltrações/mofo? - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-9">
-							<b id="qcre1"></b> <span> - Onde as crianças se alimentam? - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - O enxoval supre a demanda? - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-10">
-							<b id="qcre1"></b> <span> - Os alunos receberam fardamento em tamanho adequado? - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Os materiais de higiene pessoal suprem a demanda? - <b id="qcre2"></b></span>
 						</div>
 					</div>
 				</div>
