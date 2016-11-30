@@ -62,6 +62,7 @@ function fechaPainelCompareCreche() {
 	$(".compare-titulo-creche1").html("");
 	$(".compare-titulo-creche2").html("");
 	$(".compare-galerias").slideUp();
+	$(".tabela-comparativo").slideUp();
 	if($(window).width() <= 1024){
 		$(".compare-resultado").slideDown();
 	}
@@ -77,6 +78,7 @@ function fechaPainelResultadoCompare() {
 	$(".compare-titulo-creche2").html("");
 	$(".compare").slideUp();
 	$(".compare-galerias").slideUp();
+	$(".tabela-comparativo").slideUp();
 	if($(window).width() <= 1024){
 		$(".compare-resultado").slideDown();
 	}
@@ -116,6 +118,7 @@ function addCompara(cre){
 					comparaCreches(comp1, comp2);
 					$(".compare-header h2").html("COMPARATIVO");
 					$(".compare-creche").slideDown();
+					$(".tabela-comparativo").slideDown();
 					$(".compare-galerias").slideDown();
 					if($(window).width() <= 1024){
 						$(".compare-resultado").slideUp();
@@ -144,6 +147,7 @@ function addCompara(cre){
 			$(".compare-header h2").html("SELECIONE AO LADO AS ESCOLAS QUE DESEJA COMPARAR");
 			$(".compare-creche").slideUp();
 			$(".compare-galerias").slideUp();
+			$(".tabela-comparativo").slideUp();
 			$(".compare-titulo-creche1").html("");
 			$(".compare-titulo-creche2").html("");
 		}

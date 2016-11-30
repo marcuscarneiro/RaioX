@@ -1077,7 +1077,7 @@ function exibeCompCreches(data, comp1, comp2){
 	var creNome1, creNome2;
 	
 	$.each(data, function(i, creche){
-		if(i == 0){
+		if(parseInt(creche.id) === parseInt(comp1)){
 			creNome1 = creche.nome;
 		} else {
 			creNome2 = creche.nome;
@@ -1086,8 +1086,6 @@ function exibeCompCreches(data, comp1, comp2){
 	
 	$(".compare-titulo-creche1").text(creNome1);
 	$(".compare-titulo-creche2").text(creNome2);
-	$(".comp-cre1").text(creNome1);
-	$(".comp-cre2").text(creNome2);
 	
 	compareNotas(comp1, comp2, creNome1, creNome2);
 	compareVistoria(comp1, comp2, creNome1, creNome2);
@@ -1106,6 +1104,7 @@ function compareNotas(cre1Id, cre2Id, nome1, nome2){
 			if(data != null & data != ''){
 				$.each(data, function(i, nota){
 					if(parseInt(nota.creche.id) === parseInt(cre1Id)){
+						$(".comp-cre1").text(nota.creche.nome);
 						$(".comp-sala-cre1").text(nota.sala);
 						$(".comp-bercario-cre1").text(nota.bercario);
 						$(".comp-banheiros-cre1").text(nota.banheiros);
@@ -1117,6 +1116,7 @@ function compareNotas(cre1Id, cre2Id, nome1, nome2){
 						$(".comp-lavanderia-cre1").text(nota.lavanderia);
 						$(".comp-saude-cre1").text(nota.saude);
 					} else if(parseInt(nota.creche.id) === parseInt(cre2Id)){
+						$(".comp-cre2").text(nota.creche.nome);
 						$(".comp-sala-cre2").text(nota.sala);
 						$(".comp-bercario-cre2").text(nota.bercario);
 						$(".comp-banheiros-cre2").text(nota.banheiros);
@@ -1152,135 +1152,135 @@ function compareVistoria(comp1, comp2, creNome1, creNome2){
 			if(data != null & data != ''){
 				$(".compare-creche").show();
 				$(".compare-creche h3").hide();
-				$.each(data, function(i, visita){
-					if(visita.creche.id === parseInt(comp1)){
-						$(".compare-creche .questao-1 #qcre1").html(visita.sa1);
-						$(".compare-creche .questao-2 #qcre1").html(visita.sa4a + 'ºC');
-						$(".compare-creche .questao-3 #qcre1").html(visita.sa5a + ' lux');
+				$.each(data, function(i, vistoria){
+					if(vistoria.creche.id === parseInt(comp1)){
+						$(".compare-creche .questao-1 #qcre1").html(vistoria.sa1);
+						$(".compare-creche .questao-2 #qcre1").html(vistoria.sa4a + 'ºC');
+						$(".compare-creche .questao-3 #qcre1").html(vistoria.sa5a + ' lux');
 						
-						if(visita.sa6 != null){
-							$(".compare-creche .questao-4 #qcre1").html(visita.sa6);
+						if(vistoria.sa6 != null){
+							$(".compare-creche .questao-4 #qcre1").html(vistoria.sa6);
 						} else {
 							$(".compare-creche .questao-4 #qcre1").html('0');
 						}
 						
-						if(visita.bib1 == 'true'){
+						if(vistoria.bib1 == 'true'){
 							$(".compare-creche .questao-5 #qcre1").html("Não");
-						} else if(visita.bib1 != 'false'){
+						} else if(vistoria.bib1 != 'false'){
 							$(".compare-creche .questao-5 #qcre1").html("Sim");
 						} else {
 							$(".compare-creche .questao-5 #qcre1").html("Sem informação");
 						}
 						
-						if(visita.ace5 == 'true'){
+						if(vistoria.ace5 == 'true'){
 							$(".compare-creche .questao-6 #qcre1").html("Sim");
-						} else if(visita.ace5 == 'false'){
+						} else if(vistoria.ace5 == 'false'){
 							$(".compare-creche .questao-6 #qcre1").html("Não");
 						} else {
 							$(".compare-creche .questao-6 #qcre1").html("Sem informação");
 						}
 						
-						if(visita.se2 == 'true'){
+						if(vistoria.se2 == 'true'){
 							$(".compare-creche .questao-7 #qcre1").html("Sim");
-						} else if(visita.se2 == 'false'){
+						} else if(vistoria.se2 == 'false'){
 							$(".compare-creche .questao-7 #qcre1").html("Não");
 						} else {
 							$(".compare-creche .questao-7 #qcre1").html("Sem informação");
 						}
 						
-						if(visita.sp1 == 'true'){
+						if(vistoria.sp1 == 'true'){
 							$(".compare-creche .questao-8 #qcre1").html("Sim");
-						} else if(visita.sp1 == 'false'){
+						} else if(vistoria.sp1 == 'false'){
 							$(".compare-creche .questao-8 #qcre1").html("Não");
 						} else {
 							$(".compare-creche .questao-8 #qcre1").html("Sem informação");
 						}
 						
-						if(visita.alim1 == 1){
+						if(vistoria.alim1 == 1){
 							$(".compare-creche .questao-9 #qcre1").html("Sala de aula");
-						} else if(visita.alim1 == 2) {
+						} else if(vistoria.alim1 == 2) {
 							$(".compare-creche .questao-9 #qcre1").html("Outros");
-						} else if(visita.alim1 == 3){
+						} else if(vistoria.alim1 == 3){
 							$(".compare-creche .questao-9 #qcre1").html("Refeitório");
 						} else {
 							$(".compare-creche .questao-9 #qcre1").html("Sem informação");
 						}
 						
-						if(visita.mdf2b == 'true'){
+						if(vistoria.mdf2b == 'true'){
 							$(".compare-creche .questao-10 #qcre1").html("Sim");
-						} else if(visita.mdf2b == 'false'){
+						} else if(vistoria.mdf2b == 'false'){
 							$(".compare-creche .questao-10 #qcre1").html("Não");
 						} else {
 							$(".compare-creche .questao-10 #qcre1").html("Sem informação");
 						}
 						
 						$("#galcre1 h4").html("Fotos da " + creNome1);
-						compareFotosVisita(visita.id, 1);
+						compareFotosVisita(vistoria.id, 1);
 						
-					} else if(visita.creche.id === parseInt(comp2)){
+					} else if(vistoria.creche.id === parseInt(comp2)){
 						
-						$(".compare-creche .questao-1 #qcre2").html(visita.sa1);
-						$(".compare-creche .questao-2 #qcre2").html(visita.sa4a + 'ºC');
-						$(".compare-creche .questao-3 #qcre2").html(visita.sa5a + ' lux');
+						$(".compare-creche .questao-1 #qcre2").html(vistoria.sa1);
+						$(".compare-creche .questao-2 #qcre2").html(vistoria.sa4a + 'ºC');
+						$(".compare-creche .questao-3 #qcre2").html(vistoria.sa5a + ' lux');
 						
-						if(visita.sa6 != null){
-							$(".compare-creche .questao-4 #qcre2").html(visita.sa6);
+						if(vistoria.sa6 != null){
+							$(".compare-creche .questao-4 #qcre2").html(vistoria.sa6);
 						} else {
 							$(".compare-creche .questao-4 #qcre2").html('0');
 						}
 						
-						if(visita.bib1 == 'true'){
+						if(vistoria.bib1 == 'true'){
 							$(".compare-creche .questao-5 #qcre2").html("Não");
-						} else if(visita.bib1 != 'false'){
+						} else if(vistoria.bib1 != 'false'){
 							$(".compare-creche .questao-5 #qcre2").html("Sim");
 						} else {
 							$(".compare-creche .questao-5 #qcre2").html("Sem informação");
 						}
 						
-						if(visita.ace5 == 'true'){
+						if(vistoria.ace5 == 'true'){
 							$(".compare-creche .questao-6 #qcre2").html("Sim");
-						} else if(visita.ace5 == 'false'){
+						} else if(vistoria.ace5 == 'false'){
 							$(".compare-creche .questao-6 #qcre2").html("Não");
 						} else {
 							$(".compare-creche .questao-6 #qcre2").html("Sem informação");
 						}
 						
-						if(visita.se2 == 'true'){
+						if(vistoria.se2 == 'true'){
 							$(".compare-creche .questao-7 #qcre2").html("Sim");
-						} else if(visita.se2 == 'false'){
+						} else if(vistoria.se2 == 'false'){
 							$(".compare-creche .questao-7 #qcre2").html("Não");
 						} else {
 							$(".compare-creche .questao-7 #qcre2").html("Sem informação");
 						}
 						
-						if(visita.sp1 == 'true'){
+						if(vistoria.sp1 == 'true'){
 							$(".compare-creche .questao-8 #qcre2").html("Sim");
-						} else if(visita.sp1 == 'false'){
+						} else if(vistoria.sp1 == 'false'){
 							$(".compare-creche .questao-8 #qcre2").html("Não");
 						} else {
 							$(".compare-creche .questao-8 #qcre2").html("Sem informação");
 						}
 						
-						if(visita.alim1 == 1){
+						if(vistoria.alim1 == 1){
 							$(".compare-creche .questao-9 #qcre2").html("Sala de aula");
-						} else if(visita.alim1 == 2) {
+						} else if(vistoria.alim1 == 2) {
 							$(".compare-creche .questao-9 #qcre2").html("Outros");
-						} else if(visita.alim1 == 3){
+						} else if(vistoria.alim1 == 3){
 							$(".compare-creche .questao-9 #qcre2").html("Refeitório");
 						} else {
 							$(".compare-creche .questao-9 #qcre2").html("Sem informação");
 						}
 						
-						if(visita.mdf2b == 'true'){
+						if(vistoria.mdf2b == 'true'){
 							$(".compare-creche .questao-10 #qcre2").html("Sim");
-						} else if(visita.mdf2b == 'false'){
+						} else if(vistoria.mdf2b == 'false'){
 							$(".compare-creche .questao-10 #qcre2").html("Não");
 						} else {
 							$(".compare-creche .questao-10 #qcre2").html("Sem informação");
 						}
 						
 						$("#galcre2 h4").html("Fotos da " + creNome2);
-						compareFotosVisita(visita.id, 2);
+						compareFotosVisita(vistoria.id, 2);
 					}
 				});
 			}
