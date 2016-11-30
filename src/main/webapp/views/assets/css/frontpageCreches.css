@@ -148,7 +148,7 @@ html, body
 	-webkit-transform: translateZ(0);
 }
 
-.painel-creche, .painel-numeros
+.painel-creche, .painel-ranking
 {
 	-moz-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
 	-webkit-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
@@ -244,16 +244,16 @@ html, body
  	width: 80%;
 
 }
-.detalhe-numeros .cabecalho
+.detalhe-ranking .cabecalho
 {
 	margin: 3%;
 }
 
-.detalhe-numeros canvas{
+.detalhe-ranking canvas{
 	margin-top: 20px;
 }
 
-.detalhe-numeros h3 
+.detalhe-ranking h3 
 {
 	text-align: center;
 }
@@ -923,11 +923,11 @@ li.box-numeros:hover
 	font-weight: bolder;
 }
 
-.detalhe-numeros h3 {
+.detalhe-ranking h3 {
 	margin-bottom: 40px;
 }
 
-.detalhe-numeros ul {
+.detalhe-ranking ul {
 	padding-left: 10px;
 	padding-right: 10px;
 }

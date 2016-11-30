@@ -240,13 +240,13 @@ public class MapaCrechesController {
     		if(notasCreche.getGeral() != null){
     			Double nota =notasCreche.getGeral();
     			if(nota < 2.5){
-    	    		return "red";
+    	    		return "nivel1";
     	    	} else if(nota < 5.1){
-    				return "orange";
+    				return "nivel2";
     	    	} else if(nota < 7.6){
-    				return "yellow";
+    				return "nivel3";
     			} else {
-    				return "green";
+    				return "nivel4";
     			}
     		} else {
     			return "grey";

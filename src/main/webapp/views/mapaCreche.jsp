@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/hover.css">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapaCreches.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpageCreches.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/ranking.css" />
 		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
 
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
@@ -109,7 +110,7 @@
 						<li onclick="abrePainel('pesquisa')"><a href="#">Pesquisa</a></li>
 						<li onclick="abrePainel('compare')"><a href="#">Compare</a></li>
 						<li onclick="abrePainel('filtro')"><a href="#">Filtros</a></li>
-						<li onclick="abrePainel('numeros')"><a href="#">Números da educação</a></li>
+						<li onclick="abrePainel('ranking')"><a href="#">Números da educação</a></li>
 						<li onclick="abreSiteAndre()"><a href="#">André Régis</a></li>
 						<li onclick="abrePainel('videos')"><a href="#">Vídeos</a></li>
 					</ul>
@@ -173,6 +174,31 @@
 				<div class="cabecalho">
 					<h2>Ranking das creches por módulo</h2>
 				</div>
+				<div class="ranking-table">
+					<table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+					
+						<!-- Table Header -->
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Creche</th>
+								<th>Nota</th>
+							</tr>
+						</thead>
+					
+						<tbody>
+					
+							<tr>
+								<td>1</td>
+								<td>Crechezinha Massa</td>
+								<td>3.2</td>
+							</tr>
+					
+						</tbody>
+					
+					</table>
+				</div>
+				
 			</div>
 		</div>
 		
@@ -676,7 +702,7 @@
 							<b id="qcre1"></b> <span> - Número de alunos - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-2">
-							<b id="qcre1"></b> <span> - Número de professores - <b id="qcre2"></b></span>
+							<b id="qcre1"></b> <span> - Quantas salas de aula há na unidade? - <b id="qcre2"></b></span>
 						</div>
 						<div class="questao-3">
 							<b id="qcre1"></b> <span> - Possui parquinho? - <b id="qcre2"></b></span>
@@ -971,13 +997,9 @@
 					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Superou a meta IDEB e ficou acima de 6">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel1-15.png">
 					</li>
-
-
-<%-- 	NÃO SEI PORQUE ESSE NAO APARECE				<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
+					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel2-15.png">
-					</li> --%>
-
-
+					</li>
 					<li class="legenda-item">
 						<img id="pin-amarelo" src="<%=request.getContextPath()%>/views/assets/css/img/nivel2-15.png" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
 					</li>
@@ -987,9 +1009,9 @@
 					<li id="pin-cinza" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Sem dados do IDEB">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel4-15.png">
 					</li>
-<%-- 	NEM ESSE				<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
+					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/preto-15.png">
-					</li> --%> 
+					</li> 
 				</ul>
 				<span class="copyright">© Todos os direitos reservados</span>
 			</div>
