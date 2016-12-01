@@ -633,53 +633,53 @@
 						<tbody>
 							<tr>
 								<td class="comp-modulo">SALA DE AULA</td>
-								<td class="comp-sala-cre1"></td>
-								<td class="comp-sala-cre2"></td>
+								<td class="comp-sala-cre1 col-1"></td>
+								<td class="comp-sala-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">BERÇÁRIO</td>
-								<td class="comp-bercario-cre1"></td>
-								<td class="comp-bercario-cre2"></td>
+								<td class="comp-bercario-cre1 col-1"></td>
+								<td class="comp-bercario-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">BANHEIROS</td>
-								<td class="comp-banheiros-cre1"></td>
-								<td class="comp-banheiros-cre2"></td>
+								<td class="comp-banheiros-cre1 col-1"></td>
+								<td class="comp-banheiros-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">ESPAÇOS ALTERNATIVOS DE APRENDIZAGEM E LAZER</td>
-								<td class="comp-espacos-cre1"></td>
-								<td class="comp-espacos-cre2"></td>
+								<td class="comp-espacos-cre1 col-1"></td>
+								<td class="comp-espacos-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">ACESSIBILIDADE E ATENDIMENTO EDUCACIONAL ESPECIALIZADO</td>
-								<td class="comp-acessibilidade-cre1"></td>
-								<td class="comp-acessibilidade-cre2"></td>
+								<td class="comp-acessibilidade-cre1 col-1"></td>
+								<td class="comp-acessibilidade-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">SERVIÇOS ESSENCIAIS / ESTRUTURA BÁSICA</td>
-								<td class="comp-servicos-cre1"></td>
-								<td class="comp-servicos-cre2"></td>
+								<td class="comp-servicos-cre1 col-1"></td>
+								<td class="comp-servicos-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">MATERIAIS</td>
-								<td class="comp-materiais-cre1"></td>
-								<td class="comp-materiais-cre2"></td>
+								<td class="comp-materiais-cre1 col-1"></td>
+								<td class="comp-materiais-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">ALIMENTAÇÃO</td>
-								<td class="comp-alimentacao-cre1"></td>
-								<td class="comp-alimentacao-cre2"></td>
+								<td class="comp-alimentacao-cre1 col-1"></td>
+								<td class="comp-alimentacao-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">LAVANDERIA</td>
-								<td class="comp-lavanderia-cre1"></td>
-								<td class="comp-lavanderia-cre2"></td>
+								<td class="comp-lavanderia-cre1 col-1"></td>
+								<td class="comp-lavanderia-cre2 col-2"></td>
 							</tr>
 							<tr>
 								<td class="comp-modulo">SAÚDE</td>
-								<td class="comp-saude-cre1"></td>
-								<td class="comp-saude-cre2"></td>
+								<td class="comp-saude-cre1 col-1"></td>
+								<td class="comp-saude-cre2 col-2"></td>
 							</tr>
 						</tbody>
 					</table>
