@@ -91,6 +91,17 @@ public class MapaCrechesController {
 		}
 	}
 	
+	@RequestMapping(value = "/consultaTodasNotas", headers = {"Content-type=application/json"}, produces={"application/json; charset=UTF-8"}, method = RequestMethod.POST)
+	public @ResponseBody
+		List<NotasCreche> consultaTodasNotas(@RequestBody Creche creche) {
+		List<NotasCreche> notas = notasCrecheDao.list();
+		if(notas != null){
+			return notas;
+		} else {
+			return null;
+		}
+	}
+	
 	@RequestMapping(value = "/consultaCrechesComparativo", headers = {"Content-type=application/json"}, produces={"application/json; charset=UTF-8"}, method = RequestMethod.POST)
 	@ResponseBody
 	public List<Creche> consultaCrechesComparativo(
@@ -184,34 +195,6 @@ public class MapaCrechesController {
                 }
                 properties.put("COR", getMarkerColor(notasCreche));
                 properties.put("Foto", creche.getFotoCapa());
-//                for(VistoriaCreche vistoriaCreche : vistoriaCreches){
-//                	if(creche.getId().intValue() == vistoriaCreche.getCreche().getId().intValue()){
-//                		String situacao = "";
-//                		try {
-//                    		situacao = vistoriaCreche.getRl3();
-//                		} catch (Exception e) {
-//                			properties.put("POSSUIQUADRA", "null");
-//                			break;
-//                		}
-//                		if(situacao.equals("")){
-//                			properties.put("POSSUIQUADRA", "null");
-//                			break;
-//                		} else if(situacao.equals("0")){
-//                			properties.put("POSSUIQUADRA", 0);
-//                			break;
-//                		} else if(situacao.equals("1")){
-//                			properties.put("POSSUIQUADRA", 1);
-//                			break;
-//                		} else if(situacao.equals("2")){
-//                			properties.put("POSSUIQUADRA", 2);
-//                			break;
-//                		} else if(situacao.equals("3")){
-//                			properties.put("POSSUIQUADRA", 3);
-//                			break;
-//                		}
-//                	}
-//                }
-                
                 for(VistoriaCreche vistoriaCreche : vistoriaCreches){
                 	if(creche.getId().intValue() == vistoriaCreche.getCreche().getId().intValue()){
             			properties.put("ACESSIBILIDADE", getAcessibilidade(vistoriaCreche));
@@ -219,6 +202,7 @@ public class MapaCrechesController {
                 	}
                 }
                 feature.put("properties", properties);
+                feature.put("notas", notasCreche);
                 featureList.put(feature);
                 featureCollection.put("features", featureList);
             }

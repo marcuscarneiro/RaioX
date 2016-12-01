@@ -174,25 +174,35 @@
 				<div class="cabecalho">
 					<h2>Ranking das creches por módulo</h2>
 				</div>
+				<div class="ranking-filtro btn-group btn-group-justified">
+					<a href="#"	class="btn btn-primary" onclick="updateRanking('sala')">Salas de aula</a>
+					<a href="#"	class="btn btn-primary" onclick="updateRanking('bercario')">Berçário</a>
+					<a href="#" class="btn btn-primary" onclick="updateRanking('banheiros')">Banheiros</a>
+					<a href="#"	class="btn btn-primary" onclick="updateRanking('espacosAlternativos')">Espaços alternativos</a>
+					<a href="#"	class="btn btn-primary" onclick="updateRanking('acessibilidade')">Acessibilidade</a>
+				</div>
+				<div class="ranking-filtro btn-group btn-group-justified">
+					<a href="#" class="btn btn-primary" onclick="updateRanking('servicosEssenciais')">Serviços essenciais</a>
+					<a href="#"	class="btn btn-primary" onclick="updateRanking('materiais')">Materiais</a>
+					<a href="#"	class="btn btn-primary" onclick="updateRanking('alimentacao')">Alimentação</a>
+					<a href="#"	class="btn btn-primary" onclick="updateRanking('lavanderia')">Lavanderia</a>
+					<a href="#" class="btn btn-primary" onclick="updateRanking('saude')">Saúde</a>
+				</div>
 				<div class="ranking-table">
-					<table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+					<table cellspacing='0' class="table table-bordered">
 					
 						<!-- Table Header -->
 						<thead>
 							<tr>
 								<th>#</th>
 								<th>Creche</th>
-								<th>Nota</th>
+								<th class="title-nota">Nota</th>
 							</tr>
 						</thead>
 					
 						<tbody>
 					
-							<tr>
-								<td>1</td>
-								<td>Crechezinha Massa</td>
-								<td>3.2</td>
-							</tr>
+							
 					
 						</tbody>
 					
