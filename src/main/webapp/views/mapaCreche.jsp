@@ -800,11 +800,38 @@
 					<span class="filtro-opcoes">Marque abaixo o filtro que deseja aplicar no mapa</span>
 				</div>
 				<div class="filtro-lista">
-					<input type="checkbox" id="filtro-1" class="filtro-item" data-filter="meta">
-					<label for="filtro-1">Atingiram a meta do IDEB</label>
+					<!-- <input type="checkbox" id="filtro-1" class="filtro-item" data-filter="ranking">
+					<label for="filtro-1">Classificação do Ranking</label>-->
 	
-					<input type="checkbox" id="filtro-2" class="filtro-item" data-filter="quadras">
-					<label for="filtro-2">Possuem quadra poliesportiva</label>
+					<input type="checkbox" id="filtro-2" class="filtro-item" data-filter="bercario">
+					<label for="filtro-2">Creches que possuem berçario</label>
+	
+					<input type="checkbox" id="filtro-3" class="filtro-item" data-filter="novas">
+					<label for="filtro-3">Creches com nova sede</label>
+	
+					<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="lazer">
+					<label for="filtro-4">¿LAZER?</label>
+	
+					<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="grupos">
+					<label for="filtro-5">Creches que oferecem grupos escolares</label>
+	
+					<input type="checkbox" id="filtro-6" class="filtro-item" data-filter="saneamento">
+					<label for="filtro-6">Qualidade do saneamento básico nas creches</label>
+	
+					<input type="checkbox" id="filtro-7" class="filtro-item" data-filter="acessibilidade">
+					<label for="filtro-7">Creches com itens de acessibilidade</label>
+	
+					<input type="checkbox" id="filtro-8" class="filtro-item" data-filter="climatizadas">
+					<label for="filtro-8">Creches com salas climatizadas</label>
+	
+					<input type="checkbox" id="filtro-9" class="filtro-item" data-filter="crechexcmei">
+					<label for="filtro-9">Creche X CMEI</label>
+	
+					<input type="checkbox" id="filtro-10" class="filtro-item" data-filter="temperatura">
+					<label for="filtro-10">Nível de temperatura nas creches</label>
+	
+					<input type="checkbox" id="filtro-11" class="filtro-item" data-filter="iluminacao">
+					<label for="filtro-11">Nível de iluminação</label>
 				</div>
 			</div>
 		</div>
@@ -1002,19 +1029,22 @@
 			<div class="legenda">
 				<span>Legenda</span>
 				<ul class="lista-legenda">
-					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Superou a meta IDEB e ficou acima de 6">
+					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="A nota geral abaixo de 2.5">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel1-15.png">
 					</li>
+					<li id="pin-azul-claro" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/s-lightblue.png">
+					</li>
 					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel2-15.png">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/s-blue.png">
 					</li>
-					<li class="legenda-item">
-						<img id="pin-amarelo" src="<%=request.getContextPath()%>/views/assets/css/img/nivel2-15.png" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
+					<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="A nota geral entre 2.5 e 5.0">
+						<img  src="<%=request.getContextPath()%>/views/assets/css/img/nivel2-15.png">
 					</li>
-					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Não atingiu a meta do IDEB">
+					<li id="pin-verde-claro" class="legenda-item" data-toggle="tooltip" data-placement="top" title="A nota geral entre 5.1 e 7.5">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel3-15.png">
 					</li>
-					<li id="pin-cinza" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Sem dados do IDEB">
+					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="A nota geral acima de 7.5">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel4-15.png">
 					</li>
 					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">

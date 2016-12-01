@@ -101,17 +101,6 @@ html, body
 	transition-duration: .4s;
 }
 
-.menu-ranking
-{
-	height: 100px;
-}
-
-.menu-ranking .menu-item-icone
-{
-	height: 40px;
-	top: 33%;
-}
-
 .menu-item:hover
 {
 	border-left: 2px solid #6bc3b0;

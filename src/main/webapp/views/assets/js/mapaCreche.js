@@ -833,15 +833,17 @@ function removePins(){
 }
 
 function mudaLegenda(filter){
-	if(filter == 'quadras'){
+	if(filter == 'crechexcmei'){
 		$("#pin-vermelho").hide();
 		$("#pin-verde").hide();
 		$("#pin-cinza").hide();
-		$("#pin-amarelo").attr("title","REGULAR").tooltip("fixTitle");
+		$("#pin-amarelo").hide();
+		$("#pin-verde-claro").hide();
+		$("#pin-azul-claro").show();
+		$("#pin-azul-claro").attr("title","Creche").tooltip("fixTitle");
 		$("#pin-azul").show();
-		$("#pin-azul").attr("title","BOM").tooltip("fixTitle");
-		$("#pin-preto").show();
-		$("#pin-preto").attr("title","RUIM").tooltip("fixTitle");
+		$("#pin-azul").attr("title","CMEI").tooltip("fixTitle");
+		$("#pin-preto").hide();
 	} else if(filter == 'aces') {
 		$("#pin-vermelho").hide();
 		$("#pin-verde").hide();
@@ -853,13 +855,17 @@ function mudaLegenda(filter){
 		$("#pin-preto").attr("title","Não possui itens básicos de acessibilidade").tooltip("fixTitle");
 	} else {
 		$("#pin-vermelho").show();
-		$("#pin-vermelho").attr("title","Não atingiu a meta do IDEB").tooltip("fixTitle");
+		$("#pin-vermelho").attr("title","A nota geral abaixo de 2.5").tooltip("fixTitle");
 		$("#pin-verde").show();
-		$("#pin-verde").attr("title","Superou a meta IDEB e ficou acima de 6").tooltip("fixTitle");
+		$("#pin-verde").attr("title","A nota geral acima de 7.5").tooltip("fixTitle");
+		$("#pin-verde-claro").show();
+		$("#pin-verde-claro").attr("title","A nota geral entre 5.1 e 7.5").tooltip("fixTitle");
 		$("#pin-cinza").show();
-		$("#pin-amarelo").attr("title","Atingiu a meta IDEB mas ficou abaixo de 6").tooltip("fixTitle");
+		$("#pin-amarelo").show();
+		$("#pin-amarelo").attr("title","A nota geral entre 2.5 e 5.0").tooltip("fixTitle");
 		$("#pin-azul").hide();
 		$("#pin-preto").hide();
+		$("#pin-azul-claro").hide();
 	}
 	$(".lista-legenda").attr("title","Legenda atualizada").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(2000).queue(function (next) {
 		$(".lista-legenda").tooltip("hide");
@@ -881,12 +887,12 @@ $('.filtro-item').on('click', function(){
 		replotMap();
 		removePins();
 		mudaLegenda(filter);
-	} else if (filter === 'meta'){
+	} else if (filter === 'bercario'){
 		map.removeLayer(crechesLayer);
 		crechesLayer = L.mapbox.featureLayer().addTo(map);
 		crechesLayer.setGeoJSON(crechesData);
 		crechesLayer.eachLayer(function(marker) {
-			if(marker.feature.properties.ATINGIUMETA == true){
+			if(marker.feature.properties.Bercario == "true"){
 			} else {
 				map.removeLayer(marker);
 			}
@@ -894,8 +900,33 @@ $('.filtro-item').on('click', function(){
 		removePins();
 		crechesList = [];
 		crechesListCompare = [];
-		modo = 'meta';
+		modo = 'bercario';
 		changeMarkers();
+		mudaLegenda(filter);
+	} else if (filter === 'novas'){
+		map.removeLayer(crechesLayer);
+		crechesLayer = L.mapbox.featureLayer().addTo(map);
+		crechesLayer.setGeoJSON(crechesData);
+		crechesLayer.eachLayer(function(marker) {
+			if(marker.feature.properties.Nova == "true"){
+			} else {
+				map.removeLayer(marker);
+			}
+		});
+		removePins();
+		crechesList = [];
+		crechesListCompare = [];
+		modo = 'novas';
+		changeMarkers();
+		mudaLegenda(filter);
+	} else if (filter === 'crechexcmei'){
+		map.removeLayer(crechesLayer);
+		crechesLayer = L.mapbox.featureLayer().addTo(map);
+		crechesLayer.setGeoJSON(crechesData);
+		removePins();
+		crechesList = [];
+		modo = 'crechexcmei';
+		changeMarkersCrecheCmei();
 		mudaLegenda(filter);
 	} else {
 		replotMap();
@@ -920,8 +951,30 @@ function changeMarkersMeta(){
 	});
 }
 
+function changeMarkersCrecheCmei(){
+	crechesLayer.eachLayer(function(marker) {
+		crechesList.push({label: marker.feature.properties.Creche, value: marker.feature.properties.ID});
+		if(marker.feature.properties.CrecrexCMEI == true){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-lightblue.png',
+				iconSize: [15, 38]
+			}));
+		} else {
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-blue.png',
+				iconSize: [15, 38]
+			}));
+		}
+		
+		return false;
+	});
+
+	crechesMouseOver();
+	crechesMouseOut();
+	crechesClick();
+};
+
 function changeMarkersQuadras(){
-	
 	crechesLayer.eachLayer(function(marker) {
 		crechesList.push({label: marker.feature.properties.Creche, value: marker.feature.properties.ID});
 		if(marker.feature.properties.POSSUIQUADRA === 1){
@@ -945,7 +998,7 @@ function changeMarkersQuadras(){
 		
 		return false;
 	});
-
+	
 	crechesMouseOver();
 	crechesMouseOut();
 	crechesClick();
