@@ -36,7 +36,7 @@
 	padding:21px 25px 22px 25px;
 	border-top:1px solid #fafafa;
 	border-bottom:1px solid #e0e0e0;
-
+	text-align: center;
 	background: #ededed;
 	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
 	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
@@ -98,14 +98,37 @@
 	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
 }
 
-.title-nota
-{
-	text-align: center;
-}
-
 .ranking-filtro
 {
 	width: 50%;
 	margin-left: 3%;
 	margin-bottom: 0;
+}
+
+.ranking-filtro a
+{
+	width: 20%;
+	margin-bottom: 0;
+	border-radius: 0 !important;
+	margin-left: 0px !important;
+}
+
+@media screen and (max-width: 1366px){
+	.ranking-table 
+	{
+		width: 90%;
+		margin-left: 5%;
+	}
+	
+	.ranking-filtro
+	{
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	.ranking-filtro a
+	{
+		width: 50%;
+		margin-left: 5%;
+	}
 }

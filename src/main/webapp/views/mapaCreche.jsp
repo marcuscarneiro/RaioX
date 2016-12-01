@@ -174,14 +174,12 @@
 				<div class="cabecalho">
 					<h2>Ranking das creches por módulo</h2>
 				</div>
-				<div class="ranking-filtro btn-group btn-group-justified">
+				<div class="ranking-filtro btn-group">
 					<a href="#"	class="btn btn-primary" onclick="updateRanking('sala')">Salas de aula</a>
 					<a href="#"	class="btn btn-primary" onclick="updateRanking('bercario')">Berçário</a>
 					<a href="#" class="btn btn-primary" onclick="updateRanking('banheiros')">Banheiros</a>
 					<a href="#"	class="btn btn-primary" onclick="updateRanking('espacosAlternativos')">Espaços alternativos</a>
 					<a href="#"	class="btn btn-primary" onclick="updateRanking('acessibilidade')">Acessibilidade</a>
-				</div>
-				<div class="ranking-filtro btn-group btn-group-justified">
 					<a href="#" class="btn btn-primary" onclick="updateRanking('servicosEssenciais')">Serviços essenciais</a>
 					<a href="#"	class="btn btn-primary" onclick="updateRanking('materiais')">Materiais</a>
 					<a href="#"	class="btn btn-primary" onclick="updateRanking('alimentacao')">Alimentação</a>
@@ -196,7 +194,7 @@
 							<tr>
 								<th>#</th>
 								<th>Creche</th>
-								<th class="title-nota">Nota</th>
+								<th>Nota</th>
 							</tr>
 						</thead>
 					
