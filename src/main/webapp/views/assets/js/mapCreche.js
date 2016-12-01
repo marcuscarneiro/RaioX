@@ -23,9 +23,13 @@ function abrePainel(nomePainel) {
 		if($(".painel").hasClass("isActive")){
 			fechaPaineis();
 		}
-		if (nomePainel == 'creche' || nomePainel == 'ranking'){
+		if (nomePainel == 'creche'){
 			$(".painel-"+nomePainel).animate({left: "0"},350);
 			$(".painel-"+nomePainel).addClass("isActive");
+		} if (nomePainel == 'ranking'){
+			$(".painel-"+nomePainel).animate({left: "0"},350);
+			$(".painel-"+nomePainel).addClass("isActive");
+			updateRanking('geral');
 		} if (nomePainel == 'compare' || nomePainel == 'resultado-compare' || nomePainel == 'videos' || nomePainel == 'projeto' ) {
 			$(".painel-"+nomePainel).animate({width: "100%"},350);
 			$(".painel-"+nomePainel).addClass("isActive");

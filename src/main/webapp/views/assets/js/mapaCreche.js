@@ -1,4 +1,4 @@
-var creId, creNome, rel, creIdebComp1, creIdebComp2, ordemAtual;
+var creId, creNome, rel, creIdebComp1, creIdebComp2, ordemAtual, rankingData;
 var modo = 'all';
 var viewWidth = $(window).width();
 var rpaAtual = 0;
@@ -1439,4 +1439,57 @@ function updateNotas(data){
 	$("#notaLavanderia").html('Nota: ' + data.lavanderia);
 	$("#notaSaude").html('Nota: ' + data.saude);
 		
+}
+
+function updateRanking(ranking) {
+	
+	if(rankingData == null){
+		$.ajax({
+			url: 'consultaTodasNotas',
+			type: "POST",
+			data: JSON.stringify({ id: 1 }),
+			contentType: 'application/json',
+			success: function(data) {
+				montaRanking(ranking, data);
+			},
+			error: function(xhr, ajaxOptions, thrownError){
+			}
+		});
+	}
+}
+
+function montaRanking(ranking, data){
+	
+	var notas = new Array();
+	
+	$.each(data, function(i, nota){
+		notas.push({name: nota.creche.nome, val: deepFind(nota, ranking)});
+	});
+	
+	notas.sort(function(a,b) {
+	    return b.val - a.val;
+	});
+	
+	$(".ranking-table tbody").empty();
+	
+	var count = 1;
+	$.each(notas, function(i, nota){
+		$(".ranking-table tbody").append('<tr><td>'+count+'</td><td>'+nota.name+'</td><td>'+nota.val+'</td></tr>');
+		count++;
+	});
+}
+
+function deepFind(obj, path) {
+	var paths = path.split('.')
+	, current = obj
+	, i;
+
+	for (i = 0; i < paths.length; ++i) {
+		if (current[paths[i]] == undefined) {
+			return 'Sem nota';
+		} else {
+			current = current[paths[i]];
+		}
+	}
+	return current;
 }
