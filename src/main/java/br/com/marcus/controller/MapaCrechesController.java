@@ -169,9 +169,9 @@ public class MapaCrechesController {
             featureCollection.put("type", "FeatureCollection");
             JSONArray featureList = new JSONArray();
             // iterate through your list
-            List<VistoriaCreche> vistoriaCreches = vistoriaCrecheDao.list();
             List<NotasCreche> listNotasCreche = notasCrecheDao.list();
             for (Creche creche : creches) {
+            	VistoriaCreche vistoria = vistoriaCrecheDao.getUltimaByCreche(creche.getId());
                 // {"geometry": {"type": "Point", "coordinates": [-94.149, 36.33]}
                 JSONObject point = new JSONObject();
                 point.put("type", "Point");
@@ -187,22 +187,29 @@ public class MapaCrechesController {
                 properties.put("Creche", creche.getNome());
                 properties.put("Endereco", getEnderecoCreche(creche));
                 properties.put("RPA", creche.getRpa());
+                properties.put("Nova", creche.getNova());
                 NotasCreche notasCreche = null;
                 for(NotasCreche nc : listNotasCreche){
                 	if(creche.getId().intValue() == nc.getCreche().getId().intValue()){
                 		notasCreche = nc;
                 	}
                 }
+
                 properties.put("COR", getMarkerColor(notasCreche));
                 properties.put("Foto", creche.getFotoCapa());
-                for(VistoriaCreche vistoriaCreche : vistoriaCreches){
-                	if(creche.getId().intValue() == vistoriaCreche.getCreche().getId().intValue()){
-            			properties.put("ACESSIBILIDADE", getAcessibilidade(vistoriaCreche));
-            			break;
-                	}
-                }
+    			properties.put("ACESSIBILIDADE", getAcessibilidade(vistoria));
+    			properties.put("Grupos", getGruposEscolares(vistoria));
+    			properties.put("Climatizada", getSalasClimatizadas(vistoria));
+    			String bercario = "false";
+    			try {
+    				bercario = vistoria.getBer1().toString();
+				} catch (Exception e) {
+					bercario = "false";
+				}
+    			properties.put("Bercario", bercario);
+    			properties.put("CrecrexCMEI", creche.getCrecheCmei());
+    			properties.put("notas", notasCreche);
                 feature.put("properties", properties);
-                feature.put("notas", notasCreche);
                 featureList.put(feature);
                 featureCollection.put("features", featureList);
             }
@@ -215,6 +222,14 @@ public class MapaCrechesController {
     }
     
     public int getAcessibilidade(VistoriaCreche vistoriaCreche){
+    	return 0;
+    }
+    
+    public int getGruposEscolares(VistoriaCreche vistoriaCreche){
+    	return 0;
+    }
+    
+    public int getSalasClimatizadas(VistoriaCreche vistoriaCreche){
     	return 0;
     }
     

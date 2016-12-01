@@ -967,7 +967,7 @@ input.pesquisa-input
 	display: none;
 }
 
-#pin-azul, #pin-preto
+#pin-azul, #pin-preto, #pin-azul-claro
 {
 	display: none;
 }
@@ -983,10 +983,6 @@ input.pesquisa-input
 	margin: 30px auto;
 	display: none;
 }
-
-/*Ajustes de cor na tabela*/
-
-.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td { border: none;}
 
 tr.accordion-toggle {
     background: #E9F3FC;
