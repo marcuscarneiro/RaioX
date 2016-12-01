@@ -780,7 +780,7 @@ input.pesquisa-input
 
 .compare-titulos > h4
 {
-	color: #fff;
+	color: #222;
 	width: 45%;
 	text-align: center;
 	display: table-cell;
@@ -790,12 +790,12 @@ input.pesquisa-input
 
 .compare-titulo-creche1
 {
-	background-color: #074f8e;
+	background-color: #E9F3FC;
 }
 
 .compare-titulo-creche2
 {
-	background-color: #6BB540;
+	background-color: #E8F9E8;
 }
 
 .linha
@@ -991,6 +991,21 @@ input.pesquisa-input
 tr.accordion-toggle {
     background: #E9F3FC;
 }
+
+/*Ajustes de comparativo*/
+
+td.col-1 {
+    background: #E9F3FC;
+}
+
+td.col-2 {
+    background: #E8F9E8;
+}
+
+td.comp-modulo {
+    border-bottom: 1px solid #DBE5EF !important;
+}
+
 
 
 @media screen and (max-width: 1024px){

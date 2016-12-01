@@ -339,7 +339,7 @@ html, body
 	height: 210px;
 }
 
-.compare-selecionados li:hover {background-color: #6BB540 !important;}
+.compare-selecionados li:hover {background-color: #BFD7ED !important;}
 
 .compare-selecionados li h4 {
 	font-size: 12px;
