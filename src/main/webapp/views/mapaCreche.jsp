@@ -810,7 +810,7 @@
 					<label for="filtro-3">Creches com nova sede</label>
 	
 					<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="lazer">
-					<label for="filtro-4">¿LAZER?</label>
+					<label for="filtro-4">Creches com itens de lazer</label>
 	
 					<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="grupos">
 					<label for="filtro-5">Creches que oferecem grupos escolares</label>
@@ -846,6 +846,21 @@
 				</div>
 				<div id="video-gallery">
 					<ul class="list video-list">
+						<li>
+							<a class="videos fancybox.iframe" href="http://www.youtube.com/embed/z7LGlgb_5PI?autoplay=1">
+								<img alt="" src="http://i1.ytimg.com/vi/z7LGlgb_5PI/mqdefault.jpg">
+							</a>
+						</li>
+						<li>
+							<a class="videos fancybox.iframe" href="http://www.youtube.com/embed/lvUD4VIRm2c?autoplay=1">
+								<img alt="" src="http://i1.ytimg.com/vi/lvUD4VIRm2c/mqdefault.jpg">
+							</a>
+						</li>
+						<li>
+							<a class="videos fancybox.iframe" href="http://www.youtube.com/embed/GGqLzBzdPOk?autoplay=1">
+								<img alt="" src="http://i1.ytimg.com/vi/GGqLzBzdPOk/mqdefault.jpg">
+							</a>
+						</li>
 						<li>
 							<a class="videos fancybox.iframe" href="http://www.youtube.com/embed/GJimmx4RoHo?autoplay=1">
 								<img alt="" src="http://i1.ytimg.com/vi/GJimmx4RoHo/mqdefault.jpg">
@@ -931,21 +946,6 @@
 								<img alt="" src="http://i1.ytimg.com/vi/pcovmR0jtT0/mqdefault.jpg">
 							</a>
 						</li>
-						<li>
-							<a class="videos fancybox.iframe" href="http://www.youtube.com/embed/FSs4cS8BWOM?autoplay=1">
-								<img alt="" src="http://i1.ytimg.com/vi/FSs4cS8BWOM/mqdefault.jpg">
-							</a>
-						</li>
-						<li>
-							<a class="videos fancybox.iframe" href="http://www.youtube.com/embed/PYOcG_-YW9s?autoplay=1">
-								<img alt="" src="http://i1.ytimg.com/vi/PYOcG_-YW9s/mqdefault.jpg">
-							</a>
-						</li>
-						<li>
-							<a class="videos fancybox.iframe" href="http://www.youtube.com/embed/5WjHOsf8Itk?autoplay=1">
-								<img alt="" src="http://i1.ytimg.com/vi/5WjHOsf8Itk/mqdefault.jpg">
-							</a>
-						</li>
 					</ul>
 				</div>
 			</div>
@@ -1029,7 +1029,7 @@
 			<div class="legenda">
 				<span>Legenda</span>
 				<ul class="lista-legenda">
-					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="A nota geral abaixo de 2.5">
+					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Nota geral entre 0 e 2.5">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel1-15.png">
 					</li>
 					<li id="pin-azul-claro" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
@@ -1038,13 +1038,13 @@
 					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/s-blue.png">
 					</li>
-					<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="A nota geral entre 2.5 e 5.0">
+					<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Nota geral entre 2.5 e 5.0">
 						<img  src="<%=request.getContextPath()%>/views/assets/css/img/nivel2-15.png">
 					</li>
-					<li id="pin-verde-claro" class="legenda-item" data-toggle="tooltip" data-placement="top" title="A nota geral entre 5.1 e 7.5">
+					<li id="pin-verde-claro" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Nota geral entre 5.1 e 7.5">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel3-15.png">
 					</li>
-					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="A nota geral acima de 7.5">
+					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Nota geral acima de 7.5">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/nivel4-15.png">
 					</li>
 					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">

@@ -855,14 +855,14 @@ function mudaLegenda(filter){
 		$("#pin-preto").attr("title","Não possui itens básicos de acessibilidade").tooltip("fixTitle");
 	} else {
 		$("#pin-vermelho").show();
-		$("#pin-vermelho").attr("title","A nota geral abaixo de 2.5").tooltip("fixTitle");
+		$("#pin-vermelho").attr("title","Nota geral entre 0 e 2.5").tooltip("fixTitle");
 		$("#pin-verde").show();
-		$("#pin-verde").attr("title","A nota geral acima de 7.5").tooltip("fixTitle");
+		$("#pin-verde").attr("title","Nota geral acima de 7.5").tooltip("fixTitle");
 		$("#pin-verde-claro").show();
-		$("#pin-verde-claro").attr("title","A nota geral entre 5.1 e 7.5").tooltip("fixTitle");
+		$("#pin-verde-claro").attr("title","Nota geral entre 5.1 e 7.5").tooltip("fixTitle");
 		$("#pin-cinza").show();
 		$("#pin-amarelo").show();
-		$("#pin-amarelo").attr("title","A nota geral entre 2.5 e 5.0").tooltip("fixTitle");
+		$("#pin-amarelo").attr("title","Nota geral entre 2.5 e 5.0").tooltip("fixTitle");
 		$("#pin-azul").hide();
 		$("#pin-preto").hide();
 		$("#pin-azul-claro").hide();

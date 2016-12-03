@@ -233,7 +233,7 @@ html, body
  	width: 80%;
 
 }
-.detalhe-ranking .cabecalho
+.detalhe-ranking .cabecalho, .detalhe-video .cabecalho
 {
 	margin: 3%;
 }
