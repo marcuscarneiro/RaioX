@@ -238,7 +238,7 @@ public class MapaCrechesController {
     	try {
     		if(notasCreche.getGeral() != null){
     			Double nota =notasCreche.getGeral();
-    			if(nota < 2.5){
+    			if(nota <= 2.5){
     	    		return "nivel1";
     	    	} else if(nota < 5.1){
     				return "nivel2";
