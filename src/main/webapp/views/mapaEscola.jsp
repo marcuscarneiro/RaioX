@@ -90,6 +90,12 @@
 						</span>
 						<span class="menu-item-titulo">Vídeos</span>
 					</li>
+					<li class="menu-item menu-creche" onclick="abreSiteCreches()">
+						<span class="menu-item-icone">
+							<i class="fa fa-child fa-2x"></i>
+						</span>
+						<span class="menu-item-titulo">Creches</span>
+					</li>
 				</ul>
 			</div>
 		</nav>

@@ -139,7 +139,7 @@ public class VistoriaCrecheController {
 			newDir.mkdir();
 		}
 		
-		String subFolder = folder + separator + "Relatorios";
+		String subFolder = folder + separator + "RelatoriosCreches";
 		File newSubDir = new File(subFolder);
 		if(!newSubDir.exists()){
 			newSubDir.mkdir();
@@ -163,7 +163,7 @@ public class VistoriaCrecheController {
 	private String getOutputFilename(VistoriaCreche vistoriaCreche, MultipartFile multipartFile) {
 		String fileName = multipartFile.getOriginalFilename();
 		String separator = System.getProperty("file.separator");
-		String nomeArquivo = getDestinationLocation() + separator + "ArquivosRaioX" + separator + "Relatorios" + separator + vistoriaCreche.getId() + separator + "relatorio" + fileName.substring(fileName.indexOf("."), fileName.length());
+		String nomeArquivo = getDestinationLocation() + separator + "ArquivosRaioX" + separator + "RelatoriosCreches" + separator + vistoriaCreche.getId() + separator + "relatorio" + fileName.substring(fileName.indexOf("."), fileName.length());
 		return nomeArquivo;
 	}
 

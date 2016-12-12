@@ -1141,3 +1141,18 @@ li.box-numeros:hover
 	cursor: pointer;
 	width: 110px;
 }
+
+.hidden-question
+{
+	display: none;
+}
+
+.subquestao
+{
+	padding-left: 10px; 
+}
+
+.subquestao-titulo
+{
+	font-weight: 600;
+}

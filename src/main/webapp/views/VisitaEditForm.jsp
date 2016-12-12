@@ -60,8 +60,9 @@
 							<form:label class="col-sm-3 control-label" path="escola.id"><strong>Escola</strong></form:label>
 							<div class="col-sm-4">
 								<form:select path="escola.id" class="form-control">
+									<option value="${visita.escola.id}">${visita.escola.nome}</option>
 									<c:forEach items="${escolas}" var="escola">
-										<option value="${visita.escola.id}">${visita.escola.nome}</option>
+										<option value="${escola.id}">${escola.nome}</option>
 									</c:forEach>
 								</form:select>
 							</div>

@@ -60,6 +60,7 @@
 							<form:label class="col-sm-3 control-label" path="creche.id"><strong>Creche/CMEI</strong></form:label>
 							<div class="col-sm-4">
 								<form:select path="creche.id" class="form-control">
+									<option value="${vistoriaCreche.creche.id}">${vistoriaCreche.creche.nome}</option>
 									<c:forEach items="${creches}" var="creche">
 										<option value="${creche.id}">${creche.nome}</option>
 									</c:forEach>

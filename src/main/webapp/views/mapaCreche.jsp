@@ -259,7 +259,6 @@
 				                            <span>Situação do prédio:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
-				                        <br>				
 				                        <li class="questao" id="qger1">
 				                            <span>Total de Alunos:</span>
 				                            <span class="questao-info"></span>
@@ -380,8 +379,72 @@
 				            <td colspan="6"  class="hiddenRow">
 				                <div id="banheiros" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				                        <li class="questao" id="qber1">
-				                            <span>Existe berçário na unidade?</span>
+				                        <li class="questao">
+				                            <span class="subquestao-titulo">Problemas identificados na unidade</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1a">
+				                            <span class="subquestao">- Descargas quebradas:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1b">
+				                            <span class="subquestao">- Pias quebradas:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1c">
+				                            <span class="subquestao">- Torneiras quebradas:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1d">
+				                            <span class="subquestao">- Assentos sanitários quebrados/inexistentes:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1e">
+				                            <span class="subquestao">- Vasos sanitários quebrados/inexistentes:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1f">
+				                            <span class="subquestao">- Má higienização:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1g">
+				                            <span class="subquestao">- Pias altas:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1h">
+				                            <span class="subquestao">- Portas danificadas/inexistentes:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1i">
+				                            <span class="subquestao">- Piso danificado:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1j">
+				                            <span class="subquestao">- Paredes danificadas:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1k">
+				                            <span class="subquestao">- Ausência de piso antiderrapante:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1l">
+				                            <span class="subquestao">- Vazamento de água:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1m">
+				                            <span class="subquestao">- Retorno de esgoto:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1n">
+				                            <span class="subquestao">- Vasos em tamanho inadequado:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qban1o">
+				                            <span class="subquestao">- Banheiro em quantidade insuficiente:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qbaninf">
+				                            <span>Mais informações:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                    </ul>
@@ -398,8 +461,48 @@
 				            <td colspan="6"  class="hiddenRow">
 				                <div id="espacosAlternativos" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				                        <li class="questao" id="qber1">
-				                            <span>Existe berçário na unidade?</span>
+				                        <li class="questao">
+				                            <span class="subquestao-titulo">Itens existentes na unidade</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1a">
+				                            <span class="subquestao">- Biblioteca:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1b">
+				                            <span class="subquestao">- Espaço Tecnológico:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1c">
+				                            <span class="subquestao">- Sala de Vídeo:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1d">
+				                            <span class="subquestao">- Brinquedoteca:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1e">
+				                            <span class="subquestao">- Quadra:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1f">
+				                            <span class="subquestao">- Pátio:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1g">
+				                            <span class="subquestao">- Caixa de areia:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1h">
+				                            <span class="subquestao">- Parquinho:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qeaa1i">
+				                            <span class="subquestao">- Brinquedos em bom estado:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qeaainf">
+				                            <span>Mais informações:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                    </ul>
@@ -416,8 +519,80 @@
 				            <td colspan="6"  class="hiddenRow">
 				                <div id="acessibilidade" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				                        <li class="questao" id="qber1">
-				                            <span>Existe berçário na unidade?</span>
+				                        <li class="questao" id="qaae1">
+				                            <span>Existem crianças com necessidades especiais diagnosticadas com laudo matriculadas?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae2">
+				                            <span>Se sim, todas estão acompanhadas por cuidador em sala de aula?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae3">
+				                            <span>Existe professor realizando atendimento educacional especializado na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao">
+				                            <span class="subquestao-titulo">Necessidades especiais que englobam os alunos matriculados</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae4a">
+				                            <span class="subquestao">- Cadeirante:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae4b">
+				                            <span class="subquestao">- Limitações motoras:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae4c">
+				                            <span class="subquestao">- Surdez:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae4d">
+				                            <span class="subquestao">- Baixa audição:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae4e">
+				                            <span class="subquestao">- Cegueira:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae4f">
+				                            <span class="subquestao">- Baixa visão:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae4g">
+				                            <span class="subquestao">- Problemas cognitivos/patologias mentais:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae4outros">
+				                            <span class="subquestao">- Outros:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae5">
+				                            <span>Há rampas no acesso a TODAS as dependências?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae6">
+				                            <span>Há banheiros infantis plenamente adaptados para cadeirantes?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae7">
+				                            <span>Há banheiros adultos plenamente adaptados para cadeirantes?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae8">
+				                            <span>Há piso tátil?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae9">
+				                            <span>Há placas indicativas em braile na entrada das diferentes dependências?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qaae10">
+				                            <span>Há Sala de Recursos Multifuncionais na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qaaeinf">
+				                            <span>Mais informações:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                    </ul>
@@ -434,8 +609,128 @@
 				            <td colspan="6"  class="hiddenRow">
 				                <div id="servicosEssenciais" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				                        <li class="questao" id="qber1">
-				                            <span>Existe berçário na unidade?</span>
+				                        <li class="questao" id="qsee1">
+				                            <span>Há distribuição de água na instituição?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee1o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee2">
+				                            <span>A quantidade de reservatórios supre a demanda?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee2o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee3">
+				                            <span>Foi realizada limpeza dos reservatórios nos últimos seis meses?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee3o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee4">
+				                            <span>Há saneamento básico na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee4o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee5">
+				                            <span>Há falhas na rede elétrica?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee5o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee6">
+				                            <span>Há extintores em condições de funcionamento?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee6o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee7">
+				                            <span>Há saídas de emergência desobstruídas e sinalizadas?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee7o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee8">
+				                            <span>Houve dedetização nos últimos seis meses?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee8o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee9">
+				                            <span>A unidade fica localizada em área de encosta ou barreira?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee9o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee10">
+				                            <span>A instituição é alvo de vândalos?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee10o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee11">
+				                            <span>Existem câmeras de segurança funcionando?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee11o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee12">
+				                            <span>Há rachaduras?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee12o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee13">
+				                            <span>Há infiltrações/mofo?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee13o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee14">
+				                            <span>Há goteiras?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee14o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsee15">
+				                            <span>Há focos de água parada na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qsee15o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qseeinf">
+				                            <span>Mais informações:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                    </ul>
@@ -452,8 +747,108 @@
 				            <td colspan="6"  class="hiddenRow">
 				                <div id="materiais" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				                        <li class="questao" id="qber1">
-				                            <span>Existe berçário na unidade?</span>
+				                        <li class="questao" id="qmat1">
+				                            <span>Os materiais de limpeza suprem a demanda?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat1o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat2">
+				                            <span>Os materiais de expediente suprem a demanda?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat2o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat3">
+				                            <span>Os materiais de higiene pessoal suprem a demanda?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat3o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat4">
+				                            <span>O enxoval supre a demanda?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat4o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat5">
+				                            <span>Os colchonetes suprem a demanda e estão em boas condições de uso?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat5o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat6">
+				                            <span>Estão sendo entregues equipamentos de proteção individual para funcionários (luvas e aventais)?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat6o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat7">
+				                            <span>Os kits escolares foram entregues em quantidade suficiente para atender à demanda?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat7o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat8">
+				                            <span>Os fardamentos foram distribuídos em quantidade suficiente para atender à demanda?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat8o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat9">
+				                            <span>A Prefeitura disponibiliza jogos pedagógicos?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat9o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat10">
+				                            <span>A Prefeitura envia brinquedos para as crianças?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmat10o">
+				                            <span>Observação:</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao">
+				                            <span class="subquestao-titulo">Itens audiovisuais existentes e em condições de uso na unidade</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat11a">
+				                            <span class="subquestao">- Aparelho de TV</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat11b">
+				                            <span class="subquestao">- Aparelho de DVD</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat11c">
+				                            <span class="subquestao">- Aparelho de Som</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qmat11d">
+				                            <span class="subquestao">- Datashow</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qmatinf">
+				                            <span>Mais informações:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                    </ul>
@@ -470,8 +865,60 @@
 				            <td colspan="6"  class="hiddenRow">
 				                <div id="alimentacao" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				                        <li class="questao" id="qber1">
-				                            <span>Existe berçário na unidade?</span>
+				                        <li class="questao" id="qali1">
+				                            <span>Onde as crianças se alimentam?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali2">
+				                            <span>Quais as condições de iluminação?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali3">
+				                            <span>Quais as condições da ventilação?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali4">
+				                            <span>Quais as condições do espaço de circulação?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali5">
+				                            <span>Quais as condições de higiene?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali6">
+				                            <span>Quais as condições do mobiliário?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali7">
+				                            <span>Quais as condições do bebedouro?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali8">
+				                            <span>Quais as condições dos utensílios?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali9">
+				                            <span>Os alimentos estão sendo recebidos?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali10">
+				                            <span>Apresentam anormalidades?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali11">
+				                            <span>O cardápio é adequado à faixa etária atendida?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali12">
+				                            <span>As amostras de alimentos para análise estão sendo recolhidas?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qali13">
+				                            <span>Os eletrodomésticos estão em boas condições de uso?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qaliinf">
+				                            <span>Mais informações:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                    </ul>
@@ -488,8 +935,28 @@
 				            <td colspan="6"  class="hiddenRow">
 				                <div id="lavanderia" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				                        <li class="questao" id="qber1">
-				                            <span>Existe berçário na unidade?</span>
+				                        <li class="questao" id="qlav1">
+				                            <span>As máquinas de lavar estão em quantidade suficiente e em boas condições de uso?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qlav2">
+				                            <span>As secadoras estão em quantidade suficiente e em boas condições de uso?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qlav3">
+				                            <span>Existem tanques de lavar roupas?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qlav4">
+				                            <span>Existem varais?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qlav5">
+				                            <span>Existem armários em quantidade suficiente e em boas condições de uso?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="hidden-question questao" id="qlavinf">
+				                            <span>Mais informações:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                    </ul>
@@ -506,8 +973,52 @@
 				            <td colspan="6"  class="hiddenRow">
 				                <div id="saude" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				                        <li class="questao" id="qber1">
-				                            <span>Existe berçário na unidade?</span>
+				                        <li class="questao" id="qsau1">
+				                            <span>A creche possui cópias dos cartões de vacinação das crianças?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau2">
+				                            <span>O posto de saúde da comunidade realiza acompanhamento médico e odontológico na unidade?</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao">
+				                            <span class="subquestao-titulo">Doenças que afetaram alunos e funcionários no ano corrente nesta unidade</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3a">
+				                            <span class="subquestao">- Piolho</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3b">
+				                            <span class="subquestao">- Cárie</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3c">
+				                            <span class="subquestao">- Verminoses</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3d">
+				                            <span class="subquestao">- Dermatites</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3e">
+				                            <span class="subquestao">- Hanseníase</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3f">
+				                            <span class="subquestao">- Dengue</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3g">
+				                            <span class="subquestao">- Zika</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3h">
+				                            <span class="subquestao">- Febre chikungunya</span>
+				                            <span class="questao-info"></span>
+				                        </li>
+				                        <li class="questao" id="qsau3i">
+				                            <span class="subquestao">- Conjuntivite</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                    </ul>
@@ -745,44 +1256,44 @@
 					<h4>Galeria de fotos da última vistoria</h4>
 					<div id="galcre1" class="galeria">
 						<h4></h4>
-						<a id="fotocompesq1" class="fancybox boxes" href="#" rel="fotovise" title="#">
+						<a id="fotocompesq1" class="fancybox boxes-compare" href="#" rel="fotovise" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompesq2" class="fancybox boxes" href="#" rel="fotovise" title="#">
+						<a id="fotocompesq2" class="fancybox boxes-compare" href="#" rel="fotovise" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompesq3" class="fancybox boxes" href="#" rel="fotovise" title="#">
+						<a id="fotocompesq3" class="fancybox boxes-compare" href="#" rel="fotovise" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompesq4" class="fancybox boxes" href="#" rel="fotovise" title="#">
+						<a id="fotocompesq4" class="fancybox boxes-compare" href="#" rel="fotovise" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompesq5" class="fancybox boxes" href="#" rel="fotovise" title="#">
+						<a id="fotocompesq5" class="fancybox boxes-compare" href="#" rel="fotovise" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompesq6" class="fancybox boxes" href="#" rel="fotovise" title="#">
+						<a id="fotocompesq6" class="fancybox boxes-compare" href="#" rel="fotovise" title="#">
 							<img src="#" width="100" height="100">
 						</a>
 					</div>
 		
 					<div id="galcre2" class="galeria">
 						<h4></h4>
-						<a id="fotocompdir1" class="fancybox boxes" href="#" rel="fotovisd" title="#">
+						<a id="fotocompdir1" class="fancybox boxes-compare" href="#" rel="fotovisd" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompdir2" class="fancybox boxes" href="#" rel="fotovisd" title="#">
+						<a id="fotocompdir2" class="fancybox boxes-compare" href="#" rel="fotovisd" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompdir3" class="fancybox boxes" href="#" rel="fotovisd" title="#">
+						<a id="fotocompdir3" class="fancybox boxes-compare" href="#" rel="fotovisd" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompdir4" class="fancybox boxes" href="#" rel="fotovisd" title="#">
+						<a id="fotocompdir4" class="fancybox boxes-compare" href="#" rel="fotovisd" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompdir5" class="fancybox boxes" href="#" rel="fotovisd" title="#">
+						<a id="fotocompdir5" class="fancybox boxes-compare" href="#" rel="fotovisd" title="#">
 							<img src="#" width="100" height="100">
 						</a>
-						<a id="fotocompdir6" class="fancybox boxes" href="#" rel="fotovisd" title="#">
+						<a id="fotocompdir6" class="fancybox boxes-compare" href="#" rel="fotovisd" title="#">
 							<img src="#" width="100" height="100">
 						</a>
 					</div>
@@ -809,29 +1320,29 @@
 					<input type="checkbox" id="filtro-3" class="filtro-item" data-filter="novas">
 					<label for="filtro-3">Creches com nova sede</label>
 	
-					<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="lazer">
-					<label for="filtro-4">Creches com itens de lazer</label>
-	
-					<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="grupos">
-					<label for="filtro-5">Creches que oferecem grupos escolares</label>
-	
-					<input type="checkbox" id="filtro-6" class="filtro-item" data-filter="saneamento">
-					<label for="filtro-6">Qualidade do saneamento básico nas creches</label>
-	
-					<input type="checkbox" id="filtro-7" class="filtro-item" data-filter="acessibilidade">
-					<label for="filtro-7">Creches com itens de acessibilidade</label>
-	
-					<input type="checkbox" id="filtro-8" class="filtro-item" data-filter="climatizadas">
-					<label for="filtro-8">Creches com salas climatizadas</label>
-	
 					<input type="checkbox" id="filtro-9" class="filtro-item" data-filter="crechexcmei">
 					<label for="filtro-9">Creche X CMEI</label>
 	
+					<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="lazer">
+					<label for="filtro-4" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches com itens de lazer</label>
+	
+					<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="grupos">
+					<label for="filtro-5" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches que oferecem grupos escolares</label>
+	
+					<input type="checkbox" id="filtro-6" class="filtro-item" data-filter="saneamento">
+					<label for="filtro-6" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Qualidade do saneamento básico nas creches</label>
+	
+					<input type="checkbox" id="filtro-7" class="filtro-item" data-filter="acessibilidade">
+					<label for="filtro-7" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches com itens de acessibilidade</label>
+	
+					<input type="checkbox" id="filtro-8" class="filtro-item" data-filter="climatizadas">
+					<label for="filtro-8" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches com salas climatizadas</label>
+	
 					<input type="checkbox" id="filtro-10" class="filtro-item" data-filter="temperatura">
-					<label for="filtro-10">Nível de temperatura nas creches</label>
+					<label for="filtro-10" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Nível de temperatura nas creches</label>
 	
 					<input type="checkbox" id="filtro-11" class="filtro-item" data-filter="iluminacao">
-					<label for="filtro-11">Nível de iluminação</label>
+					<label for="filtro-11" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Nível de iluminação</label>
 				</div>
 			</div>
 		</div>
@@ -956,10 +1467,10 @@
 
 		<div id="flip" class="flip logo" ontouchstart="this.classList.toggle('hover');">
 			<div class="front">
-				<img class="top" src="<%=request.getContextPath()%>/views/assets/css/img/marca-sistema-1.png">
+				<img class="top" src="<%=request.getContextPath()%>/views/assets/css/img/marca-creche-1.png">
 			</div>
 			<div class="back">
-				<img class="top" src="<%=request.getContextPath()%>/views/assets/css/img/marca-sistema-2.png">
+				<img class="top" src="<%=request.getContextPath()%>/views/assets/css/img/marca-creche-2.png">
 			</div>
 		</div>
 		
@@ -1069,6 +1580,7 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapaCreche.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
+				swal("Sistema em atualização", "Informações e funcionalidade do sistema ainda estão em atualização", "error");
 				$('[data-toggle="tooltip"]').tooltip(); 
 				$(".videos").fancybox({
 					maxWidth	: 800,

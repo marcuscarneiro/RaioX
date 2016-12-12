@@ -263,6 +263,11 @@ function abreSiteAndre(){
 	window.open('http://www.andreregis.com.br', '_blank');
 };
 
+//ABRE SITE RAIO-X DAS CRECHES
+function abreSiteCreches(){
+	window.open('http://www.raioxdasescolas.com.br/raiox/creches', '_self');
+};
+
 //TEMPORIZADOR DA ANIMAÇÃO DO LOGO
 setInterval(function(){
 		$("#flip").flip('toggle');
