@@ -1324,7 +1324,7 @@
 					<label for="filtro-9">Creche X CMEI</label>
 	
 					<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="lazer">
-					<label for="filtro-4" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches com itens de lazer</label>
+					<label for="filtro-4">Creches com itens de lazer</label>
 	
 					<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="grupos">
 					<label for="filtro-5" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches que oferecem grupos escolares</label>

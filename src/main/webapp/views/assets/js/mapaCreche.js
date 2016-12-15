@@ -2489,11 +2489,24 @@ function mudaLegenda(filter){
 		$("#pin-vermelho").hide();
 		$("#pin-verde").hide();
 		$("#pin-cinza").hide();
+		$("#pin-verde-claro").hide();
+		$("#pin-amarelo").show();
 		$("#pin-amarelo").attr("title","Possui pelo menos um item básico").tooltip("fixTitle");
 		$("#pin-azul").show();
 		$("#pin-azul").attr("title","Possui todos os itens básicos").tooltip("fixTitle");
 		$("#pin-preto").show();
 		$("#pin-preto").attr("title","Não possui itens básicos de acessibilidade").tooltip("fixTitle");
+	} else if(filter == 'lazer') {
+		$("#pin-vermelho").show();
+		$("#pin-verde").show();
+		$("#pin-verde").attr("title","Possui todos os itens de lazer").tooltip("fixTitle");
+		$("#pin-verde-claro").hide();
+		$("#pin-cinza").hide();
+		$("#pin-amarelo").show();
+		$("#pin-amarelo").attr("title","Possui pelo menos um item de lazer").tooltip("fixTitle");
+		$("#pin-azul").hide();
+		$("#pin-preto").hide();
+		$("#pin-vermelho").attr("title","Não possui nenhum item de lazer").tooltip("fixTitle");
 	} else {
 		$("#pin-vermelho").show();
 		$("#pin-vermelho").attr("title","Nota geral entre 0 e 2.5").tooltip("fixTitle");
@@ -2569,6 +2582,15 @@ $('.filtro-item').on('click', function(){
 		modo = 'crechexcmei';
 		changeMarkersCrecheCmei();
 		mudaLegenda(filter);
+	} else if (filter === 'lazer'){
+		map.removeLayer(crechesLayer);
+		crechesLayer = L.mapbox.featureLayer().addTo(map);
+		crechesLayer.setGeoJSON(crechesData);
+		removePins();
+		crechesList = [];
+		modo = 'lazer';
+		changeMarkersLazer();
+		mudaLegenda(filter);
 	} else {
 		replotMap();
 		removePins();
@@ -2603,6 +2625,34 @@ function changeMarkersCrecheCmei(){
 		} else {
 			marker.setIcon(L.icon({
 				iconUrl: contextPath + '/views/assets/css/img/s-blue.png',
+				iconSize: [15, 38]
+			}));
+		}
+		
+		return false;
+	});
+
+	crechesMouseOver();
+	crechesMouseOut();
+	crechesClick();
+};
+
+function changeMarkersLazer(){
+	crechesLayer.eachLayer(function(marker) {
+		crechesList.push({label: marker.feature.properties.Creche, value: marker.feature.properties.ID});
+		if(marker.feature.properties.Lazer == 0){
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-red.png',
+				iconSize: [15, 38]
+			}));
+		} else if(marker.feature.properties.Lazer == 1) {
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-yellow.png',
+				iconSize: [15, 38]
+			}));
+		} else if(marker.feature.properties.Lazer == 2) {
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-cgreen.png',
 				iconSize: [15, 38]
 			}));
 		}
@@ -3203,7 +3253,6 @@ function deepFind(obj, path) {
 	return current;
 }
 
-$("#filtro-4").prop('disabled', true);
 $("#filtro-5").prop('disabled', true);
 $("#filtro-6").prop('disabled', true);
 $("#filtro-7").prop('disabled', true);
