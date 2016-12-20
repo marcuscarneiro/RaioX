@@ -1315,7 +1315,7 @@
 					<label for="filtro-1">Classificação do Ranking</label>-->
 	
 					<input type="checkbox" id="filtro-2" class="filtro-item" data-filter="bercario">
-					<label for="filtro-2">Creches que possuem berçario</label>
+					<label for="filtro-2">Creches que possuem berçário</label>
 	
 					<input type="checkbox" id="filtro-3" class="filtro-item" data-filter="novas">
 					<label for="filtro-3">Creches com nova sede</label>
@@ -1324,25 +1324,25 @@
 					<label for="filtro-9">Creche X CMEI</label>
 	
 					<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="lazer">
-					<label for="filtro-4">Creches com itens de lazer</label>
+					<label for="filtro-4">Itens de lazer nas creches</label>
 	
 					<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="grupos">
-					<label for="filtro-5" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches que oferecem grupos escolares</label>
+					<label for="filtro-5">Grupos escolares oferecidos</label>
 	
 					<input type="checkbox" id="filtro-6" class="filtro-item" data-filter="saneamento">
-					<label for="filtro-6" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Qualidade do saneamento básico nas creches</label>
+					<label for="filtro-6">Saneamento básico nas creches</label>
 	
 					<input type="checkbox" id="filtro-7" class="filtro-item" data-filter="acessibilidade">
-					<label for="filtro-7" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches com itens de acessibilidade</label>
+					<label for="filtro-7">Creches com itens de acessibilidade</label>
 	
 					<input type="checkbox" id="filtro-8" class="filtro-item" data-filter="climatizadas">
-					<label for="filtro-8" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Creches com salas climatizadas</label>
+					<label for="filtro-8">Creches com salas climatizadas</label>
 	
 					<input type="checkbox" id="filtro-10" class="filtro-item" data-filter="temperatura">
-					<label for="filtro-10" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Nível de temperatura nas creches</label>
+					<label for="filtro-10">Nível de temperatura nas creches</label>
 	
 					<input type="checkbox" id="filtro-11" class="filtro-item" data-filter="iluminacao">
-					<label for="filtro-11" data-toggle="tooltip" data-placement="top" title="Estará disponível em breve">Nível de iluminação</label>
+					<label for="filtro-11">Nível de iluminação nas creches</label>
 				</div>
 			</div>
 		</div>
@@ -1580,7 +1580,6 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapaCreche.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				swal("Sistema em atualização", "Informações e funcionalidade do sistema ainda estão em atualização", "error");
 				$('[data-toggle="tooltip"]').tooltip(); 
 				$(".videos").fancybox({
 					maxWidth	: 800,
