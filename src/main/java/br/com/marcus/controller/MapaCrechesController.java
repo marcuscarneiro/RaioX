@@ -197,7 +197,7 @@ public class MapaCrechesController {
 
                 properties.put("COR", getMarkerColor(notasCreche));
                 properties.put("Foto", creche.getFotoCapa());
-    			properties.put("ACESSIBILIDADE", getAcessibilidade(vistoria));
+    			properties.put("Acessibilidade", getAcessibilidade(vistoria));
     			properties.put("Grupos", getGruposEscolares(vistoria));
     			properties.put("Climatizada", getSalasClimatizadas(vistoria));
     			properties.put("Lazer", getLazer(vistoria));
@@ -208,6 +208,13 @@ public class MapaCrechesController {
 					bercario = "false";
 				}
     			properties.put("Bercario", bercario);
+    			String saneamento = "false";
+    			try {
+    				saneamento = vistoria.getSee4().toString();
+				} catch (Exception e) {
+					saneamento = "false";
+				}
+    			properties.put("Saneamento", saneamento);
     			properties.put("CrecrexCMEI", creche.getCrecheCmei());
     			properties.put("notas", notasCreche);
                 feature.put("properties", properties);
@@ -222,16 +229,35 @@ public class MapaCrechesController {
         return featureCollection;
     }
     
-    public int getAcessibilidade(VistoriaCreche vistoriaCreche){
-    	return 0;
-    }
-    
     public int getGruposEscolares(VistoriaCreche vistoriaCreche){
     	return 0;
     }
     
     public int getSalasClimatizadas(VistoriaCreche vistoriaCreche){
-    	return 0;
+    	int qtdSalas = 0;
+    	int salasClimatizadas = 0;
+    	
+    	try {
+    		qtdSalas = vistoriaCreche.getGer2();
+		} catch (Exception e) {
+		}
+    	
+    	try {
+    		salasClimatizadas = vistoriaCreche.getSal1();
+		} catch (Exception e) {
+		}
+    	
+    	if(qtdSalas == 0){
+    		return 0;
+    	} else if (salasClimatizadas > 0) {
+    		if(salasClimatizadas < qtdSalas){
+    			return 1;
+    		} else {
+    			return 2;
+    		}
+		} else {
+			return 0;
+		}
     }
     
     public int getLazer(VistoriaCreche vistoriaCreche){
@@ -292,6 +318,48 @@ public class MapaCrechesController {
 		}
     	
     	if(count == 9){
+    		return 2;
+    	} else if (count > 0) {
+			return 1;
+		} else {
+			return 0;
+		}
+    }
+    
+    public int getAcessibilidade(VistoriaCreche vistoriaCreche){
+    	int count = 0;
+    	try {
+			if(vistoriaCreche.getAae5() == true){
+				count++;
+			}
+		} catch (Exception e) {
+		}
+    	try {
+			if(vistoriaCreche.getAae6() == true){
+				count++;
+			}
+		} catch (Exception e) {
+		}
+    	try {
+			if(vistoriaCreche.getAae7() == true){
+				count++;
+			}
+		} catch (Exception e) {
+		}
+    	try {
+			if(vistoriaCreche.getAae8() == true){
+				count++;
+			}
+		} catch (Exception e) {
+		}
+    	try {
+			if(vistoriaCreche.getAae9() == true){
+				count++;
+			}
+		} catch (Exception e) {
+		}
+    	
+    	if(count == 5){
     		return 2;
     	} else if (count > 0) {
 			return 1;

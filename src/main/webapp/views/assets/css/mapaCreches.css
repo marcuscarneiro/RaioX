@@ -1055,9 +1055,3 @@ td.comp-modulo {
 {
 	color: red !important;
 }
-
-label[for="filtro-4"], label[for="filtro-5"], label[for="filtro-6"], label[for="filtro-7"], label[for="filtro-8"], label[for="filtro-10"], label[for="filtro-11"]
-{
-	cursor: no-drop !important;
-	color: #ccc;
-}
