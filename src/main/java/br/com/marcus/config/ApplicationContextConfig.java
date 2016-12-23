@@ -148,11 +148,13 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 		String rootPath = System.getProperty("catalina.base");
 		String fotosPath = "file:"+rootPath + File.separator + "ArquivosRaioX/";
 		String relatoriosPath = fotosPath + "Relatorios/";
+		String relatoriosCrechesPath = fotosPath + "RelatoriosCreches/";
 	    
 	    System.out.println(fotosPath);
 	    System.out.println(relatoriosPath);
   
 		registry.addResourceHandler("/fotos/**").addResourceLocations(fotosPath);
 		registry.addResourceHandler("/relatorios/**").addResourceLocations(relatoriosPath);
+		registry.addResourceHandler("/relatoriosCreches/**").addResourceLocations(relatoriosCrechesPath);
 	}
 }
