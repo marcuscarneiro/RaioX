@@ -34,7 +34,7 @@
 	
 						</header>
 
-						<div class="intro-content">
+						<div class="intro-content" onclick="openEscolas()">
 							<div class="profile"><img src="<%=request.getContextPath()%>/views/assets/images/profile1.jpg" alt="RaioX Escolas"></div>
 							<h1>
 								<span>RaioX Escolas </span>
@@ -45,7 +45,7 @@
 						<div class="overlay"></div>
 					</div>
 					<div class="side side-right">
-						<div class="intro-content">
+						<div class="intro-content" onclick="openCreches()">
 							<div class="profile"><img src="<%=request.getContextPath()%>/views/assets/images/profile2.jpg" alt="RaioX Creches"></div>
 							<h1><span>RaioX Creches </span>
 							<span><a href="<%=request.getContextPath()%>/creches"> Acesse o Sistema</a></span>

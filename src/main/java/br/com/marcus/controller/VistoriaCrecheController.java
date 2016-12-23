@@ -170,7 +170,7 @@ public class VistoriaCrecheController {
 	private String getDataBaseFilePath(VistoriaCreche vistoriaCreche, MultipartFile multipartFile){
 		String fileName = multipartFile.getOriginalFilename();
 		String separator = "/";
-		String nomeArquivo = separator + "relatorios" + separator + vistoriaCreche.getId() + separator + "relatorio" + fileName.substring(fileName.indexOf("."), fileName.length());
+		String nomeArquivo = separator + "relatoriosCreches" + separator + vistoriaCreche.getId() + separator + "relatorio" + fileName.substring(fileName.indexOf("."), fileName.length());
 		return nomeArquivo;
 	}
 	

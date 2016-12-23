@@ -40,15 +40,15 @@
 		}
 		classie.add( splitlayout, 'reset-layout' );
 
-		leftSide.querySelector( 'div.intro-content' ).addEventListener( eventtype, function( ev ) {
-			reset();
-			classie.add( splitlayout, 'open-left' );
-		} );
-
-		rightSide.querySelector( 'div.intro-content' ).addEventListener( eventtype, function( ev ) {
-			reset();
-			classie.add( splitlayout, 'open-right' );
-		} );
+//		leftSide.querySelector( 'div.intro-content' ).addEventListener( eventtype, function( ev ) {
+//			reset();
+//			classie.add( splitlayout, 'open-left' );
+//		} );
+//
+//		rightSide.querySelector( 'div.intro-content' ).addEventListener( eventtype, function( ev ) {
+//			reset();
+//			classie.add( splitlayout, 'open-right' );
+//		} );
 
 		// back to intro
 		// after transition ends:
@@ -80,3 +80,11 @@
 	init();
 
 })();
+
+function openCreches(){
+	window.open('http://www.raioxdasescolas.com.br/raiox/creches', '_self');
+};
+
+function openEscolas(){
+	window.open('http://www.raioxdasescolas.com.br/raiox/escolas', '_self');
+};
