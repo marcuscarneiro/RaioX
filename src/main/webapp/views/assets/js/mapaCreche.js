@@ -2519,7 +2519,7 @@ function mudaLegenda(filter){
 		$("#pin-preto").hide();
 		$("#pin-azul-claro").hide();
 		$("#pin-vermelho").attr("title","Não possui nenhum item de lazer").tooltip("fixTitle");
-	}  else if(filter == 'climatizadas') {
+	} else if(filter == 'climatizadas') {
 		$("#pin-vermelho").show();
 		$("#pin-verde").show();
 		$("#pin-verde").attr("title","Todas as salas são climatizadas").tooltip("fixTitle");
@@ -2531,6 +2531,30 @@ function mudaLegenda(filter){
 		$("#pin-preto").hide();
 		$("#pin-azul-claro").hide();
 		$("#pin-vermelho").attr("title","Não existem salas climatizadas na creche").tooltip("fixTitle");
+	} else if(filter == 'temperatura') {
+		$("#pin-vermelho").show();
+		$("#pin-verde").show();
+		$("#pin-verde").attr("title","Todas as salas estão dentro do intervalo de temperatura aceitável segundo MPT (entre 20 e 26ºC)").tooltip("fixTitle");
+		$("#pin-verde-claro").hide();
+		$("#pin-cinza").hide();
+		$("#pin-amarelo").show();
+		$("#pin-amarelo").attr("title","Pelo menos uma sala está dentro do intervalo de temperatura aceitável segundo MPT (entre 20 e 26ºC)").tooltip("fixTitle");
+		$("#pin-azul").hide();
+		$("#pin-preto").hide();
+		$("#pin-azul-claro").hide();
+		$("#pin-vermelho").attr("title","Todas as salas estão fora do intervalo de temperatura aceitável segundo MPT (entre 20 e 26ºC)").tooltip("fixTitle");
+	} else if(filter == 'iluminacao') {
+		$("#pin-vermelho").show();
+		$("#pin-verde").show();
+		$("#pin-verde").attr("title","Todas as salas estão dentro do intervalo de iluminação aceitável segundo ABNT (entre 200 e 750 Lux)").tooltip("fixTitle");
+		$("#pin-verde-claro").hide();
+		$("#pin-cinza").hide();
+		$("#pin-amarelo").show();
+		$("#pin-amarelo").attr("title","Pelo menos uma sala está dentro do intervalo de iluminação aceitável segundo ABNT (entre 200 e 750 Lux)").tooltip("fixTitle");
+		$("#pin-azul").hide();
+		$("#pin-preto").hide();
+		$("#pin-azul-claro").hide();
+		$("#pin-vermelho").attr("title","Todas as salas estão fora do intervalo de iluminação aceitável segundo ABNT (entre 200 e 750 Lux)").tooltip("fixTitle");
 	} else {
 		$("#pin-vermelho").show();
 		$("#pin-vermelho").attr("title","Nota geral entre 0 e 2.5").tooltip("fixTitle");
@@ -2552,6 +2576,17 @@ function mudaLegenda(filter){
 	});
 }
 
+$('.filtro-grupos').on('click', function(){
+	
+	if($(this).hasClass('active')){
+		$(this).removeClass('active');
+		$(".grupos-escolares + label").slideUp();
+	} else {
+		$(this).addClass('active');
+		$(".grupos-escolares + label").slideDown();
+	}
+});
+
 $('.filtro-item').on('click', function(){
 	actualMarker = undefined;
 	
@@ -2559,7 +2594,7 @@ $('.filtro-item').on('click', function(){
 		$(this).removeClass('active');
 		var filter = 'null';
 	} else {
-		$(this).addClass('active').siblings().removeClass('active');
+		$(this).addClass('active').siblings('.filtro-item').removeClass('active');
 		var filter = $(this).data('filter');
 	}
 	
@@ -2576,38 +2611,61 @@ $('.filtro-item').on('click', function(){
 		crechesListCompare = [];
 		if (filter === 'bercario'){
 			crechesLayer.eachLayer(function(marker) {
-				if(marker.feature.properties.Bercario == "true"){
-				} else {
+				if(marker.feature.properties.Bercario != "true"){
 					map.removeLayer(marker);
 				}
 			});
-			modo = 'bercario';
 		} else if (filter === 'novas'){
 			crechesLayer.eachLayer(function(marker) {
-				if(marker.feature.properties.Nova == "true"){
-				} else {
+				if(marker.feature.properties.Nova != "true"){
 					map.removeLayer(marker);
 				}
 			});
-			modo = 'novas';
-		} else if (filter === 'crechexcmei'){
-			modo = 'crechexcmei';
-		} else if (filter === 'lazer'){
-			modo = 'lazer';
-		} else if (filter === 'saneamento'){
-			modo = 'saneamento';
-		} else if (filter === 'acessibilidade'){
-			modo = 'acessibilidade';
-		} else if (filter === 'climatizadas'){
-			modo = 'climatizadas';
+		}  else if (filter === 'grupoBercario'){
+			crechesLayer.eachLayer(function(marker) {
+				if(marker.feature.properties.grupoB != "true"){
+					map.removeLayer(marker);
+				}
+			});
+		}  else if (filter === 'grupo1'){
+			crechesLayer.eachLayer(function(marker) {
+				if(marker.feature.properties.grupo1 != "true"){
+					map.removeLayer(marker);
+				}
+			});
+		}  else if (filter === 'grupo2'){
+			crechesLayer.eachLayer(function(marker) {
+				if(marker.feature.properties.grupo2 != "true"){
+					map.removeLayer(marker);
+				}
+			});
+		}  else if (filter === 'grupo3'){
+			crechesLayer.eachLayer(function(marker) {
+				if(marker.feature.properties.grupo3 != "true"){
+					map.removeLayer(marker);
+				}
+			});
+		}  else if (filter === 'grupo4'){
+			crechesLayer.eachLayer(function(marker) {
+				if(marker.feature.properties.grupo4 != "true"){
+					map.removeLayer(marker);
+				}
+			});
+		}  else if (filter === 'grupo5'){
+			crechesLayer.eachLayer(function(marker) {
+				if(marker.feature.properties.grupo5 != "true"){
+					map.removeLayer(marker);
+				}
+			});
 		} else {
 			replotMap();
 			removePins();
-			mudaLegenda(filter);
 		}
+		modo = filter;
 		changeMarkersFiltros(filter);
 		mudaLegenda(filter);
 	}
+	modo = filter;
 	
 	if($(window).width() <= 1024){
 		fechaPainelFiltro();
@@ -2650,15 +2708,59 @@ function changeMarkersFiltros(filter){
 			crechesList.push({label: marker.feature.properties.Creche, value: marker.feature.properties.ID});
 			if(marker.feature.properties.Lazer == 0){
 				marker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-red.png',
+					iconUrl: contextPath + '/views/assets/css/img/s-cred.png',
 					iconSize: [15, 38]
 				}));
 			} else if(marker.feature.properties.Lazer == 1) {
 				marker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-yellow.png',
+					iconUrl: contextPath + '/views/assets/css/img/s-cyellow.png',
 					iconSize: [15, 38]
 				}));
 			} else if(marker.feature.properties.Lazer == 2) {
+				marker.setIcon(L.icon({
+					iconUrl: contextPath + '/views/assets/css/img/s-cgreen.png',
+					iconSize: [15, 38]
+				}));
+			}
+			
+			return false;
+		});
+	} else if (filter === 'temperatura'){
+		crechesLayer.eachLayer(function(marker) {
+			crechesList.push({label: marker.feature.properties.Creche, value: marker.feature.properties.ID});
+			if(marker.feature.properties.Temperatura == 0){
+				marker.setIcon(L.icon({
+					iconUrl: contextPath + '/views/assets/css/img/s-cred.png',
+					iconSize: [15, 38]
+				}));
+			} else if(marker.feature.properties.Temperatura == 1) {
+				marker.setIcon(L.icon({
+					iconUrl: contextPath + '/views/assets/css/img/s-cyellow.png',
+					iconSize: [15, 38]
+				}));
+			} else if(marker.feature.properties.Temperatura == 2) {
+				marker.setIcon(L.icon({
+					iconUrl: contextPath + '/views/assets/css/img/s-cgreen.png',
+					iconSize: [15, 38]
+				}));
+			}
+			
+			return false;
+		});
+	} else if (filter === 'iluminacao'){
+		crechesLayer.eachLayer(function(marker) {
+			crechesList.push({label: marker.feature.properties.Creche, value: marker.feature.properties.ID});
+			if(marker.feature.properties.Iluminacao == 0){
+				marker.setIcon(L.icon({
+					iconUrl: contextPath + '/views/assets/css/img/s-cred.png',
+					iconSize: [15, 38]
+				}));
+			} else if(marker.feature.properties.Iluminacao == 1) {
+				marker.setIcon(L.icon({
+					iconUrl: contextPath + '/views/assets/css/img/s-cyellow.png',
+					iconSize: [15, 38]
+				}));
+			} else if(marker.feature.properties.Iluminacao == 2) {
 				marker.setIcon(L.icon({
 					iconUrl: contextPath + '/views/assets/css/img/s-cgreen.png',
 					iconSize: [15, 38]
@@ -2672,12 +2774,12 @@ function changeMarkersFiltros(filter){
 			crechesList.push({label: marker.feature.properties.Climatizada, value: marker.feature.properties.ID});
 			if(marker.feature.properties.Climatizada == 0){
 				marker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-red.png',
+					iconUrl: contextPath + '/views/assets/css/img/s-cred.png',
 					iconSize: [15, 38]
 				}));
 			} else if(marker.feature.properties.Climatizada == 1) {
 				marker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-yellow.png',
+					iconUrl: contextPath + '/views/assets/css/img/s-cyellow.png',
 					iconSize: [15, 38]
 				}));
 			} else if(marker.feature.properties.Climatizada == 2) {
@@ -2694,12 +2796,12 @@ function changeMarkersFiltros(filter){
 			crechesList.push({label: marker.feature.properties.Creche, value: marker.feature.properties.ID});
 			if(marker.feature.properties.Acessibilidade == 0){
 				marker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-red.png',
+					iconUrl: contextPath + '/views/assets/css/img/s-cred.png',
 					iconSize: [15, 38]
 				}));
 			} else if(marker.feature.properties.Acessibilidade == 1) {
 				marker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-yellow.png',
+					iconUrl: contextPath + '/views/assets/css/img/s-cyellow.png',
 					iconSize: [15, 38]
 				}));
 			} else if(marker.feature.properties.Acessibilidade == 2) {
@@ -2721,7 +2823,7 @@ function changeMarkersFiltros(filter){
 				}));
 			} else {
 				marker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-red.png',
+					iconUrl: contextPath + '/views/assets/css/img/s-cred.png',
 					iconSize: [15, 38]
 				}));
 			}
@@ -3138,7 +3240,6 @@ function closeComparativo(){
 function recarregaMapa(){
 	rpaAtual = 0;
 	actualMarker = undefined;
-	modo = 'all';
 	$(".menu-ui a").removeClass('active');
 	replotMap();
 	removeAllRpaLayers();

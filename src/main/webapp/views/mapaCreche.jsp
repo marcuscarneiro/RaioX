@@ -38,7 +38,7 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapCreche.js"></script>
 		
-		<title>Raio-X da Educação Municipal do Recife - Vereador André Régis</title>
+		<title>Raio-X das Creches Municipais do Recife - Vereador André Régis</title>
 		
 		<link rel="icon" type="image/png" href="<%=request.getContextPath()%>/views/assets/css/img/raiox-ico.png" sizes="16x16">
 		
@@ -90,6 +90,12 @@
 							<i class="fa fa-youtube-play fa-2x"></i>
 						</span>
 						<span class="menu-item-titulo">Vídeos</span>
+					</li>
+					<li class="menu-item menu-escola" onclick="abreSiteEscolas()">
+						<span class="menu-item-icone">
+							<i class="fa fa-map-marker fa-2x"></i>
+						</span>
+						<span class="menu-item-titulo">Escolas</span>
 					</li>
 				</ul>
 			</div>
@@ -1326,8 +1332,26 @@
 					<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="lazer">
 					<label for="filtro-4">Itens de lazer nas creches</label>
 	
-					<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="grupos">
+					<input type="checkbox" id="filtro-5" class="filtro-grupos" data-filter="grupos">
 					<label for="filtro-5">Grupos escolares oferecidos</label>
+					
+					<input type="checkbox" id="grupoBercario" class="filtro-item grupos-escolares" data-filter="grupoBercario">
+					<label for="grupoBercario"><strong>Berçário</strong> - Até 1 ano de idade</label>
+					
+					<input type="checkbox" id="grupo1" class="filtro-item grupos-escolares" data-filter="grupo1">
+					<label for="grupo1"><strong>Grupo I</strong> - Até 1 ano e 11 meses</label>
+					
+					<input type="checkbox" id="grupo2" class="filtro-item grupos-escolares" data-filter="grupo2">
+					<label for="grupo2"><strong>Grupo II</strong> - Até 2 anos e 11 meses </label>
+					
+					<input type="checkbox" id="grupo3" class="filtro-item grupos-escolares" data-filter="grupo3">
+					<label for="grupo3"><strong>Grupo III</strong> - Até 3 anos e 11 meses</label>
+					
+					<input type="checkbox" id="grupo4" class="filtro-item grupos-escolares" data-filter="grupo4">
+					<label for="grupo4"><strong>Grupo IV</strong> - Até 4 anos e 11 meses</label>
+					
+					<input type="checkbox" id="grupo5" class="filtro-item grupos-escolares" data-filter="grupo5">
+					<label for="grupo5"><strong>Grupo V</strong> - Até 5 anos e 11 meses</label>
 	
 					<input type="checkbox" id="filtro-6" class="filtro-item" data-filter="saneamento">
 					<label for="filtro-6">Saneamento básico nas creches</label>

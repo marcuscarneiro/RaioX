@@ -201,6 +201,8 @@ public class MapaCrechesController {
     			properties.put("Grupos", getGruposEscolares(vistoria));
     			properties.put("Climatizada", getSalasClimatizadas(vistoria));
     			properties.put("Lazer", getLazer(vistoria));
+    			properties.put("Temperatura", getTemperatura(vistoria));
+    			properties.put("Iluminacao", getIluminacao(vistoria));
     			String bercario = "false";
     			try {
     				bercario = vistoria.getBer1().toString();
@@ -215,6 +217,48 @@ public class MapaCrechesController {
 					saneamento = "false";
 				}
     			properties.put("Saneamento", saneamento);
+    			String grupoB = "false";
+    			try {
+    				grupoB = vistoria.getGer3a().toString();
+				} catch (Exception e) {
+					grupoB = "false";
+				}
+    			properties.put("grupoB", grupoB);
+    			String grupo1 = "false";
+    			try {
+    				grupo1 = vistoria.getGer3b().toString();
+				} catch (Exception e) {
+					grupo1 = "false";
+				}
+    			properties.put("grupo1", grupo1);
+    			String grupo2 = "false";
+    			try {
+    				grupo2 = vistoria.getGer3c().toString();
+				} catch (Exception e) {
+					grupo2 = "false";
+				}
+    			properties.put("grupo2", grupo2);
+    			String grupo3 = "false";
+    			try {
+    				grupo3 = vistoria.getGer3d().toString();
+				} catch (Exception e) {
+					grupo3 = "false";
+				}
+    			properties.put("grupo3", grupo3);
+    			String grupo4 = "false";
+    			try {
+    				grupo4 = vistoria.getGer3e().toString();
+				} catch (Exception e) {
+					grupo4 = "false";
+				}
+    			properties.put("grupo4", grupo4);
+    			String grupo5 = "false";
+    			try {
+    				grupo5 = vistoria.getGer3f().toString();
+				} catch (Exception e) {
+					grupo5 = "false";
+				}
+    			properties.put("grupo5", grupo5);
     			properties.put("CrecrexCMEI", creche.getCrecheCmei());
     			properties.put("notas", notasCreche);
                 feature.put("properties", properties);
@@ -251,6 +295,60 @@ public class MapaCrechesController {
     		return 0;
     	} else if (salasClimatizadas > 0) {
     		if(salasClimatizadas < qtdSalas){
+    			return 1;
+    		} else {
+    			return 2;
+    		}
+		} else {
+			return 0;
+		}
+    }
+    
+    public int getTemperatura(VistoriaCreche vistoriaCreche){
+    	int qtdSalas = 0;
+    	int salasTempCerta = 0;
+    	
+    	try {
+    		qtdSalas = vistoriaCreche.getGer2();
+		} catch (Exception e) {
+		}
+    	
+    	try {
+    		salasTempCerta = vistoriaCreche.getSal2();
+		} catch (Exception e) {
+		}
+    	
+    	if(qtdSalas == 0){
+    		return 0;
+    	} else if (salasTempCerta > 0) {
+    		if(salasTempCerta < qtdSalas){
+    			return 1;
+    		} else {
+    			return 2;
+    		}
+		} else {
+			return 0;
+		}
+    }
+    
+    public int getIluminacao(VistoriaCreche vistoriaCreche){
+    	int qtdSalas = 0;
+    	int salasIlumCerta = 0;
+    	
+    	try {
+    		qtdSalas = vistoriaCreche.getGer2();
+		} catch (Exception e) {
+		}
+    	
+    	try {
+    		salasIlumCerta = vistoriaCreche.getSal3();
+		} catch (Exception e) {
+		}
+    	
+    	if(qtdSalas == 0){
+    		return 0;
+    	} else if (salasIlumCerta > 0) {
+    		if(salasIlumCerta < qtdSalas){
     			return 1;
     		} else {
     			return 2;
@@ -374,13 +472,13 @@ public class MapaCrechesController {
     		if(notasCreche.getGeral() != null){
     			Double nota =notasCreche.getGeral();
     			if(nota <= 2.5){
-    	    		return "nivel1";
+    	    		return "cred";
     	    	} else if(nota < 5.1){
-    				return "nivel2";
+    				return "cyellow";
     	    	} else if(nota < 7.6){
-    				return "nivel3";
+    				return "clight-green";
     			} else {
-    				return "nivel4";
+    				return "cgreen";
     			}
     		} else {
     			return "grey";
