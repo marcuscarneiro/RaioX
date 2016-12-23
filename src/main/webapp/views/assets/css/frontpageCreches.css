@@ -655,7 +655,7 @@ li.box-numeros:hover
 
 
 
-/* CHECKBOXES */
+/* CHECKBOXES FILTROS */
 .filtro-lista
 {
   margin: 10%;
@@ -678,11 +678,6 @@ li.box-numeros:hover
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-}
-
-.filtro-item + label:last-child
-{
-	margin-bottom: 0;
 }
 
 .filtro-item + label:before
@@ -713,8 +708,51 @@ li.box-numeros:hover
 	transform: rotate(45deg);
 }
 
-/* FIM CHECKBOXES */
+.filtro-grupos + label
+{
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 20px;
+	font: 14px/20px 'Open Sans', Arial, sans-serif;
+	cursor: pointer;
+}
 
+.filtro-grupos
+{
+	display: none;
+}
+
+.filtro-grupos + label:before
+{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 17.3px 10px 0 10px;
+	border-color: #6cc1e5 transparent transparent transparent;
+	left: 0;
+	top: 0;
+	opacity: .6;
+	-webkit-transition: all .12s, border-color .08s;
+	transition: all .12s, border-color .08s;
+}
+
+.filtro-grupos:checked + label:before
+{
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+.grupos-escolares + label
+{
+	margin-left: 36px !important;
+	display: none;
+}
+
+/* FIM CHECKBOXES */
 
 
 .leaflet-control

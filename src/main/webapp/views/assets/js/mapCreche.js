@@ -94,12 +94,8 @@ function fechaPainelResultadoCompare() {
 //FILTRO
 $(document).ready(function(){
 	$(".filtro-item").change(function(){
-		if ($(".filtro-item:checked").length == 0) {
-			// resetar mapa
-		}
-
 	    if (this.checked) {
-			$(this).siblings(':checkbox').attr('checked',false);
+			$(this).siblings('.filtro-item').attr('checked',false);
 		}
 	});
 });
@@ -264,6 +260,11 @@ function abreSiteAndre(){
 	window.open('http://www.andreregis.com.br', '_blank');
 };
 
+//ABRE RAIO-X DAS ESCOLAS
+function abreSiteEscolas(){
+	window.open('http://www.raioxdasescolas.com.br/raiox/escolas', '_self');
+};
+
 //TEMPORIZADOR DA ANIMAÇÃO DO LOGO
 setInterval(function(){
 		$("#flip").flip('toggle');
@@ -278,4 +279,3 @@ function ordenaCreches() {
 	})
 	$.each(listaitems, function(idx, itm) { listaComp.append(itm); });
 };
-
