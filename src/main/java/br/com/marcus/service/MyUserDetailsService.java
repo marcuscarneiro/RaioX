@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.marcus.dao.UserDao;
-import br.com.marcus.modelo.UserRole;
+import br.com.marcus.modelo.Role;
 
 @Service("userDetailsService")
 public class MyUserDetailsService implements UserDetailsService {
@@ -32,7 +32,7 @@ public class MyUserDetailsService implements UserDetailsService {
 	
 		br.com.marcus.modelo.User user = userDao.findByUserName(username);
 		List<GrantedAuthority> authorities = 
-                                      buildUserAuthority(user.getUserRole());
+                                      buildUserAuthority(user.getRoles());
 
 		return buildUserForAuthentication(user, authorities);
 		
@@ -46,13 +46,13 @@ public class MyUserDetailsService implements UserDetailsService {
 			user.isEnabled(), true, true, true, authorities);
 	}
 
-	private List<GrantedAuthority> buildUserAuthority(Set<UserRole> userRoles) {
+	private List<GrantedAuthority> buildUserAuthority(Set<Role> userRoles) {
 
 		Set<GrantedAuthority> setAuths = new HashSet<GrantedAuthority>();
 
 		// Build user's authorities
-		for (UserRole userRole : userRoles) {
-			setAuths.add(new SimpleGrantedAuthority(userRole.getRole()));
+		for (Role role : userRoles) {
+			setAuths.add(new SimpleGrantedAuthority(role.getName()));
 		}
 
 		List<GrantedAuthority> Result = new ArrayList<GrantedAuthority>(setAuths);

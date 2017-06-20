@@ -2,6 +2,7 @@ package br.com.marcus.config;
 
 import java.io.File;
 
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -9,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -38,12 +41,19 @@ import br.com.marcus.dao.impl.RpaDaoImpl;
 import br.com.marcus.dao.impl.UserDaoImpl;
 import br.com.marcus.dao.impl.VisitaDaoImpl;
 import br.com.marcus.dao.impl.VistoriaCrecheDaoImpl;
+import br.com.marcus.jdbc.ConnectionFactory;
+import br.com.marcus.service.UserService;
+import br.com.marcus.service.impl.UserServiceImpl;
 
 @EnableWebMvc
 @Configuration
 @ComponentScan("br.com.marcus")
+@EnableJpaRepositories(basePackages="br.com.marcus.repository", entityManagerFactoryRef="emf")
 @EnableTransactionManagement
 public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
+	
+	ConnectionFactory cf = new ConnectionFactory();
+	
 	@Bean(name = "viewResolver")
 	public InternalResourceViewResolver getViewResolver() {
 	    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -51,7 +61,7 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 	    viewResolver.setSuffix(".jsp");
 	    return viewResolver;
 	}
-
+	
 	
 	@Autowired
 	@Bean(name = "sessionFactory")
@@ -74,6 +84,19 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 	            sessionFactory);
 	 
 	    return transactionManager;
+	}
+	
+	@Bean
+	public EntityManager entityManager() {
+	    return entityManagerFactory().getObject().createEntityManager();
+	}
+
+	@Bean
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+	    LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+	    em.setDataSource(cf.getConnection());
+	    em.setPackagesToScan("br.com.marcus.model");
+	    return em;
 	}
 	
 	@Autowired
@@ -123,7 +146,13 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 	public UserDao getUserDao(SessionFactory sessionFactory) {
 		return new UserDaoImpl(sessionFactory);
 	}
-
+	
+	@Autowired
+	@Bean(name = "userService")
+	public UserService getUserService(SessionFactory sessionFactory) {
+		return new UserServiceImpl();
+	}
+	
 	@Autowired
 	@Bean(name = "crecheDao")
 	public CrecheDao getCrecheDao(SessionFactory sessionFactory) {

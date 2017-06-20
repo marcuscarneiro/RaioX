@@ -21,7 +21,12 @@ http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
 	</bean>
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="/WEB-INF/messages" />
+		<property name="basenames">
+            <list>
+                <value>classpath:validation</value>
+            </list>
+        </property>
+		
 	</bean>
 	<mvc:annotation-driven />
 	

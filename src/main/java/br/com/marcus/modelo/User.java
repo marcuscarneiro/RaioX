@@ -1,19 +1,20 @@
 package br.com.marcus.modelo;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
-@Table(name = "users", catalog = "test")
+@Table(name = "users")
 public class User {
 
 	@Id
@@ -26,11 +27,15 @@ public class User {
 	@Column(name = "password", nullable = false, length = 60)
 	private String password;
 	
+	@Column(name = "passwordconfirm")
+	private String passwordConfirm;
+	
 	@Column(name = "enabled", nullable = false)
 	private boolean enabled;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	private Set<UserRole> userRole = new HashSet<UserRole>(0);
+	@ManyToMany
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles;
 
 	public User() {
 	}
@@ -42,11 +47,11 @@ public class User {
 	}
 
 	public User(String username, String password, 
-		boolean enabled, Set<UserRole> userRole) {
+		boolean enabled, Set<Role> roles) {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
-		this.userRole = userRole;
+		this.roles = roles;
 	}
 	
 	public Long getId() {
@@ -72,6 +77,15 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	@Transient
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
 
 	public boolean isEnabled() {
 		return this.enabled;
@@ -81,12 +95,12 @@ public class User {
 		this.enabled = enabled;
 	}
 
-	public Set<UserRole> getUserRole() {
-		return this.userRole;
+	public Set<Role> getRoles() {
+		return roles;
 	}
 
-	public void setUserRole(Set<UserRole> userRole) {
-		this.userRole = userRole;
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 
 }
