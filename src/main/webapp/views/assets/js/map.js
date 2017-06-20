@@ -30,6 +30,9 @@ function abrePainel(nomePainel) {
 			$(".painel-"+nomePainel).animate({width: "100%"},350);
 			$(".painel-"+nomePainel).addClass("isActive");
 		} if(nomePainel == 'pesquisa' || nomePainel == 'filtro') {
+			if(nomePainel == 'pesquisa'){
+				$("#pesquisaEscola").focus();
+			}
 			if($(window).width() <= 1024){
 				$(".painel-"+nomePainel).animate({width: "100%"},350);
 				$(".painel-"+nomePainel).addClass("isActive");
@@ -97,6 +100,14 @@ $(document).ready(function(){
 
 	    if (this.checked) {
 			$(this).siblings(':checkbox').attr('checked',false);
+		}
+	});
+	
+	$('#pesquisaEscola').on('keyup keypress', function(e) {
+		var keyCode = e.keyCode || e.which;
+		if (keyCode === 13) { 
+			e.preventDefault();
+			return false;
 		}
 	});
 });
@@ -282,4 +293,3 @@ function ordenaEscolas() {
 	})
 	$.each(listaitems, function(idx, itm) { listaComp.append(itm); });
 };
-

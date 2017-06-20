@@ -931,9 +931,9 @@ function processaVisitas(data){
 	var indice = 1;
 	while(indice <= qtd){
 		if(qtd === indice){
-			$(".fiscalizacao-datas").append("<li class='vistoria-" + indice + " data-active' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
+			$(".fiscalizacao-datas ul").append("<li class='vistoria-" + indice + " data-active' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
 		} else {
-			$(".fiscalizacao-datas").append("<li class='vistoria-" + indice + "' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
+			$(".fiscalizacao-datas ul").append("<li class='vistoria-" + indice + "' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
 		}
 		indice++;
 	}
