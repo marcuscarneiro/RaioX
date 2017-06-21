@@ -323,6 +323,7 @@ public class MapaEscolasController {
                 properties.put("IDEB", escola.getIdeb());
                 properties.put("RPA", escola.getRpa());
                 properties.put("Nova", escola.getNova());
+                properties.put("Requerimentos", escola.getRequerimentos());
                 DadosIdeb dadosIdeb = null;
                 for(DadosIdeb di : listDadosIdeb){
                 	if(escola.getId().intValue() == di.getEscola().getId().intValue()){

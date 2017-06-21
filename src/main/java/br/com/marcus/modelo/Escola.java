@@ -47,6 +47,9 @@ public class Escola {
 	private String telefone2;
 	
 	@Column
+	private String requerimentos;
+	
+	@Column
 	private Double ideb;
 	
 	@Column
@@ -163,6 +166,14 @@ public class Escola {
 
 	public void setTelefone2(String telefone2) {
 		this.telefone2 = telefone2;
+	}
+
+	public String getRequerimentos() {
+		return requerimentos;
+	}
+
+	public void setRequerimentos(String requerimentos) {
+		this.requerimentos = requerimentos;
 	}
 
 	public Double getIdeb() {

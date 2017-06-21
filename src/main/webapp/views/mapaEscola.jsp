@@ -915,6 +915,10 @@
 							<span class="btn-relatorio">RELATÓRIO COMPLETO</span>
 							<a target="_blank" href="#" class="btn-relatorio">RELATÓRIO COMPLETO</a>
 						</div>
+						<div class="fiscalicazaoRequerimento">
+							<span class="btn-relatorio">REQUERIMENTOS</span>
+							<a target="_blank" href="#" class="btn-requerimento">REQUERIMENTOS</a>
+						</div>
 					</div>
 				</div>
 				

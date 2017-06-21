@@ -845,10 +845,8 @@ function showEscola(esc, id){
 	$(".foto-fachada img").attr("src",fotoFachada);
 	if(id != null){
 		
-//		$(".ideb").show();
 		$(".fiscalizacao").show();
 		$(".comentarios").show();
-//		resetDisqus(id.toString(), 'http://localhost:8080/EquipeAR/' + id + '/', esc);
 		consultaDadosIdeb(id);
 		consultaProvaBrasil(id);
 		$(".fiscalizacao-datas li").remove();
@@ -868,6 +866,9 @@ function consultaDadosIdeb(id){
 		contentType: 'application/json',
 		async: false,
 		success: function(data) {
+			if(data.escola.requerimentos != null){
+				$(".fiscalicazaoRequerimento a").attr('href', contextPath + data.escola.requerimentos);
+			}
 			if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null){
 				updateIdeb(data);
 			} else {

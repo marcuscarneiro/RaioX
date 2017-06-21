@@ -65,6 +65,17 @@ body {
 						<!-- Text input-->
 						<div class="form-group">
 							<label class="col-sm-3 control-label"
+								for="requerimentos"><strong>Link dos requerimentos</strong></label>
+							<div class="col-sm-4">
+								<form:input id="requerimentos"
+									name="requerimentos" type="text" path="requerimentos"
+									class="form-control"/>
+							</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label"
 								for="rpa"><strong>RPA</strong></label>
 							<div class="col-sm-4">
 								<form:input id="rpa"
