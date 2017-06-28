@@ -916,7 +916,6 @@
 							<a target="_blank" href="#" class="btn-relatorio">RELATÓRIO COMPLETO</a>
 						</div>
 						<div class="fiscalicazaoRequerimento">
-							<span class="btn-relatorio">REQUERIMENTOS</span>
 							<a target="_blank" href="#" class="btn-requerimento">REQUERIMENTOS</a>
 						</div>
 					</div>
@@ -1148,6 +1147,12 @@
 				<div class="filtro-lista">
 					<input type="checkbox" id="filtro-1" class="filtro-item" data-filter="meta">
 					<label for="filtro-1">Atingiram a meta do IDEB</label>
+					
+					<input type="checkbox" id="filtro-13" class="filtro-item" data-filter="recentes">
+					<label for="filtro-13">Escolas visitadas recentemente</label>
+					
+					<input type="checkbox" id="filtro-14" class="filtro-item" data-filter="evolucao">
+					<label for="filtro-14">Escolas com evolução sempre crescente da nota do IDEB</label>
 	
 					<input type="checkbox" id="filtro-2" class="filtro-item" data-filter="quadras">
 					<label for="filtro-2">Possuem quadra poliesportiva</label>

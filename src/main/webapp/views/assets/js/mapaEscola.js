@@ -867,7 +867,11 @@ function consultaDadosIdeb(id){
 		async: false,
 		success: function(data) {
 			if(data.escola.requerimentos != null){
-				$(".fiscalicazaoRequerimento a").attr('href', contextPath + data.escola.requerimentos);
+				$(".fiscalicazaoRequerimento a").attr('href', data.escola.requerimentos);
+				$(".fiscalicazaoRequerimento").css('display', 'block');
+				$(".fiscalicazaoRequerimento a").css('display', 'inline-block');
+			} else {
+				$(".fiscalicazaoRequerimento").css('display', 'none');
 			}
 			if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null){
 				updateIdeb(data);
@@ -1948,6 +1952,41 @@ $('.filtro-item').on('click', function(){
 		escolasListCompare = [];
 		modo = 'novas';
 		changeMarkers();
+		mudaLegenda(filter);
+	} else if (filter === 'evolucao'){
+		map.removeLayer(escolasLayer);
+		escolasLayer = L.mapbox.featureLayer().addTo(map);
+		escolasLayer.setGeoJSON(escolasData);
+		escolasLayer.eachLayer(function(marker) {
+			if(marker.feature.properties.Evolucao == "true"){
+			} else {
+				map.removeLayer(marker);
+			}
+		});
+		removePins();
+		escolasList = [];
+		escolasListCompare = [];
+		modo = 'evolucao';
+		changeMarkers();
+		mudaLegenda(filter);
+	} else if (filter === 'recentes'){
+		map.removeLayer(escolasLayer);
+		escolasLayer = L.mapbox.featureLayer().addTo(map);
+		$.ajax({
+			url: 'consultaRecentes',
+			type: "GET",
+			dataType: 'json',
+			success: function(data) {
+				escolasLayer.setGeoJSON(data);
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'ideb';
+				changeMarkers();
+			},
+			error: function(xhr, ajaxOptions, thrownError){
+			}
+		});
 		mudaLegenda(filter);
 	} else if (filter === 'melhorIdeb5'){
 		map.removeLayer(escolasLayer);
@@ -3040,30 +3079,12 @@ function compareVisita(comp1, comp2, escNome1, escNome2){
 	        alert(thrownError);
 		}
 	});
-	//compareFotoVisita(comp1, comp2);
 }
 
 var logo = $('.logo');
 var img = $('.logo img');
 var spans = $('.logo span');
 var scrlld = false;
-
-//$(window).scroll(function () {
-//    
-//    if ($(window).scrollTop() > 30 && !scrlld) {
-//    	img.hide();
-//        logo.css('height', '55px');
-//        logo.css('padding-top', '5px');
-//        scrlld = true;
-//    }
-//
-//   if ($(window).scrollTop() < 30 && scrlld && modo === 'all') {
-//	   	logo.css('height', '105px');
-//	   	logo.css('padding-top', '0px')
-//	   	img.show();
-//	   	scrlld = false;      
-//    }
-//});
 
 function closeComparativo(){
 	escondeDados();
@@ -3194,3 +3215,17 @@ function compareFotosVisita(visId, ordem){
 
 //$(document).ready(updateSize);    // When the page first loads
 //$(window).resize(updateSize);     // When the browser changes size
+
+function compare(a,b) {
+	if (a.feature.properties.DataVisita < b.feature.properties.DataVisita)
+		return -1;
+	if (a.feature.properties.DataVisita > b.feature.properties.DataVisita)
+		return 1;
+	return 0;
+}
+
+function limitTen(escolas){
+	$.escolas(a, function(i, escola){
+		
+	});
+}

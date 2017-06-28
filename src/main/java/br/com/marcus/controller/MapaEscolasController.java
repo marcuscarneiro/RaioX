@@ -19,11 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-
 import br.com.marcus.dao.DadosIdebDao;
 import br.com.marcus.dao.EscolaDao;
 import br.com.marcus.dao.FotoVisitaDao;
@@ -34,6 +29,11 @@ import br.com.marcus.modelo.Escola;
 import br.com.marcus.modelo.FotoVisita;
 import br.com.marcus.modelo.ProvaBrasil;
 import br.com.marcus.modelo.Visita;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 @Controller
 public class MapaEscolasController {
@@ -59,6 +59,17 @@ public class MapaEscolasController {
         sdf.setLenient(true);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
     }
+	
+	@RequestMapping(value="/consultaRecentes", method=RequestMethod.GET, produces={"application/json; charset=UTF-8"})
+	public @ResponseBody()
+	String consultaRecentes(){
+		List<Escola> escList = new ArrayList<>();
+		List<Visita> visitasList = visitaDao.list();
+		for (int i = 0; i < 10; i++) {
+			escList.add((visitasList.get(i)).getEscola());
+		}
+		return getEscolasGeoJSON(escList).toString();
+	}
 	
 	@RequestMapping(value="/carregaEscolas", method=RequestMethod.GET, produces={"application/json; charset=UTF-8"})
 	public @ResponseBody()
@@ -323,13 +334,13 @@ public class MapaEscolasController {
                 properties.put("IDEB", escola.getIdeb());
                 properties.put("RPA", escola.getRpa());
                 properties.put("Nova", escola.getNova());
-                properties.put("Requerimentos", escola.getRequerimentos());
                 DadosIdeb dadosIdeb = null;
                 for(DadosIdeb di : listDadosIdeb){
                 	if(escola.getId().intValue() == di.getEscola().getId().intValue()){
                 		dadosIdeb = di;
                 	}
                 }
+                properties.put("Evolucao", getEvolucaoLinear(dadosIdeb));
                 properties.put("COR", getMarkerColor(dadosIdeb));
                 properties.put("ATINGIUMETA", getMetaAtingida(dadosIdeb));
                 properties.put("Foto", escola.getFotoCapa());
@@ -337,10 +348,15 @@ public class MapaEscolasController {
                 	if(escola.getId().intValue() == visita.getEscola().getId().intValue()){
                 		String situacao = "";
                 		try {
+                			properties.put("DataVisita", visita.getData());
+                		} catch (Exception e) {
+                		}
+                		
+                		try {
                     		situacao = visita.getRl3();
                 		} catch (Exception e) {
-
                 		}
+                		
                 		if(situacao.equals("")){
                 			properties.put("POSSUIQUADRA", "null");
                 			break;
@@ -739,6 +755,193 @@ public class MapaEscolasController {
     		}
     	} else {
     		return false;
+    	}
+    }
+    
+    public String getEvolucaoLinear(DadosIdeb dadosIdeb){
+//    	if(dadosIdeb.getEscola().getId() == 185){
+//    		System.out.println("ok");
+//    	}
+    	Double ideb2007Ini, ideb2009Ini, ideb2011Ini, ideb2013Ini, ideb2015Ini;
+    	Double ideb2007Fin, ideb2009Fin, ideb2011Fin, ideb2013Fin, ideb2015Fin;
+    	Boolean idebIni = null, idebFin = null;
+    	try {
+    		ideb2007Ini = dadosIdeb.getDid_ideb_2007_ini();
+		} catch (Exception e) {
+			ideb2007Ini = null;
+		}
+    	try {
+    		ideb2009Ini = dadosIdeb.getDid_ideb_2009_ini();
+		} catch (Exception e) {
+			ideb2009Ini = null;
+		}
+    	try {
+    		ideb2011Ini = dadosIdeb.getDid_ideb_2011_ini();
+		} catch (Exception e) {
+			ideb2011Ini = null;
+		}
+    	try {
+    		ideb2013Ini = dadosIdeb.getDid_ideb_2013_ini();
+		} catch (Exception e) {
+			ideb2013Ini = null;
+		}
+    	try {
+    		ideb2015Ini = dadosIdeb.getDid_ideb_2015_ini();
+		} catch (Exception e) {
+			ideb2015Ini = null;
+		}
+    	
+
+    	try {
+    		ideb2007Fin = dadosIdeb.getDid_ideb_2007_fin();
+		} catch (Exception e) {
+			ideb2007Fin = null;
+		}
+    	try {
+    		ideb2009Fin = dadosIdeb.getDid_ideb_2009_fin();
+		} catch (Exception e) {
+			ideb2009Fin = null;
+		}
+    	try {
+    		ideb2011Fin = dadosIdeb.getDid_ideb_2011_fin();
+		} catch (Exception e) {
+			ideb2011Fin = null;
+		}
+    	try {
+    		ideb2013Fin = dadosIdeb.getDid_ideb_2013_fin();
+		} catch (Exception e) {
+			ideb2013Fin = null;
+		}
+    	try {
+    		ideb2015Fin = dadosIdeb.getDid_ideb_2015_fin();
+		} catch (Exception e) {
+			ideb2015Fin = null;
+		}
+    	
+		if(ideb2015Ini != null && ideb2013Ini != null){
+			if(ideb2015Ini >= ideb2013Ini){
+				idebIni = true;
+				if(ideb2013Ini != null && ideb2011Ini != null){
+					if(ideb2013Ini >= ideb2011Ini){
+						idebIni = true;
+						if(ideb2011Ini != null && ideb2009Ini != null){
+							if(ideb2011Ini >= ideb2009Ini){
+								idebIni = true;
+								if(ideb2009Ini != null && ideb2007Ini != null){
+									if(ideb2009Ini >= ideb2007Ini){
+										idebIni = true;
+									} else {
+										idebIni = false;
+									}
+								}
+							} else {
+								idebIni = false;
+							}
+						}
+			    	} else {
+						idebIni = false;
+					}
+				}
+			} else {
+				idebIni = false;
+			}
+		} else {
+			if(ideb2013Ini != null && ideb2011Ini != null){
+				if(ideb2013Ini >= ideb2011Ini){
+					idebIni = true;
+					if(ideb2011Ini != null && ideb2009Ini != null){
+						if(ideb2011Ini >= ideb2009Ini){
+							idebIni = true;
+							if(ideb2009Ini != null && ideb2007Ini != null){
+								if(ideb2009Ini >= ideb2007Ini){
+									idebIni = true;
+								} else {
+									idebIni = false;
+								}
+							}
+						} else {
+							idebIni = false;
+						}
+					}
+		    	} else {
+					idebIni = false;
+				}
+			} else {
+				idebIni = false;
+			}
+		}
+    	
+		if(ideb2015Fin != null && ideb2013Fin != null){
+			if(ideb2015Fin >= ideb2013Fin){
+				idebFin = true;
+				if(ideb2013Fin != null && ideb2011Fin != null){
+					if(ideb2013Fin >= ideb2011Fin){
+						idebFin = true;
+						if(ideb2011Fin != null && ideb2009Fin != null){
+							if(ideb2011Fin >= ideb2009Fin){
+								idebFin = true;
+								if(ideb2009Fin != null && ideb2007Fin != null){
+									if(ideb2009Fin >= ideb2007Fin){
+										idebFin = true;
+									} else {
+										idebFin = false;
+									}
+								}
+							} else {
+								idebFin = false;
+							}
+						}
+			    	} else {
+						idebFin = false;
+					}
+				}
+			} else {
+				idebFin = false;
+			}
+		} else {
+			if(ideb2013Fin != null && ideb2011Fin != null){
+				if(ideb2013Fin >= ideb2011Fin){
+					idebFin = true;
+					if(ideb2011Fin != null && ideb2009Fin != null){
+						if(ideb2011Fin >= ideb2009Fin){
+							idebFin = true;
+							if(ideb2009Fin != null && ideb2007Fin != null){
+								if(ideb2009Fin >= ideb2007Fin){
+									idebFin = true;
+								} else {
+									idebFin = false;
+								}
+							}
+						} else {
+							idebFin = false;
+						}
+					}
+		    	} else {
+					idebFin = false;
+				}
+			}
+		}
+    	
+    	if(idebIni != null && idebFin != null){
+    		if(idebIni && idebFin){
+    			return "true";
+    		} else {
+    			return "false";
+    		}
+    	} else if(idebIni != null) {
+    		if(idebIni){
+    			return "true";
+    		} else {
+    			return "false";
+    		}
+    	} else if(idebFin != null) {
+    		if(idebFin){
+    			return "true";
+    		} else {
+    			return "false";
+    		}
+    	} else {
+    		return "false";
     	}
     }
     

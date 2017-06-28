@@ -7,7 +7,7 @@ import br.com.marcus.modelo.Visita;
 
 public interface VisitaDao {
 	public List<Visita> list();
-
+	
 	public Visita get(Long id);
 
 	public void saveOrUpdate(Visita visita);
@@ -17,4 +17,5 @@ public interface VisitaDao {
 	public List<Visita> getByEscola(Escola escola);
 	
 	public Visita getUltimaByEscola(Long id);
+	
 }

@@ -47,6 +47,7 @@ function abrePainel(nomePainel) {
 function fechaPainelFiltro() {
 	$(".painel-filtro").animate({width: "-1px"},350);
 	$(".painel-filtro").removeClass("isActive");
+	$(".filtro-lista input").removeClass("active");
 	if($(window).width() > 1024){
 		$(".filtro-item").prop('checked', false);
 		replotMap();

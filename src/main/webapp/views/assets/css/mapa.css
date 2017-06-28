@@ -1042,7 +1042,7 @@ input.pesquisa-input
 	padding: 15px 30px;	
 }
 
-.fiscalicazaoRelatorio
+.fiscalicazaoRelatorio, .fiscalicazaoRequerimento
 {
 	text-align: center;
     font: inherit;
@@ -1060,7 +1060,7 @@ input.pesquisa-input
 	cursor: pointer;
 }
 
-.btn-relatorio
+.btn-relatorio, .btn-requerimento
 {
 	display: inline-block;
     transition: all .5s ease-in-out;
@@ -1069,14 +1069,14 @@ input.pesquisa-input
     min-height: 60px;
     font-size: 16px;
 	padding: 18px 40px;
-	width: auto;
+	width: 300px;
 	letter-spacing: 1px;
     /* border-radius: 100px; */
-    margin: 40px;
+    margin: 20px;
     font-weight: 600;
 }
 
-.btn-relatorio:HOVER, .btn-relatorio:FOCUS
+.btn-relatorio:HOVER, .btn-relatorio:FOCUS, .btn-requerimento:HOVER, .btn-requerimento:FOCUS
 {
 	background: #565656;
 	text-decoration: none;

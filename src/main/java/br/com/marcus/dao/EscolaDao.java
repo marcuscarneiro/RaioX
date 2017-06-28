@@ -14,5 +14,5 @@ public interface EscolaDao {
     public void delete(Long id);
     
     public List<Escola> getEscolasComparativo(Long id1, Long id2);
-
+    
 }
