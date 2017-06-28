@@ -712,25 +712,41 @@ public class MapaEscolasController {
     public boolean getMetaAtingida(DadosIdeb dadosIdeb){
     	Double idebIni, idebFin, metaIni, metaFin;
     	try {
-    		idebIni = dadosIdeb.getDid_ideb_2013_ini();
+    		if(dadosIdeb.getDid_ideb_2015_ini() != null){
+    			idebIni = dadosIdeb.getDid_ideb_2015_ini();
+    		} else {
+    			idebIni = dadosIdeb.getDid_ideb_2013_ini();
+    		}
 		} catch (Exception e) {
 			idebIni = null;
 		}
     	
     	try {
-    		idebFin = dadosIdeb.getDid_ideb_2013_fin();
+    		if(dadosIdeb.getDid_ideb_2015_fin() != null){
+    			idebFin = dadosIdeb.getDid_ideb_2015_fin();
+    		} else {
+    			idebFin = dadosIdeb.getDid_ideb_2013_fin();
+    		}
 		} catch (Exception e) {
 			idebFin = null;
 		}
     	
     	try {
-    		metaIni = dadosIdeb.getDid_meta_2013_ini();
+    		if(dadosIdeb.getDid_ideb_2015_ini() != null){
+    			metaIni = dadosIdeb.getDid_meta_2015_ini();
+    		} else {
+    			metaIni = dadosIdeb.getDid_meta_2013_ini();
+    		}
     	} catch (Exception e) {
     		metaIni = null;
 		}
     	
     	try {
-        	metaFin = dadosIdeb.getDid_meta_2013_fin();
+    		if(dadosIdeb.getDid_ideb_2015_fin() != null){
+    			metaFin = dadosIdeb.getDid_meta_2015_fin();
+    		} else {
+    			metaFin = dadosIdeb.getDid_meta_2013_fin();
+    		}
 		} catch (Exception e) {
 			metaFin = null;
 		}
@@ -759,12 +775,17 @@ public class MapaEscolasController {
     }
     
     public String getEvolucaoLinear(DadosIdeb dadosIdeb){
-//    	if(dadosIdeb.getEscola().getId() == 185){
-//    		System.out.println("ok");
-//    	}
+    	
     	Double ideb2007Ini, ideb2009Ini, ideb2011Ini, ideb2013Ini, ideb2015Ini;
     	Double ideb2007Fin, ideb2009Fin, ideb2011Fin, ideb2013Fin, ideb2015Fin;
-    	Boolean idebIni = null, idebFin = null;
+    	Double meta2007Ini, meta2009Ini, meta2011Ini, meta2013Ini, meta2015Ini;
+    	Double meta2007Fin, meta2009Fin, meta2011Fin, meta2013Fin, meta2015Fin;
+    	Boolean idebIni = null, idebFin = null, metaIni = null, metaFin = null, idebFinal = null, metaFinal = null;
+    	
+    	//IDEBS
+    	
+    	//INICIAIS
+    	
     	try {
     		ideb2007Ini = dadosIdeb.getDid_ideb_2007_ini();
 		} catch (Exception e) {
@@ -791,6 +812,7 @@ public class MapaEscolasController {
 			ideb2015Ini = null;
 		}
     	
+    	//FINAIS
 
     	try {
     		ideb2007Fin = dadosIdeb.getDid_ideb_2007_fin();
@@ -818,17 +840,77 @@ public class MapaEscolasController {
 			ideb2015Fin = null;
 		}
     	
+    	//METAS
+    	
+    	//INICIAIS
+    	
+    	try {
+    		meta2007Ini = dadosIdeb.getDid_meta_2007_ini();
+		} catch (Exception e) {
+			meta2007Ini = null;
+		}
+    	try {
+    		meta2009Ini = dadosIdeb.getDid_meta_2009_ini();
+		} catch (Exception e) {
+			meta2009Ini = null;
+		}
+    	try {
+    		meta2011Ini = dadosIdeb.getDid_meta_2011_ini();
+		} catch (Exception e) {
+			meta2011Ini = null;
+		}
+    	try {
+    		meta2013Ini = dadosIdeb.getDid_meta_2013_ini();
+		} catch (Exception e) {
+			meta2013Ini = null;
+		}
+    	try {
+    		meta2015Ini = dadosIdeb.getDid_meta_2015_ini();
+		} catch (Exception e) {
+			meta2015Ini = null;
+		}
+    	
+    	//FINAIS
+
+    	try {
+    		meta2007Fin = dadosIdeb.getDid_meta_2007_fin();
+		} catch (Exception e) {
+			meta2007Fin = null;
+		}
+    	try {
+    		meta2009Fin = dadosIdeb.getDid_meta_2009_fin();
+		} catch (Exception e) {
+			meta2009Fin = null;
+		}
+    	try {
+    		meta2011Fin = dadosIdeb.getDid_meta_2011_fin();
+		} catch (Exception e) {
+			meta2011Fin = null;
+		}
+    	try {
+    		meta2013Fin = dadosIdeb.getDid_meta_2013_fin();
+		} catch (Exception e) {
+			meta2013Fin = null;
+		}
+    	try {
+    		meta2015Fin = dadosIdeb.getDid_meta_2015_fin();
+		} catch (Exception e) {
+			meta2015Fin = null;
+		}
+    	
+    	//TESTES CRESCIMENTO
+    	
 		if(ideb2015Ini != null && ideb2013Ini != null){
-			if(ideb2015Ini >= ideb2013Ini){
+			if(ideb2015Ini > ideb2013Ini){
 				idebIni = true;
 				if(ideb2013Ini != null && ideb2011Ini != null){
-					if(ideb2013Ini >= ideb2011Ini){
+					if(ideb2013Ini > ideb2011Ini){
 						idebIni = true;
 						if(ideb2011Ini != null && ideb2009Ini != null){
-							if(ideb2011Ini >= ideb2009Ini){
+							if(ideb2011Ini > ideb2009Ini){
 								idebIni = true;
 								if(ideb2009Ini != null && ideb2007Ini != null){
-									if(ideb2009Ini >= ideb2007Ini){
+									if(ideb2009Ini > ideb2007Ini){
 										idebIni = true;
 									} else {
 										idebIni = false;
@@ -847,13 +929,13 @@ public class MapaEscolasController {
 			}
 		} else {
 			if(ideb2013Ini != null && ideb2011Ini != null){
-				if(ideb2013Ini >= ideb2011Ini){
+				if(ideb2013Ini > ideb2011Ini){
 					idebIni = true;
 					if(ideb2011Ini != null && ideb2009Ini != null){
-						if(ideb2011Ini >= ideb2009Ini){
+						if(ideb2011Ini > ideb2009Ini){
 							idebIni = true;
 							if(ideb2009Ini != null && ideb2007Ini != null){
-								if(ideb2009Ini >= ideb2007Ini){
+								if(ideb2009Ini > ideb2007Ini){
 									idebIni = true;
 								} else {
 									idebIni = false;
@@ -872,16 +954,16 @@ public class MapaEscolasController {
 		}
     	
 		if(ideb2015Fin != null && ideb2013Fin != null){
-			if(ideb2015Fin >= ideb2013Fin){
+			if(ideb2015Fin > ideb2013Fin){
 				idebFin = true;
 				if(ideb2013Fin != null && ideb2011Fin != null){
-					if(ideb2013Fin >= ideb2011Fin){
+					if(ideb2013Fin > ideb2011Fin){
 						idebFin = true;
 						if(ideb2011Fin != null && ideb2009Fin != null){
-							if(ideb2011Fin >= ideb2009Fin){
+							if(ideb2011Fin > ideb2009Fin){
 								idebFin = true;
 								if(ideb2009Fin != null && ideb2007Fin != null){
-									if(ideb2009Fin >= ideb2007Fin){
+									if(ideb2009Fin > ideb2007Fin){
 										idebFin = true;
 									} else {
 										idebFin = false;
@@ -900,13 +982,13 @@ public class MapaEscolasController {
 			}
 		} else {
 			if(ideb2013Fin != null && ideb2011Fin != null){
-				if(ideb2013Fin >= ideb2011Fin){
+				if(ideb2013Fin > ideb2011Fin){
 					idebFin = true;
 					if(ideb2011Fin != null && ideb2009Fin != null){
-						if(ideb2011Fin >= ideb2009Fin){
+						if(ideb2011Fin > ideb2009Fin){
 							idebFin = true;
 							if(ideb2009Fin != null && ideb2007Fin != null){
-								if(ideb2009Fin >= ideb2007Fin){
+								if(ideb2009Fin > ideb2007Fin){
 									idebFin = true;
 								} else {
 									idebFin = false;
@@ -922,24 +1004,147 @@ public class MapaEscolasController {
 			}
 		}
     	
+		//TESTES METAS
+//		Double ideb2007Ini, ideb2009Ini, ideb2011Ini, ideb2013Ini, ideb2015Ini;
+//    	Double ideb2007Fin, ideb2009Fin, ideb2011Fin, ideb2013Fin, ideb2015Fin;
+//    	Double meta2007Ini, meta2009Ini, meta2011Ini, meta2013Ini, meta2015Ini;
+//    	Double meta2007Fin, meta2009Fin, meta2011Fin, meta2013Fin, meta2015Fin;
+//    	Boolean idebIni = null, idebFin = null, metaIni = null, metaFin = null;
+		
+		//INICIAIS
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@"+ dadosIdeb.getEscola().getNome() +"@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		
+		if(dadosIdeb.getEscola().getId() == 262){
+			System.out.println("aqui");
+		}
+		if(ideb2007Ini != null){
+			if(ideb2007Ini >= meta2007Ini){
+				metaIni = true;
+			} else {
+				metaIni = false;
+			}
+		}
+		if(ideb2009Ini != null){
+			if(ideb2009Ini >= meta2009Ini){
+				metaIni = true;
+			} else {
+				metaIni = false;
+			}
+		}
+		if(ideb2011Ini != null){
+			if(ideb2011Ini >= meta2011Ini){
+				metaIni = true;
+			} else {
+				metaIni = false;
+			}
+		}
+		if(ideb2013Ini != null){
+			if(ideb2013Ini >= meta2013Ini){
+				metaIni = true;
+			} else {
+				metaIni = false;
+			}
+		}
+		if(ideb2015Ini != null){
+			if(ideb2015Ini >= meta2015Ini){
+				metaIni = true;
+			} else {
+				metaIni = false;
+			}
+		}
+		
+		//FINAIS
+		
+		if(ideb2007Fin != null){
+			if(ideb2007Fin >= meta2007Fin){
+				metaFin = true;
+			} else {
+				metaFin = false;
+			}
+		}
+		if(ideb2009Fin != null){
+			if(ideb2009Fin >= meta2009Fin){
+				metaFin = true;
+			} else {
+				metaFin = false;
+			}
+		}
+		if(ideb2011Fin != null){
+			if(ideb2011Fin >= meta2011Fin){
+				metaFin = true;
+			} else {
+				metaFin = false;
+			}
+		}
+		if(ideb2013Fin != null){
+			if(ideb2013Fin >= meta2013Fin){
+				metaFin = true;
+			} else {
+				metaFin = false;
+			}
+		}
+		if(ideb2015Fin != null){
+			if(ideb2015Fin >= meta2015Fin){
+				metaFin = true;
+			} else {
+				metaFin = false;
+			}
+		}
+		
+		//TESTE FINAIS
+		
+		if(metaIni != null && metaFin != null){
+			if(metaIni == true && metaFin == true){
+				metaFinal = true;
+			} else {
+				metaFinal = false;
+			}
+		} else if(metaIni != null){
+			if(metaIni == true){
+				metaFinal = true;
+			} else {
+				metaFinal = false;
+			}
+		} else if(metaFin != null){
+			if(metaFin == true){
+				metaFinal = true;
+			} else {
+				metaFinal = false;
+			}
+		} else {
+			metaFinal = false;
+		}
+		
     	if(idebIni != null && idebFin != null){
     		if(idebIni && idebFin){
-    			return "true";
+    			idebFinal = true;
     		} else {
-    			return "false";
+    			idebFinal = false;
     		}
     	} else if(idebIni != null) {
     		if(idebIni){
-    			return "true";
+    			idebFinal = true;
     		} else {
-    			return "false";
+    			idebFinal = false;
     		}
     	} else if(idebFin != null) {
     		if(idebFin){
-    			return "true";
+    			idebFinal = true;
     		} else {
-    			return "false";
+    			idebFinal = false;
     		}
+    	} else {
+    		idebFinal = false;
+    	}
+    	
+    	if(metaFinal == true && idebFinal == true){
+    		return "true";
     	} else {
     		return "false";
     	}
