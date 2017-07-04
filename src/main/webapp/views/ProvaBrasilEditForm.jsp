@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/general-style.css" />
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/bootstrap-dialog.min.css" />
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/proficiencia.css" />
 
 	<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
 	<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
 					<fieldset>
 
 						<!-- Form Name -->
-						<h1>Prova Brasil - 2013</h1>
+						<h1>Prova Brasil</h1>
 
 						<hr>
 
@@ -61,55 +62,268 @@
 							</div>
 						</div>
 						
-						<div class="iniciais col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<h2>Fundamental I (Anos iniciais)</h2>
+						<hr>
 						
-							<div class="pb-iniciais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="proficiencia-ano">
+							<h2>Proficiência - 2013</h2>
 							
-								<!-- Text input-->
-								<div class="form-group">
-									<label class="col-sm-12 control-label" for="porc_2013_lp_5"><strong>Porcentagem Português</strong></label>
-									<div class="col-sm-12">
-										<form:input id="porc_2013_lp_5" name="porc_2013_lp_5" type="text" class="form-control" path="porc_2013_lp_5" />
-									</div>
-								</div>
-		
+							<div class="iniciais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental I (Anos iniciais)</h2>
+							
+								<div class="pb-iniciais col-xs-12 col-sm-12 col-md-12 col-lg-12">
 								
-								<!-- Text input-->
-								<div class="form-group">
-									<label class="col-sm-12 control-label" for="porc_2013_mt_5"><strong>Porcentagem Matemática</strong></label>
-									<div class="col-sm-12">
-										<form:input id="porc_2013_mt_5" name="porc_2013_mt_5" type="text" class="form-control" path="porc_2013_mt_5" />
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2013_lp_5"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2013_lp_5" name="porc_2013_lp_5" type="text" class="form-control" path="porc_2013_lp_5" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2013_mt_5"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2013_mt_5" name="porc_2013_mt_5" type="text" class="form-control" path="porc_2013_mt_5" />
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						
-						<div class="finais col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<h2>Fundamental II (Anos finais)</h2>
 							
-							<div class="pb-finais col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
-								<!-- Text input-->
-								<div class="form-group">
-									<label class="col-sm-12 control-label" for="porc_2013_lp_9"><strong>Porcentagem Português</strong></label>
-									<div class="col-sm-12">
-										<form:input id="porc_2013_lp_9" name="porc_2013_lp_9" type="text" class="form-control" path="porc_2013_lp_9" />
-									</div>
-								</div>
-		
+							<div class="finais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental II (Anos finais)</h2>
 								
-								<!-- Text input-->
-								<div class="form-group">
-									<label class="col-sm-12 control-label" for="porc_2013_mt_9"><strong>Porcentagem Matemática</strong></label>
-									<div class="col-sm-12">
-										<form:input id="porc_2013_mt_9" name="porc_2013_mt_9" type="text" class="form-control" path="porc_2013_mt_9" />
+								<div class="pb-finais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2013_lp_9"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2013_lp_9" name="porc_2013_lp_9" type="text" class="form-control" path="porc_2013_lp_9" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2013_mt_9"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2013_mt_9" name="porc_2013_mt_9" type="text" class="form-control" path="porc_2013_mt_9" />
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<hr>
+						<div class="proficiencia-ano">
+							<h2>Proficiência - 2015</h2>
+							
+							<div class="iniciais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental I (Anos iniciais)</h2>
+							
+								<div class="pb-iniciais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2015_lp_5"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2015_lp_5" name="porc_2015_lp_5" type="text" class="form-control" path="porc_2015_lp_5" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2015_mt_5"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2015_mt_5" name="porc_2015_mt_5" type="text" class="form-control" path="porc_2015_mt_5" />
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="finais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental II (Anos finais)</h2>
+								
+								<div class="pb-finais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2015_lp_9"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2015_lp_9" name="porc_2015_lp_9" type="text" class="form-control" path="porc_2015_lp_9" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2015_mt_9"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2015_mt_9" name="porc_2015_mt_9" type="text" class="form-control" path="porc_2015_mt_9" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="proficiencia-ano">
+							<h2>Proficiência - 2017</h2>
+							
+							<div class="iniciais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental I (Anos iniciais)</h2>
+							
+								<div class="pb-iniciais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2017_lp_5"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2017_lp_5" name="porc_2017_lp_5" type="text" class="form-control" path="porc_2017_lp_5" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2017_mt_5"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2017_mt_5" name="porc_2017_mt_5" type="text" class="form-control" path="porc_2017_mt_5" />
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="finais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental II (Anos finais)</h2>
+								
+								<div class="pb-finais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2017_lp_9"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2017_lp_9" name="porc_2017_lp_9" type="text" class="form-control" path="porc_2017_lp_9" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2017_mt_9"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2017_mt_9" name="porc_2017_mt_9" type="text" class="form-control" path="porc_2017_mt_9" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="proficiencia-ano">
+							<h2>Proficiência - 2019</h2>
+							
+							<div class="iniciais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental I (Anos iniciais)</h2>
+							
+								<div class="pb-iniciais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2019_lp_5"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2019_lp_5" name="porc_2019_lp_5" type="text" class="form-control" path="porc_2019_lp_5" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2019_mt_5"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2019_mt_5" name="porc_2019_mt_5" type="text" class="form-control" path="porc_2019_mt_5" />
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="finais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental II (Anos finais)</h2>
+								
+								<div class="pb-finais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2019_lp_9"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2019_lp_9" name="porc_2019_lp_9" type="text" class="form-control" path="porc_2019_lp_9" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2019_mt_9"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2019_mt_9" name="porc_2019_mt_9" type="text" class="form-control" path="porc_2019_mt_9" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="proficiencia-ano">
+							<h2>Proficiência - 2021</h2>
+							
+							<div class="iniciais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental I (Anos iniciais)</h2>
+							
+								<div class="pb-iniciais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2021_lp_5"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2021_lp_5" name="porc_2021_lp_5" type="text" class="form-control" path="porc_2021_lp_5" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2021_mt_5"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2021_mt_5" name="porc_2021_mt_5" type="text" class="form-control" path="porc_2021_mt_5" />
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="finais col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h2>Fundamental II (Anos finais)</h2>
+								
+								<div class="pb-finais col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2021_lp_9"><strong>Porcentagem Português</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2021_lp_9" name="porc_2021_lp_9" type="text" class="form-control" path="porc_2021_lp_9" />
+										</div>
+									</div>
+			
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-sm-12 control-label" for="porc_2021_mt_9"><strong>Porcentagem Matemática</strong></label>
+										<div class="col-sm-12">
+											<form:input id="porc_2021_mt_9" name="porc_2021_mt_9" type="text" class="form-control" path="porc_2021_mt_9" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 
 						<!-- Button -->
 						<div class="form-group">

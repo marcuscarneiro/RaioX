@@ -466,15 +466,14 @@ input.pesquisa-input
 
 .fiscalizacao-datas ul
 {
-
-	margin: 6%;
-	text-align: center;
 	width: 100%;
-	float: left;
+	text-align: center;
+	padding: 0;
 }
 
 .fiscalizacao-datas li
 {
+	display: inline-block;
 	color: #565656;
 	transition: all .5s ease-in-out;
 	min-width: 81px;
@@ -527,11 +526,6 @@ input.pesquisa-input
 {
 	text-align: right;
 	border-right: 1px #565656 groove;
-}
-
-.fiscalizacao-questionario
-{
-	float: left;
 }
 
 .fiscalizacao-questionario h3

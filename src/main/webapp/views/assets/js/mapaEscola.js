@@ -944,10 +944,11 @@ function processaVisitas(data){
 	}
 	$.each(data, function(i, visita){
 		var ordem = i+1;
+		mapVisita[ordem] = visita;
 		if(ordem === qtd){
 			changeVisita(visita);
+			alteraVistoria(ordem);
 		}
-		mapVisita[ordem] = visita;
 //		$(anoVisita + " a").attr('href', contextPath + visita.relatorio)
 	});
 }
@@ -956,31 +957,42 @@ function alteraVistoria(ordem){
 	$('.fiscalizacao-datas li').removeClass('data-active');
 	$('.vistoria-'+ordem).addClass('data-active');
 	
+	$(".fiscalicazaoRelatorio").fadeOut();
 	var vistoria = getVisita(ordem);
 	if(vistoria.relatorio != null){
 		rel = true;
+		$(".fiscalicazaoRelatorio").fadeIn();
 		$(".fiscalicazaoRelatorio").css('display', 'block');
 		$(".fiscalicazaoRelatorio span").css('display', 'none');
 		$(".fiscalicazaoRelatorio a").css('display', 'inline-block');
 		$(".fiscalicazaoRelatorio a").attr('href', contextPath + vistoria.relatorio);
 	} else {
 		rel = false;
+		$(".fiscalicazaoRelatorio").fadeIn();
 		$(".fiscalicazaoRelatorio").css('display', 'block');
 		$(".fiscalicazaoRelatorio a").css('display', 'none');
 		$(".fiscalicazaoRelatorio span").css('display', 'inline-block');
 	}
 	
+	consultaFotos(vistoria.id);
+	
 	if(vistoria.sa1){
 		if(ordemAtual != ordem){
-			changeVisita(vistoria);
+			updateVisitas(vistoria);
 			ordemAtual = ordem;
 		}
-
-		$(".fiscalizacao-fotos").show();
+		
 		$(".fiscalizacao-questionario").show();
+		$(".fiscalizacao-questionario ul").show();
+		$(".fiscalizacao-questionario h3").text("Informações da escola");
 	} else {
-		$(".fiscalizacao-fotos").hide();
-		$(".fiscalizacao-questionario").hide();
+		if(vistoria.atualizacao == "true"){
+			$(".fiscalizacao-questionario").show();
+			$(".fiscalizacao-questionario ul").hide();
+			$(".fiscalizacao-questionario h3").text("Vistoria de atualização");
+		} else {
+			$(".fiscalizacao-questionario").hide();
+		}
 	}
 };
 
@@ -1128,27 +1140,43 @@ function idebVazio(){
 function updateIdeb(data){
 	$(".ideb-intro h2").text("DADOS DO IDEB");
 	
-	var notasIniciais, metasIniciais, notasFinais, metasFinais;
+	var notasIniciais, metasIniciais = "-", notasFinais, metasFinais = "-";
 	if(data.did_ideb_2019_ini != null || data.did_ideb_2019_fin != null){
 		notasIniciais = data.did_ideb_2019_ini;
-		metasIniciais = data.did_meta_2019_ini;
+		if(data.did_meta_2019_ini != null){
+			metasIniciais = data.did_meta_2019_ini;
+		}
 		notasFinais = data.did_ideb_2019_fin;
-		metasFinais = data.did_meta_2019_fin;
+		if(data.did_meta_2019_fin != null){
+			metasFinais = data.did_meta_2019_fin;
+		}
 	} else if(data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
 		notasIniciais = data.did_ideb_2017_ini;
-		metasIniciais = data.did_meta_2017_ini;
+		if(data.did_meta_2017_ini != null){
+			metasIniciais = data.did_meta_2017_ini;
+		}
 		notasFinais = data.did_ideb_2017_fin;
-		metasFinais = data.did_meta_2017_fin;
+		if(data.did_meta_2017_fin != null){
+			metasFinais = data.did_meta_2017_fin;
+		}
 	} else if(data.did_ideb_2015_ini != null || data.did_ideb_2015_fin != null){
 		notasIniciais = data.did_ideb_2015_ini;
-		metasIniciais = data.did_meta_2015_ini;
+		if(data.did_meta_2015_ini != null){
+			metasIniciais = data.did_meta_2015_ini;
+		}
 		notasFinais = data.did_ideb_2015_fin;
-		metasFinais = data.did_meta_2015_fin;
+		if(data.did_meta_2015_fin != null){
+			metasFinais = data.did_meta_2015_fin;
+		}
 	} else if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null){
 		notasIniciais = data.did_ideb_2013_ini;
-		metasIniciais = data.did_meta_2013_ini;
+		if(data.did_meta_2013_ini != null){
+			metasIniciais = data.did_meta_2013_ini;
+		}
 		notasFinais = data.did_ideb_2013_fin;
-		metasFinais = data.did_meta_2013_fin;
+		if(data.did_meta_2013_fin != null){
+			metasFinais = data.did_meta_2013_fin;
+		}
 	}
 	
 	if(notasIniciais != null){
@@ -1263,7 +1291,7 @@ function trataNotas(nota){
 
 //GRÁFICOS DA EVOLUÇÃO
 function updateGraficoIdeb(data){
-	if(data.did_ideb_2013_ini != null){
+	if(testaIdebIni(data)){
 		var grafEvo5Data = {
 				labels: ["2005", "2007", "2009", "2011", "2013", "2015", "2017", "2019", "2021"],
 				datasets: [
@@ -1330,7 +1358,7 @@ function updateGraficoIdeb(data){
 		});
 	}
 	
-	if(data.did_ideb_2013_fin != null){
+	if(testaIdebFin(data)){
 		$('.evolucao-finais').show();
 		var grafEvo9Data = {
 				labels: ["2005", "2007", "2009", "2011", "2013", "2015", "2017", "2019", "2021"],
@@ -1396,6 +1424,22 @@ function updateGraficoIdeb(data){
 			responsiveMinHeight : 200,
 			responsiveMinWidth : 300
 		});
+	}
+}
+
+function testaIdebIni(data){
+	if(data.did_ideb_2007_ini != null || data.did_ideb_2009_ini != null || data.did_ideb_2011_ini != null || data.did_ideb_2013_ini != null || data.did_ideb_2015_ini != null || data.did_ideb_2017_ini != null || data.did_ideb_2019_ini != null || data.did_ideb_2021_ini != null){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function testaIdebFin(data){
+	if(data.did_ideb_2007_fin != null || data.did_ideb_2009_fin != null || data.did_ideb_2011_fin != null || data.did_ideb_2013_fin != null || data.did_ideb_2015_fin != null || data.did_ideb_2017_fin != null || data.did_ideb_2019_fin != null || data.did_ideb_2021_fin != null){
+		return true;
+	} else {
+		return false;
 	}
 }
 
@@ -1967,6 +2011,22 @@ $('.filtro-item').on('click', function(){
 		escolasList = [];
 		escolasListCompare = [];
 		modo = 'evolucao';
+		changeMarkers();
+		mudaLegenda(filter);
+	} else if (filter === 'nunca'){
+		map.removeLayer(escolasLayer);
+		escolasLayer = L.mapbox.featureLayer().addTo(map);
+		escolasLayer.setGeoJSON(escolasData);
+		escolasLayer.eachLayer(function(marker) {
+			if(marker.feature.properties.NuncaAtingiu == "true"){
+			} else {
+				map.removeLayer(marker);
+			}
+		});
+		removePins();
+		escolasList = [];
+		escolasListCompare = [];
+		modo = 'nunca';
 		changeMarkers();
 		mudaLegenda(filter);
 	} else if (filter === 'recentes'){

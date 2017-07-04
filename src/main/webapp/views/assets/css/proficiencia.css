@@ -1,0 +1,9 @@
+.proficiencia-ano {
+	float: left;
+	width: 100%;
+	margin: 10px 0;
+}
+
+.iniciais, .finais {
+	padding-bottom: 10px;
+}

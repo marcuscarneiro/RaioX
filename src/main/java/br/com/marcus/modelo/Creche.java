@@ -48,6 +48,9 @@ public class Creche {
 
 	@Column
 	private String nova;
+
+	@Column
+	private String requerimentos;
 	
 	@Column
 	private Boolean crecheCmei;
@@ -157,6 +160,14 @@ public class Creche {
 
 	public void setNova(String nova) {
 		this.nova = nova;
+	}
+
+	public String getRequerimentos() {
+		return requerimentos;
+	}
+
+	public void setRequerimentos(String requerimentos) {
+		this.requerimentos = requerimentos;
 	}
 
 	public Boolean getCrecheCmei() {

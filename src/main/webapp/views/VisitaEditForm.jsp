@@ -155,6 +155,16 @@
 								<form:input id="problemasChuva" name="problemasChuva" type="text" class="form-control" path="problemasChuva" />
 							</div>
 						</div>
+						
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="atualizacao"><strong>É uma vistoria apenas de atualização?</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="atualizacao" path="atualizacao" value="true" />  SIM
+							</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="atualizacao" path="atualizacao" value="false" />  NÃO
+							</div>
+						</div>
 
 						<hr>
 						<h3 style="text-align: center;">1 - MÓDULO DE SALAS DE AULA</h3>

@@ -81,7 +81,7 @@ public class ProvaBrasil {
 	
 	@Column
 	private Integer porc_2015_mt_9;
-	
+
 	@Column
 	private Integer porc_2017_lp_5;
 	
@@ -93,6 +93,30 @@ public class ProvaBrasil {
 	
 	@Column
 	private Integer porc_2017_mt_9;
+
+	@Column
+	private Integer porc_2019_lp_5;
+	
+	@Column
+	private Integer porc_2019_mt_5;
+	
+	@Column
+	private Integer porc_2019_lp_9;
+	
+	@Column
+	private Integer porc_2019_mt_9;
+
+	@Column
+	private Integer porc_2021_lp_5;
+	
+	@Column
+	private Integer porc_2021_mt_5;
+	
+	@Column
+	private Integer porc_2021_lp_9;
+	
+	@Column
+	private Integer porc_2021_mt_9;
 	
 	public Long getId() {
 		return id;
@@ -300,5 +324,69 @@ public class ProvaBrasil {
 
 	public void setPorc_2017_mt_9(Integer porc_2017_mt_9) {
 		this.porc_2017_mt_9 = porc_2017_mt_9;
+	}
+
+	public Integer getPorc_2019_lp_5() {
+		return porc_2019_lp_5;
+	}
+
+	public void setPorc_2019_lp_5(Integer porc_2019_lp_5) {
+		this.porc_2019_lp_5 = porc_2019_lp_5;
+	}
+
+	public Integer getPorc_2019_mt_5() {
+		return porc_2019_mt_5;
+	}
+
+	public void setPorc_2019_mt_5(Integer porc_2019_mt_5) {
+		this.porc_2019_mt_5 = porc_2019_mt_5;
+	}
+
+	public Integer getPorc_2019_lp_9() {
+		return porc_2019_lp_9;
+	}
+
+	public void setPorc_2019_lp_9(Integer porc_2019_lp_9) {
+		this.porc_2019_lp_9 = porc_2019_lp_9;
+	}
+
+	public Integer getPorc_2019_mt_9() {
+		return porc_2019_mt_9;
+	}
+
+	public void setPorc_2019_mt_9(Integer porc_2019_mt_9) {
+		this.porc_2019_mt_9 = porc_2019_mt_9;
+	}
+
+	public Integer getPorc_2021_lp_5() {
+		return porc_2021_lp_5;
+	}
+
+	public void setPorc_2021_lp_5(Integer porc_2021_lp_5) {
+		this.porc_2021_lp_5 = porc_2021_lp_5;
+	}
+
+	public Integer getPorc_2021_mt_5() {
+		return porc_2021_mt_5;
+	}
+
+	public void setPorc_2021_mt_5(Integer porc_2021_mt_5) {
+		this.porc_2021_mt_5 = porc_2021_mt_5;
+	}
+
+	public Integer getPorc_2021_lp_9() {
+		return porc_2021_lp_9;
+	}
+
+	public void setPorc_2021_lp_9(Integer porc_2021_lp_9) {
+		this.porc_2021_lp_9 = porc_2021_lp_9;
+	}
+
+	public Integer getPorc_2021_mt_9() {
+		return porc_2021_mt_9;
+	}
+
+	public void setPorc_2021_mt_9(Integer porc_2021_mt_9) {
+		this.porc_2021_mt_9 = porc_2021_mt_9;
 	}
 }

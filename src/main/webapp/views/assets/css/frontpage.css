@@ -260,6 +260,7 @@ html, body
 	right: 20px;
 	position: absolute;
 	cursor: pointer;
+	z-index: 2;
 }
 
 .busca, .busca-compare

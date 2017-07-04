@@ -341,6 +341,7 @@ public class MapaEscolasController {
                 	}
                 }
                 properties.put("Evolucao", getEvolucaoLinear(dadosIdeb));
+                properties.put("NuncaAtingiu", getNuncaAtingiuMeta(dadosIdeb));
                 properties.put("COR", getMarkerColor(dadosIdeb));
                 properties.put("ATINGIUMETA", getMetaAtingida(dadosIdeb));
                 properties.put("Foto", escola.getFotoCapa());
@@ -774,6 +775,308 @@ public class MapaEscolasController {
     	}
     }
     
+    public String getNuncaAtingiuMeta(DadosIdeb dadosIdeb){
+    	Double ideb2007Ini, ideb2009Ini, ideb2011Ini, ideb2013Ini, ideb2015Ini;
+    	Double ideb2007Fin, ideb2009Fin, ideb2011Fin, ideb2013Fin, ideb2015Fin;
+    	Double meta2007Ini, meta2009Ini, meta2011Ini, meta2013Ini, meta2015Ini;
+    	Double meta2007Fin, meta2009Fin, meta2011Fin, meta2013Fin, meta2015Fin;
+    	Boolean metaIni = null, metaFin = null;
+    	
+    	//IDEBS
+    	//INICIAIS
+    	try {
+    		ideb2007Ini = dadosIdeb.getDid_ideb_2007_ini();
+		} catch (Exception e) {
+			ideb2007Ini = null;
+		}
+    	try {
+    		ideb2009Ini = dadosIdeb.getDid_ideb_2009_ini();
+		} catch (Exception e) {
+			ideb2009Ini = null;
+		}
+    	try {
+    		ideb2011Ini = dadosIdeb.getDid_ideb_2011_ini();
+		} catch (Exception e) {
+			ideb2011Ini = null;
+		}
+    	try {
+    		ideb2013Ini = dadosIdeb.getDid_ideb_2013_ini();
+		} catch (Exception e) {
+			ideb2013Ini = null;
+		}
+    	try {
+    		ideb2015Ini = dadosIdeb.getDid_ideb_2015_ini();
+		} catch (Exception e) {
+			ideb2015Ini = null;
+		}
+    	
+    	//FINAIS
+
+    	try {
+    		ideb2007Fin = dadosIdeb.getDid_ideb_2007_fin();
+		} catch (Exception e) {
+			ideb2007Fin = null;
+		}
+    	try {
+    		ideb2009Fin = dadosIdeb.getDid_ideb_2009_fin();
+		} catch (Exception e) {
+			ideb2009Fin = null;
+		}
+    	try {
+    		ideb2011Fin = dadosIdeb.getDid_ideb_2011_fin();
+		} catch (Exception e) {
+			ideb2011Fin = null;
+		}
+    	try {
+    		ideb2013Fin = dadosIdeb.getDid_ideb_2013_fin();
+		} catch (Exception e) {
+			ideb2013Fin = null;
+		}
+    	try {
+    		ideb2015Fin = dadosIdeb.getDid_ideb_2015_fin();
+		} catch (Exception e) {
+			ideb2015Fin = null;
+		}
+    	
+    	//METAS
+    	
+    	//INICIAIS
+    	
+    	try {
+    		meta2007Ini = dadosIdeb.getDid_meta_2007_ini();
+		} catch (Exception e) {
+			meta2007Ini = null;
+		}
+    	try {
+    		meta2009Ini = dadosIdeb.getDid_meta_2009_ini();
+		} catch (Exception e) {
+			meta2009Ini = null;
+		}
+    	try {
+    		meta2011Ini = dadosIdeb.getDid_meta_2011_ini();
+		} catch (Exception e) {
+			meta2011Ini = null;
+		}
+    	try {
+    		meta2013Ini = dadosIdeb.getDid_meta_2013_ini();
+		} catch (Exception e) {
+			meta2013Ini = null;
+		}
+    	try {
+    		meta2015Ini = dadosIdeb.getDid_meta_2015_ini();
+		} catch (Exception e) {
+			meta2015Ini = null;
+		}
+    	
+    	//FINAIS
+
+    	try {
+    		meta2007Fin = dadosIdeb.getDid_meta_2007_fin();
+		} catch (Exception e) {
+			meta2007Fin = null;
+		}
+    	try {
+    		meta2009Fin = dadosIdeb.getDid_meta_2009_fin();
+		} catch (Exception e) {
+			meta2009Fin = null;
+		}
+    	try {
+    		meta2011Fin = dadosIdeb.getDid_meta_2011_fin();
+		} catch (Exception e) {
+			meta2011Fin = null;
+		}
+    	try {
+    		meta2013Fin = dadosIdeb.getDid_meta_2013_fin();
+		} catch (Exception e) {
+			meta2013Fin = null;
+		}
+    	try {
+    		meta2015Fin = dadosIdeb.getDid_meta_2015_fin();
+		} catch (Exception e) {
+			meta2015Fin = null;
+		}
+    	
+    	//TESTES METAS		
+		//INICIAIS
+
+		if(ideb2007Ini != null && meta2007Ini != null){
+			if(ideb2007Ini < meta2007Ini){
+				metaIni = true;
+			} else {
+				metaIni = false;
+			}
+		}
+		if(ideb2009Ini != null && meta2009Ini != null){
+			if (metaIni != null) {
+				if (metaIni != false) {
+					if(ideb2009Ini < meta2009Ini){
+						metaIni = true;
+					} else {
+						metaIni = false;
+					}
+				}
+			} else {
+				if(ideb2009Ini < meta2009Ini){
+					metaIni = true;
+				} else {
+					metaIni = false;
+				}
+			}
+		}
+		if(ideb2011Ini != null && meta2011Ini != null){
+			if (metaIni != null) {
+				if (metaIni != false) {
+					if(ideb2011Ini < meta2011Ini){
+						metaIni = true;
+					} else {
+						metaIni = false;
+					}
+				}
+			} else {
+				if(ideb2011Ini < meta2011Ini){
+					metaIni = true;
+				} else {
+					metaIni = false;
+				}
+			}
+		}
+		if(ideb2013Ini != null && meta2013Ini != null){
+			if (metaIni != null) {
+				if (metaIni != false) {
+					if(ideb2013Ini < meta2013Ini){
+						metaIni = true;
+					} else {
+						metaIni = false;
+					}
+				}
+			} else {
+				if(ideb2013Ini < meta2013Ini){
+					metaIni = true;
+				} else {
+					metaIni = false;
+				}
+			}
+		}
+		if(ideb2015Ini != null && meta2015Ini != null){
+			if (metaIni != null) {
+				if (metaIni != false) {
+					if(ideb2015Ini < meta2015Ini){
+						metaIni = true;
+					} else {
+						metaIni = false;
+					}
+				}
+			} else {
+				if(ideb2015Ini < meta2015Ini){
+					metaIni = true;
+				} else {
+					metaIni = false;
+				}
+			}
+		}
+		
+		//FINAIS
+		
+		if(ideb2007Fin != null && meta2007Fin != null){
+			if(ideb2007Fin < meta2007Fin){
+				metaFin = true;
+			} else {
+				metaFin = false;
+			}
+		}
+		if(ideb2009Fin != null && meta2009Fin != null){
+			if (metaFin != null) {
+				if (metaFin != false) {
+					if(ideb2009Fin < meta2009Fin){
+						metaFin = true;
+					} else {
+						metaFin = false;
+					}
+				}
+			} else {
+				if(ideb2009Fin < meta2009Fin){
+					metaFin = true;
+				} else {
+					metaFin = false;
+				}
+			}
+		}
+		if(ideb2011Fin != null && meta2011Fin != null){
+			if (metaFin != null) {
+				if (metaFin != false) {
+					if(ideb2011Fin < meta2011Fin){
+						metaFin = true;
+					} else {
+						metaFin = false;
+					}
+				}
+			} else {
+				if(ideb2011Fin < meta2011Fin){
+					metaFin = true;
+				} else {
+					metaFin = false;
+				}
+			}
+		}
+		if(ideb2013Fin != null && meta2013Fin != null){
+			if (metaFin != null) {
+				if (metaFin != false) {
+					if(ideb2013Fin < meta2013Fin){
+						metaFin = true;
+					} else {
+						metaFin = false;
+					}
+				}
+			} else {
+				if(ideb2013Fin < meta2013Fin){
+					metaFin = true;
+				} else {
+					metaFin = false;
+				}
+			}
+		}
+		if(ideb2015Fin != null && meta2015Fin != null){
+			if (metaFin != null) {
+				if (metaFin != false) {
+					if(ideb2015Fin < meta2015Fin){
+						metaFin = true;
+					} else {
+						metaFin = false;
+					}
+				}
+			} else {
+				if(ideb2015Fin < meta2015Fin){
+					metaFin = true;
+				} else {
+					metaFin = false;
+				}
+			}
+		}
+		
+		if(metaIni != null && metaFin != null){
+			if(metaIni == true && metaFin == true){
+				return "true";
+			} else {
+				return "false";
+			}
+		} else if(metaIni != null){
+			if(metaIni == true){
+				return "true";
+			} else {
+				return "false";
+			}
+		} else if(metaFin != null){
+			if(metaFin == true){
+				return "true";
+			} else {
+				return "false";
+			}
+		} else {
+			return "false";
+		}
+		
+    }
+    
     public String getEvolucaoLinear(DadosIdeb dadosIdeb){
     	
     	Double ideb2007Ini, ideb2009Ini, ideb2011Ini, ideb2013Ini, ideb2015Ini;
@@ -783,9 +1086,7 @@ public class MapaEscolasController {
     	Boolean idebIni = null, idebFin = null, metaIni = null, metaFin = null, idebFinal = null, metaFinal = null;
     	
     	//IDEBS
-    	
     	//INICIAIS
-    	
     	try {
     		ideb2007Ini = dadosIdeb.getDid_ideb_2007_ini();
 		} catch (Exception e) {
@@ -899,201 +1200,287 @@ public class MapaEscolasController {
 		}
     	
     	//TESTES CRESCIMENTO
-    	
+    	//INICIAIS
 		if(ideb2015Ini != null && ideb2013Ini != null){
-			if(ideb2015Ini > ideb2013Ini){
+			if(ideb2015Ini >= ideb2013Ini){
 				idebIni = true;
-				if(ideb2013Ini != null && ideb2011Ini != null){
-					if(ideb2013Ini > ideb2011Ini){
+			} else {
+				idebIni = false;
+			}
+		}
+		
+		if(ideb2013Ini != null && ideb2011Ini != null){
+			if (idebIni != null) {
+				if (idebIni != false) {
+					if(ideb2013Ini >= ideb2011Ini){
 						idebIni = true;
-						if(ideb2011Ini != null && ideb2009Ini != null){
-							if(ideb2011Ini > ideb2009Ini){
-								idebIni = true;
-								if(ideb2009Ini != null && ideb2007Ini != null){
-									if(ideb2009Ini > ideb2007Ini){
-										idebIni = true;
-									} else {
-										idebIni = false;
-									}
-								}
-							} else {
-								idebIni = false;
-							}
-						}
-			    	} else {
+					} else {
 						idebIni = false;
 					}
 				}
 			} else {
-				idebIni = false;
-			}
-		} else {
-			if(ideb2013Ini != null && ideb2011Ini != null){
-				if(ideb2013Ini > ideb2011Ini){
+				if(ideb2013Ini >= ideb2011Ini){
 					idebIni = true;
-					if(ideb2011Ini != null && ideb2009Ini != null){
-						if(ideb2011Ini > ideb2009Ini){
-							idebIni = true;
-							if(ideb2009Ini != null && ideb2007Ini != null){
-								if(ideb2009Ini > ideb2007Ini){
-									idebIni = true;
-								} else {
-									idebIni = false;
-								}
-							}
-						} else {
-							idebIni = false;
-						}
-					}
-		    	} else {
+				} else {
 					idebIni = false;
 				}
-			} else {
-				idebIni = false;
 			}
 		}
-    	
+		
+		if(ideb2011Ini != null && ideb2009Ini != null){
+			if (idebIni != null) {
+				if (idebIni != false) {
+					if(ideb2011Ini >= ideb2009Ini){
+						idebIni = true;
+					} else {
+						idebIni = false;
+					}
+				}
+			} else {
+				if(ideb2011Ini >= ideb2009Ini){
+					idebIni = true;
+				} else {
+					idebIni = false;
+				}
+			}
+		}
+		
+		if(ideb2009Ini != null && ideb2007Ini != null){
+			if (idebIni != null) {
+				if (idebIni != false) {
+					if(ideb2009Ini >= ideb2007Ini){
+						idebIni = true;
+					} else {
+						idebIni = false;
+					}
+				}
+			} else {
+				if(ideb2009Ini >= ideb2007Ini){
+					idebIni = true;
+				} else {
+					idebIni = false;
+				}
+			}
+		}
+
+		//FINAIS
 		if(ideb2015Fin != null && ideb2013Fin != null){
-			if(ideb2015Fin > ideb2013Fin){
+			if(ideb2015Fin >= ideb2013Fin){
 				idebFin = true;
-				if(ideb2013Fin != null && ideb2011Fin != null){
-					if(ideb2013Fin > ideb2011Fin){
+			} else {
+				idebFin = false;
+			}
+		}
+		
+		if(ideb2013Fin != null && ideb2011Fin != null){
+			if (idebFin != null) {
+				if (idebFin != false) {
+					if(ideb2013Fin >= ideb2011Fin){
 						idebFin = true;
-						if(ideb2011Fin != null && ideb2009Fin != null){
-							if(ideb2011Fin > ideb2009Fin){
-								idebFin = true;
-								if(ideb2009Fin != null && ideb2007Fin != null){
-									if(ideb2009Fin > ideb2007Fin){
-										idebFin = true;
-									} else {
-										idebFin = false;
-									}
-								}
-							} else {
-								idebFin = false;
-							}
-						}
-			    	} else {
+					} else {
 						idebFin = false;
 					}
 				}
 			} else {
-				idebFin = false;
-			}
-		} else {
-			if(ideb2013Fin != null && ideb2011Fin != null){
-				if(ideb2013Fin > ideb2011Fin){
+				if(ideb2013Fin >= ideb2011Fin){
 					idebFin = true;
-					if(ideb2011Fin != null && ideb2009Fin != null){
-						if(ideb2011Fin > ideb2009Fin){
-							idebFin = true;
-							if(ideb2009Fin != null && ideb2007Fin != null){
-								if(ideb2009Fin > ideb2007Fin){
-									idebFin = true;
-								} else {
-									idebFin = false;
-								}
-							}
-						} else {
-							idebFin = false;
-						}
-					}
-		    	} else {
+				} else {
 					idebFin = false;
 				}
 			}
 		}
-    	
-		//TESTES METAS
-//		Double ideb2007Ini, ideb2009Ini, ideb2011Ini, ideb2013Ini, ideb2015Ini;
-//    	Double ideb2007Fin, ideb2009Fin, ideb2011Fin, ideb2013Fin, ideb2015Fin;
-//    	Double meta2007Ini, meta2009Ini, meta2011Ini, meta2013Ini, meta2015Ini;
-//    	Double meta2007Fin, meta2009Fin, meta2011Fin, meta2013Fin, meta2015Fin;
-//    	Boolean idebIni = null, idebFin = null, metaIni = null, metaFin = null;
 		
-		//INICIAIS
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@@@@@@"+ dadosIdeb.getEscola().getNome() +"@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		
-		if(dadosIdeb.getEscola().getId() == 262){
-			System.out.println("aqui");
+		if(ideb2011Fin != null && ideb2009Fin != null){
+			if (idebFin != null) {
+				if (idebFin != false) {
+					if(ideb2011Fin >= ideb2009Fin){
+						idebFin = true;
+					} else {
+						idebFin = false;
+					}
+				}
+			} else {
+				if(ideb2011Fin >= ideb2009Fin){
+					idebFin = true;
+				} else {
+					idebFin = false;
+				}
+			}
 		}
-		if(ideb2007Ini != null){
+		
+		if(ideb2009Fin != null && ideb2007Fin != null){
+			if (idebFin != null) {
+				if (idebFin != false) {
+					if(ideb2009Fin >= ideb2007Fin){
+						idebFin = true;
+					} else {
+						idebFin = false;
+					}
+				}
+			} else {
+				if(ideb2009Fin >= ideb2007Fin){
+					idebFin = true;
+				} else {
+					idebFin = false;
+				}
+			}
+		}
+		
+    	
+		//TESTES METAS		
+		//INICIAIS
+
+		if(ideb2007Ini != null && meta2007Ini != null){
 			if(ideb2007Ini >= meta2007Ini){
 				metaIni = true;
 			} else {
 				metaIni = false;
 			}
 		}
-		if(ideb2009Ini != null){
-			if(ideb2009Ini >= meta2009Ini){
-				metaIni = true;
+		if(ideb2009Ini != null && meta2009Ini != null){
+			if (metaIni != null) {
+				if (metaIni != false) {
+					if(ideb2009Ini >= meta2009Ini){
+						metaIni = true;
+					} else {
+						metaIni = false;
+					}
+				}
 			} else {
-				metaIni = false;
+				if(ideb2009Ini >= meta2009Ini){
+					metaIni = true;
+				} else {
+					metaIni = false;
+				}
 			}
 		}
-		if(ideb2011Ini != null){
-			if(ideb2011Ini >= meta2011Ini){
-				metaIni = true;
+		if(ideb2011Ini != null && meta2011Ini != null){
+			if (metaIni != null) {
+				if (metaIni != false) {
+					if(ideb2011Ini >= meta2011Ini){
+						metaIni = true;
+					} else {
+						metaIni = false;
+					}
+				}
 			} else {
-				metaIni = false;
+				if(ideb2011Ini >= meta2011Ini){
+					metaIni = true;
+				} else {
+					metaIni = false;
+				}
 			}
 		}
-		if(ideb2013Ini != null){
-			if(ideb2013Ini >= meta2013Ini){
-				metaIni = true;
+		if(ideb2013Ini != null && meta2013Ini != null){
+			if (metaIni != null) {
+				if (metaIni != false) {
+					if(ideb2013Ini >= meta2013Ini){
+						metaIni = true;
+					} else {
+						metaIni = false;
+					}
+				}
 			} else {
-				metaIni = false;
+				if(ideb2013Ini >= meta2013Ini){
+					metaIni = true;
+				} else {
+					metaIni = false;
+				}
 			}
 		}
-		if(ideb2015Ini != null){
-			if(ideb2015Ini >= meta2015Ini){
-				metaIni = true;
+		if(ideb2015Ini != null && meta2015Ini != null){
+			if (metaIni != null) {
+				if (metaIni != false) {
+					if(ideb2015Ini >= meta2015Ini){
+						metaIni = true;
+					} else {
+						metaIni = false;
+					}
+				}
 			} else {
-				metaIni = false;
+				if(ideb2015Ini >= meta2015Ini){
+					metaIni = true;
+				} else {
+					metaIni = false;
+				}
 			}
 		}
 		
 		//FINAIS
 		
-		if(ideb2007Fin != null){
+		if(ideb2007Fin != null && meta2007Fin != null){
 			if(ideb2007Fin >= meta2007Fin){
 				metaFin = true;
 			} else {
 				metaFin = false;
 			}
 		}
-		if(ideb2009Fin != null){
-			if(ideb2009Fin >= meta2009Fin){
-				metaFin = true;
+		if(ideb2009Fin != null && meta2009Fin != null){
+			if (metaFin != null) {
+				if (metaFin != false) {
+					if(ideb2009Fin >= meta2009Fin){
+						metaFin = true;
+					} else {
+						metaFin = false;
+					}
+				}
 			} else {
-				metaFin = false;
+				if(ideb2009Fin >= meta2009Fin){
+					metaFin = true;
+				} else {
+					metaFin = false;
+				}
 			}
 		}
-		if(ideb2011Fin != null){
-			if(ideb2011Fin >= meta2011Fin){
-				metaFin = true;
+		if(ideb2011Fin != null && meta2011Fin != null){
+			if (metaFin != null) {
+				if (metaFin != false) {
+					if(ideb2011Fin >= meta2011Fin){
+						metaFin = true;
+					} else {
+						metaFin = false;
+					}
+				}
 			} else {
-				metaFin = false;
+				if(ideb2011Fin >= meta2011Fin){
+					metaFin = true;
+				} else {
+					metaFin = false;
+				}
 			}
 		}
-		if(ideb2013Fin != null){
-			if(ideb2013Fin >= meta2013Fin){
-				metaFin = true;
+		if(ideb2013Fin != null && meta2013Fin != null){
+			if (metaFin != null) {
+				if (metaFin != false) {
+					if(ideb2013Fin >= meta2013Fin){
+						metaFin = true;
+					} else {
+						metaFin = false;
+					}
+				}
 			} else {
-				metaFin = false;
+				if(ideb2013Fin >= meta2013Fin){
+					metaFin = true;
+				} else {
+					metaFin = false;
+				}
 			}
 		}
-		if(ideb2015Fin != null){
-			if(ideb2015Fin >= meta2015Fin){
-				metaFin = true;
+		if(ideb2015Fin != null && meta2015Fin != null){
+			if (metaFin != null) {
+				if (metaFin != false) {
+					if(ideb2015Fin >= meta2015Fin){
+						metaFin = true;
+					} else {
+						metaFin = false;
+					}
+				}
 			} else {
-				metaFin = false;
+				if(ideb2015Fin >= meta2015Fin){
+					metaFin = true;
+				} else {
+					metaFin = false;
+				}
 			}
 		}
 		

@@ -37,6 +37,9 @@ public class Visita {
 	private Escola escola;
 
 	@Column
+	private String atualizacao;
+	
+	@Column
 	private String pesquisaCompleta;
 	
 	@Column
@@ -708,6 +711,14 @@ public class Visita {
 
 	public void setEscola(Escola escola) {
 		this.escola = escola;
+	}
+
+	public String getAtualizacao() {
+		return atualizacao;
+	}
+
+	public void setAtualizacao(String atualizacao) {
+		this.atualizacao = atualizacao;
 	}
 
 	public String getRpa() {
