@@ -866,14 +866,14 @@ function consultaDadosIdeb(id){
 		contentType: 'application/json',
 		async: false,
 		success: function(data) {
-			if(data.escola.requerimentos != null){
-				$(".fiscalicazaoRequerimento a").attr('href', data.escola.requerimentos);
-				$(".fiscalicazaoRequerimento").css('display', 'block');
-				$(".fiscalicazaoRequerimento a").css('display', 'inline-block');
-			} else {
-				$(".fiscalicazaoRequerimento").css('display', 'none');
-			}
 			if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null){
+				if(data.escola.requerimentos != null){
+					$(".fiscalicazaoRequerimento a").attr('href', data.escola.requerimentos);
+					$(".fiscalicazaoRequerimento").css('display', 'block');
+					$(".fiscalicazaoRequerimento a").css('display', 'inline-block');
+				} else {
+					$(".fiscalicazaoRequerimento").css('display', 'none');
+				}
 				updateIdeb(data);
 			} else {
 				idebVazio();

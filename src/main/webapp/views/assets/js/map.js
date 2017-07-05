@@ -1,4 +1,5 @@
 function fechaPaineis() {
+	actualMarker = undefined;
 	if($(".painel-filtro").hasClass("isActive")){
 		fechaPainelFiltro();
 	}

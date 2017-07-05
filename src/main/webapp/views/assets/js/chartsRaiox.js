@@ -172,24 +172,23 @@ DrawTheChart(ChartData, ChartOptions, "chartMatriculados", "Bar");
 //IDEB FUNDAMENTAL I
 function MoreChartOptions() {}
 var ChartData = {
-    labels: ["",
-        "2005", "2007", "2009", "2011", "2013", "2015", "",
+		labels: ["", "2005", "2007", "2009", "2011", "2013", "2015", "2017", "2019", "2021", "",
     ],
     datasets: [{
-        fillColor: "rgba(52,152,219,1)",
-        strokeColor: "rgba(52,152,219,0.5)",
-        pointColor: "rgba(52,152,219,1)",
-        markerShape: "circle",
-        pointStrokeColor: "rgba(255,255,255,1)",
-        data: [, 3.3, 3.8, 4.1, 4.1, 4.3, ],
-        title: ""
-    }, {
-        fillColor: "rgba(46,204,113,1)",
+    	fillColor: "rgba(46,204,113,1)",
         strokeColor: "rgba(46,204,113,1)",
         pointColor: "rgba(46,204,113,1)",
         markerShape: "circle",
         pointStrokeColor: "rgba(255,255,255,1)",
-        data: [, , 3.3, 3.7, 4.1, 4.3, ],
+        data: [, , 3.2, 3.6, 4, 4.3, 4.6, 4.9, 5.2, 5.5, ],
+        title: ""
+    }, {
+    	fillColor: "rgba(52,152,219,1)",
+        strokeColor: "rgba(52,152,219,0.5)",
+        pointColor: "rgba(52,152,219,1)",
+        markerShape: "circle",
+        pointStrokeColor: "rgba(255,255,255,1)",
+        data: [, 3.2, 3.8, 4.1, 4.1, 4.3, 4.6, ],
         title: ""
     }, ]
 };
@@ -322,8 +321,8 @@ ChartOptions = {
     scaleTickSizeTop: 5,
     scaleTickSizeLeft: 5,
     scaleTickSizeRight: 5,
-    graphMin: 0,
-    graphMax: 5,
+    graphMin: 2,
+    graphMax: 6,
     barShowStroke: false,
     barBorderRadius: 0,
     barStrokeStyle: "solid",
@@ -348,7 +347,7 @@ DrawTheChart(ChartData, ChartOptions, "chartIdebFunI", "Line");
 //IDEB FUNDAMENTAL II
 function MoreChartOptions() {}
 var ChartData = {
-    labels: ["", "2005", "2007", "2009", "2011", "2013", "",
+    labels: ["", "2005", "2007", "2009", "2011", "2013", "2015", "2017", "2019", "2021", "",
     ],
     datasets: [{
         fillColor: "rgba(52,152,219,1)",
@@ -356,7 +355,7 @@ var ChartData = {
         pointColor: "rgba(52,152,219,1)",
         markerShape: "circle",
         pointStrokeColor: "rgba(255,255,255,1)",
-        data: [, 2.8, 2.5, 2.7, 2.9, 3.2, , ],
+        data: [, 2.8, 2.5, 2.7, 2.9, 3.2, 3.5, , ],
         title: ""
     }, {
         fillColor: "rgba(46,204,113,1)",
@@ -364,7 +363,7 @@ var ChartData = {
         pointColor: "rgba(46,204,113,1)",
         markerShape: "circle",
         pointStrokeColor: "rgba(255,255,255,1)",
-        data: [, , 2.8, 3, 3.3, 3.6, , ],
+        data: [, , 2.8, 3, 3.3, 3.6, 4, 4.3, 4.6, 4.8 , ],
         title: ""
     }, ]
 };
@@ -497,7 +496,7 @@ ChartOptions = {
     scaleTickSizeTop: 5,
     scaleTickSizeLeft: 5,
     scaleTickSizeRight: 5,
-    graphMin: 0,
+    graphMin: 2,
     graphMax: 5,
     barShowStroke: false,
     barBorderRadius: 0,
@@ -666,7 +665,7 @@ var ChartData = {
         "Curitiba", "Terezina", "Campo Grande", "Florianópolis", "Belo Horizonte", "Macapá", "Cuiabá", "Fortaleza", "São Paulo", "Rio de Janeiro", "Vitória", "Manaus", "Belém", "São Luiz", "João Pessoa", "Porto Alegre", "Natal", "Porto Velho", "Recife", "Salvador", "Aracaju", "Maceió",
     ],
     datasets: [{
-    	fillColor: ['rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(237,28,36,1)', 'rgba(52,152,219,1)','rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', ],
+    	fillColor: ['rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', 'rgba(237,28,36,1)', 'rgba(52,152,219,1)', 'rgba(52,152,219,1)', ],
         strokeColor: "rgba(52,152,219,0.5)",
         pointColor: "rgba(52,152,219,1)",
         markerShape: "circle",
@@ -799,7 +798,7 @@ var ChartData = {
         "Fortaleza", "Salvador", "J. Pessoa", "Recife", "Maceió", "Natal", "São Luís", "Aracaju",
     ],
     datasets: [{
-        fillColor: "rgba(52,152,219,1)",
+        fillColor: ["rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", 'rgba(237,28,36,1)', "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)"], 
         strokeColor: "rgba(52,152,219,0.5)",
         pointColor: "rgba(52,152,219,1)",
         markerShape: "circle",
@@ -945,7 +944,7 @@ var ChartData = {
 		         "Fortaleza", "Maceió", "Natal", "Salvador", "J. Pessoa", "Aracaju", "Recife", "São Luís",
 		     ],
     datasets: [{
-        fillColor: "rgba(52,152,219,1)",
+        fillColor: ["rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(237,28,36,1)", "rgba(52,152,219,1)"],
         strokeColor: "rgba(52,152,219,0.5)",
         pointColor: "rgba(52,152,219,1)",
         markerShape: "circle",
@@ -1088,15 +1087,15 @@ DrawTheChart(ChartData, ChartOptions, "chartAprPortII", "Bar");
 function MoreChartOptions() {}
 var ChartData = {
     labels: ["Teresina",
-        "J. Pessoa", "Aracaju", "Fortaleza", "Salvador", "Recife", "Maceió", "Natal ", "São Luís",
+        "Fortaleza", "Salvador", "Aracaju", "J. Pessoa", "Recife", "Maceió", "Natal ", "São Luís",
     ],
     datasets: [{
-        fillColor: "rgba(52,152,219,1)",
+    	fillColor: ["rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(237,28,36,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)"],
         strokeColor: "rgba(52,152,219,0.5)",
         pointColor: "rgba(52,152,219,1)",
         markerShape: "circle",
         pointStrokeColor: "rgba(255,255,255,1)",
-        data: [34, 25, 24, 24, 23, 21, 20, 20, 15, ],
+        data: [51, 36, 30, 28, 25, 24, 22, 22, 17, ],
         title: ""
     }, ]
 };
@@ -1234,15 +1233,15 @@ DrawTheChart(ChartData, ChartOptions, "chartAprMatI", "Bar");
 function MoreChartOptions() {}
 var ChartData = {
     labels: ["Teresina",
-        "Natal ", "Fortaleza", "J. Pessoa", "Aracajú", "Salvador", "São Luís", "Recife", "Maceió",
+        "Fortaleza", "Natal", "Maceió", "Aracajú", "Salvador", "J. Pessoa", "Recife", "São Luís",
     ],
     datasets: [{
-        fillColor: "rgba(52,152,219,1)",
+    	fillColor: ["rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(52,152,219,1)", "rgba(237,28,36,1)", "rgba(52,152,219,1)"],
         strokeColor: "rgba(52,152,219,0.5)",
         pointColor: "rgba(52,152,219,1)",
         markerShape: "circle",
         pointStrokeColor: "rgba(255,255,255,1)",
-        data: [13, 12, 9, 7, 6, 5, 5, 4, ],
+        data: [20, 12, 11, 10, 9, 8, 7, 7, 5, ],
         title: ""
     }, ]
 };
