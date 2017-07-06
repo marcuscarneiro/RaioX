@@ -1140,42 +1140,118 @@ function idebVazio(){
 function updateIdeb(data){
 	$(".ideb-intro h2").text("DADOS DO IDEB");
 	
-	var notasIniciais, metasIniciais = "-", notasFinais, metasFinais = "-";
-	if(data.did_ideb_2019_ini != null || data.did_ideb_2019_fin != null){
-		notasIniciais = data.did_ideb_2019_ini;
-		if(data.did_meta_2019_ini != null){
-			metasIniciais = data.did_meta_2019_ini;
+	var notasIniciais = null, metasIniciais = "-", notasFinais = null, metasFinais = "-", anoIniciais, anoFinais;
+
+	if(data.did_ideb_2007_ini != null){
+		notasIniciais = data.did_ideb_2007_ini;
+		anoIniciais = 2007;
+		if(data.did_meta_2007_ini != null){
+			metasIniciais = data.did_meta_2007_ini;
 		}
-		notasFinais = data.did_ideb_2019_fin;
-		if(data.did_meta_2019_fin != null){
-			metasFinais = data.did_meta_2019_fin;
+	}
+	if(data.did_ideb_2007_fin != null){
+		notasFinais = data.did_ideb_2007_fin;
+		anoFinais = 2007;
+		if(data.did_meta_2007_fin != null){
+			metasFinais = data.did_meta_2007_fin;
 		}
-	} else if(data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
-		notasIniciais = data.did_ideb_2017_ini;
-		if(data.did_meta_2017_ini != null){
-			metasIniciais = data.did_meta_2017_ini;
+	}
+	if(data.did_ideb_2009_ini != null){
+		notasIniciais = data.did_ideb_2009_ini;
+		anoIniciais = 2009;
+		if(data.did_meta_2009_ini != null){
+			metasIniciais = data.did_meta_2009_ini;
 		}
-		notasFinais = data.did_ideb_2017_fin;
-		if(data.did_meta_2017_fin != null){
-			metasFinais = data.did_meta_2017_fin;
+	}
+	if(data.did_ideb_2009_fin != null){
+		notasFinais = data.did_ideb_2009_fin;
+		anoFinais = 2009;
+		if(data.did_meta_2009_fin != null){
+			metasFinais = data.did_meta_2009_fin;
 		}
-	} else if(data.did_ideb_2015_ini != null || data.did_ideb_2015_fin != null){
-		notasIniciais = data.did_ideb_2015_ini;
-		if(data.did_meta_2015_ini != null){
-			metasIniciais = data.did_meta_2015_ini;
+	}
+	if(data.did_ideb_2011_ini != null){
+		notasIniciais = data.did_ideb_2011_ini;
+		anoIniciais = 2011;
+		if(data.did_meta_2011_ini != null){
+			metasIniciais = data.did_meta_2011_ini;
 		}
-		notasFinais = data.did_ideb_2015_fin;
-		if(data.did_meta_2015_fin != null){
-			metasFinais = data.did_meta_2015_fin;
+	}
+	if(data.did_ideb_2011_fin != null){
+		notasFinais = data.did_ideb_2011_fin;
+		anoFinais = 2011;
+		if(data.did_meta_2011_fin != null){
+			metasFinais = data.did_meta_2011_fin;
 		}
-	} else if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null){
+	}
+	if(data.did_ideb_2013_ini != null){
 		notasIniciais = data.did_ideb_2013_ini;
+		anoIniciais = 2013;
 		if(data.did_meta_2013_ini != null){
 			metasIniciais = data.did_meta_2013_ini;
 		}
+	}
+	if(data.did_ideb_2013_fin != null){
 		notasFinais = data.did_ideb_2013_fin;
+		anoFinais = 2013;
 		if(data.did_meta_2013_fin != null){
 			metasFinais = data.did_meta_2013_fin;
+		}
+	}
+	if(data.did_ideb_2015_ini != null){
+		notasIniciais = data.did_ideb_2015_ini;
+		anoIniciais = 2015;
+		if(data.did_meta_2015_ini != null){
+			metasIniciais = data.did_meta_2015_ini;
+		}
+	}
+	if(data.did_ideb_2015_fin != null){
+		notasFinais = data.did_ideb_2015_fin;
+		anoFinais = 2015;
+		if(data.did_meta_2015_fin != null){
+			metasFinais = data.did_meta_2015_fin;
+		}
+	}
+	if(data.did_ideb_2017_ini != null){
+		notasIniciais = data.did_ideb_2017_ini;
+		anoIniciais = 2017;
+		if(data.did_meta_2017_ini != null){
+			metasIniciais = data.did_meta_2017_ini;
+		}
+	}
+	if(data.did_ideb_2017_fin != null){
+		notasFinais = data.did_ideb_2017_fin;
+		anoFinais = 2017;
+		if(data.did_meta_2017_fin != null){
+			metasFinais = data.did_meta_2017_fin;
+		}
+	}
+	if(data.did_ideb_2019_ini != null){
+		notasIniciais = data.did_ideb_2019_ini;
+		anoIniciais = 2019;
+		if(data.did_meta_2019_ini != null){
+			metasIniciais = data.did_meta_2019_ini;
+		}
+	}
+	if(data.did_ideb_2019_fin != null){
+		notasFinais = data.did_ideb_2019_fin;
+		anoFinais = 2019;
+		if(data.did_meta_2019_fin != null){
+			metasFinais = data.did_meta_2019_fin;
+		}
+	}
+	if(data.did_ideb_2021_fin != null){
+		notasFinais = data.did_ideb_2021_fin;
+		anoFinais = 2021;
+		if(data.did_meta_2021_fin != null){
+			metasFinais = data.did_meta_2021_fin;
+		}
+	}
+	if(data.did_ideb_2021_ini != null){
+		notasIniciais = data.did_ideb_2021_ini;
+		anoIniciais = 2021;
+		if(data.did_meta_2021_ini != null){
+			metasIniciais = data.did_meta_2021_ini;
 		}
 	}
 	
@@ -1184,6 +1260,7 @@ function updateIdeb(data){
 		$('#linha1 .col-esq').html(
 				'<div class="ideb-notas">'+
 				'<h3>Nota e meta do IDEB - Fundamental I</h3>'+
+				'<h3>'+anoIniciais+'</h3>'+
 				'<div class="notas-iniciais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
 					'<div class="notas-circle">'+
 						'<div class="inner-notas">'+
@@ -1205,6 +1282,7 @@ function updateIdeb(data){
 			$('#linha1 .col-dir').html(
 				'<div class="ideb-metas">'+
 					'<h3>Nota e meta do IDEB - Fundamental II</h3>'+
+					'<h3>'+anoFinais+'</h3>'+
 					'<div class="notas-finais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
 						'<div class="notas-circle">'+
 							'<div class="inner-notas">'+
@@ -1224,6 +1302,7 @@ function updateIdeb(data){
 				'</div>');
 			$('#linha2').show();
 			$('#linha2 .col-esq').html(
+				'<hr>'+
 				'<div class="ideb-evolucao">'+
 					'<h3>Evolução do IDEB - Fundamental I</h3>'+
 					'<div class="evolucao-iniciais">'+
@@ -1240,7 +1319,8 @@ function updateIdeb(data){
 		} else {
 			$('#linha2').hide();
 			$('#linha1 .col-dir').html(
-				'<div class="ideb-evolucao">'+
+					'<hr>'+
+					'<div class="ideb-evolucao">'+
 					'<h3>Evolução do IDEB - Fundamental I</h3>'+
 					'<div class="evolucao-iniciais">'+
 						'<canvas id="evolucao5" width="400" height="300"></canvas>'+
@@ -1252,6 +1332,7 @@ function updateIdeb(data){
 		$('#linha1 .col-esq').html(
 				'<div class="ideb-metas">'+
 				'<h3>Nota e meta do IDEB - Fundamental II</h3>'+
+				'<h3>'+anoFinais+'</h3>'+
 				'<div class="notas-finais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
 					'<div class="notas-circle">'+
 						'<div class="inner-notas">'+
@@ -1270,6 +1351,7 @@ function updateIdeb(data){
 				'</div>'+
 			'</div>');
 		$('#linha1 .col-dir').html(
+				'<hr>'+
 				'<div class="ideb-evolucao">'+
 				'<div class="evolucao-finais">'+
 					'<h3>Evolução do IDEB - Fundamental II</h3>'+
