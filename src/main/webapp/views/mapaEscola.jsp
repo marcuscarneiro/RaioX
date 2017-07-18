@@ -1373,7 +1373,7 @@
 		</div>
 		
 		<div class="helper">
-			<i class="fa fa-question-circle-o"></i>
+			<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/warningWhite.png">
 		</div>
 		
 		<footer>
