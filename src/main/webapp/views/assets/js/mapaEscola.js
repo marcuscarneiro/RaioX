@@ -1,4 +1,4 @@
-var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual;
+var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual, filtrosIds = [];
 var modo = 'all';
 var viewWidth = $(window).width();
 var rpaAtual = 0;
@@ -349,6 +349,7 @@ function carregaEscolas(){
 			escolasList = [];
 			escolasListCompare = [];
 			changeMarkers();
+			guardaIds(data);
 		},
 		error: function(xhr, ajaxOptions, thrownError){
 		}
@@ -2034,169 +2035,7 @@ function mudaLegenda(filter){
 	});
 }
 
-function changeMarkersMeta(){
-	escolasLayer.eachLayer(function(marker) {
-		if(marker.feature.properties.ATINGIUMETA == true){
-			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-' + marker.feature.properties.COR + '.png',
-				iconSize: [15, 38]
-			}));
-		} else {
-			map.removeLayer(marker);
-		}
-	});
-}
-
-function changeMarkersNovas(){
-	escolasLayer.eachLayer(function(marker) {
-		if(marker.feature.properties.Nova == true){
-			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-' + marker.feature.properties.COR + '.png',
-				iconSize: [15, 38]
-			}));
-		} else {
-			map.removeLayer(marker);
-		}
-	});
-}
-
-function changeMarkersQuadras(){
-	
-	escolasLayer.eachLayer(function(marker) {
-		escolasList.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
-		if(marker.feature.properties.POSSUIQUADRA === 1){
-			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-black.png',
-				iconSize: [15, 38]
-			}));
-		} else if(marker.feature.properties.POSSUIQUADRA === 2){
-			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-yellow.png',
-				iconSize: [15, 38]
-			}));
-		} else if(marker.feature.properties.POSSUIQUADRA === 3){
-			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-blue.png',
-				iconSize: [15, 38]
-			}));
-		} else {
-			map.removeLayer(marker);
-		}
-		
-		return false;
-	});
-
-	escolasMouseOver();
-	escolasMouseOut();
-	escolasClick();
-};
-
-function changeMarkersAcess(){
-	escolasLayer.eachLayer(function(marker) {
-		
-		escolasList.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
-		if(marker.feature.properties.ACESSIBILIDADE === 2){
-			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-yellow.png',
-				iconSize: [15, 38]
-			}));
-		} else if(marker.feature.properties.ACESSIBILIDADE === 3){
-			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-blue.png',
-				iconSize: [15, 38]
-			}));
-		} else {
-			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-black.png',
-				iconSize: [15, 38]
-			}));
-		}
-		
-		return false;
-	});
-
-	escolasMouseOver();
-	escolasMouseOut();
-	escolasClick();
-};
-
-//function changeLegend(){
-//	if (modo === 'all' || modo === 'meta' || modo === 'ideb') {
-//		var html = '<strong>Cores das escolas</strong>'+
-//				'<hr>'+
-//				'<nav class="legend clearfix">'+
-//					'<div class="legend-spans">'+
-//						'<span style="background: green"></span>'+
-//						'<span style="background: yellow"></span>'+
-//						'<span style="background: red"></span>'+
-//						'<span style="background: #bdbdbd"></span>'+
-//					'</div>'+
-//					'<div class="legend-labels">'+
-//						'<label>Superou a meta IDEB e ficou acima de <strong>6</strong></label>'+
-//						'<label>Atingiu a meta IDEB mas ficou abaixo de <strong>6</strong></label>'+
-//						'<label>Não atingiu a meta do IDEB</label>'+
-//						'<label>Sem dados do IDEB</label>'+
-//					'</div>';
-//		
-////		$(".map-legends").animate({
-////		    width: "240px"
-////		  }, 500 );
-////		$(".map-legend").css("width", "240px");
-//		legend.innerHTML = html;
-//		addLegend();
-//		
-//	} else if (modo === 'quadras') {
-//		var html = '<strong>Estado de conservação da quadra</strong>'+
-//		'<hr>'+
-//		'<nav class="legend clearfix">'+
-//			'<div class="legend-spans">'+
-//				'<span style="background: blue"></span>'+
-//				'<span style="background: yellow"></span>'+
-//				'<span style="background: black"></span>'+
-//			'</div>'+
-//			'<div class="legend-labels">'+
-//				'<label>BOM</label>'+
-//				'<label>REGULAR</label>'+
-//				'<label>RUIM</label>'+
-//			'</div>';
-//		
-//		
-////		$("").css("width", "150px");
-////		$(".wax-legend").css("width", "150px");
-//		legend.innerHTML = html;
-//		addLegend();
-//		
-//	} else if (modo === 'acessibilidade') {
-//		var html = '<strong>Itens de acessibilidade</strong>'+
-//		'<hr>'+
-//		'<nav class="legend clearfix">'+
-//			'<div class="legend-spans">'+
-//				'<span style="background: blue"></span>'+
-//				'<span style="background: yellow"></span>'+
-//				'<span style="background: black"></span>'+
-//			'</div>'+
-//			'<div class="legend-labels">'+
-//				'<label>Possui todos os itens</label>'+
-//				'<label>Possui pelo menos um item</label>'+
-//				'<label>Não possui itens de acessibilidade</label>'+
-//			'</div>';
-//
-////		$(".map-legends").animate({
-////		    width: "240px"
-////		  }, 500 );
-////		$(".map-legend").css("width", "240px");
-//		legend.innerHTML = html;
-//		addLegend();
-//	}
-//}
-
 function escondeDados(){
-//	$(".compare").slideUp();
-//	$(".compare").css("visibility", "none");
-	
-//	$(".ideb").slideUp();
-//	$(".ideb").css("visibility", "none");
-	
 	$(".fiscalizacao").slideUp();
 	$(".fiscalizacao").css("visibility", "none");
 	
@@ -2936,71 +2775,6 @@ function compareFotosVisita(visId, ordem){
 	});
 }
 
-//function updateSize(){
-//    // Get the dimensions of the viewport
-//	viewWidth = $(window).width();
-//    
-//	if(viewWidth < 1100){
-//		$(".navbar-brand").show();
-//		$(".logo").hide();
-//		$(".pesquisa-input").css("padding-left","15px");
-//		if (viewWidth > 750 || viewWidth < 450) {
-//			$(".menu-social").hide();
-//		} else {
-//			$(".menu-social").show();
-//		}
-//	} else {
-//		$(".navbar-brand").hide();
-//    	$(".logo").show();
-//		$(".menu-social").show();
-//		$(".pesquisa-input").css("padding-left","262px");
-//		$(".navbar").hide().fadeIn('fast');
-//	}
-//	
-//    if(viewWidth < 750){
-////    	removeLegend();
-//    	$("#filtro").hide();
-////    	$(".lista-rpas").hide();
-//    	$(".fiscalizacao-datas li").addClass("col-xs-4");
-//    	$(".fiscalizacao-datas li").addClass("col-sm-4");
-//    	map.setZoom(11);
-//    	map.dragging.disable();
-////    	
-////    	$("#map").css("height","400px");
-//    	$(".questoes-esquerda").css("text-align", "left");
-//    	$(".questoes-esquerda").css("border-right", "0px #495D77 groove");
-//    	if(viewWidth < 400){
-//    		$(".boxes img").css("width","120px");
-//    		$(".boxes img").css("height","120px");
-//    		$(".boxes").css("width","130px");
-//    		$(".boxes").css("height","130px");
-//    	} else {
-//    		$(".boxes img").css("width","150px");
-//    		$(".boxes img").css("height","150px");
-//    		$(".boxes").css("width","160px");
-//    		$(".boxes").css("height","160px");
-//    	}
-//    	
-//    } else {
-////    	removeLegend();
-////    	addLegend();
-//    	$("#filtro").show();
-////    	$(".lista-rpas").show();
-//    	$(".fiscalizacao-datas li").removeClass("col-xs-4");
-//    	$(".fiscalizacao-datas li").removeClass("col-sm-4");
-//    	map.setZoom(12);
-//    	map.dragging.enable();
-////    	showPesquisa();
-//    	
-////    	$("#map").css("height","450px");
-//    	$(".questoes-esquerda").css("text-align", "right");
-//    	$(".questoes-esquerda").css("border-right", "1px #495D77 groove");
-//    }
-//};
-
-//$(document).ready(updateSize);    // When the page first loads
-//$(window).resize(updateSize);     // When the browser changes size
-
 function compare(a,b) {
 	if (a.feature.properties.DataVisita < b.feature.properties.DataVisita)
 		return -1;
@@ -3014,3 +2788,12 @@ function limitTen(escolas){
 		
 	});
 }
+
+$(".helper").hover(
+		function(){
+			$('.helper span').css('display', 'block');
+		},
+		function(){
+			$('.helper span').hide();
+		}
+);

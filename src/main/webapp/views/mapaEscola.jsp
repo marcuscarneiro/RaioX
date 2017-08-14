@@ -171,6 +171,19 @@
 			</div>
 		</div>
 		
+		<div class="painel painel-contato">
+			<div class="detalhe-contato detalhe">
+				<span class="painel-close" onclick="fechaPaineis()">
+					<i class="fa fa-close fa-2x"></i>
+				</span>
+				<div class="cabecalho">
+					<h2>Envie uma mensagem</h2>
+					
+				</div>
+				
+			</div>
+		</div>
+		
 		<div class="painel painel-numeros">
 			<div class="detalhe-numeros detalhe">
 				<span class="painel-close" onclick="fechaPaineis()">
@@ -1153,14 +1166,27 @@
 				</span>
 				<div class="cabecalho">
 					<h2>Filtros das escolas</h2>
-					<span class="filtro-opcoes">Marque abaixo o filtro que deseja aplicar no mapa</span>
+					<span class="filtro-opcoes">Marque abaixo os filtros que deseja aplicar ao mapa</span>
 				</div>
 				<div class="filtro-lista">
 					<input type="checkbox" id="filtro-1" class="filtro-item" data-filter="meta">
 					<label for="filtro-1">Atingiram a meta do IDEB</label>
 					
-					<input type="checkbox" id="filtro-13" class="filtro-item" data-filter="recentes">
-					<label for="filtro-13">Escolas visitadas recentemente</label>
+					<div class="filtro-periodo">
+						<input type="checkbox" id="filtro-13" class="filtro-item" data-filter="recentes">
+						<label for="filtro-13">Escolas visitadas recentemente</label>
+
+						<span>Informe a data inicial e final para obter as escolas fiscalizadas nesse período</span><br>
+						<div>
+							<label for="periodo-ini">Data inicial</label>
+							<input id="periodo-ini" class="form-control" type="text" data-mask-clearifnotmatch="true"></input>
+						</div>
+						<div>
+							<label for="periodo-fim">Datra final</label>
+							<input id="periodo-fim" class="form-control" type="text" data-mask-clearifnotmatch="true"></input>
+						</div>
+						<button type="button" class="btn btn-primary" onclick="filtraRecentes('recentes')">Filtrar</button>
+					</div>
 					
 					<input type="checkbox" id="filtro-14" class="filtro-item" data-filter="evolucao">
 					<label for="filtro-14">Escolas com evolução sempre crescente da nota do IDEB</label>
@@ -1372,8 +1398,9 @@
 			</ul>
 		</div>
 		
-		<div class="helper">
+		<div class="helper" onclick="abrePainel('contato')">
 			<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/warningWhite.png">
+			<span>Clique aqui caso queira fazer uma denúncia ou sugestão</span>
 		</div>
 		
 		<footer>
@@ -1432,9 +1459,13 @@
 			</p>
 		</div>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapaEscola.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/filters.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.mask.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('[data-toggle="tooltip"]').tooltip(); 
+				$('#periodo-ini').mask("00/00/0000", {placeholder: "__/__/____"});
+				$('#periodo-fim').mask("00/00/0000", {placeholder: "__/__/____"});
 				$(".videos").fancybox({
 					maxWidth	: 800,
 					maxHeight	: 600,

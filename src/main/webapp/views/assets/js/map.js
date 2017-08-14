@@ -8,6 +8,7 @@ function fechaPaineis() {
 	}
 	$(".painel-resultado-compare").animate({width: "-1px"},350);
 	$(".painel-videos").animate({width: "-1px"},350);
+	$(".painel-contato").animate({width: "-1px"},350);
 	$(".painel-projeto").animate({width: "-1px"},350);
 	$(".painel-pesquisa").animate({width: "-1px"},350);
 	$(".painel-filtro").animate({width: "-1px"},350);
@@ -30,10 +31,18 @@ function abrePainel(nomePainel) {
 		} if (nomePainel == 'compare' || nomePainel == 'resultado-compare' || nomePainel == 'videos' || nomePainel == 'projeto' ) {
 			$(".painel-"+nomePainel).animate({width: "100%"},350);
 			$(".painel-"+nomePainel).addClass("isActive");
-		} if(nomePainel == 'pesquisa' || nomePainel == 'filtro') {
+		} if (nomePainel == 'pesquisa' || nomePainel == 'filtro') {
 			if(nomePainel == 'pesquisa'){
 				$("#pesquisaEscola").focus();
 			}
+			if($(window).width() <= 1024){
+				$(".painel-"+nomePainel).animate({width: "100%"},350);
+				$(".painel-"+nomePainel).addClass("isActive");
+			} else {
+				$(".painel-"+nomePainel).animate({width: "40%"},350);
+				$(".painel-"+nomePainel).addClass("isActive");
+			}
+		} if (nomePainel == 'contato') {
 			if($(window).width() <= 1024){
 				$(".painel-"+nomePainel).animate({width: "100%"},350);
 				$(".painel-"+nomePainel).addClass("isActive");

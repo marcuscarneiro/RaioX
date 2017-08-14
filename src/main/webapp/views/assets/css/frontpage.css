@@ -148,6 +148,22 @@ html, body
 	-webkit-transform: translateZ(0);
 }
 
+.painel-contato
+{
+	-moz-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
+	-webkit-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
+	box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	bottom: 0;
+	width: 0%;
+	max-width: 600px;
+	background: #fff;
+	z-index: 2;
+	-webkit-transform: translateZ(0);
+}
+
 .painel-escola, .painel-numeros
 {
 	-moz-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
@@ -673,6 +689,7 @@ li.box-numeros:hover
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+	float: left;
 }
 
 .filtro-item + label:last-child
@@ -1113,28 +1130,63 @@ li.box-numeros:hover
 }
 
 .helper {
+	position: relative;
+	top: 50%;
 	display: block;
-	width: 50px;
-	height: 50px;
-	background: #D44545;
-	bottom: 95px;
-	right: 30px;
+	overflow: hidden;
+	width: 60px;
+	height: 120px;
+	background: #333;
+	right: 0;
 	position: absolute;
-	border-radius: 90px;
-	text-align: center;
+	border-radius: 90px 0 0 90px;
+	text-align: left;
 	vertical-align: middle;
 	color: white;
 	font-size: 22px;
 	cursor: default;
+	transform: perspective(1px) translateY(-50%);
 	transition-property: width;
 	transition-duration: .3s;
 }
 
 .helper img {
 	width: 30px;
+	margin-left: 22px;
+	margin-top: 44px;
+	float: left;
 }
 
 .helper:hover {
 	cursor: pointer;
-	width: 200px;
+	width: 300px;
+}
+
+.helper span{
+	display: none;
+    font-size: 17px;
+    padding-left: 80px;
+    margin-top: 24px;
+}
+
+.filtro-periodo div {
+	display: none;
+	color: #6cc0e5;
+	padding-left: 36px;
+	width: 135px;
+	float: left;
+	margin: 20px 0;
+}
+
+.filtro-periodo span {
+	display: none;
+	float: left;
+	padding-left: 36px;
+	color: #6cc0e5;
+}
+
+.filtro-periodo button {
+	display: none;
+	float: left;
+	margin: 45px 0 0 36px;
 }
