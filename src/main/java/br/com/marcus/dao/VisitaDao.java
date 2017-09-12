@@ -18,4 +18,6 @@ public interface VisitaDao {
 	
 	public Visita getUltimaByEscola(Long id);
 	
+	public List<Visita> getByTimeRange(String ini, String fim);
+	
 }

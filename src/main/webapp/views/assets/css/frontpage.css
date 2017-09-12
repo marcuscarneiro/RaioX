@@ -159,9 +159,31 @@ html, body
 	bottom: 0;
 	width: 0%;
 	max-width: 600px;
-	background: #fff;
+	background: #3b4141;
 	z-index: 2;
 	-webkit-transform: translateZ(0);
+	color: #fff;
+}
+
+.detalhe-contato {
+	display: none;
+	width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detalhe-contato i {
+	margin: 10px 10px 0 0;
+	color: #fff;
+}
+
+.painel-contato input {
+	border: none !important;
+	background: #2e3434;
+	color: #ccc;
+	border-radius: 0;
+	height: 50px;
+	margin: 10px 0;
 }
 
 .painel-escola, .painel-numeros
@@ -1008,7 +1030,79 @@ li.box-numeros:hover
     background-color: #242429;
 }
 
+.helper {
+	position: relative;
+	top: 50%;
+	display: block;
+	overflow: hidden;
+	width: 60px;
+	height: 120px;
+	background: #333;
+	right: 0;
+	position: absolute;
+	border-radius: 90px 0 0 90px;
+	text-align: left;
+	vertical-align: middle;
+	color: white;
+	font-size: 22px;
+	cursor: default;
+	transform: perspective(1px) translateY(-50%);
+	transition-property: width;
+	transition-duration: .3s;
+}
+
+.helper img {
+	width: 30px;
+	margin-left: 22px;
+	margin-top: 44px;
+	float: left;
+}
+
+.helper:hover {
+	cursor: pointer;
+	width: 300px;
+}
+
+.helper span{
+	display: none;
+    font-size: 17px;
+    padding-left: 80px;
+    margin-top: 24px;
+}
+
+.filtro-periodo div {
+	display: none;
+	color: #286090;
+	padding-left: 36px;
+	width: 135px;
+	float: left;
+	margin: 20px 0;
+}
+
+.filtro-periodo span {
+	display: none;
+	float: left;
+	padding-left: 36px;
+	color: #286090;
+}
+
+.filtro-periodo button {
+	display: none;
+	float: left;
+	margin: 45px 0 0 36px;
+}
+
 /* MEDIA QUERY */
+
+@media screen and (max-width: 1400px){
+	.filtro-periodo button {
+		margin: 45px 0 0 10px !important;
+	}
+	
+	.periodo-fim {
+		padding-left: 20px !important;
+	}
+}
 
 @media screen and (max-width: 1024px){
   	
@@ -1127,66 +1221,4 @@ li.box-numeros:hover
 		width: 100%;
 		padding: 4%;
 	}
-}
-
-.helper {
-	position: relative;
-	top: 50%;
-	display: block;
-	overflow: hidden;
-	width: 60px;
-	height: 120px;
-	background: #333;
-	right: 0;
-	position: absolute;
-	border-radius: 90px 0 0 90px;
-	text-align: left;
-	vertical-align: middle;
-	color: white;
-	font-size: 22px;
-	cursor: default;
-	transform: perspective(1px) translateY(-50%);
-	transition-property: width;
-	transition-duration: .3s;
-}
-
-.helper img {
-	width: 30px;
-	margin-left: 22px;
-	margin-top: 44px;
-	float: left;
-}
-
-.helper:hover {
-	cursor: pointer;
-	width: 300px;
-}
-
-.helper span{
-	display: none;
-    font-size: 17px;
-    padding-left: 80px;
-    margin-top: 24px;
-}
-
-.filtro-periodo div {
-	display: none;
-	color: #6cc0e5;
-	padding-left: 36px;
-	width: 135px;
-	float: left;
-	margin: 20px 0;
-}
-
-.filtro-periodo span {
-	display: none;
-	float: left;
-	padding-left: 36px;
-	color: #6cc0e5;
-}
-
-.filtro-periodo button {
-	display: none;
-	float: left;
-	margin: 45px 0 0 36px;
 }

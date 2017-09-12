@@ -5,23 +5,27 @@ filtroQuadras = [], filtroAces = [];
 $('.filtro-item').on('click', function(){
 	actualMarker = undefined;
 	
-	if($.inArray($(this).data('filter'), selectedFilters) != -1){
-		if($(this).data('filter') === 'recentes'){
-			$("#periodo-ini").val('');
-			$("#periodo-fim").val('');
-			$(".filtro-periodo div").hide();
-			$(".filtro-periodo span").hide();
-			$(".filtro-periodo button").hide();
-		}
-		filter = 'null';
+	if($(this).data('filter') === 'periodo'){
+		filter = 'periodo';
 	} else {
-		if($(this).data('filter') === 'recentes'){
-			$(".filtro-periodo div").show();
-			$(".filtro-periodo span").show();
-			$(".filtro-periodo button").show();
+		if($.inArray($(this).data('filter'), selectedFilters) != -1){
+			if($(this).data('filter') === 'recentes'){
+				$("#periodo-ini").val('');
+				$("#periodo-fim").val('');
+				$(".filtro-periodo div").hide();
+				$(".filtro-periodo span").hide();
+				$(".filtro-periodo button").hide();
+			}
+			filter = 'null';
+		} else {
+			if($(this).data('filter') === 'recentes'){
+				$(".filtro-periodo div").show();
+				$(".filtro-periodo span").show();
+				$(".filtro-periodo button").show();
+			}
+			selectedFilters.push($(this).data('filter'));
+			filter = $(this).data('filter');
 		}
-		selectedFilters.push($(this).data('filter'));
-		filter = $(this).data('filter');
 	}
 	
 	if ($(".filtro-item:checked").length == 0) {
@@ -157,15 +161,45 @@ function filtraNunca(filter){
 }
 
 function filtraRecentes(filter){
-	if(filtroRecentes.length === 0){
+	if($("#periodo-ini").val() != "" || $("#periodo-fim").val() != ""){
+		var recIni, recFim;
+		
+		if($("#periodo-ini").val() != ""){
+			var d = new Date($("#periodo-ini").val().split("/").reverse().join("-"));
+			var dd = d.getDate();
+			var mm = d.getMonth()+1;
+			var yy = d.getFullYear();
+			var recIni = yy + "-" + mm + "-" + dd;
+		} else {
+			recIni = 'null';
+		}
+		
+		if($("#periodo-fim").val() != ""){
+			var d = new Date($("#periodo-fim").val().split("/").reverse().join("-"));
+			var dd = d.getDate();
+			var mm = d.getMonth()+1;
+			var yy = d.getFullYear();
+			var recFim = yy + "-" + mm + "-" + dd;
+		} else {
+			recFim = 'null';
+		}
+		
 		$.ajax({
 			url: 'consultaRecentes',
-			type: "GET",
+			type: "POST",
+			data: {
+				"ini" : recIni,
+				"fim" : recFim
+			},
+			contentType: 'application/json',
 			dataType: 'json',
 			success: function(data) {
-				$.each(data.features, function(i, escola){
-					filtroRecentes.push(escola.properties.ID);
-				});
+				filtroRecentes = [];
+				if(data != null){
+					$.each(data.features, function(i, escola){
+						filtroRecentes.push(escola.properties.ID);
+					});
+				}
 				removeFilterLayers(filtroRecentes);
 				removePins();
 				escolasList = [];
@@ -176,13 +210,6 @@ function filtraRecentes(filter){
 			error: function(xhr, ajaxOptions, thrownError){
 			}
 		});
-	} else {
-		removeFilterLayers(filtroRecentes);
-		removePins();
-		escolasList = [];
-		escolasListCompare = [];
-		modo = 'ideb';
-		changeMarkers();
 	}
 }
 
@@ -671,3 +698,31 @@ function updateSelectedFilters(){
 		selectedFilters.push($(el).data('filter'));
 	});
 }
+
+$("#periodo-ini").blur(function(){
+	var parts = $(this).val().split("/");
+	var dt = new Date(parseInt(parts[2], 10),
+	                  parseInt(parts[1], 10) - 1,
+	                  parseInt(parts[0], 10));
+	if(dt-Date.parse(new Date())>0){
+		swal("Atenção!", "A data precisa ser anterior a hoje", "error");
+		$(this).val('');
+	}
+});
+
+$("#periodo-fim").blur(function(){
+	var fimParts = $(this).val().split("/");
+	var fimDt = new Date(parseInt(fimParts[2], 10),
+	                  parseInt(fimParts[1], 10) - 1,
+	                  parseInt(fimParts[0], 10));
+	var iniParts = $("#periodo-ini").val().split("/");
+	var iniDt = new Date(parseInt(iniParts[2], 10),
+	                  parseInt(iniParts[1], 10) - 1,
+	                  parseInt(iniParts[0], 10));
+	if($("#periodo-ini").val() != null){
+		if(iniDt-fimDt>0){
+			swal("Atenção!", "A data final precisa ser posterior à data inicial", "error");
+			$(this).val('');
+		}
+	}
+});

@@ -85,4 +85,26 @@ public class VisitaDaoImpl implements VisitaDao {
          
         return null;
     }
+    
+    @Transactional
+    public List<Visita> getByTimeRange(String ini, String fim) {
+    	String hql = "";
+    	if(!ini.equals("null") && !fim.equals("null")){
+    		hql = "from Visita where data_visita between '" + ini + "' and '" + fim + "' order by data desc";
+    	} else if(!ini.equals("null")){
+    		hql = "from Visita where data >= '" + ini + "' order by data desc";
+    	} else {
+    		hql = "from Visita where data <= '" + fim + "' order by data desc";
+    	}
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+         
+        @SuppressWarnings("unchecked")
+        List<Visita> listVisita = (List<Visita>) query.list();
+         
+        if (listVisita != null && !listVisita.isEmpty()) {
+            return listVisita;
+        }
+         
+        return null;
+    }
 }

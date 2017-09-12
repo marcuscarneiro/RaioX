@@ -9,6 +9,7 @@ function fechaPaineis() {
 	$(".painel-resultado-compare").animate({width: "-1px"},350);
 	$(".painel-videos").animate({width: "-1px"},350);
 	$(".painel-contato").animate({width: "-1px"},350);
+	$(".detalhe-contato").hide();
 	$(".painel-projeto").animate({width: "-1px"},350);
 	$(".painel-pesquisa").animate({width: "-1px"},350);
 	$(".painel-filtro").animate({width: "-1px"},350);
@@ -43,6 +44,7 @@ function abrePainel(nomePainel) {
 				$(".painel-"+nomePainel).addClass("isActive");
 			}
 		} if (nomePainel == 'contato') {
+			$(".detalhe-contato").show();
 			if($(window).width() <= 1024){
 				$(".painel-"+nomePainel).animate({width: "100%"},350);
 				$(".painel-"+nomePainel).addClass("isActive");
@@ -287,3 +289,17 @@ function ordenaEscolas() {
 	})
 	$.each(listaitems, function(idx, itm) { listaComp.append(itm); });
 };
+
+function enviaForm(){
+	if($("#contNome").val() != "" && $("#contEmail").val() != "" && $("#contAssunto").val() != "" && $("#contMensagem").val() != ""){
+		swal("Formulário enviado!", "Em breve iremos retornar o contato", "success");
+		$("#contNome").val("");
+		$("#contEmail").val("");
+		$("#contEscola").val("");
+		$("#contAssunto").val("");
+		$("#contMensgame").val("");
+		fechaPaineis();
+	} else {
+		swal("Formulário incompleto!", "Antes de enviar, preencha todos os campos", "error");
+	}
+}

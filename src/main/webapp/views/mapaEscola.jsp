@@ -172,15 +172,25 @@
 		</div>
 		
 		<div class="painel painel-contato">
-			<div class="detalhe-contato detalhe">
+			<div class="detalhe-contato">
 				<span class="painel-close" onclick="fechaPaineis()">
 					<i class="fa fa-close fa-2x"></i>
 				</span>
-				<div class="cabecalho">
-					<h2>Envie uma mensagem</h2>
-					
+				<div class="contato-topo">
+					<h2>Entre em contato</h2>
 				</div>
-				
+				<form class="contato-form">
+					<input id="contNome" class="form-control" type="text" placeholder="Nome*"></input>
+					<input id="contEmail" class="form-control" type="text" placeholder="Seu e-mail*"></input>
+					<input id="contEscola" class="form-control" type="text" placeholder="Sua escola"></input>
+					<input id="contAssunto" class="form-control" type="text" placeholder="Assunto*"></input>
+					<input id="contMensagem" class="form-control" type="text" placeholder="Mensagem*"></input>
+					<button type="button" class="btn btn-primary" onclick="enviaForm()">ENVIAR</button>
+				</form>
+				<hr>
+				<h3>OUTRAS FORMAS</h3>
+				<i class="fa fa-envelope"></i><span>equipeandreregis@gmail.com</span><br>
+				<i class="fa fa-phone-square"></i><span>(81) 3301-1253</span>
 			</div>
 		</div>
 		
@@ -1179,13 +1189,13 @@
 						<span>Informe a data inicial e final para obter as escolas fiscalizadas nesse período</span><br>
 						<div>
 							<label for="periodo-ini">Data inicial</label>
-							<input id="periodo-ini" class="form-control" type="text" data-mask-clearifnotmatch="true"></input>
+							<input id="periodo-ini" class="form-control" type="text" data-inputmask="'alias': 'date'"></input>
 						</div>
-						<div>
-							<label for="periodo-fim">Datra final</label>
-							<input id="periodo-fim" class="form-control" type="text" data-mask-clearifnotmatch="true"></input>
+						<div class="periodo-fim">
+							<label for="periodo-fim">Data final</label>
+							<input id="periodo-fim" class="form-control" type="text" data-inputmask="'alias': 'date'"></input>
 						</div>
-						<button type="button" class="btn btn-primary" onclick="filtraRecentes('recentes')">Filtrar</button>
+						<button type="button" class="btn btn-primary filtro-item" data-filter="periodo">Filtrar</button>
 					</div>
 					
 					<input type="checkbox" id="filtro-14" class="filtro-item" data-filter="evolucao">
@@ -1460,12 +1470,17 @@
 		</div>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapaEscola.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/filters.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.mask.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.extensions.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.date.extensions.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.inputmask.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('[data-toggle="tooltip"]').tooltip(); 
-				$('#periodo-ini').mask("00/00/0000", {placeholder: "__/__/____"});
-				$('#periodo-fim').mask("00/00/0000", {placeholder: "__/__/____"});
+				$("#periodo-ini").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
+				$("#periodo-fim").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
+				//$('#periodo-ini').mask("00/00/0000", {placeholder: "__/__/____"});
+				//$('#periodo-fim').mask("00/00/0000", {placeholder: "__/__/____"});
 				$(".videos").fancybox({
 					maxWidth	: 800,
 					maxHeight	: 600,

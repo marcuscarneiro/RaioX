@@ -60,13 +60,29 @@ public class MapaEscolasController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
     }
 	
-	@RequestMapping(value="/consultaRecentes", method=RequestMethod.GET, produces={"application/json; charset=UTF-8"})
-	public @ResponseBody()
-	String consultaRecentes(){
+	@RequestMapping(value="/consultaRecentes", headers = {"Content-type=application/json"}, produces={"application/json; charset=UTF-8"}, method = RequestMethod.POST)
+	@ResponseBody()
+	public String consultaRecentes(@RequestBody String json){
 		List<Escola> escList = new ArrayList<>();
-		List<Visita> visitasList = visitaDao.list();
-		for (int i = 0; i < 10; i++) {
-			escList.add((visitasList.get(i)).getEscola());
+		List<Visita> visitasList = new ArrayList<>();
+		String ini = json.substring(4,json.indexOf("&"));
+		String fim = json.substring(json.indexOf("fim")+4);
+		if(!ini.equals("null") || !fim.equals("null")){
+			visitasList = visitaDao.getByTimeRange(ini, fim);
+			try {
+				if(visitasList.size() > 0){
+					for (int i = 0; i < visitasList.size(); i++) {
+						escList.add((visitasList.get(i)).getEscola());
+					}
+				}
+			} catch (Exception e) {
+				return "null";
+			}
+		} else {
+			visitasList = visitaDao.list();
+			for (int i = 0; i < 10; i++) {
+				escList.add((visitasList.get(i)).getEscola());
+			}
 		}
 		return getEscolasGeoJSON(escList).toString();
 	}
