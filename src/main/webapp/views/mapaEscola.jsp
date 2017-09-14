@@ -185,7 +185,7 @@
 					<input id="contEscola" class="form-control" type="text" placeholder="Sua escola"></input>
 					<input id="contAssunto" class="form-control" type="text" placeholder="Assunto*"></input>
 					<input id="contMensagem" class="form-control" type="text" placeholder="Mensagem*"></input>
-					<button type="button" class="btn btn-primary" onclick="enviaForm()">ENVIAR</button>
+					<button id="sendButton" type="button" class="btn btn-primary" onclick="enviaForm()"><i id="sending" class="fa fa-circle-o-notch fa-spin"></i>ENVIAR</button>
 				</form>
 				<hr>
 				<h3>OUTRAS FORMAS</h3>

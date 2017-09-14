@@ -9,10 +9,14 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import br.com.marcus.modelo.Email;
 
 @Controller
 public class MainController {
@@ -74,6 +78,15 @@ public class MainController {
 		return model;
 
 	}
+	
+	@RequestMapping(value = "/sendMail", headers = {"Content-type=application/json"}, produces={"application/json; charset=UTF-8"}, method = RequestMethod.POST)
+	@ResponseBody
+	public boolean addEmail(@RequestBody Email email) {
+		
+		System.out.println("Nome: " + email.getNome() + ", Assunto: " + email.getAssunto() + ", E-mail: " + email.getEmail() + ", Escola: " + email.getEscola() + ", Mensagem: " + email.getMensagem());
+		return true;
+	}
+
 
 	// customize the error message
 	private String getErrorMessage(HttpServletRequest request, String key) {

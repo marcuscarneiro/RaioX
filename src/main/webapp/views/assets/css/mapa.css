@@ -1111,3 +1111,7 @@ input.pesquisa-input
 {
 	bottom: 10px !important;
 }
+
+#sending {
+	display: none;
+}

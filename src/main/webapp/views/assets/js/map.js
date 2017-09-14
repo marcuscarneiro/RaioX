@@ -292,13 +292,40 @@ function ordenaEscolas() {
 
 function enviaForm(){
 	if($("#contNome").val() != "" && $("#contEmail").val() != "" && $("#contAssunto").val() != "" && $("#contMensagem").val() != ""){
-		swal("Formulário enviado!", "Em breve iremos retornar o contato", "success");
-		$("#contNome").val("");
-		$("#contEmail").val("");
-		$("#contEscola").val("");
-		$("#contAssunto").val("");
-		$("#contMensgame").val("");
-		fechaPaineis();
+		$("#sending").show();
+		$("#sendButton").text("ENVIANDO");
+		var data = {};
+		data["nome"] = $("#contNome").val();
+		data["email"] = $("#contEmail").val();
+		data["escola"] = $("#contEscola").val();
+		data["assunto"] = $("#contAssunto").val();
+		data["mensagem"] = 	$("#contMensagem").val();
+		$.ajax({
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			type: 'POST',
+			async: false,
+			url: 'sendMail',
+				data: JSON.stringify(data),
+				success: function (data){
+					if(data === true){
+						swal("Formulário enviado!", "Em breve iremos retornar o contato", "success")
+					} else {
+						swal("Erro inesperado!", "Alguma coisa aconteceu", "error");
+					}
+					$("#contNome").val("");
+					$("#contEmail").val("");
+					$("#contEscola").val("");
+					$("#contAssunto").val("");
+					$("#contMensagem").val("");
+					$("#sending").show();
+					$("#sendButton").text("ENVIAR");
+					fechaPaineis();
+				},
+				error: function (callback) {
+					console.log(callback);
+				}
+			});
 	} else {
 		swal("Formulário incompleto!", "Antes de enviar, preencha todos os campos", "error");
 	}
