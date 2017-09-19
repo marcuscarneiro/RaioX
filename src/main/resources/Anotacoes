@@ -1,0 +1,14 @@
+Rodar no banco de produção:
+
+ALTER TABLE visita RENAME anotacoes10a  TO anotacoes11a;
+ALTER TABLE visita RENAME anotacoes5  TO anotacoes6;
+ALTER TABLE visita RENAME anotacoes6a  TO anotacoes7a;
+ALTER TABLE visita RENAME anotacoes5a  TO anotacoes6a;
+ALTER TABLE visita RENAME anotacoes8  TO anotacoes9;
+ALTER TABLE visita RENAME anotacoes7  TO anotacoes8;
+ALTER TABLE visita RENAME anotacoes9a  TO anotacoes10a;
+ALTER TABLE visita RENAME infger10  TO anotacoes11;
+ALTER TABLE visita RENAME infger2  TO anotacoes2;
+ALTER TABLE visita RENAME infger4  TO anotacoes5;
+ALTER TABLE visita RENAME infger6  TO anotacoes7;
+ALTER TABLE visita RENAME infger9  TO anotacoes10;

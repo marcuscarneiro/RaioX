@@ -578,9 +578,9 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="infger2" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes2" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="infger2" name="infger2" class="form-control" path="infger2" />
+								<form:textarea id="anotacoes2" name="anotacoes2" class="form-control" path="anotacoes2" />
 							</div>
 						</div>
 						
@@ -690,7 +690,112 @@
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">4 - MÓDULO RECREAÇÃO E LAZER</h3>
+						<h3 style="text-align: center;">4 - MÓDULO ESPAÇO TECNOLÓGICO</h3>
+						<hr>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="et1"><strong>ET1</strong> - Existe Espaço Tecnológico?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et1" path="et1" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et1" path="et1" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et1" path="et1" value="false" />  NÃO</div>
+								<div class="col-sm-8 col-sm-offset-3">Obs: Caso a resposta seja não, vá para o próximo módulo.</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="et2"><strong>ET2</strong> - É climatizado?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et2" path="et2" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et2" path="et2" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et2" path="et2" value="false" />  NÃO</div>
+								<div class="col-sm-8 col-sm-offset-3">Obs: Se for climatizado, pule a próxima pergunta.</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="et3"><strong>ET3</strong> - É bem ventilado?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et3" path="et3" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et3" path="et3" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et3" path="et3" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="et4"><strong>ET4</strong> - Há suporte técnico da Prefeitura?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et4" path="et4" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et4" path="et4" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et4" path="et4" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="et5"><strong>ET5</strong> - Há aulas de interatividade tecnológica?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et5" path="et5" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et5" path="et5" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et5" path="et5" value="false" />  NÃO</div>
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="et6"><strong>ET6</strong> - Quantas mesas iterativas há no laboratório?</label>
+							<div class="col-sm-4">
+								<form:input id="et6" name="et6" type="text" class="form-control" path="et6" />
+							</div>
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="et7"><strong>ET7</strong> - Quantas mesas iterativas funcionam?</label>
+							<div class="col-sm-4">
+								<form:input id="et7" name="et7" type="text" class="form-control" path="et7" />
+							</div>
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="et8"><strong>ET8</strong> - Quantas mesas iterativas tem acesso à internet?</label>
+							<div class="col-sm-4">
+								<form:input id="et8" name="et8" type="text" class="form-control" path="et8" />
+							</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="et9"><strong>ET9</strong> - Há monitor(a) / instrutor(a)?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et9" path="et9" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et9" path="et9" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et9" path="et9" value="false" />  NÃO</div>
+								<div class="col-sm-8 col-sm-offset-3">Obs: Se a resposta for não, vá para o próximo módulo</div>
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="et10"><strong>ET10</strong> - Qual a formação do(a) Monitor(a) / Instrutor(a)?</label>
+							<div class="col-sm-4">
+								<form:input id="et10" name="et10" type="text" class="form-control" path="et10" />
+								1 = Na área de informática;<br/>
+								0 = Em outra área.
+							</div>
+						</div>
+						<!-- Textarea -->
+						<div class="form-group">
+							<label for="anotacoes4" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<div class="col-sm-4">
+								<form:textarea id="anotacoes4" name="anotacoes4" class="form-control" path="anotacoes4" />
+							</div>
+						</div>
+						
+						<hr>
+						<h3 style="text-align: center;">5 - MÓDULO RECREAÇÃO E LAZER</h3>
 						<hr>
 						Para as perguntas de estado de conservação use os valores:<br/>
 						3 = bom;<br/>
@@ -745,14 +850,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="infger4" class="col-sm-3 control-label"><strong>Anotações</strong></label>
-							<div class="col-sm-4">
-								<form:textarea id="infger4" name="infger4" class="form-control" path="infger4" />
+							<label for="anotacoes5" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<div class="col-sm-3">
+								<form:textarea id="anotacoes5" name="anotacoes5" class="form-control" path="anotacoes5" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">5 - MÓDULO ACESSIBILIDADE</h3>
+						<h3 style="text-align: center;">6 - MÓDULO ACESSIBILIDADE</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -857,14 +962,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="anotacoes5" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes6" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="anotacoes5" name="anotacoes5" class="form-control" path="anotacoes5" />
+								<form:textarea id="anotacoes6" name="anotacoes6" class="form-control" path="anotacoes6" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">5A - MÓDULO ESPECIAL DE ACESSIBILIDADE</h3>
+						<h3 style="text-align: center;">6A - MÓDULO ESPECIAL DE ACESSIBILIDADE</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -932,14 +1037,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="anotacoes5a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes6a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="anotacoes5a" name="anotacoes5a" class="form-control" path="anotacoes5a" />
+								<form:textarea id="anotacoes6a" name="anotacoes6a" class="form-control" path="anotacoes6a" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">6 - MÓDULO SERVIÇOS ESSENCIAIS</h3>
+						<h3 style="text-align: center;">7 - MÓDULO SERVIÇOS ESSENCIAIS</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -1014,14 +1119,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="infger6" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes7" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="infger6" name="infger6" class="form-control" path="infger6" />
+								<form:textarea id="anotacoes7" name="anotacoes7" class="form-control" path="anotacoes7" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">6A - MÓDULO ESPECIAL ESTRUTURA FÍSICA</h3>
+						<h3 style="text-align: center;">7A - MÓDULO ESPECIAL ESTRUTURA FÍSICA</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -1228,14 +1333,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="anotacoes6a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes7a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="anotacoes6a" name="anotacoes6a" class="form-control" path="anotacoes6a" />
+								<form:textarea id="anotacoes7a" name="anotacoes7a" class="form-control" path="anotacoes7a" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">7 - MÓDULO SALA DOS PROFESSORES</h3>
+						<h3 style="text-align: center;">8 - MÓDULO SALA DOS PROFESSORES</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -1332,14 +1437,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="anotacoes7" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes8" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="anotacoes7" name="anotacoes7" class="form-control" path="anotacoes7" />
+								<form:textarea id="anotacoes8" name="anotacoes8" class="form-control" path="anotacoes8" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">8 - MÓDULO ADMINISTRAÇÃO</h3>
+						<h3 style="text-align: center;">9 - MÓDULO ADMINISTRAÇÃO</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -1540,14 +1645,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="anotacoes8" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes9" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="anotacoes8" name="anotacoes8" class="form-control" path="anotacoes8" />
+								<form:textarea id="anotacoes9" name="anotacoes9" class="form-control" path="anotacoes9" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">9 - MÓDULO ALIMENTAÇÃO</h3>
+						<h3 style="text-align: center;">10 - MÓDULO ALIMENTAÇÃO</h3>
 						<hr>
 						As perguntas ALIM2 a ALIM8 avaliam o local onde as refeições são feitas e deve ser usada seguinte escala Likert:<br>
 						1 = inexistente;<br>
@@ -1655,14 +1760,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="infger9" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes10" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="infger9" name="infger9" class="form-control" path="infger9" />
+								<form:textarea id="anotacoes10" name="anotacoes10" class="form-control" path="anotacoes10" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">9A - MÓDULO ESPECIAL DE MERENDA</h3>
+						<h3 style="text-align: center;">10A - MÓDULO ESPECIAL DE MERENDA</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -1721,14 +1826,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="anotacoes9a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes10a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="anotacoes9a" name="anotacoes9a" class="form-control" path="anotacoes9a" />
+								<form:textarea id="anotacoes10a" name="anotacoes10a" class="form-control" path="anotacoes10a" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">10 - MATERIAL DIDÁTICO E FARDAMENTO</h3>
+						<h3 style="text-align: center;">11 - MATERIAL DIDÁTICO E FARDAMENTO</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -1863,14 +1968,14 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="infger10" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes11" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="infger10" name="infger10" class="form-control" path="infger10" />
+								<form:textarea id="anotacoes11" name="anotacoes11" class="form-control" path="anotacoes11" />
 							</div>
 						</div>
 						
 						<hr>
-						<h3 style="text-align: center;">10A - MÓDULO ESPECIAL DE DIDÁTICA E SAÚDE</h3>
+						<h3 style="text-align: center;">11A - MÓDULO ESPECIAL DE DIDÁTICA E SAÚDE</h3>
 						<hr>
 						
 						<!-- CheckBox -->
@@ -2127,22 +2232,9 @@
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="anotacoes10a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes11a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
-								<form:textarea id="anotacoes10a" name="anotacoes10a" class="form-control" path="anotacoes10a" />
-							</div>
-						</div>
-
-						<hr>
-							
-						<!-- CheckBox Switch -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="pub"><strong>Publicar no Raio-X das Escolas?</strong></form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="pub" path="pub" value="true" />  SIM
-							</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="pub" path="pub" value="false" />  NÃO
+								<form:textarea id="anotacoes11a" name="anotacoes11a" class="form-control" path="anotacoes11a" />
 							</div>
 						</div>
 
@@ -2152,7 +2244,6 @@
 						<div class="form-group">
 							<div class="col-sm-7">
 								<div class="pull-right">
-									<button id="arquivar" class="btn btn-default" title="Deixa de exibir na lista (pode ser recuperada posteriormente)">Arquivar</button>
 									<button id="cancelar" class="btn btn-default" title="Limpa o formulário">Cancelar</button>
 									<button id="gravar" type="submit" name="gravar" class="btn btn-primary">Gravar</button>
 								</div>

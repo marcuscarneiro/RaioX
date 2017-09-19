@@ -55,7 +55,7 @@ body {
 						<!-- TROCAR POR DROPZONE -->
 						<c:if test="${not empty creche.id}">
 							<div class="form-group">
-							<label class="col-sm-3 control-label" for="fotoCapa"><strong>Foto da capa</strong></label>
+							<label class="col-sm-3 control-label" for="fotoCapa"><strong>Foto da fachada</strong></label>
 								<div id="fotoCapa" class="col-sm-4">
 									<input type="file" name="fileUpload" size="50" />
 								</div>

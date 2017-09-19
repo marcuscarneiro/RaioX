@@ -291,9 +291,9 @@ function ordenaEscolas() {
 };
 
 function enviaForm(){
+	$("#sending").show();
+	$("#sendButton").text("ENVIANDO");
 	if($("#contNome").val() != "" && $("#contEmail").val() != "" && $("#contAssunto").val() != "" && $("#contMensagem").val() != ""){
-		$("#sending").show();
-		$("#sendButton").text("ENVIANDO");
 		var data = {};
 		data["nome"] = $("#contNome").val();
 		data["email"] = $("#contEmail").val();
@@ -318,7 +318,7 @@ function enviaForm(){
 					$("#contEscola").val("");
 					$("#contAssunto").val("");
 					$("#contMensagem").val("");
-					$("#sending").show();
+					$("#sending").hide();
 					$("#sendButton").text("ENVIAR");
 					fechaPaineis();
 				},
@@ -327,6 +327,8 @@ function enviaForm(){
 				}
 			});
 	} else {
+		$("#sending").hide();
+		$("#sendButton").text("ENVIAR");
 		swal("Formulário incompleto!", "Antes de enviar, preencha todos os campos", "error");
 	}
 }

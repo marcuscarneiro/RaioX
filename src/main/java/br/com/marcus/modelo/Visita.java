@@ -127,7 +127,7 @@ public class Visita {
 	private String bib13;
 
 	@Column
-	private String infger2;
+	private String anotacoes2;
 
 	@Column
 	private String inf1;
@@ -163,6 +163,39 @@ public class Visita {
 	private String anotacoes3;
 
 	@Column
+	private String et1;
+
+	@Column
+	private String et2;
+
+	@Column
+	private String et3;
+
+	@Column
+	private String et4;
+
+	@Column
+	private String et5;
+
+	@Column
+	private String et6;
+
+	@Column
+	private String et7;
+
+	@Column
+	private String et8;
+
+	@Column
+	private String et9;
+
+	@Column
+	private String et10;
+
+	@Column
+	private String anotacoes4;
+	
+	@Column
 	private String rl1;
 
 	@Column
@@ -181,7 +214,7 @@ public class Visita {
 	private String rl6;
 
 	@Column
-	private String infger4;
+	private String anotacoes5;
 
 	@Column
 	private String ace1;
@@ -214,7 +247,7 @@ public class Visita {
 	private String ace10;
 
 	@Column
-	private String anotacoes5;
+	private String anotacoes6;
 
 	@Column
 	private String se1;
@@ -238,7 +271,7 @@ public class Visita {
 	private String se7;
 
 	@Column
-	private String infger6;
+	private String anotacoes7;
 
 	@Column
 	private String sp1;
@@ -268,7 +301,7 @@ public class Visita {
 	private String sp9;
 
 	@Column
-	private String anotacoes7;
+	private String anotacoes8;
 
 	@Column
 	private String adm1;
@@ -328,7 +361,7 @@ public class Visita {
 	private String adm13;
 
 	@Column
-	private String anotacoes8;
+	private String anotacoes9;
 
 	@Column
 	private String alim1;
@@ -367,7 +400,7 @@ public class Visita {
 	private String alim12;
 
 	@Column
-	private String infger9;
+	private String anotacoes10;
 
 	@Column
 	private String mdf1;
@@ -409,7 +442,7 @@ public class Visita {
 	private String mdf12;
 
 	@Column
-	private String infger10;
+	private String anotacoes11;
 
 	@Column
 	private String endereco;
@@ -505,7 +538,7 @@ public class Visita {
 	private String eac3d;
 
 	@Column
-	private String anotacoes5a;
+	private String anotacoes6a;
 
 	@Column
 	private String eef1;
@@ -574,7 +607,7 @@ public class Visita {
 	private String eef17;
 
 	@Column
-	private String anotacoes6a;
+	private String anotacoes7a;
 
 	@Column
 	private String em1;
@@ -592,7 +625,7 @@ public class Visita {
 	private String em4;
 
 	@Column
-	private String anotacoes9a;
+	private String anotacoes10a;
 
 	@Column
 	private String edfs1;
@@ -676,7 +709,7 @@ public class Visita {
 	private String edfs17o;
 
 	@Column
-	private String anotacoes10a;
+	private String anotacoes11a;
 
 	@Column
 	private String pub;
@@ -721,6 +754,14 @@ public class Visita {
 		this.atualizacao = atualizacao;
 	}
 
+	public String getPesquisaCompleta() {
+		return pesquisaCompleta;
+	}
+
+	public void setPesquisaCompleta(String pesquisaCompleta) {
+		this.pesquisaCompleta = pesquisaCompleta;
+	}
+
 	public String getRpa() {
 		return rpa;
 	}
@@ -735,14 +776,6 @@ public class Visita {
 
 	public void setRelatorio(String relatorio) {
 		this.relatorio = relatorio;
-	}
-
-	public String getPesquisaCompleta() {
-		return pesquisaCompleta;
-	}
-
-	public void setPesquisaCompleta(String pesquisaCompleta) {
-		this.pesquisaCompleta = pesquisaCompleta;
 	}
 
 	public String getSa1() {
@@ -953,12 +986,13 @@ public class Visita {
 		this.bib13 = bib13;
 	}
 
-	public String getInfger2() {
-		return infger2;
+
+	public String getAnotacoes2() {
+		return anotacoes2;
 	}
 
-	public void setInfger2(String infger2) {
-		this.infger2 = infger2;
+	public void setAnotacoes2(String anotacoes2) {
+		this.anotacoes2 = anotacoes2;
 	}
 
 	public String getInf1() {
@@ -1049,6 +1083,94 @@ public class Visita {
 		this.anotacoes3 = anotacoes3;
 	}
 
+	public String getEt1() {
+		return et1;
+	}
+
+	public void setEt1(String et1) {
+		this.et1 = et1;
+	}
+
+	public String getEt2() {
+		return et2;
+	}
+
+	public void setEt2(String et2) {
+		this.et2 = et2;
+	}
+
+	public String getEt3() {
+		return et3;
+	}
+
+	public void setEt3(String et3) {
+		this.et3 = et3;
+	}
+
+	public String getEt4() {
+		return et4;
+	}
+
+	public void setEt4(String et4) {
+		this.et4 = et4;
+	}
+
+	public String getEt5() {
+		return et5;
+	}
+
+	public void setEt5(String et5) {
+		this.et5 = et5;
+	}
+
+	public String getEt6() {
+		return et6;
+	}
+
+	public void setEt6(String et6) {
+		this.et6 = et6;
+	}
+
+	public String getEt7() {
+		return et7;
+	}
+
+	public void setEt7(String et7) {
+		this.et7 = et7;
+	}
+
+	public String getEt8() {
+		return et8;
+	}
+
+	public void setEt8(String et8) {
+		this.et8 = et8;
+	}
+
+	public String getEt9() {
+		return et9;
+	}
+
+	public void setEt9(String et9) {
+		this.et9 = et9;
+	}
+
+	public String getEt10() {
+		return et10;
+	}
+
+	public void setEt10(String et10) {
+		this.et10 = et10;
+	}
+
+	public String getAnotacoes4() {
+		return anotacoes4;
+	}
+
+	public void setAnotacoes4(String anotacoes4) {
+		this.anotacoes4 = anotacoes4;
+	}
+
 	public String getRl1() {
 		return rl1;
 	}
@@ -1097,12 +1219,12 @@ public class Visita {
 		this.rl6 = rl6;
 	}
 
-	public String getInfger4() {
-		return infger4;
+	public String getAnotacoes5() {
+		return anotacoes5;
 	}
 
-	public void setInfger4(String infger4) {
-		this.infger4 = infger4;
+	public void setAnotacoes5(String anotacoes5) {
+		this.anotacoes5 = anotacoes5;
 	}
 
 	public String getAce1() {
@@ -1185,12 +1307,12 @@ public class Visita {
 		this.ace10 = ace10;
 	}
 
-	public String getAnotacoes5() {
-		return anotacoes5;
+	public String getAnotacoes6() {
+		return anotacoes6;
 	}
 
-	public void setAnotacoes5(String anotacoes5) {
-		this.anotacoes5 = anotacoes5;
+	public void setAnotacoes6(String anotacoes6) {
+		this.anotacoes6 = anotacoes6;
 	}
 
 	public String getSe1() {
@@ -1249,12 +1371,12 @@ public class Visita {
 		this.se7 = se7;
 	}
 
-	public String getInfger6() {
-		return infger6;
+	public String getAnotacoes7() {
+		return anotacoes7;
 	}
 
-	public void setInfger6(String infger6) {
-		this.infger6 = infger6;
+	public void setAnotacoes7(String anotacoes7) {
+		this.anotacoes7 = anotacoes7;
 	}
 
 	public String getSp1() {
@@ -1329,12 +1451,12 @@ public class Visita {
 		this.sp9 = sp9;
 	}
 
-	public String getAnotacoes7() {
-		return anotacoes7;
+	public String getAnotacoes8() {
+		return anotacoes8;
 	}
 
-	public void setAnotacoes7(String anotacoes7) {
-		this.anotacoes7 = anotacoes7;
+	public void setAnotacoes8(String anotacoes8) {
+		this.anotacoes8 = anotacoes8;
 	}
 
 	public String getAdm1() {
@@ -1489,12 +1611,12 @@ public class Visita {
 		this.adm13 = adm13;
 	}
 
-	public String getAnotacoes8() {
-		return anotacoes8;
+	public String getAnotacoes9() {
+		return anotacoes9;
 	}
 
-	public void setAnotacoes8(String anotacoes8) {
-		this.anotacoes8 = anotacoes8;
+	public void setAnotacoes9(String anotacoes9) {
+		this.anotacoes9 = anotacoes9;
 	}
 
 	public String getAlim1() {
@@ -1593,12 +1715,12 @@ public class Visita {
 		this.alim12 = alim12;
 	}
 
-	public String getInfger9() {
-		return infger9;
+	public String getAnotacoes10() {
+		return anotacoes10;
 	}
 
-	public void setInfger9(String infger9) {
-		this.infger9 = infger9;
+	public void setAnotacoes10(String anotacoes10) {
+		this.anotacoes10 = anotacoes10;
 	}
 
 	public String getMdf1() {
@@ -1705,12 +1827,12 @@ public class Visita {
 		this.mdf12 = mdf12;
 	}
 
-	public String getInfger10() {
-		return infger10;
+	public String getAnotacoes11() {
+		return anotacoes11;
 	}
 
-	public void setInfger10(String infger10) {
-		this.infger10 = infger10;
+	public void setAnotacoes11(String anotacoes11) {
+		this.anotacoes11 = anotacoes11;
 	}
 
 	public String getEndereco() {
@@ -1961,12 +2083,12 @@ public class Visita {
 		this.eac3d = eac3d;
 	}
 
-	public String getAnotacoes5a() {
-		return anotacoes5a;
+	public String getAnotacoes6a() {
+		return anotacoes6a;
 	}
 
-	public void setAnotacoes5a(String anotacoes5a) {
-		this.anotacoes5a = anotacoes5a;
+	public void setAnotacoes6a(String anotacoes6a) {
+		this.anotacoes6a = anotacoes6a;
 	}
 
 	public String getEef1() {
@@ -2145,12 +2267,12 @@ public class Visita {
 		this.eef17 = eef17;
 	}
 
-	public String getAnotacoes6a() {
-		return anotacoes6a;
+	public String getAnotacoes7a() {
+		return anotacoes7a;
 	}
 
-	public void setAnotacoes6a(String anotacoes6a) {
-		this.anotacoes6a = anotacoes6a;
+	public void setAnotacoes7a(String anotacoes7a) {
+		this.anotacoes7a = anotacoes7a;
 	}
 
 	public String getEm1() {
@@ -2193,12 +2315,12 @@ public class Visita {
 		this.em4 = em4;
 	}
 
-	public String getAnotacoes9a() {
-		return anotacoes9a;
+	public String getAnotacoes10a() {
+		return anotacoes10a;
 	}
 
-	public void setAnotacoes9a(String anotacoes9a) {
-		this.anotacoes9a = anotacoes9a;
+	public void setAnotacoes10a(String anotacoes10a) {
+		this.anotacoes10a = anotacoes10a;
 	}
 
 	public String getEdfs1() {
@@ -2417,12 +2539,12 @@ public class Visita {
 		this.edfs17o = edfs17o;
 	}
 
-	public String getAnotacoes10a() {
-		return anotacoes10a;
+	public String getAnotacoes11a() {
+		return anotacoes11a;
 	}
 
-	public void setAnotacoes10a(String anotacoes10a) {
-		this.anotacoes10a = anotacoes10a;
+	public void setAnotacoes11a(String anotacoes11a) {
+		this.anotacoes11a = anotacoes11a;
 	}
 
 	public String getPub() {
@@ -2431,7 +2553,5 @@ public class Visita {
 
 	public void setPub(String pub) {
 		this.pub = pub;
-	}
-	
-	
+	}	
 }
