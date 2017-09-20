@@ -172,28 +172,6 @@ body {
 							</div>
 						</div>
 						
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label"
-								for="ideb"><strong>IDEB</strong></label>
-							<div class="col-sm-4">
-								<form:input id="ideb"
-									name="ideb" type="text" path="ideb"
-									class="form-control"/>
-							</div>
-						</div>
-						
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label"
-								for="codMec"><strong>Código do MEC</strong></label>
-							<div class="col-sm-4">
-								<form:input id="codMec"
-									name="codMec" type="text" path="codMec"
-									class="form-control"/>
-							</div>
-						</div>
-						
 						<!-- CheckBox -->
 						<div class="form-group">
 							<form:label class="col-sm-3 control-label" path="nova"><strong>Escola nova?</strong></form:label>
