@@ -904,8 +904,8 @@
 									<span class="questao-info"></span>
 								</li>
 								<li>
-									<span>Temperatura determinada pela ABNT:</span>
-									<span class="questao-info">entre 20ºC e 23ºC</span>
+									<span>Temperatura determinada pela ANVISA <i data-toggle="tooltip" data-placement="top" title="Resolução RE Nº 09 da ANVISA adotada a partir de 01/09/2017" id="anvisa-info" class="fa fa-question-circle-o" aria-hidden="true">:</i></span>
+									<span class="questao-info">entre 23ºC e 26ºC</span>
 								</li>
 								<li class="questao-3">
 									<span>Luminosidade mais baixa:</span>
