@@ -814,20 +814,20 @@
 			</div>
 		</div>
 		
-		<div id="modalEscola" class="painel painel-escola modal fade" role="dialog">
+		<div id="modalEscola" class="painel painel-escola modal fade" aria-hidden="true" role="dialog">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
 						<span id="fecha-escola" class="painel-close" onclick="fechaPaineis()">
 							<i class="fa fa-close fa-2x"></i>
 						</span>
+						<div class="escola-cabecalho">
+							<h2 class="escola-nome"></h2>
+						</div>
 					</div>
 					<div class="modal-body">
-						<div class="detalhe-escola detalhe">
+						<div class="detalhe-escola">
 							<div class="escola-left">
-								<div class="escola-cabecalho cabecalho">
-									<h2 class="escola-nome"></h2>
-								</div>
 								
 								<div class="foto-fachada">
 									<img alt="Foto da fachada" src="<%=request.getContextPath()%>/views/assets/css/img/thumb.jpg">
@@ -963,9 +963,6 @@
 							
 							<!-- Quadro de dados do IDEB -->
 							<div class="dados ideb">
-								<span id="fecha-ideb" class="painel-close" onclick="fechaPaineis()">
-									<i class="fa fa-close fa-2x"></i>
-								</span>
 								<header class="ideb-intro">
 									<h2>DADOS DO IDEB</h2>
 								</header>

@@ -186,7 +186,7 @@ html, body
 	margin: 10px 0;
 }
 
-.painel-escola, .painel-numeros
+.painel-numeros
 {
 	-moz-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
 	-webkit-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
@@ -199,6 +199,24 @@ html, body
 	background: #fff;
 	z-index: 2;
 	-webkit-transform: translateZ(0);
+}
+
+.painel-escola
+{
+	-moz-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
+	-webkit-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
+	box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 2;
+	-webkit-transform: translateZ(0);
+}
+
+.modal-lg
+{
+	width: 90% !important;
 }
 
 .painel-resultado-compare, .painel-videos, .painel-projeto, .painel-compare  
@@ -517,10 +535,32 @@ li.compare-item:hover {background: #E7F3F3;}
 
 .escola-cabecalho h2
 {
-	border-bottom: 1px solid #efeeec;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
+	text-align: center;
+	padding: 0;
+	font-weight: bold;
+	font-size: 23px;
+	color: #565656;
 }
+
+.modal-backdrop.in {
+	opacity: 0.5 !important;
+}
+
+.modal-dialog,
+.modal-content {
+    /* 80% of window height */
+    height: 93%;
+}
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{overflow-y:scroll;max-height:none;position:absolute !important;top:86px;bottom:65px;right:0px;left:0px;}
+
+.modal-footer {position: absolute;bottom: 0;right: 0;left: 0;} 
 
 footer
 {
@@ -982,7 +1022,7 @@ li.box-numeros:hover
 	display: block;
 }
 
-#fecha-escola, #fecha-compare, #fecha-resultado-compare{
+#fecha-compare, #fecha-resultado-compare{
 	display: none;
 }
 

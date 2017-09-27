@@ -159,7 +159,6 @@ input.pesquisa-input
 	-webkit-overflow-scrolling: touch;
 	width: 60%;
 	right: 0;
-	border-left: 1px solid #dadada;
 	padding: 3%;
 }
 

@@ -13,7 +13,7 @@ function fechaPaineis() {
 	$(".painel-projeto").animate({width: "-1px"},350);
 	$(".painel-pesquisa").animate({width: "-1px"},350);
 	$(".painel-filtro").animate({width: "-1px"},350);
-	$(".painel-escola").animate({left: "-3000px"},350);
+	$("#modalEscola").modal('hide');
 	$(".painel-numeros").animate({left: "-3000px"},350);
 	$(".painel").removeClass("isActive");
 	return true;
