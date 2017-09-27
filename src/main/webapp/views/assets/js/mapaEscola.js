@@ -855,7 +855,8 @@ function showEscola(esc, id){
 		ordemAtual = 0;
 		consultaVisitas(id);
 		consultaAvaliacaoPublica(id);
-		abrePainel('escola');
+		$("#modalEscola").modal();
+//		abrePainel('escola');
 	}
 };
 

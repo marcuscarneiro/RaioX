@@ -222,7 +222,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="sal2"><strong>Quantas salas possuem temperatura entre 20 e 26ºC?</strong></label>
+							<label class="col-sm-3 control-label" for="sal2"><strong>Quantas salas possuem temperatura entre 23ºC e 26ºC?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="sal2" name="sal2" type="number" class="form-control" path="sal2" />
 							</div>

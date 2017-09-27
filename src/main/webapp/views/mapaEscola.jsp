@@ -3,7 +3,6 @@
 	<html>
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/sweetalert.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/jquery-ui.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapbox.css" />
@@ -14,11 +13,11 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapa.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpage.css" />
 		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/bootstrap.min.css" />
 
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery-ui.min.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/ChartNew.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/dropzone.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapbox.js"></script>
@@ -36,6 +35,7 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.simpleslider.package.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/map.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>
 		
 		<title>Raio-X das Escolas Municipais do Recife - Vereador André Régis</title>
 		
@@ -814,198 +814,208 @@
 			</div>
 		</div>
 		
-		<div class="painel painel-escola">
-			<span id="fecha-escola" class="painel-close" onclick="fechaPaineis()">
-				<i class="fa fa-close fa-2x"></i>
-			</span>
-			<div class="detalhe-escola detalhe">
-				<div class="escola-left">
-					<div class="escola-cabecalho cabecalho">
-						<h2 class="escola-nome"></h2>
+		<div id="modalEscola" class="painel painel-escola modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span id="fecha-escola" class="painel-close" onclick="fechaPaineis()">
+							<i class="fa fa-close fa-2x"></i>
+						</span>
 					</div>
+					<div class="modal-body">
+						<div class="detalhe-escola detalhe">
+							<div class="escola-left">
+								<div class="escola-cabecalho cabecalho">
+									<h2 class="escola-nome"></h2>
+								</div>
+								
+								<div class="foto-fachada">
+									<img alt="Foto da fachada" src="<%=request.getContextPath()%>/views/assets/css/img/thumb.jpg">
+								</div>
+								
+								<!-- Quadro de dados da Fiscalização -->
+								<div class="dados fiscalizacao">
+									
+									<header class="fiscalizacao-header">
+										<h2>FISCALIZAÇÃO</h2>
+									</header>
+									<div class="fiscalizacao-datas">
+										<ul>
+											<li><span>1ª VISTORIA</span></li>
+											<li><span>2ª VISTORIA</span></li>
+											<li><span>3ª VISTORIA</span></li>
+										</ul>
+									</div>
+									<a id="foto-visita-1" class="fancybox big-box" href="#" rel="fotoescola" title="#">
+										<img src="#">
+									</a>
+									<ul class="fiscalizacao-fotos">
+										<li>
+											<a id="foto-visita-2" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+										<li>
+											<a id="foto-visita-3" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+										<li>
+											<a id="foto-visita-4" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+										<li>
+											<a id="foto-visita-5" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+										<li>
+											<a id="foto-visita-6" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+										<li>
+											<a id="foto-visita-7" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+										<li>
+											<a id="foto-visita-8" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+										<li>
+											<a id="foto-visita-9" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+										<li>
+											<a id="foto-visita-10" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<img src="#">
+											</a>
+										</li>
+									</ul>
+									<div class="fiscalizacao-questionario">
+										<h3>Informações da escola</h3>
+										<h4 class="data-vistoria">Data da vistoria: <span>20/10/2015</span></h4>
+										<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+											<li class="questao-1">
+												<span>Total de Alunos:</span>
+												<span class="questao-info"></span>
+											</li>
+											<li class="questao-2">
+												<span>Temperatura de sala mais alta:</span>
+												<span class="questao-info"></span>
+											</li>
+											<li>
+												<span>Temperatura determinada pela ANVISA <i data-toggle="tooltip" data-placement="top" title="Resolução RE Nº 09 da ANVISA adotada a partir de 01/09/2017" id="anvisa-info" class="fa fa-question-circle-o" aria-hidden="true">:</i></span>
+												<span class="questao-info">entre 23ºC e 26ºC</span>
+											</li>
+											<li class="questao-3">
+												<span>Luminosidade mais baixa:</span>
+												<span class="questao-info"></span>
+											</li>
+											<li>
+												<span>Luminosidade determinada pela ABNT:</span>
+												<span class="questao-info">entre 200 lux e 700 lux</span>
+											</li>
+											<li class="questao-6">
+												<span>A escola dispõe de rampas de acesso em todos os espaços?</span>
+												<span class="questao-info"></span>
+											</li>
+											<li class="questao-4">
+												<span>Quantas salas de aula são climatizadas:</span>
+												<span class="questao-info"></span>
+											</li>
+											<li class="questao-5">
+												<span>Existe Biblioteca?</span>
+												<span class="questao-info"></span>
+											</li>
+											<li class="questao-7">
+												<span>Há saneamento básico na escola?</span>
+												<span class="questao-info"></span>
+											</li>
+											<li class="questao-8">
+												<span>Há sala dos professores?</span>
+												<span class="questao-info"></span>
+											</li>
+											<li class="questao-9">
+												<span>Onde as crianças se alimentam?</span>
+												<span class="questao-info"></span>
+											</li>
+											<li class="questao-10">
+												<span>Os alunos receberam fardamento em tamanho adequado?</span>
+												<span class="questao-info"></span>
+											</li>
+										</ul>
+									</div>
+									<div class="fiscalicazaoRelatorio">
+										<span class="btn-relatorio">RELATÓRIO COMPLETO</span>
+										<a target="_blank" href="#" class="btn-relatorio">RELATÓRIO COMPLETO</a>
+									</div>
+									<div class="fiscalicazaoRequerimento">
+										<a target="_blank" href="#" class="btn-requerimento">REQUERIMENTOS</a>
+									</div>
+								</div>
+							</div>
+							
+							
+							<!-- Quadro de dados do IDEB -->
+							<div class="dados ideb">
+								<span id="fecha-ideb" class="painel-close" onclick="fechaPaineis()">
+									<i class="fa fa-close fa-2x"></i>
+								</span>
+								<header class="ideb-intro">
+									<h2>DADOS DO IDEB</h2>
+								</header>
 					
-					<div class="foto-fachada">
-						<img alt="Foto da fachada" src="<%=request.getContextPath()%>/views/assets/css/img/thumb.jpg">
-					</div>
+								<div id="linha1" class="linha col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<div class="coluna col-esq col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										
+									</div>
+									<div class="coluna col-dir col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										
+									</div>
+								</div>
+								
+								<div id="linha2" class="linha col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<div class="coluna col-esq col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										
+									</div>
+									<div class="coluna col-dir col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										
+									</div>
+								</div>
 					
-					<!-- Quadro de dados da Fiscalização -->
-					<div class="dados fiscalizacao">
-						
-						<header class="fiscalizacao-header">
-							<h2>FISCALIZAÇÃO</h2>
-						</header>
-						<div class="fiscalizacao-datas">
-							<ul>
-								<li><span>1ª VISTORIA</span></li>
-								<li><span>2ª VISTORIA</span></li>
-								<li><span>3ª VISTORIA</span></li>
-							</ul>
-						</div>
-						<a id="foto-visita-1" class="fancybox big-box" href="#" rel="fotoescola" title="#">
-							<img src="#">
-						</a>
-						<ul class="fiscalizacao-fotos">
-							<li>
-								<a id="foto-visita-2" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-							<li>
-								<a id="foto-visita-3" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-							<li>
-								<a id="foto-visita-4" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-							<li>
-								<a id="foto-visita-5" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-							<li>
-								<a id="foto-visita-6" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-							<li>
-								<a id="foto-visita-7" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-							<li>
-								<a id="foto-visita-8" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-							<li>
-								<a id="foto-visita-9" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-							<li>
-								<a id="foto-visita-10" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
-								</a>
-							</li>
-						</ul>
-						<div class="fiscalizacao-questionario">
-							<h3>Informações da escola</h3>
-							<h4 class="data-vistoria">Data da vistoria: <span>20/10/2015</span></h4>
-							<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<li class="questao-1">
-									<span>Total de Alunos:</span>
-									<span class="questao-info"></span>
-								</li>
-								<li class="questao-2">
-									<span>Temperatura de sala mais alta:</span>
-									<span class="questao-info"></span>
-								</li>
-								<li>
-									<span>Temperatura determinada pela ANVISA <i data-toggle="tooltip" data-placement="top" title="Resolução RE Nº 09 da ANVISA adotada a partir de 01/09/2017" id="anvisa-info" class="fa fa-question-circle-o" aria-hidden="true">:</i></span>
-									<span class="questao-info">entre 23ºC e 26ºC</span>
-								</li>
-								<li class="questao-3">
-									<span>Luminosidade mais baixa:</span>
-									<span class="questao-info"></span>
-								</li>
-								<li>
-									<span>Luminosidade determinada pela ABNT:</span>
-									<span class="questao-info">entre 200 lux e 700 lux</span>
-								</li>
-								<li class="questao-6">
-									<span>A escola dispõe de rampas de acesso em todos os espaços?</span>
-									<span class="questao-info"></span>
-								</li>
-								<li class="questao-4">
-									<span>Quantas salas de aula são climatizadas:</span>
-									<span class="questao-info"></span>
-								</li>
-								<li class="questao-5">
-									<span>Existe Biblioteca?</span>
-									<span class="questao-info"></span>
-								</li>
-								<li class="questao-7">
-									<span>Há saneamento básico na escola?</span>
-									<span class="questao-info"></span>
-								</li>
-								<li class="questao-8">
-									<span>Há sala dos professores?</span>
-									<span class="questao-info"></span>
-								</li>
-								<li class="questao-9">
-									<span>Onde as crianças se alimentam?</span>
-									<span class="questao-info"></span>
-								</li>
-								<li class="questao-10">
-									<span>Os alunos receberam fardamento em tamanho adequado?</span>
-									<span class="questao-info"></span>
-								</li>
-							</ul>
-						</div>
-						<div class="fiscalicazaoRelatorio">
-							<span class="btn-relatorio">RELATÓRIO COMPLETO</span>
-							<a target="_blank" href="#" class="btn-relatorio">RELATÓRIO COMPLETO</a>
-						</div>
-						<div class="fiscalicazaoRequerimento">
-							<a target="_blank" href="#" class="btn-requerimento">REQUERIMENTOS</a>
-						</div>
-					</div>
-				</div>
-				
-				
-				<!-- Quadro de dados do IDEB -->
-				<div class="dados ideb">
-					<span id="fecha-ideb" class="painel-close" onclick="fechaPaineis()">
-						<i class="fa fa-close fa-2x"></i>
-					</span>
-					<header class="ideb-intro">
-						<h2>DADOS DO IDEB</h2>
-					</header>
-		
-					<div id="linha1" class="linha col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="coluna col-esq col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
-						</div>
-						<div class="coluna col-dir col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
-						</div>
-					</div>
+								<div class="ideb-aprendizado">
+									<div class="graficos">
+										<h3>Nível do aprendizado na escola</h3>
+										<div id="pizza1" class="grafico-pizza col-xs-12 col-sm-12 col-md-6 col-lg-6">
+											
+										</div>
 					
-					<div id="linha2" class="linha col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="coluna col-esq col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
-						</div>
-						<div class="coluna col-dir col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
+										<div id="pizza2" class="grafico-pizza col-xs-12 col-sm-12 col-md-6 col-lg-6">
+											
+										</div>
+					
+										<div id="pizza3" class="grafico-pizza col-xs-12 col-sm-12 col-md-6 col-lg-6">
+											
+										</div>
+					
+										<div id="pizza4" class="grafico-pizza col-xs-12 col-sm-12 col-md-6 col-lg-6">
+											
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-		
-					<div class="ideb-aprendizado">
-						<div class="graficos">
-							<h3>Nível do aprendizado na escola</h3>
-							<div id="pizza1" class="grafico-pizza col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								
-							</div>
-		
-							<div id="pizza2" class="grafico-pizza col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								
-							</div>
-		
-							<div id="pizza3" class="grafico-pizza col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								
-							</div>
-		
-							<div id="pizza4" class="grafico-pizza col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								
-							</div>
-						</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
 					</div>
 				</div>
 			</div>
-			
 		</div>
 		
 		<div class="painel painel-compare">
@@ -1409,8 +1419,8 @@
 		</div>
 		
 		<div class="helper" onclick="abrePainel('contato')">
-			<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/warningWhite.png">
-			<span>Clique aqui caso queira fazer uma denúncia ou sugestão</span>
+			<i class="fa fa-paper-plane"></i>
+			<span>Clique aqui caso queira nos enviar uma denúncia ou sugestão</span>
 		</div>
 		
 		<footer>

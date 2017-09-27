@@ -1040,7 +1040,7 @@ li.box-numeros:hover
 	background: #333;
 	right: 0;
 	position: absolute;
-	border-radius: 90px 0 0 90px;
+	border-radius: 25px 0 0 25px;
 	text-align: left;
 	vertical-align: middle;
 	color: white;
@@ -1051,16 +1051,16 @@ li.box-numeros:hover
 	transition-duration: .3s;
 }
 
-.helper img {
-	width: 30px;
-	margin-left: 22px;
-	margin-top: 44px;
+.helper i {
+	font-size: 30px;
+	margin-left: 18px;
+	margin-top: 45px;
 	float: left;
 }
 
 .helper:hover {
 	cursor: pointer;
-	width: 300px;
+	width: 280px;
 }
 
 .helper span{

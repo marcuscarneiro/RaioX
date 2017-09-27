@@ -201,7 +201,7 @@
 						</div>
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="sa4b"><strong>SA4b</strong> - Quantas salas possuem temperatura entre de 20 e 26ºC?</label>
+							<label class="col-sm-3 control-label" for="sa4b"><strong>SA4b</strong> - Quantas salas possuem temperatura entre de 23ºC e 26ºC?</label>
 							<div class="col-sm-4">
 								<form:input id="sa4b" name="sa4b" type="text" class="form-control" path="sa4b" />
 							</div>
@@ -747,21 +747,21 @@
 						</div>
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="et6"><strong>ET6</strong> - Quantas mesas iterativas há no laboratório?</label>
+							<label class="col-sm-3 control-label" for="et6"><strong>ET6</strong> - Quantas mesas interativas há no laboratório?</label>
 							<div class="col-sm-4">
 								<form:input id="et6" name="et6" type="text" class="form-control" path="et6" />
 							</div>
 						</div>
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="et7"><strong>ET7</strong> - Quantas mesas iterativas funcionam?</label>
+							<label class="col-sm-3 control-label" for="et7"><strong>ET7</strong> - Quantas mesas interativas funcionam?</label>
 							<div class="col-sm-4">
 								<form:input id="et7" name="et7" type="text" class="form-control" path="et7" />
 							</div>
 						</div>
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="et8"><strong>ET8</strong> - Quantas mesas iterativas tem acesso à internet?</label>
+							<label class="col-sm-3 control-label" for="et8"><strong>ET8</strong> - Quantas mesas interativas tem acesso à internet?</label>
 							<div class="col-sm-4">
 								<form:input id="et8" name="et8" type="text" class="form-control" path="et8" />
 							</div>

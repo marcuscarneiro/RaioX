@@ -26,7 +26,7 @@ function abrePainel(nomePainel) {
 		if($(".painel").hasClass("isActive")){
 			fechaPaineis();
 		}
-		if (nomePainel == 'escola' || nomePainel == 'numeros'){
+		if (nomePainel == 'numeros'){
 			$(".painel-"+nomePainel).animate({left: "0"},350);
 			$(".painel-"+nomePainel).addClass("isActive");
 		} if (nomePainel == 'compare' || nomePainel == 'resultado-compare' || nomePainel == 'videos' || nomePainel == 'projeto' ) {
