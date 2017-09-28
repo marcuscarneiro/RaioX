@@ -2089,6 +2089,15 @@ function mudaLegenda(filter){
 	});
 }
 
+$('.filtro-grupos').on('click', function(){
+	$(this).toggle();
+	if($(this).hasClass('active')){
+		$(this).removeClass('active');
+	} else {
+		$(this).addClass('active');
+	}
+});
+
 function escondeDados(){
 	$(".fiscalizacao").slideUp();
 	$(".fiscalizacao").css("visibility", "none");

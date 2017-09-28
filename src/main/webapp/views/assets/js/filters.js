@@ -3,13 +3,21 @@ filtroMelhorProfPort5 = [], filtroPiorProfPort5 = [], filtroMelhorProfPort9 = []
 filtroQuadras = [], filtroAces = [];
 
 $('.filtro-item').on('click', function(){
+	clickFiltro(this);
+});
+
+$('.filtro-grupos').on('click', function(){
+	clickFiltro(this);
+});
+
+function clickFiltro(that){
 	actualMarker = undefined;
 	
-	if($(this).data('filter') === 'periodo'){
+	if($(that).data('filter') === 'periodo'){
 		filter = 'periodo';
 	} else {
-		if($.inArray($(this).data('filter'), selectedFilters) != -1){
-			if($(this).data('filter') === 'recentes'){
+		if($.inArray($(that).data('filter'), selectedFilters) != -1){
+			if($(that).data('filter') === 'recentes'){
 				$("#periodo-ini").val('');
 				$("#periodo-fim").val('');
 				$(".filtro-periodo div").hide();
@@ -18,17 +26,17 @@ $('.filtro-item').on('click', function(){
 			}
 			filter = 'null';
 		} else {
-			if($(this).data('filter') === 'recentes'){
+			if($(that).data('filter') === 'recentes'){
 				$(".filtro-periodo div").show();
 				$(".filtro-periodo span").show();
 				$(".filtro-periodo button").show();
 			}
-			selectedFilters.push($(this).data('filter'));
-			filter = $(this).data('filter');
+			selectedFilters.push($(that).data('filter'));
+			filter = $(that).data('filter');
 		}
 	}
 	
-	if ($(".filtro-item:checked").length == 0) {
+	if ($(".filtro-item:checked").length == 0 && $(".filtro-grupos:checked").length == 0) {
 		selectedFilters = [];
 		recarregaMapa();
 	} else {
@@ -102,7 +110,7 @@ $('.filtro-item').on('click', function(){
 	if($(window).width() <= 1024){
 		fechaPainelFiltro();
 	}
-});
+};
 
 function filtraMeta(filter){
 	escolasLayer.eachLayer(function(marker) {

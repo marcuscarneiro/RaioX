@@ -1190,7 +1190,7 @@
 					<label for="filtro-1">Atingiram a meta do IDEB</label>
 					
 					<div class="filtro-periodo">
-						<input type="checkbox" id="filtro-13" class="filtro-item" data-filter="recentes">
+						<input type="checkbox" id="filtro-13" class="filtro-grupos" data-filter="recentes">
 						<label for="filtro-13">Escolas visitadas recentemente</label>
 
 						<span>Informe a data inicial e final para obter as escolas fiscalizadas nesse período</span><br>
