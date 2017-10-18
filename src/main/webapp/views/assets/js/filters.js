@@ -20,16 +20,16 @@ function clickFiltro(that){
 			if($(that).data('filter') === 'recentes'){
 				$("#periodo-ini").val('');
 				$("#periodo-fim").val('');
-				$(".filtro-periodo div").hide();
-				$(".filtro-periodo span").hide();
-				$(".filtro-periodo button").hide();
+				$(".filtro-periodo div").slideUp("slow");
+				$(".filtro-periodo span").slideUp("slow");
+				$(".filtro-periodo button").slideUp("slow");
 			}
 			filter = 'null';
 		} else {
 			if($(that).data('filter') === 'recentes'){
-				$(".filtro-periodo div").show();
-				$(".filtro-periodo span").show();
-				$(".filtro-periodo button").show();
+				$(".filtro-periodo div").slideDown();
+				$(".filtro-periodo span").slideDown();
+				$(".filtro-periodo button").slideDown();
 			}
 			selectedFilters.push($(that).data('filter'));
 			filter = $(that).data('filter');

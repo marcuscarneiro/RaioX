@@ -1191,7 +1191,7 @@
 					
 					<div class="filtro-periodo">
 						<input type="checkbox" id="filtro-13" class="filtro-grupos" data-filter="recentes">
-						<label for="filtro-13">Escolas visitadas recentemente</label>
+						<label for="filtro-13">Por período da visita</label>
 
 						<span>Informe a data inicial e final para obter as escolas fiscalizadas nesse período</span><br>
 						<div>

@@ -442,6 +442,9 @@ public class Visita {
 	private String mdf12;
 
 	@Column
+	private String mdf12a;
+	
+	@Column
 	private String anotacoes11;
 
 	@Column
@@ -661,6 +664,12 @@ public class Visita {
 	private String edfs7o;
 
 	@Column
+	private String edfs7a;
+
+	@Column
+	private String edfs7b;
+
+	@Column
 	private String edfs8;
 
 	@Column
@@ -708,6 +717,27 @@ public class Visita {
 	@Column
 	private String edfs17o;
 
+	@Column
+	private String edfs18a;
+
+	@Column
+	private String edfs18b;
+
+	@Column
+	private String edfs18c;
+
+	@Column
+	private String edfs18d;
+
+	@Column
+	private String edfs18e;
+
+	@Column
+	private String edfs18f;
+
+	@Column
+	private String edfs18g;
+	
 	@Column
 	private String anotacoes11a;
 
@@ -2411,6 +2441,22 @@ public class Visita {
 		this.edfs7o = edfs7o;
 	}
 
+	public String getEdfs7a() {
+		return edfs7a;
+	}
+
+	public void setEdfs7a(String edfs7a) {
+		this.edfs7a = edfs7a;
+	}
+
+	public String getEdfs7b() {
+		return edfs7b;
+	}
+
+	public void setEdfs7b(String edfs7b) {
+		this.edfs7b = edfs7b;
+	}
+
 	public String getEdfs8() {
 		return edfs8;
 	}
@@ -2553,5 +2599,69 @@ public class Visita {
 
 	public void setPub(String pub) {
 		this.pub = pub;
-	}	
+	}
+
+	public String getMdf12a() {
+		return mdf12a;
+	}
+
+	public void setMdf12a(String mdf12a) {
+		this.mdf12a = mdf12a;
+	}
+
+	public String getEdfs18a() {
+		return edfs18a;
+	}
+
+	public void setEdfs18a(String edfs18a) {
+		this.edfs18a = edfs18a;
+	}
+
+	public String getEdfs18b() {
+		return edfs18b;
+	}
+
+	public void setEdfs18b(String edfs18b) {
+		this.edfs18b = edfs18b;
+	}
+
+	public String getEdfs18c() {
+		return edfs18c;
+	}
+
+	public void setEdfs18c(String edfs18c) {
+		this.edfs18c = edfs18c;
+	}
+
+	public String getEdfs18d() {
+		return edfs18d;
+	}
+
+	public void setEdfs18d(String edfs18d) {
+		this.edfs18d = edfs18d;
+	}
+
+	public String getEdfs18e() {
+		return edfs18e;
+	}
+
+	public void setEdfs18e(String edfs18e) {
+		this.edfs18e = edfs18e;
+	}
+
+	public String getEdfs18f() {
+		return edfs18f;
+	}
+
+	public void setEdfs18f(String edfs18f) {
+		this.edfs18f = edfs18f;
+	}
+
+	public String getEdfs18g() {
+		return edfs18g;
+	}
+
+	public void setEdfs18g(String edfs18g) {
+		this.edfs18g = edfs18g;
+	}
 }

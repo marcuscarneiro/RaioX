@@ -1936,6 +1936,16 @@
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mdf12" path="mdf12" value="false" />  NÃO</div>
 						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="mdf12a"><strong>MDF12a</strong> - É garantida a merenda em aulas de campo?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="mdf12a" path="mdf12a" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="mdf12a" path="mdf12a" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="mdf12a" path="mdf12a" value="false" />  NÃO</div>
+						</div>
 						<!-- Textarea -->
 						<div class="form-group">
 							<label for="anotacoes11" class="col-sm-3 control-label"><strong>Anotações</strong></label>
@@ -2051,12 +2061,25 @@
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="edfs7" path="edfs7" value="false" />  NÃO</div>
 						</div>
-						<!-- Text input-->
+						<!-- CheckBox -->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="edfs7o"><strong></strong>Oficinas:</label>
-							<div class="col-sm-4">
-								<form:input id="edfs7o" name="edfs7o" type="text" class="form-control" path="edfs7o" />
-							</div>
+							<form:label class="col-sm-3 control-label" path="edfs7a"><strong>EDFS7a</strong> - Robótica funciona?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs7a" path="edfs7a" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs7a" path="edfs7a" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs7a" path="edfs7a" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs7b"><strong>EDFS7b</strong> - Houve treinamento para professores?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs7b" path="edfs7b" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs7b" path="edfs7b" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs7b" path="edfs7b" value="false" />  NÃO</div>
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
@@ -2200,6 +2223,83 @@
 								<form:input id="edfs17o" name="edfs17o" type="text" class="form-control" path="edfs17o" />
 							</div>
 						</div>
+						
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs18a"><strong>EDFS18</strong></form:label>
+							<div class="col-sm-9 formradio"> - Marque os itens que correspondem a doenças que afetaram alunos e funcionários no ano corrente</div>
+						</div>
+
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs18a"><strong>Catapora</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18a" path="edfs18a" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18a" path="edfs18a" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18a" path="edfs18a" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs18b"><strong>Caxumba</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18b" path="edfs18b" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18b" path="edfs18b" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18b" path="edfs18b" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs18c"><strong>Chikungunya</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18c" path="edfs18c" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18c" path="edfs18c" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18c" path="edfs18c" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs18d"><strong>Conjutivite</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18d" path="edfs18d" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18d" path="edfs18d" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18d" path="edfs18d" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs18e"><strong>Dengue</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18e" path="edfs18e" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18e" path="edfs18e" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18e" path="edfs18e" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs18f"><strong>Hanseníase</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18f" path="edfs18f" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18f" path="edfs18f" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18f" path="edfs18f" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs18g"><strong>Zika</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18g" path="edfs18g" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18g" path="edfs18g" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs18g" path="edfs18g" value="false" />  NÃO</div>
+						</div>
+						
 						<!-- Textarea -->
 						<div class="form-group">
 							<label for="anotacoes11a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
