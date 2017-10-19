@@ -1,6 +1,6 @@
 var filter, selectedFilters = [], filtroMeta = [], filtroNovas = [], filtroEvolucao = [], filtroNunca = [], filtroRecentes = [], filtroMelhorIdeb5 = [], filtroMelhorIdeb9 = [], filtroPiorIdeb5 = [], filtroPiorIdeb9 = [],
 filtroMelhorProfPort5 = [], filtroPiorProfPort5 = [], filtroMelhorProfPort9 = [], filtroPiorProfPort9 = [], filtroMelhorProfMat5 = [], filtroPiorProfMat5 = [], filtroMelhorProfMat9 = [], filtroPiorProfMat9 = [],
-filtroQuadras = [], filtroAces = [];
+filtroQuadras = [], filtroAces = [], copyFilter;
 
 $('.filtro-item').on('click', function(){
 	clickFiltro(this);
@@ -12,7 +12,7 @@ $('.filtro-grupos').on('click', function(){
 
 function clickFiltro(that){
 	actualMarker = undefined;
-	
+	copyFilter = $(that).data('filter');
 	if($(that).data('filter') === 'periodo'){
 		filter = 'periodo';
 	} else {
@@ -27,9 +27,9 @@ function clickFiltro(that){
 			filter = 'null';
 		} else {
 			if($(that).data('filter') === 'recentes'){
-				$(".filtro-periodo div").slideDown();
-				$(".filtro-periodo span").slideDown();
-				$(".filtro-periodo button").slideDown();
+				$(".filtro-periodo div").slideDown("slow");
+				$(".filtro-periodo span").slideDown("slow");
+				$(".filtro-periodo button").slideDown("slow");
 			}
 			selectedFilters.push($(that).data('filter'));
 			filter = $(that).data('filter');
@@ -45,6 +45,7 @@ function clickFiltro(that){
 			map.removeLayer(escolasLayer);
 			escolasLayer = L.mapbox.featureLayer().addTo(map);
 			escolasLayer.setGeoJSON(escolasData);
+			changeMarkers();
 		}
 		if ($.inArray('meta', selectedFilters) != -1){
 			filtraMeta('meta');
@@ -108,7 +109,9 @@ function clickFiltro(that){
 	mudaLegenda(selectedFilters[selectedFilters.length-1]);
 	
 	if($(window).width() <= 1024){
-		fechaPainelFiltro();
+		if (copyFilter != 'recentes') {
+			fechaPainelFiltro();
+		}
 	}
 };
 

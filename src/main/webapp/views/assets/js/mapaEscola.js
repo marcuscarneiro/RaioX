@@ -1361,7 +1361,7 @@ function updateIdeb(data){
 				'<div class="ideb-evolucao">'+
 					'<h3>Evolução do IDEB - Fundamental I</h3>'+
 					'<div class="evolucao-iniciais">'+
-						'<canvas id="evolucao5" width="400" height="300"></canvas>'+
+						getCanvas("evolucao5")+
 					'</div>'+
 				'</div>');
 			$('#linha2 .col-dir').html(
@@ -1378,7 +1378,7 @@ function updateIdeb(data){
 					'<div class="ideb-evolucao">'+
 					'<h3>Evolução do IDEB - Fundamental I</h3>'+
 					'<div class="evolucao-iniciais">'+
-						'<canvas id="evolucao5" width="400" height="300"></canvas>'+
+						getCanvas("evolucao5")+
 					'</div>'+
 				'</div>');
 		}
@@ -1486,12 +1486,7 @@ function updateGraficoIdeb(data){
 			datasetStrokeWidth : 2,
 			datasetFill : false,
 			legend: true,
-			legendBorders: false,
-			responsive: true,
-			responsiveMaxHeight: 300,
-			responsiveMaxWidth: 400,
-			responsiveMinHeight : 200,
-			responsiveMinWidth : 300
+			legendBorders: false
 		});
 	}
 	
@@ -2860,3 +2855,21 @@ $(".helper").hover(
 			$('.helper span').hide();
 		}
 );
+
+function getCanvas(canvas){
+	if(canvas === "evolucao5"){
+		if(isSmallScreen() == true){
+			return '<canvas id="evolucao5" width="300" height="200"></canvas>';
+		} else {
+			return '<canvas id="evolucao5" width="400" height="300"></canvas>';
+		}
+	}
+}
+
+function isSmallScreen(){
+	if(viewWidth <= 750){
+		return true;
+	} else {
+		return false;
+	}
+}

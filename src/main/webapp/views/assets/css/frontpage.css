@@ -177,13 +177,37 @@ html, body
 	color: #fff;
 }
 
-.painel-contato input {
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari/ */
+   color: #ccc !important;
+   opacity: 1 !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+   color: #ccc !important;
+   opacity: 1 !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+   color: #ccc !important;
+   opacity: 1 !important;
+}
+
+input:-ms-input-placeholder {  /* IE */
+   color: #ccc !important;
+   opacity: 1 !important;
+}
+
+.painel-contato input, .painel-contato select {
 	border: none !important;
 	background: #2e3434;
 	color: #ccc;
 	border-radius: 0;
 	height: 50px;
 	margin: 10px 0;
+}
+
+.painel-contato select option[disabled]:first-child {
+	display: none;
 }
 
 .painel-numeros
@@ -210,7 +234,7 @@ html, body
 	top: 0;
 	bottom: 0;
 	width: 100%;
-	z-index: 2;
+	z-index: 10;
 	-webkit-transform: translateZ(0);
 }
 
@@ -551,12 +575,13 @@ li.compare-item:hover {background: #E7F3F3;}
 .modal-dialog,
 .modal-content {
     /* 80% of window height */
-    height: 93%;
+    height: 96%;
 }
 
 /* Important part */
 .modal-dialog{
-    overflow-y: initial !important
+    overflow-y: initial !important;
+    margin: 30px auto 0 auto;
 }
 .modal-body{overflow-y:scroll;max-height:none;position:absolute !important;top:86px;bottom:65px;right:0px;left:0px;}
 
@@ -1300,5 +1325,19 @@ li.box-numeros:hover
 	.pesquisa-escola-caixas, .compare-escola-caixas {
 		width: 100%;
 		padding: 4%;
+	}
+	
+	.modal-dialog,
+	.modal-content {
+	    height: 100%;
+	}
+
+	.modal-dialog {
+		margin: 0px !important;
+	}
+
+	.modal-lg
+	{
+		width: 100% !important;
 	}
 }

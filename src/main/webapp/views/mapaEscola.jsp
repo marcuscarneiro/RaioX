@@ -11,9 +11,9 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/hover.css">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapa.css" />
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpage.css" />
 		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpage.css" />
 
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
@@ -182,8 +182,15 @@
 				<form class="contato-form">
 					<input id="contNome" class="form-control" type="text" placeholder="Nome*"></input>
 					<input id="contEmail" class="form-control" type="text" placeholder="Seu e-mail*"></input>
-					<input id="contEscola" class="form-control" type="text" placeholder="Sua escola"></input>
-					<input id="contAssunto" class="form-control" type="text" placeholder="Assunto*"></input>
+					<select id="contEscola" class="form-control">
+						<option value="" selected disabled>Escolha a sua escola*</option>
+					</select>
+					<select id="contAssunto" class="form-control">
+						<option value="" selected disabled>Escolha o assunto*</option>
+						<option value="Denúncia">Denúncia</option>
+						<option value="Sugestão">Sugestão</option>
+						<option value="Outros">Outros</option>
+					</select>
 					<input id="contMensagem" class="form-control" type="text" placeholder="Mensagem*"></input>
 					<button id="sendButton" type="button" class="btn btn-primary" onclick="enviaForm()"><i id="sending" class="fa fa-circle-o-notch fa-spin"></i>ENVIAR</button>
 				</form>
@@ -1187,7 +1194,7 @@
 				</div>
 				<div class="filtro-lista">
 					<input type="checkbox" id="filtro-1" class="filtro-item" data-filter="meta">
-					<label for="filtro-1">Atingiram a meta do IDEB</label>
+					<label for="filtro-1">Escolas que atingiram a meta do IDEB</label>
 					
 					<div class="filtro-periodo">
 						<input type="checkbox" id="filtro-13" class="filtro-grupos" data-filter="recentes">
