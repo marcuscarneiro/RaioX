@@ -633,6 +633,7 @@ function fechar()
 };
 
 function changeMarkers(){
+	$('#contEscola').find('option').remove();
 	$('#marker-list').remove();
 	var body = document.body;
 	var markerList = body.appendChild(document.createElement('div'));
@@ -641,11 +642,11 @@ function changeMarkers(){
 	$('.compare-resultado').append('<ul class="compare-lista">');
 	$('.pesquisa-lista').remove();
 	$('.pesquisa-resultado').append('<ul class="pesquisa-lista">');
-	
+	$('#contEscola').append('<option value="" selected disabled>Escolha a sua escola*</option>');
 	escolasLayer.eachLayer(function(marker) {
 		escolasList.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		escolasListCompare.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
-		
+		$('#contEscola').append('<option value="'+ marker.feature.properties.Escola + '">' + marker.feature.properties.Escola + '</option>');
 		$('.pesquisa-lista').append('<li esc="' + marker.feature.properties.ID + '" class="pesquisa-escola-caixas" onclick="abreEscola('+ marker.feature.properties.ID +',\''+marker.feature.properties.Escola+'\')">'+
 				'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
 				'<h4 class="pesquisa-endereco">'+marker.feature.properties.Endereco+'</h4>'+

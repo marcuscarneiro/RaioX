@@ -206,6 +206,10 @@ input:-ms-input-placeholder {  /* IE */
 	margin: 10px 0;
 }
 
+.painel-contato select option {
+	max-width: inherit;
+}
+
 .painel-contato select option[disabled]:first-child {
 	display: none;
 }
@@ -575,7 +579,7 @@ li.compare-item:hover {background: #E7F3F3;}
 .modal-dialog,
 .modal-content {
     /* 80% of window height */
-    height: 96%;
+    height: 95%;
 }
 
 /* Important part */
