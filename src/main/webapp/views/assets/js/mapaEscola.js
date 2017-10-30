@@ -18,6 +18,9 @@ var map = L.mapbox.map('map', 'mapbox.outdoors',
 	.setView([-8.0529, -34.9330], 12);
 
 // Desabilita o toque no mapa.
+
+var layers = document.getElementById('menu-ui');
+
 if (map.tap) map.tap.disable();
 
 // Adiciona um novo controle de zoom no canto superior direito do mapa.
@@ -44,6 +47,7 @@ function resetMap(){
 }
 
 var bgLayer = L.circle([-8.069677, -34.901499], 100000, bg_options).addTo(map);
+addLayer(bgLayer, 'BackGround', 1);
 bgLayer.on('click', function(e)
 {
 	escondeDados();
@@ -125,6 +129,7 @@ function resetActualMarker(){
 var rpa1Layer;
 function setRpa1(click){
 	rpa1Layer = L.mapbox.featureLayer().addTo(map);
+	addLayer(rpa1Layer, "RPA 1", 2);
 	rpa1Layer.setGeoJSON(rpa1);
 	rpa1Layer.setStyle({'fillColor': '#ccff00', 'fillOpacity': 0.4, 'weight': 1});
 	rpa1Layer.on('click', function(e)
@@ -159,6 +164,7 @@ setRpa1(false);
 var rpa2Layer;
 function setRpa2(click){
 	rpa2Layer = L.mapbox.featureLayer().addTo(map);
+	addLayer(rpa2Layer, "RPA 2", 2);
 	rpa2Layer.setGeoJSON(rpa2);
 	rpa2Layer.setStyle({'fillColor': '#66cc99', 'fillOpacity': 0.4, 'weight': 1});
 	rpa2Layer.on('click', function(e)
@@ -194,6 +200,7 @@ var rpa3Layer;
 
 function setRpa3(click){
 	rpa3Layer = L.mapbox.featureLayer().addTo(map);
+	addLayer(rpa3Layer, "RPA 3", 2);
 	rpa3Layer.setGeoJSON(rpa3);
 	rpa3Layer.setStyle({'fillColor': '#cc9933', 'fillOpacity': 0.4, 'weight': 1});
 	rpa3Layer.on('click', function(e)
@@ -331,6 +338,7 @@ function setRpa6(click){
 setRpa6(false);
 
 var escolasLayer = L.mapbox.featureLayer().addTo(map);
+addLayer(escolasLayer, "Escolas", 3);
 
 var escolasList = [];
 
@@ -2873,4 +2881,29 @@ function isSmallScreen(){
 	} else {
 		return false;
 	}
+}
+
+function addLayer(layer, name, zIndex) {
+
+    // Create a simple layer switcher that
+    // toggles layers on and off.
+    var link = document.createElement('a');
+        link.href = '#';
+        link.className = 'active';
+        link.innerHTML = name;
+
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            this.className = '';
+        } else {
+            map.addLayer(layer);
+            this.className = 'active';
+        }
+    };
+
+    layers.appendChild(link);
 }

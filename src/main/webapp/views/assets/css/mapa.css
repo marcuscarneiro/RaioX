@@ -584,60 +584,6 @@ input.pesquisa-input
 	width: 100%;
 }
 
-.menu-ui 
-{
-	background:#fff;
-	position:absolute;
-	top:180px;
-	left:10px;
-	z-index:1;
-	border-radius:3px;
-	width:120px;
-	border:1px solid rgba(0,0,0,0.4);
-}
-
-.menu-ui a,
-.menu-ui span
-{
-	font-size:12px;
-	color:#404040;
-	display:block;
-	margin:0;padding:0;
-	padding:5px;
-	text-decoration:none;
-	border-bottom:1px solid rgba(0,0,0,0.25);
-	text-align:center;
-}
-
-.menu-ui span
-{
-	font-weight: bold;
-	background: #cccccc;
-}
-
-.menu-ui a:first-child
-{
-	border-radius:3px 3px 0 0;
-}
-
-.menu-ui a:last-child
-{
-	border:none;
-	border-radius:0 0 3px 3px;
-}
-
-.menu-ui a:hover
-{
-	background:#f8f8f8;
-	color:#404040;
-}
-
-.menu-ui a.active, .menu-ui a.active:hover
-{
-	background:#3887BE;
-	color:#FFF;
-}
-
 .map-legends .map-legend
 {
 	width: 240px;
