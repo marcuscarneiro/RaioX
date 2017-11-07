@@ -2110,6 +2110,13 @@
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="edfs7b" path="edfs7b" value="false" />  NÃO</div>
 						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="edfs7o"><strong></strong>Oficinas:</label>
+							<div class="col-sm-4">
+								<form:input id="edfs7o" name="edfs7o" type="text" class="form-control" path="edfs7o" />
+							</div>
+						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
 							<form:label class="col-sm-3 control-label" path="edfs8"><strong>EDFS8</strong> - Outros</form:label>

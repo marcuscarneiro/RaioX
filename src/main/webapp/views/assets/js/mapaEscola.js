@@ -659,14 +659,18 @@ function changeMarkers(){
 				'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
 				'<h4 class="pesquisa-endereco">'+marker.feature.properties.Endereco+'</h4>'+
 				'<div class="pesquisa-thumb">'+
-					'<img src="'+contextPath + marker.feature.properties.Foto+'" alt="" class="thumb">'+
+					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="progressive replace">'+
+						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada da '+marker.feature.properties.Escola+'" class="thumb">'+
+					'</a>'+
 				'</div>'+
 			'</li>');
 		
 		$('.compare-lista').append('<li esc="' + marker.feature.properties.ID + '" class="compare-item compare-escola-caixas" onclick="addCompara('+marker.feature.properties.ID+')">'+
 				'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
 				'<div class="pesquisa-thumb">'+
-					'<img src="'+contextPath + marker.feature.properties.Foto+'" alt="" class="thumb">'+
+					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="progressive replace">'+
+						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada: '+marker.feature.properties.Escola+'" class="thumb">'+
+					'</a>'+
 				'</div>'+
 			'</li>');
 				
