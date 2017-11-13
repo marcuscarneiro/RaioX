@@ -660,7 +660,7 @@ function changeMarkers(){
 				'<h4 class="pesquisa-endereco">'+marker.feature.properties.Endereco+'</h4>'+
 				'<div class="pesquisa-thumb">'+
 					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="progressive replace">'+
-						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada da '+marker.feature.properties.Escola+'" class="thumb">'+
+						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada da '+marker.feature.properties.Escola+'" class="preview">'+
 					'</a>'+
 				'</div>'+
 			'</li>');
@@ -669,7 +669,7 @@ function changeMarkers(){
 				'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
 				'<div class="pesquisa-thumb">'+
 					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="progressive replace">'+
-						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada: '+marker.feature.properties.Escola+'" class="thumb">'+
+						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada: '+marker.feature.properties.Escola+'" class="preview">'+
 					'</a>'+
 				'</div>'+
 			'</li>');

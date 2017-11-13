@@ -361,6 +361,11 @@ public class MapaEscolasController {
                 properties.put("COR", getMarkerColor(dadosIdeb));
                 properties.put("ATINGIUMETA", getMetaAtingida(dadosIdeb));
                 properties.put("Foto", escola.getFotoCapa());
+                try {
+                	properties.put("FotoMin", escola.getFotoCapa().replaceAll("\\bcapa\\b", "capaMin"));
+				} catch (Exception e) {
+					properties.put("FotoMin", "");
+				}
                 for(Visita visita : visitas){
                 	if(escola.getId().intValue() == visita.getEscola().getId().intValue()){
                 		String situacao = "";

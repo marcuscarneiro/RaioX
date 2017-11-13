@@ -51,3 +51,7 @@ Temporary Items
 .class
 src/main/resources/database.properties
 database.properties
+*.classpath
+*.prefs
+.settings/org.eclipse.wst.common.project.facet.core.xml
+.classpath
