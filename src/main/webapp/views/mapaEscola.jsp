@@ -6,7 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/sweetalert.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/jquery-ui.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapbox.css" />
-		<link href='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/jquery.fancybox.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/hover.css">
@@ -19,9 +18,7 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery-ui.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/ChartNew.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/dropzone.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapbox.js"></script>
-		<script src='https://api.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox-media.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap-list-filter.src.js"></script>
@@ -32,7 +29,8 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/rpa4.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/rpa5.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/rpa6.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.simpleslider.package.min.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/bairros.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/rpa.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/map.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>
@@ -1517,7 +1515,6 @@
 	        });
         </script>
         <script src="<%=request.getContextPath()%>/views/assets/js/chartsRaiox.js"></script>
-        <script src="<%=request.getContextPath()%>/views/assets/js/progressive-image.js"></script>
         <script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

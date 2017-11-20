@@ -126,6 +126,26 @@ function resetActualMarker(){
 	}
 }
 
+var bairrosLayer;
+function setBairros(click){
+	bairrosLayer = L.mapbox.featureLayer().addTo(map);
+	addLayer(bairrosLayer, "Bairros", 2);
+	bairrosLayer.setGeoJSON(bairrosGeo);
+	bairrosLayer.setStyle({'fillColor': '#000', 'fillOpacity': 0.4, 'weight': 1});
+}
+
+setBairros(false);
+
+var rpasLayer;
+function setRpas(click){
+	rpasLayer = L.mapbox.featureLayer().addTo(map);
+	addLayer(rpasLayer, "RPAS", 2);
+	rpasLayer.setGeoJSON(rpas);
+	rpasLayer.setStyle({'fillColor': '#fff', 'fillOpacity': 0.4, 'weight': 1});
+}
+
+setRpas(false);
+
 var rpa1Layer;
 function setRpa1(click){
 	rpa1Layer = L.mapbox.featureLayer().addTo(map);
@@ -139,7 +159,7 @@ function setRpa1(click){
 //		info.innerHTML = '';
 		map.setView(e.layer.getBounds().getCenter(), 13);
 		showEscola(e.layer.feature.properties.RPA, null);
-			});
+	});
 	rpa1Layer.on('mousemove', function(e){highlightLayer(e);});
 	rpa1Layer.on('mouseout', function(e){resetLayerStyle(e);});
 	if(click == true){
@@ -236,6 +256,7 @@ var rpa4Layer;
 
 function setRpa4(click){
 	rpa4Layer = L.mapbox.featureLayer().addTo(map);
+	addLayer(rpa4Layer, "RPA 4", 2);
 	rpa4Layer.setGeoJSON(rpa4);
 	rpa4Layer.setStyle({'fillColor': '#cc3366', 'fillOpacity': 0.4, 'weight': 1});
 	rpa4Layer.on('click', function(e)
@@ -271,6 +292,7 @@ var rpa5Layer;
 
 function setRpa5(click){
 	rpa5Layer = L.mapbox.featureLayer().addTo(map);
+	addLayer(rpa5Layer, "RPA 5", 2);
 	rpa5Layer.setGeoJSON(rpa5);
 	rpa5Layer.setStyle({'fillColor': '#6666cc', 'fillOpacity': 0.4, 'weight': 1});
 	rpa5Layer.on('click', function(e)
@@ -306,6 +328,7 @@ var rpa6Layer;
 
 function setRpa6(click){
 	rpa6Layer = L.mapbox.featureLayer().addTo(map);
+	addLayer(rpa6Layer, "RPA 6", 2);
 	rpa6Layer.setGeoJSON(rpa6);
 	rpa6Layer.setStyle({'fillColor': '#ff6633', 'fillOpacity': 0.4, 'weight': 1});
 	rpa6Layer.on('click', function(e)
@@ -375,6 +398,7 @@ function escolasMouseOver(){
 //		}
 		definePopup(e.layer);
 		e.layer.openPopup();
+		requestAnimationFrame(inView);
 	});
 }
 
@@ -443,16 +467,20 @@ function highlightMarker(e){
 function definePopup(marker){
 	var feature = marker.feature,
 		foto;
-	if(feature.properties.Foto != null){
-		foto = contextPath + feature.properties.Foto;
+	if(feature.properties.FotoMin != null){
+		foto = contextPath + feature.properties.FotoMin;
 	} else {
 		foto = contextPath + '/views/assets/css/img/escola.jpg';
 	}
 	// Create custom popup content
 	var popupContent = '<div class="pop"><div class="popup-texto"><span><strong>' + feature.properties.Escola + '</strong></span>' +
 		'<p>' + feature.properties.Endereco + '</p></div>'+
-		'<div class="crop"><img src="' + foto + '"/></div></div>';
-
+		'<div class="crop">'+
+			'<a href="'+contextPath + marker.feature.properties.Foto+'" class="progressive replace">'+
+				'<img src="'+foto+'" alt="Fachada da '+marker.feature.properties.Escola+'" class="preview">'+
+			'</a>'+
+		'</div></div>';
+	
 //	if(viewWidth >= 750){
 //		info.innerHTML = popupContent;
 //	}
@@ -668,7 +696,7 @@ function changeMarkers(){
 		$('.compare-lista').append('<li esc="' + marker.feature.properties.ID + '" class="compare-item compare-escola-caixas" onclick="addCompara('+marker.feature.properties.ID+')">'+
 				'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
 				'<div class="pesquisa-thumb">'+
-					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="progressive replace">'+
+					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="full progressive replace">'+
 						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada: '+marker.feature.properties.Escola+'" class="preview">'+
 					'</a>'+
 				'</div>'+
@@ -2776,8 +2804,8 @@ function compareVisita(comp1, comp2, escNome1, escNome2){
 	});
 }
 
-var logo = $('.logo');
-var img = $('.logo img');
+//var logo = $('.logo');
+//var img = $('.logo img');
 var spans = $('.logo span');
 var scrlld = false;
 
@@ -2911,3 +2939,54 @@ function addLayer(layer, name, zIndex) {
 
     layers.appendChild(link);
 }
+
+var pItem = document.getElementsByClassName('progressive replace'), timer;
+function loadFullImage(item) {
+	if (!item || !item.href) return;
+
+	// load image
+	var img = new Image();
+	if (item.dataset) {
+		img.srcset = item.dataset.srcset || '';
+		img.sizes = item.dataset.sizes || '';
+	}
+	img.src = item.href;
+	img.className = 'reveal';
+	if (img.complete) addImg();
+	else img.onload = addImg;
+
+	function addImg() {
+		// disable click
+		item.addEventListener('click', function(e) { e.preventDefault(); }, false);
+
+		// add full image
+		item.appendChild(img).addEventListener('animationend', function(e) {
+			// remove preview image
+			var pImg = item.querySelector && item.querySelector('img.preview');
+
+			if (pImg) {
+				e.target.alt = pImg.alt || '';
+				item.removeChild(pImg);
+				e.target.classList.remove('reveal');
+			}
+		});
+	}
+}
+
+function inView() {
+	var wT = window.pageYOffset, wB = wT + window.innerHeight, cRect, pT, pB, p = 0;
+	while (p < pItem.length) {
+
+		cRect = pItem[p].getBoundingClientRect();
+		pT = wT + cRect.top;
+		pB = pT + cRect.height;
+
+		if (wT < pB && wB > pT) {
+			loadFullImage(pItem[p]);
+			pItem[p].classList.remove('replace');
+		}
+		else p++;
+	}
+}
+
+inView();

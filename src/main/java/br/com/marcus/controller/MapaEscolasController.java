@@ -362,7 +362,7 @@ public class MapaEscolasController {
                 properties.put("ATINGIUMETA", getMetaAtingida(dadosIdeb));
                 properties.put("Foto", escola.getFotoCapa());
                 try {
-                	properties.put("FotoMin", escola.getFotoCapa().replaceAll("\\bcapa\\b", "capaMin"));
+                	properties.put("FotoMin", escola.getFotoCapa().replaceAll("\\bcapa\\b", "capaThumb"));
 				} catch (Exception e) {
 					properties.put("FotoMin", "");
 				}
