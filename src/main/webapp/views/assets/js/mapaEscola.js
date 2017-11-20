@@ -1,4 +1,4 @@
-var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual, filtrosIds = [];
+var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual, filtrosIds = [], heatArr = [];
 var modo = 'all';
 var viewWidth = $(window).width();
 var rpaAtual = 0;
@@ -7,8 +7,7 @@ var southWest = L.latLng(-8.203279, -35.308557),
 	northEast = L.latLng(-7.714644, -34.522893),
 	bounds = L.latLngBounds(southWest, northEast);
 
-L.mapbox.accessToken = 'pk.eyJ1IjoibXZjYXJuZWlybyIsImEiOiIwZmIxOTNkNjU1NzNkN2E5OGRhNTE5NWIwMjZlMzVjMiJ9.5dFjUXu8lTpH3zoPF93mYQ';
-var map = L.mapbox.map('map', 'mapbox.outdoors',
+var map = L.map('map', 'mapbox.outdoors',
 	{
 		zoomControl: true,
 		maxBounds: bounds,
@@ -16,6 +15,13 @@ var map = L.mapbox.map('map', 'mapbox.outdoors',
 		minZoom: 11
 	})
 	.setView([-8.0529, -34.9330], 12);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+		'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+		'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	id: 'mapbox.streets'
+}).addTo(map);
 
 // Desabilita o toque no mapa.
 
@@ -29,6 +35,7 @@ new L.Control.Zoom(
 	position: 'bottomright'
 }).addTo(map);
 
+var heatLayer = L.heatLayer([], {radius: 25}).addTo(map);
 
 var bg_options = {
     color: '#fff',
@@ -128,9 +135,9 @@ function resetActualMarker(){
 
 var bairrosLayer;
 function setBairros(click){
-	bairrosLayer = L.mapbox.featureLayer().addTo(map);
+	bairrosLayer = L.geoJSON().addTo(map);
 	addLayer(bairrosLayer, "Bairros", 2);
-	bairrosLayer.setGeoJSON(bairrosGeo);
+	bairrosLayer.addData(bairrosGeo);
 	bairrosLayer.setStyle({'fillColor': '#000', 'fillOpacity': 0.4, 'weight': 1});
 }
 
@@ -138,9 +145,9 @@ setBairros(false);
 
 var rpasLayer;
 function setRpas(click){
-	rpasLayer = L.mapbox.featureLayer().addTo(map);
+	rpasLayer = L.geoJSON().addTo(map);
 	addLayer(rpasLayer, "RPAS", 2);
-	rpasLayer.setGeoJSON(rpas);
+	rpasLayer.addData(rpas);
 	rpasLayer.setStyle({'fillColor': '#fff', 'fillOpacity': 0.4, 'weight': 1});
 }
 
@@ -148,9 +155,9 @@ setRpas(false);
 
 var rpa1Layer;
 function setRpa1(click){
-	rpa1Layer = L.mapbox.featureLayer().addTo(map);
+	rpa1Layer = L.geoJSON().addTo(map);
 	addLayer(rpa1Layer, "RPA 1", 2);
-	rpa1Layer.setGeoJSON(rpa1);
+	rpa1Layer.addData(rpa1);
 	rpa1Layer.setStyle({'fillColor': '#ccff00', 'fillOpacity': 0.4, 'weight': 1});
 	rpa1Layer.on('click', function(e)
 	{
@@ -183,9 +190,9 @@ setRpa1(false);
 
 var rpa2Layer;
 function setRpa2(click){
-	rpa2Layer = L.mapbox.featureLayer().addTo(map);
+	rpa2Layer = L.geoJSON().addTo(map);
 	addLayer(rpa2Layer, "RPA 2", 2);
-	rpa2Layer.setGeoJSON(rpa2);
+	rpa2Layer.addData(rpa2);
 	rpa2Layer.setStyle({'fillColor': '#66cc99', 'fillOpacity': 0.4, 'weight': 1});
 	rpa2Layer.on('click', function(e)
 	{
@@ -219,9 +226,9 @@ setRpa2(false);
 var rpa3Layer;
 
 function setRpa3(click){
-	rpa3Layer = L.mapbox.featureLayer().addTo(map);
+	rpa3Layer = L.geoJSON().addTo(map);
 	addLayer(rpa3Layer, "RPA 3", 2);
-	rpa3Layer.setGeoJSON(rpa3);
+	rpa3Layer.addData(rpa3);
 	rpa3Layer.setStyle({'fillColor': '#cc9933', 'fillOpacity': 0.4, 'weight': 1});
 	rpa3Layer.on('click', function(e)
 	{
@@ -255,9 +262,9 @@ setRpa3(false);
 var rpa4Layer;
 
 function setRpa4(click){
-	rpa4Layer = L.mapbox.featureLayer().addTo(map);
+	rpa4Layer = L.geoJSON().addTo(map);
 	addLayer(rpa4Layer, "RPA 4", 2);
-	rpa4Layer.setGeoJSON(rpa4);
+	rpa4Layer.addData(rpa4);
 	rpa4Layer.setStyle({'fillColor': '#cc3366', 'fillOpacity': 0.4, 'weight': 1});
 	rpa4Layer.on('click', function(e)
 	{
@@ -291,9 +298,9 @@ setRpa4(false);
 var rpa5Layer;
 
 function setRpa5(click){
-	rpa5Layer = L.mapbox.featureLayer().addTo(map);
+	rpa5Layer = L.geoJSON().addTo(map);
 	addLayer(rpa5Layer, "RPA 5", 2);
-	rpa5Layer.setGeoJSON(rpa5);
+	rpa5Layer.addData(rpa5);
 	rpa5Layer.setStyle({'fillColor': '#6666cc', 'fillOpacity': 0.4, 'weight': 1});
 	rpa5Layer.on('click', function(e)
 	{
@@ -327,9 +334,9 @@ setRpa5(false);
 var rpa6Layer;
 
 function setRpa6(click){
-	rpa6Layer = L.mapbox.featureLayer().addTo(map);
+	rpa6Layer = L.geoJSON().addTo(map);
 	addLayer(rpa6Layer, "RPA 6", 2);
-	rpa6Layer.setGeoJSON(rpa6);
+	rpa6Layer.addData(rpa6);
 	rpa6Layer.setStyle({'fillColor': '#ff6633', 'fillOpacity': 0.4, 'weight': 1});
 	rpa6Layer.on('click', function(e)
 	{
@@ -360,7 +367,7 @@ function setRpa6(click){
 
 setRpa6(false);
 
-var escolasLayer = L.mapbox.featureLayer().addTo(map);
+var escolasLayer = L.geoJSON().addTo(map);
 addLayer(escolasLayer, "Escolas", 3);
 
 var escolasList = [];
@@ -376,7 +383,7 @@ function carregaEscolas(){
 		dataType: 'json',
 		success: function(data) {
 			escolasData = data;
-			escolasLayer.setGeoJSON(data);
+			escolasLayer.addData(data);
 			escolasList = [];
 			escolasListCompare = [];
 			changeMarkers();
@@ -724,12 +731,26 @@ function changeMarkers(){
 		// Create custom popup content
 			definePopup(marker);
 		}
+		
+//		if(heatLayer === null){
+//			if(marker.feature.properties.qtdAlunos != undefined){
+//			heatLayer.addLatLng(marker.getLatLng(), 1);
+				heatArr.push([marker.feature.geometry.coordinates[0], marker.feature.geometry.coordinates[1], 1]);
+//			}
+//		}
+			
 		return false;
 	});
 	
+	heatLayer = L.heatLayer(heatArr, {radius: 250}).addTo(map);
+	addLayer(heatLayer, "Mapa de Calor", 2);
 	escolasMouseOver();
 	escolasMouseOut();
 	escolasClick();
+};
+
+function scaleBetween(unscaledNum, minAllowed, maxAllowed, min, max) {
+	return (maxAllowed - minAllowed) * (unscaledNum - min) / (max - min) + minAllowed;
 };
 
 function preencheEscolas(){
@@ -2168,8 +2189,8 @@ function focusRpa(rpa){
 		if(rpa == 4) { setRpa4(true); };
 		if(rpa == 5) { setRpa5(true); };
 		if(rpa == 6) { setRpa6(true); };
-		escolasLayer = L.mapbox.featureLayer().addTo(map);
-		escolasLayer.setGeoJSON(escolasData);
+		escolasLayer = L.geoJSON().addTo(map);
+		escolasLayer.addData(escolasData);
 		escolasLayer.eachLayer(function(marker) {
 			if(marker.feature.properties.RPA == rpa){
 			} else {
@@ -2195,8 +2216,8 @@ function replotMap(){
 //	info.innerHTML = '';
 //	showPesquisa();
 	map.removeLayer(escolasLayer);
-	escolasLayer = L.mapbox.featureLayer().addTo(map);
-	escolasLayer.setGeoJSON(escolasData);
+	escolasLayer = L.geoJSON().addTo(map);
+	escolasLayer.addData(escolasData);
 	escolasList = [];
 	escolasListCompare = [];
 	modo = 'all';

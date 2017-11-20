@@ -5,7 +5,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/sweetalert.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/jquery-ui.css" />
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapbox.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/leaflet.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/jquery.fancybox.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/hover.css">
@@ -18,7 +18,8 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery-ui.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/ChartNew.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/mapbox.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet-heat.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox-media.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap-list-filter.src.js"></script>

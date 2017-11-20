@@ -395,6 +395,12 @@ public class MapaEscolasController {
                 			properties.put("POSSUIQUADRA", 3);
                 			break;
                 		}
+                		
+                		try {
+                			properties.put("qtdAlunos", visita.getSa1());
+                		} catch (Exception e) {
+                			properties.put("qtdAlunos", "null");
+                		}
                 	}
                 }
                 

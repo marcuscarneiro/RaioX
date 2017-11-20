@@ -33,6 +33,7 @@ html, body
 	height: 100%;
 	width: 95%;
 	float: right;
+	z-index: 0;
 }
 
 .side-menu
