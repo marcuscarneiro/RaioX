@@ -909,6 +909,7 @@ li.box-numeros:hover
 	font: 14px/20px 'Open Sans', Arial, sans-serif;
 	cursor: pointer;
 	float: left;
+	width: 100%;
 }
 
 .filtro-grupos
@@ -1263,7 +1264,7 @@ li.box-numeros:hover
     margin-top: 24px;
 }
 
-.filtro-periodo div {
+.filtro-periodo div, .filtro-proficiencia div  {
 	display: none;
 	color: #286090;
 	padding-left: 36px;
@@ -1272,11 +1273,20 @@ li.box-numeros:hover
 	margin: 20px 0;
 }
 
-.filtro-periodo span {
+.filtro-proficiencia div {
+	width: 100% !important;
+	margin: 0 0 20px 0;
+}
+
+.filtro-periodo span, .filtro-proficiencia span {
 	display: none;
 	float: left;
 	padding-left: 36px;
 	color: #286090;
+}
+
+.filtro-proficiencia span {
+	margin-bottom: 20px;
 }
 
 .filtro-periodo button {

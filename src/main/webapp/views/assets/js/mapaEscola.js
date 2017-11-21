@@ -25,7 +25,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 // Desabilita o toque no mapa.
 
-var layers = document.getElementById('menu-ui');
+var layers = $('.filtro-camadas');
 
 if (map.tap) map.tap.disable();
 
@@ -54,7 +54,7 @@ function resetMap(){
 }
 
 var bgLayer = L.circle([-8.069677, -34.901499], 100000, bg_options).addTo(map);
-addLayer(bgLayer, 'BackGround', 1);
+addLayer(bgLayer, 'BackGround', 1, 'bglayer');
 bgLayer.on('click', function(e)
 {
 	escondeDados();
@@ -136,7 +136,7 @@ function resetActualMarker(){
 var bairrosLayer;
 function setBairros(click){
 	bairrosLayer = L.geoJSON().addTo(map);
-	addLayer(bairrosLayer, "Bairros", 2);
+	addLayer(bairrosLayer, "Bairros", 2, 'bairroslayer');
 	bairrosLayer.addData(bairrosGeo);
 	bairrosLayer.setStyle({'fillColor': '#000', 'fillOpacity': 0.4, 'weight': 1});
 }
@@ -146,7 +146,7 @@ setBairros(false);
 var rpasLayer;
 function setRpas(click){
 	rpasLayer = L.geoJSON().addTo(map);
-	addLayer(rpasLayer, "RPAS", 2);
+	addLayer(rpasLayer, "RPAS", 2, 'rpas');
 	rpasLayer.addData(rpas);
 	rpasLayer.setStyle({'fillColor': '#fff', 'fillOpacity': 0.4, 'weight': 1});
 }
@@ -156,7 +156,7 @@ setRpas(false);
 var rpa1Layer;
 function setRpa1(click){
 	rpa1Layer = L.geoJSON().addTo(map);
-	addLayer(rpa1Layer, "RPA 1", 2);
+	addLayer(rpa1Layer, "RPA 1", 2, 'rpa1layer');
 	rpa1Layer.addData(rpa1);
 	rpa1Layer.setStyle({'fillColor': '#ccff00', 'fillOpacity': 0.4, 'weight': 1});
 	rpa1Layer.on('click', function(e)
@@ -191,7 +191,7 @@ setRpa1(false);
 var rpa2Layer;
 function setRpa2(click){
 	rpa2Layer = L.geoJSON().addTo(map);
-	addLayer(rpa2Layer, "RPA 2", 2);
+	addLayer(rpa2Layer, "RPA 2", 2, 'rpa2layer');
 	rpa2Layer.addData(rpa2);
 	rpa2Layer.setStyle({'fillColor': '#66cc99', 'fillOpacity': 0.4, 'weight': 1});
 	rpa2Layer.on('click', function(e)
@@ -227,7 +227,7 @@ var rpa3Layer;
 
 function setRpa3(click){
 	rpa3Layer = L.geoJSON().addTo(map);
-	addLayer(rpa3Layer, "RPA 3", 2);
+	addLayer(rpa3Layer, "RPA 3", 2, 'rpa3layer');
 	rpa3Layer.addData(rpa3);
 	rpa3Layer.setStyle({'fillColor': '#cc9933', 'fillOpacity': 0.4, 'weight': 1});
 	rpa3Layer.on('click', function(e)
@@ -263,7 +263,7 @@ var rpa4Layer;
 
 function setRpa4(click){
 	rpa4Layer = L.geoJSON().addTo(map);
-	addLayer(rpa4Layer, "RPA 4", 2);
+	addLayer(rpa4Layer, "RPA 4", 2, 'rpa4layer');
 	rpa4Layer.addData(rpa4);
 	rpa4Layer.setStyle({'fillColor': '#cc3366', 'fillOpacity': 0.4, 'weight': 1});
 	rpa4Layer.on('click', function(e)
@@ -299,7 +299,7 @@ var rpa5Layer;
 
 function setRpa5(click){
 	rpa5Layer = L.geoJSON().addTo(map);
-	addLayer(rpa5Layer, "RPA 5", 2);
+	addLayer(rpa5Layer, "RPA 5", 2, 'rpa5layer');
 	rpa5Layer.addData(rpa5);
 	rpa5Layer.setStyle({'fillColor': '#6666cc', 'fillOpacity': 0.4, 'weight': 1});
 	rpa5Layer.on('click', function(e)
@@ -335,7 +335,7 @@ var rpa6Layer;
 
 function setRpa6(click){
 	rpa6Layer = L.geoJSON().addTo(map);
-	addLayer(rpa6Layer, "RPA 6", 2);
+	addLayer(rpa6Layer, "RPA 6", 2, 'rpa6layer');
 	rpa6Layer.addData(rpa6);
 	rpa6Layer.setStyle({'fillColor': '#ff6633', 'fillOpacity': 0.4, 'weight': 1});
 	rpa6Layer.on('click', function(e)
@@ -368,7 +368,7 @@ function setRpa6(click){
 setRpa6(false);
 
 var escolasLayer = L.geoJSON().addTo(map);
-addLayer(escolasLayer, "Escolas", 3);
+addLayer(escolasLayer, "Escolas", 3, 'escolaslayer');
 
 var escolasList = [];
 
@@ -743,7 +743,7 @@ function changeMarkers(){
 	});
 	
 	heatLayer = L.heatLayer(heatArr, {radius: 250}).addTo(map);
-	addLayer(heatLayer, "Mapa de Calor", 2);
+	addLayer(heatLayer, "Mapa de Calor", 2, 'mapaCalor');
 	escolasMouseOver();
 	escolasMouseOut();
 	escolasClick();
@@ -2146,7 +2146,22 @@ function mudaLegenda(filter){
 	});
 }
 
-$('.filtro-grupos').on('click', function(){
+$('#filtro-16').on('click', function(){
+	$(this).toggle();
+	if($(this).hasClass('active')){
+		$(".filtro-proficiencia div").slideUp("slow");
+		$(".filtro-proficiencia span").slideUp("slow");
+		$(".filtro-proficiencia button").slideUp("slow");
+		$(this).removeClass('active');
+	} else {
+		$(".filtro-proficiencia div").slideDown("slow");
+		$(".filtro-proficiencia span").slideDown("slow");
+		$(".filtro-proficiencia button").slideDown("slow");
+		$(this).addClass('active');
+	}
+});
+
+$('#filtro-13').on('click', function(){
 	$(this).toggle();
 	if($(this).hasClass('active')){
 		$(this).removeClass('active');
@@ -2936,29 +2951,33 @@ function isSmallScreen(){
 	}
 }
 
-function addLayer(layer, name, zIndex) {
-
+function addLayer(layer, name, zIndex, id) {
+	
     // Create a simple layer switcher that
     // toggles layers on and off.
-    var link = document.createElement('a');
-        link.href = '#';
-        link.className = 'active';
-        link.innerHTML = name;
-
-    link.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            this.className = '';
-        } else {
-            map.addLayer(layer);
-            this.className = 'active';
-        }
-    };
-
-    layers.appendChild(link);
+    if($('#' + id).length){
+    } else {
+    	var link = document.createElement('a');
+    	link.href = '#';
+    	link.className = 'active';
+    	link.innerHTML = name;
+    	link.id = id;
+    	
+    	link.onclick = function(e) {
+    		e.preventDefault();
+    		e.stopPropagation();
+    		
+    		if (map.hasLayer(layer)) {
+    			map.removeLayer(layer);
+    			this.className = '';
+    		} else {
+    			map.addLayer(layer);
+    			this.className = 'active';
+    		}
+    	};
+    	
+    	layers.append(link);
+    }
 }
 
 var pItem = document.getElementsByClassName('progressive replace'), timer;
@@ -3011,3 +3030,11 @@ function inView() {
 }
 
 inView();
+
+var overlayMaps = {
+	    "BackGround": bgLayer,
+	    "RPAs": rpasLayer,
+	    "Bairros": bairrosLayer
+	};
+
+L.control.layers(overlayMaps).addTo(map);

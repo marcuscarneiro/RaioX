@@ -1190,6 +1190,12 @@
 				</span>
 				<div class="cabecalho">
 					<h2>Filtros das escolas</h2>
+					<span class="filtro-opcoes">Escolha abaixo a camada que deseja ver no mapa</span>
+				</div>
+				<div class="filtro-camadas">
+				</div>
+				
+				<div class="cabecalho">
 					<span class="filtro-opcoes">Marque abaixo os filtros que deseja aplicar ao mapa</span>
 				</div>
 				<div class="filtro-lista">
@@ -1212,6 +1218,37 @@
 						<button type="button" class="btn btn-primary filtro-item" data-filter="periodo">Filtrar</button>
 					</div>
 					
+					<div class="filtro-proficiencia">
+						<input type="checkbox" id="filtro-16" class="filtro-grupos">
+						<label for="filtro-16">Por taxas de aprovação</label>
+						<div class="prof-filtro-lista">
+							<span>Marque abaixo os filtros a serem aplicados</span><br>
+							<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="melhorProfPort5">
+							<label for="filtro-4">MELHORES taxas de aprovação em Português do Fundamental I</label>
+			
+							<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="melhorProfMat5">
+							<label for="filtro-5">MELHORES taxas de aprovação em Matemática do Fundamental I</label>
+			
+							<input type="checkbox" id="filtro-6" class="filtro-item" data-filter="melhorProfPort9">
+							<label for="filtro-6">MELHORES taxas de aprovação em Português do Fundamental II</label>
+			
+							<input type="checkbox" id="filtro-7" class="filtro-item" data-filter="melhorProfMat9">
+							<label for="filtro-7">MELHORES taxas de aprovação em Matemática do Fundamental II</label>
+			
+							<input type="checkbox" id="filtro-8" class="filtro-item" data-filter="piorProfPort5">
+							<label for="filtro-8">PIORES taxas de aprovação em Português do Fundamental I</label>
+			
+							<input type="checkbox" id="filtro-9" class="filtro-item" data-filter="piorProfMat5">
+							<label for="filtro-9">PIORES taxas de aprovação em Matemática do Fundamental I</label>
+			
+							<input type="checkbox" id="filtro-10" class="filtro-item" data-filter="piorProfPort9">
+							<label for="filtro-10">PIORES taxas de aprovação em Português do Fundamental II</label>
+			
+							<input type="checkbox" id="filtro-11" class="filtro-item" data-filter="piorProfMat9">
+							<label for="filtro-11">PIORES taxas de aprovação em Matemática do Fundamental II</label>
+						</div>
+					</div>
+					
 					<input type="checkbox" id="filtro-14" class="filtro-item" data-filter="evolucao">
 					<label for="filtro-14">Escolas com evolução sempre crescente da nota do IDEB</label>
 						
@@ -1224,30 +1261,6 @@
 					<input type="checkbox" id="filtro-3" class="filtro-item" data-filter="aces">
 					<label for="filtro-3">Possuem itens de acessibilidade</label>
 	
-					<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="melhorProfPort5">
-					<label for="filtro-4">MELHORES taxas de aprovação em Português do Fundamental I</label>
-	
-					<input type="checkbox" id="filtro-5" class="filtro-item" data-filter="melhorProfMat5">
-					<label for="filtro-5">MELHORES taxas de aprovação em Matemática do Fundamental I</label>
-	
-					<input type="checkbox" id="filtro-6" class="filtro-item" data-filter="melhorProfPort9">
-					<label for="filtro-6">MELHORES taxas de aprovação em Português do Fundamental II</label>
-	
-					<input type="checkbox" id="filtro-7" class="filtro-item" data-filter="melhorProfMat9">
-					<label for="filtro-7">MELHORES taxas de aprovação em Matemática do Fundamental II</label>
-	
-					<input type="checkbox" id="filtro-8" class="filtro-item" data-filter="piorProfPort5">
-					<label for="filtro-8">PIORES taxas de aprovação em Português do Fundamental I</label>
-	
-					<input type="checkbox" id="filtro-9" class="filtro-item" data-filter="piorProfMat5">
-					<label for="filtro-9">PIORES taxas de aprovação em Matemática do Fundamental I</label>
-	
-					<input type="checkbox" id="filtro-10" class="filtro-item" data-filter="piorProfPort9">
-					<label for="filtro-10">PIORES taxas de aprovação em Português do Fundamental II</label>
-	
-					<input type="checkbox" id="filtro-11" class="filtro-item" data-filter="piorProfMat9">
-					<label for="filtro-11">PIORES taxas de aprovação em Matemática do Fundamental II</label>
-					
 					<input type="checkbox" id="filtro-12" class="filtro-item" data-filter="novas">
 					<label for="filtro-12">Novas sedes entregues na gestão atual</label>
 				</div>
