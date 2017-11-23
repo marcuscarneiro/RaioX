@@ -1295,6 +1295,36 @@ li.box-numeros:hover
 	margin: 45px 0 0 36px;
 }
 
+.filtro-camadas {
+	margin: 10px;
+}
+
+.filtro-camadas a {
+	width: 100%;
+	display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    font: 14px/20px 'Open Sans', Arial, sans-serif;
+    cursor: pointer;
+    float: left;
+
+}
+
+.filtro-camadas + a:before {
+	content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #6cc0e5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .6;
+    -webkit-transition: all .12s, border-color .08s;
+    transition: all .12s, border-color .08s;
+}
+
 /* MEDIA QUERY */
 
 @media screen and (max-width: 1400px){

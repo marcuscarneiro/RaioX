@@ -24,14 +24,13 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox-media.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap-list-filter.src.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/recife.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/rpa1.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/rpa2.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/rpa3.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/rpa4.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/rpa5.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/rpa6.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/rpa1n.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/rpa2n.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/rpa3n.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/rpa4n.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/rpa5n.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/rpa6n.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bairros.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/rpa.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/map.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>

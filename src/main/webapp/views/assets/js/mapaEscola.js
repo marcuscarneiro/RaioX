@@ -151,12 +151,11 @@ function setRpas(click){
 	rpasLayer.setStyle({'fillColor': '#fff', 'fillOpacity': 0.4, 'weight': 1});
 }
 
-setRpas(false);
+//setRpas(false);
 
 var rpa1Layer;
 function setRpa1(click){
 	rpa1Layer = L.geoJSON().addTo(map);
-	addLayer(rpa1Layer, "RPA 1", 2, 'rpa1layer');
 	rpa1Layer.addData(rpa1);
 	rpa1Layer.setStyle({'fillColor': '#ccff00', 'fillOpacity': 0.4, 'weight': 1});
 	rpa1Layer.on('click', function(e)
@@ -191,7 +190,6 @@ setRpa1(false);
 var rpa2Layer;
 function setRpa2(click){
 	rpa2Layer = L.geoJSON().addTo(map);
-	addLayer(rpa2Layer, "RPA 2", 2, 'rpa2layer');
 	rpa2Layer.addData(rpa2);
 	rpa2Layer.setStyle({'fillColor': '#66cc99', 'fillOpacity': 0.4, 'weight': 1});
 	rpa2Layer.on('click', function(e)
@@ -227,7 +225,6 @@ var rpa3Layer;
 
 function setRpa3(click){
 	rpa3Layer = L.geoJSON().addTo(map);
-	addLayer(rpa3Layer, "RPA 3", 2, 'rpa3layer');
 	rpa3Layer.addData(rpa3);
 	rpa3Layer.setStyle({'fillColor': '#cc9933', 'fillOpacity': 0.4, 'weight': 1});
 	rpa3Layer.on('click', function(e)
@@ -263,7 +260,6 @@ var rpa4Layer;
 
 function setRpa4(click){
 	rpa4Layer = L.geoJSON().addTo(map);
-	addLayer(rpa4Layer, "RPA 4", 2, 'rpa4layer');
 	rpa4Layer.addData(rpa4);
 	rpa4Layer.setStyle({'fillColor': '#cc3366', 'fillOpacity': 0.4, 'weight': 1});
 	rpa4Layer.on('click', function(e)
@@ -299,7 +295,6 @@ var rpa5Layer;
 
 function setRpa5(click){
 	rpa5Layer = L.geoJSON().addTo(map);
-	addLayer(rpa5Layer, "RPA 5", 2, 'rpa5layer');
 	rpa5Layer.addData(rpa5);
 	rpa5Layer.setStyle({'fillColor': '#6666cc', 'fillOpacity': 0.4, 'weight': 1});
 	rpa5Layer.on('click', function(e)
@@ -335,7 +330,6 @@ var rpa6Layer;
 
 function setRpa6(click){
 	rpa6Layer = L.geoJSON().addTo(map);
-	addLayer(rpa6Layer, "RPA 6", 2, 'rpa6layer');
 	rpa6Layer.addData(rpa6);
 	rpa6Layer.setStyle({'fillColor': '#ff6633', 'fillOpacity': 0.4, 'weight': 1});
 	rpa6Layer.on('click', function(e)
