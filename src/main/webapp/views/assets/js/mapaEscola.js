@@ -42,7 +42,7 @@ var bg_options = {
     opacity: 0,
     weight: 0,
     fillColor: '#fff',
-    fillOpacity: 0.1
+    fillOpacity: 0
 };
 
 function resetMap(){
@@ -54,7 +54,6 @@ function resetMap(){
 }
 
 var bgLayer = L.circle([-8.069677, -34.901499], 100000, bg_options).addTo(map);
-addLayer(bgLayer, 'BackGround', 1, 'bglayer');
 bgLayer.on('click', function(e)
 {
 	escondeDados();
@@ -75,7 +74,7 @@ function highlightLayer(e){
 	e.layer.setStyle({
 		weight: 4,
 		opacity: 1,
-		fillOpacity: 0.6
+		fillOpacity: 0.8
 	});
 };
 
@@ -83,7 +82,7 @@ function resetLayerStyle(e){
 	e.layer.setStyle({
 		weight: 1,
 		opacity: 1,
-		fillOpacity: 0.4
+		fillOpacity: 0.6
 	});
 }
 
@@ -135,29 +134,31 @@ function resetActualMarker(){
 
 var bairrosLayer;
 function setBairros(click){
-	bairrosLayer = L.geoJSON().addTo(map);
-	addLayer(bairrosLayer, "Bairros", 2, 'bairroslayer');
-	bairrosLayer.addData(bairrosGeo);
-	bairrosLayer.setStyle({'fillColor': '#000', 'fillOpacity': 0.4, 'weight': 1});
+	bairrosLayer = L.geoJSON(bairrosGeo, {
+	    style: function(feature) {
+	        switch (feature.properties.RPA) {
+	            case '1': return {color: "#ccff00"};
+	            case '2': return {color: "#66cc99"};
+	            case '3': return {color: "#cc9933"};
+	            case '4': return {color: "#cc3366"};
+	            case '5': return {color: "#6666cc"};
+	            case '6': return {color: "#ff6633"};
+		        }
+		    }
+		});
+		addLayer(bairrosLayer, "Bairros", 2, 'bairroslayer');
+		bairrosLayer.setStyle({'fillOpacity': 0.6, 'weight': 1});
+		bairrosLayer.on('mousemove', function(e){highlightLayer(e);});
+		bairrosLayer.on('mouseout', function(e){resetLayerStyle(e);});
 }
 
 setBairros(false);
-
-var rpasLayer;
-function setRpas(click){
-	rpasLayer = L.geoJSON().addTo(map);
-	addLayer(rpasLayer, "RPAS", 2, 'rpas');
-	rpasLayer.addData(rpas);
-	rpasLayer.setStyle({'fillColor': '#fff', 'fillOpacity': 0.4, 'weight': 1});
-}
-
-//setRpas(false);
 
 var rpa1Layer;
 function setRpa1(click){
 	rpa1Layer = L.geoJSON().addTo(map);
 	rpa1Layer.addData(rpa1);
-	rpa1Layer.setStyle({'fillColor': '#ccff00', 'fillOpacity': 0.4, 'weight': 1});
+	rpa1Layer.setStyle({color: '#ccff00', 'fillOpacity': 0.6, 'weight': 1});
 	rpa1Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -191,7 +192,7 @@ var rpa2Layer;
 function setRpa2(click){
 	rpa2Layer = L.geoJSON().addTo(map);
 	rpa2Layer.addData(rpa2);
-	rpa2Layer.setStyle({'fillColor': '#66cc99', 'fillOpacity': 0.4, 'weight': 1});
+	rpa2Layer.setStyle({color: '#66cc99', 'fillOpacity': 0.6, 'weight': 1});
 	rpa2Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -226,7 +227,7 @@ var rpa3Layer;
 function setRpa3(click){
 	rpa3Layer = L.geoJSON().addTo(map);
 	rpa3Layer.addData(rpa3);
-	rpa3Layer.setStyle({'fillColor': '#cc9933', 'fillOpacity': 0.4, 'weight': 1});
+	rpa3Layer.setStyle({color: '#cc9933', 'fillOpacity': 0.6, 'weight': 1});
 	rpa3Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -261,7 +262,7 @@ var rpa4Layer;
 function setRpa4(click){
 	rpa4Layer = L.geoJSON().addTo(map);
 	rpa4Layer.addData(rpa4);
-	rpa4Layer.setStyle({'fillColor': '#cc3366', 'fillOpacity': 0.4, 'weight': 1});
+	rpa4Layer.setStyle({color: '#cc3366', 'fillOpacity': 0.6, 'weight': 1});
 	rpa4Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -296,7 +297,7 @@ var rpa5Layer;
 function setRpa5(click){
 	rpa5Layer = L.geoJSON().addTo(map);
 	rpa5Layer.addData(rpa5);
-	rpa5Layer.setStyle({'fillColor': '#6666cc', 'fillOpacity': 0.4, 'weight': 1});
+	rpa5Layer.setStyle({color: '#6666cc', 'fillOpacity': 0.6, 'weight': 1});
 	rpa5Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -331,7 +332,7 @@ var rpa6Layer;
 function setRpa6(click){
 	rpa6Layer = L.geoJSON().addTo(map);
 	rpa6Layer.addData(rpa6);
-	rpa6Layer.setStyle({'fillColor': '#ff6633', 'fillOpacity': 0.4, 'weight': 1});
+	rpa6Layer.setStyle({color: '#ff6633', 'fillOpacity': 0.6, 'weight': 1});
 	rpa6Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -360,6 +361,8 @@ function setRpa6(click){
 }
 
 setRpa6(false);
+
+addLayer('', "RPAs", 3, 'rpasLayer');
 
 var escolasLayer = L.geoJSON().addTo(map);
 addLayer(escolasLayer, "Escolas", 3, 'escolaslayer');
@@ -2945,6 +2948,8 @@ function isSmallScreen(){
 	}
 }
 
+
+
 function addLayer(layer, name, zIndex, id) {
 	
     // Create a simple layer switcher that
@@ -2961,12 +2966,32 @@ function addLayer(layer, name, zIndex, id) {
     		e.preventDefault();
     		e.stopPropagation();
     		
-    		if (map.hasLayer(layer)) {
-    			map.removeLayer(layer);
-    			this.className = '';
+    		if (name == 'RPAs'){
+    			if (map.hasLayer(rpa1Layer)) {
+        			map.removeLayer(rpa1Layer);
+        			map.removeLayer(rpa2Layer);
+        			map.removeLayer(rpa3Layer);
+        			map.removeLayer(rpa4Layer);
+        			map.removeLayer(rpa5Layer);
+        			map.removeLayer(rpa6Layer);
+        			this.className = '';
+        		} else {
+        			map.addLayer(rpa1Layer);
+        			map.addLayer(rpa2Layer);
+        			map.addLayer(rpa3Layer);
+        			map.addLayer(rpa4Layer);
+        			map.addLayer(rpa5Layer);
+        			map.addLayer(rpa6Layer);
+        			this.className = 'active';
+        		}
     		} else {
-    			map.addLayer(layer);
-    			this.className = 'active';
+    			if (map.hasLayer(layer)) {
+        			map.removeLayer(layer);
+        			this.className = '';
+        		} else {
+        			map.addLayer(layer);
+        			this.className = 'active';
+        		}
     		}
     	};
     	
@@ -3026,8 +3051,8 @@ function inView() {
 inView();
 
 var overlayMaps = {
-	    "BackGround": bgLayer,
-	    "RPAs": rpasLayer,
+//	    "BackGround": bgLayer,
+	    "Escolas": escolasLayer,
 	    "Bairros": bairrosLayer
 	};
 

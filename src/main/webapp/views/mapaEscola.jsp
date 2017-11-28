@@ -1220,8 +1220,8 @@
 					<div class="filtro-proficiencia">
 						<input type="checkbox" id="filtro-16" class="filtro-grupos">
 						<label for="filtro-16">Por taxas de aprovação</label>
+						<span>Marque abaixo os filtros a serem aplicados</span><br>
 						<div class="prof-filtro-lista">
-							<span>Marque abaixo os filtros a serem aplicados</span><br>
 							<input type="checkbox" id="filtro-4" class="filtro-item" data-filter="melhorProfPort5">
 							<label for="filtro-4">MELHORES taxas de aprovação em Português do Fundamental I</label>
 			
