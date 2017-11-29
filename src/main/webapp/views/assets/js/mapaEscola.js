@@ -1,4 +1,4 @@
-var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual, filtrosIds = [], heatArr = [];
+var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual, filtrosIds = [], heatData = [];
 var modo = 'all';
 var viewWidth = $(window).width();
 var rpaAtual = 0;
@@ -34,8 +34,6 @@ new L.Control.Zoom(
 {
 	position: 'bottomright'
 }).addTo(map);
-
-var heatLayer = L.heatLayer([], {radius: 25}).addTo(map);
 
 var bg_options = {
     color: '#fff',
@@ -683,7 +681,9 @@ function changeMarkers(){
 	$('.pesquisa-lista').remove();
 	$('.pesquisa-resultado').append('<ul class="pesquisa-lista">');
 	$('#contEscola').append('<option value="" selected disabled>Escolha a sua escola*</option>');
+	heatData = [];
 	escolasLayer.eachLayer(function(marker) {
+		heatData.push({lat:marker._latlng.lat, lng:marker._latlng.lng, count:(marker.feature.properties.qtdAlunos/1000)});
 		escolasList.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		escolasListCompare.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		$('#contEscola').append('<option value="'+ marker.feature.properties.Escola + '">' + marker.feature.properties.Escola + '</option>');
@@ -729,18 +729,17 @@ function changeMarkers(){
 			definePopup(marker);
 		}
 		
-//		if(heatLayer === null){
-//			if(marker.feature.properties.qtdAlunos != undefined){
-//			heatLayer.addLatLng(marker.getLatLng(), 1);
-				heatArr.push([marker.feature.geometry.coordinates[0], marker.feature.geometry.coordinates[1], 1]);
-//			}
-//		}
-			
 		return false;
 	});
+	var mapaCalor = $('#mapaCalor')[0];
 	
-	heatLayer = L.heatLayer(heatArr, {radius: 250}).addTo(map);
-	addLayer(heatLayer, "Mapa de Calor", 2, 'mapaCalor');
+	if(!mapaCalor){
+		var cfg = {"radius": 0.003,"maxOpacity": .8,"scaleRadius": true,"useLocalExtrema": true,latField: 'lat',lngField: 'lng',valueField: 'count'};
+		var testData = {max: 8, data: heatData};
+		var heatmapLayer = new HeatmapOverlay(cfg);
+		heatmapLayer.setData(testData);
+		addLayer(heatmapLayer, 'Mapa de Calor', 4, 'mapaCalor');
+	}
 	escolasMouseOver();
 	escolasMouseOut();
 	escolasClick();

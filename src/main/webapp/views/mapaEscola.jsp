@@ -19,7 +19,8 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery-ui.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/ChartNew.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet-heat.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/heatmap.min.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet-heatmap.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox-media.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap-list-filter.src.js"></script>
