@@ -25,7 +25,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 // Desabilita o toque no mapa.
 
-var layers = $('.filtro-camadas');
+var layers = $('#layers-options');
 
 if (map.tap) map.tap.disable();
 

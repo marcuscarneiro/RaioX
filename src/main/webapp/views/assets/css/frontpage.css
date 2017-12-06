@@ -128,19 +128,39 @@ html, body
 	opacity: 1;
 }
 
-.menu-ui {
-	background: #fff;
+.layers-ui {
+	background: #337ab7;
 	position: absolute;
-	bottom: 0;
-	margin-bottom: 85px;
+	top: 85px;
 	right: 50px;
 	z-index: 1;
-	border-radius: 3px;
-	width: 120px;
-	border: 1px solid rgba(0, 0, 0, 0.4);
+	border-radius: 7px;
+	width: 44px;
+	height: 44px;
 }
 
-.menu-ui a {
+.layers-ui:hover {
+	background: #23527c;
+}
+
+.layers-ui img {
+	margin: 9px;
+}
+
+.layers-options {
+	background: #fff;
+	position: absolute;
+	top: 85px;
+	right: 50px;
+	z-index: 1;
+	border-radius: 7px;
+	border: 2px solid #337ab7;
+	width: 100px;
+	height: 150px;
+	display: none;
+}
+
+/*.menu-ui a {
 	font-size: 13px;
 	color: #000;
 	display: block;
@@ -173,7 +193,7 @@ html, body
 
 .menu-ui a.active:hover {
 	background: #ccc;
-}
+} */
 
 /* .painel
 {
