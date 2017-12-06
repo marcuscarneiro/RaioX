@@ -1601,6 +1601,7 @@
 				Em breve iremos disponibilizá-lo aqui.
 			</p>
 		</div>
+		<script src="<%=request.getContextPath()%>/views/assets/js/questionarioCreche.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapaCreche.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {

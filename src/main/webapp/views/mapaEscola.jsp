@@ -836,10 +836,6 @@
 						<div class="detalhe-escola">
 							<div class="escola-left">
 								
-								<div class="foto-fachada">
-									<img alt="Foto da fachada" src="<%=request.getContextPath()%>/views/assets/css/img/thumb.jpg">
-								</div>
-								
 								<!-- Quadro de dados da Fiscalização -->
 								<div class="dados fiscalizacao">
 									
@@ -903,60 +899,439 @@
 											</a>
 										</li>
 									</ul>
-									<div class="fiscalizacao-questionario">
-										<h3>Informações da escola</h3>
-										<h4 class="data-vistoria">Data da vistoria: <span>20/10/2015</span></h4>
-										<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-											<li class="questao-1">
-												<span>Total de Alunos:</span>
-												<span class="questao-info"></span>
-											</li>
-											<li class="questao-2">
-												<span>Temperatura de sala mais alta:</span>
-												<span class="questao-info"></span>
-											</li>
-											<li>
-												<span>Temperatura determinada pela ANVISA <i data-toggle="tooltip" data-placement="top" title="Resolução RE Nº 09 da ANVISA adotada a partir de 01/09/2017" id="anvisa-info" class="fa fa-question-circle-o" aria-hidden="true">:</i></span>
-												<span class="questao-info">entre 23ºC e 26ºC</span>
-											</li>
-											<li class="questao-3">
-												<span>Luminosidade mais baixa:</span>
-												<span class="questao-info"></span>
-											</li>
-											<li>
-												<span>Luminosidade determinada pela ABNT:</span>
-												<span class="questao-info">entre 200 lux e 700 lux</span>
-											</li>
-											<li class="questao-6">
-												<span>A escola dispõe de rampas de acesso em todos os espaços?</span>
-												<span class="questao-info"></span>
-											</li>
-											<li class="questao-4">
-												<span>Quantas salas de aula são climatizadas:</span>
-												<span class="questao-info"></span>
-											</li>
-											<li class="questao-5">
-												<span>Existe Biblioteca?</span>
-												<span class="questao-info"></span>
-											</li>
-											<li class="questao-7">
-												<span>Há saneamento básico na escola?</span>
-												<span class="questao-info"></span>
-											</li>
-											<li class="questao-8">
-												<span>Há sala dos professores?</span>
-												<span class="questao-info"></span>
-											</li>
-											<li class="questao-9">
-												<span>Onde as crianças se alimentam?</span>
-												<span class="questao-info"></span>
-											</li>
-											<li class="questao-10">
-												<span>Os alunos receberam fardamento em tamanho adequado?</span>
-												<span class="questao-info"></span>
-											</li>
-										</ul>
-									</div>
+									<h2 class="titulo-questionario">Questionário aplicado</h2>
+									<table class="table table-condensed fiscalizacao-questionario" style="border-collapse:collapse;">
+										<tbody>
+											<tr data-toggle="collapse" data-target="#gerais" class="accordion-toggle">
+												<td class="titulo-modulo">INFORMAÇÕES GERAIS</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div class="accordian-body collapse" id="gerais">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="rpa"><span>Região Político-Administrativa (RPA):</span><span class="questao-info"></span></li>
+															<li class="questao" id="endereco"><span>Endereço:</span><span class="questao-info"></span></li>
+															<li class="questao" id="telefone"><span>Telefone:</span><span class="questao-info"></span></li>
+															<li class="questao" id="data_visita"><span>Data da coleta:</span><span class="questao-info"></span></li>
+															<li class="questao" id="gestor"><span>Gestor:</span><span class="questao-info"></span></li>
+															<li class="questao" id="idebvisivel"><span>IDEB em local visível?</span><span class="questao-info"></span></li>
+															<li class="questao" id="situacao"><span>Situação do prédio:</span><span class="questao-info"></span></li>
+															<li class="questao" id="turnovisita"><span>Turno da visita:</span><span class="questao-info"></span></li>
+															<li class="questao" id="chuva"><span>Enfrenta problemas em dias de chuva?</span><span class="questao-info"></span></li>
+															<li class="questao" id="problemaschuva"><span>Quais problemas?</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr data-toggle="collapse" data-target="#sala" class="accordion-toggle">
+												<td class="titulo-modulo">SALAS DE AULA</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="sala" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="sa1"><span>Quantos alunos estão matriculados (TOTAL)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa2"><span>Quantas salas de aula há na escola?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa3"><span>Há quantos turnos de aula?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa4a"><span>Qual a temperatura mais alta em sala de aula?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa4b"><span>Quantas salas possuem temperatura entre de 23ºC e 26ºC?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa5a"><span>Qual a luminosidade mais baixa em sala de aula?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa5b"><span>Quantas salas a iluminação está abaixo de 200 ou acima de 750 lux?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa6"><span>Quantas salas são climatizadas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa7"><span>Quantas salas são bem ventiladas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa8"><span>Quantas salas possuem bom espaço para circulação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa9"><span>Quantas salas possuem lousas conservadas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa10"><span>Qual o aspecto de conservação do mobiliário em sala de aula? Use a escala Likert*?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes1"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr data-toggle="collapse" data-target="#eee" class="accordion-toggle">
+												<td class="titulo-modulo">ENSINO E EDUCAÇÃO ESPECIAL</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="eee" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="eee1"><span>Quais o níveis/modalidades de ensino oferecidos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee2"><span>Quantidade de professores em sala</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee3"><span>Quantidade de professores que acumulam</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee4"><span>Quantidade de professores readaptados</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee5"><span>Quantidade de professores com dois contratos</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee6"><span>Há deficiência no quadro de funcionários? Quais?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee7"><span>Quantos alunos especiais COM LAUDO médico estão matriculados?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee8"><span>Quantas crianças estão SEM acompanhamento de cuidador/intérprete em sala de aula?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee9"><span>Os professores com formação em AEE ou psicopedagogia são:</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes1a"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											
+											<tr data-toggle="collapse" data-target="#bib" class="accordion-toggle">
+												<td class="titulo-modulo">BIBLIOTECA</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="bib" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="bib1"><span>Existe Biblioteca?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib2"><span>É aberta aos alunos fora do horário de aula?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib3"><span>É climatizada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib4"><span>É bem ventilada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib5"><span>Tem espaço para movimentação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib6"><span>Tem televisor?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib7"><span>Tem aparelho de DVD?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib8"><span>Tem aparelho de som?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib9"><span>Tem computador com acesso à internet?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib10"><span>Tem Bibliotecário(a)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib11"><span>Qual a formação do(a) Bibliotecário(a)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib12"><span>Possui mediador de leitura?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib13"><span>Qual a formação do mediador(a) de leitura?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes2"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											
+											<tr data-toggle="collapse" data-target="#inf" class="accordion-toggle">
+												<td class="titulo-modulo">LABORATÓRIO DE INFORMÁTICA</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="inf" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="inf1"><span>Existe Laboratório de Informática?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf2"><span>É climatizado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf3"><span>É bem ventilado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf4"><span>Há suporte técnico da Prefeitura?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf5"><span>Há aulas de informática?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf6"><span>Quantos computadores há no laboratório?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf7"><span>Quantos computadores funcionam?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf8"><span>Quantos computadores tem acesso à internet?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf9"><span>Há monitor(a) / instrutor(a)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf10"><span>Qual a formação do(a) Monitor(a) / Instrutor(a)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes3"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											
+											<tr data-toggle="collapse" data-target="#et" class="accordion-toggle">
+												<td class="titulo-modulo">ESPAÇO TECNOLÓGICO</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="et" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="et1"><span>Existe Espaço Tecnológico?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et2"><span>É climatizado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et3"><span>É bem ventilado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et4"><span>Há suporte técnico da Prefeitura?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et5"><span>Há aulas de interatividade tecnológica?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et6"><span>Quantas mesas interativas há no laboratório?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et7"><span>Quantas mesas interativas funcionam?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et8"><span>Quantas mesas interativas tem acesso à internet?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et9"><span>Há monitor(a) / instrutor(a)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et10"><span>Qual a formação do(a) Monitor(a) / Instrutor(a)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes4"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											
+											<tr data-toggle="collapse" data-target="#rl" class="accordion-toggle">
+												<td class="titulo-modulo">RECREAÇÃO E LAZER</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="rl" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="rl1"><span>Qual o estado de conservação do piso?</span><span class="questao-info"></span></li>
+															<li class="questao" id="rl2"><span>Qual o estado de conservação do parque?</span><span class="questao-info"></span></li>
+															<li class="questao" id="rl3"><span>Qual o estado de conservação da quadra?</span><span class="questao-info"></span></li>
+															<li class="questao" id="rl4"><span>Qual o estado de conservação dos brinquedos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="rl5"><span>Como é o espaço de circulação dos corredores?</span><span class="questao-info"></span></li>
+															<li class="questao" id="rl6"><span>Há risco de acidente?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes5"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											
+											<tr data-toggle="collapse" data-target="#ace" class="accordion-toggle">
+												<td class="titulo-modulo">ACESSIBILIDADE</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="ace" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="ace1"><span>Há alunos cadeirantes ou com dificuldades de locomoção?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace2"><span>Há alunos surdos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace3"><span>Há alunos cegos ou com visão limitada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace4"><span>Há alunos com problemas cognitivos ou patologias mentais?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace5"><span>A escola dispõe de rampas de acesso para acessibilidade para todos os espaços dos alunos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace6"><span>A escola dispõe de piso tátil?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace7"><span>A escola dispõe de materiais didáticos para cegos ou surdos-mudos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace8"><span>A escola dispõe de tutores ou intérpretes (libras)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace9"><span>Na escola há sala com recursos multifuncionais?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace10"><span>Há professores com formação em A.E.E. ou psicopedagogia para atender as crianças especiais?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eac1"><span>Há placas indicativas em braile?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eac2"><span>Os banheiros estão plenamente adaptados para cadeirantes?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eac3a"><span>A área para circulação é satisfatória?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eac3b"><span>Os equipamentos eletrônicos atendem às necessidades?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eac3c"><span>A mobília atende às necessidades?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eac3d"><span>Os materiais adaptados atendem às necessidades?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes6"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											
+											<tr data-toggle="collapse" data-target="#se" class="accordion-toggle">
+												<td class="titulo-modulo">SERVIÇOS ESSENCIAIS</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="se" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="se1"><span>Há distribuição de água na escola?</span><span class="questao-info"></span></li>
+															<li class="questao" id="se2"><span>Há saneamento básico na escola?</span><span class="questao-info"></span></li>
+															<li class="questao" id="se3"><span>Há extintores de incêndio em condições de funcionamento?</span><span class="questao-info"></span></li>
+															<li class="questao" id="se4"><span>Os funcionários sabem usar o extintor?</span><span class="questao-info"></span></li>
+															<li class="questao" id="se5"><span>Há infiltrações e/ou mofo?</span><span class="questao-info"></span></li>
+															<li class="questao" id="se6"><span>Há rachaduras?</span><span class="questao-info"></span></li>
+															<li class="questao" id="se7"><span>Há risco de choque nas instalações elétricas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes7"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											
+											<tr data-toggle="collapse" data-target="#eef" class="accordion-toggle">
+												<td class="titulo-modulo">ESTRUTURA FÍSICA</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="eef" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="eef1"><span>O entorno da unidade é violento?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef2"><span>Há vigilantes em todos os turnos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef3"><span>O prédio é alvo de vândalos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef3a"><span>Se sim, como?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef4"><span>O prédio possui câmeras de segurança?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef4a"><span>Elas estão funcionando?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef5"><span>Quantidade de extintores:</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef6"><span>Quantos estão fora do prazo de validade?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef7"><span>Há saídas de emergência?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef7a"><span>Se sim, estão sinalizadas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef8"><span>A escola fica em área de encosta ou barreira?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef9"><span>Se a água costuma faltar, indique quantos dias:</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef10"><span>Quantos dias o caminhão pipa demora a abastecer?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef10a"><span>A limpeza dos reservatórios tem sido feita?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef10b"><span>Qual o intervalo de limpeza dos reservatórios?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef11"><span>A quantidade de reservatórios supre a demanda?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef12"><span>Existe espaço reservado para depósito de lixo?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef13"><span>Existe espaço reservado para armazenamento de botijão de gás?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef14"><span>A quantidade de almoxarifados supre a demanda?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef15"><span>A PCR atendeu às solicitações de coleta de entulhos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef16"><span>O prédio foi dedetizado há mais de seis meses?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef17"><span>O material de limpeza enviado pela PCR atende à demanda?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes7a"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											
+											<tr data-toggle="collapse" data-target="#sp" class="accordion-toggle">
+												<td class="titulo-modulo">SALA DOS PROFESSORES</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="sp" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="sp1"><span>Há sala de professores?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp2"><span>Possui computadores?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp3"><span>Possui acesso à internet?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp4"><span>Possui armários?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp5"><span>É climatizada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp6"><span>É bem ventilada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp7"><span>Há mesas e cadeiras?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp8"><span>A iluminação está abaixo de 200 lux?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp9"><span>Há espaço para circulação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes8"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr data-toggle="collapse" data-target="#adm" class="accordion-toggle">
+												<td class="titulo-modulo">ADMINISTRAÇÃO</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="adm" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="adm1"><span>Direção, Secretaria e Coordenação funcionam na mesma sala?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm2"><span>Se SIM, há espaço que lhes permita funcionar confortavelmente?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm3"><span>Possui computadores?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm4"><span>Possui acesso à internet?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm5"><span>Tem impressora?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm6"><span>Tem copiadora?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm7"><span>Possui armários?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm8"><span>Possui mesas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm9"><span>Possui cadeiras?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm10"><span>O espaço é climatizado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm10a"><span>A sala da Direção é climatizada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm10b"><span>A sala da Secretaria é climatizada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm10c"><span>A sala da Coordenação é climatizada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm11"><span>O espaço é bem ventilado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm11a"><span>A sala da Direção é bem ventilada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm11b"><span>A sala da Secretaria é bem ventilada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm11c"><span>A sala da Coordenação é bem ventilada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm12"><span>Há espaço para circulação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm13"><span>A iluminação está abaixo de 200 lux?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes9"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr data-toggle="collapse" data-target="#alim" class="accordion-toggle">
+												<td class="titulo-modulo">ALIMENTAÇÃO</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="alim" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="alim1"><span>Onde as crianças se alimentam?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim2"><span>Quais as condições de iluminação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim3"><span>Quais as condições da ventilação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim4"><span>Quais as condições do espaço de circulação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim5"><span>Quais as condições de higiene?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim6"><span>Quais as condições do mobiliário?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim7"><span>Quais as condições do bebedouro?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim8"><span>Quais as condições dos utensílios?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim9"><span>A merenda é recebida?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim10"><span>Apresenta anormalidades?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim11"><span>É bem aceita pelos alunos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim12"><span>O cardápio é variado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes10"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr data-toggle="collapse" data-target="#em" class="accordion-toggle">
+												<td class="titulo-modulo">MERENDA</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="em" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="em1"><span>A quantidade de alimentos supre a demanda?</span><span class="questao-info"></span></li>
+															<li class="questao" id="em2"><span>Caso a merenda seja terceirizada, está sendo recebida dentro do horário?</span><span class="questao-info"></span></li>
+															<li class="questao" id="em3"><span>Qual a procedência da água?</span><span class="questao-info"></span></li>
+															<li class="questao" id="em3a"><span>Sendo filtrada, há manutenção do filtro?</span><span class="questao-info"></span></li>
+															<li class="questao" id="em4"><span>Em dias de aulas extraclasse a merenda é garantida?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes10a"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr data-toggle="collapse" data-target="#mdf" class="accordion-toggle">
+												<td class="titulo-modulo">DIDÁTICO E FARDAMENTO</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="mdf" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="mdf1"><span>Os alunos recebem o Kit Escolar completo e em número suficiente?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf2a"><span>Os alunos recebem fardamento completo?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf2b"><span>Os alunos recebem fardamento em tamanho adequado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf3"><span>Os alunos tem à disposição livros didáticos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf4"><span>Os alunos tem à disposição livros literários?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf5"><span>Os alunos tem à disposição computadores?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf6"><span>Os alunos tem à disposição acesso à internet?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf7"><span>Os alunos tem à disposição jogos/brinquedos educativos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf8"><span>Os alunos tem à disposição aparelho de TV com DVD?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf9"><span>Os alunos tem à disposição aparelho de som?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf10"><span>A escola dispõe de projetor?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf11"><span>A escola dispõe de material de artes (massas de modelar, tinta, etc.)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf12"><span>A escola dispõe de aulas de campo?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf12a"><span>É garantida a merenda em aulas de campo?</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes11"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr data-toggle="collapse" data-target="#edfs" class="accordion-toggle">
+												<td class="titulo-modulo">DIDÁTICA E SAÚDE</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="edfs" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao" id="edfs1"><span>Há canetas para quadro branco?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs2"><span>Há apagadores para quadro branco?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs3"><span>Há computadores para diário de classe?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs4"><span>Existe o programa Mais Educação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs4o"><span>Oficinas:</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs5"><span>Existe o programa Escola Aberta?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs5o"><span>Oficinas:</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs6"><span>Existe o programa Segundo Tempo?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs6o"><span>Oficinas:</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs7"><span>Existe o programa de Robótica na Escola?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs7a"><span>Robótica funciona?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs7b"><span>Houve treinamento para professores?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs7o"><span>Oficinas:</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs8"><span>Existem outros programas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs8o"><span>Quais?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs9"><span>Foram distribuídos tablets aos alunos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs10"><span>Se não, foram recebidos os tablets para o espaço tecnológico?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs11"><span>Existe internet wireless para o uso nos computadores/tablets?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs12"><span>Foram instaladas mesas interativas da Positivo?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs13"><span>É atendido pelo PSE?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs13o"><span>Como?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs14"><span>Tem parceria com PSF?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs14o"><span>Como?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs15"><span>O PSF entrega materiais de saúde preventiva?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs15o"><span>Obs:</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs16"><span>As campanhas de vacinação chegam à escola?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs16o"><span>Obs:</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs17"><span>São realizadas escovações de dentes após as merendas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs17o"><span>Obs:</span><span class="questao-info"></span></li>
+															<li class="questao">
+																<span class="subquestao-titulo">Doenças que afetaram alunos e funcionários no ano corrente nesta unidade</span>
+															</li>
+															<li class="questao" id="edfs18a"><span class="subquestao">- Catapora</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs18b"><span class="subquestao">- Caxumba</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs18c"><span class="subquestao">- Chikungunya</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs18d"><span class="subquestao">- Conjutivite</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs18e"><span class="subquestao">- Dengue</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs18f"><span class="subquestao">- Hanseníase</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs18g"><span class="subquestao">- Zika</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes11a"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 									<div class="fiscalicazaoRelatorio">
 										<span class="btn-relatorio">RELATÓRIO COMPLETO</span>
 										<a target="_blank" href="#" class="btn-relatorio">RELATÓRIO COMPLETO</a>
@@ -1495,6 +1870,7 @@
 				Em breve iremos disponibilizá-lo aqui.
 			</p>
 		</div>
+		<script src="<%=request.getContextPath()%>/views/assets/js/questionarioEscolas.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapaEscola.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/filters.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.js"></script>

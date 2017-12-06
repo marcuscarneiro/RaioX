@@ -1325,6 +1325,54 @@ li.box-numeros:hover
     transition: all .12s, border-color .08s;
 }
 
+.hidden-question
+{
+	display: none;
+}
+
+.subquestao
+{
+	padding-left: 10px; 
+}
+
+.subquestao-titulo
+{
+	font-weight: 600;
+}
+
+.titulo-questionario {
+	width: 100%;
+	float: left;
+}
+
+tr.accordion-toggle {
+    background: #E9F3FC;
+}
+
+.fiscalizacao-questionario li {
+	list-style: none;
+	font-size: 12px;
+	float: left;
+	width: 100%;
+	padding: 8px;
+	background: #EDF9FF;
+	margin-bottom: 1px !important;
+}
+
+.fiscalizacao-questionario li span {
+	width: 60%;
+	float: left;
+	padding-right: 5%;
+}
+.fiscalizacao-questionario li span.questao-info {
+    float: right;
+    text-align: right;
+    font-weight: bold;
+    width: 35%;
+    padding-right: 0;
+    color: #46BFBD;
+}
+
 /* MEDIA QUERY */
 
 @media screen and (max-width: 1400px){

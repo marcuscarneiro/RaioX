@@ -20,7 +20,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 		'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 		'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-	id: 'mapbox.streets'
+	id: 'mapbox.light'
 }).addTo(map);
 
 // Desabilita o toque no mapa.
@@ -1109,122 +1109,7 @@ function updateVisitas(visita){
 		$(".fiscalicazaoRelatorio span").css('display', 'inline-block');
 	}
 	
-	var dateOri = visita.data;
-	var dateAr = dateOri.split('-');
-	var finalDate = dateAr[2] + '/' + dateAr[1] + '/' + dateAr[0];
-	$(".data-vistoria span").html(finalDate);
-	$(".questao-1 .questao-info").html(visita.sa1);
-	$(".questao-2 .questao-info").html(visita.sa4a + 'ºC');
-	
-	if(parseInt(visita.sa4a) < 23 || parseInt(visita.sa4a) > 26){
-		$(".questao-2 .questao-info").addClass('red-mark');
-	} else {
-		$(".questao-2 .questao-info").removeClass('red-mark');
-	}
-	
-	$(".questao-3 .questao-info").html(visita.sa5a + ' lux');
-	
-	if(visita.sa5a < 200){
-		$(".questao-3 .questao-info").addClass('red-mark');
-	} else {
-		$(".questao-3 .questao-info").removeClass('red-mark');
-	}
-	
-	if(visita.sa6 != null){
-		$(".questao-4 .questao-info").html(visita.sa6);
-		$(".questao-4 .questao-info").removeClass('red-mark');
-	} else {
-		$(".questao-4 .questao-info").html('0');
-		$(".questao-4 .questao-info").addClass('red-mark');
-	}
-	
-	if(visita.bib1 == 'true'){
-		$(".questao-5 .questao-info").html("Sim");
-		$(".questao-5 .questao-info").removeClass('red-mark');
-		$(".questao-5 .questao-info").removeClass('grey-mark');
-	} else if(visita.bib1 == 'false'){
-		$(".questao-5 .questao-info").html("Não");
-		$(".questao-5 .questao-info").addClass('red-mark');
-		$(".questao-5 .questao-info").removeClass('grey-mark');
-	} else {
-		$(".questao-5 .questao-info").html("Sem informação");
-		$(".questao-5 .questao-info").addClass('grey-mark');
-		$(".questao-5 .questao-info").removeClass('red-mark');
-	}
-	
-	if(visita.ace5 == 'true'){
-		$(".questao-6 .questao-info").html("Sim");
-		$(".questao-6 .questao-info").removeClass('red-mark');
-		$(".questao-6 .questao-info").removeClass('grey-mark');
-	} else if(visita.ace5 == 'false'){
-		$(".questao-6 .questao-info").html("Não");
-		$(".questao-6 .questao-info").addClass('red-mark');
-		$(".questao-6 .questao-info").removeClass('grey-mark');
-	} else {
-		$(".questao-6 .questao-info").html("Sem informação");
-		$(".questao-6 .questao-info").addClass('grey-mark');
-		$(".questao-6 .questao-info").removeClass('red-mark');
-	}
-	
-	if(visita.se2 == 'true'){
-		$(".questao-7 .questao-info").html("Sim");
-		$(".questao-7 .questao-info").removeClass('red-mark');
-		$(".questao-7 .questao-info").removeClass('grey-mark');
-	} else if(visita.se2 == 'false'){
-		$(".questao-7 .questao-info").html("Não");
-		$(".questao-7 .questao-info").addClass('red-mark');
-		$(".questao-7 .questao-info").removeClass('grey-mark');
-	} else {
-		$(".questao-7 .questao-info").html("Sem informação");
-		$(".questao-7 .questao-info").addClass('grey-mark');
-		$(".questao-7 .questao-info").removeClass('red-mark');
-	}
-	
-	if(visita.sp1 == 'true'){
-		$(".questao-8 .questao-info").html("Sim");
-		$(".questao-8 .questao-info").removeClass('red-mark');
-		$(".questao-8 .questao-info").removeClass('grey-mark');
-	} else if(visita.sp1 == 'false'){
-		$(".questao-8 .questao-info").html("Não");
-		$(".questao-8 .questao-info").addClass('red-mark');
-		$(".questao-8 .questao-info").removeClass('grey-mark');
-	} else {
-		$(".questao-8 .questao-info").html("Sem informação");
-		$(".questao-8 .questao-info").removeClass('red-mark');
-		$(".questao-8 .questao-info").addClass('grey-mark');
-	}
-	
-	if(visita.alim1 == 1){
-		$(".questao-9 .questao-info").html("Sala de aula");
-		$(".questao-9 .questao-info").addClass('red-mark');
-		$(".questao-9 .questao-info").removeClass('grey-mark');
-	} else if(visita.alim1 == 2) {
-		$(".questao-9 .questao-info").html("Outros");
-		$(".questao-9 .questao-info").removeClass('red-mark');
-		$(".questao-9 .questao-info").addClass('grey-mark');
-	} else if(visita.alim1 == 3){
-		$(".questao-9 .questao-info").html("Refeitório");
-		$(".questao-9 .questao-info").removeClass('red-mark');
-		$(".questao-9 .questao-info").removeClass('grey-mark');
-	} else {
-		$(".questao-9 .questao-info").html("Sem informação");
-		$(".questao-9 .questao-info").removeClass('red-mark');
-		$(".questao-9 .questao-info").addClass('grey-mark');
-	}
-	
-	if(visita.mdf2b == 'true'){
-		$(".questao-10 .questao-info").html("Sim");
-		$(".questao-10 .questao-info").removeClass('red-mark');
-		$(".questao-10 .questao-info").removeClass('grey-mark');
-	} else if(visita.mdf2b == 'false'){
-		$(".questao-10 .questao-info").html("Não");
-		$(".questao-10 .questao-info").addClass('red-mark');
-		$(".questao-10 .questao-info").removeClass('grey-mark');
-	} else {
-		$(".questao-10 .questao-info").html("Sem informação");
-		$(".questao-10 .questao-info").removeClass('red-mark');
-		$(".questao-10 .questao-info").addClass('grey-mark');
-	}
+	preencheQuestionario(visita);
 }
 
 function consultaAvaliacaoPublica(id){

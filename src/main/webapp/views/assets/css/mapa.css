@@ -531,16 +531,6 @@ input.pesquisa-input
 	text-align: center;
 }
 
-.fiscalizacao-questionario li {
-	list-style: none;
-	font-size: 12px;
-	margin-bottom: 8px !important;
-	float: left;
-	width: 100%;
-	border-bottom: 1px solid #E9E9E9;
-	padding-bottom: 8px;
-}
-
 .fiscalizacao-questionario li span {
 	width: 60%;
 	float: left;
