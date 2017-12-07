@@ -683,7 +683,7 @@ function changeMarkers(){
 	$('#contEscola').append('<option value="" selected disabled>Escolha a sua escola*</option>');
 	heatData = [];
 	escolasLayer.eachLayer(function(marker) {
-		heatData.push({lat:marker._latlng.lat, lng:marker._latlng.lng, count:(marker.feature.properties.qtdAlunos/1000)});
+		heatData.push({lat:marker._latlng.lat, lng:marker._latlng.lng, count:5});
 		escolasList.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		escolasListCompare.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		$('#contEscola').append('<option value="'+ marker.feature.properties.Escola + '">' + marker.feature.properties.Escola + '</option>');
@@ -734,11 +734,11 @@ function changeMarkers(){
 	var mapaCalor = $('#mapaCalor')[0];
 	
 	if(!mapaCalor){
-		var cfg = {"radius": 0.003,"maxOpacity": .8,"scaleRadius": true,"useLocalExtrema": true,latField: 'lat',lngField: 'lng',valueField: 'count'};
+		var cfg = {"radius": 0.0025,"maxOpacity": .8,"scaleRadius": true,"useLocalExtrema": false,latField: 'lat',lngField: 'lng',valueField: 'count'};
 		var testData = {max: 8, data: heatData};
 		var heatmapLayer = new HeatmapOverlay(cfg);
 		heatmapLayer.setData(testData);
-		addLayer(heatmapLayer, 'Mapa de Calor', 4, 'mapaCalor');
+		addLayer(heatmapLayer, 'Mapa de Calor', 3, 'mapaCalor');
 	}
 	escolasMouseOver();
 	escolasMouseOut();
@@ -2940,4 +2940,13 @@ var overlayMaps = {
 	    "Bairros": bairrosLayer
 	};
 
-L.control.layers(overlayMaps).addTo(map);
+//L.control.layers(overlayMaps).addTo(map);
+
+
+$("#layers-ui").on('mouseover', function() {
+	$("#layers-options").show();
+});
+
+$("#layers-options").on('mouseout', function() {
+	$("#layers-options").hide();
+});

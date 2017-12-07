@@ -52,8 +52,8 @@
 	<body>
 		<div id='layers-ui' class='layers-ui'>
 			<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/layers.png">
+			<div id='layers-options' class='layers-options'></div>
 		</div>
-		<div id='layers-options' class='layers-options'></div>
 		<nav class="side-menu">
 			<div class="menu-barra">
 				<ul class="menu-botoes">
