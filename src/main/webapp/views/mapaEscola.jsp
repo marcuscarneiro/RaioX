@@ -52,7 +52,22 @@
 	<body>
 		<div id='layers-ui' class='layers-ui'>
 			<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/layers.png">
-			<div id='layers-options' class='layers-options'></div>
+			<div id='layers-options' class='layers-options'>
+				<span class="close-layers" onclick="fechaLayers()">
+					<i class="fa fa-close"></i>
+				</span>
+				<div class="layers-bg">
+					<span class="layer-title">Tipo do mapa</span>
+					<div class="layers-bairros"></div>
+					<div class="layers-rpas"></div>
+				</div>
+				<hr>
+				<div class="layers-info">
+					<span class="layer-title">Informações</span>
+					<div class="layers-escolas"></div>
+					<div class="layers-calor"></div>
+				</div>
+			</div>
 		</div>
 		<nav class="side-menu">
 			<div class="menu-barra">

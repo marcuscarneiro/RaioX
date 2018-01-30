@@ -148,24 +148,56 @@ html, body
 }
 
 .layers-ui img {
-	margin: 9px;
+	margin: 9px 9px 0 9px;
 }
 
 .layers-options {
+	-moz-box-shadow: rgba(0,0,0,0.2) 0 0 10px 1px;
+	-webkit-box-shadow: rgba(0,0,0,0.2) 0 0 10px 1px;
+	box-shadow: rgba(0,0,0,0.2) 0 0 10px 1px;
 	background: #fff;
 	position: relative;
 	float: right;
 	top: -44px;
 	z-index: 1;
-	border-radius: 7px;
-	border: 2px solid #337ab7;
-	width: 150px;
-	height: 150px;
+	border-radius: 3px;
+	width: 250px;
+	height: 300px;
+	padding: 10px;
 	display: none;
+}
+
+.layers-bg, .layers-info {
+	width: 100%;
+	float: left;
+}
+
+.layers-info {
+	margin-top: 15px;
+}
+
+.layers-bg div, .layers-info div {
+	width: 50%;
+	float: left;
+}
+
+.close-layers {
+	float: right;
+}
+
+.layers-bg img, .layers-info img {
+	width: 85%;
+}
+
+.layer-title {
+	font-weight: 600;
+	width: 100%;
+    float: left;
 }
 
 .layers-options a {
 	float: left;
+	text-align: center;
 	width: 100%;
 }
 
