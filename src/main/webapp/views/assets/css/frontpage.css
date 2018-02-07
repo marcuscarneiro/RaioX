@@ -187,6 +187,8 @@ html, body
 
 .layers-bg img, .layers-info img {
 	width: 85%;
+	border: 2px solid transparent;
+	border-radius: 3px;
 }
 
 .layer-title {
@@ -199,6 +201,17 @@ html, body
 	float: left;
 	text-align: center;
 	width: 100%;
+	color: black;
+	text-decoration: none;
+}
+
+.layer-active a {
+	color: #337ab7 !important;
+	font-weight: 600;
+}
+
+.layer-active img {
+	border: 2px solid #337ab7;
 }
 
 /*.menu-ui a {
@@ -1537,6 +1550,15 @@ tr.accordion-toggle {
 	
 	#home-mob{
 		padding: 8px 8px 0;
+	}
+	
+	.layers-options, .layers-ui {
+		right: 10px;
+		top: 60px;
+	}
+	
+	.layers-options {
+		position: fixed;
 	}
 }
 

@@ -336,3 +336,39 @@ function enviaForm(){
 		swal("Formulário incompleto!", "Antes de enviar, preencha todos os campos", "error");
 	}
 }
+
+function fechaLayers(){
+	$('#layers-options').hide();
+}
+
+function changeLayer(layer){
+	if(layer == 'rpas'){
+		if($('#rpasLayer').hasClass('layer-active')){
+			$('#rpasLayer').removeClass('layer-active');
+		} else {
+			$('#rpasLayer').addClass('layer-active');
+			$('#bairrosLayer').removeClass('layer-active');
+		}
+	} else if(layer == 'bairros'){
+		if($('.layers-bairros').hasClass('layer-active')){
+			$('.layers-bairros').removeClass('layer-active');
+		} else {
+			$('.layers-rpas').removeClass('layer-active');
+			$('.layers-bairros').addClass('layer-active');
+		}
+	} else if(layer == 'escolas'){
+		if($('.layers-escolas').hasClass('layer-active')){
+			$('.layers-escolas').removeClass('layer-active');
+		} else {
+			$('.layers-calor').removeClass('layer-active');
+			$('.layers-escolas').addClass('layer-active');
+		}
+	} else if(layer == 'calor'){
+		if($('.layers-calor').hasClass('layer-active')){
+			$('.layers-calor').removeClass('layer-active');
+		} else {
+			$('.layers-calor').addClass('layer-active');
+			$('.layers-escolas').removeClass('layer-active');
+		}
+	}
+}

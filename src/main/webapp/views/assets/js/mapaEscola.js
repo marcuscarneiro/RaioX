@@ -670,6 +670,7 @@ function fechar()
 	e.layer.closePopup();
 };
 
+var heatmapLayer;
 function changeMarkers(){
 	$('#contEscola').find('option').remove();
 	$('#marker-list').remove();
@@ -736,7 +737,7 @@ function changeMarkers(){
 	if(!mapaCalor){
 		var cfg = {"radius": 0.0025,"maxOpacity": .8,"scaleRadius": true,"useLocalExtrema": false,latField: 'lat',lngField: 'lng',valueField: 'count'};
 		var testData = {max: 8, data: heatData};
-		var heatmapLayer = new HeatmapOverlay(cfg);
+		heatmapLayer = new HeatmapOverlay(cfg);
 		heatmapLayer.setData(testData);
 		addLayer(heatmapLayer, 'Mapa de Calor', 3, 'mapaCalor');
 	}
@@ -2798,7 +2799,7 @@ function addLayer(layer, name, zIndex, id) {
         			map.removeLayer(rpa4Layer);
         			map.removeLayer(rpa5Layer);
         			map.removeLayer(rpa6Layer);
-        			this.className = '';
+        			$(".layers-rpas").removeClass('layer-active');
         		} else {
         			map.addLayer(rpa1Layer);
         			map.addLayer(rpa2Layer);
@@ -2806,30 +2807,51 @@ function addLayer(layer, name, zIndex, id) {
         			map.addLayer(rpa4Layer);
         			map.addLayer(rpa5Layer);
         			map.addLayer(rpa6Layer);
-        			this.className = 'active';
+        			$(".layers-rpas").addClass('layer-active');
+        			$(".layers-bairros").removeClass('layer-active');
+        			map.removeLayer(bairrosLayer);
         		}
     		} else {
     			if (map.hasLayer(layer)) {
         			map.removeLayer(layer);
-        			this.className = '';
+        			this.parentElement.classList.remove('layer-active');
         		} else {
         			map.addLayer(layer);
-        			this.className = 'active';
+        			if(name == 'Bairros'){
+        				map.removeLayer(rpa1Layer);
+            			map.removeLayer(rpa2Layer);
+            			map.removeLayer(rpa3Layer);
+            			map.removeLayer(rpa4Layer);
+            			map.removeLayer(rpa5Layer);
+            			map.removeLayer(rpa6Layer);
+        				$(".layers-rpas").removeClass('layer-active');
+        				$(".layers-bairros").addClass('layer-active');
+        			} else if(name == 'Mapa de Calor'){
+        				map.removeLayer(escolasLayer);
+        				$(".layers-calor").addClass('layer-active');
+        				$(".layers-escolas").removeClass('layer-active');
+        			} else if(name == 'Escolas'){
+        				map.removeLayer(heatmapLayer);
+        				$(".layers-escolas").addClass('layer-active');
+        				$(".layers-calor").removeClass('layer-active');
+        			}
         		}
     		}
     	};
     	
     	if (name == 'RPAs'){
-    		link.innerHTML = '<img alt="Camada de RPAs" src="'+ contextPath +'/views/assets/css/img/layers-rpas.png">' + name;
+    		link.innerHTML = '<img alt="Camada de RPAs" src="'+ contextPath +'/views/assets/css/img/layers-rpas.jpg">' + name;
+    		$(".layers-rpas").addClass('layer-active');
     		$(".layers-rpas").append(link);
     	} else if (name == 'Mapa de Calor'){
-    		link.innerHTML = '<img alt="Mapa de Calor" src="'+ contextPath +'/views/assets/css/img/layers-calor.png">' + name;
+    		link.innerHTML = '<img alt="Mapa de Calor" src="'+ contextPath +'/views/assets/css/img/layers-calor.jpg">' + name;
     		$(".layers-calor").append(link);
     	} else if (name == 'Bairros'){
-    		link.innerHTML = '<img alt="Camada de Bairros" src="'+ contextPath +'/views/assets/css/img/layers-bairros.png">' + name;
+    		link.innerHTML = '<img alt="Camada de Bairros" src="'+ contextPath +'/views/assets/css/img/layers-bairros.jpg">' + name;
     		$(".layers-bairros").append(link);
     	} else if (name == 'Escolas'){
-    		link.innerHTML = '<img alt="Escolas" src="'+ contextPath +'/views/assets/css/img/layers-escolas.png">' + name;
+    		link.innerHTML = '<img alt="Escolas" src="'+ contextPath +'/views/assets/css/img/layers-escolas.jpg">' + name;
+    		$(".layers-escolas").addClass('layer-active');
     		$(".layers-escolas").append(link);
     	}
     }

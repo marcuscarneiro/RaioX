@@ -954,14 +954,16 @@
 															<li class="questao" id="sa2"><span>Quantas salas de aula há na escola?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa3"><span>Há quantos turnos de aula?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa4a"><span>Qual a temperatura mais alta em sala de aula?</span><span class="questao-info"></span></li>
+															<li class="questao"><span>Temperatura ideal determinada pela ABNT:</span><span class="questao-info">entre 20ºC e 23ºC</span></li>
 															<li class="questao" id="sa4b"><span>Quantas salas possuem temperatura entre de 23ºC e 26ºC?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa5a"><span>Qual a luminosidade mais baixa em sala de aula?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa5b"><span>Quantas salas a iluminação está abaixo de 200 ou acima de 750 lux?</span><span class="questao-info"></span></li>
+															<li class="questao"><span>Nível de iluminação ideal determinada pela ABNT:</span><span class="questao-info">entre 200 lux e 500 lux</span></li>
 															<li class="questao" id="sa6"><span>Quantas salas são climatizadas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa7"><span>Quantas salas são bem ventiladas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa8"><span>Quantas salas possuem bom espaço para circulação?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa9"><span>Quantas salas possuem lousas conservadas?</span><span class="questao-info"></span></li>
-															<li class="questao" id="sa10"><span>Qual o aspecto de conservação do mobiliário em sala de aula? Use a escala Likert*?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa10"><span>Qual o aspecto de conservação do mobiliário em sala de aula?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes1"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -1498,6 +1500,10 @@
 						<div class="questao-2">
 							<b id="qesc1"></b> <span> - Temperatura de sala mais alta - <b id="qesc2"></b></span>
 						</div>
+						<div>
+							<span>Temperatura determinada pela ABNT:</span>
+							<span class="questao-info">entre 20ºC e 23ºC</span>
+						</div>
 						<div class="questao-3">
 							<b id="qesc1"></b> <span> - Luminosidade mais baixa - <b id="qesc2"></b></span>
 						</div>
@@ -1581,13 +1587,6 @@
 				<span class="painel-close" onclick="fechaPainelFiltro()">
 					<i class="fa fa-close fa-2x"></i>
 				</span>
-				<div class="cabecalho">
-					<h2>Filtros das escolas</h2>
-					<span class="filtro-opcoes">Escolha abaixo a camada que deseja ver no mapa</span>
-				</div>
-				<div class="filtro-camadas">
-				</div>
-				
 				<div class="cabecalho">
 					<span class="filtro-opcoes">Marque abaixo os filtros que deseja aplicar ao mapa</span>
 				</div>
