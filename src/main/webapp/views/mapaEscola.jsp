@@ -1429,7 +1429,7 @@
 							<i class="fa fa-search fa-lg"></i>
 						</span>
 						<form action="teste_submit" method="get" accept-charset="utf-8">
-							<input class="busca-input form-control" type="text"></input>
+							<input id="pesquisaCompare" class="busca-input form-control" type="text"></input>
 						</form>
 						<span class="formato-titulo">Apresentação:</span>
 						<ul class="formato-opcoes fa-ul">
@@ -1859,8 +1859,8 @@
 					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/azul-15.png">
 					</li>
-					<li class="legenda-item">
-						<img id="pin-amarelo" src="<%=request.getContextPath()%>/views/assets/css/img/amarelo-15.png" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
+					<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/amarelo-15.png">
 					</li>
 					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Não atingiu a meta do IDEB">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/vermelho-15.png">
@@ -1870,6 +1870,9 @@
 					</li>
 					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
 						<img src="<%=request.getContextPath()%>/views/assets/css/img/preto-15.png">
+					</li>
+					<li id="heatmap-legend" class="legenda-item" data-toggle="tooltip" data-placement="top" title="">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/heatmap-legend.png">
 					</li>
 				</ul>
 				<span class="copyright">© Todos os direitos reservados</span>

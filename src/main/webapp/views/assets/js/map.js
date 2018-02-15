@@ -32,13 +32,15 @@ function abrePainel(nomePainel) {
 		} if (nomePainel == 'compare' || nomePainel == 'resultado-compare' || nomePainel == 'videos' || nomePainel == 'projeto' ) {
 			if(nomePainel == 'compare'){
 				requestAnimationFrame(inView);
+				if($(window).width() > 1024){
+					$("#pesquisaCompare").focus();
+				}
 			}
 			$(".painel-"+nomePainel).animate({width: "100%"},350);
 			$(".painel-"+nomePainel).addClass("isActive");
 		} if (nomePainel == 'pesquisa' || nomePainel == 'filtro') {
 			if(nomePainel == 'pesquisa'){
 				requestAnimationFrame(inView);
-				$("#pesquisaEscola").focus();
 			}
 			if($(window).width() <= 1024){
 				$(".painel-"+nomePainel).animate({width: "100%"},350);
@@ -46,6 +48,9 @@ function abrePainel(nomePainel) {
 			} else {
 				$(".painel-"+nomePainel).animate({width: "40%"},350);
 				$(".painel-"+nomePainel).addClass("isActive");
+				if(nomePainel == 'pesquisa'){
+					$("#pesquisaEscola").focus();
+				}
 			}
 		} if (nomePainel == 'contato') {
 			$(".detalhe-contato").show();
@@ -251,6 +256,26 @@ $(document).ready(function(){
 	
 	$('#pesquisaEscola').keyup(function(){
 		var that = this, $allListElements = $('.pesquisa-lista > li');
+	    var $matchingListElements = $allListElements.filter(function(i, li){
+	    	
+	        var listItemText = normalize($(li).text()).toUpperCase(), searchText = normalize(that.value).toUpperCase();
+	        return ~listItemText.indexOf(searchText);
+	    });
+	    
+	    $allListElements.hide();
+	    $matchingListElements.show();
+	});	
+	
+	$('#pesquisaCompare').on('keyup keypress', function(e) {
+		var keyCode = e.keyCode || e.which;
+		if (keyCode === 13) { 
+			e.preventDefault();
+			return false;
+		}
+	});
+	
+	$('#pesquisaCompare').keyup(function(){
+		var that = this, $allListElements = $('.compare-lista > li');
 	    var $matchingListElements = $allListElements.filter(function(i, li){
 	    	
 	        var listItemText = normalize($(li).text()).toUpperCase(), searchText = normalize(that.value).toUpperCase();

@@ -8,7 +8,7 @@
 .center_div
 {
 	margin: 0 auto;
-    width:80%;
+    width: 80%;
 }
 
 .fixed-width
@@ -249,16 +249,17 @@ input.pesquisa-input
 .crop
 {
 	width: 100%;
-	height: 150px;
+	height: 170px;
 	overflow: hidden;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
 }
 
 .crop img
 {
 	width: 100%;
-	margin: -35px 0;
+}
+
+.leaflet-popup-content {
+	margin: 13px !important;
 }
 
 .escola-title
@@ -1035,7 +1036,7 @@ input.pesquisa-input
 	display: none;
 }
 
-#pin-azul, #pin-preto
+#pin-azul, #pin-preto, #heatmap-legend
 {
 	display: none;
 }

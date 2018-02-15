@@ -132,6 +132,13 @@ html, body
 	z-index: 201;
 }
 
+.layer-info {
+	position: absolute;
+	bottom: 85px;
+	right: 50px;
+	z-index: 1;
+}
+
 .layers-ui {
 	background: #337ab7;
 	position: absolute;

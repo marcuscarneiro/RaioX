@@ -1938,35 +1938,59 @@ function mudaLegenda(filter){
 		$("#pin-vermelho").hide();
 		$("#pin-verde").hide();
 		$("#pin-cinza").hide();
+		$("#pin-amarelo").show();
 		$("#pin-amarelo").attr("title","REGULAR").tooltip("fixTitle");
 		$("#pin-azul").show();
 		$("#pin-azul").attr("title","BOM").tooltip("fixTitle");
 		$("#pin-preto").show();
 		$("#pin-preto").attr("title","RUIM").tooltip("fixTitle");
+		$("#heatmap-legend").hide();
 	} else if(filter == 'aces') {
 		$("#pin-vermelho").hide();
 		$("#pin-verde").hide();
 		$("#pin-cinza").hide();
+		$("#pin-amarelo").show();
 		$("#pin-amarelo").attr("title","Possui pelo menos um item básico").tooltip("fixTitle");
 		$("#pin-azul").show();
 		$("#pin-azul").attr("title","Possui todos os itens básicos").tooltip("fixTitle");
 		$("#pin-preto").show();
 		$("#pin-preto").attr("title","Não possui itens básicos de acessibilidade").tooltip("fixTitle");
+		$("#heatmap-legend").hide();
+	} else if(filter == 'heatmap') {
+		$("#pin-vermelho").hide();
+		$("#pin-verde").hide();
+		$("#pin-cinza").hide();
+		$("#pin-amarelo").hide();
+		$("#pin-azul").hide();
+		$("#pin-preto").hide();
+		$("#heatmap-legend").show();
+		$('#heatmap-legend').attr("title","O mapa de calor representa a concentração de escolas em uma área e o seu alcance de acordo com a quantidade de vagas oferecidas.").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(10000).queue(function (next) {
+			$("#heatmap-legend").tooltip("hide");
+			next();
+		});
 	} else {
 		$("#pin-vermelho").show();
 		$("#pin-vermelho").attr("title","Não atingiu a meta do IDEB").tooltip("fixTitle");
 		$("#pin-verde").show();
 		$("#pin-verde").attr("title","Superou a meta IDEB e ficou acima de 6").tooltip("fixTitle");
 		$("#pin-cinza").show();
+		$("#pin-amarelo").show();
 		$("#pin-amarelo").attr("title","Atingiu a meta IDEB mas ficou abaixo de 6").tooltip("fixTitle");
 		$("#pin-azul").hide();
 		$("#pin-preto").hide();
+		$("#heatmap-legend").hide();
 	}
-	$(".lista-legenda").attr("title","Legenda atualizada").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(2000).queue(function (next) {
+	
+	if (filter != 'heatmap') {
+		$("#heatmap-legend").tooltip("hide");
+		$(".lista-legenda").attr("title","Legenda atualizada").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(2000).queue(function (next) {
+			$(".lista-legenda").tooltip("hide");
+			$(".lista-legenda").tooltip("disable");
+			next();
+		});
+	} else {
 		$(".lista-legenda").tooltip("hide");
-		$(".lista-legenda").tooltip("disable");
-		next();
-	});
+	}
 }
 
 $('#filtro-16').on('click', function(){
@@ -2818,6 +2842,7 @@ function addLayer(layer, name, zIndex, id) {
         		} else {
         			map.addLayer(layer);
         			if(name == 'Bairros'){
+        				mudaLegenda();
         				map.removeLayer(rpa1Layer);
             			map.removeLayer(rpa2Layer);
             			map.removeLayer(rpa3Layer);
@@ -2827,13 +2852,17 @@ function addLayer(layer, name, zIndex, id) {
         				$(".layers-rpas").removeClass('layer-active');
         				$(".layers-bairros").addClass('layer-active');
         			} else if(name == 'Mapa de Calor'){
+        				mudaLegenda('heatmap');
         				map.removeLayer(escolasLayer);
         				$(".layers-calor").addClass('layer-active');
         				$(".layers-escolas").removeClass('layer-active');
         			} else if(name == 'Escolas'){
+        				mudaLegenda();
         				map.removeLayer(heatmapLayer);
         				$(".layers-escolas").addClass('layer-active');
         				$(".layers-calor").removeClass('layer-active');
+        			} else {
+        				mudaLegenda();
         			}
         		}
     		}
