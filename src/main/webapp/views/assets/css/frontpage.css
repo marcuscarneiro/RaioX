@@ -536,6 +536,10 @@ input:-ms-input-placeholder {  /* IE */
 	height: 210px;
 }
 
+.compare-selecionados img {
+	max-height: 110px !important;
+}
+
 .compare-selecionados li:hover {background-color: #6BB540 !important;}
 
 .compare-selecionados li h4 {
@@ -621,6 +625,10 @@ input:-ms-input-placeholder {  /* IE */
     background: #f5f5f5;
     overflow: hidden;
     position: relative;
+}
+
+.pesquisa-thumb a {
+	cursor: pointer !important;
 }
 
 img.thumb

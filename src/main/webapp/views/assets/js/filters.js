@@ -11,6 +11,9 @@ $('.filtro-grupos').on('click', function(){
 });
 
 function clickFiltro(that){
+	if(map.hasLayer(heatmapLayer)){
+		$('#escolaslayer').click();
+	}
 	actualMarker = undefined;
 	copyFilter = $(that).data('filter');
 	if($(that).data('filter') === 'periodo'){
@@ -43,8 +46,8 @@ function clickFiltro(that){
 		if(filter === 'null'){
 			updateSelectedFilters();
 			map.removeLayer(escolasLayer);
-			escolasLayer = L.mapbox.featureLayer().addTo(map);
-			escolasLayer.setGeoJSON(escolasData);
+			escolasLayer = L.geoJSON().addTo(map);
+			escolasLayer.addData(escolasData);
 			changeMarkers();
 		}
 		if ($.inArray('meta', selectedFilters) != -1){

@@ -2842,7 +2842,6 @@ function addLayer(layer, name, zIndex, id) {
         		} else {
         			map.addLayer(layer);
         			if(name == 'Bairros'){
-        				mudaLegenda();
         				map.removeLayer(rpa1Layer);
             			map.removeLayer(rpa2Layer);
             			map.removeLayer(rpa3Layer);
@@ -2861,8 +2860,6 @@ function addLayer(layer, name, zIndex, id) {
         				map.removeLayer(heatmapLayer);
         				$(".layers-escolas").addClass('layer-active');
         				$(".layers-calor").removeClass('layer-active');
-        			} else {
-        				mudaLegenda();
         			}
         		}
     		}
