@@ -139,15 +139,35 @@ html, body
 	z-index: 1;
 }
 
-.layers-ui {
-	background: #337ab7;
+.anos-radio {
 	position: absolute;
-	top: 85px;
+	top: 77px;
 	right: 50px;
 	z-index: 1;
 	border-radius: 7px;
-	width: 44px;
-	height: 44px;
+	width: 200px;
+	height: 34px;
+}
+
+.anos-radio .btn-group .active {
+	background-color: #337ab7;
+}
+
+.anos-radio .btn-group .not-active  {
+	color: #3276b1;
+	background-color: rgba(255,255,255,0.4);
+}
+
+.layers-ui {
+	background: #337ab7;
+	font-size: 13px;
+	position: absolute;
+	top: 126px;
+	right: 50px;
+	z-index: 1;
+	border-radius: 7px;
+	width: 34px;
+	height: 34px;
 }
 
 .layers-ui:hover {
@@ -155,7 +175,8 @@ html, body
 }
 
 .layers-ui img {
-	margin: 9px 9px 0 9px;
+	margin: 6px 6px 0 6px;
+	width: 22px
 }
 
 .layers-options {
@@ -165,7 +186,7 @@ html, body
 	background: #fff;
 	position: relative;
 	float: right;
-	top: -44px;
+	top: -28px;
 	z-index: 1;
 	border-radius: 3px;
 	width: 250px;
@@ -915,7 +936,7 @@ li.box-numeros:hover
 {
 	display: inline;
 	text-decoration: none;
-	margin: 0px 3px;
+	margin-left: 13px;
 }
 
 .social-item > a > i

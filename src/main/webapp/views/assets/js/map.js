@@ -397,3 +397,13 @@ function changeLayer(layer){
 		}
 	}
 }
+
+function changeIniciais(){
+	$('#btnIniciais').removeClass('not-active');
+	$('#btnFinais').addClass('not-active');
+};
+
+function changeFinais(){
+	$('#btnFinais').removeClass('not-active');
+	$('#btnIniciais').addClass('not-active');
+};

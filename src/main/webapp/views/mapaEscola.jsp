@@ -69,6 +69,16 @@
 				</div>
 			</div>
 		</div>
+		<div id='anos-radio' class='anos-radio'>
+			<div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
+				<a href="#" onclick="changeIniciais()" id="btnIniciais" class="btn btn-primary not-active">
+					<input type="radio" />Anos iniciais
+				</a>
+				<a href="#" onclick="changeFinais()" id="btnFinais" class="btn btn-primary not-active">
+					<input type="radio" />Anos finais
+				</a>
+			</div>
+		</div>
 		<nav class="side-menu">
 			<div class="menu-barra">
 				<ul class="menu-botoes">
