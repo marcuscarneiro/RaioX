@@ -401,9 +401,31 @@ function changeLayer(layer){
 function changeIniciais(){
 	$('#btnIniciais').removeClass('not-active');
 	$('#btnFinais').addClass('not-active');
+	escolasLayer.eachLayer(function(marker) {
+		if(marker.feature.properties.FundI === "true"){
+		} else {
+			map.removeLayer(marker);
+		}
+	});
+	anos = 'ini';
+	removePins();
+	escolasList = [];
+	escolasListCompare = [];
+	changeMarkers();
 };
 
 function changeFinais(){
 	$('#btnFinais').removeClass('not-active');
 	$('#btnIniciais').addClass('not-active');
+	escolasLayer.eachLayer(function(marker) {
+		if(marker.feature.properties.FundII === "true"){
+		} else {
+			map.removeLayer(marker);
+		}
+	});
+	anos = 'fin';
+	removePins();
+	escolasList = [];
+	escolasListCompare = [];
+	changeMarkers();
 };

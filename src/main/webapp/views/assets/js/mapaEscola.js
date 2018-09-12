@@ -1,5 +1,6 @@
 var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual, filtrosIds = [], heatData = [];
 var modo = 'all';
+var anos = 'both';
 var viewWidth = $(window).width();
 var rpaAtual = 0;
 var actualMarker = undefined; 
@@ -85,10 +86,19 @@ function resetLayerStyle(e){
 }
 
 function resetActualMarker(){
+	var cor;
+	if(anos === 'both'){
+		cor = actualMarker.feature.properties.COR;
+	} else if (anos === 'ini'){
+		cor = actualMarker.feature.properties.CORIni;
+	} else if (anos === 'fin'){
+		cor = actualMarker.feature.properties.CORFin;
+	}
+	
 	if(actualMarker != undefined && actualMarker != null){
 		if(modo === 'all' || modo === 'meta' || modo === 'novas'){
 			actualMarker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/s-' + actualMarker.feature.properties.COR + '.png',
+				iconUrl: contextPath + '/views/assets/css/img/s-' + cor + '.png',
 				iconSize: [15, 38]
 			}));
 		} else if(modo === 'quadras'){
@@ -424,9 +434,18 @@ escolasMouseOut();
 
 function highlightMarker(e){
 	var marker = e.layer;
+	var cor;
+	if(anos === 'both'){
+		cor = marker.feature.properties.COR;
+	} else if (anos === 'ini'){
+		cor = marker.feature.properties.CORIni;
+	} else if (anos === 'fin'){
+		cor = marker.feature.properties.CORFin;
+	}
+
 	if(modo === 'all' || modo === "meta" || modo === "novas"){
 		marker.setIcon(L.icon({
-			iconUrl: contextPath + '/views/assets/css/img/m-' + marker.feature.properties.COR + '.png',
+			iconUrl: contextPath + '/views/assets/css/img/m-' + cor + '.png',
 			iconSize: [20, 50]
 		}));
 	} else if(modo === 'quadras'){
@@ -496,9 +515,18 @@ function definePopup(marker){
 
 function resetMarker(e){
 	var marker = e.layer;
+	var cor;
+	if(anos === 'both'){
+		cor = marker.feature.properties.COR;
+	} else if (anos === 'ini'){
+		cor = marker.feature.properties.CORIni;
+	} else if (anos === 'fin'){
+		cor = marker.feature.properties.CORFin;
+	}
+
 	if(modo === 'all' || modo === "meta" || modo === "novas"){
 		marker.setIcon(L.icon({
-			iconUrl: contextPath + '/views/assets/css/img/s-' + marker.feature.properties.COR + '.png',
+			iconUrl: contextPath + '/views/assets/css/img/s-' + cor + '.png',
 			iconSize: [15, 38]
 		}));
 	} else if(modo === 'quadras'){
@@ -539,12 +567,21 @@ function resetMarker(e){
 }
 
 function resizeMarker(marker){
+	var cor;
+	if(anos === 'both'){
+		cor = marker.feature.properties.COR;
+	} else if (anos === 'ini'){
+		cor = marker.feature.properties.CORIni;
+	} else if (anos === 'fin'){
+		cor = marker.feature.properties.CORFin;
+	}
+
 	if(marker != actualMarker){
 		showEscola(marker.feature.properties.Escola, marker.feature.properties.ID);
 		$("#schools").val("");
 		if(modo === 'all' || modo === "meta" || modo === "novas"){
 			marker.setIcon(L.icon({
-				iconUrl: contextPath + '/views/assets/css/img/l-' + marker.feature.properties.COR + '.png',
+				iconUrl: contextPath + '/views/assets/css/img/l-' + cor + '.png',
 				iconSize: [30, 70]
 			}));
 		} else if(modo === 'quadras'){
@@ -584,9 +621,17 @@ function resizeMarker(marker){
 		}
 		
 		if(actualMarker != undefined && actualMarker != null){
+			var actcor;
+			if(anos === 'both'){
+				actcor = actualMarker.feature.properties.COR;
+			} else if (anos === 'ini'){
+				actcor = actualMarker.feature.properties.CORIni;
+			} else if (anos === 'fin'){
+				actcor = actualMarker.feature.properties.CORFin;
+			}
 			if(modo === 'all' || modo === "meta" || modo === "novas"){
 				actualMarker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-' + actualMarker.feature.properties.COR + '.png',
+					iconUrl: contextPath + '/views/assets/css/img/s-' + actcor + '.png',
 					iconSize: [15, 38]
 				}));
 			} else if(modo === 'quadras'){
@@ -711,8 +756,17 @@ function changeMarkers(){
 			marker.setZIndexOffset(9999);
 		}
 		
+		var cor;
+		if(anos === 'both'){
+			cor = marker.feature.properties.COR;
+		} else if (anos === 'ini'){
+			cor = marker.feature.properties.CORIni;
+		} else if (anos === 'fin'){
+			cor = marker.feature.properties.CORFin;
+		}
+		
 		marker.setIcon(L.icon({
-			iconUrl: contextPath + '/views/assets/css/img/s-' + marker.feature.properties.COR + '.png',
+			iconUrl: contextPath + '/views/assets/css/img/s-' + cor + '.png',
 			iconSize: [15, 38]
 		}));
 		
