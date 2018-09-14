@@ -399,33 +399,50 @@ function changeLayer(layer){
 }
 
 function changeIniciais(){
-	$('#btnIniciais').removeClass('not-active');
-	$('#btnFinais').addClass('not-active');
-	escolasLayer.eachLayer(function(marker) {
-		if(marker.feature.properties.FundI === "true"){
-		} else {
-			map.removeLayer(marker);
-		}
-	});
-	anos = 'ini';
-	removePins();
-	escolasList = [];
-	escolasListCompare = [];
-	changeMarkers();
+	if($('#btnIniciais').hasClass('not-active')){
+		$('#btnIniciais').removeClass('not-active');
+		anosIni = true;
+	} else {
+		$('#btnIniciais').addClass('not-active');
+		anosIni = false;
+	}
+	plotAnos();
 };
 
 function changeFinais(){
-	$('#btnFinais').removeClass('not-active');
-	$('#btnIniciais').addClass('not-active');
-	escolasLayer.eachLayer(function(marker) {
-		if(marker.feature.properties.FundII === "true"){
-		} else {
-			map.removeLayer(marker);
-		}
-	});
-	anos = 'fin';
+	if($('#btnFinais').hasClass('not-active')){
+		$('#btnFinais').removeClass('not-active');
+		anosFin = true;
+	} else {
+		$('#btnFinais').addClass('not-active');
+		anosFin = false;
+	}
+	plotAnos();
+};
+
+function plotAnos(){
+	map.removeLayer(escolasLayer);
+	escolasLayer = L.geoJSON().addTo(map);
+	escolasLayer.addData(escolasData);
+	if(anosIni && anosFin){
+		
+	} else if(anosIni){
+		escolasLayer.eachLayer(function(marker) {
+			if(marker.feature.properties.FundI == true){
+			} else {
+				map.removeLayer(marker);
+			}
+		});
+	} else if(anosFin){
+		escolasLayer.eachLayer(function(marker) {
+			if(marker.feature.properties.FundII == true){
+			} else {
+				map.removeLayer(marker);
+			}
+		});
+	}
 	removePins();
 	escolasList = [];
 	escolasListCompare = [];
 	changeMarkers();
-};
+}

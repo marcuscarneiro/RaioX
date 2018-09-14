@@ -1,6 +1,7 @@
 var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual, filtrosIds = [], heatData = [];
 var modo = 'all';
-var anos = 'both';
+var anosIni = false;
+var anosFin = false;
 var viewWidth = $(window).width();
 var rpaAtual = 0;
 var actualMarker = undefined; 
@@ -87,12 +88,14 @@ function resetLayerStyle(e){
 
 function resetActualMarker(){
 	var cor;
-	if(anos === 'both'){
+	if(anosIni && anosFin){
 		cor = actualMarker.feature.properties.COR;
-	} else if (anos === 'ini'){
+	} else if (anosIni){
 		cor = actualMarker.feature.properties.CORIni;
-	} else if (anos === 'fin'){
+	} else if (anosFin){
 		cor = actualMarker.feature.properties.CORFin;
+	} else {
+		cor = actualMarker.feature.properties.COR;
 	}
 	
 	if(actualMarker != undefined && actualMarker != null){
@@ -435,12 +438,14 @@ escolasMouseOut();
 function highlightMarker(e){
 	var marker = e.layer;
 	var cor;
-	if(anos === 'both'){
+	if(anosIni && anosFin){
 		cor = marker.feature.properties.COR;
-	} else if (anos === 'ini'){
+	} else if (anosIni){
 		cor = marker.feature.properties.CORIni;
-	} else if (anos === 'fin'){
+	} else if (anosFin){
 		cor = marker.feature.properties.CORFin;
+	} else {
+		cor = marker.feature.properties.COR;
 	}
 
 	if(modo === 'all' || modo === "meta" || modo === "novas"){
@@ -516,12 +521,14 @@ function definePopup(marker){
 function resetMarker(e){
 	var marker = e.layer;
 	var cor;
-	if(anos === 'both'){
+	if(anosIni && anosFin){
 		cor = marker.feature.properties.COR;
-	} else if (anos === 'ini'){
+	} else if (anosIni){
 		cor = marker.feature.properties.CORIni;
-	} else if (anos === 'fin'){
+	} else if (anosFin){
 		cor = marker.feature.properties.CORFin;
+	} else {
+		cor = marker.feature.properties.COR;
 	}
 
 	if(modo === 'all' || modo === "meta" || modo === "novas"){
@@ -568,12 +575,14 @@ function resetMarker(e){
 
 function resizeMarker(marker){
 	var cor;
-	if(anos === 'both'){
+	if(anosIni && anosFin){
 		cor = marker.feature.properties.COR;
-	} else if (anos === 'ini'){
+	} else if (anosIni){
 		cor = marker.feature.properties.CORIni;
-	} else if (anos === 'fin'){
+	} else if (anosFin){
 		cor = marker.feature.properties.CORFin;
+	} else {
+		cor = marker.feature.properties.COR;
 	}
 
 	if(marker != actualMarker){
@@ -622,12 +631,14 @@ function resizeMarker(marker){
 		
 		if(actualMarker != undefined && actualMarker != null){
 			var actcor;
-			if(anos === 'both'){
+			if(anosIni && anosFin){
 				actcor = actualMarker.feature.properties.COR;
-			} else if (anos === 'ini'){
+			} else if (anosIni){
 				actcor = actualMarker.feature.properties.CORIni;
-			} else if (anos === 'fin'){
+			} else if (anosFin){
 				actcor = actualMarker.feature.properties.CORFin;
+			} else {
+				actcor = actualMarker.feature.properties.COR;
 			}
 			if(modo === 'all' || modo === "meta" || modo === "novas"){
 				actualMarker.setIcon(L.icon({
@@ -757,12 +768,14 @@ function changeMarkers(){
 		}
 		
 		var cor;
-		if(anos === 'both'){
+		if(anosIni && anosFin){
 			cor = marker.feature.properties.COR;
-		} else if (anos === 'ini'){
+		} else if (anosIni){
 			cor = marker.feature.properties.CORIni;
-		} else if (anos === 'fin'){
+		} else if (anosFin){
 			cor = marker.feature.properties.CORFin;
+		} else {
+			cor = marker.feature.properties.COR;
 		}
 		
 		marker.setIcon(L.icon({

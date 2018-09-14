@@ -362,43 +362,14 @@ public class MapaEscolasController {
                 properties.put("CORFin", corFin);
                 properties.put("COR", getMarkerColor(corIni, corFin));
                 properties.put("ATINGIUMETA", getMetaAtingida(dadosIdeb));
+                properties.put("FundI", getFundI(dadosIdeb));
+                properties.put("FundII", getFundII(dadosIdeb));
                 properties.put("Foto", escola.getFotoCapa());
                 try {
                 	properties.put("FotoMin", escola.getFotoCapa().replaceAll("\\bcapa\\b", "capaThumb"));
 				} catch (Exception e) {
 					properties.put("FotoMin", "");
 				}
-                for(Visita visita : visitas){
-                	if(escola.getId().intValue() == visita.getEscola().getId().intValue()){
-                		String fundI = "";
-                		String fundII = "";
-                		try {
-                			if(visita.getEee1b() != null) {
-                				fundI = visita.getEee1b();
-                			}
-                		} catch (Exception e) {
-                		}
-
-                		if(fundI.equals("")) {
-                			properties.put("FundI", "null");
-                		} else {
-                			properties.put("FundI", fundI);
-                		}
-                		
-                		try {
-                			if(visita.getEee1c() != null) {
-                				fundII = visita.getEee1c();
-                			}
-                		} catch (Exception e) {
-                		}
-                		
-                		if(fundII.equals("")) {
-                			properties.put("FundII", "null");
-                		} else {
-                			properties.put("FundII", fundII);
-                		}
-                	}
-                }
                 for(Visita visita : visitas){
                 	if(escola.getId().intValue() == visita.getEscola().getId().intValue()){
                 		String situacao = "";
@@ -771,6 +742,30 @@ public class MapaEscolasController {
 		} else {
 			return "grey";
 		}
+    }
+    
+    public boolean getFundI(DadosIdeb dadosIdeb){
+    	try {
+    		if(dadosIdeb.getDid_meta_2019_ini() != null){
+    			return true;
+    		} else {
+    			return false;
+    		}
+    	} catch (Exception e) {
+    		return false;
+		}
+    }
+    
+    public boolean getFundII(DadosIdeb dadosIdeb){
+    	try {
+    		if(dadosIdeb.getDid_meta_2019_fin() != null){
+    			return true;
+    		} else {
+    			return false;
+    		}
+    	} catch (Exception e) {
+    		return false;
+    	}
     }
     
     public boolean getMetaAtingida(DadosIdeb dadosIdeb){
