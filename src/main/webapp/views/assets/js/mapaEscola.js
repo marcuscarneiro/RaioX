@@ -8,6 +8,10 @@ var actualMarker = undefined;
 var southWest = L.latLng(-8.203279, -35.308557),
 	northEast = L.latLng(-7.714644, -34.522893),
 	bounds = L.latLngBounds(southWest, northEast);
+var initialzoom = 12;
+if(viewWidth < 640) {
+	initialzoom = 11;
+}
 
 var map = L.map('map', 'mapbox.outdoors',
 	{
@@ -16,7 +20,7 @@ var map = L.map('map', 'mapbox.outdoors',
 		maxZoom: 19,
 		minZoom: 11
 	})
-	.setView([-8.0529, -34.9330], 12);
+	.setView([-8.0529, -34.9330], initialzoom);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -2099,6 +2103,10 @@ function focusRpa(rpa){
 	rpaAtual = rpa;
 	actualMarker = undefined;
 	if(rpa === 0){
+		$(".footer-list i").removeClass('footer-menu-active');
+		$(".footer-globe i").addClass('footer-menu-active');
+		$(".footer-list i").addClass('footer-menu-inactive');
+		$(".footer-globe i").removeClass('footer-menu-inactive');
 		$(".menu-ui a").removeClass('active');
 		$("#todas").addClass('active');
 		escondeDados();

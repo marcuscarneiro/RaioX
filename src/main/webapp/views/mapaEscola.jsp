@@ -11,8 +11,10 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/hover.css">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapa.css" />
 		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpage.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/fab-menu.css" />
 
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
@@ -69,6 +71,23 @@
 				</div>
 			</div>
 		</div>
+		
+		<div id="container-floating">
+			<div class="nd3 nds" onclick="abreSiteAndre()">
+				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/ar-small.jpg">
+			</div>
+			<div class="nd2 nds" onclick="abrePainel('contato')">
+				<i class="mobile-send fa fa-send"></i>
+			</div>
+			<div class="nd1 nds" onclick="abreInstagram()">
+				<i class="mobile-instagram fa fa-instagram"></i>
+			</div>
+			<div id="floating-button">
+				<p class="plus">+</p>
+				<i class="edit fa fa-ellipsis-v"></i>
+			</div>
+		</div>
+
 		<div id='anos-radio' class='anos-radio'>
 			<div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
 				<a href="#" onclick="changeIniciais()" id="btnIniciais" class="btn btn-primary not-active">
@@ -127,37 +146,35 @@
 				</ul>
 			</div>
 		</nav>
-		<div id="mobile-menu" class="navbar navbar-default navbar-fixed-top"
-			role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-menubuilder">
-						<span class="sr-only">Toggle navigation</span><span
-							class="icon-bar"></span><span class="icon-bar"></span><span
-							class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="collapse navbar-collapse navbar-menubuilder">
-					<ul class="nav navbar-nav navbar-left">
-						<li onclick="abrePainel('pesquisa')"><a href="#">Pesquisa</a></li>
-						<li onclick="abrePainel('compare')"><a href="#">Compare</a></li>
-						<li onclick="abrePainel('filtro')"><a href="#">Filtros</a></li>
-						<li onclick="abrePainel('numeros')"><a href="#">Números da educação</a></li>
-						<li onclick="abreSiteAndre()"><a href="#">André Régis</a></li>
-						<li onclick="abrePainel('videos')"><a href="#">Vídeos</a></li>
-					</ul>
-				</div>
+		<div id="mobile-menu" class="mobile-menu">
+			<div class="menu-burger">
+				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/menu3.svg">
+			</div>
+			<div class="mobile-logo">
+				<span class="mobile-logo-title">Raio-X das Escolas</span>
+			</div>
+			<div class="menu-filter">
+				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/filter.svg">
 			</div>
 		</div>
+		<div class="menu-mobile-options collapse navbar-collapse navbar-menubuilder">
+			<ul class="nav navbar-nav navbar-left">
+				<li onclick="abrePainel('pesquisa')"><a href="#">Pesquisa</a></li>
+				<li onclick="abrePainel('compare')"><a href="#">Compare</a></li>
+				<li onclick="abrePainel('filtro')"><a href="#">Filtros</a></li>
+				<li onclick="abrePainel('numeros')"><a href="#">Números da educação</a></li>
+				<li onclick="abreSiteAndre()"><a href="#">André Régis</a></li>
+				<li onclick="abrePainel('videos')"><a href="#">Vídeos</a></li>
+			</ul>
+		</div>
 
-	<div class="painel painel-pesquisa">
+		<div class="painel painel-pesquisa">
 			<div class="dados-pesquisa detalhe">
 				<span class="painel-close" onclick="fechaPaineis()">
-					<i class="fa fa-close fa-2x"></i>
+					<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left.svg">
 				</span>
 				<div class="cabecalho">
-					<h2>Pesquisa de escolas</h2>
+					<h2>Lista das Escolas</h2>
 					<div class="busca">
 						<span class="busca-icone">
 							<i class="fa fa-search fa-lg"></i>
@@ -202,7 +219,7 @@
 		<div class="painel painel-contato">
 			<div class="detalhe-contato">
 				<span class="painel-close" onclick="fechaPaineis()">
-					<i class="fa fa-close fa-2x"></i>
+					<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left-white.svg">
 				</span>
 				<div class="contato-topo">
 					<h2>Entre em contato</h2>
@@ -1842,7 +1859,41 @@
 			<span>Clique aqui caso queira nos enviar uma denúncia ou sugestão</span>
 		</div>
 		
-		<footer>
+		<footer class="mobile-footer">
+			<div id="footer-list" class="rpa-item footer-list" onclick="abrePainel('pesquisa')">
+				<i class="fa fa-list footer-menu-inactive"></i>
+			</div>
+			<div id="footer-list" class="rpa-item footer-globe" onclick="focusRpa(0)">
+				<i class="fa fa-globe footer-menu-active"></i>
+			</div>
+			<div class="mobile-legenda">
+				<ul class="mobile-lista-legenda">
+					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Superou a meta IDEB e ficou acima de 6">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/verde-15.png">
+					</li>
+					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/azul-15.png">
+					</li>
+					<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/amarelo-15.png">
+					</li>
+					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Não atingiu a meta do IDEB">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/vermelho-15.png">
+					</li>
+					<li id="pin-cinza" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Sem dados do IDEB">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/cinza-15.png">
+					</li>
+					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/preto-15.png">
+					</li>
+					<li id="heatmap-legend" class="legenda-item" data-toggle="tooltip" data-placement="top" title="">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/heatmap-legend.png">
+					</li>
+				</ul>
+			</div>
+		</footer>
+		
+		<footer class="desktop-footer">
 			<div id="home-mob" class="rpa-item rpa-home" onclick="focusRpa(0)">
 				<i class="fa fa-home fa-2x"></i>
 			</div>

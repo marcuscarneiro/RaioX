@@ -1,4 +1,8 @@
 function fechaPaineis() {
+	$(".footer-list i").removeClass('footer-menu-active');
+	$(".footer-globe i").addClass('footer-menu-active');
+	$(".footer-list i").addClass('footer-menu-inactive');
+	$(".footer-globe i").removeClass('footer-menu-inactive');
 	actualMarker = undefined;
 	if($(".painel-filtro").hasClass("isActive")){
 		fechaPainelFiltro();
@@ -40,6 +44,10 @@ function abrePainel(nomePainel) {
 			$(".painel-"+nomePainel).addClass("isActive");
 		} if (nomePainel == 'pesquisa' || nomePainel == 'filtro') {
 			if(nomePainel == 'pesquisa'){
+				$(".footer-globe i").removeClass('footer-menu-active');
+				$(".footer-list i").addClass('footer-menu-active');
+				$(".footer-globe i").addClass('footer-menu-inactive');
+				$(".footer-list i").removeClass('footer-menu-inactive');
 				requestAnimationFrame(inView);
 			}
 			if($(window).width() <= 1024){
@@ -297,6 +305,11 @@ function abreEscola(id, nome){
 //ABRE SITE ANDRÉ RÉGIS
 function abreSiteAndre(){
 	window.open('http://www.andreregis.com.br', '_blank');
+};
+
+//ABRE INSTAGRAM ANDRÉ RÉGIS
+function abreInstagram(){
+	window.open('http://www.instagram.com/andreregis1', '_blank');
 };
 
 //ABRE SITE RAIO-X DAS CRECHES
