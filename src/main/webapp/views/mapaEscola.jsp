@@ -12,8 +12,10 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapa.css" />
 		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:semi-bold" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpage.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mobile.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/fab-menu.css" />
 
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
@@ -36,6 +38,7 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/bairros.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/map.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/mobile.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>
 		
 		<title>Raio-X das Escolas Municipais do Recife - Vereador André Régis</title>
@@ -146,14 +149,15 @@
 				</ul>
 			</div>
 		</nav>
-		<div id="mobile-menu" class="mobile-menu">
-			<div class="menu-burger">
-				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/menu3.svg">
+		
+		<div class="mobile-menu mobile-menu-map">
+			<div class="menu-left" onclick="abrePainelMobile('menu')">
+				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/menu.svg">
 			</div>
-			<div class="mobile-logo">
-				<span class="mobile-logo-title">Raio-X das Escolas</span>
+			<div class="menu-title">
+				<span>Raio-X das Escolas</span>
 			</div>
-			<div class="menu-filter">
+			<div class="menu-right" onclick="abrePainelMobile('filtro')">
 				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/filter.svg">
 			</div>
 		</div>
@@ -1609,6 +1613,25 @@
 			</div>
 		</div>
 		
+		<div class="mobile-blur" onclick="fechaPainelMobile('filtro')"></div>
+		
+		<div class="mobile-painel mobile-filtro">
+			<div class="mobile-painel-menu">
+				<div class="menu-left menu-cancel">
+					<span>Cancelar</span>
+				</div>
+				<div class="menu-title">
+					<span>Filtros</span>
+				</div>
+				<div class="menu-right menu-save">
+					<span>Salvar</span>
+				</div>
+			</div>
+			<div class="mobile-painel-content">
+			
+			</div>
+		</div>
+		
 		<div class="painel painel-filtro">
 			<div class="detalhe-filtro detalhe">
 				<span class="painel-close" onclick="fechaPainelFiltro()">
@@ -1801,8 +1824,14 @@
 			</div>
 		</div>
 		
+		<div class="background-menu"></div>
+
+		<div class="mapShadow1"></div>
+		
+		<div class="mapShadow2"></div>
+		
 		<!-- Quadro do MAPA -->
-		<div id='map'></div>
+		<div id="map"></div>
 
 		<div id="flip" class="flip logo" ontouchstart="this.classList.toggle('hover');">
 			<div class="front">

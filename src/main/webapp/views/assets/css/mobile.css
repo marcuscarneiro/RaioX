@@ -1,0 +1,412 @@
+.background-menu 
+{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: linear-gradient(45deg, #105099 0%,#7bb7e5 100%);
+}
+
+#map.menu-small {
+	transform: translateX(70vw) translateY(96px) scale(.7);
+    transform-origin: 0 0
+}
+
+.mobile-legenda
+{
+	float: right;
+	height: 65px;
+}
+
+.mobile-painel {
+	display: none;
+    position: absolute;
+    height: 50%;
+    z-index: 3;
+    width: 100%;
+    background-color: white;
+}
+
+.menu-save {
+	color: #2b7093;
+}
+
+.mapShadow1 {
+    position: absolute;
+    width: 100%;
+    height: 66%;
+    left: 67%;
+    top: 109px;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.4);
+}
+
+.mapShadow2 {
+    position: absolute;
+    width: 100%;
+    height: 62%;
+    left: 64%;
+    top: 122px;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.mobile-blur {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(55,55,55,0.6);
+	z-index: 2;
+}
+
+.mobile-painel-menu {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	padding: 25px 20px;
+}
+
+/* MENU MOBILE */
+.mobile-menu
+{
+	display: none;
+	justify-content: space-between;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	top: 0;
+	padding: 25px 20px;
+}
+
+.mobile-menu-map {
+	background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.7), rgba(255,255,255,0.6), rgba(255,255,255,0.4), rgba(255,255,255,0));
+}
+
+.menu-left img, .menu-right img
+{
+	height: 18px;
+}
+
+.menu-left span, .menu-right span
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-stretch: normal;
+	font-weight: 300;
+	line-height: 15px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0px;
+}
+
+.menu-title
+{
+	margin: auto;
+	text-align: center;
+}
+
+.menu-title span
+{
+	color: #35343d;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-stretch: normal;
+	font-weight: bold;
+	line-height: 15px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0px;
+}
+
+.mobile-logo-img
+{
+	width: 30px;
+}
+
+.menu-mobile-options
+{
+	display: none;
+}
+
+
+/* FOOTER MOBILE */
+
+.mobile-footer
+{
+	display: none;
+	justify-content: space-between;
+	box-shadow: rgba(0,0,0,.1) 0 0 10px;
+	background: #fff;
+	height: 65px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+
+.footer-globe:after, .footer-list:after
+{
+	
+    content: "";
+    position: relative;
+    top: -3px;
+    left: calc(33% + 20px);
+    border-right: 1px solid #bebebe;
+}
+
+.footer-globe, .footer-list
+{
+	color: #bebebe;
+	text-align: center;
+	width: 33%;
+}
+
+.footer-globe i, .footer-list i
+{
+	font-size: 23px;
+}
+
+.footer-filtros
+{
+	float: left;
+	position: fixed;
+}
+
+.footer-menu-active {
+	color: #2b7093;
+}
+
+.footer-menu-inactive {
+	color: #bebebe;
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 1400px){
+	.filtro-periodo button {
+		margin: 45px 0 0 10px !important;
+	}
+	
+	.periodo-fim {
+		padding-left: 20px !important;
+	}
+}
+
+@media screen and (max-width: 1024px){
+  	
+	.pesquisa-resultado h4.pesquisa-nome {
+		font-size: 10px;
+	}
+
+	.pesquisa-resultado h4.pesquisa-endereco {
+		font-size: 8px !important;
+	}
+
+  	.compare-selecionados li {
+  		height: auto;
+  	}
+  	
+	.pesquisa-escola-caixas, .compare-escola-caixas {
+		width: 33%;
+		padding: 2%;
+	}
+
+	.cabecalho-compare {
+        margin: 5%;
+	}
+
+	.dados {
+		padding: 4%
+	}
+
+	.painel h2 {
+		font-size: 20px;
+	}
+
+	.ideb, .escola-left, .dados-compare, .compare {
+		width: 100%;
+		float: left;
+		position: relative;
+	}
+
+  	.navbar-fixed-top {
+    margin-bottom: 0px;
+    position: fixed;
+  	}
+
+	#map {
+		width: 100%;
+	}
+		
+	#fecha-escola, #fecha-compare, #fecha-resultado-compare, #home-mob {
+		display: block;
+	}
+	
+	.painel{
+		box-shadow: none;
+	}
+	
+	.redes-sociais, .footer-filtros, .copyright, .side-menu, #fecha-ideb, #fecha-compare-desk {
+		display: none;
+	}
+	
+	.boxes {
+	    width: 37px;
+	    height: 37px;
+	}
+	
+	.logo {
+		left: 10px;
+		top: 60px;
+	}
+	
+	.detalhe, .dados-compare, .cabecalho-compare, .compare-resultado {
+		left: 0;
+	}
+	
+	.compare, .detalhe, .dados-compare {
+		bottom: 40px;
+	}
+	
+	.legenda span, .lista-legenda {
+		padding: 10px 12px 0 0;
+	}
+	
+	.mobile-legenda {
+		width: 33%;
+	}
+	
+	.mobile-lista-legenda {
+		float: right;
+		list-style: none;
+		display: inline-block;
+		padding: 10px;
+	}
+	
+	.legenda, .desktop-footer, .mobile-footer, .mobile-legenda {
+		height: 40px;
+	}
+	
+	.mobile-legenda {
+		width: 33%;
+	}
+	
+	.desktop-footer {
+		display: none;
+	}
+	
+	.mobile-footer {
+		display: flex;
+	}
+	
+	.desktop-footer, .mobile-footer {
+		position: fixed;
+    	bottom: 0;
+	}
+	
+	#home-mob{
+		padding: 8px 8px 0;
+	}
+	
+	.footer-list, .footer-globe {
+		padding: 10px 20px;
+	}
+	
+	.layers-options, .layers-ui {
+		right: 10px;
+		top: 60px;
+	}
+	
+	.layers-options {
+		position: fixed;
+	}
+}
+
+@media screen and (max-width: 768px){
+
+	#mobile-menu.navbar-default {
+    	font-size: 16px;
+	}
+
+	.pesquisa-escola-caixas, .compare-escola-caixas {
+		width: 50%;
+		padding: 2%;
+	}
+}
+
+
+@media screen and (max-width: 640px){
+	
+	.mobile-menu {
+		display: flex;
+	}
+		
+	.flip, .anos-radio, .layers-ui, .helper {
+    	display: none;
+	}
+
+	.pesquisa-escola-caixas, .compare-escola-caixas {
+		width: 100%;
+		padding: 4%;
+	}
+	
+	.painel-pesquisa .cabecalho, .contato-topo	{
+		text-align: center;
+		margin: 25px 25px 0px 25px;
+	}
+	
+	.contato-topo {
+		text-align: center;
+	}
+	
+	.contato-topo h2 {
+		font-size: 15px;
+		text-transform: none;
+		padding: 0 0 14px 0;
+		color: white;
+	}
+	
+	.painel-pesquisa .cabecalho h2 {
+		font-size: 15px;
+		text-transform: none;
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	
+	.pesquisa-nome {
+		margin-bottom: 10px;
+		font-size: 12px !important;
+	}
+	
+	.formato-titulo, .formato-opcoes {
+		text-align: left;
+	}
+	
+	.painel-close {
+		left: 25px;
+		right: 0;
+		top: 20px
+	}
+	
+	.modal-dialog,
+	.modal-content {
+	    height: 100%;
+	}
+
+	.modal-dialog {
+		margin: 0px !important;
+	}
+
+	.modal-lg
+	{
+		width: 100% !important;
+	}
+}
