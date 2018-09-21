@@ -55,3 +55,6 @@ database.properties
 *.prefs
 .settings/org.eclipse.wst.common.project.facet.core.xml
 .classpath
+src/main/resources/database.properties
+.classpath
+.settings/org.eclipse.jdt.core.prefs

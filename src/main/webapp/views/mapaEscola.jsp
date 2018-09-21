@@ -150,17 +150,6 @@
 			</div>
 		</nav>
 		
-		<div class="mobile-menu mobile-menu-map">
-			<div class="menu-left" onclick="abrePainelMobile('menu')">
-				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/menu.svg">
-			</div>
-			<div class="menu-title">
-				<span>Raio-X das Escolas</span>
-			</div>
-			<div class="menu-right" onclick="abrePainelMobile('filtro')">
-				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/filter.svg">
-			</div>
-		</div>
 		<div class="menu-mobile-options collapse navbar-collapse navbar-menubuilder">
 			<ul class="nav navbar-nav navbar-left">
 				<li onclick="abrePainel('pesquisa')"><a href="#">Pesquisa</a></li>
@@ -1831,8 +1820,55 @@
 		<div class="mapShadow2"></div>
 		
 		<!-- Quadro do MAPA -->
-		<div id="map"></div>
-
+		<div class="map-container">
+			<div class="mobile-menu mobile-menu-map">
+				<div class="menu-left" onclick="abrePainelMobile('menu')">
+					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/menu.svg">
+				</div>
+				<div class="menu-title">
+					<span>Raio-X das Escolas</span>
+				</div>
+				<div class="menu-right" onclick="abrePainelMobile('filtro')">
+					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/filter.svg">
+				</div>
+			</div>
+		
+			<div id="map"></div>
+			
+			<footer class="mobile-footer">
+			<div id="footer-list" class="rpa-item footer-list" onclick="abrePainel('pesquisa')">
+				<i class="fa fa-list footer-menu-inactive"></i>
+			</div>
+			<div id="footer-list" class="rpa-item footer-globe" onclick="focusRpa(0)">
+				<i class="fa fa-globe footer-menu-active"></i>
+			</div>
+			<div class="mobile-legenda">
+				<ul class="mobile-lista-legenda">
+					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Superou a meta IDEB e ficou acima de 6">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/verde-15.png">
+					</li>
+					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/azul-15.png">
+					</li>
+					<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/amarelo-15.png">
+					</li>
+					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Não atingiu a meta do IDEB">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/vermelho-15.png">
+					</li>
+					<li id="pin-cinza" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Sem dados do IDEB">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/cinza-15.png">
+					</li>
+					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/preto-15.png">
+					</li>
+					<li id="heatmap-legend" class="legenda-item" data-toggle="tooltip" data-placement="top" title="">
+						<img src="<%=request.getContextPath()%>/views/assets/css/img/heatmap-legend.png">
+					</li>
+				</ul>
+			</div>
+		</footer>
+		</div>
 		<div id="flip" class="flip logo" ontouchstart="this.classList.toggle('hover');">
 			<div class="front">
 				<img class="top" src="<%=request.getContextPath()%>/views/assets/css/img/marca-sistema-1.png">
@@ -1887,40 +1923,6 @@
 			<i class="fa fa-paper-plane"></i>
 			<span>Clique aqui caso queira nos enviar uma denúncia ou sugestão</span>
 		</div>
-		
-		<footer class="mobile-footer">
-			<div id="footer-list" class="rpa-item footer-list" onclick="abrePainel('pesquisa')">
-				<i class="fa fa-list footer-menu-inactive"></i>
-			</div>
-			<div id="footer-list" class="rpa-item footer-globe" onclick="focusRpa(0)">
-				<i class="fa fa-globe footer-menu-active"></i>
-			</div>
-			<div class="mobile-legenda">
-				<ul class="mobile-lista-legenda">
-					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Superou a meta IDEB e ficou acima de 6">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/verde-15.png">
-					</li>
-					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/azul-15.png">
-					</li>
-					<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/amarelo-15.png">
-					</li>
-					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Não atingiu a meta do IDEB">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/vermelho-15.png">
-					</li>
-					<li id="pin-cinza" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Sem dados do IDEB">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/cinza-15.png">
-					</li>
-					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/preto-15.png">
-					</li>
-					<li id="heatmap-legend" class="legenda-item" data-toggle="tooltip" data-placement="top" title="">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/heatmap-legend.png">
-					</li>
-				</ul>
-			</div>
-		</footer>
 		
 		<footer class="desktop-footer">
 			<div id="home-mob" class="rpa-item rpa-home" onclick="focusRpa(0)">

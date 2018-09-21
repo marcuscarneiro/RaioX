@@ -4,8 +4,8 @@ var painel;
 function abrePainelMobile(painel) {
 	switch (painel) {
 	case "filtro":
-		$(".mobile-blur").fadeIn(500);
-		$(".mobile-filtro").slideDown(500);
+		$(".mobile-blur").addClass('mobile-blur-show');
+		$(".mobile-filtro").addClass('mobile-filtro-show');
 		break;
 	case "menu":
 		if(menu){
@@ -13,18 +13,10 @@ function abrePainelMobile(painel) {
 		} else {
 			menu = true;
 			$(".background-menu").show();
-//			$("#map").animate({left: "70%"},{duration: 500, queue: false});
-//			$("#map").animate({height: "70%"},{duration: 500, queue: false});
-//			$("#map").animate({top: "15%"},{duration: 500, queue: false});
-			$("#map").addClass('menu-small');
-//			$("#map").css("border-radius", "5px");
-//			$(".mobile-menu").css("border-radius", "5px");
-//			$(".mobile-footer").css("border-radius", "0 0 0 5px");
-//			$("#container-floating").fadeOut({duration: 500, queue: false});
-//			$(".mobile-menu-map").animate({left: "70%"},{duration: 500, queue: false});
-//			$(".mobile-menu-map").animate({top: "15%"},{duration: 500, queue: false});
-//			$(".mobile-footer").animate({left: "70%"},{duration: 500, queue: false});
-//			$(".mobile-footer").animate({bottom: "15%"},{duration: 500, queue: false});
+			$(".map-container").addClass('menu-small');
+			$(".mapShadow1").addClass('shadow1-show');
+			$(".mapShadow2").addClass('shadow2-show');
+			$("#container-floating").fadeOut({duration: 500, queue: false});
 		}
 		break;
 	default:
@@ -35,23 +27,15 @@ function abrePainelMobile(painel) {
 function fechaPainelMobile(painel) {
 	switch (painel) {
 	case "filtro":
-		$(".mobile-blur").fadeOut(500);
-		$(".mobile-painel").slideUp(500);
+		$(".mobile-blur").removeClass('mobile-blur-show');
+		$(".mobile-filtro").removeClass('mobile-filtro-show');
 		break;
 	case "menu":
 		menu = false;
-//		$("#map").animate({left: "0"},{duration: 500, queue: false});
-//		$("#map").animate({height: "100%"},{duration: 500, queue: false});
-//		$("#map").animate({top: "0"},{duration: 500, queue: false});
-//		$("#map").animate({"border-radius": "0"},{duration: 500, queue: false});
-		$("#map").removeClass('menu-small');
-//		$(".mobile-menu").animate({"border-radius": "0"},{duration: 500, queue: false});
-//		$(".mobile-footer").animate({"border-radius": "0"},{duration: 500, queue: false});
-//		$("#container-floating").fadeIn({duration: 500, queue: false});
-//		$(".mobile-menu-map").animate({left: "0"},{duration: 500, queue: false});
-//		$(".mobile-menu-map").animate({top: "0"},{duration: 500, queue: false});
-//		$(".mobile-footer").animate({left: "0"},{duration: 500, queue: false});
-//		$(".mobile-footer").animate({bottom: "0"},{duration: 500, queue: false});
+		$(".map-container").removeClass('menu-small');
+		$(".mapShadow1").removeClass('shadow1-show');
+		$(".mapShadow2").removeClass('shadow2-show');
+		$("#container-floating").fadeIn({duration: 500, queue: false});
 		break;
 	default:
 		break;
