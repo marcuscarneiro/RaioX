@@ -149,25 +149,21 @@
 				</ul>
 			</div>
 		</nav>
-		
-		<div class="menu-mobile-options collapse navbar-collapse navbar-menubuilder">
-			<ul class="nav navbar-nav navbar-left">
-				<li onclick="abrePainel('pesquisa')"><a href="#">Pesquisa</a></li>
-				<li onclick="abrePainel('compare')"><a href="#">Compare</a></li>
-				<li onclick="abrePainel('filtro')"><a href="#">Filtros</a></li>
-				<li onclick="abrePainel('numeros')"><a href="#">Números da educação</a></li>
-				<li onclick="abreSiteAndre()"><a href="#">André Régis</a></li>
-				<li onclick="abrePainel('videos')"><a href="#">Vídeos</a></li>
-			</ul>
-		</div>
 
 		<div class="painel painel-pesquisa">
 			<div class="dados-pesquisa detalhe">
-				<span class="painel-close" onclick="fechaPaineis()">
-					<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left.svg">
-				</span>
+				<div class="mobile-painel-menu">
+					<div class="menu-left" onclick="fechaPainelMobile('lista')">
+						<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left.svg">
+					</div>
+					<div class="menu-title">
+						<span>Lista das Escolas</span>
+					</div>
+					<div class="menu-right">
+						
+					</div>
+				</div>
 				<div class="cabecalho">
-					<h2>Lista das Escolas</h2>
 					<div class="busca">
 						<span class="busca-icone">
 							<i class="fa fa-search fa-lg"></i>
@@ -1617,7 +1613,38 @@
 				</div>
 			</div>
 			<div class="mobile-painel-content">
-			
+				<div class="filtro-ano-letivo">
+					<h4>Ano letivo</h4>
+					<div id='mobible-anos-radio' class='mobible-anos-radio'>
+						<div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
+							<a href="#" onclick="filtraTodos()" id="btnIniciais" class="btn btn-primary active">
+								<input type="radio" />Todos
+							</a>
+							<a href="#" onclick="filtraIniciais()" id="btnIniciais" class="btn btn-primary not-active">
+								<input type="radio" />5º ano
+							</a>
+							<a href="#" onclick="filtraFinais()" id="btnFinais" class="btn btn-primary not-active">
+								<input type="radio" />9º ano
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="mobile-layers">
+					<div class="layers-bg">
+						<h4>Tipo do mapa</h4>
+						<div class="layers-imgs">
+							<div class="layers-bairros"></div>
+							<div class="layers-rpas"></div>
+						</div>
+					</div>
+					<div class="layers-info">
+						<h4>Informações</h4>
+						<div class="layers-imgs">
+							<div class="layers-escolas"></div>
+							<div class="layers-calor"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		
@@ -1813,7 +1840,22 @@
 			</div>
 		</div>
 		
-		<div class="background-menu"></div>
+		<div class="mobile-side-menu">
+			<div class="mobile-side-menu-content">
+				<img class="mobile-menu-logo" alt="" src="<%=request.getContextPath()%>/views/assets/css/img/marca-sistema-1.png">
+				<div class="mobile-side-menu-group">
+					<h2 class="mobile-side-menu-title">Menu</h2>
+					<ul class="mobile-side-menu-lista">
+						<li onclick="abrePainel('pesquisa')">Lista das escolas</li>
+						<li onclick="abrePainel('compare')">Compare escolas</li>
+						<li onclick="abrePainel('numeros')">Números da educação</li>
+						<li onclick="abrePainel('videos')">Vídeos</li>
+						<li onclick="abreSiteAndre()">Conheça André Régis</li>
+						<li onclick="abrePainel('sobre')">Sobre o projeto</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 		<div class="mapShadow1"></div>
 		
@@ -1836,7 +1878,8 @@
 			<div id="map"></div>
 			
 			<footer class="mobile-footer">
-			<div id="footer-list" class="rpa-item footer-list" onclick="abrePainel('pesquisa')">
+			<div class="footer-active-indicator"></div>
+			<div id="footer-list" class="rpa-item footer-list" onclick="abrePainelMobile('lista')">
 				<i class="fa fa-list footer-menu-inactive"></i>
 			</div>
 			<div id="footer-list" class="rpa-item footer-globe" onclick="focusRpa(0)">

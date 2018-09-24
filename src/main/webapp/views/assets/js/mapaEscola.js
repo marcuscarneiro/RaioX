@@ -2945,7 +2945,7 @@ function addLayer(layer, name, zIndex, id) {
     		$(".layers-rpas").addClass('layer-active');
     		$(".layers-rpas").append(link);
     	} else if (name == 'Mapa de Calor'){
-    		link.innerHTML = '<img alt="Mapa de Calor" src="'+ contextPath +'/views/assets/css/img/layers-calor.jpg">' + name;
+    		link.innerHTML = '<img alt="Mapa de Calor" src="'+ contextPath +'/views/assets/css/img/layers-calor.jpg">' + 'Alcance';
     		$(".layers-calor").append(link);
     	} else if (name == 'Bairros'){
     		link.innerHTML = '<img alt="Camada de Bairros" src="'+ contextPath +'/views/assets/css/img/layers-bairros.jpg">' + name;

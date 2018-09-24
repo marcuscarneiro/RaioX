@@ -34,6 +34,7 @@ html, body
 	width: 100%;
 	height: 100%;
 	z-index: 0;
+	border-radius: 0;
 	transition: all .3s ease-in-out;
 }
 
@@ -154,6 +155,9 @@ html, body
 
 .anos-radio {
 	position: absolute;
+}
+
+.anos-radio, .mobile-anos-radio {
 	top: 77px;
 	right: 50px;
 	z-index: 1;
@@ -162,11 +166,11 @@ html, body
 	height: 34px;
 }
 
-.anos-radio .btn-group .active {
+.anos-radio .btn-group .active, .mobile-anos-radio .btn-group .active {
 	background-color: #337ab7;
 }
 
-.anos-radio .btn-group .not-active  {
+.anos-radio .btn-group .not-active, .mobible-anos-radio .btn-group .not-active {
 	color: #3276b1;
 	background-color: rgba(255,255,255,0.4);
 }
