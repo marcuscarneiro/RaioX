@@ -1877,13 +1877,66 @@
 		
 			<div id="map"></div>
 			
+			<div class="mobile-list">
+				<ul class="mobile-list-items">
+					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
+						<div class="pesquisa-thumb">
+							<a href="/EquipeAR/fotos/FotosEscolas/486/capa.jpg" class="progressive replace">
+								<img src="/EquipeAR/fotos/FotosEscolas/486/capaThumb.jpg" alt="Fachada da Escola Municipal 14 Bis" class="preview">
+							</a>
+						</div>
+						<div class="mobile-list-info">
+							<span class="mobile-list-nome">Escola Municipal 14 Bis</span>
+							<span class="mobile-list-endereco">Rua Almirante Nelson Fernandes, s/n, Boa Viagem</span>
+							<span class="mobile-list-nota mobile-nota-red">5.5</span>
+						</div>
+					</li>
+					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
+						<div class="pesquisa-thumb">
+							<a href="/EquipeAR/fotos/FotosEscolas/486/capa.jpg" class="progressive replace">
+								<img src="/EquipeAR/fotos/FotosEscolas/486/capaThumb.jpg" alt="Fachada da Escola Municipal 14 Bis" class="preview">
+							</a>
+						</div>
+						<div class="mobile-list-info">
+							<span class="mobile-list-nome">Escola Municipal Almirante Soares Dutra</span>
+							<span class="mobile-list-endereco">Rua Almirante Nelson Fernandes, s/n, Boa Viagem</span>
+							<span class="mobile-list-nota mobile-nota-green">6.1</span>
+						</div>
+					</li>
+					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
+						<div class="pesquisa-thumb">
+							<a href="/EquipeAR/fotos/FotosEscolas/486/capa.jpg" class="progressive replace">
+								<img src="/EquipeAR/fotos/FotosEscolas/486/capaThumb.jpg" alt="Fachada da Escola Municipal 14 Bis" class="preview">
+							</a>
+						</div>
+						<div class="mobile-list-info">
+							<span class="mobile-list-nome">Escola Municipal 27 de Novembro</span>
+							<span class="mobile-list-endereco">Rua Almirante Nelson Fernandes, s/n, Boa Viagem</span>
+							<span class="mobile-list-nota mobile-nota-yellow">5.9</span>
+						</div>
+					</li>
+					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
+						<div class="pesquisa-thumb">
+							<a href="/EquipeAR/fotos/FotosEscolas/486/capa.jpg" class="progressive replace">
+								<img src="/EquipeAR/fotos/FotosEscolas/486/capaThumb.jpg" alt="Fachada da Escola Municipal 14 Bis" class="preview">
+							</a>
+						</div>
+						<div class="mobile-list-info">
+							<span class="mobile-list-nome">Escola Municipal 14 Bis</span>
+							<span class="mobile-list-endereco">Rua Almirante Nelson Fernandes, s/n, Boa Viagem</span>
+							<span class="mobile-list-nota mobile-nota-red">5.5</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
 			<footer class="mobile-footer">
 			<div class="footer-active-indicator"></div>
 			<div id="footer-list" class="rpa-item footer-list" onclick="abrePainelMobile('lista')">
 				<i class="fa fa-list footer-menu-inactive"></i>
 			</div>
-			<div id="footer-list" class="rpa-item footer-globe" onclick="focusRpa(0)">
-				<i class="fa fa-globe footer-menu-active"></i>
+			<div id="footer-list" class="rpa-item footer-globe" onclick="fechaPainelMobile('lista')">
+				<i class="fa fa-globe footer-menu-active footer-menu-inactive"></i>
 			</div>
 			<div class="mobile-legenda">
 				<ul class="mobile-lista-legenda">

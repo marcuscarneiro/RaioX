@@ -245,6 +245,79 @@
 	transform: translateX(0vw);
 }
 
+
+/* MOBILE SCHOOL LIST */
+.mobile-list {
+	visibility: hidden;
+	opacity: 0;
+	display: block;
+	position: absolute;
+	width: 100%;
+	top: 70px;
+	padding: 10px 20px;
+	z-index: 1;
+    transition: visibility 0.5s, opacity 0.5s;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-list-show {
+	visibility: visible;
+	opacity: 1;
+}
+
+.mobile-list-items {
+	list-style: none;
+    padding-inline-start: 0;
+}
+
+.mobile-list-item {
+	background-color: white;
+	box-shadow: rgba(0,0,0,.1) 0 0 10px;
+	margin: 10px 0;	
+}
+
+.pesquisa-thumb {
+	height: 140px;
+}
+
+.mobile-list-info {
+	height: 60px;
+	margin: 10px;
+}
+
+.mobile-list-nome {
+	width: 100%;
+	float: left;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.mobile-list-endereco {
+	width: 100%;
+	float: left;
+	color: grey;
+	font-size: 12px;
+}
+
+.mobile-list-nota {
+	position: absolute;
+	right: 30px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.mobile-nota-red {
+	color: red;
+}
+
+.mobile-nota-green {
+	color: green;
+}
+
+.mobile-nota-yellow {
+	color: yellow;
+}
+
 /* FOOTER MOBILE */
 
 .mobile-footer
@@ -296,12 +369,12 @@
 	position: fixed;
 }
 
-.footer-menu-active {
-	color: #2b7093;
-}
-
 .footer-menu-inactive {
 	color: #bebebe;
+}
+
+.footer-menu-active {
+	color: #2b7093;
 }
 
 /* MEDIA QUERY */

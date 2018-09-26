@@ -20,14 +20,16 @@ function abrePainelMobile(painel) {
 			$(".mapShadow1").addClass('shadow1-show');
 			$(".mapShadow2").addClass('shadow2-show');
 			$("#container-floating").addClass('container-floating-hide');
-//			$(".map-container").attr("onclick", "fechaPainelMobile('menu')");
 		}
 		break;
 	case "lista":
 		if(!lista){
 			lista = true;
 			$(".footer-active-indicator").addClass('list-indicator');
-			$(".painel-pesquisa").addClass('pesquisa-show');
+			$(".footer-list i").addClass('footer-menu-active');
+			$(".footer-globe i").removeClass('footer-menu-active');
+			$(".mobile-list").addClass('mobile-list-show');
+			$("#container-floating").addClass('container-floating-hide');
 		}
 		break;
 	default:
@@ -51,12 +53,14 @@ function fechaPainelMobile(painel) {
 		$(".mapShadow1").removeClass('shadow1-show');
 		$(".mapShadow2").removeClass('shadow2-show');
 		$("#container-floating").removeClass('container-floating-hide');
-//		$(".map-container").removeAttr("onclick");
 		break;
 	case "lista":
 		lista = false;
+		$(".footer-list i").removeClass('footer-menu-active');
+		$(".footer-globe i").addClass('footer-menu-active');
 		$(".footer-active-indicator").removeClass('list-indicator');
-		$(".painel-pesquisa").removeClass('pesquisa-show');
+		$(".mobile-list").removeClass('mobile-list-show');
+		$("#container-floating").removeClass('container-floating-hide');
 	default:
 		break;
 	}
