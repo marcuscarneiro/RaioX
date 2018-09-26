@@ -223,23 +223,6 @@ function addRemoveCompare(checkbox) {
 
 // BUSCA POR ESCOLA
 $(document).ready(function(){
-//	var options = {
-//	        slides: '.slide', // The name of a slide in the slidesContainer
-//	        swipe: true,    // Add possibility to Swipe
-//	        magneticSwipe: true, // Add 'magnetic' swiping. When the user swipes over the screen the slides will attach to the mouse's position
-//	        transition: "slide", // Accepts "slide" and "fade" for a slide or fade transition
-//	        slideTracker: true, // Add a UL with list items to track the current slide
-//	        slideTrackerID: 'slideposition', // The name of the UL that tracks the slides
-////	        slideOnInterval: false, // Slide on interval
-////	        interval: 0, // Interval to slide on if slideOnInterval is enabled
-////	        animateDuration: 1500, // Duration of an animation
-////	        animationEasing: 'easeInOut', // Accepts: linear ease in out in-out snap easeOutCubic easeInOutCubic easeInCirc easeOutCirc easeInOutCirc easeInExpo easeOutExpo easeInOutExpo easeInQuad easeOutQuad easeInOutQuad easeInQuart easeOutQuart easeInOutQuart easeInQuint easeOutQuint easeInOutQuint easeInSine easeOutSine easeInOutSine easeInBack easeOutBack easeInOutBack
-//	        pauseOnHover: true, // Pause when user hovers the slide container
-//	        useDefaultCSS: false // Add default CSS for positioning the slides
-////	        neverEnding: true // Create a 'neverending/repeating' slider effect.
-//	    };
-
-//    $(".slider").simpleSlider(options);
     $('.collapse a').on('click', function(){
         $('.navbar-toggle').click();
     });
@@ -253,6 +236,26 @@ $(document).ready(function(){
 		}
 		return ret;
 	};
+
+	$('#mobile-pesquisa-input').on('keyup keypress', function(e) {
+		var keyCode = e.keyCode || e.which;
+		if (keyCode === 13) { 
+			e.preventDefault();
+			return false;
+		}
+	});
+	
+	$('#mobile-pesquisa-input').keyup(function(){
+		var that = this, $allListElements = $('.mobile-list-items > li');
+	    var $matchingListElements = $allListElements.filter(function(i, li){
+	    	
+	        var listItemText = normalize($(li).text()).toUpperCase(), searchText = normalize(that.value).toUpperCase();
+	        return ~listItemText.indexOf(searchText);
+	    });
+	    
+	    $allListElements.hide();
+	    $matchingListElements.show();
+	});
 	
 	$('#pesquisaEscola').on('keyup keypress', function(e) {
 		var keyCode = e.keyCode || e.which;
@@ -272,7 +275,7 @@ $(document).ready(function(){
 	    
 	    $allListElements.hide();
 	    $matchingListElements.show();
-	});	
+	});
 	
 	$('#pesquisaCompare').on('keyup keypress', function(e) {
 		var keyCode = e.keyCode || e.which;

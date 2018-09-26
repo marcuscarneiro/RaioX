@@ -129,7 +129,7 @@
 	height: 100%;
 	background-color: rgba(55,55,55,0.6);
 	z-index: 2;
-    transition: visibility 0s, opacity 0.5s;
+    transition: visibility 0.5s, opacity 0.5s;
 }
 
 .mobile-blur-show {
@@ -160,13 +160,24 @@
 	margin-top: 25px;
 }
 
+.mobile-pesquisa {
+	margin: 0 0 20px 0;
+}
+
+.mobile-busca-icon {
+	top: 76px;
+    left: 29px;
+    font-size: 15px;
+    position: absolute;
+}
+
 /* MENU MOBILE */
 .mobile-menu
 {
 	display: none;
 	justify-content: space-between;
 	position: absolute;
-	z-index: 1;
+	z-index: 2;
 	width: 100%;
 	top: 0;
 	border-radius: 0;
@@ -175,7 +186,7 @@
 
 .mobile-menu-map {
 	background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.7), rgba(255,255,255,0.6), rgba(255,255,255,0.4), rgba(255,255,255,0));
-	transition: all .3s ease-in-out;
+	transition: all .5s ease-in-out;
 	border-radius: 0;
 }
 
@@ -250,14 +261,18 @@
 .mobile-list {
 	visibility: hidden;
 	opacity: 0;
-	display: block;
 	position: absolute;
+	flex-grow: 1;
 	width: 100%;
-	top: 70px;
-	padding: 10px 20px;
+    height: inherit;
+	padding-top: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	overflow: auto;
 	z-index: 1;
+	border-radius: 10px;
     transition: visibility 0.5s, opacity 0.5s;
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.9);
 }
 
 .mobile-list-show {
@@ -268,12 +283,15 @@
 .mobile-list-items {
 	list-style: none;
     padding-inline-start: 0;
+    margin-bottom: 60px;
 }
 
 .mobile-list-item {
+	display: flex;
+	flex-direction: column;
 	background-color: white;
 	box-shadow: rgba(0,0,0,.1) 0 0 10px;
-	margin: 10px 0;	
+	margin-bottom: 20px;	
 }
 
 .pesquisa-thumb {
@@ -281,12 +299,12 @@
 }
 
 .mobile-list-info {
-	height: 60px;
+	height: auto;
 	margin: 10px;
 }
 
 .mobile-list-nome {
-	width: 100%;
+	width: 90%;
 	float: left;
 	font-weight: bold;
 	font-size: 12px;

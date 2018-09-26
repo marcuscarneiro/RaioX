@@ -1878,6 +1878,12 @@
 			<div id="map"></div>
 			
 			<div class="mobile-list">
+				<span class="mobile-busca-icon">
+					<i class="fa fa-search fa-lg"></i>
+				</span>
+				<form class="mobile-pesquisa">
+					<input id="mobile-pesquisa-input" class="form-control busca-input" type="text" placeholder="Pesquise aqui a sua escola..."></input>
+				</form>
 				<ul class="mobile-list-items">
 					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
 						<div class="pesquisa-thumb">
