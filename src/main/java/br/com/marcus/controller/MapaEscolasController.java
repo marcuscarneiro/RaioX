@@ -345,7 +345,6 @@ public class MapaEscolasController {
                 System.out.println("ID: " + escola.getId());
                 properties.put("Escola", escola.getNome());
                 properties.put("Endereco", getEnderecoEscola(escola));
-                properties.put("IDEB", escola.getIdeb());
                 properties.put("RPA", escola.getRpa());
                 properties.put("Nova", escola.getNova());
                 DadosIdeb dadosIdeb = null;
@@ -362,6 +361,8 @@ public class MapaEscolasController {
                 properties.put("CORFin", corFin);
                 properties.put("COR", getMarkerColor(corIni, corFin));
                 properties.put("ATINGIUMETA", getMetaAtingida(dadosIdeb));
+                properties.put("IDEBini", getIdebIni(dadosIdeb));
+                properties.put("IDEBfin", getIdebFin(dadosIdeb));
                 properties.put("FundI", getFundI(dadosIdeb));
                 properties.put("FundII", getFundII(dadosIdeb));
                 properties.put("Foto", escola.getFotoCapa());
@@ -646,6 +647,54 @@ public class MapaEscolasController {
 		} else {
 			return 1;
 		}
+    }
+    
+    public Double getIdebIni(DadosIdeb dadosIdeb){
+    	
+    	Double idebIni;
+    	try {
+    		if(dadosIdeb.getDid_ideb_2021_ini() != null){
+    			idebIni = dadosIdeb.getDid_ideb_2021_ini();
+    		} else if(dadosIdeb.getDid_ideb_2019_ini() != null){
+    			idebIni = dadosIdeb.getDid_ideb_2019_ini();
+    		} else if(dadosIdeb.getDid_ideb_2017_ini() != null){
+    			idebIni = dadosIdeb.getDid_ideb_2017_ini();
+    		} else if(dadosIdeb.getDid_ideb_2015_ini() != null){
+    			idebIni = dadosIdeb.getDid_ideb_2015_ini();
+    		} else if(dadosIdeb.getDid_ideb_2013_ini() != null){
+    			idebIni = dadosIdeb.getDid_ideb_2013_ini();
+    		} else {
+    			idebIni = 0.0;
+    		}
+		} catch (Exception e) {
+			 idebIni = 0.0;
+		}
+    	
+    	return idebIni;
+    }
+    
+    public Double getIdebFin(DadosIdeb dadosIdeb){
+    	
+    	Double idebFin;
+    	try {
+    		if(dadosIdeb.getDid_ideb_2021_fin() != null){
+    			idebFin = dadosIdeb.getDid_ideb_2021_fin();
+    		} else if(dadosIdeb.getDid_ideb_2019_fin() != null){
+    			idebFin = dadosIdeb.getDid_ideb_2019_fin();
+    		} else if(dadosIdeb.getDid_ideb_2017_fin() != null){
+    			idebFin = dadosIdeb.getDid_ideb_2017_fin();
+    		} else if(dadosIdeb.getDid_ideb_2015_fin() != null){
+    			idebFin = dadosIdeb.getDid_ideb_2015_fin();
+    		} else if(dadosIdeb.getDid_ideb_2013_fin() != null){
+    			idebFin = dadosIdeb.getDid_ideb_2013_fin();
+    		} else {
+    			idebFin = 0.0;
+    		}
+    	} catch (Exception e) {
+    		idebFin = 0.0;
+    	}
+    	
+    	return idebFin;
     }
 
     public String getMarkerColor(String corIni, String corFin){

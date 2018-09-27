@@ -748,24 +748,47 @@ function changeMarkers(){
 		escolasList.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		escolasListCompare.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		$('#contEscola').append('<option value="'+ marker.feature.properties.Escola + '">' + marker.feature.properties.Escola + '</option>');
-		$('.pesquisa-lista').append('<li esc="' + marker.feature.properties.ID + '" class="pesquisa-escola-caixas" onclick="abreEscola('+ marker.feature.properties.ID +',\''+marker.feature.properties.Escola+'\')">'+
-				'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
-				'<h4 class="pesquisa-endereco">'+marker.feature.properties.Endereco+'</h4>'+
-				'<div class="pesquisa-thumb">'+
-					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="progressive replace">'+
-						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada da '+marker.feature.properties.Escola+'" class="preview">'+
-					'</a>'+
-				'</div>'+
-			'</li>');
-		
 		$('.compare-lista').append('<li esc="' + marker.feature.properties.ID + '" class="compare-item compare-escola-caixas" onclick="addCompara('+marker.feature.properties.ID+')">'+
 				'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
 				'<div class="pesquisa-thumb">'+
-					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="full progressive replace">'+
-						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada: '+marker.feature.properties.Escola+'" class="preview">'+
-					'</a>'+
+				'<a href="'+contextPath + marker.feature.properties.Foto+'" class="full progressive replace">'+
+				'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada: '+marker.feature.properties.Escola+'" class="preview">'+
+				'</a>'+
 				'</div>'+
+		'</li>');
+		if(viewWidth > 620){
+			$('.pesquisa-lista').append('<li esc="' + marker.feature.properties.ID + '" class="pesquisa-escola-caixas" onclick="abreEscola('+ marker.feature.properties.ID +',\''+marker.feature.properties.Escola+'\')">'+
+					'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
+					'<h4 class="pesquisa-endereco">'+marker.feature.properties.Endereco+'</h4>'+
+					'<div class="pesquisa-thumb">'+
+					'<a href="'+contextPath + marker.feature.properties.Foto+'" class="progressive replace">'+
+					'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada da '+marker.feature.properties.Escola+'" class="preview">'+
+					'</a>'+
+					'</div>'+
 			'</li>');
+		} else {
+			var nota;
+			var idebini = parseFloat(marker.feature.properties.IDEBini).toFixed(1);
+			var idebfin = parseFloat(marker.feature.properties.IDEBfin).toFixed(1);
+			
+			if(idebini > 0 && idebfin > 0) {
+				nota = idebini + ' / ' + idebfin;
+			} else if(idebini > 0) {
+				nota = idebini;
+			} else if(idebfin > 0) {
+				nota = idebfin;
+			} else {
+				nota = '0.0';
+			}
+			
+			$('.mobile-list-items').append('<li esc="' + marker.feature.properties.ID + '" class="mobile-list-item" onclick="abreEscolaMobile('+ marker.feature.properties.ID +')">'+
+					'<div class="mobile-school-image"><img class="lazy" data-src="'+ contextPath + marker.feature.properties.Foto +'" alt="Fachada da '+marker.feature.properties.Escola+'"></div>'+
+					'<div class="mobile-list-info">'+
+						'<span class="mobile-list-nome">'+marker.feature.properties.Escola+'</span>'+
+						'<span class="mobile-list-endereco">'+marker.feature.properties.Endereco+'</span>'+
+						'<span class="mobile-list-nota mobile-nota-'+marker.feature.properties.COR+'">'+nota+'</span>'+
+					'</div></li>');
+		}
 				
 		if(marker.feature.properties.ID === 262){
 			marker.setZIndexOffset(9999);
@@ -803,6 +826,13 @@ function changeMarkers(){
 		
 		return false;
 	});
+	
+	$(function() {
+        $('.lazy').lazy({
+        	delay: 5000
+        });
+    });
+	
 	var mapaCalor = $('#mapaCalor')[0];
 	
 	if(!mapaCalor){

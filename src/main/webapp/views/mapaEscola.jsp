@@ -28,6 +28,10 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox-media.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap-list-filter.src.js"></script>
+		
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+		
 		<script src="<%=request.getContextPath()%>/views/assets/js/recife.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/rpa1n.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/rpa2n.js"></script>
@@ -208,6 +212,9 @@
 		<div class="painel painel-contato">
 			<div class="detalhe-contato">
 				<span class="painel-close" onclick="fechaPaineis()">
+					<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left-white.svg">
+				</span>
+				<span class="menu-left" onclick="fechaPaineis()">
 					<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left-white.svg">
 				</span>
 				<div class="contato-topo">
@@ -1434,6 +1441,16 @@
 		</div>
 		
 		<div class="painel painel-compare">
+			<div class="mobile-menu mobile-menu-compare">
+				<div class="menu-left" onclick="fechaPainelMobile('compare')">
+					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left.svg">
+				</div>
+				<div class="menu-title">
+					<span>Compare as escolas</span>
+				</div>
+				<div class="menu-right">
+				</div>
+			</div>
 			<div class="dados-compare">
 				<span id="fecha-compare" class="painel-close" onclick="fechaPainelCompare()">
 					<i class="fa fa-close fa-2x"></i>
@@ -1846,12 +1863,12 @@
 				<div class="mobile-side-menu-group">
 					<h2 class="mobile-side-menu-title">Menu</h2>
 					<ul class="mobile-side-menu-lista">
-						<li onclick="abrePainel('pesquisa')">Lista das escolas</li>
-						<li onclick="abrePainel('compare')">Compare escolas</li>
-						<li onclick="abrePainel('numeros')">Números da educação</li>
-						<li onclick="abrePainel('videos')">Vídeos</li>
+						<li onclick="abrePainelMobile('lista')">Lista das escolas</li>
+						<li onclick="abrePainelMobile('compare')">Compare escolas</li>
+						<li onclick="abrePainelMobile('numeros')">Números da educação</li>
+						<li onclick="abrePainelMobile('videos')">Vídeos</li>
 						<li onclick="abreSiteAndre()">Conheça André Régis</li>
-						<li onclick="abrePainel('sobre')">Sobre o projeto</li>
+						<li onclick="abrePainelMobile('sobre')">Sobre o projeto</li>
 					</ul>
 				</div>
 			</div>
@@ -1863,6 +1880,7 @@
 		
 		<!-- Quadro do MAPA -->
 		<div class="map-container">
+			<div class="map-container-blur" onclick="fechaPainelMobile('menu')"></div>
 			<div class="mobile-menu mobile-menu-map">
 				<div class="menu-left" onclick="abrePainelMobile('menu')">
 					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/menu.svg">
@@ -1885,54 +1903,7 @@
 					<input id="mobile-pesquisa-input" class="form-control busca-input" type="text" placeholder="Pesquise aqui a sua escola..."></input>
 				</form>
 				<ul class="mobile-list-items">
-					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
-						<div class="pesquisa-thumb">
-							<a href="/EquipeAR/fotos/FotosEscolas/486/capa.jpg" class="progressive replace">
-								<img src="/EquipeAR/fotos/FotosEscolas/486/capaThumb.jpg" alt="Fachada da Escola Municipal 14 Bis" class="preview">
-							</a>
-						</div>
-						<div class="mobile-list-info">
-							<span class="mobile-list-nome">Escola Municipal 14 Bis</span>
-							<span class="mobile-list-endereco">Rua Almirante Nelson Fernandes, s/n, Boa Viagem</span>
-							<span class="mobile-list-nota mobile-nota-red">5.5</span>
-						</div>
-					</li>
-					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
-						<div class="pesquisa-thumb">
-							<a href="/EquipeAR/fotos/FotosEscolas/486/capa.jpg" class="progressive replace">
-								<img src="/EquipeAR/fotos/FotosEscolas/486/capaThumb.jpg" alt="Fachada da Escola Municipal 14 Bis" class="preview">
-							</a>
-						</div>
-						<div class="mobile-list-info">
-							<span class="mobile-list-nome">Escola Municipal Almirante Soares Dutra</span>
-							<span class="mobile-list-endereco">Rua Almirante Nelson Fernandes, s/n, Boa Viagem</span>
-							<span class="mobile-list-nota mobile-nota-green">6.1</span>
-						</div>
-					</li>
-					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
-						<div class="pesquisa-thumb">
-							<a href="/EquipeAR/fotos/FotosEscolas/486/capa.jpg" class="progressive replace">
-								<img src="/EquipeAR/fotos/FotosEscolas/486/capaThumb.jpg" alt="Fachada da Escola Municipal 14 Bis" class="preview">
-							</a>
-						</div>
-						<div class="mobile-list-info">
-							<span class="mobile-list-nome">Escola Municipal 27 de Novembro</span>
-							<span class="mobile-list-endereco">Rua Almirante Nelson Fernandes, s/n, Boa Viagem</span>
-							<span class="mobile-list-nota mobile-nota-yellow">5.9</span>
-						</div>
-					</li>
-					<li esc="486" class="mobile-list-item" onclick="abreEscolaMobile(486,'Escola Municipal 14 Bis')">
-						<div class="pesquisa-thumb">
-							<a href="/EquipeAR/fotos/FotosEscolas/486/capa.jpg" class="progressive replace">
-								<img src="/EquipeAR/fotos/FotosEscolas/486/capaThumb.jpg" alt="Fachada da Escola Municipal 14 Bis" class="preview">
-							</a>
-						</div>
-						<div class="mobile-list-info">
-							<span class="mobile-list-nome">Escola Municipal 14 Bis</span>
-							<span class="mobile-list-endereco">Rua Almirante Nelson Fernandes, s/n, Boa Viagem</span>
-							<span class="mobile-list-nota mobile-nota-red">5.5</span>
-						</div>
-					</li>
+					
 				</ul>
 			</div>
 			
@@ -2096,8 +2067,6 @@
 				$('[data-toggle="tooltip"]').tooltip(); 
 				$("#periodo-ini").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
 				$("#periodo-fim").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
-				//$('#periodo-ini').mask("00/00/0000", {placeholder: "__/__/____"});
-				//$('#periodo-fim').mask("00/00/0000", {placeholder: "__/__/____"});
 				$(".videos").fancybox({
 					maxWidth	: 800,
 					maxHeight	: 600,
@@ -2110,6 +2079,12 @@
 					closeEffect	: 'none'
 				});
 			});
+			
+			$(function() {
+		        $('.lazy').lazy({
+		        	delay: 5000
+		        });
+		    });
         </script>
         <script type="text/javascript">
 	        $(function(){

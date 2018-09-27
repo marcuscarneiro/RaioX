@@ -175,6 +175,10 @@ html, body
 	background-color: rgba(255,255,255,0.4);
 }
 
+#btnIniciais {
+	padding: 6px 0 !important;
+}
+
 .layers-ui {
 	background: #337ab7;
 	font-size: 13px;
@@ -426,6 +430,9 @@ input:-ms-input-placeholder {  /* IE */
 	left: 0px;
 	bottom: 0;
 	width: 0%;
+    height: auto;
+    flex-grow: 1;
+    overflow: auto;
 	background: #fff;
 	z-index: 2;
 	-webkit-transform: translateZ(0);

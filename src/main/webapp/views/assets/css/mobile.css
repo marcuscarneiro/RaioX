@@ -22,7 +22,7 @@
 .mobile-side-menu-content
 {
 	opacity: 0;
-	transition: all .5s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
 .menu-content-show {
@@ -59,17 +59,29 @@
 	border-radius: 10px;
 }
 
+.map-container-blur {
+	visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+.map-container-blur.blur-show {
+	visibility: visible;
+}
+
 #map.map-small {
 	border-radius: 10px;
 }
 
 .mobile-legenda
 {
-	float: right;
 	height: 65px;
 }
 
 .mobile-filtro {
+	display: none;
 	transform: translateY(-100%);
     position: absolute;
     height: 300px;
@@ -190,9 +202,18 @@
 	border-radius: 0;
 }
 
+.mobile-menu-map.menu-map-solid {
+	background-color: white;
+}
+
 .mobile-menu-map.mobile-menu-map-small {
 	border-radius: 10px 0 0 0;
 }
+
+.menu-left, .menu-right {
+	width: 20px;
+}
+
 
 .menu-left img, .menu-right img
 {
@@ -291,11 +312,35 @@
 	flex-direction: column;
 	background-color: white;
 	box-shadow: rgba(0,0,0,.1) 0 0 10px;
-	margin-bottom: 20px;	
+	margin-bottom: 20px;
+    border-radius: 5px;
 }
 
-.pesquisa-thumb {
+.mobile-school-image {
 	height: 140px;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	outline: none;
+	border-radius: 5px 5px 0 0;
+	
+	background-image: url('icons/loading.svg');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.lazy {
+	position: absolute;
+	display: block;
+	width: 100%;
+	max-width: none;
+	height: auto;
+	border: 0 none;
+    top: -100%;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    margin: auto;
 }
 
 .mobile-list-info {
@@ -333,7 +378,11 @@
 }
 
 .mobile-nota-yellow {
-	color: yellow;
+	color: #d6d600;
+}
+
+.mobile-nota-grey {
+	color: grey;
 }
 
 /* FOOTER MOBILE */
@@ -420,6 +469,10 @@
   		height: auto;
   	}
   	
+  	.mobile-filtro {
+  		display: block;
+  	}
+  	
 	.pesquisa-escola-caixas, .compare-escola-caixas {
 		width: 33%;
 		padding: 2%;
@@ -450,10 +503,6 @@
 
 	#map {
 		width: 100%;
-	}
-		
-	#fecha-escola, #fecha-compare, #fecha-resultado-compare, #home-mob {
-		display: block;
 	}
 	
 	.painel{
@@ -488,6 +537,8 @@
 	
 	.mobile-legenda {
 		width: 33%;
+		display: flex;
+		justify-content: center;
 	}
 	
 	.mobile-lista-legenda {
@@ -555,7 +606,7 @@
 		display: flex;
 	}
 		
-	.flip, .anos-radio, .layers-ui, .helper {
+	.flip, .anos-radio, .layers-ui, .helper, .fecha-compare, .cabecalho-compare h2 {
     	display: none;
 	}
 
@@ -653,4 +704,32 @@
 	.layers-bg div, .layers-info div {
 		width: 100%;
 	}
+	
+	.painel-resultado-compare {
+		width: 100%;
+	}
+	
+	.cabecalho-compare {
+		margin: 0 20px 20px 20px;
+	}
+	
+	.mobile-menu-compare {
+		position: relative;
+		float: left;
+	}
+	
+	.painel-compare {
+		left: -100%;
+		width: 100%;
+		transition: all .5s ease-in-out;
+	}
+	
+	.painel-compare.compare-show {
+		transform: translateX(100%);
+	}
+	
+	#container-floating {
+		visibility: visible;
+	}
+	
 }
