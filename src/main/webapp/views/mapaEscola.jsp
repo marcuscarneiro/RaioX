@@ -15,8 +15,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:semi-bold" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/frontpage.css" />
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mobile.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/fab-menu.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mobile.css" />
 
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
@@ -91,7 +91,7 @@
 			</div>
 			<div id="floating-button">
 				<p class="plus">+</p>
-				<i class="edit fa fa-ellipsis-v"></i>
+				<i class="edit fa fa-times"></i>
 			</div>
 		</div>
 
@@ -1902,6 +1902,20 @@
 				<form class="mobile-pesquisa">
 					<input id="mobile-pesquisa-input" class="form-control busca-input" type="text" placeholder="Pesquise aqui a sua escola..."></input>
 				</form>
+				<div class="mobile-list-order">
+					<span class="mobile-list-label">Ordenar por: </span>
+					<a href="#" class="order-radio active" onclick="listOrder('nome')">
+						<span>Nome</span>
+					</a>
+					<a href="#" class="order-radio" onclick="listOrder('melhornota')">
+						<span>IDEB</span>
+						<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-up.svg">
+					</a>
+					<a href="#" class="order-radio" onclick="listOrder('piornota')">
+						<span>IDEB</span>
+						<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-down.svg">
+					</a>
+				</div>
 				<ul class="mobile-list-items">
 					
 				</ul>

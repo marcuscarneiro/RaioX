@@ -778,7 +778,7 @@ function changeMarkers(){
 			} else if(idebfin > 0) {
 				nota = idebfin;
 			} else {
-				nota = '0.0';
+				nota = '--';
 			}
 			
 			$('.mobile-list-items').append('<li esc="' + marker.feature.properties.ID + '" class="mobile-list-item" onclick="abreEscolaMobile('+ marker.feature.properties.ID +')">'+

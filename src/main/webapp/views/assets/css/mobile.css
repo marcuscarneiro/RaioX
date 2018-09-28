@@ -172,10 +172,6 @@
 	margin-top: 25px;
 }
 
-.mobile-pesquisa {
-	margin: 0 0 20px 0;
-}
-
 .mobile-busca-icon {
 	top: 76px;
     left: 29px;
@@ -211,9 +207,13 @@
 }
 
 .menu-left, .menu-right {
-	width: 20px;
+    width: auto;
+    min-width: 40px;
 }
 
+.menu-right img, .menu-right span {
+    float: right;
+}
 
 .menu-left img, .menu-right img
 {
@@ -303,6 +303,7 @@
 
 .mobile-list-items {
 	list-style: none;
+	float: left;
     padding-inline-start: 0;
     margin-bottom: 60px;
 }
@@ -311,7 +312,7 @@
 	display: flex;
 	flex-direction: column;
 	background-color: white;
-	box-shadow: rgba(0,0,0,.1) 0 0 10px;
+	box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
 	margin-bottom: 20px;
     border-radius: 5px;
 }
@@ -349,7 +350,7 @@
 }
 
 .mobile-list-nome {
-	width: 90%;
+	width: 84%;
 	float: left;
 	font-weight: bold;
 	font-size: 12px;
@@ -383,6 +384,39 @@
 
 .mobile-nota-grey {
 	color: grey;
+}
+
+.mobile-list-order {
+	display: flex;
+	margin: 20px 0;
+	flex-direction: row;
+    align-items: center;
+	float: right;
+	font-size: 12px;
+}
+
+.mobile-list-order img {
+	height: 15px;
+}
+
+.mobile-list-label {
+	margin-right: 8px;
+}
+
+.order-radio {
+	margin-left: 5px;
+	padding: 8px;
+	border-radius: 50px;
+	box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+.order-radio.active {
+    background-color: #e8f0fe;
+}
+
+.mobile-list-order a {
+	text-decoration: none;
+	color: #333;
 }
 
 /* FOOTER MOBILE */
@@ -637,6 +671,10 @@
 	.painel-pesquisa .cabecalho, .contato-topo	{
 		text-align: center;
 		margin: 25px 25px 0px 25px;
+	}
+	
+	.busca-input {
+		font-size: 14px;
 	}
 	
 	.contato-topo {

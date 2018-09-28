@@ -88,3 +88,37 @@ function fechaPainelMobile(painel) {
 		break;
 	}
 }
+
+function mobileOrder(parent, childSelector, keySelector, order) {
+    var items = parent.children(childSelector).sort(function(a, b) {
+        var vA = $(keySelector, a).text();
+        var vB = $(keySelector, b).text();
+        if (order === 'asc') {
+        	vA = vA.replace("--", "999");
+        	vB = vB.replace("--", "999");
+        	return (vA < vB) ? -1 : (vA > vB) ? 1 : 0;
+		} else {
+			return (vA > vB) ? -1 : (vA < vB) ? 1 : 0;
+		}
+    });
+    parent.append(items);
+}
+
+//mobileOrder($('#sortThis'), "div", "span.price");
+
+
+function listOrder(key) {
+	switch (key) {
+	case 'nome':
+		mobileOrder($('.mobile-list-items'), "li", '.mobile-list-nome', "asc");
+		break;
+	case 'melhornota':
+		mobileOrder($('.mobile-list-items'), "li", '.mobile-list-nota', "desc");
+		break;
+	case 'piornota':
+		mobileOrder($('.mobile-list-items'), "li", '.mobile-list-nota', "asc");
+		break;
+	default:
+		break;
+	}
+}
