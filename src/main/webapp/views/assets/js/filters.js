@@ -132,6 +132,48 @@ function filtraMeta(filter){
 	changeMarkers();
 }
 
+function filtraNaoAtingiu(filter){
+	escolasLayer.eachLayer(function(marker) {
+		if(marker.feature.properties.ATINGIUMETA == false){
+		} else {
+			map.removeLayer(marker);
+		}
+	});
+	removePins();
+	escolasList = [];
+	escolasListCompare = [];
+	modo = 'meta';
+	changeMarkers();
+}
+
+function filtraIniciais(filter){
+	escolasLayer.eachLayer(function(marker) {
+		if(marker.feature.properties.FundI == true){
+		} else {
+			map.removeLayer(marker);
+		}
+	});
+	removePins();
+	escolasList = [];
+	escolasListCompare = [];
+	modo = 'all';
+	changeMarkers();
+}
+
+function filtraFinais(filter){
+	escolasLayer.eachLayer(function(marker) {
+		if(marker.feature.properties.FundII == true){
+		} else {
+			map.removeLayer(marker);
+		}
+	});
+	removePins();
+	escolasList = [];
+	escolasListCompare = [];
+	modo = 'all';
+	changeMarkers();
+}
+
 function filtraNova(filter){
 	escolasLayer.eachLayer(function(marker) {
 		if(marker.feature.properties.Nova == "true"){

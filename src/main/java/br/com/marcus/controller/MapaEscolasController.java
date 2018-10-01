@@ -189,7 +189,7 @@ public class MapaEscolasController {
 	
 	@RequestMapping(value="/melhorIdeb5", method=RequestMethod.GET, produces={"application/json; charset=UTF-8"})
 	public @ResponseBody String melhorIdeb5(){
-		List<DadosIdeb> idebs = dadosIdebDao.getMelhorIdeb5();
+		List<DadosIdeb> idebs = dadosIdebDao.getMelhorIdeb5("2017");
 		List<Escola> escolas = new ArrayList<>();
 		for (DadosIdeb di : idebs) {
 			escolas.add(escolaDao.get(di.getEscola().getId()));
@@ -199,7 +199,7 @@ public class MapaEscolasController {
 	
 	@RequestMapping(value="/piorIdeb5", method=RequestMethod.GET, produces={"application/json; charset=UTF-8"})
 	public @ResponseBody String piorIdeb5(){
-		List<DadosIdeb> idebs = dadosIdebDao.getPiorIdeb5();
+		List<DadosIdeb> idebs = dadosIdebDao.getPiorIdeb5("2017");
 		List<Escola> escolas = new ArrayList<>();
 		for (DadosIdeb di : idebs) {
 			escolas.add(escolaDao.get(di.getEscola().getId()));
@@ -209,7 +209,7 @@ public class MapaEscolasController {
 	
 	@RequestMapping(value="/melhorIdeb9", method=RequestMethod.GET, produces={"application/json; charset=UTF-8"})
 	public @ResponseBody String melhorIdeb9(){
-		List<DadosIdeb> idebs = dadosIdebDao.getMelhorIdeb9();
+		List<DadosIdeb> idebs = dadosIdebDao.getMelhorIdeb9("2017");
 		List<Escola> escolas = new ArrayList<>();
 		for (DadosIdeb di : idebs) {
 			escolas.add(escolaDao.get(di.getEscola().getId()));
@@ -219,7 +219,7 @@ public class MapaEscolasController {
 	
 	@RequestMapping(value="/piorIdeb9", method=RequestMethod.GET, produces={"application/json; charset=UTF-8"})
 	public @ResponseBody String piorIdeb9(){
-		List<DadosIdeb> idebs = dadosIdebDao.getPiorIdeb9();
+		List<DadosIdeb> idebs = dadosIdebDao.getPiorIdeb9("2017");
 		List<Escola> escolas = new ArrayList<>();
 		for (DadosIdeb di : idebs) {
 			escolas.add(escolaDao.get(di.getEscola().getId()));
@@ -371,43 +371,35 @@ public class MapaEscolasController {
 				} catch (Exception e) {
 					properties.put("FotoMin", "");
 				}
-                for(Visita visita : visitas){
-                	if(escola.getId().intValue() == visita.getEscola().getId().intValue()){
-                		String situacao = "";
-                		try {
-                			properties.put("DataVisita", visita.getData());
-                		} catch (Exception e) {
-                		}
-                		
-                		try {
-                    		situacao = visita.getRl3();
-                		} catch (Exception e) {
-                		}
-                		
-                		if(situacao.equals("")){
-                			properties.put("POSSUIQUADRA", "null");
-                			break;
-                		} else if(situacao.equals("0")){
-                			properties.put("POSSUIQUADRA", 0);
-                			break;
-                		} else if(situacao.equals("1")){
-                			properties.put("POSSUIQUADRA", 1);
-                			break;
-                		} else if(situacao.equals("2")){
-                			properties.put("POSSUIQUADRA", 2);
-                			break;
-                		} else if(situacao.equals("3")){
-                			properties.put("POSSUIQUADRA", 3);
-                			break;
-                		}
-                		
-                		try {
-                			properties.put("qtdAlunos", visita.getSa1());
-                		} catch (Exception e) {
-                			properties.put("qtdAlunos", "null");
-                		}
-                	}
-                }
+                Visita ultimaVisita = visitaDao.getUltimaByEscola(escola.getId());
+        		String situacao = "";
+        		try {
+        			properties.put("DataVisita", ultimaVisita.getData());
+        		} catch (Exception e) {
+        		}
+
+        		try {
+        			properties.put("qtdAlunos", ultimaVisita.getSa1());
+        		} catch (Exception e) {
+        			properties.put("qtdAlunos", "null");
+        		}
+        		
+        		try {
+            		situacao = ultimaVisita.getRl3();
+        		} catch (Exception e) {
+        		}
+        		
+        		if(situacao.equals("")){
+        			properties.put("POSSUIQUADRA", "null");
+        		} else if(situacao.equals("0")){
+        			properties.put("POSSUIQUADRA", 0);
+        		} else if(situacao.equals("1")){
+        			properties.put("POSSUIQUADRA", 1);
+        		} else if(situacao.equals("2")){
+        			properties.put("POSSUIQUADRA", 2);
+        		} else if(situacao.equals("3")){
+        			properties.put("POSSUIQUADRA", 3);
+        		}
                 
                 for(Visita visita : visitas){
                 	if(escola.getId().intValue() == visita.getEscola().getId().intValue()){

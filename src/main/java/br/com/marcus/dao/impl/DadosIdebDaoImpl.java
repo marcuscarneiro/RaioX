@@ -86,8 +86,8 @@ public class DadosIdebDaoImpl implements DadosIdebDao {
 	}
     
     @Transactional
-	public List<DadosIdeb> getMelhorIdeb5() {
-		String hql = "from DadosIdeb where did_ideb_2013_ini is not null order by did_ideb_2013_ini desc";
+	public List<DadosIdeb> getMelhorIdeb5(String ano) {
+		String hql = "from DadosIdeb where did_ideb_"+ ano +"_ini is not null order by did_ideb_"+ano+"_ini desc";
         Query query = sessionFactory.getCurrentSession().createQuery(hql).setMaxResults(10);
          
         @SuppressWarnings("unchecked")
@@ -101,8 +101,8 @@ public class DadosIdebDaoImpl implements DadosIdebDao {
 	}
     
     @Transactional
-	public List<DadosIdeb> getPiorIdeb5() {
-		String hql = "from DadosIdeb where did_ideb_2013_ini is not null order by did_ideb_2013_ini asc";
+	public List<DadosIdeb> getPiorIdeb5(String ano) {
+		String hql = "from DadosIdeb where did_ideb_"+ano+"_ini is not null order by did_ideb_"+ano+"_ini asc";
         Query query = sessionFactory.getCurrentSession().createQuery(hql).setMaxResults(10);
          
         @SuppressWarnings("unchecked")
@@ -116,8 +116,8 @@ public class DadosIdebDaoImpl implements DadosIdebDao {
 	}
     
     @Transactional
-	public List<DadosIdeb> getMelhorIdeb9() {
-		String hql = "from DadosIdeb where did_ideb_2013_fin is not null order by did_ideb_2013_ini desc";
+	public List<DadosIdeb> getMelhorIdeb9(String ano) {
+		String hql = "from DadosIdeb where did_ideb_"+ano+"_fin is not null order by did_ideb_"+ano+"_ini desc";
         Query query = sessionFactory.getCurrentSession().createQuery(hql).setMaxResults(10);
          
         @SuppressWarnings("unchecked")
@@ -131,8 +131,8 @@ public class DadosIdebDaoImpl implements DadosIdebDao {
 	}
     
     @Transactional
-	public List<DadosIdeb> getPiorIdeb9() {
-		String hql = "from DadosIdeb where did_ideb_2013_fin is not null order by did_ideb_2013_ini asc";
+	public List<DadosIdeb> getPiorIdeb9(String ano) {
+		String hql = "from DadosIdeb where did_ideb_"+ano+"_fin is not null order by did_ideb_"+ano+"_ini asc";
         Query query = sessionFactory.getCurrentSession().createQuery(hql).setMaxResults(10);
          
         @SuppressWarnings("unchecked")

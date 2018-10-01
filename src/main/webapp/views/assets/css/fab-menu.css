@@ -29,6 +29,22 @@
 	transition: all 0.3s;
 }
 
+.fab-x {
+	width: 32px;
+	margin: 9px;
+	display: block;
+	opacity: 0;
+	transform: rotateZ(-70deg);
+	transition: all 0.3s;
+	animation: edit-out 0.3s;
+}
+
+#container-floating:hover .fab-x {
+	animation: edit-in 0.2s;
+	animation-delay: 0.1s;
+	animation-fill-mode: forwards;
+}
+
 #container-floating {
 	visibility: hidden;
 	opacity: 1;

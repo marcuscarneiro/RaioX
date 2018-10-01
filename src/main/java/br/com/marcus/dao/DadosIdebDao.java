@@ -18,11 +18,11 @@ public interface DadosIdebDao {
     
     public List<DadosIdeb> getIdebsComparativo(Long id1, Long id2);
     
-    public List<DadosIdeb> getMelhorIdeb5();
+    public List<DadosIdeb> getMelhorIdeb5(String ano);
     
-    public List<DadosIdeb> getPiorIdeb5();
+    public List<DadosIdeb> getPiorIdeb5(String ano);
     
-    public List<DadosIdeb> getMelhorIdeb9();
+    public List<DadosIdeb> getMelhorIdeb9(String ano);
     
-    public List<DadosIdeb> getPiorIdeb9();
+    public List<DadosIdeb> getPiorIdeb9(String ano);
 }

@@ -1,5 +1,7 @@
 let menu = false;
 let lista = false;
+let todos = true;
+let anosiniciais = true, anosfinais = true, atingiu, naoatingiu, melhoresiniciais, pioresiniciais, melhoresfinais, pioresfinais, quadra, acessibilidade;
 
 function abrePainelMobile(painel) {
 	switch (painel) {
@@ -108,17 +110,149 @@ function mobileOrder(parent, childSelector, keySelector, order) {
 
 
 function listOrder(key) {
+	$('.mobile-list-order a').removeClass('active');
 	switch (key) {
 	case 'nome':
+		$('#order-radio-nome').addClass('active');
 		mobileOrder($('.mobile-list-items'), "li", '.mobile-list-nome', "asc");
 		break;
 	case 'melhornota':
+		$('#order-radio-melhorideb').addClass('active');
 		mobileOrder($('.mobile-list-items'), "li", '.mobile-list-nota', "desc");
 		break;
 	case 'piornota':
+		$('#order-radio-piorideb').addClass('active');
 		mobileOrder($('.mobile-list-items'), "li", '.mobile-list-nota', "asc");
 		break;
 	default:
 		break;
+	}
+}
+
+function filtraTodosMobile(){
+	if($('#btnTodosMobile').hasClass('not-active')){
+		$('#btnTodosMobile').removeClass('not-active');
+		$('#btnTodosMobile').addClass('active');
+		$('#btnIniciaisMobile').removeClass('active');
+		$('#btnIniciaisMobile').addClass('not-active');
+		$('#btnFinaisMobile').removeClass('active');
+		$('#btnFinaisMobile').addClass('not-active');
+		anosiniciais = true;
+		anosfinais = true;
+	}
+}	
+
+function filtraIniciaisMobile(){
+	if($('#btnIniciaisMobile').hasClass('not-active')){
+		$('#btnIniciaisMobile').removeClass('not-active');
+		$('#btnIniciaisMobile').addClass('active');
+		$('#btnFinaisMobile').removeClass('active');
+		$('#btnFinaisMobile').addClass('not-active');
+		$('#btnTodosMobile').addClass('not-active');
+		$('#btnTodosMobile').removeClass('active');
+		anosiniciais = true;
+		anosfinais = false;
+	}
+};
+
+function filtraFinaisMobile(){
+	if($('#btnFinaisMobile').hasClass('not-active')){
+		$('#btnFinaisMobile').removeClass('not-active');
+		$('#btnFinaisMobile').addClass('active');
+		$('#btnIniciaisMobile').removeClass('active');
+		$('#btnIniciaisMobile').addClass('not-active');
+		$('#btnTodosMobile').addClass('not-active');
+		$('#btnTodosMobile').removeClass('active');
+		anosfinais = true;
+		anosiniciais = false;
+	}
+};
+
+function cancelaFiltro() {
+	filtraTodosMobile();
+	$('.opcoes-item input[type=checkbox]').removeAttr('checked');
+	$('.opcoes-item input[type=checkbox]').button('refresh');
+	resetaVariaveis();
+}
+
+function resetaVariaveis() {
+	anosiniciais = true;
+	anosfinais = true;
+	atingiu = false;
+	naoatingiu = false;
+	melhoresiniciais = false;
+	pioresiniciais = false;
+	melhoresfinais = false;
+	pioresfinais = false;
+	quadra = false;
+	acessibilidade = false;
+}
+
+function salvaFiltro() {
+	atingiu = false;
+	naoatingiu = false;
+	melhoresiniciais = false;
+	pioresiniciais = false;
+	melhoresfinais = false;
+	pioresfinais = false;
+	quadra = false;
+	acessibilidade = false;
+	$('.mobile-opcoes-lista input[type=checkbox]:checked').each(function(){
+		var name = $(this).attr('name');
+		if(name === 'atingiu') {
+			atingiu = true;
+		} else if(name === 'nunca') {
+			naoatingiu = true;
+		} else if(name === 'melhoresiniciais') {
+			melhoresiniciais = true;
+		} else if(name === 'pioresiniciais') {
+			pioresiniciais = true;
+		} else if(name === 'melhoresfinais') {
+			melhoresfinais = true;
+		} else if(name === 'pioresfinais') {
+			pioresfinais = true;
+		} else if(name === 'quadra') {
+			quadra = true;
+		} else if(name === 'acessibilidade') {
+			acessibilidade = true;
+		}
+	});
+	filtraMobile();
+	fechaPainelMobile('filtro');
+}
+function filtraMobile(){
+	map.removeLayer(escolasLayer);
+	escolasLayer = L.geoJSON().addTo(map);
+	escolasLayer.addData(escolasData);
+	changeMarkers();
+	if(anosiniciais && anosfinais){
+	} else if(anosiniciais) {
+		filtraIniciais('iniciais');
+	} else {
+		filtraFinais('finais');
+	}
+	if(atingiu){
+		filtraMeta('meta');
+	}
+	if(naoatingiu){
+		filtraNaoAtingiu('naoatingiu');
+	}
+	if(melhoresiniciais){
+		filtraMelhorIdeb5('melhorIdeb5');
+	}
+	if(pioresiniciais){
+		filtraPiorIdeb5('piorIdeb5');
+	}
+	if(melhoresfinais){
+		filtraMelhorIdeb9('melhorIdeb9');
+	}
+	if(pioresfinais){
+		filtraPiorIdeb9('piorIdeb9');
+	}
+	if(quadra){
+		filtraQuadras('quadras');
+	}
+	if(acessibilidade){
+		filtraAcessibilidade('acessibilidade');
 	}
 }

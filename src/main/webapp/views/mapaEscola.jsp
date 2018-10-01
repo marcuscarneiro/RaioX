@@ -67,8 +67,8 @@
 				</span>
 				<div class="layers-bg">
 					<span class="layer-title">Tipo do mapa</span>
-					<div class="layers-bairros"></div>
 					<div class="layers-rpas"></div>
+					<div class="layers-bairros"></div>
 				</div>
 				<hr>
 				<div class="layers-info">
@@ -91,7 +91,7 @@
 			</div>
 			<div id="floating-button">
 				<p class="plus">+</p>
-				<i class="edit fa fa-times"></i>
+				<img class="fab-x" alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/x.svg">
 			</div>
 		</div>
 
@@ -1619,13 +1619,13 @@
 		
 		<div class="mobile-painel mobile-filtro">
 			<div class="mobile-painel-menu">
-				<div class="menu-left menu-cancel">
+				<div class="menu-left menu-cancel" onclick="cancelaFiltro()">
 					<span>Cancelar</span>
 				</div>
 				<div class="menu-title">
 					<span>Filtros</span>
 				</div>
-				<div class="menu-right menu-save">
+				<div class="menu-right menu-save" onclick="salvaFiltro()">
 					<span>Salvar</span>
 				</div>
 			</div>
@@ -1634,24 +1634,25 @@
 					<h4>Ano letivo</h4>
 					<div id='mobible-anos-radio' class='mobible-anos-radio'>
 						<div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
-							<a href="#" onclick="filtraTodos()" id="btnIniciais" class="btn btn-primary active">
+							<a href="#" onclick="filtraTodosMobile()" id="btnTodosMobile" class="btn btn-primary active">
 								<input type="radio" />Todos
 							</a>
-							<a href="#" onclick="filtraIniciais()" id="btnIniciais" class="btn btn-primary not-active">
+							<a href="#" onclick="filtraIniciaisMobile()" id="btnIniciaisMobile" class="btn btn-primary not-active">
 								<input type="radio" />5º ano
 							</a>
-							<a href="#" onclick="filtraFinais()" id="btnFinais" class="btn btn-primary not-active">
+							<a href="#" onclick="filtraFinaisMobile()" id="btnFinaisMobile" class="btn btn-primary not-active">
 								<input type="radio" />9º ano
 							</a>
 						</div>
 					</div>
 				</div>
+				
 				<div class="mobile-layers">
 					<div class="layers-bg">
 						<h4>Tipo do mapa</h4>
 						<div class="layers-imgs">
-							<div class="layers-bairros"></div>
 							<div class="layers-rpas"></div>
+							<div class="layers-bairros"></div>
 						</div>
 					</div>
 					<div class="layers-info">
@@ -1662,6 +1663,45 @@
 						</div>
 					</div>
 				</div>
+	
+				<div class="mobile-filtro-opcoes">
+					<h4>Filtros</h4>
+					<div class="mobile-opcoes-lista">
+						<label class="opcoes-item">
+							<input type="checkbox" name="atingiu">
+							<span class="opcoes-label">Atingiu a meta</span>
+						</label>
+						<label class="opcoes-item">
+							<input type="checkbox" name="nunca">
+							<span class="opcoes-label">Nunca atingiu a meta</span>
+						</label>
+						<label class="opcoes-item">
+							<input type="checkbox" name="melhoresiniciais">
+							<span class="opcoes-label">Melhores IDEBs (5ºano)</span>
+						</label>
+						<label class="opcoes-item">
+							<input type="checkbox" name="pioresiniciais">
+							<span class="opcoes-label">Piores IDEBs (5ºano)</span>
+						</label>
+						<label class="opcoes-item">
+							<input type="checkbox" name="melhoresfinais">
+							<span class="opcoes-label">Melhores IDEBs (9ºano)</span>
+						</label>
+						<label class="opcoes-item">
+							<input type="checkbox" name="pioresfinais">
+							<span class="opcoes-label">Piores IDEBs (9ºano)</span>
+						</label>
+						<label class="opcoes-item">
+							<input type="checkbox" name="quadra">
+							<span class="opcoes-label">Possui quadra</span>
+						</label>
+						<label class="opcoes-item">
+							<input type="checkbox" name="acessibilidade">
+							<span class="opcoes-label">Possui itens de acessibilidade</span>
+						</label>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 		
@@ -1903,17 +1943,15 @@
 					<input id="mobile-pesquisa-input" class="form-control busca-input" type="text" placeholder="Pesquise aqui a sua escola..."></input>
 				</form>
 				<div class="mobile-list-order">
-					<span class="mobile-list-label">Ordenar por: </span>
-					<a href="#" class="order-radio active" onclick="listOrder('nome')">
+					<span class="mobile-list-label">Ordem: </span>
+					<a id="order-radio-nome" href="#" class="order-radio active" onclick="listOrder('nome')">
 						<span>Nome</span>
 					</a>
-					<a href="#" class="order-radio" onclick="listOrder('melhornota')">
-						<span>IDEB</span>
-						<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-up.svg">
+					<a id="order-radio-melhorideb" href="#" class="order-radio" onclick="listOrder('melhornota')">
+						<span>Melhor IDEB</span>
 					</a>
-					<a href="#" class="order-radio" onclick="listOrder('piornota')">
-						<span>IDEB</span>
-						<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-down.svg">
+					<a id="order-radio-piorideb" href="#" class="order-radio" onclick="listOrder('piornota')">
+						<span>Pior IDEB</span>
 					</a>
 				</div>
 				<ul class="mobile-list-items">
