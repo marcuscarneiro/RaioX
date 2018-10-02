@@ -366,40 +366,50 @@ public class MapaEscolasController {
                 properties.put("FundI", getFundI(dadosIdeb));
                 properties.put("FundII", getFundII(dadosIdeb));
                 properties.put("Foto", escola.getFotoCapa());
+                
                 try {
                 	properties.put("FotoMin", escola.getFotoCapa().replaceAll("\\bcapa\\b", "capaThumb"));
 				} catch (Exception e) {
 					properties.put("FotoMin", "");
 				}
-                Visita ultimaVisita = visitaDao.getUltimaByEscola(escola.getId());
-        		String situacao = "";
-        		try {
-        			properties.put("DataVisita", ultimaVisita.getData());
-        		} catch (Exception e) {
-        		}
-
-        		try {
-        			properties.put("qtdAlunos", ultimaVisita.getSa1());
-        		} catch (Exception e) {
-        			properties.put("qtdAlunos", "null");
-        		}
-        		
-        		try {
-            		situacao = ultimaVisita.getRl3();
-        		} catch (Exception e) {
-        		}
-        		
-        		if(situacao.equals("")){
-        			properties.put("POSSUIQUADRA", "null");
-        		} else if(situacao.equals("0")){
-        			properties.put("POSSUIQUADRA", 0);
-        		} else if(situacao.equals("1")){
-        			properties.put("POSSUIQUADRA", 1);
-        		} else if(situacao.equals("2")){
-        			properties.put("POSSUIQUADRA", 2);
-        		} else if(situacao.equals("3")){
-        			properties.put("POSSUIQUADRA", 3);
-        		}
+                
+                for(Visita visita : visitas){
+                	if(escola.getId().intValue() == visita.getEscola().getId().intValue()){
+                		String situacao = "";
+                		try {
+                			properties.put("DataVisita", visita.getData());
+                		} catch (Exception e) {
+                		}
+                		
+                		try {
+                			properties.put("qtdAlunos", visita.getSa1());
+                		} catch (Exception e) {
+                			properties.put("qtdAlunos", "null");
+                		}
+                		
+                		try {
+                    		situacao = visita.getRl3();
+                		} catch (Exception e) {
+                		}
+                		
+                		if(situacao.equals("")){
+                			properties.put("POSSUIQUADRA", "null");
+                			break;
+                		} else if(situacao.equals("0")){
+                			properties.put("POSSUIQUADRA", 0);
+                			break;
+                		} else if(situacao.equals("1")){
+                			properties.put("POSSUIQUADRA", 1);
+                			break;
+                		} else if(situacao.equals("2")){
+                			properties.put("POSSUIQUADRA", 2);
+                			break;
+                		} else if(situacao.equals("3")){
+                			properties.put("POSSUIQUADRA", 3);
+                			break;
+                		}
+                	}
+                }
                 
                 for(Visita visita : visitas){
                 	if(escola.getId().intValue() == visita.getEscola().getId().intValue()){
@@ -407,6 +417,7 @@ public class MapaEscolasController {
             			break;
                 	}
                 }
+                
                 feature.put("properties", properties);
                 featureList.put(feature);
                 featureCollection.put("features", featureList);

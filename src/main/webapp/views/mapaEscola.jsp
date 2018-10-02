@@ -910,32 +910,7 @@
 											</a>
 										</li>
 										<li>
-											<a id="foto-visita-5" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<img src="#">
-											</a>
-										</li>
-										<li>
-											<a id="foto-visita-6" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<img src="#">
-											</a>
-										</li>
-										<li>
-											<a id="foto-visita-7" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<img src="#">
-											</a>
-										</li>
-										<li>
-											<a id="foto-visita-8" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<img src="#">
-											</a>
-										</li>
-										<li>
-											<a id="foto-visita-9" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<img src="#">
-											</a>
-										</li>
-										<li>
-											<a id="foto-visita-10" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+											<a id="foto-visita-counter" class="fancybox boxes" href="#" rel="fotoescola" title="#">
 												<img src="#">
 											</a>
 										</li>
@@ -1921,6 +1896,7 @@
 		<!-- Quadro do MAPA -->
 		<div class="map-container">
 			<div class="map-container-blur" onclick="fechaPainelMobile('menu')"></div>
+			<div class="map-container-loading"></div>
 			<div class="mobile-menu mobile-menu-map">
 				<div class="menu-left" onclick="abrePainelMobile('menu')">
 					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/menu.svg">
@@ -1932,7 +1908,7 @@
 					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/filter.svg">
 				</div>
 			</div>
-		
+			
 			<div id="map"></div>
 			
 			<div class="mobile-list">
@@ -1957,6 +1933,57 @@
 				<ul class="mobile-list-items">
 					
 				</ul>
+			</div>
+			
+			<div class="painel-escola-mobile">
+				<span class="escola-mobile-nome"></span>
+				<span class="escola-mobile-endereco"></span>
+				
+				<div class="fiscalizacao-datas"></div>
+
+				<div class="escola-mobile-galeria">
+					<a id="foto-visita-1" class="fancybox big-box" href="#" rel="fotoescola" title="#">
+						<img src="#">
+					</a>
+					<ul class="fiscalizacao-fotos">
+						<li>
+							<a id="foto-visita-2" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-visita-3" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-visita-4" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+								<img src="#">
+							</a>
+						</li>
+						<li>
+							<a id="foto-visita-counter" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+								<img src="#">
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="escola-mobile-notas">
+				</div>
+				
+				<div class="escola-mobile-aprendizado">
+				</div>
+
+				<div class="escola-mobile-questionario">
+				</div>
+				
+				<div class="escola-mobile-relatorio">
+				</div>
+				
+				<div class="escola-mobile-requerimentos">
+				</div>
+				
 			</div>
 			
 			<footer class="mobile-footer">

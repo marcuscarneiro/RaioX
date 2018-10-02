@@ -781,7 +781,7 @@ function changeMarkers(){
 				nota = '--';
 			}
 			
-			$('.mobile-list-items').append('<li esc="' + marker.feature.properties.ID + '" class="mobile-list-item" onclick="abreEscolaMobile('+ marker.feature.properties.ID +')">'+
+			$('.mobile-list-items').append('<li esc="' + marker.feature.properties.ID + '" class="mobile-list-item" onclick="loadEscolaMobile('+ marker.feature.properties.ID +')">'+
 					'<div class="mobile-school-image"><img class="lazy" data-src="'+ contextPath + marker.feature.properties.Foto +'" alt="Fachada da '+marker.feature.properties.Escola+'"></div>'+
 					'<div class="mobile-list-info">'+
 						'<span class="mobile-list-nome">'+marker.feature.properties.Escola+'</span>'+
@@ -952,7 +952,6 @@ function showEscola(esc, id){
 	var fotoFachada = $('.pesquisa-lista').find('[esc="'+id+'"]').children('.pesquisa-thumb').children('.thumb').attr('src');
 	$(".foto-fachada img").attr("src",fotoFachada);
 	if(id != null){
-		
 		$(".fiscalizacao").show();
 		$(".comentarios").show();
 		consultaDadosIdeb(id);
@@ -963,7 +962,6 @@ function showEscola(esc, id){
 		consultaVisitas(id);
 		consultaAvaliacaoPublica(id);
 		$("#modalEscola").modal();
-//		abrePainel('escola');
 	}
 };
 
@@ -1081,8 +1079,6 @@ function alteraVistoria(ordem){
 		$(".fiscalicazaoRelatorio a").css('display', 'none');
 		$(".fiscalicazaoRelatorio span").css('display', 'inline-block');
 	}
-	
-	consultaFotos(vistoria.id);
 	
 	if(vistoria.sa1){
 		if(ordemAtual != ordem){
@@ -1962,18 +1958,25 @@ function updateAprendizado(data){
 }
 
 function updateFotos(data){
-	for (var i = 0; i <= 10; i++) {
-		$("#foto-visita-"+i).fadeOut();
-	}
+	$(".fiscalizacao-fotos img").attr('src', '');
+	$(".fiscalizacao-fotos .foto-hidden").remove();
+	var fotoCounter = data.lenght - 3;
 	
 	$.each(data, function(i, foto){
 		if(foto.localizacao != null){
-			if(i <= 10){
-				i++;
+			i++;
+			if(i <= 3){
 				$("#foto-visita-"+i).fadeIn();
 				$("#foto-visita-"+i).attr('href', contextPath + foto.localizacao);
 				$("#foto-visita-"+i).attr('title', foto.nome);
 				$("#foto-visita-"+i + " img").attr('src', contextPath + foto.localizacao);
+			} else if(i == 4) {
+				$(".foto-visita-counter span").text(fotoCounter);
+				$("#foto-visita-"+i).attr('href', contextPath + foto.localizacao);
+				$("#foto-visita-"+i).attr('title', foto.nome);
+				$("#foto-visita-"+i + " img").attr('src', contextPath + foto.localizacao);
+			} else {
+				$(".fiscalizacao-fotos").append('<li><a id="foto-visita-'+i+'" class="foto-hidden fancybox boxes" href="'+contextPath + foto.localizacao+'" rel="fotoescola" title="'+foto.nome+'"><img src="'+contextPath + foto.localizacao+'"></a></li>');
 			}
 		}
 	})

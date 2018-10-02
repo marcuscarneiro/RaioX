@@ -24,7 +24,7 @@ public class VisitaDaoImpl implements VisitaDao {
 		List<Visita> listVisita = (List<Visita>) sessionFactory.getCurrentSession()
 		.createCriteria(Visita.class)
 //		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY)
-		.addOrder(Order.asc("data")).list();
+		.addOrder(Order.desc("data")).list();
 
 		return listVisita;
 	}
