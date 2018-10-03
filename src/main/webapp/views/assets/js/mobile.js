@@ -3,6 +3,18 @@ let lista = false;
 let todos = true;
 let anosiniciais = true, anosfinais = true, atingiu, naoatingiu, melhoresiniciais, pioresiniciais, melhoresfinais, pioresfinais, quadra, acessibilidade;
 
+function showFab() {
+	if($('#container-floating').hasClass('floating-show')){
+		$('.plus').removeClass('plus-rotate');
+		$('.nds').removeClass('nds-show');
+		$('#container-floating').removeClass('floating-show');
+	} else {
+		$('.plus').addClass('plus-rotate');
+		$('.nds').addClass('nds-show');
+		$('#container-floating').addClass('floating-show');
+	}
+}
+
 function abrePainelMobile(painel) {
 	switch (painel) {
 	case "filtro":

@@ -59,12 +59,21 @@
 	border-radius: 10px;
 }
 
-.map-container-blur, .map-container-loading {
+.map-container-blur {
 	visibility: hidden;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	z-index: 3;
+}
+
+.map-container-loading {
+	visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	background-color: rgba(255,255,255,0.5);
 }
 
 .map-container-blur.blur-show {
@@ -460,6 +469,49 @@
 	color: white;
 }
 
+/* ESCOLA MOBILE */
+
+.painel-escola-mobile {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	flex-grow: 1;
+	width: 100%;
+    height: inherit;
+	padding: 0;
+	top: 0;
+	overflow: auto;
+	z-index: 1;
+	transition: visibility 0.5s, opacity 0.5s;
+}
+
+.painel-escola-mobile.escola-show {
+	opacity: 1;
+	visibility: visible;
+}
+
+.escola-mobile-blur {
+	background-color: rgba(255, 255, 255, 0);
+	width: 100%;
+	height: 35%;
+}
+
+.escola-mobile-border {
+	height: 70px;
+	background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+.escola-mobile-content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+	padding: 0 20px;
+}
+
+.escola-mobile-nome {
+	margin-top: -30px;
+}
+
 /* FOOTER MOBILE */
 
 .mobile-footer
@@ -809,6 +861,14 @@
 	
 	#container-floating {
 		visibility: visible;
+	}
+	
+	#foto-visita-1 img {
+		width: 100%;
+	}
+	
+	.foto-hidden {
+		display: none;
 	}
 	
 }

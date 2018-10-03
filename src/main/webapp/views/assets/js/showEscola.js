@@ -1,23 +1,25 @@
-function loadEscolaMobile(id, nome) {
+function loadEscolaMobile(id, nome, endereco) {
 	if(lista){
 		fechaPainelMobile('lista');
 	}
     $('.map-container-loading').addClass('loading-show');
-    $('.escola-mobile-nome').text(nome);
-    getEscolaMobileInfo();
+    $('.escola-mobile-nome').html(nome);
+    $('.escola-mobile-endereco').html(endereco);
+    getEscolaMobileInfo(id);
 }
 
-function getEscolaMobileInfo(){
+function getEscolaMobileInfo(id){
 	setTimeout(function() {
     	consultaDadosIdebMobile(id);
 		consultaProvaBrasilMobile(id);
 		consultaVisitas(id);
-        $('.map-container-loading').removeClass('loading-show');
-    }, 0).then(showEscolaMobile);
+		showEscolaMobile();
+    }, 2000);
 }
 
 function showEscolaMobile(){
 	$('.painel-escola-mobile').addClass('escola-show');
+	$('.map-container-loading').removeClass('loading-show');
 }
 
 function consultaDadosIdebMobile(id){
@@ -31,7 +33,7 @@ function consultaDadosIdebMobile(id){
 			if(data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
 				updateIdebMobile(data);
 			} else {
-				idebVazioMobile();
+//				idebVazioMobile();
 			}
 			
 			if(data.escola.requerimentos != null){
@@ -97,4 +99,17 @@ function updateAprendizadoMobile(data){
 	
 	// TO-DO EXIBIR OU ESCONDER INFORMAÇÕES
 	// PREENCHER OU LIMPAR GRÁFICOS DE BOLINHAS
+}
+
+L.Map.prototype.panToOffset = function (latlng, offset, options) {
+    var x = this.latLngToContainerPoint(latlng).x - offset[0]
+    var y = this.latLngToContainerPoint(latlng).y - offset[1]
+    var point = this.containerPointToLatLng([x, y])
+    return this.setView(point, this._zoom, { pan: options })
+}
+
+L.Map.prototype.setViewOffset = function (latlng, offset, targetZoom) {
+    var targetPoint = this.project(latlng, targetZoom).subtract(offset),
+    targetLatLng = this.unproject(targetPoint, targetZoom);
+    return this.setView(targetLatLng, targetZoom);
 }

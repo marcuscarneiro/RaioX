@@ -43,6 +43,7 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/map.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mobile.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/showEscola.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>
 		
 		<title>Raio-X das Escolas Municipais do Recife - Vereador André Régis</title>
@@ -79,7 +80,7 @@
 			</div>
 		</div>
 		
-		<div id="container-floating">
+		<div id="container-floating" onclick="showFab()">
 			<div class="nd3 nds" onclick="abreSiteAndre()">
 				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/ar-small.jpg">
 			</div>
@@ -91,7 +92,6 @@
 			</div>
 			<div id="floating-button">
 				<p class="plus">+</p>
-				<img class="fab-x" alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/x.svg">
 			</div>
 		</div>
 
@@ -911,6 +911,7 @@
 										</li>
 										<li>
 											<a id="foto-visita-counter" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+												<span></span>
 												<img src="#">
 											</a>
 										</li>
@@ -1936,54 +1937,93 @@
 			</div>
 			
 			<div class="painel-escola-mobile">
-				<span class="escola-mobile-nome"></span>
-				<span class="escola-mobile-endereco"></span>
-				
-				<div class="fiscalizacao-datas"></div>
-
-				<div class="escola-mobile-galeria">
-					<a id="foto-visita-1" class="fancybox big-box" href="#" rel="fotoescola" title="#">
-						<img src="#">
-					</a>
-					<ul class="fiscalizacao-fotos">
-						<li>
-							<a id="foto-visita-2" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-								<img src="#">
-							</a>
-						</li>
-						<li>
-							<a id="foto-visita-3" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-								<img src="#">
-							</a>
-						</li>
-						<li>
-							<a id="foto-visita-4" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-								<img src="#">
-							</a>
-						</li>
-						<li>
-							<a id="foto-visita-counter" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-								<img src="#">
-							</a>
-						</li>
-					</ul>
-				</div>
-				
-				<div class="escola-mobile-notas">
-				</div>
-				
-				<div class="escola-mobile-aprendizado">
-				</div>
-
-				<div class="escola-mobile-questionario">
-				</div>
-				
-				<div class="escola-mobile-relatorio">
-				</div>
-				
-				<div class="escola-mobile-requerimentos">
-				</div>
-				
+				<div class="escola-mobile-blur"></div>
+				<div class="escola-mobile-border"></div>
+				<div class="escola-mobile-content">
+					<span class="escola-mobile-nome"></span>
+					<span class="escola-mobile-endereco"></span>
+					<div class="fiscalizacao-datas"></div>
+	
+					<div class="escola-mobile-galeria">
+						<a id="foto-visita-1" class="fancybox big-box" href="#" rel="fotoescola" title="#">
+							<img src="#">
+						</a>
+						<ul class="fiscalizacao-fotos">
+							<li>
+								<a id="foto-visita-2" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+									<img src="#">
+								</a>
+							</li>
+							<li>
+								<a id="foto-visita-3" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+									<img src="#">
+								</a>
+							</li>
+							<li>
+								<a id="foto-visita-4" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+									<img src="#">
+								</a>
+							</li>
+							<li>
+								<a id="foto-visita-counter" class="fancybox boxes" href="#" rel="fotoescola" title="#">
+									<img src="#">
+								</a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="escola-mobile-notas">
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					nweiuqfbqfiqb<br/>
+					
+					</div>
+					
+					<div class="escola-mobile-aprendizado">
+					</div>
+	
+					<div class="escola-mobile-questionario">
+					</div>
+					
+					<div class="escola-mobile-relatorio">
+					</div>
+					
+					<div class="escola-mobile-requerimentos">
+					</div>
+				</div>				
 			</div>
 			
 			<footer class="mobile-footer">

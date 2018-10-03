@@ -781,7 +781,7 @@ function changeMarkers(){
 				nota = '--';
 			}
 			
-			$('.mobile-list-items').append('<li esc="' + marker.feature.properties.ID + '" class="mobile-list-item" onclick="loadEscolaMobile('+ marker.feature.properties.ID +')">'+
+			$('.mobile-list-items').append('<li esc="' + marker.feature.properties.ID + '" class="mobile-list-item" onclick="loadEscolaMobile('+ marker.feature.properties.ID +',\''+marker.feature.properties.Escola+'\',\''+marker.feature.properties.Endereco+'\')">'+
 					'<div class="mobile-school-image"><img class="lazy" data-src="'+ contextPath + marker.feature.properties.Foto +'" alt="Fachada da '+marker.feature.properties.Escola+'"></div>'+
 					'<div class="mobile-list-info">'+
 						'<span class="mobile-list-nome">'+marker.feature.properties.Escola+'</span>'+
@@ -817,7 +817,11 @@ function changeMarkers(){
 	
 		// Populate content from each markers object.
 		link.onclick = function() {
-			map.setView(marker.getLatLng(), 15);
+			if(viewWidth > 620){
+				map.setViewOffset(marker.getLatLng(),[0,-150],15);
+			} else {
+				map.setView(marker.getLatLng(), 15);
+			}
 			resizeMarker(marker);
 	
 		// Create custom popup content
@@ -1966,7 +1970,6 @@ function updateFotos(data){
 		if(foto.localizacao != null){
 			i++;
 			if(i <= 3){
-				$("#foto-visita-"+i).fadeIn();
 				$("#foto-visita-"+i).attr('href', contextPath + foto.localizacao);
 				$("#foto-visita-"+i).attr('title', foto.nome);
 				$("#foto-visita-"+i + " img").attr('src', contextPath + foto.localizacao);
