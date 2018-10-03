@@ -10,16 +10,15 @@ function loadEscolaMobile(id, nome, endereco) {
 
 function getEscolaMobileInfo(id){
 	setTimeout(function() {
+		regionFill = 0;
+		removeAllRpaLayers();
+		setAllRpaLayers();
+		$('#'+id).click();
     	consultaDadosIdebMobile(id);
 		consultaProvaBrasilMobile(id);
 		consultaVisitas(id);
-		showEscolaMobile();
+		abrePainelMobile('escola');
     }, 2000);
-}
-
-function showEscolaMobile(){
-	$('.painel-escola-mobile').addClass('escola-show');
-	$('.map-container-loading').removeClass('loading-show');
 }
 
 function consultaDadosIdebMobile(id){

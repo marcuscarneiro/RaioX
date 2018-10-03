@@ -482,12 +482,15 @@
 	top: 0;
 	overflow: auto;
 	z-index: 1;
-	transition: visibility 0.5s, opacity 0.5s;
+	transform: translateY(100%);
+	transition: all 0.5s;
+	transition-delay: 0.5s;
 }
 
 .painel-escola-mobile.escola-show {
 	opacity: 1;
 	visibility: visible;
+	transform: translateY(0%);
 }
 
 .escola-mobile-blur {
@@ -865,6 +868,10 @@
 	
 	#foto-visita-1 img {
 		width: 100%;
+	}
+	
+	.escola-mobile-galeria a {
+		border: 1px black solid;
 	}
 	
 	.foto-hidden {

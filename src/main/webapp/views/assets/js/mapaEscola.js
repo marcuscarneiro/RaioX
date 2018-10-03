@@ -2,6 +2,7 @@ var escId, escNome, rel, escIdebComp1, escIdebComp2, ordemAtual, filtrosIds = []
 var modo = 'all';
 var anosIni = false;
 var anosFin = false;
+var regionFill = 0.6;
 var viewWidth = $(window).width();
 var rpaAtual = 0;
 var actualMarker = undefined; 
@@ -86,7 +87,7 @@ function resetLayerStyle(e){
 	e.layer.setStyle({
 		weight: 1,
 		opacity: 1,
-		fillOpacity: 0.6
+		fillOpacity: regionFill
 	});
 }
 
@@ -162,7 +163,7 @@ function setBairros(click){
 		    }
 		});
 		addLayer(bairrosLayer, "Bairros", 2, 'bairroslayer');
-		bairrosLayer.setStyle({'fillOpacity': 0.6, 'weight': 1});
+		bairrosLayer.setStyle({'fillOpacity': regionFill, 'weight': 1});
 		bairrosLayer.on('mousemove', function(e){highlightLayer(e);});
 		bairrosLayer.on('mouseout', function(e){resetLayerStyle(e);});
 }
@@ -173,7 +174,7 @@ var rpa1Layer;
 function setRpa1(click){
 	rpa1Layer = L.geoJSON().addTo(map);
 	rpa1Layer.addData(rpa1);
-	rpa1Layer.setStyle({color: '#ccff00', 'fillOpacity': 0.6, 'weight': 1});
+	rpa1Layer.setStyle({color: '#ccff00', 'fillOpacity': regionFill, 'weight': 1});
 	rpa1Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -207,7 +208,7 @@ var rpa2Layer;
 function setRpa2(click){
 	rpa2Layer = L.geoJSON().addTo(map);
 	rpa2Layer.addData(rpa2);
-	rpa2Layer.setStyle({color: '#66cc99', 'fillOpacity': 0.6, 'weight': 1});
+	rpa2Layer.setStyle({color: '#66cc99', 'fillOpacity': regionFill, 'weight': 1});
 	rpa2Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -242,7 +243,7 @@ var rpa3Layer;
 function setRpa3(click){
 	rpa3Layer = L.geoJSON().addTo(map);
 	rpa3Layer.addData(rpa3);
-	rpa3Layer.setStyle({color: '#cc9933', 'fillOpacity': 0.6, 'weight': 1});
+	rpa3Layer.setStyle({color: '#cc9933', 'fillOpacity': regionFill, 'weight': 1});
 	rpa3Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -277,7 +278,7 @@ var rpa4Layer;
 function setRpa4(click){
 	rpa4Layer = L.geoJSON().addTo(map);
 	rpa4Layer.addData(rpa4);
-	rpa4Layer.setStyle({color: '#cc3366', 'fillOpacity': 0.6, 'weight': 1});
+	rpa4Layer.setStyle({color: '#cc3366', 'fillOpacity': regionFill, 'weight': 1});
 	rpa4Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -312,7 +313,7 @@ var rpa5Layer;
 function setRpa5(click){
 	rpa5Layer = L.geoJSON().addTo(map);
 	rpa5Layer.addData(rpa5);
-	rpa5Layer.setStyle({color: '#6666cc', 'fillOpacity': 0.6, 'weight': 1});
+	rpa5Layer.setStyle({color: '#6666cc', 'fillOpacity': regionFill, 'weight': 1});
 	rpa5Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -347,7 +348,7 @@ var rpa6Layer;
 function setRpa6(click){
 	rpa6Layer = L.geoJSON().addTo(map);
 	rpa6Layer.addData(rpa6);
-	rpa6Layer.setStyle({color: '#ff6633', 'fillOpacity': 0.6, 'weight': 1});
+	rpa6Layer.setStyle({color: '#ff6633', 'fillOpacity': regionFill, 'weight': 1});
 	rpa6Layer.on('click', function(e)
 	{
 		escondeDados();
@@ -817,15 +818,15 @@ function changeMarkers(){
 	
 		// Populate content from each markers object.
 		link.onclick = function() {
-			if(viewWidth > 620){
+			if(viewWidth < 620){
 				map.setViewOffset(marker.getLatLng(),[0,-150],15);
 			} else {
 				map.setView(marker.getLatLng(), 15);
+				resizeMarker(marker);
+				
+				// Create custom popup content
+				definePopup(marker);
 			}
-			resizeMarker(marker);
-	
-		// Create custom popup content
-			definePopup(marker);
 		}
 		
 		return false;
@@ -2814,6 +2815,7 @@ function closeComparativo(){
 
 function recarregaMapa(){
 	rpaAtual = 0;
+	regionFill = 0.6;
 	actualMarker = undefined;
 	modo = 'all';
 	$(".menu-ui a").removeClass('active');

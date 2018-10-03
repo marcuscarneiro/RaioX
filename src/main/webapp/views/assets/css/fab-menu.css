@@ -44,6 +44,7 @@
 	bottom: 30px;
 	right: 30px;
     transition: visibility 0.5s, opacity 0.5s;
+	transition-delay: 0.5s;
 }
 
 #container-floating.container-floating-hide {

@@ -1,6 +1,7 @@
 let menu = false;
 let lista = false;
 let todos = true;
+let painelEscola = false;
 let anosiniciais = true, anosfinais = true, atingiu, naoatingiu, melhoresiniciais, pioresiniciais, melhoresfinais, pioresfinais, quadra, acessibilidade;
 
 function showFab() {
@@ -20,6 +21,7 @@ function abrePainelMobile(painel) {
 	case "filtro":
 		$(".mobile-blur").addClass('mobile-blur-show');
 		$(".mobile-filtro").addClass('mobile-filtro-show');
+		fechaPainelMobile('escola');
 		break;
 	case "menu":
 		if(menu){
@@ -43,6 +45,9 @@ function abrePainelMobile(painel) {
 		if(menu){
 			fechaPainelMobile('menu');
 		}
+		if(painelEscola){
+			fechaPainelMobile('escola');
+		}
 		if(!lista){
 			lista = true;
 			$(".footer-active-indicator").addClass('list-indicator');
@@ -60,6 +65,12 @@ function abrePainelMobile(painel) {
 		break;
 	case "compare":
 		$(".painel-compare").addClass('compare-show');
+		break;
+	case "escola":
+		painelEscola = true;
+		$('.painel-escola-mobile').addClass('escola-show');
+		$('.map-container-loading').removeClass('loading-show');
+		$("#container-floating").addClass('container-floating-hide');
 		break;
 	default:
 		break;
@@ -82,7 +93,7 @@ function fechaPainelMobile(painel) {
 		$(".mobile-footer").removeClass('mobile-footer-small');
 		$(".mapShadow1").removeClass('shadow1-show');
 		$(".mapShadow2").removeClass('shadow2-show');
-		if(!lista){
+		if(!lista && !painelEscola){
 			$("#container-floating").removeClass('container-floating-hide');
 		}
 		break;
@@ -97,6 +108,15 @@ function fechaPainelMobile(painel) {
 		break;
 	case "compare":
 		$(".painel-compare").removeClass('compare-show');
+		break;
+	case "escola":
+		painelEscola = false;
+		$("#container-floating").removeClass('container-floating-hide');
+		$('.painel-escola-mobile').removeClass('escola-show');
+		regionFill = 0.6;
+		map.setView([-8.0529, -34.9330], initialzoom);
+		removeAllRpaLayers();
+		setAllRpaLayers();
 		break;
 	default:
 		break;

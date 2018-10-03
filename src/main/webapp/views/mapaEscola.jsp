@@ -1937,8 +1937,8 @@
 			</div>
 			
 			<div class="painel-escola-mobile">
-				<div class="escola-mobile-blur"></div>
-				<div class="escola-mobile-border"></div>
+				<div class="escola-mobile-blur" onclick="fechaPainelMobile('escola')"></div>
+				<div class="escola-mobile-border" onclick="fechaPainelMobile('escola')"></div>
 				<div class="escola-mobile-content">
 					<span class="escola-mobile-nome"></span>
 					<span class="escola-mobile-endereco"></span>
