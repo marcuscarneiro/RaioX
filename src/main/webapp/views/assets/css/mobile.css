@@ -526,10 +526,16 @@
 	color: #9d9d9d;
 }
 
-.mobile-ideb-info-ini {
+.mobile-group-title {
+	font-size: 18px;
+    color: #9b9b9b;
+    margin: 20px 0 10px 0;
+    text-align: center;
+}
+
+.mobile-ideb-info-ini, .mobile-ideb-info-fin {
 	display: flex;
 	flex-direction: row;
-	margin-top: 20px;
 }
 
 .escola-mobile-notas {
@@ -538,13 +544,14 @@
 	height: auto;
 }
 
-.notas-title {
+.notas-title-ini, .notas-title-fin {
     font-size: 14px;
     color: #9b9b9b;
     margin-bottom: 10px;
+	margin-top: 20px;
 }
 
-.mobile-meta-ini {
+.mobile-meta-ini, .mobile-meta-fin {
 	width: 60px;
 	height: 60px;
 	margin-bottom: 8px;
@@ -554,17 +561,17 @@
 	text-align: center;
 }
 
-.meta-ini-title {
+.meta-ini-title, .meta-fin-title {
 	font-size: 11px;
 }
 
-.meta-ini-valor {
+.meta-ini-valor, .meta-fin-valor {
     position: relative;
     font-size: 30px;
     top: -10%;
 }
 
-.mobile-nota-ini {
+.mobile-nota-ini, .mobile-nota-fin {
 	width: 60px;
 	height: 60px;
 	border-width: 2px;
@@ -573,11 +580,11 @@
 	text-align: center;
 }
 
-.nota-ini-title {
+.nota-ini-title, .nota-fin-title {
 	font-size: 11px;
 }
 
-.nota-ini-valor {
+.nota-ini-valor, .nota-fin-valor {
 	position: relative;
     font-size: 30px;
     top: -10%;
@@ -981,4 +988,44 @@
 	    background-color: rgba(60,60,60,0.9);
 	}
 	
+	.aprendizado-group {
+		margin: 15px 0;
+	}
+	
+	.aprendizado-grafico {
+		max-width: 320px;
+		display: flex;
+		margin-top: 7px;
+		flex-direction: row;
+	}
+	
+	.aprendizado-grafico > span {
+		width: 12px;
+		height: 12px;
+		margin-right: 3px;
+		background-color: #d5d5d5;
+		border-color: #d5d5d5;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 50px;
+	}
+	
+	.aprendizado-grafico > .aprendizado-red {
+		background-color: red;
+		border-color: red;
+	}
+	
+	.aprendizado-grafico > .aprendizado-green {
+		background-color: green;
+		border-color: green;
+	}
+	
+	.aprendizado-grafico > .aprendizado-yellow {
+		background-color: yellow;
+		border-color: yellow;
+	}
+	
+	.aprendizado-text {
+		font-size: 11px;
+	}
 }

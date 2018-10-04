@@ -1974,7 +1974,12 @@
 						</ul>
 					</div>
 					
-					<span class="notas-title">IDEB 2017 (5º ano)</span>
+					<span class="mobile-group-title">Dados do IDEB</span>
+					<span class="mobile-ideb-resume">
+						O IDEB é o índice oficial de medição da qualidade da educação básica no Brasil.
+					</span>
+					
+					<span class="notas-title-ini">IDEB 2017 (5º ano)</span>
 					<div class="mobile-ideb-info-ini">
 						<div class="escola-mobile-notas">
 							<div class="mobile-meta-ini">
@@ -1989,16 +1994,142 @@
 						<canvas id="evolucao5" width="300" height="200"></canvas>
 					</div>
 					
+					<span class="notas-title-fin">IDEB 2017 (9º ano)</span>
+					<div class="mobile-ideb-info-fin">
+						<div class="escola-mobile-notas">
+							<div class="mobile-meta-fin">
+								<span class="meta-fin-title">META</span>
+								<span class="meta-fin-valor">6.2</span>
+							</div>
+							<div class="mobile-nota-fin nota-red">
+								<span class="nota-fin-title">NOTA</span>
+								<span class="nota-fin-valor">5.9</span>
+							</div>
+						</div>
+						<canvas id="evolucao9" width="300" height="200"></canvas>
+					</div>
+					
+					<span class="mobile-group-title">Qualidade do aprendizado</span>
 					<div class="escola-mobile-aprendizado">
+						<div class="aprendizado-port-ini aprendizado-group">
+							<span class="port-ini-title">Português - 5º ano</span>
+							<div class="port-ini-grafico aprendizado-grafico">
+								<span class="port-ini-circle-1 aprendizado-red"></span>
+								<span class="port-ini-circle-2 aprendizado-red"></span>
+								<span class="port-ini-circle-3"></span>
+								<span class="port-ini-circle-4"></span>
+								<span class="port-ini-circle-5"></span>
+								<span class="port-ini-circle-6"></span>
+								<span class="port-ini-circle-7"></span>
+								<span class="port-ini-circle-8"></span>
+								<span class="port-ini-circle-9"></span>
+								<span class="port-ini-circle-10"></span>
+								<span class="port-ini-circle-11"></span>
+								<span class="port-ini-circle-12"></span>
+								<span class="port-ini-circle-13"></span>
+								<span class="port-ini-circle-14"></span>
+								<span class="port-ini-circle-15"></span>
+								<span class="port-ini-circle-16"></span>
+								<span class="port-ini-circle-17"></span>
+								<span class="port-ini-circle-18"></span>
+								<span class="port-ini-circle-19"></span>
+								<span class="port-ini-circle-20"></span>
+							</div>
+							<span class="port-ini-text aprendizado-text">Apenas 10% dos alunos aprenderam adequadamente</span>
+						</div>
+						
+						<div class="aprendizado-mat-ini aprendizado-group">
+							<span class="mat-ini-title">Matemática - 5º ano</span>
+							<div class="mat-ini-grafico aprendizado-grafico">
+								<span class="mat-ini-circle-1 aprendizado-red"></span>
+								<span class="mat-ini-circle-2 aprendizado-red"></span>
+								<span class="mat-ini-circle-3 aprendizado-red"></span>
+								<span class="mat-ini-circle-4 aprendizado-red"></span>
+								<span class="mat-ini-circle-5"></span>
+								<span class="mat-ini-circle-6"></span>
+								<span class="mat-ini-circle-7"></span>
+								<span class="mat-ini-circle-8"></span>
+								<span class="mat-ini-circle-9"></span>
+								<span class="mat-ini-circle-10"></span>
+								<span class="mat-ini-circle-11"></span>
+								<span class="mat-ini-circle-12"></span>
+								<span class="mat-ini-circle-13"></span>
+								<span class="mat-ini-circle-14"></span>
+								<span class="mat-ini-circle-15"></span>
+								<span class="mat-ini-circle-16"></span>
+								<span class="mat-ini-circle-17"></span>
+								<span class="mat-ini-circle-18"></span>
+								<span class="mat-ini-circle-19"></span>
+								<span class="mat-ini-circle-20"></span>
+							</div>
+							<span class="mat-ini-text aprendizado-text">Apenas 10% dos alunos aprenderam adequadamente</span>
+						</div>
+						
+						<div class="aprendizado-port-fin aprendizado-group">
+							<span class="port-fin-title">Português - 9º ano</span>
+							<div class="port-fin-grafico aprendizado-grafico">
+								<span class="port-fin-circle-1 aprendizado-yellow"></span>
+								<span class="port-fin-circle-2 aprendizado-yellow"></span>
+								<span class="port-fin-circle-3 aprendizado-yellow"></span>
+								<span class="port-fin-circle-4 aprendizado-yellow"></span>
+								<span class="port-fin-circle-5 aprendizado-yellow"></span>
+								<span class="port-fin-circle-6 aprendizado-yellow"></span>
+								<span class="port-fin-circle-7 aprendizado-yellow"></span>
+								<span class="port-fin-circle-8 aprendizado-yellow"></span>
+								<span class="port-fin-circle-9"></span>
+								<span class="port-fin-circle-10"></span>
+								<span class="port-fin-circle-11"></span>
+								<span class="port-fin-circle-12"></span>
+								<span class="port-fin-circle-13"></span>
+								<span class="port-fin-circle-14"></span>
+								<span class="port-fin-circle-15"></span>
+								<span class="port-fin-circle-16"></span>
+								<span class="port-fin-circle-17"></span>
+								<span class="port-fin-circle-18"></span>
+								<span class="port-fin-circle-19"></span>
+								<span class="port-fin-circle-20"></span>
+							</div>
+							<span class="port-fin-text aprendizado-text">Apenas 4% dos alunos aprenderam adequadamente</span>
+						</div>
+						
+						<div class="aprendizado-mat-fin aprendizado-group">
+							<span class="mat-fin-title">Matemática - 9º ano</span>
+							<div class="mat-fin-grafico aprendizado-grafico">
+								<span class="mat-fin-circle-1 aprendizado-green"></span>
+								<span class="mat-fin-circle-2 aprendizado-green"></span>
+								<span class="mat-fin-circle-3 aprendizado-green"></span>
+								<span class="mat-fin-circle-4 aprendizado-green"></span>
+								<span class="mat-fin-circle-5 aprendizado-green"></span>
+								<span class="mat-fin-circle-6 aprendizado-green"></span>
+								<span class="mat-fin-circle-7 aprendizado-green"></span>
+								<span class="mat-fin-circle-8 aprendizado-green"></span>
+								<span class="mat-fin-circle-9 aprendizado-green"></span>
+								<span class="mat-fin-circle-10 aprendizado-green"></span>
+								<span class="mat-fin-circle-11 aprendizado-green"></span>
+								<span class="mat-fin-circle-12 aprendizado-green"></span>
+								<span class="mat-fin-circle-13 aprendizado-green"></span>
+								<span class="mat-fin-circle-14 aprendizado-green"></span>
+								<span class="mat-fin-circle-15 aprendizado-green"></span>
+								<span class="mat-fin-circle-16"></span>
+								<span class="mat-fin-circle-17"></span>
+								<span class="mat-fin-circle-18"></span>
+								<span class="mat-fin-circle-19"></span>
+								<span class="mat-fin-circle-20"></span>
+							</div>
+							<span class="mat-fin-text aprendizado-text">Apenas 1% dos alunos aprenderam adequadamente</span>
+						</div>
 					</div>
 	
 					<div class="escola-mobile-questionario">
+						
 					</div>
 					
 					<div class="escola-mobile-relatorio">
+					
 					</div>
 					
 					<div class="escola-mobile-requerimentos">
+					
 					</div>
 				</div>				
 			</div>
