@@ -22,17 +22,22 @@
 {
 	width: 100%;
 	float: left;
-	height: 50px;
-	padding: 0;
+	display: flex;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .fiscalizacao-fotos li {
 	list-style: none;
 	float: left;
-	display: block;
-	width: 11.11%;
 	text-align: center;
+	width: 25%;
+    margin-left: 6px;
+}
 
+.fiscalizacao-fotos li:first-child {
+	margin-left: 0;
 }
 
 .galeria
@@ -82,8 +87,8 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); */
 
 .boxes img
 {
-	width: 98%;
-	height: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 .avalie-fields

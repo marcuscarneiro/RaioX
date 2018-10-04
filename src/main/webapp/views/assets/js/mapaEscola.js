@@ -1965,22 +1965,23 @@ function updateAprendizado(data){
 function updateFotos(data){
 	$(".fiscalizacao-fotos img").attr('src', '');
 	$(".fiscalizacao-fotos .foto-hidden").remove();
-	var fotoCounter = data.lenght - 3;
+	var fotoCounter = '+'+(data.length - 4)+' fotos';
 	
 	$.each(data, function(i, foto){
 		if(foto.localizacao != null){
 			i++;
-			if(i <= 3){
-				$("#foto-visita-"+i).attr('href', contextPath + foto.localizacao);
-				$("#foto-visita-"+i).attr('title', foto.nome);
-				$("#foto-visita-"+i + " img").attr('src', contextPath + foto.localizacao);
-			} else if(i == 4) {
-				$(".foto-visita-counter span").text(fotoCounter);
-				$("#foto-visita-"+i).attr('href', contextPath + foto.localizacao);
-				$("#foto-visita-"+i).attr('title', foto.nome);
-				$("#foto-visita-"+i + " img").attr('src', contextPath + foto.localizacao);
+			var localizacao = contextPath + foto.localizacao;
+			if(i <= 4){
+				$(".escola-mobile-galeria #foto-visita-"+i).attr("href", localizacao);
+				$(".escola-mobile-galeria #foto-visita-"+i).attr("title", foto.nome);
+				$(".escola-mobile-galeria #foto-visita-"+i + " img").attr('src', localizacao);
+			} else if(i == 5) {
+				$(".escola-mobile-galeria #foto-visita-counter .counter").text(fotoCounter);
+				$(".escola-mobile-galeria #foto-visita-counter").attr("href", localizacao);
+				$(".escola-mobile-galeria #foto-visita-counter").attr("title", foto.nome);
+				$(".escola-mobile-galeria #foto-visita-counter" + " img").attr('src', localizacao);
 			} else {
-				$(".fiscalizacao-fotos").append('<li><a id="foto-visita-'+i+'" class="foto-hidden fancybox boxes" href="'+contextPath + foto.localizacao+'" rel="fotoescola" title="'+foto.nome+'"><img src="'+contextPath + foto.localizacao+'"></a></li>');
+				$(".fiscalizacao-fotos").append('<li class="foto-hidden"><a id="foto-visita-'+i+'" class="fancybox boxes" href="'+localizacao+'" rel="fotoescola" title="'+foto.nome+'"><img src="'+localizacao+'"></a></li>');
 			}
 		}
 	})

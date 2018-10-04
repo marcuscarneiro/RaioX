@@ -1945,71 +1945,48 @@
 					<div class="fiscalizacao-datas"></div>
 	
 					<div class="escola-mobile-galeria">
-						<a id="foto-visita-1" class="fancybox big-box" href="#" rel="fotoescola" title="#">
-							<img src="#">
+						<a id="foto-visita-1" class="fancybox big-box" href="" rel="fotoescola" title="">
+							<img src="">
 						</a>
 						<ul class="fiscalizacao-fotos">
 							<li>
-								<a id="foto-visita-2" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
+								<a id="foto-visita-2" class="fancybox boxes" href="" rel="fotoescola" title="">
+									<img src="">
 								</a>
 							</li>
 							<li>
-								<a id="foto-visita-3" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
+								<a id="foto-visita-3" class="fancybox boxes" href="" rel="fotoescola" title="">
+									<img src="">
 								</a>
 							</li>
 							<li>
-								<a id="foto-visita-4" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
+								<a id="foto-visita-4" class="fancybox boxes" href="" rel="fotoescola" title="">
+									<img src="">
 								</a>
 							</li>
 							<li>
-								<a id="foto-visita-counter" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-									<img src="#">
+								<a id="foto-visita-counter" class="fancybox boxes" href="" rel="fotoescola" title="">
+									<span class="background"></span>
+									<span class="counter"></span>
+									<img src="">
 								</a>
 							</li>
 						</ul>
 					</div>
 					
-					<div class="escola-mobile-notas">
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					nweiuqfbqfiqb<br/>
-					
+					<span class="notas-title">IDEB 2017 (5º ano)</span>
+					<div class="mobile-ideb-info-ini">
+						<div class="escola-mobile-notas">
+							<div class="mobile-meta-ini">
+								<span class="meta-ini-title">META</span>
+								<span class="meta-ini-valor">6.2</span>
+							</div>
+							<div class="mobile-nota-ini nota-red">
+								<span class="nota-ini-title">NOTA</span>
+								<span class="nota-ini-valor">5.9</span>
+							</div>
+						</div>
+						<canvas id="evolucao5" width="300" height="200"></canvas>
 					</div>
 					
 					<div class="escola-mobile-aprendizado">
