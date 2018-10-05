@@ -30,9 +30,9 @@ function consultaDadosIdebMobile(id){
 		async: false,
 		success: function(data) {
 			if(data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
-				updateIdebMobile(data);
+				updateIdeb(data);
 			} else {
-//				idebVazioMobile();
+				idebVazio();
 			}
 			
 			if(data.escola.requerimentos != null){
@@ -65,7 +65,7 @@ function updateIdebMobile(data){
 	
 	// TO-DO UPDATE INFORMAÇÕES
 	
-	updateGraficoIdeb(data);
+//	updateGraficoIdeb(data);
 }
 
 function idebVazio(){

@@ -962,6 +962,7 @@ function showEscola(esc, id){
 		consultaDadosIdeb(id);
 		consultaProvaBrasil(id);
 		$(".fiscalizacao-datas li").remove();
+		$(".fiscalizacao-datas-mobile li").remove();
 		mapVisita = new Object();
 		ordemAtual = 0;
 		consultaVisitas(id);
@@ -978,14 +979,14 @@ function consultaDadosIdeb(id){
 		contentType: 'application/json',
 		async: false,
 		success: function(data) {
-			if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null){
-				if(data.escola.requerimentos != null){
-					$(".fiscalicazaoRequerimento a").attr('href', data.escola.requerimentos);
-					$(".fiscalicazaoRequerimento").css('display', 'block');
-					$(".fiscalicazaoRequerimento a").css('display', 'inline-block');
-				} else {
-					$(".fiscalicazaoRequerimento").css('display', 'none');
-				}
+			if(data.escola.requerimentos != null){
+				$(".fiscalicazaoRequerimento a").attr('href', data.escola.requerimentos);
+				$(".fiscalicazaoRequerimento").css('display', 'block');
+				$(".fiscalicazaoRequerimento a").css('display', 'inline-block');
+			} else {
+				$(".fiscalicazaoRequerimento").css('display', 'none');
+			}
+			if(data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
 				updateIdeb(data);
 			} else {
 				idebVazio();
@@ -1046,13 +1047,24 @@ function processaVisitas(data){
 	$(".fiscalizacao-datas").show();
 	var qtd = data.length;
 	var indice = 1;
-	while(indice <= qtd){
-		if(qtd === indice){
-			$(".fiscalizacao-datas ul").append("<li class='vistoria-" + indice + " data-active' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
-		} else {
-			$(".fiscalizacao-datas ul").append("<li class='vistoria-" + indice + "' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
+	if(viewWidth < 620){
+		while(indice <= qtd){
+			if(qtd === indice){
+				$(".fiscalizacao-datas-mobile ul").append("<li class='vistoria-" + indice + " data-active' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
+			} else {
+				$(".fiscalizacao-datas-mobile ul").append("<li class='vistoria-" + indice + "' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
+			}
+			indice++;
 		}
-		indice++;
+	} else {
+		while(indice <= qtd){
+			if(qtd === indice){
+				$(".fiscalizacao-datas ul").append("<li class='vistoria-" + indice + " data-active' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
+			} else {
+				$(".fiscalizacao-datas ul").append("<li class='vistoria-" + indice + "' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
+			}
+			indice++;
+		}
 	}
 	$.each(data, function(i, visita){
 		var ordem = i+1;
@@ -1137,7 +1149,14 @@ function updateVisitas(visita){
 	$(".fiscalizacao-header h2").text("FISCALIZAÇÃO");
 	$(".fiscalizacao-datas").show();
 	$(".fiscalizacao-fotos").show();
-	$(".fiscalizacao-questionario").show();
+	if(viewWidth < 620) {
+		var tableQuestionario = $('.detalhe-escola .fiscalizacao-questionario');
+		$('.escola-mobile-questionario').append(tableQuestionario);
+		$('.detalhe-escola .fiscalizacao-questionario').remove();
+		$(".fiscalizacao-questionario").show();
+	} else {
+		$(".fiscalizacao-questionario").show();
+	}
 	
 	if(visita.relatorio != null){
 		rel = true;
@@ -1176,6 +1195,15 @@ function idebVazio(){
 	$(".ideb-intro h2").text("Ainda não existem dados do IDEB para esta escola");
 	$(".linha").hide();
 	$(".ideb-aprendizado").hide();
+	$(".mobile-ideb").hide();
+	$(".mobile-ideb-resume").hide();
+	$(".notas-title-ini").hide();
+	$(".mobile-ideb-info-ini").hide();
+	$(".notas-title-fin").hide();
+	$(".mobile-ideb-info-fin").hide();
+	$(".mobile-aprendizado").hide();
+	$(".escola-mobile-aprendizado").hide();
+	
 }
 
 //NOTAS DO IDEB
@@ -1298,111 +1326,212 @@ function updateIdeb(data){
 	}
 	
 	if(notasIniciais != null){
-		$('#linha1').show();
-		$('#linha1 .col-esq').html(
-				'<div class="ideb-notas">'+
-				'<h3>Nota e meta do IDEB - Fundamental I</h3>'+
-				'<h3>'+anoIniciais+'</h3>'+
-				'<div class="notas-iniciais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
+		notasIniciais = parseFloat(notasIniciais).toFixed(1);
+		metasIniciais = parseFloat(metasIniciais).toFixed(1);
+	}
+	if(notasFinais != null){
+		notasFinais = parseFloat(notasFinais).toFixed(1);
+		metasFinais = parseFloat(metasFinais).toFixed(1);
+	}
+	
+	if(viewWidth < 620) {
+		$(".mobile-group-title").show();
+		$(".mobile-ideb-resume").show();
+		$(".mobile-nota-ini").removeClass('nota-red');
+		$(".mobile-nota-ini").removeClass('nota-green');
+		$(".mobile-nota-ini").removeClass('nota-yellow');
+		$(".mobile-nota-fin").removeClass('nota-red');
+		$(".mobile-nota-fin").removeClass('nota-green');
+		$(".mobile-nota-fin").removeClass('nota-yellow');
+		if(notasIniciais != null && notasFinais != null){
+			$(".notas-title-ini").show();
+			$(".mobile-ideb-info-ini").show();
+			$(".notas-title-fin").show();
+			$(".mobile-ideb-info-fin").show();
+			$(".notas-title-ini").text('IDEB ' + anoIniciais + ' (5º ano)');
+			$(".meta-ini-valor").text(metasIniciais);
+			$(".nota-ini-valor").text(notasIniciais);
+			if(notasIniciais >= metasIniciais){
+				if(notasIniciais >= 6){
+					$(".mobile-nota-ini").addClass('nota-green');
+				} else {
+					$(".mobile-nota-ini").addClass('nota-yellow');
+				}
+			} else {
+				$(".mobile-nota-ini").addClass('nota-red');
+			}
+			$(".notas-title-fin").text('IDEB ' + anoFinais + ' (9º ano)');
+			$(".meta-fin-valor").text(metasFinais);
+			$(".nota-fin-valor").text(notasFinais);
+			if(notasFinais >= metasFinais){
+				if(notasFinais >= 6){
+					$(".mobile-nota-fin").addClass('nota-red');
+				} else {
+					$(".mobile-nota-fin").addClass('nota-yellow');
+				}
+			} else {
+				$(".mobile-nota-fin").addClass('nota-red');
+			}
+		} else if(notasIniciais != null){
+			$(".notas-title-ini").show();
+			$(".mobile-ideb-info-ini").show();
+			$(".notas-title-fin").hide();
+			$(".mobile-ideb-info-fin").hide();
+			$(".notas-title-ini").text('IDEB ' + anoIniciais + ' (5º ano)');
+			$(".meta-ini-valor").text(metasIniciais);
+			$(".nota-ini-valor").text(notasIniciais);
+			if(notasIniciais >= metasIniciais){
+				if(notasIniciais >= 6){
+					$(".mobile-nota-ini").addClass('nota-green');
+				} else {
+					$(".mobile-nota-ini").addClass('nota-yellow');
+				}
+			} else {
+				$(".mobile-nota-ini").addClass('nota-red');
+			}
+			$(".notas-title-fin").text('');
+			$(".meta-fin-valor").text('');
+			$(".nota-fin-valor").text('');
+		} else if(notasIniciais != null){
+			$(".notas-title-ini").hide();
+			$(".mobile-ideb-info-ini").hide();
+			$(".notas-title-fin").show();
+			$(".mobile-ideb-info-fin").show();
+			$(".notas-title-ini").text('');
+			$(".meta-ini-valor").text('');
+			$(".nota-ini-valor").text('');
+			$(".notas-title-fin").text('IDEB ' + anoFinais + ' (9º ano)');
+			$(".meta-fin-valor").text(metasFinais);
+			$(".nota-fin-valor").text(notasFinais);
+			if(notasFinais >= metasFinais){
+				if(notasFinais >= 6){
+					$(".mobile-nota-fin").addClass('nota-green');
+				} else {
+					$(".mobile-nota-fin").addClass('nota-yellow');
+				}
+			} else {
+				$(".mobile-nota-fin").addClass('nota-red');
+			}
+		} else {
+			$(".notas-title-ini").hide();
+			$(".mobile-ideb-info-ini").hide();
+			$(".notas-title-fin").hide();
+			$(".mobile-ideb-info-fin").hide();
+			$(".mobile-group-title").hide();
+			$(".mobile-ideb-resume").hide();
+		}
+	} else {
+		if(notasIniciais != null){
+			$('#linha1').show();
+			$('#linha1 .col-esq').html(
+					'<div class="ideb-notas">'+
+					'<h3>Nota e meta do IDEB - Fundamental I</h3>'+
+					'<h3>'+anoIniciais+'</h3>'+
+					'<div class="notas-iniciais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
 					'<div class="notas-circle">'+
-						'<div class="inner-notas">'+
-							'<span>Nota</span>'+
-							'<h4>'+notasIniciais+'</h4>'+
-						'</div>'+
+					'<div class="inner-notas">'+
+					'<span>Nota</span>'+
+					'<h4>'+notasIniciais+'</h4>'+
 					'</div>'+
-				'</div>'+
-				'<div class="metas-iniciais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
+					'</div>'+
+					'</div>'+
+					'<div class="metas-iniciais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
 					'<div class="metas-circle">'+
-						'<div class="inner-notas">'+
-							'<span>Meta</span>'+
-							'<h4>'+metasIniciais+'</h4>'+
-						'</div>'+
+					'<div class="inner-notas">'+
+					'<span>Meta</span>'+
+					'<h4>'+metasIniciais+'</h4>'+
 					'</div>'+
-				'</div>'+
+					'</div>'+
+					'</div>'+
 			'</div>');
-		if(notasFinais != null){
-			$('#linha1 .col-dir').html(
-				'<div class="ideb-metas">'+
+			if(notasFinais != null){
+				$('#linha1 .col-dir').html(
+						'<div class="ideb-metas">'+
+						'<h3>Nota e meta do IDEB - Fundamental II</h3>'+
+						'<h3>'+anoFinais+'</h3>'+
+						'<div class="notas-finais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
+						'<div class="notas-circle">'+
+						'<div class="inner-notas">'+
+						'<span>Nota</span>'+
+						'<h4>'+notasFinais+'</h4>'+
+						'</div>'+
+						'</div>'+
+						'</div>'+
+						'<div class="metas-finais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
+						'<div class="metas-circle">'+
+						'<div class="inner-notas">'+
+						'<span>Meta</span>'+
+						'<h4>'+metasFinais+'</h4>'+
+						'</div>'+
+						'</div>'+
+						'</div>'+
+				'</div>');
+				$('#linha2').show();
+				$('#linha2 .col-esq').html(
+						'<hr>'+
+						'<div class="ideb-evolucao">'+
+						'<h3>Evolução do IDEB - Fundamental I</h3>'+
+						'<div class="evolucao-iniciais">'+
+						getCanvas("evolucao5")+
+						'</div>'+
+				'</div>');
+				$('#linha2 .col-dir').html(
+						'<div class="ideb-evolucao">'+
+						'<div class="evolucao-finais">'+
+						'<h3>Evolução do IDEB - Fundamental II</h3>'+
+						'<canvas id="evolucao9" width="400" height="300"></canvas>'+
+						'</div>'+
+				'</div>');
+			} else {
+				$('#linha2').hide();
+				$('#linha1 .col-dir').html(
+						'<hr>'+
+						'<div class="ideb-evolucao">'+
+						'<h3>Evolução do IDEB - Fundamental I</h3>'+
+						'<div class="evolucao-iniciais">'+
+						getCanvas("evolucao5")+
+						'</div>'+
+				'</div>');
+			}
+		} else {
+			$('#linha2').hide();
+			$('#linha1 .col-esq').html(
+					'<div class="ideb-metas">'+
 					'<h3>Nota e meta do IDEB - Fundamental II</h3>'+
 					'<h3>'+anoFinais+'</h3>'+
 					'<div class="notas-finais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-						'<div class="notas-circle">'+
-							'<div class="inner-notas">'+
-								'<span>Nota</span>'+
-								'<h4>'+notasFinais+'</h4>'+
-							'</div>'+
-						'</div>'+
+					'<div class="notas-circle">'+
+					'<div class="inner-notas">'+
+					'<span>Nota</span>'+
+					'<h4>'+notasFinais+'</h4>'+
+					'</div>'+
+					'</div>'+
 					'</div>'+
 					'<div class="metas-finais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-						'<div class="metas-circle">'+
-							'<div class="inner-notas">'+
-								'<span>Meta</span>'+
-								'<h4>'+metasFinais+'</h4>'+
-							'</div>'+
-						'</div>'+
+					'<div class="metas-circle">'+
+					'<div class="inner-notas">'+
+					'<span>Meta</span>'+
+					'<h4>'+metasFinais+'</h4>'+
 					'</div>'+
-				'</div>');
-			$('#linha2').show();
-			$('#linha2 .col-esq').html(
-				'<hr>'+
-				'<div class="ideb-evolucao">'+
-					'<h3>Evolução do IDEB - Fundamental I</h3>'+
-					'<div class="evolucao-iniciais">'+
-						getCanvas("evolucao5")+
 					'</div>'+
-				'</div>');
-			$('#linha2 .col-dir').html(
-				'<div class="ideb-evolucao">'+
-					'<div class="evolucao-finais">'+
-						'<h3>Evolução do IDEB - Fundamental II</h3>'+
-						'<canvas id="evolucao9" width="400" height="300"></canvas>'+
 					'</div>'+
-				'</div>');
-		} else {
-			$('#linha2').hide();
+			'</div>');
 			$('#linha1 .col-dir').html(
 					'<hr>'+
 					'<div class="ideb-evolucao">'+
-					'<h3>Evolução do IDEB - Fundamental I</h3>'+
-					'<div class="evolucao-iniciais">'+
-						getCanvas("evolucao5")+
-					'</div>'+
-				'</div>');
-		}
-	} else {
-		$('#linha2').hide();
-		$('#linha1 .col-esq').html(
-				'<div class="ideb-metas">'+
-				'<h3>Nota e meta do IDEB - Fundamental II</h3>'+
-				'<h3>'+anoFinais+'</h3>'+
-				'<div class="notas-finais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-					'<div class="notas-circle">'+
-						'<div class="inner-notas">'+
-							'<span>Nota</span>'+
-							'<h4>'+notasFinais+'</h4>'+
-						'</div>'+
-					'</div>'+
-				'</div>'+
-				'<div class="metas-finais col-xs-12 col-sm-6 col-md-6 col-lg-6">'+
-					'<div class="metas-circle">'+
-						'<div class="inner-notas">'+
-							'<span>Meta</span>'+
-							'<h4>'+metasFinais+'</h4>'+
-						'</div>'+
-					'</div>'+
-				'</div>'+
-			'</div>');
-		$('#linha1 .col-dir').html(
-				'<hr>'+
-				'<div class="ideb-evolucao">'+
-				'<div class="evolucao-finais">'+
+					'<div class="evolucao-finais">'+
 					'<h3>Evolução do IDEB - Fundamental II</h3>'+
 					'<canvas id="evolucao9" width="400" height="300"></canvas>'+
-				'</div>'+
+					'</div>'+
 			'</div>');
+		}
 	}
 	
-	updateGraficoIdeb(data);
+	if(viewWidth < 620){
+		
+	} else {
+		updateGraficoIdeb(data);
+	}
 }
 
 function trataNotas(nota){

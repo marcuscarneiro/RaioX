@@ -368,15 +368,15 @@
 }
 
 .mobile-nota-red {
-	color: red;
+	color: #d8320c;
 }
 
 .mobile-nota-green {
-	color: green;
+	color: #017e00;
 }
 
 .mobile-nota-yellow {
-	color: #d6d600;
+	color: #e9ce14;
 }
 
 .mobile-nota-grey {
@@ -506,6 +506,38 @@
 	background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));
 }
 
+.fiscalizacao-datas-mobile {
+    display: flex;
+    margin: 20px auto 0 auto;
+    flex-direction: row;
+}
+
+.fiscalizacao-datas-mobile ul {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    display: flex;
+}
+
+.fiscalizacao-datas-mobile li {
+	padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+	display: inline-block;
+	transition: all .5s ease-in-out;
+	list-style: none;
+    cursor: pointer;
+    font-size: 11px;
+    margin: 6px;
+    
+}
+
+.fiscalizacao-datas-mobile .data-active {
+    background: #2b7093;
+    text-decoration: none;
+    color: white;
+}
+
 .escola-mobile-content {
     display: flex;
     flex-direction: column;
@@ -531,6 +563,10 @@
     color: #9b9b9b;
     margin: 20px 0 10px 0;
     text-align: center;
+}
+
+.mobile-ideb-resume {
+	font-size: 12px;
 }
 
 .mobile-ideb-info-ini, .mobile-ideb-info-fin {
@@ -591,18 +627,18 @@
 }
 
 .nota-red {
-	color: red;
-	border-color: red; 
+	color: #d8320c;
+	border-color: #d8320c; 
 }
 
 .nota-green {
-	color: green;
-	border-color: green; 
+	color: #017e00;
+	border-color: #017e00; 
 }
 
 .nota-yellow {
-	color: yellow;
-	border-color: yellow; 
+	color: #e9ce14;
+	border-color: #e9ce14; 
 }
 
 /* FOOTER MOBILE */
@@ -1010,22 +1046,71 @@
 		border-radius: 50px;
 	}
 	
-	.aprendizado-grafico > .aprendizado-red {
-		background-color: red;
-		border-color: red;
+	.aprendizado-grafico > .aprendizado-0 {
+		background-color: #f00;
+		border-color: #f00;
 	}
 	
-	.aprendizado-grafico > .aprendizado-green {
-		background-color: green;
-		border-color: green;
+	.aprendizado-grafico > .aprendizado-1 {
+		background-color: #f60;
+		border-color: #f60;
 	}
 	
-	.aprendizado-grafico > .aprendizado-yellow {
-		background-color: yellow;
-		border-color: yellow;
+	.aprendizado-grafico > .aprendizado-2 {
+		background-color: #fc9700;
+		border-color: #fc9700;
+	}
+	
+	.aprendizado-grafico > .aprendizado-3 {
+		background-color: #fcc115;
+		border-color: #fcc115;
+	}
+	
+	.aprendizado-grafico > .aprendizado-4 {
+		background-color: #fde51f;
+		border-color: #fde51f;
+	}
+	
+	.aprendizado-grafico > .aprendizado-5 {
+		background-color: #f6fd2c;
+		border-color: #f6fd2c;
+	}
+	
+	.aprendizado-grafico > .aprendizado-6 {
+		background-color: #c9de26;
+		border-color: #c9de26;
+	}
+	
+	.aprendizado-grafico > .aprendizado-7 {
+		background-color: #87cc1d;
+		border-color: #87cc1d;
+	}
+	
+	.aprendizado-grafico > .aprendizado-8 {
+		background-color: #63b916;
+		border-color: #63b916;
+	}
+	
+	.aprendizado-grafico > .aprendizado-9 {
+		background-color: #3ea50f;
+		border-color: #3ea50f;
 	}
 	
 	.aprendizado-text {
 		font-size: 11px;
 	}
+	
+	.escola-mobile-questionario {
+		margin-top: 15px;
+	}
+	
+	.fiscalizacao-questionario ul {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.mobile-aprendizado {
+		margin-top: 35px;
+	}
+	
 }

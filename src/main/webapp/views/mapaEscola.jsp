@@ -1942,7 +1942,9 @@
 				<div class="escola-mobile-content">
 					<span class="escola-mobile-nome"></span>
 					<span class="escola-mobile-endereco"></span>
-					<div class="fiscalizacao-datas"></div>
+					<div class="fiscalizacao-datas-mobile">
+						<ul></ul>
+					</div>
 	
 					<div class="escola-mobile-galeria">
 						<a id="foto-visita-1" class="fancybox big-box" href="" rel="fotoescola" title="">
@@ -1974,7 +1976,7 @@
 						</ul>
 					</div>
 					
-					<span class="mobile-group-title">Dados do IDEB</span>
+					<span class="mobile-group-title mobile-ideb">Dados do IDEB</span>
 					<span class="mobile-ideb-resume">
 						O IDEB é o índice oficial de medição da qualidade da educação básica no Brasil.
 					</span>
@@ -1991,7 +1993,7 @@
 								<span class="nota-ini-valor">5.9</span>
 							</div>
 						</div>
-						<canvas id="evolucao5" width="300" height="200"></canvas>
+						<div class="mobile-ideb-ini-grafico"></div>
 					</div>
 					
 					<span class="notas-title-fin">IDEB 2017 (9º ano)</span>
@@ -2001,15 +2003,15 @@
 								<span class="meta-fin-title">META</span>
 								<span class="meta-fin-valor">6.2</span>
 							</div>
-							<div class="mobile-nota-fin nota-red">
+							<div class="mobile-nota-fin">
 								<span class="nota-fin-title">NOTA</span>
 								<span class="nota-fin-valor">5.9</span>
 							</div>
 						</div>
-						<canvas id="evolucao9" width="300" height="200"></canvas>
+						<div class="mobile-ideb-fin-grafico"></div>
 					</div>
 					
-					<span class="mobile-group-title">Qualidade do aprendizado</span>
+					<span class="mobile-group-title mobile-aprendizado">Qualidade do aprendizado</span>
 					<div class="escola-mobile-aprendizado">
 						<div class="aprendizado-port-ini aprendizado-group">
 							<span class="port-ini-title">Português - 5º ano</span>
@@ -2120,16 +2122,16 @@
 						</div>
 					</div>
 	
+					<span class="mobile-group-title">Questionário aplicado</span>
 					<div class="escola-mobile-questionario">
-						
 					</div>
 					
 					<div class="escola-mobile-relatorio">
-					
+						
 					</div>
 					
 					<div class="escola-mobile-requerimentos">
-					
+						
 					</div>
 				</div>				
 			</div>
