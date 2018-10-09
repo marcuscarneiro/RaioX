@@ -591,7 +591,11 @@ function resizeMarker(marker){
 	}
 
 	if(marker != actualMarker){
-		showEscola(marker.feature.properties.Escola, marker.feature.properties.ID);
+		if(viewWidth < 620){
+			loadEscolaMobile(marker.feature.properties.ID, marker.feature.properties.Escola, marker.feature.properties.Endereco);
+		} else {
+			showEscola(marker.feature.properties.Escola, marker.feature.properties.ID);
+		}
 		$("#schools").val("");
 		if(modo === 'all' || modo === "meta" || modo === "novas"){
 			marker.setIcon(L.icon({
@@ -703,26 +707,49 @@ function escolasClick(){
 
 function goToPoint(marker){
 	if(map.getZoom() != 15){
-		map.setView(marker.getLatLng(), 15, {
-			pan: {
-				animate: true,
-				duration: 1
-			},
-			zoom: {
-				animate: true
-			}
-		});
-		map.panTo(marker.getLatLng());
+		if(viewWidth < 620){
+			map.setViewOffset(marker.getLatLng(),[0,-150],15, {
+				pan: {
+					animate: true,
+					duration: 1
+				},
+				zoom: {
+					animate: true
+				}
+			});
+		} else {
+			map.setView(marker.getLatLng(), 15, {
+				pan: {
+					animate: true,
+					duration: 1
+				},
+				zoom: {
+					animate: true
+				}
+			});
+		}
 	} else {
-		map.setView(marker.getLatLng(), 15, {
-			pan: {
-				animate: true,
-				duration: 2
-			},
-			zoom: {
-				animate: true
-			}
-		});
+		if(viewWidth < 620){
+			map.setViewOffset(marker.getLatLng(),[0,-150],15, {
+				pan: {
+					animate: true,
+					duration: 2
+				},
+				zoom: {
+					animate: true
+				}
+			});
+		} else {
+			map.setView(marker.getLatLng(), 15, {
+				pan: {
+					animate: true,
+					duration: 2
+				},
+				zoom: {
+					animate: true
+				}
+			});
+		}
 	}
 }
 
@@ -962,7 +989,7 @@ function showEscola(esc, id){
 		consultaDadosIdeb(id);
 		consultaProvaBrasil(id);
 		$(".fiscalizacao-datas li").remove();
-		$(".fiscalizacao-datas-mobile li").remove();
+		$(".fiscalizacao-datas-mobile ul li").remove();
 		mapVisita = new Object();
 		ordemAtual = 0;
 		consultaVisitas(id);
