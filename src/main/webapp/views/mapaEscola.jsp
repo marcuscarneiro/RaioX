@@ -2122,16 +2122,17 @@
 						</div>
 					</div>
 	
-					<span class="mobile-group-title">Questionário aplicado</span>
+					<span class="mobile-group-title mobile-questionario">Questionário aplicado</span>
 					<div class="escola-mobile-questionario">
 					</div>
 					
-					<div class="escola-mobile-relatorio">
-						
-					</div>
 					
+					<div class="escola-mobile-relatorio">
+						<span class="btn-relatorio">RELATÓRIO COMPLETO</span>
+						<a target="_blank" href="#" class="btn-relatorio">RELATÓRIO COMPLETO</a>
+					</div>
 					<div class="escola-mobile-requerimentos">
-						
+						<a target="_blank" href="#" class="btn-requerimento">REQUERIMENTOS</a>
 					</div>
 				</div>				
 			</div>

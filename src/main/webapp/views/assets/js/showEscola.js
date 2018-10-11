@@ -2,12 +2,12 @@ function loadEscolaMobile(id, nome, endereco) {
 	if(lista){
 		fechaPainelMobile('lista');
 	}
-    $('.map-container-loading').addClass('loading-show');
-    $('.escola-mobile-nome').html(nome);
-    $('.escola-mobile-endereco').html(endereco);
-    $(".fiscalizacao-datas li").remove();
+	$('.map-container-loading').addClass('loading-show');
+	$('.escola-mobile-nome').html(nome);
+	$('.escola-mobile-endereco').html(endereco);
+	$(".fiscalizacao-datas li").remove();
 	$(".fiscalizacao-datas-mobile ul li").remove();
-    getEscolaMobileInfo(id);
+	getEscolaMobileInfo(id);
 }
 
 function getEscolaMobileInfo(id){
@@ -16,11 +16,11 @@ function getEscolaMobileInfo(id){
 		removeAllRpaLayers();
 		setAllRpaLayers();
 		$('#'+id).click();
-    	consultaDadosIdebMobile(id);
+		consultaDadosIdebMobile(id);
 		consultaProvaBrasilMobile(id);
 		consultaVisitas(id);
 		abrePainelMobile('escola');
-    }, 2000);
+	}, 2000);
 }
 
 function consultaDadosIdebMobile(id){
@@ -121,53 +121,71 @@ function updateAprendizadoMobile(data){
 		$('.aprendizado-port-ini').show();
 		$('.aprendizado-mat-ini').show();
 
-		if(porc_aprend_lp_5 < '60'){
-			$('.port-ini-text').text('Apenas ' + porc_aprend_lp_5 + '% dos alunos aprenderam adequadamente');
+		if(porc_aprend_lp_5 < '50'){
+			if(porc_aprend_lp_5 < '1'){
+				$('.port-ini-text').html('<strong>Nenhum dos alunos aprendeu adequadamente</strong>');
+			} else {
+				$('.port-ini-text').html('Apenas <strong>' + porc_aprend_lp_5 + '%</strong> dos alunos aprenderam adequadamente');
+			}
 		} else {
-			$('.port-ini-text').text(porc_aprend_lp_5 + '% dos alunos aprenderam adequadamente');
+			$('.port-ini-text').html('<strong>'+porc_aprend_lp_5 + '%</strong> dos alunos aprenderam adequadamente');
 		}
-		fillAprendizadoChart('port-ini', porc_aprend_lp_5.toString().slice(0, -1));
+		fillAprendizadoChart('port-ini', porc_aprend_lp_5);
 		
-		if(porc_aprend_mt_5 < '60'){
-			$('.mat-ini-text').text('Apenas ' + porc_aprend_mt_5 + '% dos alunos aprenderam adequadamente');
+		if(porc_aprend_mt_5 < '50'){
+			if(porc_aprend_mt_5 < '1'){
+				$('.mat-ini-text').html('<strong>Nenhum dos alunos aprendeu adequadamente</strong>');
+			} else {
+				$('.mat-ini-text').html('Apenas <strong>' + porc_aprend_mt_5 + '%</strong> dos alunos aprenderam adequadamente');
+			}
 		} else {
-			$('.mat-ini-text').text(porc_aprend_mt_5 + '% dos alunos aprenderam adequadamente');
+			$('.mat-ini-text').html('<strong>'+porc_aprend_mt_5 + '%</strong> dos alunos aprenderam adequadamente');
 		}
-		fillAprendizadoChart('mat-ini', porc_aprend_mt_5.toString().slice(0, -1));
-	} else if (porc_aprend_lp_9 != null){
+		fillAprendizadoChart('mat-ini', porc_aprend_mt_5);
+	}
+	
+	if(porc_aprend_lp_9 != null){
 		$('.aprendizado-port-fin').show();
 		$('.aprendizado-mat-fin').show();
-		if(porc_aprend_lp_9 < '60'){
-			$('.port-fin-text').text('Apenas ' + porc_aprend_lp_9 + '% dos alunos aprenderam adequadamente');
+		if(porc_aprend_lp_9 < '50'){
+			if(porc_aprend_lp_9 < '1'){
+				$('.port-fin-text').html('<strong>Nenhum dos alunos aprendeu adequadamente</strong>');
+			} else {
+				$('.port-fin-text').html('Apenas <strong>' + porc_aprend_lp_9 + '%</strong> dos alunos aprenderam adequadamente');
+			}
 		} else {
-			$('.port-fin-text').text(porc_aprend_lp_9 + '% dos alunos aprenderam adequadamente');
+			$('.port-fin-text').html('<strong>'+porc_aprend_lp_9 + '%</strong> dos alunos aprenderam adequadamente');
 		}
-		fillAprendizadoChart('port-fin', porc_aprend_lp_9.toString().slice(0, -1));
+		fillAprendizadoChart('port-fin', porc_aprend_lp_9);
 		
-		if(porc_aprend_mt_9 < '60'){
-			$('.mat-fin-text').text('Apenas ' + porc_aprend_mt_9 + '% dos alunos aprenderam adequadamente');
+		if(porc_aprend_mt_9 < '50'){
+			if(porc_aprend_mt_9 < '1'){
+				$('.mat-fin-text').html('<strong>Nenhum dos alunos aprendeu adequadamente</strong>');
+			} else {
+				$('.mat-fin-text').html('Apenas <strong>' + porc_aprend_mt_9 + '%</strong> dos alunos aprenderam adequadamente');
+			}
 		} else {
-			$('.mat-fin-text').text(porc_aprend_mt_9 + '% dos alunos aprenderam adequadamente');
+			$('.mat-fin-text').html('<strong>'+porc_aprend_mt_9 + '%</strong> dos alunos aprenderam adequadamente');
 		}
-		fillAprendizadoChart('mat-fin', porc_aprend_mt_9.toString().slice(0, -1));
+		fillAprendizadoChart('mat-fin', porc_aprend_mt_9);
 	}
 }
 
 function fillAprendizadoChart(targetClass,  grade){
-	for (var i = 0; i < (grade*2)+1; i++) {
-		$('.'+targetClass+'-grafico' + ' #'+targetClass+'-circle-'+i).addClass('aprendizado-'+grade);
+	for (var i = 0; i < Math.ceil(grade/10)*2; i++) {
+		$('.'+targetClass+'-grafico' + ' #'+targetClass+'-circle-'+i).addClass('aprendizado-'+Math.ceil(grade/10));
 	}
 }
 
 L.Map.prototype.panToOffset = function (latlng, offset, options) {
-    var x = this.latLngToContainerPoint(latlng).x - offset[0]
-    var y = this.latLngToContainerPoint(latlng).y - offset[1]
-    var point = this.containerPointToLatLng([x, y])
-    return this.setView(point, this._zoom, { pan: options })
+	var x = this.latLngToContainerPoint(latlng).x - offset[0]
+	var y = this.latLngToContainerPoint(latlng).y - offset[1]
+	var point = this.containerPointToLatLng([x, y])
+	return this.setView(point, this._zoom, { pan: options })
 }
 
 L.Map.prototype.setViewOffset = function (latlng, offset, targetZoom) {
-    var targetPoint = this.project(latlng, targetZoom).subtract(offset),
-    targetLatLng = this.unproject(targetPoint, targetZoom);
-    return this.setView(targetLatLng, targetZoom);
+	var targetPoint = this.project(latlng, targetZoom).subtract(offset),
+	targetLatLng = this.unproject(targetPoint, targetZoom);
+	return this.setView(targetLatLng, targetZoom);
 }
