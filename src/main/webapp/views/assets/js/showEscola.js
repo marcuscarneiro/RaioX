@@ -2,12 +2,12 @@ function loadEscolaMobile(id, nome, endereco) {
 	if(lista){
 		fechaPainelMobile('lista');
 	}
-    $('.map-container-loading').addClass('loading-show');
-    $('.escola-mobile-nome').html(nome);
-    $('.escola-mobile-endereco').html(endereco);
-    $(".fiscalizacao-datas li").remove();
+	$('.map-container-loading').addClass('loading-show');
+	$('.escola-mobile-nome').html(nome);
+	$('.escola-mobile-endereco').html(endereco);
+	$(".fiscalizacao-datas li").remove();
 	$(".fiscalizacao-datas-mobile ul li").remove();
-    getEscolaMobileInfo(id);
+	getEscolaMobileInfo(id);
 }
 
 function getEscolaMobileInfo(id){
@@ -16,11 +16,11 @@ function getEscolaMobileInfo(id){
 		removeAllRpaLayers();
 		setAllRpaLayers();
 		$('#'+id).click();
-    	consultaDadosIdebMobile(id);
+		consultaDadosIdebMobile(id);
 		consultaProvaBrasilMobile(id);
 		consultaVisitas(id);
 		abrePainelMobile('escola');
-    }, 2000);
+	}, 2000);
 }
 
 function consultaDadosIdebMobile(id){
@@ -178,14 +178,14 @@ function fillAprendizadoChart(targetClass,  grade){
 }
 
 L.Map.prototype.panToOffset = function (latlng, offset, options) {
-    var x = this.latLngToContainerPoint(latlng).x - offset[0]
-    var y = this.latLngToContainerPoint(latlng).y - offset[1]
-    var point = this.containerPointToLatLng([x, y])
-    return this.setView(point, this._zoom, { pan: options })
+	var x = this.latLngToContainerPoint(latlng).x - offset[0]
+	var y = this.latLngToContainerPoint(latlng).y - offset[1]
+	var point = this.containerPointToLatLng([x, y])
+	return this.setView(point, this._zoom, { pan: options })
 }
 
 L.Map.prototype.setViewOffset = function (latlng, offset, targetZoom) {
-    var targetPoint = this.project(latlng, targetZoom).subtract(offset),
-    targetLatLng = this.unproject(targetPoint, targetZoom);
-    return this.setView(targetLatLng, targetZoom);
+	var targetPoint = this.project(latlng, targetZoom).subtract(offset),
+	targetLatLng = this.unproject(targetPoint, targetZoom);
+	return this.setView(targetLatLng, targetZoom);
 }

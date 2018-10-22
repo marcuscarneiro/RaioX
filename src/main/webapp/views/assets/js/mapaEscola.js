@@ -1104,24 +1104,31 @@ function processaVisitas(data){
 }
 
 function alteraVistoria(ordem){
-	$('.fiscalizacao-datas li').removeClass('data-active');
+	var relTargetClass, questTargetClass;
+	if(viewWidth < 620){
+		relTargetClass = '.escola-mobile-relatorio';
+		$('.fiscalizacao-datas-mobile li').removeClass('data-active');
+	} else {
+		relTargetClass = '.fiscalicazaoRelatorio';
+		$('.fiscalizacao-datas li').removeClass('data-active');
+	}
 	$('.vistoria-'+ordem).addClass('data-active');
 	
-	$(".fiscalicazaoRelatorio").fadeOut();
+	$(relTargetClass).hide();
 	var vistoria = getVisita(ordem);
 	if(vistoria.relatorio != null){
 		rel = true;
-		$(".fiscalicazaoRelatorio").fadeIn();
-		$(".fiscalicazaoRelatorio").css('display', 'block');
-		$(".fiscalicazaoRelatorio span").css('display', 'none');
-		$(".fiscalicazaoRelatorio a").css('display', 'inline-block');
-		$(".fiscalicazaoRelatorio a").attr('href', contextPath + vistoria.relatorio);
+		$(relTargetClass).show();
+		$(relTargetClass).css('display', 'block');
+		$(relTargetClass + " span").css('display', 'none');
+		$(relTargetClass + " a").css('display', 'inline-block');
+		$(relTargetClass + " a").attr('href', contextPath + vistoria.relatorio);
 	} else {
 		rel = false;
-		$(".fiscalicazaoRelatorio").fadeIn();
-		$(".fiscalicazaoRelatorio").css('display', 'block');
-		$(".fiscalicazaoRelatorio a").css('display', 'none');
-		$(".fiscalicazaoRelatorio span").css('display', 'inline-block');
+		$(relTargetClass).show();
+		$(relTargetClass).css('display', 'block');
+		$(relTargetClass + " a").css('display', 'none');
+		$(relTargetClass + " span").css('display', 'inline-block');
 	}
 	
 	if(vistoria.sa1){
@@ -1129,22 +1136,28 @@ function alteraVistoria(ordem){
 			updateVisitas(vistoria);
 			ordemAtual = ordem;
 		}
-		
 		$(".fiscalizacao-questionario").show();
+		$(".mobile-questionario").show();
 		$(".fiscalizacao-questionario ul").show();
 		$(".fiscalizacao-questionario h3").text("Informações da escola");
 	} else {
 		if(vistoria.atualizacao == "true"){
+			$(".mobile-questionario").show();
 			$(".fiscalizacao-questionario").show();
 			$(".fiscalizacao-questionario ul").hide();
 			$(".fiscalizacao-questionario h3").text("Vistoria de atualização");
 		} else {
 			$(".fiscalizacao-questionario").hide();
+			$(".mobile-questionario").hide();
 		}
 	}
 };
 
 $('.fiscalicazaoRelatorio span').on('click', function(){
+	swal("Relatório indisponível", "Em breve iremos cadastrá-lo aqui", "error");
+});
+
+$('.escola-mobile-relatorio span').on('click', function(){
 	swal("Relatório indisponível", "Em breve iremos cadastrá-lo aqui", "error");
 });
 
