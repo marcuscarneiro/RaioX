@@ -572,6 +572,7 @@
 .mobile-ideb-info-ini, .mobile-ideb-info-fin {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-around;
 }
 
 .escola-mobile-notas {
@@ -1113,4 +1114,13 @@
 		margin-top: 35px;
 	}
 	
+	#mobile-ideb-ini-grafico {
+		width: 80%;
+		height: 150px;
+	}
+	
+	#mobile-ideb-fin-grafico {
+		width: 80%;
+		height: 150px;
+	}
 }

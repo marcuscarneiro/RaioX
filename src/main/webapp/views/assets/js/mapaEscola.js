@@ -3220,3 +3220,138 @@ $("#layers-ui").on('mouseover', function() {
 $("#layers-options").on('mouseout', function() {
 	$("#layers-options").hide();
 });
+
+var data = [{
+	time: '2007',
+	value: 4.1 ,
+	type: 'Nota'
+}, {
+	time: '09',
+	value: 5,
+	type: 'Nota'
+}, {
+	time: '11',
+	value: 4.3,
+	type: 'Nota'
+}, {
+	time: '13',
+	value: 5.5,
+	type: 'Nota'
+}, {
+	time: '15',
+	value: 4.5,
+	type: 'Nota'
+}, {
+	time: '17',
+	value: 6,
+	type: 'Nota'
+}, {
+	time: '19',
+	value: null,
+	type: 'Nota'
+}, {
+	time: '2021',
+	value: null,
+	type: 'Nota'
+}, {
+	time: '2007',
+	value: null,
+	type: 'Meta'
+}, {
+	time: '09',
+	value: 4.3,
+	type: 'Meta'
+}, {
+	time: '11',
+	value: 4.7,
+	type: 'Meta'
+}, {
+	time: '13',
+	value: 4.9,
+	type: 'Meta'
+}, {
+	time: '15',
+	value: 5.2,
+	type: 'Meta'
+}, {
+	time: '17',
+	value: 5.5,
+	type: 'Meta'
+}, {
+	time: '19',
+	value: 5.7,
+	type: 'Meta'
+}, {
+	time: '2021',
+	value: 6,
+	type: 'Meta'
+}];
+
+var chart = new F2.Chart({
+	id: 'mobile-ideb-ini-grafico',
+	pixelRatio: window.devicePixelRatio
+});
+chart.source(data, {
+	value: {
+		nice: false,
+		min: 3,
+		max: 7,
+		tickCount: 5
+	}
+});
+chart.scale('time', {
+	tickCount: 7
+});
+chart.axis('time');
+chart.axis('value');
+
+chart.tooltip({
+	showCrosshairs: true,
+	custom: true,
+	onChange: function onChange(obj) {
+		var legend = chart.get('legendController').legends.top[0];
+		var tooltipItems = obj.items;
+		var legendItems = legend.items;
+		var map = {};
+		legendItems.map(function(item) {
+			map[item.name] = _.clone(item);
+		});
+		tooltipItems.map(function(item) {
+			var name = item.name;
+			var value = item.value;
+			if (map[name]) {
+				map[name].value = value;
+			}
+		});
+		legend.setItems(_.values(map));
+	},
+	onHide: function onHide() {
+		var legend = chart.get('legendController').legends.top[0];
+		legend.setItems(chart.getLegendItems().type);
+	}
+});
+chart.area().position('time*value').color('type', function(val) {
+    if (val === 'Meta') {
+        return '#808080';
+      } else if (val === 'Nota') {
+        return '#017e00';
+      }
+    }).shape('smooth');
+chart.line().position('time*value').color('type', function(val) {
+    if (val === 'Meta') {
+        return '#808080';
+      } else if (val === 'Nota') {
+        return '#017e00';
+      }
+    }).shape('smooth');
+chart.point().position('time*value').color('type', function(val) {
+    if (val === 'Meta') {
+        return '#808080';
+      } else if (val === 'Nota') {
+        return '#017e00';
+      }
+    }).style({
+	stroke: '#fff',
+	lineWidth: 1
+});
+chart.render();

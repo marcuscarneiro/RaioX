@@ -18,6 +18,10 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/fab-menu.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mobile.css" />
 
+		<script>document.body.clientHeight;</script>
+
+		<script src="https://gw.alipayobjects.com/os/antv/assets/f2/3.2.3/f2.min.js"></script>
+		<script src="https://gw.alipayobjects.com/os/antv/assets/lib/lodash-4.17.4.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery-ui.min.js"></script>
@@ -1993,7 +1997,7 @@
 								<span class="nota-ini-valor">5.9</span>
 							</div>
 						</div>
-						<div class="mobile-ideb-ini-grafico"></div>
+						<canvas id="mobile-ideb-ini-grafico"></canvas>
 					</div>
 					
 					<span class="notas-title-fin">IDEB 2017 (9º ano)</span>
@@ -2008,7 +2012,8 @@
 								<span class="nota-fin-valor">5.9</span>
 							</div>
 						</div>
-						<div class="mobile-ideb-fin-grafico"></div>
+						<div id="mobile-ideb-fin-grafico">
+						</div>
 					</div>
 					
 					<span class="mobile-group-title mobile-aprendizado">Nível do aprendizado</span>
