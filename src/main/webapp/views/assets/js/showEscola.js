@@ -67,7 +67,238 @@ function updateIdebMobile(data){
 	
 	// TO-DO UPDATE INFORMAÇÕES
 	
-//	updateGraficoIdeb(data);
+	updateGraficoIdebMobile(data);
+}
+
+function updateGraficoIdebMobile(data, colorIni, colorFin){
+	var chartDataIni = [{
+			time: '2005',
+			value: trataNotas(data.did_meta_2005_ini),
+			type: 'Meta'
+		}, {
+			time: '2007',
+			value: trataNotas(data.did_meta_2007_ini),
+			type: 'Meta'
+		}, {
+			time: '2009',
+			value: trataNotas(data.did_meta_2009_ini),
+			type: 'Meta'
+		}, {
+			time: '2011',
+			value: trataNotas(data.did_meta_2011_ini),
+			type: 'Meta'
+		}, {
+			time: '2013',
+			value: trataNotas(data.did_meta_2013_ini),
+			type: 'Meta'
+		}, {
+			time: '2015',
+			value: trataNotas(data.did_meta_2015_ini),
+			type: 'Meta'
+		}, {
+			time: '2017',
+			value: trataNotas(data.did_meta_2017_ini),
+			type: 'Meta'
+		}, {
+			time: '2019',
+			value: trataNotas(data.did_meta_2019_ini),
+			type: 'Meta'
+		}, {
+			time: '2021',
+			value: trataNotas(data.did_meta_2021_ini),
+			type: 'Meta'
+		}, {
+			time: '2005',
+			value: trataNotas(data.did_ideb_2005_ini),
+			type: 'Nota'
+		}, {
+			time: '2007',
+			value: trataNotas(data.did_ideb_2007_ini),
+			type: 'Nota'
+		}, {
+			time: '2009',
+			value: trataNotas(data.did_ideb_2009_ini),
+			type: 'Nota'
+		}, {
+			time: '2011',
+			value: trataNotas(data.did_ideb_2011_ini),
+			type: 'Nota'
+		}, {
+			time: '2013',
+			value: trataNotas(data.did_ideb_2013_ini),
+			type: 'Nota'
+		}, {
+			time: '2015',
+			value: trataNotas(data.did_ideb_2015_ini),
+			type: 'Nota'
+		}, {
+			time: '2017',
+			value: trataNotas(data.did_ideb_2017_ini),
+			type: 'Nota'
+		}, {
+			time: '2019',
+			value: trataNotas(data.did_ideb_2019_ini),
+			type: 'Nota'
+		}, {
+			time: '2021',
+			value: trataNotas(data.did_ideb_2021_ini),
+			type: 'Nota'
+		}
+	];
+	
+	var chartDataFin = [{
+			time: '2005',
+			value: trataNotas(data.did_meta_2005_fin),
+			type: 'Meta'
+		}, {
+			time: '2007',
+			value: trataNotas(data.did_meta_2007_fin),
+			type: 'Meta'
+		}, {
+			time: '2009',
+			value: trataNotas(data.did_meta_2009_fin),
+			type: 'Meta'
+		}, {
+			time: '2011',
+			value: trataNotas(data.did_meta_2011_fin),
+			type: 'Meta'
+		}, {
+			time: '2013',
+			value: trataNotas(data.did_meta_2013_fin),
+			type: 'Meta'
+		}, {
+			time: '2015',
+			value: trataNotas(data.did_meta_2015_fin),
+			type: 'Meta'
+		}, {
+			time: '2017',
+			value: trataNotas(data.did_meta_2017_fin),
+			type: 'Meta'
+		}, {
+			time: '2019',
+			value: trataNotas(data.did_meta_2019_fin),
+			type: 'Meta'
+		}, {
+			time: '2021',
+			value: trataNotas(data.did_meta_2021_fin),
+			type: 'Meta'
+		}, {
+			time: '2005',
+			value: trataNotas(data.did_ideb_2005_fin),
+			type: 'Nota'
+		}, {
+			time: '2007',
+			value: trataNotas(data.did_ideb_2007_fin),
+			type: 'Nota'
+		}, {
+			time: '2009',
+			value: trataNotas(data.did_ideb_2009_fin),
+			type: 'Nota'
+		}, {
+			time: '2011',
+			value: trataNotas(data.did_ideb_2011_fin),
+			type: 'Nota'
+		}, {
+			time: '2013',
+			value: trataNotas(data.did_ideb_2013_fin),
+			type: 'Nota'
+		}, {
+			time: '2015',
+			value: trataNotas(data.did_ideb_2015_fin),
+			type: 'Nota'
+		}, {
+			time: '2017',
+			value: trataNotas(data.did_ideb_2017_fin),
+			type: 'Nota'
+		}, {
+			time: '2019',
+			value: trataNotas(data.did_ideb_2019_fin),
+			type: 'Nota'
+		}, {
+			time: '2021',
+			value: trataNotas(data.did_ideb_2021_fin),
+			type: 'Nota'
+		}
+	];
+
+	if(testaIdebIni(data)){
+		renderMobileIdebChart(chartDataIni, 'mobile-ideb-ini-grafico', colorIni);
+	}
+	
+	if(testaIdebFin(data)){
+		renderMobileIdebChart(chartDataFin, 'mobile-ideb-fin-grafico', colorFin);
+	}
+}
+
+function renderMobileIdebChart(data, periodo, color){
+	var chart = new F2.Chart({
+		id: periodo,
+		pixelRatio: window.devicePixelRatio
+	});
+	chart.source(data, {
+		value: {
+			nice: false,
+			min: 2,
+			max: 7,
+			tickCount: 6
+		}
+	});
+	chart.scale('time', {
+		tickCount: 5
+	});
+	chart.axis('time');
+	chart.axis('value');
+
+	chart.tooltip({
+		showCrosshairs: true,
+		custom: true,
+		onChange: function onChange(obj) {
+			var legend = chart.get('legendController').legends.top[0];
+			var tooltipItems = obj.items;
+			var legendItems = legend.items;
+			var map = {};
+			legendItems.map(function(item) {
+				map[item.name] = _.clone(item);
+			});
+			tooltipItems.map(function(item) {
+				var name = item.name;
+				var value = item.value;
+				if (map[name]) {
+					map[name].value = value;
+				}
+			});
+			legend.setItems(_.values(map));
+		},
+		onHide: function onHide() {
+			var legend = chart.get('legendController').legends.top[0];
+			legend.setItems(chart.getLegendItems().type);
+		}
+	});
+	chart.area().position('time*value').color('type', function(val) {
+		if (val === 'Nota') {
+	        return color;
+	      } else if (val === 'Meta') {
+		        return '#808080';
+	      }
+	    }).shape('smooth');
+	chart.line().position('time*value').color('type', function(val) {
+		if (val === 'Nota') {
+	        return color;
+	      } else if (val === 'Meta') {
+		        return '#808080';
+	      }
+	    }).shape('smooth');
+	chart.point().position('time*value').color('type', function(val) {
+	    if (val === 'Nota') {
+	        return color;
+	      } else if (val === 'Meta') {
+		        return '#808080';
+	      }
+	    }).style({
+		stroke: '#fff',
+		lineWidth: 1
+	});
+	chart.render();
 }
 
 function idebVazio(){

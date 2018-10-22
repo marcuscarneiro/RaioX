@@ -2012,8 +2012,7 @@
 								<span class="nota-fin-valor">5.9</span>
 							</div>
 						</div>
-						<div id="mobile-ideb-fin-grafico">
-						</div>
+						<canvas id="mobile-ideb-fin-grafico"></canvas>
 					</div>
 					
 					<span class="mobile-group-title mobile-aprendizado">Nível do aprendizado</span>
