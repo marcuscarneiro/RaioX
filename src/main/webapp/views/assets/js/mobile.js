@@ -16,7 +16,7 @@ let estadoRealFiltros = [
 	{name: 'quadra', value: false},
 	{name: 'acessibilidade', value: false}
 ];
-let estadoTemporarioFiltros = estadoRealFiltros.slice();
+let estadoTemporarioFiltros = JSON.parse(JSON.stringify(estadoRealFiltros));
 
 function showFab() {
 	if($('#container-floating').hasClass('floating-show')){
@@ -186,15 +186,19 @@ $(document).ready(function(){
 	$(".mobile-opcoes-lista [type=checkbox]").on('click', function() {
 		var index = estadoTemporarioFiltros.findIndex(e => e.name == $(this).attr('name'));
 		estadoTemporarioFiltros[index].value = $(this).is(':checked');
-		if(JSON.stringify(estadoTemporarioFiltros) === JSON.stringify(estadoRealFiltros)) {
-			$('.menu-save').addClass('menu-save-disabled');
-			$('.menu-save').attr('onclick', '');
-		} else {
-			$('.menu-save').removeClass('menu-save-disabled');
-			$('.menu-save').attr('onclick', 'salvaFiltro()');
-		}
+		testFilterChange();
 	});
 });
+
+function testFilterChange(){
+	if(JSON.stringify(estadoTemporarioFiltros) === JSON.stringify(estadoRealFiltros)) {
+		$('.menu-save').addClass('menu-save-disabled');
+		$('.menu-save').attr('onclick', '');
+	} else {
+		$('.menu-save').removeClass('menu-save-disabled');
+		$('.menu-save').attr('onclick', 'salvaFiltro()');
+	}
+}
 
 function filtraTodosMobile(){
 	if($('#btnTodosMobile').hasClass('not-active')){
@@ -206,6 +210,9 @@ function filtraTodosMobile(){
 		$('#btnFinaisMobile').addClass('not-active');
 		anosiniciais = true;
 		anosfinais = true;
+		estadoTemporarioFiltros[0].value = true;
+		estadoTemporarioFiltros[1].value = true;
+		testFilterChange();
 	}
 }	
 
@@ -219,6 +226,9 @@ function filtraIniciaisMobile(){
 		$('#btnTodosMobile').removeClass('active');
 		anosiniciais = true;
 		anosfinais = false;
+		estadoTemporarioFiltros[0].value = true;
+		estadoTemporarioFiltros[1].value = false;
+		testFilterChange();
 	}
 };
 
@@ -230,8 +240,11 @@ function filtraFinaisMobile(){
 		$('#btnIniciaisMobile').addClass('not-active');
 		$('#btnTodosMobile').addClass('not-active');
 		$('#btnTodosMobile').removeClass('active');
-		anosfinais = true;
 		anosiniciais = false;
+		anosfinais = true;
+		estadoTemporarioFiltros[0].value = false;
+		estadoTemporarioFiltros[1].value = true;
+		testFilterChange();
 	}
 };
 
@@ -241,7 +254,7 @@ function cancelaFiltro() {
 	$('.opcoes-item input[type=checkbox]').button('refresh');
 	$('.menu-save').addClass('menu-save-disabled');
 	$('.menu-save').attr('onclick', '');
-	estadoTemporarioFiltros = estadoRealFiltros.slice();
+	estadoTemporarioFiltros = JSON.parse(JSON.stringify(estadoRealFiltros));
 	resetaVariaveis();
 }
 
@@ -272,7 +285,7 @@ function resetaFiltroMobile() {
 		{name: 'quadra', value: false},
 		{name: 'acessibilidade', value: false}
 	];
-	estadoTemporarioFiltros = estadoRealFiltros.slice();
+	estadoTemporarioFiltros = JSON.parse(JSON.stringify(estadoRealFiltros));
 	salvaFiltro();
 }
 
@@ -313,7 +326,7 @@ function salvaFiltro() {
 		filtroAplicado = false;
 	}
 	filtraMobile();
-	estadoRealFiltros = estadoTemporarioFiltros.slice();
+	estadoRealFiltros = JSON.parse(JSON.stringify(estadoTemporarioFiltros));
 	$('.menu-save').addClass('menu-save-disabled');
 	$('.menu-save').attr('onclick', '');
 	fechaPainelMobile('filtro');

@@ -1618,13 +1618,13 @@
 					<div id='mobible-anos-radio' class='mobible-anos-radio'>
 						<div id="tab" class="btn-group btn-group-justified" data-toggle="buttons">
 							<a href="#" onclick="filtraTodosMobile()" id="btnTodosMobile" class="btn btn-primary active">
-								<input type="radio" />Todos
+								<input type="radio" id="radiotodos"/>Todos
 							</a>
 							<a href="#" onclick="filtraIniciaisMobile()" id="btnIniciaisMobile" class="btn btn-primary not-active">
-								<input type="radio" />5º ano
+								<input type="radio" id="radioanosiniciais"/>5º ano
 							</a>
 							<a href="#" onclick="filtraFinaisMobile()" id="btnFinaisMobile" class="btn btn-primary not-active">
-								<input type="radio" />9º ano
+								<input type="radio" id="radioanosfinais"/>9º ano
 							</a>
 						</div>
 					</div>
@@ -1686,6 +1686,10 @@
 				</div>
 				
 			</div>
+			<div class="close-filter-button" onclick="fechaPainelMobile('filtro')"><i class="fa fa-chevron-up"></i></div>
+			<svg width="100%" height="30" viewBox="0 0 500 80" preserveAspectRatio="none">
+				<path d="M0,0 L0,40 Q250,80 500,40 L500,0 Z" fill="white" />
+			</svg>
 		</div>
 		
 		<div class="painel painel-filtro">

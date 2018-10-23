@@ -161,12 +161,13 @@
 .mobile-painel-content h4 {
 	color: #bebebe;
 	font-size: 15px;
+	margin-top: 0;
 }
 
 .mobile-layers {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 25px;
+	margin-top: 20px;
 }
 
 .mobile-busca-icon {
@@ -224,7 +225,7 @@
     min-width: 40px;
 }
 
-.menu-right img, .menu-right span {
+.menu-right img {
     float: right;
 }
 
@@ -439,9 +440,9 @@
 
 .mobile-filtro {
 	display: none;
-	transform: translateY(-100%);
+	transform: translateY(-110%);
     position: absolute;
-    height: 500px;
+    height: 470px;
     z-index: 3;
     width: 100%;
     background-color: white;
@@ -461,7 +462,7 @@
 }
 
 .mobile-filtro-opcoes {
-	margin-top: 25px;
+	margin-top: 20px;
 }
 
 .mobile-opcoes-lista {
@@ -488,6 +489,19 @@
 .opcoes-item input[type=checkbox]:checked+.opcoes-label {
 	background-color: #2b7093;
 	color: white;
+}
+
+.close-filter-button {
+	position: absolute;
+	top: 457px;
+    padding-top: 8px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+	background-color: #7ab6c9;
+	color: white;
+	text-align: center;
+	left: calc(50% - 20px);
 }
 
 /* ESCOLA MOBILE */
