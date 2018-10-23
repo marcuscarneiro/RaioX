@@ -203,6 +203,22 @@
 	border-radius: 10px 0 0 0;
 }
 
+.filter-applied {
+	display: none;
+	font-size: 25px !important;
+    color: red;
+    position: absolute;
+    right: 17px;
+}
+
+.menu-cancel {
+	display: block;
+}
+
+.menu-reset {
+	display: none;
+}
+
 .menu-left, .menu-right {
     width: auto;
     min-width: 40px;
@@ -438,6 +454,10 @@
 
 .menu-save {
 	color: #2b7093;
+}
+
+.menu-save-disabled {
+	color: #d5d5d5;
 }
 
 .mobile-filtro-opcoes {
@@ -1142,3 +1162,10 @@
 	    font-weight: 600;
 	}
 }
+
+@media screen and (max-width: 320px){
+	.mobile-opcoes-lista .opcoes-label {
+		font-size: 10px;
+	}
+}
+	

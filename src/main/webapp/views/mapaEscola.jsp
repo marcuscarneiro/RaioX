@@ -1600,12 +1600,15 @@
 		<div class="mobile-painel mobile-filtro">
 			<div class="mobile-painel-menu">
 				<div class="menu-left menu-cancel" onclick="cancelaFiltro()">
-					<span>Cancelar</span>
+					<span>Limpar</span>
+				</div>
+				<div class="menu-left menu-reset" onclick="resetaFiltroMobile()">
+					<span>Resetar</span>
 				</div>
 				<div class="menu-title">
 					<span>Filtros</span>
 				</div>
-				<div class="menu-right menu-save" onclick="salvaFiltro()">
+				<div class="menu-right menu-save menu-save-disabled" onclick="salvaFiltro()">
 					<span>Salvar</span>
 				</div>
 			</div>
@@ -1911,6 +1914,7 @@
 				</div>
 				<div class="menu-right" onclick="abrePainelMobile('filtro')">
 					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/filter.svg">
+					<span class="filter-applied">*</span>
 				</div>
 			</div>
 			

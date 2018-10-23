@@ -2,7 +2,21 @@ let menu = false;
 let lista = false;
 let todos = true;
 let painelEscola = false;
+let filtroAplicado = false;
 let anosiniciais = true, anosfinais = true, atingiu, naoatingiu, melhoresiniciais, pioresiniciais, melhoresfinais, pioresfinais, quadra, acessibilidade;
+let estadoRealFiltros = [
+	{name: 'anosiniciais', value: true},
+	{name: 'anosfinais', value: true},
+	{name: 'atingiu', value: false},
+	{name: 'naoatingiu', value: false},
+	{name: 'melhoresiniciais', value: false},
+	{name: 'pioresiniciais', value: false},
+	{name: 'melhoresfinais', value: false},
+	{name: 'pioresfinais', value: false},
+	{name: 'quadra', value: false},
+	{name: 'acessibilidade', value: false}
+];
+let estadoTemporarioFiltros = estadoRealFiltros.slice();
 
 function showFab() {
 	if($('#container-floating').hasClass('floating-show')){
@@ -21,6 +35,13 @@ function abrePainelMobile(painel) {
 	case "filtro":
 		$(".mobile-blur").addClass('mobile-blur-show');
 		$(".mobile-filtro").addClass('mobile-filtro-show');
+		if(filtroAplicado){
+			$(".menu-cancel").hide();
+			$(".menu-reset").show();
+		} else {
+			$(".menu-cancel").show();
+			$(".menu-reset").hide();
+		}
 		fechaPainelMobile('escola');
 		break;
 	case "menu":
@@ -161,6 +182,20 @@ function listOrder(key) {
 	}
 }
 
+$(document).ready(function(){
+	$(".mobile-opcoes-lista [type=checkbox]").on('click', function() {
+		var index = estadoTemporarioFiltros.findIndex(e => e.name == $(this).attr('name'));
+		estadoTemporarioFiltros[index].value = $(this).is(':checked');
+		if(JSON.stringify(estadoTemporarioFiltros) === JSON.stringify(estadoRealFiltros)) {
+			$('.menu-save').addClass('menu-save-disabled');
+			$('.menu-save').attr('onclick', '');
+		} else {
+			$('.menu-save').removeClass('menu-save-disabled');
+			$('.menu-save').attr('onclick', 'salvaFiltro()');
+		}
+	});
+});
+
 function filtraTodosMobile(){
 	if($('#btnTodosMobile').hasClass('not-active')){
 		$('#btnTodosMobile').removeClass('not-active');
@@ -204,6 +239,9 @@ function cancelaFiltro() {
 	filtraTodosMobile();
 	$('.opcoes-item input[type=checkbox]').removeAttr('checked');
 	$('.opcoes-item input[type=checkbox]').button('refresh');
+	$('.menu-save').addClass('menu-save-disabled');
+	$('.menu-save').attr('onclick', '');
+	estadoTemporarioFiltros = estadoRealFiltros.slice();
 	resetaVariaveis();
 }
 
@@ -218,6 +256,24 @@ function resetaVariaveis() {
 	pioresfinais = false;
 	quadra = false;
 	acessibilidade = false;
+}
+
+function resetaFiltroMobile() {
+	cancelaFiltro();
+	estadoRealFiltros = [
+		{name: 'anosiniciais', value: true},
+		{name: 'anosfinais', value: true},
+		{name: 'atingiu', value: false},
+		{name: 'naoatingiu', value: false},
+		{name: 'melhoresiniciais', value: false},
+		{name: 'pioresiniciais', value: false},
+		{name: 'melhoresfinais', value: false},
+		{name: 'pioresfinais', value: false},
+		{name: 'quadra', value: false},
+		{name: 'acessibilidade', value: false}
+	];
+	estadoTemporarioFiltros = estadoRealFiltros.slice();
+	salvaFiltro();
 }
 
 function salvaFiltro() {
@@ -249,14 +305,25 @@ function salvaFiltro() {
 			acessibilidade = true;
 		}
 	});
+	if(anosiniciais == false || anosfinais == false || atingiu || naoatingiu || melhoresiniciais || pioresiniciais || melhoresfinais || pioresfinais || quadra || acessibilidade){
+		$('.filter-applied').show();
+		filtroAplicado = true;
+	} else {
+		$('.filter-applied').hide();
+		filtroAplicado = false;
+	}
 	filtraMobile();
+	estadoRealFiltros = estadoTemporarioFiltros.slice();
+	$('.menu-save').addClass('menu-save-disabled');
+	$('.menu-save').attr('onclick', '');
 	fechaPainelMobile('filtro');
 }
+
 function filtraMobile(){
 	map.removeLayer(escolasLayer);
+	$('.mobile-list-items').empty();
 	escolasLayer = L.geoJSON().addTo(map);
 	escolasLayer.addData(escolasData);
-	changeMarkers();
 	if(anosiniciais && anosfinais){
 	} else if(anosiniciais) {
 		filtraIniciais('iniciais');
@@ -264,22 +331,136 @@ function filtraMobile(){
 		filtraFinais('finais');
 	}
 	if(atingiu){
-		filtraMeta('meta');
+		escolasLayer.eachLayer(function(marker) {
+			if(marker.feature.properties.ATINGIUMETA == true){
+			} else {
+				map.removeLayer(marker);
+			}
+		});
+		removePins();
+		escolasList = [];
+		escolasListCompare = [];
+		modo = 'meta';
 	}
 	if(naoatingiu){
-		filtraNaoAtingiu('naoatingiu');
+		escolasLayer.eachLayer(function(marker) {
+			if(marker.feature.properties.ATINGIUMETA == false){
+			} else {
+				map.removeLayer(marker);
+			}
+		});
+		removePins();
+		escolasList = [];
+		escolasListCompare = [];
+		modo = 'meta';
 	}
 	if(melhoresiniciais){
-		filtraMelhorIdeb5('melhorIdeb5');
+		if(filtroMelhorIdeb5.length === 0){
+			$.ajax({
+				url: 'melhorIdeb5',
+				type: "GET",
+				dataType: 'json',
+				success: function(data) {
+					$.each(data.features, function(i, escola){
+						filtroMelhorIdeb5.push(escola.properties.ID);
+					});
+					removeFilterLayers(filtroMelhorIdeb5);
+					removePins();
+					escolasList = [];
+					escolasListCompare = [];
+					modo = 'ideb';
+				},
+				error: function(xhr, ajaxOptions, thrownError){
+				}
+			});
+		} else {
+			removeFilterLayers(filtroMelhorIdeb5);
+			removePins();
+			escolasList = [];
+			escolasListCompare = [];
+			modo = 'ideb';
+		}
 	}
 	if(pioresiniciais){
-		filtraPiorIdeb5('piorIdeb5');
+		if(filtroPiorIdeb5.length === 0){
+			$.ajax({
+				url: 'piorIdeb5',
+				type: "GET",
+				dataType: 'json',
+				success: function(data) {
+					$.each(data.features, function(i, escola){
+						filtroPiorIdeb5.push(escola.properties.ID);
+					});
+					removeFilterLayers(filtroPiorIdeb5);
+					removePins();
+					escolasList = [];
+					escolasListCompare = [];
+					modo = 'ideb';
+				},
+				error: function(xhr, ajaxOptions, thrownError){
+				}
+			});
+		} else {
+			removeFilterLayers(filtroPiorIdeb5);
+			removePins();
+			escolasList = [];
+			escolasListCompare = [];
+			modo = 'ideb';
+		}
 	}
 	if(melhoresfinais){
-		filtraMelhorIdeb9('melhorIdeb9');
+		if(filtroMelhorIdeb9.length === 0){
+			$.ajax({
+				url: 'melhorIdeb9',
+				type: "GET",
+				dataType: 'json',
+				success: function(data) {
+					$.each(data.features, function(i, escola){
+						filtroMelhorIdeb9.push(escola.properties.ID);
+					});
+					removeFilterLayers(filtroMelhorIdeb9);
+					removePins();
+					escolasList = [];
+					escolasListCompare = [];
+					modo = 'ideb';
+				},
+				error: function(xhr, ajaxOptions, thrownError){
+				}
+			});
+		} else {
+			removeFilterLayers(filtroMelhorIdeb9);
+			removePins();
+			escolasList = [];
+			escolasListCompare = [];
+			modo = 'ideb';
+		}
 	}
 	if(pioresfinais){
-		filtraPiorIdeb9('piorIdeb9');
+		if(filtroPiorIdeb9.length === 0){
+			$.ajax({
+				url: 'piorIdeb9',
+				type: "GET",
+				dataType: 'json',
+				success: function(data) {
+					$.each(data.features, function(i, escola){
+						filtroPiorIdeb9.push(escola.properties.ID);
+					});
+					removeFilterLayers(filtroPiorIdeb9);
+					removePins();
+					escolasList = [];
+					escolasListCompare = [];
+					modo = 'ideb';
+				},
+				error: function(xhr, ajaxOptions, thrownError){
+				}
+			});
+		} else {
+			removeFilterLayers(filtroPiorIdeb9);
+			removePins();
+			escolasList = [];
+			escolasListCompare = [];
+			modo = 'ideb';
+		}
 	}
 	if(quadra){
 		filtraQuadras('quadras');
@@ -287,4 +468,5 @@ function filtraMobile(){
 	if(acessibilidade){
 		filtraAcessibilidade('acessibilidade');
 	}
+	changeMarkers();
 }

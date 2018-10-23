@@ -157,7 +157,6 @@ function filtraIniciais(filter){
 	escolasList = [];
 	escolasListCompare = [];
 	modo = 'all';
-	changeMarkers();
 }
 
 function filtraFinais(filter){
@@ -171,7 +170,6 @@ function filtraFinais(filter){
 	escolasList = [];
 	escolasListCompare = [];
 	modo = 'all';
-	changeMarkers();
 }
 
 function filtraNova(filter){

@@ -914,22 +914,8 @@ function escolheEscola2(id){
 	$("#compareEnt2").val(esc2);
 }
 
-//function mostraEscolasComparativo(esc1, esc2){
-//	escolasLayer.eachLayer(function(marker) {
-//		if(marker.feature.properties.ID == esc1 || marker.feature.properties.ID == esc2){
-//		} else {
-//			map.removeLayer(marker);
-//		}
-//	});
-//	resetMap();
-//}
 
 function comparaEscolas(comp1, comp2){
-//	var comp1 = $("#compareId1").val();
-//	var comp2 = $("#compareId2").val();
-	
-//	mostraEscolasComparativo(comp1, comp2);
-	
 	$.ajax({
 		url: 'consultaEscolasComparativo',
 		type: "POST",
