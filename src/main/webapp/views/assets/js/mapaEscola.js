@@ -387,7 +387,7 @@ var escolasList = [];
 
 var escolasListCompare = [];
 
-var escolasData;
+var escolasData, escolasDataBackup;
 
 function carregaEscolas(){
 	$.ajax({
@@ -396,6 +396,7 @@ function carregaEscolas(){
 		dataType: 'json',
 		success: function(data) {
 			escolasData = data;
+			escolasDataBackup = data;
 			escolasLayer.addData(data);
 			escolasList = [];
 			escolasListCompare = [];

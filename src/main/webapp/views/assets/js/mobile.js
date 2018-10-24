@@ -3,6 +3,7 @@ let lista = false;
 let todos = true;
 let painelEscola = false;
 let filtroAplicado = false;
+let filtroMelhorIdeb5Mob = [], filtroMelhorIdeb9Mob = [], filtroPiorIdeb5Mob = [], filtroPiorIdeb9Mob = [];
 let anosiniciais = true, anosfinais = true, atingiu, naoatingiu, melhoresiniciais, pioresiniciais, melhoresfinais, pioresfinais, quadra, acessibilidade;
 let estadoRealFiltros = [
 	{name: 'anosiniciais', value: true},
@@ -302,7 +303,7 @@ function salvaFiltro() {
 		var name = $(this).attr('name');
 		if(name === 'atingiu') {
 			atingiu = true;
-		} else if(name === 'nunca') {
+		} else if(name === 'naoatingiu') {
 			naoatingiu = true;
 		} else if(name === 'melhoresiniciais') {
 			melhoresiniciais = true;
@@ -325,161 +326,180 @@ function salvaFiltro() {
 		$('.filter-applied').hide();
 		filtroAplicado = false;
 	}
-	filtraMobile();
+	$('.map-container-loading').addClass('loading-show');
+	filtraMobile().then(function(result) {
+		$('.map-container-loading').removeClass('loading-show');
+	});
 	estadoRealFiltros = JSON.parse(JSON.stringify(estadoTemporarioFiltros));
 	$('.menu-save').addClass('menu-save-disabled');
 	$('.menu-save').attr('onclick', '');
 	fechaPainelMobile('filtro');
 }
 
-function filtraMobile(){
-	map.removeLayer(escolasLayer);
-	$('.mobile-list-items').empty();
-	escolasLayer = L.geoJSON().addTo(map);
-	escolasLayer.addData(escolasData);
-	if(anosiniciais && anosfinais){
-	} else if(anosiniciais) {
-		filtraIniciais('iniciais');
-	} else {
-		filtraFinais('finais');
-	}
-	if(atingiu){
-		escolasLayer.eachLayer(function(marker) {
-			if(marker.feature.properties.ATINGIUMETA == true){
-			} else {
-				map.removeLayer(marker);
-			}
-		});
-		removePins();
-		escolasList = [];
-		escolasListCompare = [];
-		modo = 'meta';
-	}
-	if(naoatingiu){
-		escolasLayer.eachLayer(function(marker) {
-			if(marker.feature.properties.ATINGIUMETA == false){
-			} else {
-				map.removeLayer(marker);
-			}
-		});
-		removePins();
-		escolasList = [];
-		escolasListCompare = [];
-		modo = 'meta';
-	}
-	if(melhoresiniciais){
-		if(filtroMelhorIdeb5.length === 0){
-			$.ajax({
-				url: 'melhorIdeb5',
-				type: "GET",
-				dataType: 'json',
-				success: function(data) {
-					$.each(data.features, function(i, escola){
-						filtroMelhorIdeb5.push(escola.properties.ID);
-					});
-					removeFilterLayers(filtroMelhorIdeb5);
-					removePins();
-					escolasList = [];
-					escolasListCompare = [];
-					modo = 'ideb';
-				},
-				error: function(xhr, ajaxOptions, thrownError){
-				}
-			});
-		} else {
-			removeFilterLayers(filtroMelhorIdeb5);
-			removePins();
-			escolasList = [];
-			escolasListCompare = [];
-			modo = 'ideb';
-		}
-	}
-	if(pioresiniciais){
-		if(filtroPiorIdeb5.length === 0){
-			$.ajax({
-				url: 'piorIdeb5',
-				type: "GET",
-				dataType: 'json',
-				success: function(data) {
-					$.each(data.features, function(i, escola){
-						filtroPiorIdeb5.push(escola.properties.ID);
-					});
-					removeFilterLayers(filtroPiorIdeb5);
-					removePins();
-					escolasList = [];
-					escolasListCompare = [];
-					modo = 'ideb';
-				},
-				error: function(xhr, ajaxOptions, thrownError){
-				}
-			});
-		} else {
-			removeFilterLayers(filtroPiorIdeb5);
-			removePins();
-			escolasList = [];
-			escolasListCompare = [];
-			modo = 'ideb';
-		}
-	}
-	if(melhoresfinais){
-		if(filtroMelhorIdeb9.length === 0){
-			$.ajax({
-				url: 'melhorIdeb9',
-				type: "GET",
-				dataType: 'json',
-				success: function(data) {
-					$.each(data.features, function(i, escola){
-						filtroMelhorIdeb9.push(escola.properties.ID);
-					});
-					removeFilterLayers(filtroMelhorIdeb9);
-					removePins();
-					escolasList = [];
-					escolasListCompare = [];
-					modo = 'ideb';
-				},
-				error: function(xhr, ajaxOptions, thrownError){
-				}
-			});
-		} else {
-			removeFilterLayers(filtroMelhorIdeb9);
-			removePins();
-			escolasList = [];
-			escolasListCompare = [];
-			modo = 'ideb';
-		}
-	}
-	if(pioresfinais){
-		if(filtroPiorIdeb9.length === 0){
-			$.ajax({
-				url: 'piorIdeb9',
-				type: "GET",
-				dataType: 'json',
-				success: function(data) {
-					$.each(data.features, function(i, escola){
-						filtroPiorIdeb9.push(escola.properties.ID);
-					});
-					removeFilterLayers(filtroPiorIdeb9);
-					removePins();
-					escolasList = [];
-					escolasListCompare = [];
-					modo = 'ideb';
-				},
-				error: function(xhr, ajaxOptions, thrownError){
-				}
-			});
-		} else {
-			removeFilterLayers(filtroPiorIdeb9);
-			removePins();
-			escolasList = [];
-			escolasListCompare = [];
-			modo = 'ideb';
-		}
-	}
-	if(quadra){
-		filtraQuadras('quadras');
-	}
-	if(acessibilidade){
-		filtraAcessibilidade('acessibilidade');
-	}
-	changeMarkers();
+function removeFromDataEscola(id){
+	var index = escolasData.features.findIndex(escola => escola.properties.ID == id);
+	escolasData.features.splice(index,1);
 }
+
+function removeFilterLayersMobile(arr){
+	var others = $.grep(escolasDataBackup.features, function(value) {
+	    return $.inArray(value, arr.features) < 0;
+	});
+	escolasData.features.forEach(function(marker) {
+		$.each(others, function(i, esc){
+			if(marker.properties.ID == esc){
+				removeFromDataEscola(marker.properties.ID);
+			}
+		})
+	});
+}
+
+function filtraMobile(){
+	return new Promise(function (resolve, reject) {
+		setTimeout(function() {
+			escolasData = JSON.parse(JSON.stringify(escolasDataBackup));
+			$('.mobile-list-items').empty();
+			if(anosiniciais && anosfinais){
+			} else if(anosiniciais) {
+				escolasData.features.forEach(function(marker){
+					if(marker.properties.FundI == true){
+					} else {
+						removeFromDataEscola(marker.properties.ID);
+					}
+				});
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'all';
+			} else {
+				escolasData.features.forEach(function(marker) {
+					if(marker.properties.FundII == true){
+					} else {
+						removeFromDataEscola(marker.properties.ID);
+					}
+				});
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'all';
+			}
+			if(atingiu){
+				escolasData.features.forEach(function(marker) {
+					if(marker.properties.ATINGIUMETA == true){
+					} else {
+						removeFromDataEscola(marker.properties.ID);
+					}
+				});
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'meta';
+			}
+			if(naoatingiu){
+				escolasData.features.forEach(function(marker) {
+					if(marker.properties.ATINGIUMETA == false){
+					} else {
+						removeFromDataEscola(marker.properties.ID);
+					}
+				});
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'meta';
+			}
+			if(melhoresiniciais){
+				removeFilterLayersMobile(filtroMelhorIdeb5Mob);
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'ideb';
+			}
+			if(pioresiniciais){
+				removeFilterLayersMobile(filtroPiorIdeb5Mob);
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'ideb';
+			}
+			if(melhoresfinais){
+				removeFilterLayersMobile(filtroMelhorIdeb9Mob);
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'ideb';
+			}
+			if(pioresfinais){
+				removeFilterLayersMobile(filtroPiorIdeb9Mob);
+				removePins();
+				escolasList = [];
+				escolasListCompare = [];
+				modo = 'ideb';
+			}
+			if(quadra){
+				escolasData.features.forEach(function(marker) {
+					if(marker.properties.POSSUIQUADRA === 0 || marker.properties.POSSUIQUADRA === "null" || marker.properties.POSSUIQUADRA === undefined){
+						removeFromDataEscola(marker.properties.ID);
+					}
+				});
+				removePins();
+				escolasList = [];
+				modo = 'quadras';
+				personalizeMarkers('quadras');
+			}
+			if(acessibilidade){
+				filtraAcessibilidade('acessibilidade');
+			}
+			map.removeLayer(escolasLayer);
+			escolasLayer = L.geoJSON().addTo(map);
+			escolasLayer.addData(escolasData);
+			changeMarkers();
+			resolve()
+		}, 500);
+	});
+}
+
+$(document).ready(function() {
+	$.ajax({
+		url: 'melhorIdeb5',
+		type: "GET",
+		dataType: 'json',
+		success: function(data) {
+			$.each(data.features, function(i, escola){
+				filtroMelhorIdeb5Mob.push(escola.properties.ID);
+			});
+		}
+	});
+	
+	$.ajax({
+		url: 'piorIdeb5',
+		type: "GET",
+		dataType: 'json',
+		success: function(data) {
+			$.each(data.features, function(i, escola){
+				filtroPiorIdeb5Mob.push(escola.properties.ID);
+			});
+		}
+	});
+	
+	$.ajax({
+		url: 'melhorIdeb9',
+		type: "GET",
+		dataType: 'json',
+		success: function(data) {
+			$.each(data.features, function(i, escola){
+				filtroMelhorIdeb9Mob.push(escola.properties.ID);
+			});
+		}
+	});
+	
+	$.ajax({
+		url: 'piorIdeb9',
+		type: "GET",
+		dataType: 'json',
+		success: function(data) {
+			$.each(data.features, function(i, escola){
+				filtroPiorIdeb9Mob.push(escola.properties.ID);
+			});
+		}
+	});
+});

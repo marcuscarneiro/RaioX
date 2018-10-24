@@ -629,10 +629,13 @@ function filtraPiorProfMat9(filter){
 
 function filtraQuadras(filter){
 	escolasLayer.eachLayer(function(marker) {
-		if(marker.feature.properties.POSSUIQUADRAS === 0 || marker.feature.properties.POSSUIQUADRAS === "null"){
+		if(marker.feature.properties.POSSUIQUADRA === 0 || marker.feature.properties.POSSUIQUADRA === "null" || marker.feature.properties.POSSUIQUADRA === undefined){
 			map.removeLayer(marker);
 		}
 	});
+	map.removeLayer(escolasLayer);
+	escolasLayer = L.geoJSON().addTo(map);
+	escolasLayer.addData(escolasData);
 	removePins();
 	escolasList = [];
 	modo = 'quadras';

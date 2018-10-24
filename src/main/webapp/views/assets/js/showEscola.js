@@ -7,20 +7,25 @@ function loadEscolaMobile(id, nome, endereco) {
 	$('.escola-mobile-endereco').html(endereco);
 	$(".fiscalizacao-datas li").remove();
 	$(".fiscalizacao-datas-mobile ul li").remove();
-	getEscolaMobileInfo(id);
+	getEscolaMobileInfo(id).then(function(result) {
+		abrePainelMobile('escola');
+	});
 }
 
 function getEscolaMobileInfo(id){
-	setTimeout(function() {
-		regionFill = 0;
-		removeAllRpaLayers();
-		setAllRpaLayers();
-		$('#'+id).click();
-		consultaDadosIdebMobile(id);
-		consultaProvaBrasilMobile(id);
-		consultaVisitas(id);
-		abrePainelMobile('escola');
-	}, 2000);
+	return new Promise(function (resolve, reject) {
+		setTimeout(function() {
+			regionFill = 0;
+			removeAllRpaLayers();
+			setAllRpaLayers();
+			$('#'+id).click();
+			consultaDadosIdebMobile(id);
+			consultaProvaBrasilMobile(id);
+			consultaVisitas(id);
+			
+			resolve()
+		}, 500);
+	});
 }
 
 function consultaDadosIdebMobile(id){
@@ -36,12 +41,16 @@ function consultaDadosIdebMobile(id){
 			} else {
 				idebVazio();
 			}
-			
-			if(data.escola.requerimentos != null){
-				$(".fiscalicazaoRequerimento a").attr('href', data.escola.requerimentos);
-				$(".fiscalicazaoRequerimento").css('display', 'block');
-				$(".fiscalicazaoRequerimento a").css('display', 'inline-block');
-			} else {
+			try {
+				if(data.escola.requerimentos != null){
+					$(".fiscalicazaoRequerimento a").attr('href', data.escola.requerimentos);
+					$(".fiscalicazaoRequerimento").css('display', 'block');
+					$(".fiscalicazaoRequerimento a").css('display', 'inline-block');
+				} else {
+					$(".fiscalicazaoRequerimento").css('display', 'none');
+				}
+				
+			} catch (e) {
 				$(".fiscalicazaoRequerimento").css('display', 'none');
 			}
 		},

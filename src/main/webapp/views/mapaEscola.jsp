@@ -8,7 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/leaflet.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/jquery.fancybox.css" />
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/hover.css">
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/views/assets/css/mapa.css" />
 		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -25,12 +24,17 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery-ui.min.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/ChartNew.js"></script>
+		<script>
+		if (screen && screen.width > 480) {
+		  document.write('<script src="<%=request.getContextPath()%>/views/assets/js/ChartNew.js"><\/script>');
+		}
+		</script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/heatmap.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet-heatmap.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.fancybox-media.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap-list-filter.src.js"></script>
 		
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
@@ -44,10 +48,10 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/rpa5n.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/rpa6n.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/bairros.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.flip.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/map.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mobile.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/showEscola.js"></script>
+		
 		<script src="<%=request.getContextPath()%>/views/assets/js/bootstrap.min.js"></script>
 		
 		<title>Raio-X das Escolas Municipais do Recife - Vereador André Régis</title>
@@ -1655,7 +1659,7 @@
 							<span class="opcoes-label">Atingiu a meta</span>
 						</label>
 						<label class="opcoes-item">
-							<input type="checkbox" name="nunca">
+							<input type="checkbox" name="naoatingiu">
 							<span class="opcoes-label">Nunca atingiu a meta</span>
 						</label>
 						<label class="opcoes-item">
@@ -2300,26 +2304,30 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/questionarioEscolas.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapaEscola.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/filters.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.extensions.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.date.extensions.js"></script>
-		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.inputmask.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('[data-toggle="tooltip"]').tooltip(); 
-				$("#periodo-ini").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
-				$("#periodo-fim").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
-				$(".videos").fancybox({
-					maxWidth	: 800,
-					maxHeight	: 600,
-					fitToView	: false,
-					width		: '70%',
-					height		: '70%',
-					autoSize	: false,
-					closeClick	: false,
-					openEffect	: 'none',
-					closeEffect	: 'none'
-				});
+				if (screen && screen.width > 480) {
+					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.js"><\/script>');
+					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.extensions.js"><\/script>');
+					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.date.extensions.js"><\/script>');
+					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/jquery.inputmask.js"><\/script>');
+					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/chartsRaiox.js"><\/script>');
+					
+					$("#periodo-ini").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
+					$("#periodo-fim").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
+					$(".videos").fancybox({
+						maxWidth	: 800,
+						maxHeight	: 600,
+						fitToView	: false,
+						width		: '70%',
+						height		: '70%',
+						autoSize	: false,
+						closeClick	: false,
+						openEffect	: 'none',
+						closeEffect	: 'none'
+					});
+				}
 			});
 			
 			$(function() {
@@ -2335,7 +2343,6 @@
 	            });
 	        });
         </script>
-        <script src="<%=request.getContextPath()%>/views/assets/js/chartsRaiox.js"></script>
         <script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

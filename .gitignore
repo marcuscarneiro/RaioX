@@ -58,3 +58,4 @@ database.properties
 src/main/resources/database.properties
 .classpath
 .settings/org.eclipse.jdt.core.prefs
+src/main/resources/database.properties
