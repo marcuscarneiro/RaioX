@@ -185,6 +185,19 @@ function listOrder(key) {
 
 $(document).ready(function(){
 	$(".mobile-opcoes-lista [type=checkbox]").on('click', function() {
+		if($(this).attr('name') == 'melhoresiniciais'){
+			$('.opcoes-item input[name=pioresiniciais]').prop("checked", false);
+			$('.opcoes-item input[name=pioresiniciais]').button('refresh');
+		} else if($(this).attr('name') == 'pioresiniciais'){
+			$('.opcoes-item input[name=melhoresiniciais]').prop("checked", false);
+			$('.opcoes-item input[name=melhoresiniciais]').button('refresh');
+		} else if($(this).attr('name') == 'melhoresfinais'){
+			$('.opcoes-item input[name=pioresfinais]').prop("checked", false);
+			$('.opcoes-item input[name=pioresfinais]').button('refresh');
+		} else if($(this).attr('name') == 'pioresfinais'){
+			$('.opcoes-item input[name=melhoresfinais]').prop("checked", false);
+			$('.opcoes-item input[name=melhoresfinais]').button('refresh');
+		}
 		var index = estadoTemporarioFiltros.findIndex(e => e.name == $(this).attr('name'));
 		estadoTemporarioFiltros[index].value = $(this).is(':checked');
 		testFilterChange();
@@ -195,9 +208,11 @@ function testFilterChange(){
 	if(JSON.stringify(estadoTemporarioFiltros) === JSON.stringify(estadoRealFiltros)) {
 		$('.menu-save').addClass('menu-save-disabled');
 		$('.menu-save').attr('onclick', '');
+		return true;
 	} else {
 		$('.menu-save').removeClass('menu-save-disabled');
 		$('.menu-save').attr('onclick', 'salvaFiltro()');
+		return false;
 	}
 }
 
@@ -248,6 +263,53 @@ function filtraFinaisMobile(){
 		testFilterChange();
 	}
 };
+
+function fechaPainelFiltroMobile(){
+	if(!testFilterChange()){
+		estadoRealFiltros.forEach(function(real){
+			estadoTemporarioFiltros.forEach(function(temp){
+				if(temp.name == real.name){
+					if(temp.value != real.value){
+						if(temp.name == 'anosiniciais' || temp.name == 'anosfinais'){
+							if(estadoRealFiltros[0].value && estadoRealFiltros[1].value){
+								$('#radiotodos').prop("checked", true);
+								$('#btnTodosMobile').addClass('active');
+								$('#btnTodosMobile').removeClass('not-active');
+								$('#radioanosiniciais').prop("checked", false);
+								$('#btnIniciaisMobile').removeClass('active');
+								$('#btnIniciaisMobile').addClass('not-active');
+								$('#radioanosfinais').prop("checked", false);
+								$('#btnFinaisMobile').removeClass('active');
+								$('#btnFinaisMobile').addClass('not-active');
+							} else if(estadoRealFiltros[0].value){
+								$('#btnTodosMobile').removeClass('active');
+								$('#btnTodosMobile').addClass('not-active');
+								$('#radioanosiniciais').prop("checked", real.value);
+								$('#btnIniciaisMobile').addClass('active');
+								$('#btnIniciaisMobile').removeClass('not-active');
+								$('#btnFinaisMobile').removeClass('active');
+								$('#btnFinaisMobile').addClass('not-active');
+							} else if(estadoRealFiltros[1].value){
+								$('#btnTodosMobile').removeClass('active');
+								$('#btnTodosMobile').addClass('not-active');
+								$('#radioanosfinais').prop("checked", real.value);
+								$('#btnFinaisMobile').addClass('active');
+								$('#btnFinaisMobile').removeClass('not-active');
+								$('#btnIniciaisMobile').removeClass('active');
+								$('#btnIniciaisMobile').addClass('not-active');
+							}
+						} else {
+							$('.opcoes-item input[name='+real.name+']').prop("checked", real.value);
+							$('.opcoes-item input[name='+real.name+']').button('refresh');
+						}
+						$('.opcoes-item input[name='+real.name+']').button('refresh');
+					}
+				}
+			});
+		});
+	}
+	fechaPainelMobile('filtro');
+}
 
 function cancelaFiltro() {
 	filtraTodosMobile();
@@ -342,16 +404,23 @@ function removeFromDataEscola(id){
 }
 
 function removeFilterLayersMobile(arr){
-	var others = $.grep(escolasDataBackup.features, function(value) {
-	    return $.inArray(value, arr.features) < 0;
+	var others = $.grep(escolasData.features, function(value) {
+	    return $.inArray(value.properties.ID, arr) < 0;
 	});
+	var featuresTemp = [];
 	escolasData.features.forEach(function(marker) {
 		$.each(others, function(i, esc){
-			if(marker.properties.ID == esc){
-				removeFromDataEscola(marker.properties.ID);
+			if(marker.properties.ID == esc.properties.ID){
+				featuresTemp.push(esc.properties.ID);
 			}
 		})
 	});
+	var featuresReal = escolasData.features;
+	featuresReal = featuresReal.filter(function(v) { 
+		return featuresTemp.indexOf(v.properties.ID) == -1 
+	});
+
+	escolasData.features = featuresReal;
 }
 
 function filtraMobile(){
@@ -361,47 +430,51 @@ function filtraMobile(){
 			$('.mobile-list-items').empty();
 			if(anosiniciais && anosfinais){
 			} else if(anosiniciais) {
+				var escolasTemp = [];
 				escolasData.features.forEach(function(marker){
 					if(marker.properties.FundI == true){
-					} else {
-						removeFromDataEscola(marker.properties.ID);
+						escolasTemp.push(marker.properties.ID);
 					}
 				});
+				removeFilterLayersMobile(escolasTemp);
 				removePins();
 				escolasList = [];
 				escolasListCompare = [];
 				modo = 'all';
 			} else {
+				var escolasTemp = [];
 				escolasData.features.forEach(function(marker) {
 					if(marker.properties.FundII == true){
-					} else {
-						removeFromDataEscola(marker.properties.ID);
+						escolasTemp.push(marker.properties.ID);
 					}
 				});
+				removeFilterLayersMobile(escolasTemp);
 				removePins();
 				escolasList = [];
 				escolasListCompare = [];
 				modo = 'all';
 			}
 			if(atingiu){
+				var escolasTemp = [];
 				escolasData.features.forEach(function(marker) {
 					if(marker.properties.ATINGIUMETA == true){
-					} else {
-						removeFromDataEscola(marker.properties.ID);
+						escolasTemp.push(marker.properties.ID);
 					}
 				});
+				removeFilterLayersMobile(escolasTemp);
 				removePins();
 				escolasList = [];
 				escolasListCompare = [];
 				modo = 'meta';
 			}
 			if(naoatingiu){
+				var escolasTemp = [];
 				escolasData.features.forEach(function(marker) {
 					if(marker.properties.ATINGIUMETA == false){
-					} else {
-						removeFromDataEscola(marker.properties.ID);
+						escolasTemp.push(marker.properties.ID);
 					}
 				});
+				removeFilterLayersMobile(escolasTemp);
 				removePins();
 				escolasList = [];
 				escolasListCompare = [];
@@ -436,11 +509,14 @@ function filtraMobile(){
 				modo = 'ideb';
 			}
 			if(quadra){
+				var escolasTemp = [];
 				escolasData.features.forEach(function(marker) {
 					if(marker.properties.POSSUIQUADRA === 0 || marker.properties.POSSUIQUADRA === "null" || marker.properties.POSSUIQUADRA === undefined){
-						removeFromDataEscola(marker.properties.ID);
+					} else {
+						escolasTemp.push(marker.properties.ID);
 					}
 				});
+				removeFilterLayersMobile(escolasTemp);
 				removePins();
 				escolasList = [];
 				modo = 'quadras';

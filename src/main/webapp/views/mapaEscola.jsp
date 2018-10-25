@@ -1660,7 +1660,7 @@
 						</label>
 						<label class="opcoes-item">
 							<input type="checkbox" name="naoatingiu">
-							<span class="opcoes-label">Nunca atingiu a meta</span>
+							<span class="opcoes-label">Não atingiu a meta</span>
 						</label>
 						<label class="opcoes-item">
 							<input type="checkbox" name="melhoresiniciais">
@@ -1690,7 +1690,7 @@
 				</div>
 				
 			</div>
-			<div class="close-filter-button" onclick="fechaPainelMobile('filtro')"><i class="fa fa-chevron-up"></i></div>
+			<div class="close-filter-button" onclick="fechaPainelFiltroMobile()"><i class="fa fa-chevron-up"></i></div>
 			<svg width="100%" height="30" viewBox="0 0 500 80" preserveAspectRatio="none">
 				<path d="M0,0 L0,40 Q250,80 500,40 L500,0 Z" fill="white" />
 			</svg>
