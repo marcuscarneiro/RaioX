@@ -261,118 +261,33 @@
 							<span class="cap-tr">Capital</span>
 							<span class="cap-tr cap-qtd">IDEB</span>
 						</li>
-						<li>
-							<span>Curitiba</span>
-							<span class="cap-qtd">6,3</span>
-						</li>
-						<li>
-							<span>Palmas</span>
-							<span class="cap-qtd">6,2</span>
-						</li>
-						<li>
-							<span>Terezina</span>
-							<span class="cap-qtd">6,1</span>
-						</li>
-						<li>
-							<span>Belo Horizonte</span>
-							<span class="cap-qtd">6,1</span>
-						</li>
-						<li>
-							<span>Florianópolis</span>
-							<span class="cap-qtd">6,1</span>
-						</li>
-						<li>
-							<span>São Paulo</span>
-							<span class="cap-qtd">5,8</span>
-						</li>
-						<li>
-							<span>Rio Branco</span>
-							<span class="cap-qtd">5,8</span>
-						</li>
-						<li>
-							<span>Rio de Janeiro</span>
-							<span class="cap-qtd">5,6</span>
-						</li>
-						<li>
-							<span>Vitória</span>
-							<span class="cap-qtd">5,6</span>
-						</li>
-						<li>
-							<span>Goiânia</span>
-							<span class="cap-qtd">5,5</span>
-						</li>
-						<li>
-							<span>Boa Vista</span>
-							<span class="cap-qtd">5,5</span>
-						</li>
-						<li>
-							<span>Cuiabá</span>
-							<span class="cap-qtd">5,5</span>
-						</li>
-						<li>
-							<span>Fortaleza</span>
-							<span class="cap-qtd">5,4</span>
-						</li>
-						<li>
-							<span>Campo Grande</span>
-							<span class="cap-qtd">5,4</span>
-						</li>
-						<li>
-							<span>Manaus</span>
-							<span class="cap-qtd">5,4</span>
-						</li>
-						<li>
-							<span>Porto Velho</span>
-							<span class="cap-qtd">4,8</span>
-						</li>
-						<li>
-							<span>Natal</span>
-							<span class="cap-qtd">4,7</span>
-						</li>
-						<li>
-							<span>Salvador</span>
-							<span class="cap-qtd">4,7</span>
-						</li>
-						<li>
-							<span class="ideb-hi">Recife</span>
-							<span class="cap-qtd ideb-hi">4,6</span>
-						</li>
-						<li>
-							<span>João Pessoa</span>
-							<span class="cap-qtd">4,6</span>
-						</li>
-						<li>
-							<span>Porto Alegre</span>
-							<span class="cap-qtd">4,6</span>
-						</li>
-						<li>
-							<span>Belém</span>
-							<span class="cap-qtd">4,6</span>
-						</li>
-						<li>
-							<span>São Luís</span>
-							<span class="cap-qtd">4,5</span>
-						</li>
-						<li>
-							<span>Aracaju</span>
-							<span class="cap-qtd">4,4</span>
-						</li>
-						<li>
-							<span>Maceió</span>
-							<span class="cap-qtd">4,4</span>
-						</li>
-						<li>
-							<span>Macapá</span>
-							<span class="cap-qtd">4,4</span>
-						</li>
-						<li>
-							<span>Brasília</span>
-							<span class="cap-qtd">Sem dados</span>
-						</li>
+						<li><span>Curitiba</span><span class="cap-qtd">6.4</span></li>
+						<li><span>Belo Horizonte</span><span class="cap-qtd">6.3</span></li>
+						<li><span>Florianópolis</span><span class="cap-qtd">6.2</span></li>
+						<li><span>Fortaleza</span><span class="cap-qtd">6.0</span></li>
+						<li><span>São Paulo</span><span class="cap-qtd">6.0</span></li>
+						<li><span>Manaus</span><span class="cap-qtd">5.8</span></li>
+						<li><span>Goiânia</span><span class="cap-qtd">5.8</span></li>
+						<li><span>Boa Vista</span><span class="cap-qtd">5.8</span></li>
+						<li><span>Cuiabá</span><span class="cap-qtd">5.7</span></li>
+						<li><span>Campo Grande</span><span class="cap-qtd">5.7</span></li>
+						<li><span>Rio de Janeiro</span><span class="cap-qtd">5.7</span></li>
+						<li><span>Vitória</span><span class="cap-qtd">5.6</span></li>
+						<li><span>Salvador</span><span class="cap-qtd">5.3</span></li>
+						<li><span>Belém</span><span class="cap-qtd">5.1</span></li>
+						<li><span>Porto Velho</span><span class="cap-qtd">5.1</span></li>
+						<li><span>Maceió</span><span class="cap-qtd">5.0</span></li>
+						<li><span class="ideb-hi">Recife</span><span class="cap-qtd ideb-hi">5.0</span></li>
+						<li><span>João Pessoa</span><span class="cap-qtd">4.9</span></li>
+						<li><span>Natal</span><span class="cap-qtd">4.8</span></li>
+						<li><span>Macapá</span><span class="cap-qtd">4.6</span></li>
+						<li><span>São Luís</span><span class="cap-qtd">4.6</span></li>
+						<li><span>Aracaju</span><span class="cap-qtd">4.6</span></li>
+						<li><span>Brasília</span><span class="cap-qtd">Sem dados</span></li>
 					</ul>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Brasilia não possui escolas municipais</span>
-						<span>Recife fica na 8ª posição entre as 10 piores capitais brasileiras</span>
+						<span>Brasília não possui escolas municipais</span>
+						<span>Recife fica na 6ª posição entre as 10 piores capitais brasileiras</span>
 						<canvas id="chartIdebCapI"></canvas>
 					</div>
 				</div>
@@ -383,119 +298,37 @@
 							<span class="cap-tr">Capital</span>
 							<span class="cap-tr cap-qtd">IDEB</span>
 						</li>
-						<li>
-							<span>Palmas</span>
-							<span class="cap-qtd">5,6</span>
-						</li>
-						<li>
-							<span>Curitiba</span>
-							<span class="cap-qtd">5,3</span>
-						</li>
-						<li>
-							<span>Terezina</span>
-							<span class="cap-qtd">5,2</span>
-						</li>
-						<li>
-							<span>Campo Grande</span>
-							<span class="cap-qtd">5,0</span>
-						</li>
-						<li>
-							<span>Florianópolis</span>
-							<span class="cap-qtd">4,9</span>
-						</li>
-						<li>
-							<span>Belo Horizonte</span>
-							<span class="cap-qtd">4,8</span>
-						</li>
-						<li>
-							<span>Macapá</span>
-							<span class="cap-qtd">4,6</span>
-						</li>
-						<li>
-							<span>Cuiabá</span>
-							<span class="cap-qtd">4,5</span>
-						</li>
-						<li>
-							<span>Fortaleza</span>
-							<span class="cap-qtd">4,4</span>
-						</li>
-						<li>
-							<span>São Paulo</span>
-							<span class="cap-qtd">4,3</span>
-						</li>
-						<li>
-							<span>Rio de Janeiro</span>
-							<span class="cap-qtd">4,3</span>
-						</li>
-						<li>
-							<span>Vitória</span>
-							<span class="cap-qtd">4,3</span>
-						</li>
-						<li>
-							<span>Manaus</span>
-							<span class="cap-qtd">4,3</span>
-						</li>
-						<li>
-							<span>Belém</span>
-							<span class="cap-qtd">4,0</span>
-						</li>
-						<li>
-							<span>São Luiz</span>
-							<span class="cap-qtd">3,9</span>
-						</li>
-						<li>
-							<span>João Pessoa</span>
-							<span class="cap-qtd">3,8</span>
-						</li>
-						<li>
-							<span>Porto Alegre</span>
-							<span class="cap-qtd">3,8</span>
-						</li>
-						<li>
-							<span>Natal</span>
-							<span class="cap-qtd">3,6</span>
-						</li>
-						<li>
-							<span>Porto Velho</span>
-							<span class="cap-qtd">3,5</span>
-						</li>
-						<li>
-							<span class="ideb-hi">Recife</span>
-							<span class="cap-qtd ideb-hi">3,5</span>
-						</li>
-						<li>
-							<span>Salvador</span>
-							<span class="cap-qtd">3,4</span>
-						</li>
-						<li>
-							<span>Aracaju</span>
-							<span class="cap-qtd">3,4</span>
-						</li>
-						<li>
-							<span>Maceió</span>
-							<span class="cap-qtd">3,4</span>
-						</li>
-						<li>
-							<span>Rio Branco</span>
-							<span class="cap-qtd">Sem dados</span>
-						</li>
-						<li>
-							<span>Goiânia</span>
-							<span class="cap-qtd">Sem dados</span>
-						</li>
-						<li>
-							<span>Boa Vista</span>
-							<span class="cap-qtd">Sem dados</span>
-						</li>
-						<li>
-							<span>Brasília</span>
-							<span class="cap-qtd">Sem dados</span>
-						</li>
+						<li><span>Teresina</span><span class="cap-qtd">6.0</span></li>
+						<li><span>Palmas</span><span class="cap-qtd">5.8</span></li>
+						<li><span>Curitiba</span><span class="cap-qtd">5.2</span></li>
+						<li><span>Florianópolis</span><span class="cap-qtd">5.0</span></li>
+						<li><span>Campo Grande</span><span class="cap-qtd">5.0</span></li>
+						<li><span>Macapá</span><span class="cap-qtd">5.0</span></li>
+						<li><span>Belo Horizonte</span><span class="cap-qtd">4.9</span></li>
+						<li><span>Fortaleza</span><span class="cap-qtd">4.9</span></li>
+						<li><span>Manaus</span><span class="cap-qtd">4.7</span></li>
+						<li><span>Goiânia</span><span class="cap-qtd">4.7</span></li>
+						<li><span>Rio de Janeiro</span><span class="cap-qtd">4.7</span></li>
+						<li><span>Cuiabá</span><span class="cap-qtd">4.6</span></li>
+						<li><span>Vitória</span><span class="cap-qtd">4.4</span></li>
+						<li><span>Belém</span><span class="cap-qtd">4.3</span></li>
+						<li><span>São Paulo</span><span class="cap-qtd">4.2</span></li>
+						<li><span class="ideb-hi">Recife</span><span class="cap-qtd ideb-hi">4.1</span></li>
+						<li><span>João Pessoa</span><span class="cap-qtd">4.0</span></li>
+						<li><span>Salvador</span><span class="cap-qtd">3.9</span></li>
+						<li><span>Porto Velho</span><span class="cap-qtd">3.9</span></li>
+						<li><span>Maceió</span><span class="cap-qtd">3.8</span></li>
+						<li><span>São Luís</span><span class="cap-qtd">3.8</span></li>
+						<li><span>Aracaju</span><span class="cap-qtd">3.7</span></li>
+						<li><span>Natal</span><span class="cap-qtd">3.5</span></li>
+						<li><span>Rio Branco</span><span class="cap-qtd">Sem dados</span></li>
+						<li><span>Boa Vista</span><span class="cap-qtd">Sem dados</span></li>
+						<li><span>Brasília</span><span class="cap-qtd">Sem dados</span></li>
 					</ul>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Boa Vista, Goiânia e Rio Branco não possuem dados</span>
+						<span>Boa Vista e Rio Branco não possuem dados</span>
 						<span>Brasília não possui escolas municipais</span>
-						<span>Recife possui a 4ª pior nota entre as capitais brasileiras</span>
+						<span>Recife possui a 8ª pior nota entre as capitais brasileiras</span>
 						<canvas id="chartIdebCapII"></canvas>
 					</div>
 				</div>
@@ -547,7 +380,7 @@
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife fica na 5ª posição no Fundamental I</span>
+						<span>Recife fica na 5ª posição no <strong>Ensino Fundamental I</strong></span>
 						<canvas id="chartAprPortI"></canvas>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -596,7 +429,7 @@
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife fica na penúltima posição</span>
+						<span>Recife fica na penúltima posição no <strong>Ensino Fundamental II</strong></span>
 						<canvas id="chartAprPortII"></canvas>
 					</div>
 				</div>
@@ -648,7 +481,7 @@
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife apresenta a 4ª pior taxa de aprendizado do Nordeste no Ensino Fundamental I</span>
+						<span>Recife apresenta a 4ª pior taxa de aprendizado do Nordeste no <strong>Ensino Fundamental I</strong></span>
 						<canvas id="chartAprMatI"></canvas>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -697,7 +530,7 @@
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife tem o 2º pior aprendizado da região Nordeste no Ensino Fundamental II</span>
+						<span>Recife tem o 2º pior aprendizado da região Nordeste no <strong>Ensino Fundamental II</strong></span>
 						<canvas id="chartAprMatII"></canvas>
 					</div>
 				</div>
@@ -709,64 +542,36 @@
 							<span class="mat-tr mat-qtd">Quantidade</span>
 						</li>
 						<li>
-							<span>2001</span>
-							<span class="mat-qtd">95.462</span>
-						</li>
-						<li>
-							<span>2002</span>
-							<span class="mat-qtd">100.817</span>
-						</li>
-						<li>
-							<span>2003</span>
-							<span class="mat-qtd">104.012</span>
-						</li>
-						<li>
-							<span>2004</span>
-							<span class="mat-qtd">101.752</span>
-						</li>
-						<li>
-							<span>2005</span>
-							<span class="mat-qtd">98.030</span>
-						</li>
-						<li>
-							<span>2006</span>
-							<span class="mat-qtd">93.985</span>
-						</li>
-						<li>
-							<span>2007</span>
-							<span class="mat-qtd">87.455</span>
-						</li>
-						<li>
-							<span>2008</span>
-							<span class="mat-qtd">83.676</span>
-						</li>
-						<li>
-							<span>2009</span>
-							<span class="mat-qtd">77.287</span>
-						</li>
-						<li>
 							<span>2010</span>
-							<span class="mat-qtd">71.983</span>
+							<span class="mat-qtd">73.506</span>
 						</li>
 						<li>
 							<span>2011</span>
-							<span class="mat-qtd">67.765</span>
+							<span class="mat-qtd">69.533</span>
 						</li>
 						<li>
 							<span>2012</span>
-							<span class="mat-qtd">64.665</span>
+							<span class="mat-qtd">66.755</span>
 						</li>
 						<li>
 							<span>2013</span>
-							<span class="mat-qtd">62.459</span>
+							<span class="mat-qtd">64.710</span>
 						</li>
 						<li>
 							<span>2014</span>
-							<span class="mat-qtd">61.241</span>
+							<span class="mat-qtd">63.559</span>
 						</li>
 						<li>
 							<span>2015</span>
-							<span class="mat-qtd">59.959</span>
+							<span class="mat-qtd">62.339</span>
+						</li>
+						<li>
+							<span>2016</span>
+							<span class="mat-qtd">64.346</span>
+						</li>
+						<li>
+							<span>2017</span>
+							<span class="mat-qtd">64.840</span>
 						</li>
 					</ul>
 					<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
@@ -812,6 +617,11 @@
 								<span class="idb-obs">4,6</span>
 								<span class="idb-meta">4,6</span>
 							</li>
+							<li>
+								<span class="idb-ano">2017</span>
+								<span class="idb-obs">5,0</span>
+								<span class="idb-meta">4,9</span>
+							</li>
 						</ul>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
@@ -856,6 +666,11 @@
 								<span class="idb-ano">2015</span>
 								<span class="idb-obs">3,5</span>
 								<span class="idb-meta">4,0</span>
+							</li>
+							<li>
+								<span class="idb-ano">2017</span>
+								<span class="idb-obs">4,1</span>
+								<span class="idb-meta">4,3</span>
 							</li>
 						</ul>
 					</div>
