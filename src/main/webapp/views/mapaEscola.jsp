@@ -24,11 +24,7 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/sweetalert.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/jquery-ui.min.js"></script>
-		<script>
-		if (screen && screen.width > 480) {
-		  document.write('<script src="<%=request.getContextPath()%>/views/assets/js/ChartNew.js"><\/script>');
-		}
-		</script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/ChartNew.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/heatmap.min.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/leaflet-heatmap.js"></script>
@@ -259,7 +255,7 @@
 					<h2>Números da educação municipal</h2>
 				</div>
 				<div class="ideb-capitais num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<h3>Comparativo dos IDEBs das Capitais (Fundamental I)</h3>
+					<h3>Comparativo dos IDEBs 2017 das Capitais (Fundamental I)</h3>
 					<ul class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<li>
 							<span class="cap-tr">Capital</span>
@@ -377,11 +373,11 @@
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
 						<span>Brasilia não possui escolas municipais</span>
 						<span>Recife fica na 8ª posição entre as 10 piores capitais brasileiras</span>
-						<canvas id="chartIdebCapI" width="700" height="400"></canvas>
+						<canvas id="chartIdebCapI"></canvas>
 					</div>
 				</div>
 				<div class="ideb-capitais num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<h3>Comparativo dos IDEBs das Capitais (Fundamental II)</h3>
+					<h3>Comparativo dos IDEBs 2017 das Capitais (Fundamental II)</h3>
 					<ul class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<li>
 							<span class="cap-tr">Capital</span>
@@ -500,11 +496,11 @@
 						<span>Boa Vista, Goiânia e Rio Branco não possuem dados</span>
 						<span>Brasília não possui escolas municipais</span>
 						<span>Recife possui a 4ª pior nota entre as capitais brasileiras</span>
-						<canvas id="chartIdebCapII" width="700" height="400"></canvas>
+						<canvas id="chartIdebCapII"></canvas>
 					</div>
 				</div>
 				<div class="aprendizado-portugues num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<h3>Taxas de aprendizado adequado em Português</h3>
+					<h3>Taxas de aprendizado adequado em Português (2015)</h3>
 					<h4>Indica a porcentagem de alunos que aprendeu a matéria adequadamente</h4>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<ul class="apr-cap">
@@ -552,7 +548,7 @@
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
 						<span>Recife fica na 5ª posição no Fundamental I</span>
-						<canvas id="chartAprPortI" width="700" height="400"></canvas>
+						<canvas id="chartAprPortI"></canvas>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						
@@ -601,11 +597,11 @@
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
 						<span>Recife fica na penúltima posição</span>
-						<canvas id="chartAprPortII" width="700" height="400"></canvas>
+						<canvas id="chartAprPortII"></canvas>
 					</div>
 				</div>
 				<div class="aprendizado-matematica num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<h3>Taxas de aprendizado adequado em Matemática</h3>
+					<h3>Taxas de aprendizado adequado em Matemática (2015)</h3>
 					<h4>Indica a porcentagem de alunos que aprendeu a matéria adequadamente</h4>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<ul class="apr-cap">
@@ -653,7 +649,7 @@
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
 						<span>Recife apresenta a 4ª pior taxa de aprendizado do Nordeste no Ensino Fundamental I</span>
-						<canvas id="chartAprMatI" width="700" height="400"></canvas>
+						<canvas id="chartAprMatI"></canvas>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						
@@ -702,7 +698,7 @@
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
 						<span>Recife tem o 2º pior aprendizado da região Nordeste no Ensino Fundamental II</span>
-						<canvas id="chartAprMatII" width="700" height="400"></canvas>
+						<canvas id="chartAprMatII"></canvas>
 					</div>
 				</div>
 				<div class="matriculados num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -774,7 +770,7 @@
 						</li>
 					</ul>
 					<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<canvas id="chartMatriculados" width="700" height="400"></canvas>
+						<canvas id="chartMatriculados"></canvas>
 					</div>
 				</div>
 				<div class="ideb-fundamental-i num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -819,7 +815,7 @@
 						</ul>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<canvas id="chartIdebFunI" width="700" height="400"></canvas>
+						<canvas id="chartIdebFunI"></canvas>
 					</div>
 				</div>
 				<div class="ideb-fundamental-ii num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -864,7 +860,7 @@
 						</ul>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<canvas id="chartIdebFunII" width="700" height="400"></canvas>
+						<canvas id="chartIdebFunII"></canvas>
 					</div>
 				</div>
 			</div>
@@ -1599,7 +1595,7 @@
 			</div>
 		</div>
 		
-		<div class="mobile-blur" onclick="fechaPainelMobile('filtro')"></div>
+		<div class="mobile-blur" onclick="fechaPainelFiltroMobile()"></div>
 		
 		<div class="mobile-painel mobile-filtro">
 			<div class="mobile-painel-menu">
@@ -1896,7 +1892,7 @@
 					<ul class="mobile-side-menu-lista">
 						<li onclick="abrePainelMobile('lista')">Lista das escolas</li>
 						<li onclick="abrePainelMobile('compare')">Compare escolas</li>
-						<li onclick="abrePainelMobile('numeros')">Números da educação</li>
+						<li onclick="abrePainel('numeros')">Números da educação</li>
 						<li onclick="abrePainelMobile('videos')">Vídeos</li>
 						<li onclick="abreSiteAndre()">Conheça André Régis</li>
 						<li onclick="abrePainelMobile('sobre')">Sobre o projeto</li>
@@ -2304,16 +2300,14 @@
 		<script src="<%=request.getContextPath()%>/views/assets/js/questionarioEscolas.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/mapaEscola.js"></script>
 		<script src="<%=request.getContextPath()%>/views/assets/js/filters.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.extensions.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.date.extensions.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/jquery.inputmask.js"></script>
+		<script src="<%=request.getContextPath()%>/views/assets/js/chartsRaiox.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$('[data-toggle="tooltip"]').tooltip(); 
-				if (screen && screen.width > 480) {
-					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.js"><\/script>');
-					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.extensions.js"><\/script>');
-					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/inputmask.date.extensions.js"><\/script>');
-					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/jquery.inputmask.js"><\/script>');
-					document.write('<script src="<%=request.getContextPath()%>/views/assets/js/chartsRaiox.js"><\/script>');
-					
+				$('[data-toggle="tooltip"]').tooltip();
 					$("#periodo-ini").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
 					$("#periodo-fim").inputmask("99/99/9999",{ "placeholder": "dd/mm/yyyy" });
 					$(".videos").fancybox({
@@ -2327,7 +2321,6 @@
 						openEffect	: 'none',
 						closeEffect	: 'none'
 					});
-				}
 			});
 			
 			$(function() {

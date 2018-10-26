@@ -1000,7 +1000,7 @@ function consultaDadosIdeb(id){
 			} else {
 				$(".fiscalicazaoRequerimento").css('display', 'none');
 			}
-			if(data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
+			if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null || data.did_ideb_2015_ini != null || data.did_ideb_2015_fin != null || data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
 				updateIdeb(data);
 			} else {
 				idebVazio();
@@ -1118,6 +1118,8 @@ function alteraVistoria(ordem){
 		$(relTargetClass + " span").css('display', 'inline-block');
 	}
 	
+	consultaFotos(vistoria.id);
+	
 	if(vistoria.sa1){
 		if(ordemAtual != ordem){
 			updateVisitas(vistoria);
@@ -1229,8 +1231,7 @@ function idebVazio(){
 	$(".notas-title-fin").hide();
 	$(".mobile-ideb-info-fin").hide();
 	$(".mobile-aprendizado").hide();
-	$(".escola-mobile-aprendizado").hide();
-	
+	$(".escola-mobile-aprendizado").hide();	
 }
 
 //NOTAS DO IDEB
@@ -1429,7 +1430,7 @@ function updateIdeb(data){
 			$(".notas-title-fin").text('');
 			$(".meta-fin-valor").text('');
 			$(".nota-fin-valor").text('');
-		} else if(notasIniciais != null){
+		} else if(notasFinais != null){
 			$(".notas-title-ini").hide();
 			$(".mobile-ideb-info-ini").hide();
 			$(".notas-title-fin").show();
@@ -2132,6 +2133,11 @@ function updateAprendizado(data){
 }
 
 function updateFotos(data){
+	if(data.length < 1){
+		$(".escola-mobile-galeria").hide();
+	} else {
+		$(".escola-mobile-galeria").show();
+	}
 	$(".fiscalizacao-fotos img").attr('src', '');
 	$(".fiscalizacao-fotos .foto-hidden").remove();
 	var fotoCounter = '+'+(data.length - 4)+' fotos';

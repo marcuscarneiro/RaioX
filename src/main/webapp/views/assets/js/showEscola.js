@@ -36,7 +36,7 @@ function consultaDadosIdebMobile(id){
 		contentType: 'application/json',
 		async: false,
 		success: function(data) {
-			if(data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
+			if(data.did_ideb_2013_ini != null || data.did_ideb_2013_fin != null || data.did_ideb_2015_ini != null || data.did_ideb_2015_fin != null || data.did_ideb_2017_ini != null || data.did_ideb_2017_fin != null){
 				updateIdeb(data);
 			} else {
 				idebVazio();
@@ -73,8 +73,6 @@ function updateIdebMobile(data){
 		notasFinais = data.did_ideb_2017_fin;
 		metasFinais = data.did_meta_2017_fin;
 	}
-	
-	// TO-DO UPDATE INFORMAÇÕES
 	
 	updateGraficoIdebMobile(data);
 }
@@ -308,10 +306,6 @@ function renderMobileIdebChart(data, periodo, color){
 		lineWidth: 1
 	});
 	chart.render();
-}
-
-function idebVazio(){
-	// TO-DO LIMPAR E ESCONDER DIVS
 }
 
 function consultaProvaBrasilMobile(id){
