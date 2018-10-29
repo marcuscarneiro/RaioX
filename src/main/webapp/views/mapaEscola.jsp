@@ -160,7 +160,7 @@
 
 		<div class="painel painel-pesquisa">
 			<div class="dados-pesquisa detalhe">
-				<div class="mobile-painel-menu">
+				<div class="mobile-menu mobile-painel-menu">
 					<div class="menu-left" onclick="fechaPainelMobile('lista')">
 						<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left.svg">
 					</div>
@@ -171,7 +171,11 @@
 						
 					</div>
 				</div>
+				<span class="painel-close" onclick="fechaPaineis()">
+					<i class="fa fa-close fa-2x"></i>
+				</span>
 				<div class="cabecalho">
+					<h2>Pesquisa de escolas</h2>
 					<div class="busca">
 						<span class="busca-icone">
 							<i class="fa fa-search fa-lg"></i>
@@ -247,6 +251,16 @@
 		</div>
 		
 		<div class="painel painel-numeros">
+			<div class="mobile-menu mobile-menu-numeros">
+				<div class="menu-left" onclick="fechaPainelMobile('numeros')">
+					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left.svg">
+				</div>
+				<div class="menu-title">
+					<span>Números da educação</span>
+				</div>
+				<div class="menu-right">
+				</div>
+			</div>
 			<div class="detalhe-numeros detalhe">
 				<span class="painel-close" onclick="fechaPaineis()">
 					<i class="fa fa-close fa-2x"></i>
@@ -336,6 +350,7 @@
 					<h3>Taxas de aprendizado adequado em Português (2015)</h3>
 					<h4>Indica a porcentagem de alunos que aprendeu a matéria adequadamente</h4>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<span class="aprendizado-title-mob">Fundamental I (do 1º ao 5º ano)</span>
 						<ul class="apr-cap">
 							<li>
 								<span class="cap-tr">Capitais do Nordeste</span>
@@ -380,11 +395,11 @@
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife fica na 5ª posição no <strong>Ensino Fundamental I</strong></span>
+						<span>Recife fica na 5ª posição no Ensino Fundamental I</span>
 						<canvas id="chartAprPortI"></canvas>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						
+						<span class="aprendizado-title-mob">Fundamental II (do 6º ao 9º ano)</span>
 						<ul class="apr-cap">
 							<li>
 								<span class="cap-tr">Capitais do Nordeste</span>
@@ -429,7 +444,7 @@
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife fica na penúltima posição no <strong>Ensino Fundamental II</strong></span>
+						<span>Recife fica na penúltima posição no Ensino Fundamental II</span>
 						<canvas id="chartAprPortII"></canvas>
 					</div>
 				</div>
@@ -437,6 +452,7 @@
 					<h3>Taxas de aprendizado adequado em Matemática (2015)</h3>
 					<h4>Indica a porcentagem de alunos que aprendeu a matéria adequadamente</h4>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<span class="aprendizado-title-mob">Fundamental I (do 1º ao 5º ano)</span>
 						<ul class="apr-cap">
 							<li>
 								<span class="cap-tr">Capitais do Nordeste</span>
@@ -485,7 +501,7 @@
 						<canvas id="chartAprMatI"></canvas>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						
+						<span class="aprendizado-title-mob">Fundamental II (do 6º ao 9º ano)</span>
 						<ul class="apr-cap">
 							<li>
 								<span class="cap-tr">Capitais do Nordeste</span>
@@ -1584,6 +1600,31 @@
 			</div>
 		</div>
 		
+		<div class="mobile-painel painel-sobre">
+			<div class="mobile-menu mobile-menu-sobre">
+				<div class="menu-left" onclick="fechaPainelMobile('sobre')">
+					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left.svg">
+				</div>
+				<div class="menu-title">
+					<span>Sobre o projeto</span>
+				</div>
+				<div class="menu-right">
+				</div>
+			</div>
+			<div class="painel-sobre-content">
+				<h2>André Régis</h2>
+				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/andre.jpg">
+				<span class="sobre-text">Idealizador do Guardião Escolar, o vereador André Régis de Carvalho, dedica-se com muito empenho aos estudos das ciências do Direito e da Política, tendo conquistado uma série de importantes títulos acadêmicos no Brasil e no exterior, além de ser também integrante de instituições voltadas para o estudo e pesquisas das grandes questões sociais e econômicas da atualidade.</span>
+				<a href='#' onclick="abreSiteAndre()">
+					<span class="sobre-link">Conheça mais sobre o professor</span>
+				</a>
+				<h2>Raio-X das Escolas</h2>
+				<img alt="" src="<%=request.getContextPath()%>/views/assets/css/img/raioxbig.jpg">
+				<span class="sobre-text">O Raio-X das Escolas é uma ferramenta online criada pelo vereador André Régis e sua equipe. Nela estão contidas todas as informações obtidas nas mais de 1000 vistorias realizadas em Escolas e Creches públicas do Recife. Essa ferramenta inédita oferece aos cidadãos acesso a todas as informações sobre as unidades de ensino: fotos, índices de aprendizagem, notas do IDEB e relatórios completos, além de diversos filtros que permitem o cruzamento dessa informações.</span>
+			</div>
+		</div>
+		
+		
 		<div class="painel painel-videos">
 			<div class="detalhe-video detalhe">
 				<span class="painel-close" onclick="fechaPaineis()">
@@ -1707,7 +1748,7 @@
 					<ul class="mobile-side-menu-lista">
 						<li onclick="abrePainelMobile('lista')">Lista das escolas</li>
 						<li onclick="abrePainelMobile('compare')">Compare escolas</li>
-						<li onclick="abrePainel('numeros')">Números da educação</li>
+						<li onclick="abrePainelMobile('numeros')">Números da educação</li>
 						<li onclick="abrePainelMobile('videos')">Vídeos</li>
 						<li onclick="abreSiteAndre()">Conheça André Régis</li>
 						<li onclick="abrePainelMobile('sobre')">Sobre o projeto</li>
@@ -1965,39 +2006,39 @@
 			</div>
 			
 			<footer class="mobile-footer">
-			<div class="footer-active-indicator"></div>
-			<div id="footer-list" class="rpa-item footer-list" onclick="abrePainelMobile('lista')">
-				<i class="fa fa-list footer-menu-inactive"></i>
-			</div>
-			<div id="footer-list" class="rpa-item footer-globe" onclick="fechaPainelMobile('lista')">
-				<i class="fa fa-globe footer-menu-active footer-menu-inactive"></i>
-			</div>
-			<div class="mobile-legenda">
-				<ul class="mobile-lista-legenda">
-					<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Superou a meta IDEB e ficou acima de 6">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/verde-15.png">
-					</li>
-					<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/azul-15.png">
-					</li>
-					<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/amarelo-15.png">
-					</li>
-					<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Não atingiu a meta do IDEB">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/vermelho-15.png">
-					</li>
-					<li id="pin-cinza" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Sem dados do IDEB">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/cinza-15.png">
-					</li>
-					<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/preto-15.png">
-					</li>
-					<li id="heatmap-legend" class="legenda-item" data-toggle="tooltip" data-placement="top" title="">
-						<img src="<%=request.getContextPath()%>/views/assets/css/img/heatmap-legend.png">
-					</li>
-				</ul>
-			</div>
-		</footer>
+				<div class="footer-active-indicator"></div>
+				<div id="footer-list" class="rpa-item footer-list" onclick="abrePainelMobile('lista')">
+					<i class="fa fa-list footer-menu-inactive"></i>
+				</div>
+				<div id="footer-list" class="rpa-item footer-globe" onclick="fechaPainelMobile('lista')">
+					<i class="fa fa-globe footer-menu-active footer-menu-inactive"></i>
+				</div>
+				<div class="mobile-legenda">
+					<ul class="mobile-lista-legenda">
+						<li id="pin-verde" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Superou a meta IDEB e ficou acima de 6">
+							<img src="<%=request.getContextPath()%>/views/assets/css/img/verde-15.png">
+						</li>
+						<li id="pin-azul" class="legenda-item" data-toggle="tooltip" data-placement="top" title="BOM">
+							<img src="<%=request.getContextPath()%>/views/assets/css/img/azul-15.png">
+						</li>
+						<li id="pin-amarelo" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Atingiu a meta IDEB mas ficou abaixo de 6">
+							<img src="<%=request.getContextPath()%>/views/assets/css/img/amarelo-15.png">
+						</li>
+						<li id="pin-vermelho" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Não atingiu a meta do IDEB">
+							<img src="<%=request.getContextPath()%>/views/assets/css/img/vermelho-15.png">
+						</li>
+						<li id="pin-cinza" class="legenda-item" data-toggle="tooltip" data-placement="top" title="Sem dados do IDEB">
+							<img src="<%=request.getContextPath()%>/views/assets/css/img/cinza-15.png">
+						</li>
+						<li id="pin-preto" class="legenda-item" data-toggle="tooltip" data-placement="top" title="RUIM">
+							<img src="<%=request.getContextPath()%>/views/assets/css/img/preto-15.png">
+						</li>
+						<li id="heatmap-legend" class="legenda-item" data-toggle="tooltip" data-placement="top" title="">
+							<img src="<%=request.getContextPath()%>/views/assets/css/img/heatmap-legend.png">
+						</li>
+					</ul>
+				</div>
+			</footer>
 		</div>
 		<div id="flip" class="flip logo" ontouchstart="this.classList.toggle('hover');">
 			<div class="front">

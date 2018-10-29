@@ -17,6 +17,7 @@
 	left: 0;
 	color: white;
 	background: linear-gradient(45deg, #105099 0%, #81D0EF 100%);
+	overflow: hidden;
 }
 
 .mobile-side-menu-content
@@ -94,6 +95,10 @@
 .mobile-legenda
 {
 	height: 65px;
+}
+
+.aprendizado-title-mob {
+	display: none;
 }
 
 .mapShadow1 {
@@ -291,6 +296,9 @@
 	transform: translateX(0vw);
 }
 
+.mobile-menu-numeros, .mobile-menu-sobre {
+	background-color: white;
+}
 
 /* MOBILE SCHOOL LIST */
 .mobile-list {
@@ -700,21 +708,12 @@
 	border-radius: 0 0 0 10px;
 }
 
-.footer-globe:after, .footer-list:after
-{
-	
-    content: "";
-    position: relative;
-    top: -3px;
-    left: calc(33% + 20px);
-    border-right: 1px solid #bebebe;
-}
-
 .footer-globe, .footer-list
 {
 	color: #bebebe;
 	text-align: center;
 	width: 33%;
+    border-right: 1px solid #efefef;
 }
 
 .footer-globe i, .footer-list i
@@ -734,6 +733,57 @@
 
 .footer-menu-active {
 	color: #2b7093;
+}
+
+.painel-sobre {
+	display: none;
+	position: absolute;
+	flex-grow: 1;
+	width: 100%;
+    height: inherit;
+	padding: 0;
+	top: 0;
+	overflow: auto;
+	z-index: 1;
+	background-color: white;
+}
+
+.painel-sobre-content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+	padding: 70px 20px 0 20px;
+}
+
+.painel-sobre-content .sobre-link {
+	font-size: 16px;
+	text-decoration: underline;
+	color: black;
+}
+	
+.painel-sobre-content a {
+	padding-bottom: 30px;
+    border-bottom: 1px #e9e9e9 solid;
+}	
+
+.painel-sobre-content h2 {
+	margin-bottom: 20px;
+	margin-top: 25px;
+	font-size: 24px;
+	line-height: 36px;
+}	
+
+.painel-sobre-content .sobre-text {
+	font-size: 16px;
+    line-height: 26px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.painel-sobre-content img {
+	width: 200px;
+	height: 200px;
+	margin-bottom: 10px;
 }
 
 /* MEDIA QUERY */
@@ -814,7 +864,7 @@
 		left: 0;
 	}
 	
-	.compare, .detalhe, .dados-compare {
+	.compare, .dados-compare {
 		bottom: 40px;
 	}
 	
@@ -893,8 +943,12 @@
 		display: flex;
 	}
 		
-	.flip, .anos-radio, .layers-ui, .helper, .fecha-compare, .cabecalho-compare h2 {
+	.flip, .anos-radio, .layers-ui, .helper, .fecha-compare, .cabecalho-compare h2, .detalhe-numeros .cabecalho , .painel-pesquisa .cabecalho {
     	display: none;
+	}
+	
+	.ideb-capitais h3 {
+		margin-top: 40px;
 	}
 
 	.pesquisa-escola-caixas, .compare-escola-caixas {
@@ -1016,6 +1070,26 @@
 	}
 	
 	.painel-compare.compare-show {
+		transform: translateX(100%);
+	}
+	
+	.painel-numeros {
+		left: -100%;
+		width: 100%;
+		transition: all .5s ease-in-out;
+	}
+	
+	.painel-numeros.numeros-show {
+		transform: translateX(100%);
+	}
+	
+	.painel-sobre {
+		left: -100%;
+		width: 100%;
+		transition: all .5s ease-in-out;
+	}
+	
+	.painel-sobre.sobre-show {
 		transform: translateX(100%);
 	}
 	
@@ -1175,11 +1249,46 @@
 	    margin: 20px 0;
 	    font-weight: 600;
 	}
+	
+	.detalhe-numeros .cap-info{
+		margin-top: 20px;
+	}
+	
+	.aprendizado-title-mob {
+		display: block;
+	    margin-bottom: 16px;
+	    font-size: 16px;
+	    font-weight: bold;
+	    text-align: center;
+	    width: 100%;
+	    border-top: 1px #e9e9e9 solid;
+	    padding-top: 20px;
+	}
+	
+	.ideb-fundamental-ii {
+	    border-bottom: 0;
+	}
+	
+	.detalhe {
+		bottom: 0 !important;
+	}
+	
+	.idb-tr {
+		font-size: 12px !important;
+	}
+	
+	.painel-sobre {
+		display: block;
+	}
 }
 
 @media screen and (max-width: 320px){
 	.mobile-opcoes-lista .opcoes-label {
 		font-size: 10px;
+	}
+	
+	.order-radio {
+    	font-size: 11px;
 	}
 }
 	

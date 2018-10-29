@@ -36,6 +36,7 @@ html, body
 	z-index: 0;
 	border-radius: 0;
 	transition: all .3s ease-in-out;
+	overflow: hidden;
 }
 
 #map
@@ -497,7 +498,7 @@ input:-ms-input-placeholder {  /* IE */
 	height: 100%;
 	max-width: 700px;
 	max-height: 400px;
-	min-height: 200px;
+	min-height: 240px;
 	margin-top: 20px;
 }
 
@@ -1239,10 +1240,16 @@ li.box-numeros:hover
 	border-bottom: 1px solid #E9E9E9;	
 }
  
-.matriculados li span, .ideb-capitais li span, .ideb-anos li span, .aprendizado-portugues li span, .aprendizado-matematica li span{
+.ideb-anos li span{
 	width: 35%;
 	float: left;
 }
+
+.matriculados li span, .ideb-capitais li span, .aprendizado-portugues li span, .aprendizado-matematica li span{
+	width: 50%;
+	float: left;
+}
+
 .matriculados li span.mat-qtd, .ideb-capitais li span.cap-qtd, .ideb-anos li span.idb-meta, .aprendizado-portugues li span.cap-qtd, .aprendizado-matematica li span.cap-qtd {
     float: right;
     text-align: right;

@@ -16,6 +16,21 @@ function renderMatriculados(){
 		{year: '2017', num: 64840}
 	];
 	
+	if(viewWidth < 360){
+		labelStyle = {
+		    	fontFamily: 'Montserrat',
+		    	fontSize: '12',
+		    	textAlign: 'start',
+		    	rotate: Math.PI / 3,
+		    	textBaseline: 'middle'
+		    };
+	} else {
+		labelStyle = {
+	    	fontFamily: 'Montserrat',
+	    	fontSize: '12'
+	    };
+	}
+	
 	var chart = new F2.Chart({
 		id: 'chartMatriculados',
 		pixelRatio: 1
@@ -23,8 +38,8 @@ function renderMatriculados(){
 	
 	chart.source(dataMat, {
 		num: {
-			tickCount: 6,
-			max: 80000,
+			tickCount: 11,
+			max: 100000,
 			formatter: function formatter(val) {
 				if(val > 0){
 					return (val.toString().slice(0, -3) + "." +val.toString().slice(-3));
@@ -43,10 +58,7 @@ function renderMatriculados(){
 	})
 	
 	chart.axis('year', {
-		label: {
-			fontFamily: 'Montserrat',
-			fontSize: '12'
-		}
+		label: labelStyle
 	})
 	chart.tooltip({
 		showItemMarker: false,
@@ -417,9 +429,27 @@ renderChartCapitais(dataCapFin, 'chartIdebCapII');
 
 //APRENDIZADO
 function renderChartNordesteAprIni(data, id){
+	var labelStyle;
+	if(viewWidth < 460){
+		labelStyle = {
+		    	fontFamily: 'Montserrat',
+		    	fontSize: '10',
+		    	textAlign: 'start',
+		    	rotate: Math.PI / 3,
+		    	textBaseline: 'middle'
+		    };
+        chartPadding = ['auto', 'auto', 50, 'auto'];
+	} else {
+		labelStyle = {
+	    	fontFamily: 'Montserrat',
+	    	fontSize: '10'
+	    };
+        chartPadding = ['auto', 'auto', 'auto', 'auto'];
+	}
 	var chart = new F2.Chart({
 		id: id,
-		pixelRatio: 1
+		pixelRatio: 1,
+		padding: chartPadding
 	});
 	
 	chart.source(data, {
@@ -440,10 +470,7 @@ function renderChartNordesteAprIni(data, id){
 	})
 	
 	chart.axis('city', {
-	    label: {
-	    	fontFamily: 'Montserrat',
-	    	fontSize: '10'
-	      }
+	    label: labelStyle
 	})
 	chart.tooltip({
 		showItemMarker: false,

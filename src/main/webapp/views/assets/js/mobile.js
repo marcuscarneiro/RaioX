@@ -88,6 +88,12 @@ function abrePainelMobile(painel) {
 	case "compare":
 		$(".painel-compare").addClass('compare-show');
 		break;
+	case "sobre":
+		$(".painel-sobre").addClass('sobre-show');
+		break;
+	case "numeros":
+		$(".painel-numeros").addClass('numeros-show');
+		break;
 	case "escola":
 		painelEscola = true;
 		$('.painel-escola-mobile').addClass('escola-show');
@@ -130,6 +136,12 @@ function fechaPainelMobile(painel) {
 		break;
 	case "compare":
 		$(".painel-compare").removeClass('compare-show');
+		break;
+	case "numeros":
+		$(".painel-numeros").removeClass('numeros-show');
+		break;
+	case "sobre":
+		$(".painel-sobre").removeClass('sobre-show');
 		break;
 	case "escola":
 		painelEscola = false;
@@ -579,3 +591,22 @@ $(document).ready(function() {
 		}
 	});
 });
+
+function callVideos(){
+	var teste = [];
+	$(document).ready(function() {
+	  $.get(
+	    "https://www.googleapis.com/youtube/v3/search",{
+	      part : 'snippet',
+			maxResults : 20,
+	      channelId : 'UC2CEbvsZB8OgBXlTHd9pwZg',
+	      type : 'video',
+	      key: 'AIzaSyCx4dLsr2z7JccqEeyEKZzlmJVdH4MMV0U'},
+	      function(data) {
+	        $.each( data.items, function( i, item ) {
+	          teste.push(item);
+	        })
+	      }
+	  );
+	});
+}
