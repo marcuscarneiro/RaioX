@@ -421,7 +421,26 @@ input:-ms-input-placeholder {  /* IE */
 	width: 90% !important;
 }
 
-.painel-resultado-compare, .painel-videos, .painel-projeto, .painel-compare  
+.painel-videos {
+	box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	bottom: 0;
+    height: auto;
+    flex-grow: 1;
+    overflow: auto;
+	background: #fff;
+	z-index: 2;
+	transition: all .5s ease-in-out;
+}
+
+.painel-videos.videos-show {
+	transform: translateX(100%);
+}
+
+.painel-resultado-compare, .painel-projeto, .painel-compare  
 {
 	-moz-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
 	-webkit-box-shadow: rgba(0,0,0,.1) 0 0 10px 3px;
@@ -1191,23 +1210,29 @@ li.box-numeros:hover
 
 .video-list
 {
-	list-style: none;
-	margin: 2% 0;
-	width: 99%;
-	float: left;
-	padding: 0 6%;
+	padding: .5vw;
+	font-size: 0;
+	display: -ms-flexbox;
+	-ms-flex-wrap: wrap;
+	-ms-flex-direction: column;
+	-webkit-flex-flow: row wrap; 
+	flex-flow: row wrap; 
+	display: -webkit-box;
+	display: flex;
 }
 
 #video-gallery li
 {
-	float: left;
-	width: 25%;
-	padding: 1px;
+	-webkit-box-flex: auto;
+	-ms-flex: auto;
+	flex: auto; 
+	width: 200px; 
+	margin: .5vw;
 }
 
 .videos img {
-	float: left;
-	width: 100%;
+	width: 100%; 
+	height: auto;
 	opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
     filter: grayscale(1);

@@ -1,3 +1,4 @@
+let videosState = false;
 let menu = false;
 let lista = false;
 let todos = true;
@@ -94,6 +95,12 @@ function abrePainelMobile(painel) {
 	case "numeros":
 		$(".painel-numeros").addClass('numeros-show');
 		break;
+	case "videos":
+		if(!videosState){
+			callVideos();
+		}
+		$(".painel-videos").addClass('videos-show');
+		break;
 	case "escola":
 		painelEscola = true;
 		$('.painel-escola-mobile').addClass('escola-show');
@@ -142,6 +149,9 @@ function fechaPainelMobile(painel) {
 		break;
 	case "sobre":
 		$(".painel-sobre").removeClass('sobre-show');
+		break;
+	case "videos":
+		$(".painel-videos").removeClass('videos-show');
 		break;
 	case "escola":
 		painelEscola = false;
@@ -593,18 +603,19 @@ $(document).ready(function() {
 });
 
 function callVideos(){
-	var teste = [];
 	$(document).ready(function() {
 	  $.get(
 	    "https://www.googleapis.com/youtube/v3/search",{
 	      part : 'snippet',
 			maxResults : 20,
 	      channelId : 'UC2CEbvsZB8OgBXlTHd9pwZg',
+	      order: 'date',
 	      type : 'video',
 	      key: 'AIzaSyCx4dLsr2z7JccqEeyEKZzlmJVdH4MMV0U'},
 	      function(data) {
+	    	  videosState = true;
 	        $.each( data.items, function( i, item ) {
-	          teste.push(item);
+	          $('.video-list').append('<li><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/'+ item.id.videoId +'?autoplay=1"><img alt="'+ item.title +'" src="'+ item.snippet.thumbnails.high.url +'"></a></li>');
 	        })
 	      }
 	  );
