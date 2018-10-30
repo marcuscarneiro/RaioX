@@ -1626,7 +1626,7 @@ function updateGraficoIdeb(data){
 			annotateDisplay: true,
 			annotateLabel: '<b><%=v1%></b><br><%=v2%>: <%=v3%>',
 			annotatePadding: "5px 5px 5px 5px",
-			annotateFontFamily: "'Helvetica'",
+			annotateFontFamily: "'Montserrat'",
 			annotateFontStyle: "normal normal",
 			annotateFontColor: "rgba(0,0,0,1)",
 			annotateFontSize: 12,
@@ -1689,7 +1689,7 @@ function updateGraficoIdeb(data){
 			annotateDisplay: true,
 			annotateLabel: '<b><%=v1%></b><br><%=v2%>: <%=v3%>',
 			annotatePadding: "5px 5px 5px 5px",
-			annotateFontFamily: "'Helvetica'",
+			annotateFontFamily: "'Montserrat'",
 			annotateFontStyle: "normal normal",
 			annotateFontColor: "rgba(0,0,0,1)",
 			annotateFontSize: 12,
@@ -1706,12 +1706,7 @@ function updateGraficoIdeb(data){
 			datasetStrokeWidth : 2,
 			datasetFill : false,
 			legend: true,
-			legendBorders: false,
-			responsive: true,
-			responsiveMaxHeight: 300,
-			responsiveMaxWidth: 400,
-			responsiveMinHeight : 200,
-			responsiveMinWidth : 300
+			legendBorders: false
 		});
 	}
 }
@@ -2135,31 +2130,46 @@ function updateAprendizado(data){
 function updateFotos(data){
 	if(data.length < 1){
 		$(".escola-mobile-galeria").hide();
+		$("#foto-visita-1").hide();
+		$(".fiscalizacao-fotos").hide();
 	} else {
 		$(".escola-mobile-galeria").show();
-	}
-	$(".fiscalizacao-fotos img").attr('src', '');
-	$(".fiscalizacao-fotos .foto-hidden").remove();
-	var fotoCounter = '+'+(data.length - 4)+' fotos';
-	
-	$.each(data, function(i, foto){
-		if(foto.localizacao != null){
-			i++;
-			var localizacao = contextPath + foto.localizacao;
-			if(i <= 4){
-				$(".escola-mobile-galeria #foto-visita-"+i).attr("href", localizacao);
-				$(".escola-mobile-galeria #foto-visita-"+i).attr("title", foto.nome);
-				$(".escola-mobile-galeria #foto-visita-"+i + " img").attr('src', localizacao);
-			} else if(i == 5) {
-				$(".escola-mobile-galeria #foto-visita-counter .counter").text(fotoCounter);
-				$(".escola-mobile-galeria #foto-visita-counter").attr("href", localizacao);
-				$(".escola-mobile-galeria #foto-visita-counter").attr("title", foto.nome);
-				$(".escola-mobile-galeria #foto-visita-counter" + " img").attr('src', localizacao);
-			} else {
-				$(".fiscalizacao-fotos").append('<li class="foto-hidden"><a id="foto-visita-'+i+'" class="fancybox boxes" href="'+localizacao+'" rel="fotoescola" title="'+foto.nome+'"><img src="'+localizacao+'"></a></li>');
-			}
+		$(".fiscalizacao-fotos").show();
+		$(".fiscalizacao-fotos img").attr('src', '');
+		$(".fiscalizacao-fotos .foto-hidden").remove();
+		var fotoCounter = '+'+(data.length - 4)+' fotos';
+		
+		var targertClass = '.escola-mobile-galeria';
+		if(viewWidth > 640){
+			targertClass = '.fiscalizacao-fotos';
 		}
-	})
+		
+		$.each(data, function(i, foto){
+			if(foto.localizacao != null){
+				i++;
+				var localizacao = contextPath + foto.localizacao;
+				if(i == 1){
+					$("#foto-visita-"+i).attr("href", localizacao);
+					$("#foto-visita-"+i).attr("title", foto.nome);
+					$("#foto-visita-"+i + " img").attr('src', localizacao);
+					$("#foto-visita-"+i).show();
+				} else if(i <= 4){
+					$(targertClass+" #foto-visita-"+i).attr("href", localizacao);
+					$(targertClass+" #foto-visita-"+i).attr("title", foto.nome);
+					$(targertClass+" #foto-visita-"+i + " img").attr('src', localizacao);
+					$("#foto-visita-"+i).show();
+				} else if(i == 5) {
+					$(targertClass+" #foto-visita-counter .counter").text(fotoCounter);
+					$(targertClass+" #foto-visita-counter").attr("href", localizacao);
+					$(targertClass+" #foto-visita-counter").attr("title", foto.nome);
+					$(targertClass+" #foto-visita-counter" + " img").attr('src', localizacao);
+					$("#foto-visita-"+i).show();
+				} else {
+					$(".fiscalizacao-fotos").append('<li class="foto-hidden"><a id="foto-visita-'+i+'" class="fancybox boxes" href="'+localizacao+'" rel="fotoescola" title="'+foto.nome+'"><img src="'+localizacao+'"></a></li>');
+				}
+			}
+		});
+	}
 }
 
 function updateComentarios(data){
@@ -2394,32 +2404,6 @@ function setAllRpaLayers(){
 	setRpa6(false);
 }
 
-//function hidePesquisa(){
-//	var logo = $(".logo");
-//	$(".pesquisa").slideUp(500);
-//	$(".menu-ui").animate({
-//	    top: "130px"
-//	  }, 500 );
-//	$("#info").css("top", "61px");
-//	logo.css('height', '55px');
-//   	logo.css('padding-top', '5px')
-//	$(".logo img").hide();
-//}
-
-//function showPesquisa(){
-//	if(viewWidth >= 750){
-//		var logo = $(".logo");
-//		$(".pesquisa").slideDown(500);
-//		$(".menu-ui").animate({
-//		    top: "180px"
-//		  }, 500 );
-//		$("#info").css("top", "111px");
-//		logo.css('height', '105px');
-//	   	logo.css('padding-top', '0px');
-//	   	$(".logo img").show();
-//	}
-//}
-
 $('#listaEscola1').btsListFilter('#compareEnt1', {
 	itemChild: 'span',
 	initial: false});
@@ -2518,7 +2502,7 @@ function compareIdeb(esc1Id, esc2Id, nome1, nome2){
 					annotateDisplay: true,
 					annotateLabel: '<b><%=v1%></b><br><%=v2%>: <%=v3%>',
 					annotatePadding: "5px 5px 5px 5px",
-					annotateFontFamily: "'Helvetica'",
+					annotateFontFamily: "'Montserrat'",
 					annotateFontStyle: "normal normal",
 					annotateFontColor: "rgba(0,0,0,1)",
 					annotateFontSize: 12,

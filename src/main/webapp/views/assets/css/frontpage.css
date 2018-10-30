@@ -507,7 +507,7 @@ input:-ms-input-placeholder {  /* IE */
 	margin: 6%;
 }
 
-.detalhe-numeros .cabecalho
+.detalhe-numeros .cabecalho, .detalhe-videos .cabecalho 
 {
 	margin: 3%;
 }
@@ -1208,6 +1208,19 @@ li.box-numeros:hover
     text-align: center;
 }
 
+#video-gallery {
+	margin: 20px;
+}
+
+#video-gallery li
+{
+	-webkit-box-flex: auto;
+	-ms-flex: auto;
+	flex: auto; 
+	width: 200px; 
+	margin: .5vw;
+}
+
 .video-list
 {
 	padding: .5vw;
@@ -1219,15 +1232,6 @@ li.box-numeros:hover
 	flex-flow: row wrap; 
 	display: -webkit-box;
 	display: flex;
-}
-
-#video-gallery li
-{
-	-webkit-box-flex: auto;
-	-ms-flex: auto;
-	flex: auto; 
-	width: 200px; 
-	margin: .5vw;
 }
 
 .videos img {

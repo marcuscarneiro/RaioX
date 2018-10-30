@@ -730,24 +730,25 @@
 									</a>
 									<ul class="fiscalizacao-fotos">
 										<li>
-											<a id="foto-visita-2" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<img src="#">
+											<a id="foto-visita-2" class="fancybox boxes" href="" rel="fotoescola" title="">
+												<img src="">
 											</a>
 										</li>
 										<li>
-											<a id="foto-visita-3" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<img src="#">
+											<a id="foto-visita-3" class="fancybox boxes" href="" rel="fotoescola" title="">
+												<img src="">
 											</a>
 										</li>
 										<li>
-											<a id="foto-visita-4" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<img src="#">
+											<a id="foto-visita-4" class="fancybox boxes" href="" rel="fotoescola" title="">
+												<img src="">
 											</a>
 										</li>
 										<li>
-											<a id="foto-visita-counter" class="fancybox boxes" href="#" rel="fotoescola" title="#">
-												<span></span>
-												<img src="#">
+											<a id="foto-visita-counter" class="fancybox boxes" href="" rel="fotoescola" title="">
+												<span class="background"></span>
+												<span class="counter"></span>
+												<img src="">
 											</a>
 										</li>
 									</ul>
@@ -1626,6 +1627,16 @@
 		
 		
 		<div class="painel painel-videos">
+			<div class="mobile-menu mobile-menu-videos">
+				<div class="menu-left" onclick="fechaPainelMobile('videos')">
+					<img alt="" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left.svg">
+				</div>
+				<div class="menu-title">
+					<span>Vídeos sobre educação</span>
+				</div>
+				<div class="menu-right">
+				</div>
+			</div>
 			<div class="detalhe-video detalhe">
 				<span class="painel-close" onclick="fechaPaineis()">
 					<i class="fa fa-close fa-2x"></i>

@@ -296,7 +296,7 @@
 	transform: translateX(0vw);
 }
 
-.mobile-menu-numeros, .mobile-menu-sobre {
+.mobile-menu-numeros, .mobile-menu-sobre, .mobile-menu-videos {
 	background-color: white;
 }
 
@@ -578,6 +578,26 @@
     background: #2b7093;
     text-decoration: none;
     color: white;
+}
+
+.foto-hidden {
+	display: none;
+}
+
+#foto-visita-counter .counter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    width: 100%;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+
+#foto-visita-counter .background {
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(60,60,60,0.9);
 }
 
 .escola-mobile-content {
@@ -943,7 +963,7 @@
 		display: flex;
 	}
 		
-	.flip, .anos-radio, .layers-ui, .helper, .fecha-compare, .cabecalho-compare h2, .detalhe-numeros .cabecalho , .painel-pesquisa .cabecalho {
+	.flip, .anos-radio, .layers-ui, .helper, .fecha-compare, .cabecalho-compare h2, .detalhe-numeros .cabecalho , .painel-pesquisa .cabecalho, .detalhe-video .cabecalho {
     	display: none;
 	}
 	
@@ -1114,26 +1134,6 @@
     	border-radius: 3px;
 	}
 	
-	.foto-hidden {
-		display: none;
-	}
-	
-	#foto-visita-counter .counter {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-	    width: 100%;
-	    color: white;
-	    transform: translate(-50%, -50%);
-	}
-	
-	#foto-visita-counter .background {
-		position: absolute;
-	    height: 100%;
-	    width: 100%;
-	    background-color: rgba(60,60,60,0.9);
-	}
-	
 	.aprendizado-group {
 		margin: 15px 0;
 	}
@@ -1279,6 +1279,19 @@
 	
 	.painel-sobre {
 		display: block;
+	}
+	
+	#video-gallery {
+	    margin: 70px 15px 0 20px;
+	}
+	
+	#video-gallery li {
+		margin: 5px 0;
+	}
+	
+	.videos img {
+		opacity: 1;
+    	filter: none;
 	}
 }
 

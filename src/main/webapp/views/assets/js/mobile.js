@@ -545,12 +545,14 @@ function filtraMobile(){
 				personalizeMarkers('quadras');
 			}
 			if(acessibilidade){
-				filtraAcessibilidade('acessibilidade');
+				modo = 'aces';
 			}
 			map.removeLayer(escolasLayer);
 			escolasLayer = L.geoJSON().addTo(map);
 			escolasLayer.addData(escolasData);
 			changeMarkers();
+			mudaLegenda(modo);
+			personalizeMarkers(modo);
 			resolve()
 		}, 500);
 	});
