@@ -10,7 +10,7 @@ var southWest = L.latLng(-8.203279, -35.308557),
 	northEast = L.latLng(-7.714644, -34.522893),
 	bounds = L.latLngBounds(southWest, northEast);
 var initialzoom = 12;
-if(viewWidth < 640) {
+if(viewWidth < 760) {
 	initialzoom = 11;
 }
 
@@ -51,7 +51,7 @@ var bg_options = {
 };
 
 function resetMap(){
-	if(viewWidth < 750){
+	if(viewWidth < 760){
 		map.setView([-8.0529, -34.9330], 11);
 	} else {
 		map.setView([-8.0529, -34.9330], 12);
@@ -513,10 +513,6 @@ function definePopup(marker){
 			'</a>'+
 		'</div></div>';
 	
-//	if(viewWidth >= 750){
-//		info.innerHTML = popupContent;
-//	}
-	
 	marker.bindPopup(popupContent,
 	{
 		closeButton: true,
@@ -592,7 +588,7 @@ function resizeMarker(marker){
 	}
 
 	if(marker != actualMarker){
-		if(viewWidth < 620){
+		if(viewWidth < 760){
 			loadEscolaMobile(marker.feature.properties.ID, marker.feature.properties.Escola, marker.feature.properties.Endereco);
 		} else {
 			showEscola(marker.feature.properties.Escola, marker.feature.properties.ID);
@@ -708,7 +704,7 @@ function escolasClick(){
 
 function goToPoint(marker){
 	if(map.getZoom() != 15){
-		if(viewWidth < 620){
+		if(viewWidth < 760){
 			map.setViewOffset(marker.getLatLng(),[0,-150],15, {
 				pan: {
 					animate: true,
@@ -730,7 +726,7 @@ function goToPoint(marker){
 			});
 		}
 	} else {
-		if(viewWidth < 620){
+		if(viewWidth < 760){
 			map.setViewOffset(marker.getLatLng(),[0,-150],15, {
 				pan: {
 					animate: true,
@@ -785,7 +781,7 @@ function changeMarkers(){
 				'</a>'+
 				'</div>'+
 		'</li>');
-		if(viewWidth > 620){
+		if(viewWidth > 760){
 			$('.pesquisa-lista').append('<li esc="' + marker.feature.properties.ID + '" class="pesquisa-escola-caixas" onclick="abreEscola('+ marker.feature.properties.ID +',\''+marker.feature.properties.Escola+'\')">'+
 					'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
 					'<h4 class="pesquisa-endereco">'+marker.feature.properties.Endereco+'</h4>'+
@@ -846,7 +842,7 @@ function changeMarkers(){
 	
 		// Populate content from each markers object.
 		link.onclick = function() {
-			if(viewWidth < 620){
+			if(viewWidth < 760){
 				map.setViewOffset(marker.getLatLng(),[0,-150],15);
 			} else {
 				map.setView(marker.getLatLng(), 15);
@@ -1061,7 +1057,7 @@ function processaVisitas(data){
 	$(".fiscalizacao-datas").show();
 	var qtd = data.length;
 	var indice = 1;
-	if(viewWidth < 620){
+	if(viewWidth < 760){
 		while(indice <= qtd){
 			if(qtd === indice){
 				$(".fiscalizacao-datas-mobile ul").append("<li class='vistoria-" + indice + " data-active' onclick='alteraVistoria("+ indice +")'><span>" + indice + "ª VISTORIA</span></li>");
@@ -1092,7 +1088,7 @@ function processaVisitas(data){
 
 function alteraVistoria(ordem){
 	var relTargetClass, questTargetClass;
-	if(viewWidth < 620){
+	if(viewWidth < 760){
 		relTargetClass = '.escola-mobile-relatorio';
 		$('.fiscalizacao-datas-mobile li').removeClass('data-active');
 	} else {
@@ -1178,7 +1174,7 @@ function updateVisitas(visita){
 	$(".fiscalizacao-header h2").text("FISCALIZAÇÃO");
 	$(".fiscalizacao-datas").show();
 	$(".fiscalizacao-fotos").show();
-	if(viewWidth < 620) {
+	if(viewWidth < 760) {
 		var tableQuestionario = $('.detalhe-escola .fiscalizacao-questionario');
 		$('.escola-mobile-questionario').append(tableQuestionario);
 		$('.detalhe-escola .fiscalizacao-questionario').remove();
@@ -1362,7 +1358,7 @@ function updateIdeb(data){
 		metasFinais = parseFloat(metasFinais).toFixed(1);
 	}
 	
-	if(viewWidth < 620) {
+	if(viewWidth < 760) {
 		var colorIni, colorFin;
 		$(".mobile-group-title").show();
 		$(".mobile-ideb-resume").show();
@@ -1568,7 +1564,7 @@ function updateIdeb(data){
 		}
 	}
 	
-	if(viewWidth < 620){
+	if(viewWidth < 760){
 		updateGraficoIdebMobile(data, colorIni, colorFin);
 	} else {
 		updateGraficoIdeb(data);
@@ -2140,7 +2136,7 @@ function updateFotos(data){
 		var fotoCounter = '+'+(data.length - 4)+' fotos';
 		
 		var targertClass = '.escola-mobile-galeria';
-		if(viewWidth > 640){
+		if(viewWidth > 760){
 			targertClass = '.fiscalizacao-fotos';
 		}
 		
@@ -3064,7 +3060,7 @@ function getCanvas(canvas){
 }
 
 function isSmallScreen(){
-	if(viewWidth <= 750){
+	if(viewWidth <= 760){
 		return true;
 	} else {
 		return false;

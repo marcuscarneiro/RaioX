@@ -831,10 +831,6 @@
   		height: auto;
   	}
   	
-  	.mobile-filtro {
-  		display: block;
-  	}
-  	
 	.pesquisa-escola-caixas, .compare-escola-caixas {
 		width: 33%;
 		padding: 2%;
@@ -852,36 +848,8 @@
 		font-size: 20px;
 	}
 
-	.ideb, .escola-left, .dados-compare, .compare {
-		width: 100%;
-		float: left;
-		position: relative;
-	}
-
-  	.navbar-fixed-top {
-    margin-bottom: 0px;
-    position: fixed;
-  	}
-
-	#map {
-		width: 100%;
-	}
-	
-	.painel{
-		box-shadow: none;
-	}
-	
-	.redes-sociais, .footer-filtros, .copyright, .side-menu, #fecha-ideb, #fecha-compare-desk {
+	.footer-filtros {
 		display: none;
-	}
-	
-	.logo {
-		left: 10px;
-		top: 60px;
-	}
-	
-	.detalhe, .dados-compare, .cabecalho-compare, .compare-resultado {
-		left: 0;
 	}
 	
 	.compare, .dados-compare {
@@ -905,6 +873,12 @@
 		padding: 10px;
 	}
 	
+	.ideb, .escola-left, .dados-compare, .compare {
+		width: 100%;
+		float: left;
+		position: relative;
+	}
+	
 	.legenda, .desktop-footer, .mobile-footer, .mobile-legenda {
 		height: 40px;
 	}
@@ -912,18 +886,19 @@
 	.mobile-legenda {
 		width: 33%;
 	}
-	
-	.desktop-footer {
-		display: none;
+	.desktop-footer, .mobile-footer {
+		position: fixed;
+    	bottom: 0;
 	}
-	
+}
+
+@media screen and (max-width: 760px){
 	.mobile-footer {
 		display: flex;
 	}
 	
-	.desktop-footer, .mobile-footer {
-		position: fixed;
-    	bottom: 0;
+	.desktop-footer {
+		display: none;
 	}
 	
 	#home-mob{
@@ -942,10 +917,19 @@
 	.layers-options {
 		position: fixed;
 	}
-}
 
-@media screen and (max-width: 768px){
+	.redes-sociais, .copyright, .side-menu, #fecha-ideb, #fecha-compare-desk {
+		display: none;
+	}
 
+	.painel{
+		box-shadow: none;
+	}
+	
+	#map {
+		width: 100%;
+	}
+	
 	#mobile-menu.navbar-default {
     	font-size: 16px;
 	}
@@ -954,11 +938,11 @@
 		width: 50%;
 		padding: 2%;
 	}
-}
 
-
-@media screen and (max-width: 640px){
-	
+  	.mobile-filtro {
+  		display: block;
+  	}
+  	
 	.mobile-menu {
 		display: flex;
 	}
@@ -1286,7 +1270,7 @@
 	}
 	
 	#video-gallery li {
-		margin: 5px 0;
+		margin: 5px 5px;
 	}
 	
 	.videos img {
