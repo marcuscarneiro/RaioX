@@ -11,7 +11,7 @@ function fechaPaineis() {
 		fechaPainelCompare();
 	}
 	$(".painel-resultado-compare").animate({width: "-1px"},350);
-	$(".painel-videos").animate({width: "-1px"},350);
+	$(".painel-videos").removeClass('videos-show');
 	$(".painel-contato").animate({width: "-1px"},350);
 	$(".detalhe-contato").hide();
 	$(".painel-projeto").animate({width: "-1px"},350);
@@ -33,7 +33,9 @@ function abrePainel(nomePainel) {
 		if (nomePainel == 'numeros'){
 			$(".painel-"+nomePainel).animate({left: "0"},350);
 			$(".painel-"+nomePainel).addClass("isActive");
-		} if (nomePainel == 'compare' || nomePainel == 'resultado-compare' || nomePainel == 'videos' || nomePainel == 'projeto' ) {
+		}
+		
+		if (nomePainel == 'compare' || nomePainel == 'resultado-compare' || nomePainel == 'projeto' ) {
 			if(nomePainel == 'compare'){
 				requestAnimationFrame(inView);
 				if($(window).width() > 1024){
@@ -42,7 +44,9 @@ function abrePainel(nomePainel) {
 			}
 			$(".painel-"+nomePainel).animate({width: "100%"},350);
 			$(".painel-"+nomePainel).addClass("isActive");
-		} if (nomePainel == 'pesquisa' || nomePainel == 'filtro') {
+		}
+		
+		if (nomePainel == 'pesquisa' || nomePainel == 'filtro') {
 			if(nomePainel == 'pesquisa'){
 				$(".footer-globe i").removeClass('footer-menu-active');
 				$(".footer-list i").addClass('footer-menu-active');
@@ -60,7 +64,17 @@ function abrePainel(nomePainel) {
 					$("#pesquisaEscola").focus();
 				}
 			}
-		} if (nomePainel == 'contato') {
+		}
+		
+		if (nomePainel == 'videos') {
+			if(!videosState){
+				callVideos();
+			}
+			$(".painel-videos").addClass('videos-show');
+			$(".painel-"+nomePainel).addClass("isActive");
+		}
+		
+		if (nomePainel == 'contato') {
 			$(".detalhe-contato").show();
 			if($(window).width() <= 1024){
 				$(".painel-"+nomePainel).animate({width: "100%"},350);

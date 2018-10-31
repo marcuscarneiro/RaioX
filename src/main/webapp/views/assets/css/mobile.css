@@ -835,6 +835,10 @@
 		width: 33%;
 		padding: 2%;
 	}
+	
+	.compare {
+		left: 100px;
+	}
 
 	.cabecalho-compare {
         margin: 5%;
@@ -848,8 +852,12 @@
 		font-size: 20px;
 	}
 
-	.footer-filtros {
+	.footer-filtros, #fecha-compare-desk {
 		display: none;
+	}
+	
+	#fecha-compare {
+		display: block;
 	}
 	
 	.compare, .dados-compare {
@@ -873,8 +881,12 @@
 		padding: 10px;
 	}
 	
-	.ideb, .escola-left, .dados-compare, .compare {
+	.ideb, .escola-left {
 		width: 100%;
+	}
+	
+	.dados-compare, .compare {
+		width: calc(100% - 100px);
 		float: left;
 		position: relative;
 	}
@@ -947,8 +959,13 @@
 		display: flex;
 	}
 		
-	.flip, .anos-radio, .layers-ui, .helper, .fecha-compare, .cabecalho-compare h2, .detalhe-numeros .cabecalho , .painel-pesquisa .cabecalho, .detalhe-video .cabecalho {
+	.flip, .anos-radio, .layers-ui, .helper, #fecha-compare, .cabecalho-compare h2, .detalhe-numeros .cabecalho , .painel-pesquisa .cabecalho, .detalhe-video .cabecalho {
     	display: none;
+	}
+	
+	.compare, .dados-compare {
+		width: 100%;
+		left: 0;
 	}
 	
 	.ideb-capitais h3 {

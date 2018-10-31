@@ -2798,9 +2798,9 @@ function montaCompareAprendizado(nome1, nome2, esc1P5, esc1M5, esc1P9, esc1M9, e
 
 function compareVisita(comp1, comp2, escNome1, escNome2){
 	$("#galesc1 a").hide();
-	$("#galesc1 h4").hide();
+	$("#title-esc1").hide();
 	$("#galesc2 a").hide();
-	$("#galesc2 h4").hide();
+	$("#title-esc2").hide();
 	$.ajax({
 		url: 'consultaVisitaComparativo',
 		type: "POST",
@@ -2876,7 +2876,7 @@ function compareVisita(comp1, comp2, escNome1, escNome2){
 							$(".compare-escola .questao-10 #qesc1").html("Sem informação");
 						}
 						
-						$("#galesc1 h4").html("Fotos da " + escNome1);
+						$("#title-esc1").html("Fotos da " + escNome1);
 						compareFotosVisita(visita.id, 1);
 						
 					} else if(visita.escola.id === parseInt(comp2)){
@@ -2941,7 +2941,7 @@ function compareVisita(comp1, comp2, escNome1, escNome2){
 							$(".compare-escola .questao-10 #qesc2").html("Sem informação");
 						}
 						
-						$("#galesc2 h4").html("Fotos da " + escNome2);
+						$("#title-esc2").html("Fotos da " + escNome2);
 						compareFotosVisita(visita.id, 2);
 					}
 				});

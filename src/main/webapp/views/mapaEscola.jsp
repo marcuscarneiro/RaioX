@@ -142,7 +142,7 @@
 						</span>
 						<span class="menu-item-titulo">André Régis</span>
 					</li>
-					<li class="menu-item menu-videos" onclick="abrePainelMobile('videos')">
+					<li class="menu-item menu-videos" onclick="abrePainel('videos')">
 						<span class="menu-item-icone">
 							<i class="fa fa-youtube-play fa-2x"></i>
 						</span>
@@ -1380,8 +1380,9 @@
 				
 				<div class="compare-galerias">
 					<h4>Galeria de fotos da última visita</h4>
+					<p id="title-esc1"></p>
+					<p id="title-esc2"></p>
 					<div id="galesc1" class="galeria">
-						<h4></h4>
 						<a id="fotocompesq1" class="fancybox boxes" href="#" rel="fotovise" title="#">
 							<img src="#" width="100" height="100">
 						</a>
@@ -1403,7 +1404,7 @@
 					</div>
 		
 					<div id="galesc2" class="galeria">
-						<h4></h4>
+						
 						<a id="fotocompdir1" class="fancybox boxes" href="#" rel="fotovisd" title="#">
 							<img src="#" width="100" height="100">
 						</a>

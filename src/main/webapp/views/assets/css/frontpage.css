@@ -504,12 +504,12 @@ input:-ms-input-placeholder {  /* IE */
 
 .cabecalho
 {
-	margin: 6%;
+	margin: 3%;
 }
 
-.detalhe-numeros .cabecalho, .detalhe-videos .cabecalho 
+.dados-pesquisa .cabecalho 
 {
-	margin: 3%;
+	margin: 6%;
 }
 
 .detalhe-numeros canvas{
@@ -689,6 +689,22 @@ input:-ms-input-placeholder {  /* IE */
 {
 	float: right;
 	padding-right: 7px;
+}
+
+.compare-galerias .galeria {
+    width: 50%;
+    float: left;
+    display: flex;
+    padding: 10px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.compare-galerias .galeria a{
+    list-style: none;
+    margin: 5px;
+    flex: auto;
+    width: 130px;
 }
 
 .pesquisa-thumb
