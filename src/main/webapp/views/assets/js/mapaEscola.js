@@ -2224,55 +2224,59 @@ function removePins(){
 }
 
 function mudaLegenda(filter){
+	var targetClass = '';
+	if(viewWidth < 760){
+		targetClass = '.painel-filtro';
+	}
 	if(filter == 'quadras'){
-		$("#pin-vermelho").hide();
-		$("#pin-verde").hide();
-		$("#pin-cinza").hide();
-		$("#pin-amarelo").show();
-		$("#pin-amarelo").attr("title","REGULAR").tooltip("fixTitle");
-		$("#pin-azul").show();
-		$("#pin-azul").attr("title","BOM").tooltip("fixTitle");
-		$("#pin-preto").show();
-		$("#pin-preto").attr("title","RUIM").tooltip("fixTitle");
-		$("#heatmap-legend").hide();
+		$(targetClass + " #pin-vermelho").hide();
+		$(targetClass + " #pin-verde").hide();
+		$(targetClass + " #pin-cinza").hide();
+		$(targetClass + " #pin-amarelo").show();
+		$(targetClass + " #pin-amarelo").attr("title","REGULAR").tooltip("fixTitle");
+		$(targetClass + " #pin-azul").show();
+		$(targetClass + " #pin-azul").attr("title","BOM").tooltip("fixTitle");
+		$(targetClass + " #pin-preto").show();
+		$(targetClass + " #pin-preto").attr("title","RUIM").tooltip("fixTitle");
+		$(targetClass + " #heatmap-legend").hide();
 	} else if(filter == 'aces') {
-		$("#pin-vermelho").hide();
-		$("#pin-verde").hide();
-		$("#pin-cinza").hide();
-		$("#pin-amarelo").show();
-		$("#pin-amarelo").attr("title","Possui pelo menos um item básico").tooltip("fixTitle");
-		$("#pin-azul").show();
-		$("#pin-azul").attr("title","Possui todos os itens básicos").tooltip("fixTitle");
-		$("#pin-preto").show();
-		$("#pin-preto").attr("title","Não possui itens básicos de acessibilidade").tooltip("fixTitle");
-		$("#heatmap-legend").hide();
+		$(targetClass + " #pin-vermelho").hide();
+		$(targetClass + " #pin-verde").hide();
+		$(targetClass + " #pin-cinza").hide();
+		$(targetClass + " #pin-amarelo").show();
+		$(targetClass + " #pin-amarelo").attr("title","Possui pelo menos um item básico").tooltip("fixTitle");
+		$(targetClass + " #pin-azul").show();
+		$(targetClass + " #pin-azul").attr("title","Possui todos os itens básicos").tooltip("fixTitle");
+		$(targetClass + " #pin-preto").show();
+		$(targetClass + " #pin-preto").attr("title","Não possui itens básicos de acessibilidade").tooltip("fixTitle");
+		$(targetClass + " #heatmap-legend").hide();
 	} else if(filter == 'heatmap') {
-		$("#pin-vermelho").hide();
-		$("#pin-verde").hide();
-		$("#pin-cinza").hide();
-		$("#pin-amarelo").hide();
-		$("#pin-azul").hide();
-		$("#pin-preto").hide();
-		$("#heatmap-legend").show();
-		$('#heatmap-legend').attr("title","O mapa de calor representa a concentração de escolas em uma área e o seu alcance de acordo com a quantidade de vagas oferecidas.").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(10000).queue(function (next) {
-			$("#heatmap-legend").tooltip("hide");
+		$(targetClass + " #pin-vermelho").hide();
+		$(targetClass + " #pin-verde").hide();
+		$(targetClass + " #pin-cinza").hide();
+		$(targetClass + " #pin-amarelo").hide();
+		$(targetClass + " #pin-azul").hide();
+		$(targetClass + " #pin-preto").hide();
+		$(targetClass + " #heatmap-legend").show();
+		$(targetClass + " #heatmap-legend").attr("title","O mapa de calor representa a concentração de escolas em uma área e o seu alcance de acordo com a quantidade de vagas oferecidas.").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(10000).queue(function (next) {
+			$(targetClass + " #heatmap-legend").tooltip("hide");
 			next();
 		});
 	} else {
-		$("#pin-vermelho").show();
-		$("#pin-vermelho").attr("title","Não atingiu a meta do IDEB").tooltip("fixTitle");
-		$("#pin-verde").show();
-		$("#pin-verde").attr("title","Superou a meta IDEB e ficou acima de 6").tooltip("fixTitle");
-		$("#pin-cinza").show();
-		$("#pin-amarelo").show();
-		$("#pin-amarelo").attr("title","Atingiu a meta IDEB mas ficou abaixo de 6").tooltip("fixTitle");
-		$("#pin-azul").hide();
-		$("#pin-preto").hide();
-		$("#heatmap-legend").hide();
+		$(targetClass + " #pin-vermelho").show();
+		$(targetClass + " #pin-vermelho").attr("title","Não atingiu a meta do IDEB").tooltip("fixTitle");
+		$(targetClass + " #pin-verde").show();
+		$(targetClass + " #pin-verde").attr("title","Superou a meta IDEB e ficou acima de 6").tooltip("fixTitle");
+		$(targetClass + " #pin-cinza").show();
+		$(targetClass + " #pin-amarelo").show();
+		$(targetClass + " #pin-amarelo").attr("title","Atingiu a meta IDEB mas ficou abaixo de 6").tooltip("fixTitle");
+		$(targetClass + " #pin-azul").hide();
+		$(targetClass + " #pin-preto").hide();
+		$(targetClass + " #heatmap-legend").hide();
 	}
 	
 	if (filter != 'heatmap') {
-		$("#heatmap-legend").tooltip("hide");
+		$(targetClass + " #heatmap-legend").tooltip("hide");
 		$(".lista-legenda").attr("title","Legenda atualizada").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(2000).queue(function (next) {
 			$(".lista-legenda").tooltip("hide");
 			$(".lista-legenda").tooltip("disable");
