@@ -91,9 +91,9 @@
 			<div class="nd2 nds" onclick="abrePainel('contato')">
 				<i class="mobile-send fa fa-send"></i>
 			</div>
-			<div class="nd1 nds" onclick="abreInstagram()">
+			<a class="nd1 nds" href="instagram://user?username=andreregis1" target="_blank">
 				<i class="mobile-instagram fa fa-instagram"></i>
-			</div>
+			</a>
 			<div id="floating-button">
 				<p class="plus">+</p>
 			</div>
@@ -218,12 +218,20 @@
 		</div>
 		
 		<div class="painel painel-contato">
+			<div class="mobile-menu mobile-painel-contato">
+				<div class="menu-left" onclick="fechaPaineis()">
+					<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left-white.svg">
+				</div>
+				<div class="menu-title">
+					<span>Entre em contato</span>
+				</div>
+				<div class="menu-right">
+					
+				</div>
+			</div>
 			<div class="detalhe-contato">
 				<span class="painel-close" onclick="fechaPaineis()">
-					<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left-white.svg">
-				</span>
-				<span class="menu-left" onclick="fechaPaineis()">
-					<img alt="Retornar" src="<%=request.getContextPath()%>/views/assets/css/icons/arrow-left-white.svg">
+					<i class="fa fa-close fa-2x"></i>
 				</span>
 				<div class="contato-topo">
 					<h2>Entre em contato</h2>
@@ -1316,14 +1324,17 @@
 				
 				<div class="compare-ideb">
 					<h3>Ainda não existem dados do IDEB para estas escolas</h3>
-					<canvas class="idebcompare grafico-linha" width="700" height="400"></canvas>
+					<h4>Evolução das notas do IDEB</h4>
+					<canvas id="idebcompare" class="grafico-linha"></canvas>
 				</div>
 				
 				<hr>
 				
 				<div class="compare-aprendizado">
 					<h3>Ainda não existem dados da Prova Brasil para estas escolas</h3>
-					<canvas class="aprendizadocompare grafico-barra" width="700" height="400"></canvas>
+					<h4>Nível de aprendizagem adequado</h4>
+					<h4 class="compare-apr-ano"></h4>
+					<canvas id="aprendizadocompare" class="grafico-barra"></canvas>
 				</div>
 				
 				<hr>
@@ -1982,7 +1993,7 @@
 					<span class="fa-hidden">YouTube</span>
 				</li>
 				<li class="social-item">
-					<a target="_blank" href="https://instagram.com/andreregisdecarvalho">
+					<a target="_blank" href="https://instagram.com/andreregis1">
 						<i class="fa-2x fa fa-instagram"></i>
 					</a>
 					<span class="fa-hidden">Instagram</span>

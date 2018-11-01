@@ -156,7 +156,7 @@
 	justify-content: space-between;
 	width: 100%;
 	top: 0;
-	padding: 25px 20px;
+	padding: 17px 12px;
 }
 
 .mobile-painel-content {
@@ -219,10 +219,12 @@
 
 .menu-cancel {
 	display: block;
+	padding: 8px;
 }
 
 .menu-reset {
 	display: none;
+	padding: 8px;
 }
 
 .menu-left, .menu-right {
@@ -270,6 +272,10 @@
 	text-transform: none;
 	text-decoration: none;
 	letter-spacing: 0px;
+}
+
+.mobile-painel-contato span {
+	color: white;
 }
 
 .mobile-logo-img
@@ -462,11 +468,19 @@
 }
 
 .menu-save {
-	color: #2b7093;
+	background-color: #2b7093;
+	color: white;
+	padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    transition: all 0.5s;
 }
 
 .menu-save-disabled {
+	background-color: transparent;
 	color: #d5d5d5;
+	border: 0;
+	box-shadow: none;
 }
 
 .mobile-filtro-opcoes {
@@ -826,9 +840,18 @@
 	.pesquisa-resultado h4.pesquisa-endereco {
 		font-size: 8px !important;
 	}
+	
+	.compare-selecionados {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
 
   	.compare-selecionados li {
   		height: auto;
+  		width: 50%;
+  		margin: 5px;
   	}
   	
 	.pesquisa-escola-caixas, .compare-escola-caixas {
@@ -879,6 +902,7 @@
 		list-style: none;
 		display: inline-block;
 		padding: 10px;
+		z-index: 10;
 	}
 	
 	.ideb, .escola-left {
@@ -909,8 +933,23 @@
 		display: flex;
 	}
 	
-	.desktop-footer {
+	.detalhe-contato {
+		margin-top: 70px;
+	}
+	.desktop-footer, .contato-topo {
 		display: none;
+	}
+	
+	.busca-compare .formato-opcoes, .busca-compare .formato-titulo {
+		display: none;
+	}
+	
+	.busca-compare form {
+		margin-bottom: 20px;
+	}
+	
+	.compare-instrucao {
+		margin-top: 20px;
 	}
 	
 	#home-mob{
@@ -1272,6 +1311,16 @@
 	
 	.detalhe {
 		bottom: 0 !important;
+		left: 0;
+	}
+	
+	.compare-ideb h4, .compare-aprendizado h4, .compare-galerias > h4, .compare-escola > h4 {
+		font-size: 20px;
+	    margin: 15px;
+	}
+	
+	.compare-apr-ano {
+		font-size: 16px !important;
 	}
 	
 	.idb-tr {

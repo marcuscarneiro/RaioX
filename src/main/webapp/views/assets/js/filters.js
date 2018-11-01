@@ -658,14 +658,10 @@ function guardaIds(data){
 function personalizeMarkers(filter){
 	if(filter == 'meta'){
 		escolasLayer.eachLayer(function(marker) {
-			if(marker.feature.properties.ATINGIUMETA == true){
-				marker.setIcon(L.icon({
-					iconUrl: contextPath + '/views/assets/css/img/s-' + marker.feature.properties.COR + '.png',
-					iconSize: [15, 38]
-				}));
-			} else {
-				map.removeLayer(marker);
-			}
+			marker.setIcon(L.icon({
+				iconUrl: contextPath + '/views/assets/css/img/s-' + marker.feature.properties.COR + '.png',
+				iconSize: [15, 38]
+			}));
 		});
 	} else if (filter == 'novas'){
 		escolasLayer.eachLayer(function(marker) {

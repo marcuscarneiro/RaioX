@@ -54,6 +54,13 @@ function abrePainel(nomePainel) {
 				$(".footer-list i").removeClass('footer-menu-inactive');
 				requestAnimationFrame(inView);
 			}
+			if(nomePainel == 'filtro'){
+				anosIni = false;
+				anosFin = false;
+				$('#btnIniciais').addClass('not-active');
+				$('#btnFinais').addClass('not-active');
+				plotAnos();
+			}
 			if($(window).width() <= 1024){
 				$(".painel-"+nomePainel).animate({width: "100%"},350);
 				$(".painel-"+nomePainel).addClass("isActive");
@@ -108,8 +115,10 @@ function fechaPainelCompare() {
 	$(".compare-header h2").html("SELECIONE AO LADO AS ESCOLAS QUE DESEJA COMPARAR");
 	$(".compare-titulo-escola1").html("");
 	$(".compare-titulo-escola2").html("");
-	$(".idebcompare").slideUp();
-	$(".aprendizadocompare").slideUp();
+	$("#idebcompare").slideUp();
+	$("#aprendizadocompare").slideUp();
+	$(".compare-ideb h4").hide();
+	$(".compare-aprendizado h4").hide();
 	$(".compare-escola").slideUp();
 	$(".compare-galerias").slideUp();
 	if($(window).width() <= 1024){
@@ -125,8 +134,10 @@ function fechaPainelResultadoCompare() {
 	$(".compare-header h2").html("SELECIONE AO LADO AS ESCOLAS QUE DESEJA COMPARAR");
 	$(".compare-titulo-escola1").html("");
 	$(".compare-titulo-escola2").html("");
-	$(".idebcompare").slideUp();
-	$(".aprendizadocompare").slideUp();
+	$("#idebcompare").slideUp();
+	$("#aprendizadocompare").slideUp();
+	$(".compare-ideb h4").hide();
+	$(".compare-aprendizado h4").hide();
 	$(".compare-escola").slideUp();
 	$(".compare-galerias").slideUp();
 	if($(window).width() <= 1024){
@@ -451,6 +462,9 @@ function changeFinais(){
 };
 
 function plotAnos(){
+	if($(".painel-filtro").hasClass("isActive")){
+		fechaPainelFiltro();
+	}
 	map.removeLayer(escolasLayer);
 	escolasLayer = L.geoJSON().addTo(map);
 	escolasLayer.addData(escolasData);

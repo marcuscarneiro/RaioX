@@ -76,7 +76,35 @@ renderMatriculados();
 
 
 //IDEBS
-function renderMobileIdebCharts(data, periodo){
+function renderMobileIdebCharts(data, periodo, origin){
+	var tooltip;
+	if(origin != 'compare'){
+		tooltip = {
+				showCrosshairs: true,
+				custom: true,
+				onChange: function onChange(obj) {
+					var legend = chart.get('legendController').legends.top[0];
+					var tooltipItems = obj.items;
+					var legendItems = legend.items;
+					var map = {};
+					legendItems.map(function(item) {
+						map[item.name] = _.clone(item);
+					});
+					tooltipItems.map(function(item) {
+						var name = item.name;
+						var value = item.value;
+						if (map[name]) {
+							map[name].value = value;
+						}
+					});
+					legend.setItems(_.values(map));
+				},
+				onHide: function onHide() {
+					var legend = chart.get('legendController').legends.top[0];
+					legend.setItems(chart.getLegendItems().type);
+				}
+			};
+	}
 	var chart = new F2.Chart({
 		id: periodo,
 		pixelRatio: 1
@@ -92,6 +120,7 @@ function renderMobileIdebCharts(data, periodo){
 	chart.scale('time', {
 		tickCount: 5
 	});
+	chart.legend(origin == 'compare' ? false : true);
 	chart.axis('time', {
 		label: {
 			fontFamily: 'Montserrat',
@@ -106,51 +135,51 @@ function renderMobileIdebCharts(data, periodo){
 			fontSize: '12'
 		}
 	});
-	chart.tooltip({
-		showCrosshairs: true,
-		custom: true,
-		onChange: function onChange(obj) {
-			var legend = chart.get('legendController').legends.top[0];
-			var tooltipItems = obj.items;
-			var legendItems = legend.items;
-			var map = {};
-			legendItems.map(function(item) {
-				map[item.name] = _.clone(item);
-			});
-			tooltipItems.map(function(item) {
-				var name = item.name;
-				var value = item.value;
-				if (map[name]) {
-					map[name].value = value;
-				}
-			});
-			legend.setItems(_.values(map));
-		},
-		onHide: function onHide() {
-			var legend = chart.get('legendController').legends.top[0];
-			legend.setItems(chart.getLegendItems().type);
-		}
-	});
+	chart.tooltip(tooltip);
 	chart.area().position('time*value').shape('smooth').color('type', function(val) {
 		if (val === 'Nota') {
-	        return '#3498da';
-	      } else if (val === 'Meta') {
-		        return '#2dcb71';
-	      }
+			if(origin == 'compare'){
+				return '#6BB540';
+			} else {
+				return '#3498da';
+			}
+		} else if (val === 'Meta') {
+			if(origin == 'compare'){
+				return '#074f8e';
+			} else {
+				return '#2dcb71';
+			}
+		}
     });
 	chart.line().position('time*value').shape('smooth').color('type', function(val) {
 		if (val === 'Nota') {
-	        return '#3498da';
-	      } else if (val === 'Meta') {
-		        return '#2dcb71';
-	      }
-    });
+			if(origin == 'compare'){
+				return '#6BB540';
+			} else {
+				return '#3498da';
+			}
+		} else if (val === 'Meta') {
+			if(origin == 'compare'){
+				return '#074f8e';
+			} else {
+				return '#2dcb71';
+			}
+		}
+	});
 	chart.point().position('time*value').color('type', function(val) {
-	    if (val === 'Nota') {
-	        return '#3498da';
-	      } else if (val === 'Meta') {
-		        return '#2dcb71';
-	      }
+		if (val === 'Nota') {
+			if(origin == 'compare'){
+				return '#6BB540';
+			} else {
+				return '#3498da';
+			}
+		} else if (val === 'Meta') {
+			if(origin == 'compare'){
+				return '#074f8e';
+			} else {
+				return '#2dcb71';
+			}
+		}
 	    }).style({
 		stroke: '#fff',
 		lineWidth: 1

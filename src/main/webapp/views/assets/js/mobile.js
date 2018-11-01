@@ -356,7 +356,7 @@ function resetaVariaveis() {
 	acessibilidade = false;
 }
 
-function resetaFiltroMobile() {
+function resetaFiltroMobile(alcance) {
 	cancelaFiltro();
 	estadoRealFiltros = [
 		{name: 'anosiniciais', value: true},
@@ -371,10 +371,27 @@ function resetaFiltroMobile() {
 		{name: 'acessibilidade', value: false}
 	];
 	estadoTemporarioFiltros = JSON.parse(JSON.stringify(estadoRealFiltros));
-	salvaFiltro();
+//	salvaFiltro();
+	escolasData = JSON.parse(JSON.stringify(escolasDataBackup));
+	$('.mobile-list-items').empty();
+	map.removeLayer(escolasLayer);
+	escolasLayer = L.geoJSON().addTo(map);
+	escolasLayer.addData(escolasData);
+	changeMarkers();
+	modo = 'meta';
+	mudaLegenda(modo);
+	personalizeMarkers(modo);
+	$('.menu-save').addClass('menu-save-disabled');
+	$('.menu-save').attr('onclick', '');
+	if(!alcance){
+		fechaPainelMobile('filtro');
+	}
 }
 
 function salvaFiltro() {
+	map.removeLayer(heatmapLayer);
+	$(".layers-escolas").addClass('layer-active');
+	$(".layers-calor").removeClass('layer-active');
 	atingiu = false;
 	naoatingiu = false;
 	melhoresiniciais = false;
@@ -492,7 +509,7 @@ function filtraMobile(){
 			if(naoatingiu){
 				var escolasTemp = [];
 				escolasData.features.forEach(function(marker) {
-					if(marker.properties.ATINGIUMETA == false){
+					if(marker.properties.ATINGIUMETA != true){
 						escolasTemp.push(marker.properties.ID);
 					}
 				});

@@ -43,15 +43,15 @@ function consultaDadosIdebMobile(id){
 			}
 			try {
 				if(data.escola.requerimentos != null){
-					$(".fiscalicazaoRequerimento a").attr('href', data.escola.requerimentos);
-					$(".fiscalicazaoRequerimento").css('display', 'block');
-					$(".fiscalicazaoRequerimento a").css('display', 'inline-block');
+					$(".escola-mobile-requerimentos a").attr('href', data.escola.requerimentos);
+					$(".escola-mobile-requerimentos").css('display', 'block');
+					$(".escola-mobile-requerimentos a").css('display', 'inline-block');
 				} else {
-					$(".fiscalicazaoRequerimento").css('display', 'none');
+					$(".escola-mobile-requerimentos").css('display', 'none');
 				}
 				
 			} catch (e) {
-				$(".fiscalicazaoRequerimento").css('display', 'none');
+				$(".escola-mobile-requerimentos").css('display', 'none');
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError){

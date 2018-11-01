@@ -512,7 +512,11 @@ input:-ms-input-placeholder {  /* IE */
 	margin: 6%;
 }
 
-.detalhe-numeros canvas{
+.layers-ui {
+	display: none;
+}
+
+.detalhe-numeros canvas {
 	width: 100%;
 	height: 100%;
 	max-width: 700px;

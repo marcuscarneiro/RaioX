@@ -6,6 +6,7 @@ var regionFill = 0.6;
 var viewWidth = $(window).width();
 var rpaAtual = 0;
 var actualMarker = undefined; 
+var compareLoaded = false;
 var southWest = L.latLng(-8.203279, -35.308557),
 	northEast = L.latLng(-7.714644, -34.522893),
 	bounds = L.latLngBounds(southWest, northEast);
@@ -762,8 +763,6 @@ function changeMarkers(){
 	var body = document.body;
 	var markerList = body.appendChild(document.createElement('div'));
 	markerList.id = "marker-list";
-	$('.compare-lista').remove();
-	$('.compare-resultado').append('<ul class="compare-lista">');
 	$('.pesquisa-lista').remove();
 	$('.pesquisa-resultado').append('<ul class="pesquisa-lista">');
 	$('#contEscola').append('<option value="" selected disabled>Escolha a sua escola*</option>');
@@ -773,15 +772,27 @@ function changeMarkers(){
 		escolasList.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		escolasListCompare.push({label: marker.feature.properties.Escola, value: marker.feature.properties.ID});
 		$('#contEscola').append('<option value="'+ marker.feature.properties.Escola + '">' + marker.feature.properties.Escola + '</option>');
-		$('.compare-lista').append('<li esc="' + marker.feature.properties.ID + '" class="compare-item compare-escola-caixas" onclick="addCompara('+marker.feature.properties.ID+')">'+
-				'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
-				'<div class="pesquisa-thumb">'+
-				'<a href="'+contextPath + marker.feature.properties.Foto+'" class="full progressive replace">'+
-				'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada: '+marker.feature.properties.Escola+'" class="preview">'+
-				'</a>'+
-				'</div>'+
-		'</li>');
-		if(viewWidth > 760){
+		if(!compareLoaded){
+			if(viewWidth > 760){
+				$('.compare-lista').append('<li esc="' + marker.feature.properties.ID + '" class="compare-item compare-escola-caixas" onclick="addCompara('+marker.feature.properties.ID+')">'+
+						'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
+						'<div class="pesquisa-thumb">'+
+						'<a href="'+contextPath + marker.feature.properties.Foto+'" class="full progressive replace">'+
+						'<img src="'+contextPath + marker.feature.properties.FotoMin+'" alt="Fachada: '+marker.feature.properties.Escola+'" class="preview">'+
+						'</a>'+
+						'</div>'+
+				'</li>');
+			} else {
+				$('.compare-lista').append('<li esc="' + marker.feature.properties.ID + '" class="mobile-list-item" onclick="addCompara('+ marker.feature.properties.ID +')">'+
+						'<div class="mobile-school-image"><img class="lazy" data-src="'+ contextPath + marker.feature.properties.Foto +'" alt="Fachada da '+marker.feature.properties.Escola+'"></div>'+
+						'<div class="mobile-list-info">'+
+						'<span class="mobile-list-nome">'+marker.feature.properties.Escola+'</span>'+
+						'<span class="mobile-list-endereco">'+marker.feature.properties.Endereco+'</span>'+
+				'</div></li>');
+			}
+		}
+		
+		if(viewWidth > 760){			
 			$('.pesquisa-lista').append('<li esc="' + marker.feature.properties.ID + '" class="pesquisa-escola-caixas" onclick="abreEscola('+ marker.feature.properties.ID +',\''+marker.feature.properties.Escola+'\')">'+
 					'<h4 class="pesquisa-nome">'+marker.feature.properties.Escola+'</h4>'+
 					'<h4 class="pesquisa-endereco">'+marker.feature.properties.Endereco+'</h4>'+
@@ -805,14 +816,14 @@ function changeMarkers(){
 			} else {
 				nota = '--';
 			}
-			
+
 			$('.mobile-list-items').append('<li esc="' + marker.feature.properties.ID + '" class="mobile-list-item" onclick="loadEscolaMobile('+ marker.feature.properties.ID +',\''+marker.feature.properties.Escola+'\',\''+marker.feature.properties.Endereco+'\')">'+
 					'<div class="mobile-school-image"><img class="lazy" data-src="'+ contextPath + marker.feature.properties.Foto +'" alt="Fachada da '+marker.feature.properties.Escola+'"></div>'+
 					'<div class="mobile-list-info">'+
-						'<span class="mobile-list-nome">'+marker.feature.properties.Escola+'</span>'+
-						'<span class="mobile-list-endereco">'+marker.feature.properties.Endereco+'</span>'+
-						'<span class="mobile-list-nota mobile-nota-'+marker.feature.properties.COR+'">'+nota+'</span>'+
-					'</div></li>');
+					'<span class="mobile-list-nome">'+marker.feature.properties.Escola+'</span>'+
+					'<span class="mobile-list-endereco">'+marker.feature.properties.Endereco+'</span>'+
+					'<span class="mobile-list-nota mobile-nota-'+marker.feature.properties.COR+'">'+nota+'</span>'+
+			'</div></li>');
 		}
 				
 		if(marker.feature.properties.ID === 262){
@@ -855,6 +866,8 @@ function changeMarkers(){
 		
 		return false;
 	});
+	
+	compareLoaded = true;
 	
 	$(function() {
         $('.lazy').lazy({
@@ -2226,7 +2239,7 @@ function removePins(){
 function mudaLegenda(filter){
 	var targetClass = '';
 	if(viewWidth < 760){
-		targetClass = '.painel-filtro';
+		targetClass = '.mobile-legenda';
 	}
 	if(filter == 'quadras'){
 		$(targetClass + " #pin-vermelho").hide();
@@ -2258,8 +2271,10 @@ function mudaLegenda(filter){
 		$(targetClass + " #pin-azul").hide();
 		$(targetClass + " #pin-preto").hide();
 		$(targetClass + " #heatmap-legend").show();
+		$("#container-floating").addClass('container-floating-hide');
 		$(targetClass + " #heatmap-legend").attr("title","O mapa de calor representa a concentração de escolas em uma área e o seu alcance de acordo com a quantidade de vagas oferecidas.").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(10000).queue(function (next) {
 			$(targetClass + " #heatmap-legend").tooltip("hide");
+			$("#container-floating").removeClass('container-floating-hide');
 			next();
 		});
 	} else {
@@ -2277,11 +2292,22 @@ function mudaLegenda(filter){
 	
 	if (filter != 'heatmap') {
 		$(targetClass + " #heatmap-legend").tooltip("hide");
-		$(".lista-legenda").attr("title","Legenda atualizada").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(2000).queue(function (next) {
-			$(".lista-legenda").tooltip("hide");
-			$(".lista-legenda").tooltip("disable");
-			next();
-		});
+		$("#container-floating").addClass('container-floating-hide');
+		if(viewWidth < 760){
+			$(".mobile-lista-legenda").attr("title","Legenda atualizada").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(2000).queue(function (next) {
+				$(".mobile-lista-legenda").tooltip("hide");
+				$(".mobile-lista-legenda").tooltip("disable");
+				$("#container-floating").removeClass('container-floating-hide');
+				next();
+			});
+		} else {
+			$(".lista-legenda").attr("title","Legenda atualizada").tooltip("fixTitle").tooltip("enable").tooltip("show").delay(2000).queue(function (next) {
+				$(".lista-legenda").tooltip("hide");
+				$(".lista-legenda").tooltip("disable");
+				$("#container-floating").removeClass('container-floating-hide');
+				next();
+			});
+		}
 	} else {
 		$(".lista-legenda").tooltip("hide");
 	}
@@ -2422,7 +2448,7 @@ function compareIdeb(esc1Id, esc2Id, nome1, nome2){
 		contentType: 'application/json',
 		success: function(data) {
 			if(data != null & data != ''){
-				$(".compare-ideb p").show();
+				$(".compare-ideb h4").show();
 				$(".compare-ideb canvas").show();
 				$(".compare-ideb h3").hide();
 				var esc1I5, esc1I7, esc1I9, esc1I11, esc1I13, esc1I15, esc1I17, esc1I19, esc1I21;
@@ -2453,80 +2479,83 @@ function compareIdeb(esc1Id, esc2Id, nome1, nome2){
 					}
 				});
 				
-				var grafIdebCompare = {
-					labels: ["2005", "2007", "2009", "2011", "2013", "2015", "2017", "2019", "2021"],
-					datasets: [
-					           {
-					        	   label: nome1,
-					        	   fillColor: "",
-					        	   strokeColor: "rgba(11,149,232,1)",
-					        	   pointColor: "rgba(11,149,232,1)",
-					        	   pointStrokeColor: "#fff",
-					        	   pointHighlightFill: "#fff",
-					        	   pointHighlightStroke: "rgba(11,149,232,1)",
-					        	   data: [trataNotas(esc1I5), trataNotas(esc1I7), trataNotas(esc1I9), trataNotas(esc1I11), trataNotas(esc1I13), trataNotas(esc1I15), trataNotas(esc1I17), trataNotas(esc1I19), trataNotas(esc1I21)]
-					           },
-					           {
-					        	   label: nome2,
-					        	   fillColor: "",
-					        	   strokeColor: "rgba(66,221,146,1)",
-					        	   pointColor: "rgba(66,221,146,1)",
-					        	   pointStrokeColor: "#fff",
-					        	   pointHighlightFill: "#fff",
-					        	   pointHighlightStroke: "rgba(66,221,146,1)",
-					        	   data: [trataNotas(esc2I5), trataNotas(esc2I7), trataNotas(esc2I9), trataNotas(esc2I11), trataNotas(esc2I13), trataNotas(esc2I15), trataNotas(esc2I17), trataNotas(esc2I19), trataNotas(esc2I21)]
-					           }
-					           ]};
-				
-				var ctxidebcompare = $(".idebcompare").get(0).getContext("2d");
-				var grafEvo9 = new Chart(ctxidebcompare).Line(grafIdebCompare,{
-					scaleShowGridLines : true,
-					scaleOverride: true,
-					scaleSteps: 7,
-					scaleStepWidth: 1,
-					scaleStartValue: 0,
-					scaleIntegersOnly: true,
-					scaleGridLineColor : "rgba(0,0,0,.05)",
-					scaleGridLineWidth : 1,
-					scaleShowHorizontalLines: true,
-					scaleShowVerticalLines: true,
-					bezierCurve : false,
-					bezierCurveTension : 0.4,
-					pointDot : true,
-					pointDotRadius : 4,
-					pointDotStrokeWidth : 1,
-					pointHitDetectionRadius : 7,
-					datasetStroke : true,
-					datasetStrokeWidth : 3,
-					datasetFill : false,
-					annotateDisplay: true,
-					annotateLabel: '<b><%=v1%></b><br><%=v2%>: <%=v3%>',
-					annotatePadding: "5px 5px 5px 5px",
-					annotateFontFamily: "'Montserrat'",
-					annotateFontStyle: "normal normal",
-					annotateFontColor: "rgba(0,0,0,1)",
-					annotateFontSize: 12,
-					annotateBorderRadius: "5px",
-					annotateBorder: "1px rgba(170,170,170,0.7) solid ",
-					annotateBackgroundColor: 'rgba(255,255,255,0.75)',
-					multiTooltipTemplate: "<%= value %>",
-					legend: true,
-					legendBorders: false,
-					legendSpaceBetweenTextHorizontal: 5,
-					graphTitle: "Evolução das notas do IDEB",
-					graphTitleSpaceBefore: 5,
-					graphTitleSpaceAfter: 5,
-					graphTitleBorders: false,
-					graphTitleBordersStyle: "solid",
-					graphTitleBordersColor: "rgba(0,0,0,1)",
-					graphTitleFontStyle: "normal normal",
-					graphTitleFontSize: 22,
-					responsive: true,
-					responsiveMaxHeight: 400,
-					responsiveMaxWidth: 700
-				});
+				var dataidebcompare = [{
+					time: '2005',
+					value: esc1I5,
+					type: 'Meta'
+				}, {
+					time: '2007',
+					value: esc1I7,
+					type: 'Meta'
+				}, {
+					time: '2009',
+					value: esc1I9,
+					type: 'Meta'
+				}, {
+					time: '2011',
+					value: esc1I11,
+					type: 'Meta'
+				}, {
+					time: '2013',
+					value: esc1I13,
+					type: 'Meta'
+				}, {
+					time: '2015',
+					value: esc1I15,
+					type: 'Meta'
+				}, {
+					time: '2017',
+					value: esc1I17,
+					type: 'Meta'
+				}, {
+					time: '2019',
+					value: esc1I19,
+					type: 'Meta'
+				}, {
+					time: '2021',
+					value: esc1I21,
+					type: 'Meta'
+				}, {
+					time: '2005',
+					value: esc2I5,
+					type: 'Nota'
+				}, {
+					time: '2007',
+					value: esc2I7,
+					type: 'Nota'
+				}, {
+					time: '2009',
+					value: esc2I9,
+					type: 'Nota'
+				}, {
+					time: '2011',
+					value: esc2I11,
+					type: 'Nota'
+				}, {
+					time: '2013',
+					value: esc2I13,
+					type: 'Nota'
+				}, {
+					time: '2015',
+					value: esc2I15,
+					type: 'Nota'
+				}, {
+					time: '2017',
+					value: esc2I17,
+					type: 'Nota'
+				}, {
+					time: '2019',
+					value: esc2I19,
+					type: 'Nota'
+				}, {
+					time: '2021',
+					value: esc2I21,
+					type: 'Nota'
+				}
+				];
+				renderMobileIdebCharts(dataidebcompare, 'idebcompare', 'compare');
 			} else {
-				$(".compare-ideb p").hide();
+				$(".compare-ideb h4").hide();
 				$(".compare-ideb canvas").hide();
 				$(".compare-ideb h3").show();
 			}
@@ -2534,10 +2563,6 @@ function compareIdeb(esc1Id, esc2Id, nome1, nome2){
 		error: function(xhr, ajaxOptions, thrownError){
 			alert(xhr.status);
 			alert(thrownError);
-//			
-//			$(".compare-ideb p").hide();
-//			$(".compare-ideb canvas").hide();
-//			$(".compare-ideb h3").show();
 		}
 	});
 }
@@ -2553,7 +2578,7 @@ function compareAprendizado(comp1, comp2, nome1, nome2){
 		contentType: 'application/json',
 		success: function(data) {
 			if(data != null & data != ''){
-				$(".compare-aprendizado p").show();
+				$(".compare-aprendizado h4").show();
 				$(".compare-aprendizado canvas").show();
 				$(".compare-aprendizado h3").hide();
 				var esc1P5, esc1M5, esc1P9, esc1M9, esc1Ano;
@@ -2623,19 +2648,19 @@ function compareAprendizado(comp1, comp2, nome1, nome2){
 				if(esc1P5 != null || esc1M5 != null || esc1P9 != null || esc1M9 != null || esc2P5 != null || esc2M5 != null || esc2P9 != null || esc2M9){
 					montaCompareAprendizado(nome1, nome2, esc1P5, esc1M5, esc1P9, esc1M9, esc2P5, esc2M5, esc2P9, esc2M9, esc1Ano);
 				} else {
-					$(".compare-aprendizado p").hide();
+					$(".compare-aprendizado h4").hide();
 					$(".compare-aprendizado canvas").hide();
 					$(".compare-aprendizado h3").show();
 				}
 			} else {
-				$(".compare-aprendizado p").hide();
+				$(".compare-aprendizado h4").hide();
 				$(".compare-aprendizado canvas").hide();
 				$(".compare-aprendizado h3").show();
 			}
 		},
 		error: function(){
 			alert("erro");
-			$(".compare-aprendizado p").hide();
+			$(".compare-aprendizado h4").hide();
 			$(".compare-aprendizado canvas").hide();
 			$(".compare-aprendizado h3").show();
 		}
@@ -2643,161 +2668,272 @@ function compareAprendizado(comp1, comp2, nome1, nome2){
 }
 
 function montaCompareAprendizado(nome1, nome2, esc1P5, esc1M5, esc1P9, esc1M9, esc2P5, esc2M5, esc2P9, esc2M9, esc1Ano){
-	var ChartData = {
-			labels: ["Português 5º ano", "Matemática 5º ano", "Português 9º ano", "Matemática 9º ano" ],
-			datasets: [
-			           {
-			        	   fillColor: "rgba(52,152,219,1)",
-			        	   strokeColor: "rgba(52,152,219,0.5)",
-			        	   pointColor: "rgba(52,152,219,1)",
-			        	   markerShape: "circle",
-			        	   pointStrokeColor: "rgba(255,255,255,1)",
-			        	   data: [esc1P5, esc1M5, esc1P9, esc1M9],
-			        	   title: nome1
-			           },
-			           {
-			        	   fillColor: "rgba(46,204,113,1)",
-			        	   strokeColor: "rgba(46,204,113,1)",
-			        	   pointColor: "rgba(46,204,113,1)",
-			        	   markerShape: "circle",
-			        	   pointStrokeColor: "rgba(255,255,255,1)",
-			        	   data: [esc2P5, esc2M5, esc2P9, esc2M9],
-			        	   title: nome2
-			           }, ]
-	};
-	ChartOptions = {
-			spaceLeft: 12,
-			spaceRight: 12,
-			spaceTop: 12,
-			spaceBottom: 12,
-			canvasBorders: false,
-			canvasBordersWidth: 1,
-			canvasBordersStyle: "solid",
-			scaleLabel: "<%=value+''%>",
-			yAxisMinimumInterval: 1,
-			scaleShowLabels: true,
-			scaleShowLine: true,
-			scaleLineStyle: "solid",
-			scaleLineWidth: 1,
-			scaleOverlay: false,
-			scaleOverride: true,
-			scaleSteps: 10,
-			scaleStepWidth: 10,
-			scaleStartValue: 0,
-			inGraphDataShow: true,
-			inGraphDataTmpl: '<%=v3%>%',
-			inGraphDataFontStyle: "normal bold",
-			inGraphDataFontSize: 12,
-			inGraphDataPaddingX: -1,
-			inGraphDataPaddingY: 19,
-			inGraphDataAlign: "center",
-			inGraphDataVAlign: "top",
-			inGraphDataXPosition: 2,
-			inGraphDataYPosition: 3,
-			inGraphDataAnglePosition: 2,
-			inGraphDataRadiusPosition: 2,
-			inGraphDataRotate: 0,
-			inGraphDataPaddingAngle: 0,
-			inGraphDataPaddingRadius: 0,
-			inGraphDataBorders: false,
-			inGraphDataBordersXSpace: 1,
-			inGraphDataBordersYSpace: 1,
-			inGraphDataBordersWidth: 1,
-			inGraphDataBordersStyle: "solid",
-			legend: true,
-			maxLegendCols: 5,
-			legendColorIndicatorStrokeWidth: 1,
-			legendPosX: -2,
-			legendPosY: 4,
-			legendXPadding: 0,
-			legendYPadding: 0,
-			legendBorders: false,
-			legendBordersWidth: 1,
-			legendBordersStyle: "solid",
-			legendBordersSpaceBefore: 5,
-			legendBordersSpaceLeft: 5,
-			legendBordersSpaceRight: 5,
-			legendBordersSpaceAfter: 5,
-			legendSpaceBeforeText: 5,
-			legendSpaceLeftText: 10,
-			legendSpaceRightText: 10,
-			legendSpaceAfterText: 5,
-			legendSpaceBetweenBoxAndText: 5,
-			legendSpaceBetweenTextHorizontal: 5,
-			legendSpaceBetweenTextVertical: 5,
-			showYAxisMin: false,
-			rotateLabels: "smart",
-			xAxisBottom: true,
-			yAxisLeft: true,
-			yAxisRight: false,
-			graphTitleSpaceBefore: 5,
-			graphTitleSpaceAfter: 5,
-			graphTitleBorders: false,
-			graphTitleBordersXSpace: 1,
-			graphTitleBordersYSpace: 1,
-			graphTitleBordersWidth: 1,
-			graphTitle: "Nível de aprendizagem adequado",
-			graphTitleFontStyle: "normal normal",
-			graphTitleFontSize: 26,
-			graphSubTitleSpaceBefore: 5,
-			graphSubTitleSpaceAfter: 5,
-			graphSubTitleBorders: false,
-			graphSubTitleBordersXSpace: 1,
-			graphSubTitleBordersYSpace: 1,
-			graphSubTitleBordersWidth: 1,
-			graphSubTitleBordersStyle: "solid",
-			graphSubTitle: "Comparativo do ano de" + esc1Ano,
-			graphSubTitleFontStyle: "normal normal",
-			graphSubTitleFontSize: 16,
-			scaleFontStyle: "normal normal",
-			scaleFontSize: 12,
-			pointLabelFontStyle: "normal normal",
-			pointLabelFontSize: 12,
-			angleShowLineOut: true,
-			angleLineStyle: "solid",
-			angleLineWidth: 1,
-			percentageInnerCutout: 50,
-			scaleShowGridLines: true,
-			scaleGridLineStyle: "solid",
-			scaleGridLineWidth: 1,
-			scaleXGridLinesStep: 1,
-			scaleYGridLinesStep: 3,
-			segmentShowStroke: true,
-			segmentStrokeStyle: "solid",
-			segmentStrokeWidth: 2,
-			datasetStroke: true,
-			datasetFill: true,
-			datasetStrokeStyle: "solid",
-			datasetStrokeWidth: 2,
-			bezierCurve: true,
-			bezierCurveTension: 0.4,
-			pointDotStrokeStyle: "solid",
-			pointDotStrokeWidth: 1,
-			pointDotRadius: 3,
-			pointDot: true,
-			scaleTickSizeBottom: 5,
-			scaleTickSizeTop: 5,
-			scaleTickSizeLeft: 5,
-			scaleTickSizeRight: 5,
-			graphMin: 0,
-			graphMax: 100,
-			barShowStroke: false,
-			barBorderRadius: -1,
-			barStrokeStyle: "solid",
-			barStrokeWidth: 1,
-			barValueSpacing: 15,
-			barDatasetSpacing: 0,
-			scaleShowLabelBackdrop: true,
-			scaleBackdropPaddingX: 2,
-			scaleBackdropPaddingY: 2,
-			animation: true,
-			responsive: true,
-			responsiveMaxHeight: 400,
-			responsiveMaxWidth: 700
-	};
 	
-	var ctxCompare = $(".aprendizadocompare").get(0).getContext("2d");
-	var grafCompare = new Chart(ctxCompare).Bar(ChartData,ChartOptions);
+	$(".compare-apr-ano").html(esc1Ano);
+	
+	var dataComp = [{
+		name: nome1,
+		periodo: 'Português \n5º ano',
+		nota: esc1P5
+	}, {
+		name: nome1,
+		periodo: 'Matemática \n5º ano',
+		nota: esc1M5
+	}, {
+		name: nome1,
+		periodo: 'Português \n9º ano',
+		nota: esc1P9
+	}, {
+		name: nome1,
+		periodo: 'Matemática \n9º ano',
+		nota: esc1M9
+	}, {
+		name: nome2,
+		periodo: 'Português \n5º ano',
+		nota: esc2P5
+	}, {
+		name: nome2,
+		periodo: 'Matemática \n5º ano',
+		nota: esc2M5
+	}, {
+		name: nome2,
+		periodo: 'Português \n9º ano',
+		nota: esc2P9
+	}, {
+		name: nome2,
+		periodo: 'Matemática \n9º ano',
+		nota: esc2M9
+	}];
+
+	var labelStyle;
+	if(viewWidth < 460){
+		labelStyle = {
+		    	fontFamily: 'Montserrat',
+		    	fontSize: '10',
+		    	textAlign: 'start',
+		    	rotate: Math.PI / 3,
+		    	textBaseline: 'middle'
+		    };
+        chartPadding = ['auto', 'auto', 60, 'auto'];
+	} else {
+		labelStyle = {
+	    	fontFamily: 'Montserrat',
+	    	fontSize: '12'
+	    };
+        chartPadding = ['auto', 'auto', 'auto', 'auto'];
+	}
+	
+	var chart = new F2.Chart({
+		id: 'aprendizadocompare',
+		pixelRatio: 1,
+		padding: chartPadding
+	});
+	chart.source(dataComp);
+	chart.axis('periodo', {
+	    label: labelStyle
+	})
+	chart.axis('nota', {
+		label: {
+			fontFamily: 'Montserrat',
+			fontSize: '12'
+	    }
+	})
+	chart.legend({
+		nameStyle: {
+			fontFamily: 'Montserrat',
+			fontSize: '12'
+		}, 
+		valueStyle: {
+			fontFamily: 'Montserrat',
+			fontSize: '12'
+		}
+	})
+	chart.tooltip({
+		custom: true,
+		onChange: function onChange(obj) {
+			var legend = chart.get('legendController').legends.top[0];
+			var tooltipItems = obj.items;
+			var legendItems = legend.items;
+			var map = {};
+			legendItems.map(function(item) {
+				map[item.name] = _.clone(item);
+			});
+			tooltipItems.map(function(item) {
+				var name = item.name;
+				var value = item.value;
+				if (map[name]) {
+					map[name].value = value;
+				}
+			});
+			legend.setItems(_.values(map));
+		},
+		onHide: function onHide() {
+			var legend = chart.get('legendController').legends.top[0];
+			legend.setItems(chart.getLegendItems().country);
+		}
+	});
+
+	chart.interval().position('periodo*nota').color('name').adjust({
+		type: 'dodge',
+		marginRatio: 0.05
+	});
+	chart.render();
+	
+//	var ChartData = {
+//			labels: ["Português 5º ano", "Matemática 5º ano", "Português 9º ano", "Matemática 9º ano" ],
+//			datasets: [
+//			           {
+//			        	   fillColor: "rgba(52,152,219,1)",
+//			        	   strokeColor: "rgba(52,152,219,0.5)",
+//			        	   pointColor: "rgba(52,152,219,1)",
+//			        	   markerShape: "circle",
+//			        	   pointStrokeColor: "rgba(255,255,255,1)",
+//			        	   data: [esc1P5, esc1M5, esc1P9, esc1M9],
+//			        	   title: nome1
+//			           },
+//			           {
+//			        	   fillColor: "rgba(46,204,113,1)",
+//			        	   strokeColor: "rgba(46,204,113,1)",
+//			        	   pointColor: "rgba(46,204,113,1)",
+//			        	   markerShape: "circle",
+//			        	   pointStrokeColor: "rgba(255,255,255,1)",
+//			        	   data: [esc2P5, esc2M5, esc2P9, esc2M9],
+//			        	   title: nome2
+//			           }, ]
+//	};
+//	ChartOptions = {
+//			spaceLeft: 12,
+//			spaceRight: 12,
+//			spaceTop: 12,
+//			spaceBottom: 12,
+//			canvasBorders: false,
+//			canvasBordersWidth: 1,
+//			canvasBordersStyle: "solid",
+//			scaleLabel: "<%=value+''%>",
+//			yAxisMinimumInterval: 1,
+//			scaleShowLabels: true,
+//			scaleShowLine: true,
+//			scaleLineStyle: "solid",
+//			scaleLineWidth: 1,
+//			scaleOverlay: false,
+//			scaleOverride: true,
+//			scaleSteps: 10,
+//			scaleStepWidth: 10,
+//			scaleStartValue: 0,
+//			inGraphDataShow: true,
+//			inGraphDataTmpl: '<%=v3%>%',
+//			inGraphDataFontStyle: "normal bold",
+//			inGraphDataFontSize: 12,
+//			inGraphDataPaddingX: -1,
+//			inGraphDataPaddingY: 19,
+//			inGraphDataAlign: "center",
+//			inGraphDataVAlign: "top",
+//			inGraphDataXPosition: 2,
+//			inGraphDataYPosition: 3,
+//			inGraphDataAnglePosition: 2,
+//			inGraphDataRadiusPosition: 2,
+//			inGraphDataRotate: 0,
+//			inGraphDataPaddingAngle: 0,
+//			inGraphDataPaddingRadius: 0,
+//			inGraphDataBorders: false,
+//			inGraphDataBordersXSpace: 1,
+//			inGraphDataBordersYSpace: 1,
+//			inGraphDataBordersWidth: 1,
+//			inGraphDataBordersStyle: "solid",
+//			legend: true,
+//			maxLegendCols: 5,
+//			legendColorIndicatorStrokeWidth: 1,
+//			legendPosX: -2,
+//			legendPosY: 4,
+//			legendXPadding: 0,
+//			legendYPadding: 0,
+//			legendBorders: false,
+//			legendBordersWidth: 1,
+//			legendBordersStyle: "solid",
+//			legendBordersSpaceBefore: 5,
+//			legendBordersSpaceLeft: 5,
+//			legendBordersSpaceRight: 5,
+//			legendBordersSpaceAfter: 5,
+//			legendSpaceBeforeText: 5,
+//			legendSpaceLeftText: 10,
+//			legendSpaceRightText: 10,
+//			legendSpaceAfterText: 5,
+//			legendSpaceBetweenBoxAndText: 5,
+//			legendSpaceBetweenTextHorizontal: 5,
+//			legendSpaceBetweenTextVertical: 5,
+//			showYAxisMin: false,
+//			rotateLabels: "smart",
+//			xAxisBottom: true,
+//			yAxisLeft: true,
+//			yAxisRight: false,
+//			graphTitleSpaceBefore: 5,
+//			graphTitleSpaceAfter: 5,
+//			graphTitleBorders: false,
+//			graphTitleBordersXSpace: 1,
+//			graphTitleBordersYSpace: 1,
+//			graphTitleBordersWidth: 1,
+//			graphTitle: "Nível de aprendizagem adequado",
+//			graphTitleFontStyle: "normal normal",
+//			graphTitleFontSize: 26,
+//			graphSubTitleSpaceBefore: 5,
+//			graphSubTitleSpaceAfter: 5,
+//			graphSubTitleBorders: false,
+//			graphSubTitleBordersXSpace: 1,
+//			graphSubTitleBordersYSpace: 1,
+//			graphSubTitleBordersWidth: 1,
+//			graphSubTitleBordersStyle: "solid",
+//			graphSubTitle: "Comparativo do ano de" + esc1Ano,
+//			graphSubTitleFontStyle: "normal normal",
+//			graphSubTitleFontSize: 16,
+//			scaleFontStyle: "normal normal",
+//			scaleFontSize: 12,
+//			pointLabelFontStyle: "normal normal",
+//			pointLabelFontSize: 12,
+//			angleShowLineOut: true,
+//			angleLineStyle: "solid",
+//			angleLineWidth: 1,
+//			percentageInnerCutout: 50,
+//			scaleShowGridLines: true,
+//			scaleGridLineStyle: "solid",
+//			scaleGridLineWidth: 1,
+//			scaleXGridLinesStep: 1,
+//			scaleYGridLinesStep: 3,
+//			segmentShowStroke: true,
+//			segmentStrokeStyle: "solid",
+//			segmentStrokeWidth: 2,
+//			datasetStroke: true,
+//			datasetFill: true,
+//			datasetStrokeStyle: "solid",
+//			datasetStrokeWidth: 2,
+//			bezierCurve: true,
+//			bezierCurveTension: 0.4,
+//			pointDotStrokeStyle: "solid",
+//			pointDotStrokeWidth: 1,
+//			pointDotRadius: 3,
+//			pointDot: true,
+//			scaleTickSizeBottom: 5,
+//			scaleTickSizeTop: 5,
+//			scaleTickSizeLeft: 5,
+//			scaleTickSizeRight: 5,
+//			graphMin: 0,
+//			graphMax: 100,
+//			barShowStroke: false,
+//			barBorderRadius: -1,
+//			barStrokeStyle: "solid",
+//			barStrokeWidth: 1,
+//			barValueSpacing: 15,
+//			barDatasetSpacing: 0,
+//			scaleShowLabelBackdrop: true,
+//			scaleBackdropPaddingX: 2,
+//			scaleBackdropPaddingY: 2,
+//			animation: true,
+//			responsive: true,
+//			responsiveMaxHeight: 400,
+//			responsiveMaxWidth: 700
+//	};
+//	
+//	var ctxCompare = $(".aprendizadocompare").get(0).getContext("2d");
+//	var grafCompare = new Chart(ctxCompare).Bar(ChartData,ChartOptions);
 }
 
 function compareVisita(comp1, comp2, escNome1, escNome2){
@@ -3125,6 +3261,9 @@ function addLayer(layer, name, zIndex, id) {
         				$(".layers-bairros").addClass('layer-active');
         			} else if(name == 'Mapa de Calor'){
         				mudaLegenda('heatmap');
+        				if(viewWidth < 760){
+        					resetaFiltroMobile(true);
+        				}
         				map.removeLayer(escolasLayer);
         				$(".layers-calor").addClass('layer-active');
         				$(".layers-escolas").removeClass('layer-active');
