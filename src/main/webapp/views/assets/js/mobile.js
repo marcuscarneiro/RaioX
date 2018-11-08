@@ -624,10 +624,10 @@ $(document).ready(function() {
 function callVideos(){
 	$(document).ready(function() {
 	  $.get(
-	    "https://www.googleapis.com/youtube/v3/search",{
+	    "https://www.googleapis.com/youtube/v3/playlistItems",{
 	      part : 'snippet',
-			maxResults : 20,
-	      channelId : 'UC2CEbvsZB8OgBXlTHd9pwZg',
+	      maxResults : 20,
+	      playlistId : 'PLmbhmBSq0k-_cKwhcVIUYs-NmW-tWibmQ',
 	      order: 'date',
 	      type : 'video',
 	      key: 'AIzaSyCx4dLsr2z7JccqEeyEKZzlmJVdH4MMV0U'},

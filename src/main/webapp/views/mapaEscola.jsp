@@ -283,6 +283,7 @@
 							<span class="cap-tr">Capital</span>
 							<span class="cap-tr cap-qtd">IDEB</span>
 						</li>
+						<li><span>Teresina</span><span class="cap-qtd">6.8</span></li>
 						<li><span>Curitiba</span><span class="cap-qtd">6.4</span></li>
 						<li><span>Belo Horizonte</span><span class="cap-qtd">6.3</span></li>
 						<li><span>Florianópolis</span><span class="cap-qtd">6.2</span></li>
