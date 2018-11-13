@@ -808,6 +808,7 @@
 															<li class="questao" id="sa8"><span>Quantas salas possuem bom espaço para circulação?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa9"><span>Quantas salas possuem lousas conservadas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sa10"><span>Qual o aspecto de conservação do mobiliário em sala de aula?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sa11"><span>Quantas salas possuem janelas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes1"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -857,6 +858,7 @@
 															<li class="questao" id="bib11"><span>Qual a formação do(a) Bibliotecário(a)?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib12"><span>Possui mediador de leitura?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib13"><span>Qual a formação do mediador(a) de leitura?</span><span class="questao-info"></span></li>
+															<li class="questao" id="bib14"><span>A sala possui janelas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes2"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -881,6 +883,7 @@
 															<li class="questao" id="inf8"><span>Quantos computadores tem acesso à internet?</span><span class="questao-info"></span></li>
 															<li class="questao" id="inf9"><span>Há monitor(a) / instrutor(a)?</span><span class="questao-info"></span></li>
 															<li class="questao" id="inf10"><span>Qual a formação do(a) Monitor(a) / Instrutor(a)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="inf11"><span>A sala possui janelas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes3"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -905,6 +908,7 @@
 															<li class="questao" id="et8"><span>Quantas mesas interativas tem acesso à internet?</span><span class="questao-info"></span></li>
 															<li class="questao" id="et9"><span>Há monitor(a) / instrutor(a)?</span><span class="questao-info"></span></li>
 															<li class="questao" id="et10"><span>Qual a formação do(a) Monitor(a) / Instrutor(a)?</span><span class="questao-info"></span></li>
+															<li class="questao" id="et11"><span>A sala possui janelas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes4"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -1035,6 +1039,7 @@
 															<li class="questao" id="sp7"><span>Há mesas e cadeiras?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sp8"><span>A iluminação está abaixo de 200 lux?</span><span class="questao-info"></span></li>
 															<li class="questao" id="sp9"><span>Há espaço para circulação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="sp10"><span>A sala possui janelas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes8"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -1067,6 +1072,10 @@
 															<li class="questao" id="adm11c"><span>A sala da Coordenação é bem ventilada?</span><span class="questao-info"></span></li>
 															<li class="questao" id="adm12"><span>Há espaço para circulação?</span><span class="questao-info"></span></li>
 															<li class="questao" id="adm13"><span>A iluminação está abaixo de 200 lux?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm14"><span>Caso seja um espaço compartilhado, a sala possui janelas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm14s"><span>A sala da Direção possui janelas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm14b"><span>A sala da Secretaria possui janelas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="adm14c"><span>A sala da Coordenação possui janelas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes9"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -1083,6 +1092,7 @@
 															<li class="questao" id="alim1"><span>Onde as crianças se alimentam?</span><span class="questao-info"></span></li>
 															<li class="questao" id="alim2"><span>Quais as condições de iluminação?</span><span class="questao-info"></span></li>
 															<li class="questao" id="alim3"><span>Quais as condições da ventilação?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim3a"><span>Caso seja um ambiente fechado, possui janelas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="alim4"><span>Quais as condições do espaço de circulação?</span><span class="questao-info"></span></li>
 															<li class="questao" id="alim5"><span>Quais as condições de higiene?</span><span class="questao-info"></span></li>
 															<li class="questao" id="alim6"><span>Quais as condições do mobiliário?</span><span class="questao-info"></span></li>
@@ -1169,6 +1179,10 @@
 															<li class="questao" id="edfs10"><span>Se não, foram recebidos os tablets para o espaço tecnológico?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs11"><span>Existe internet wireless para o uso nos computadores/tablets?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs12"><span>Foram instaladas mesas interativas da Positivo?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs19"><span>Há evasão de alunos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs20"><span>Se sim, quantos alunos estão ausentes?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs21"><span>Se sim, foi comunicado ao Conselho Tutelar?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs22"><span>Quantos casos foram comunicados ao Conselho Tutelar?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs13"><span>É atendido pelo PSE?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs13o"><span>Como?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs14"><span>Tem parceria com PSF?</span><span class="questao-info"></span></li>

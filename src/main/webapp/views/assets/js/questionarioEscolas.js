@@ -446,6 +446,7 @@ function preencheQuestionario(visita){
 	preenchePadrao('text','sa1', visita.sa1);
 	preenchePadrao('text','sa2', visita.sa2);
 	preenchePadrao('text','sa3', visita.sa3);
+	preenchePadrao('text','sa11', visita.sa11);
 	preenchePadrao('likert','sa10', visita.sa10);
 	preenchePadrao('anotacao','anotacoes1', visita.anotacoes1);
 	preenchePadrao('text','eee2', visita.eee2);
@@ -470,6 +471,7 @@ function preencheQuestionario(visita){
 	preenchePadrao('formacao','bib11', visita.bib11);
 	preenchePadrao('boolNao','bib12', visita.bib12);
 	preenchePadrao('formacao','bib13', visita.bib13);
+	preenchePadrao('boolNao','bib14', visita.bib14);
 	preenchePadrao('anotacao','anotacoes2', visita.anotacoes2);
 	preenchePadrao('boolNao','inf1', visita.inf1);
 	preenchePadrao('boolNao','inf2', visita.inf2);
@@ -480,6 +482,7 @@ function preencheQuestionario(visita){
 	preenchePadrao('text','inf7', visita.inf7);
 	preenchePadrao('text','inf8', visita.inf8);
 	preenchePadrao('boolNao','inf9', visita.inf9);
+	preenchePadrao('boolNao','inf11', visita.inf11);
 	preenchePadrao('anotacao','anotacoes3', visita.anotacoes3);
 	preenchePadrao('boolNao','et1', visita.et1);
 	preenchePadrao('boolNao','et2', visita.et2);
@@ -490,6 +493,7 @@ function preencheQuestionario(visita){
 	preenchePadrao('text','et7', visita.et7);
 	preenchePadrao('text','et8', visita.et8);
 	preenchePadrao('boolNao','et9', visita.et9);
+	preenchePadrao('boolNao','et11', visita.et11);
 	preenchePadrao('anotacao','anotacoes4', visita.anotacoes4);
 	preenchePadrao('escala','rl1', visita.rl1);
 	preenchePadrao('escala','rl2', visita.rl2);
@@ -546,6 +550,7 @@ function preencheQuestionario(visita){
 	preenchePadrao('boolNao','sp7', visita.sp7);
 	preenchePadrao('invBool','sp8', visita.sp8);
 	preenchePadrao('boolNao','sp9', visita.sp9);
+	preenchePadrao('boolNao','sp10', visita.sp10);
 	preenchePadrao('anotacao','anotacoes8', visita.anotacoes8);
 	preenchePadrao('neutro','adm1', visita.adm1);
 	preenchePadrao('boolNao','adm2', visita.adm2);
@@ -566,8 +571,13 @@ function preencheQuestionario(visita){
 	preenchePadrao('boolNao','adm11c', visita.adm11c);
 	preenchePadrao('boolNao','adm12', visita.adm12);
 	preenchePadrao('invBool','adm13', visita.adm13);
+	preenchePadrao('boolNaoHid','adm14', visita.adm14);
+	preenchePadrao('boolNaoHid','adm14a', visita.adm14a);
+	preenchePadrao('boolNaoHid','adm14b', visita.adm14b);
+	preenchePadrao('boolNaoHid','adm14c', visita.adm14c);
 	preenchePadrao('anotacao','anotacoes9', visita.anotacoes9);
 	preenchePadrao('likert','alim3', visita.alim3);
+	preenchePadrao('boolNaoHid','alim3a', visita.alim3a);
 	preenchePadrao('likert','alim4', visita.alim4);
 	preenchePadrao('likert','alim5', visita.alim5);
 	preenchePadrao('likert','alim6', visita.alim6);
@@ -633,6 +643,10 @@ function preencheQuestionario(visita){
 	preenchePadrao('invBool','edfs18e', visita.edfs18e);
 	preenchePadrao('invBool','edfs18f', visita.edfs18f);
 	preenchePadrao('invBool','edfs18g', visita.edfs18g);
+	preenchePadrao('invBool','edfs19', visita.edfs19);
+	preenchePadrao('text','edfs20', visita.edfs20);
+	preenchePadrao('boolNaoHid','edfs21', visita.edfs21);
+	preenchePadrao('text','edfs22', visita.edfs22);
 	preenchePadrao('anotacao','anotacoes11a', visita.anotacoes11a);
 }
 

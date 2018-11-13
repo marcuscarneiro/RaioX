@@ -83,6 +83,9 @@ public class Visita {
 
 	@Column
 	private String sa10;
+	
+	@Column
+	private String sa11;
 
 	@Column
 	private String anotacoes1;
@@ -127,6 +130,9 @@ public class Visita {
 	private String bib13;
 
 	@Column
+	private String bib14;
+
+	@Column
 	private String anotacoes2;
 
 	@Column
@@ -160,6 +166,9 @@ public class Visita {
 	private String inf10;
 
 	@Column
+	private String inf11;
+
+	@Column
 	private String anotacoes3;
 
 	@Column
@@ -191,6 +200,9 @@ public class Visita {
 
 	@Column
 	private String et10;
+
+	@Column
+	private String et11;
 
 	@Column
 	private String anotacoes4;
@@ -301,6 +313,9 @@ public class Visita {
 	private String sp9;
 
 	@Column
+	private String sp10;
+
+	@Column
 	private String anotacoes8;
 
 	@Column
@@ -361,6 +376,18 @@ public class Visita {
 	private String adm13;
 
 	@Column
+	private String adm14;
+
+	@Column
+	private String adm14a;
+
+	@Column
+	private String adm14b;
+
+	@Column
+	private String adm14c;
+
+	@Column
 	private String anotacoes9;
 
 	@Column
@@ -371,6 +398,9 @@ public class Visita {
 
 	@Column
 	private String alim3;
+
+	@Column
+	private String alim3a;
 
 	@Column
 	private String alim4;
@@ -737,6 +767,18 @@ public class Visita {
 
 	@Column
 	private String edfs18g;
+
+	@Column
+	private String edfs19;
+
+	@Column
+	private String edfs20;
+
+	@Column
+	private String edfs21;
+
+	@Column
+	private String edfs22;
 	
 	@Column
 	private String anotacoes11a;
@@ -904,6 +946,14 @@ public class Visita {
 		this.sa10 = sa10;
 	}
 
+	public String getSa11() {
+		return sa11;
+	}
+
+	public void setSa11(String sa11) {
+		this.sa11 = sa11;
+	}
+
 	public String getAnotacoes1() {
 		return anotacoes1;
 	}
@@ -1016,6 +1066,13 @@ public class Visita {
 		this.bib13 = bib13;
 	}
 
+	public String getBib14() {
+		return bib14;
+	}
+
+	public void setBib14(String bib14) {
+		this.bib14 = bib14;
+	}
 
 	public String getAnotacoes2() {
 		return anotacoes2;
@@ -1105,6 +1162,14 @@ public class Visita {
 		this.inf10 = inf10;
 	}
 
+	public String getInf11() {
+		return inf11;
+	}
+
+	public void setInf11(String inf11) {
+		this.inf11 = inf11;
+	}
+
 	public String getAnotacoes3() {
 		return anotacoes3;
 	}
@@ -1191,6 +1256,14 @@ public class Visita {
 
 	public void setEt10(String et10) {
 		this.et10 = et10;
+	}
+
+	public String getEt11() {
+		return et11;
+	}
+
+	public void setEt11(String et11) {
+		this.et11 = et11;
 	}
 
 	public String getAnotacoes4() {
@@ -1481,6 +1554,14 @@ public class Visita {
 		this.sp9 = sp9;
 	}
 
+	public String getSp10() {
+		return sp10;
+	}
+
+	public void setSp10(String sp10) {
+		this.sp10 = sp10;
+	}
+
 	public String getAnotacoes8() {
 		return anotacoes8;
 	}
@@ -1641,6 +1722,38 @@ public class Visita {
 		this.adm13 = adm13;
 	}
 
+	public String getAdm14() {
+		return adm14;
+	}
+
+	public void setAdm14(String adm14) {
+		this.adm14 = adm14;
+	}
+
+	public String getAdm14a() {
+		return adm14a;
+	}
+
+	public void setAdm14a(String adm14a) {
+		this.adm14a = adm14a;
+	}
+
+	public String getAdm14b() {
+		return adm14b;
+	}
+
+	public void setAdm14b(String adm14b) {
+		this.adm14b = adm14b;
+	}
+
+	public String getAdm14c() {
+		return adm14c;
+	}
+
+	public void setAdm14c(String adm14c) {
+		this.adm14c = adm14c;
+	}
+
 	public String getAnotacoes9() {
 		return anotacoes9;
 	}
@@ -1671,6 +1784,14 @@ public class Visita {
 
 	public void setAlim3(String alim3) {
 		this.alim3 = alim3;
+	}
+
+	public String getAlim3a() {
+		return alim3a;
+	}
+
+	public void setAlim3a(String alim3a) {
+		this.alim3a = alim3a;
 	}
 
 	public String getAlim4() {
@@ -2663,5 +2784,37 @@ public class Visita {
 
 	public void setEdfs18g(String edfs18g) {
 		this.edfs18g = edfs18g;
+	}
+
+	public String getEdfs19() {
+		return edfs19;
+	}
+
+	public void setEdfs19(String edfs19) {
+		this.edfs19 = edfs19;
+	}
+
+	public String getEdfs20() {
+		return edfs20;
+	}
+
+	public void setEdfs20(String edfs20) {
+		this.edfs20 = edfs20;
+	}
+
+	public String getEdfs21() {
+		return edfs21;
+	}
+
+	public void setEdfs21(String edfs21) {
+		this.edfs21 = edfs21;
+	}
+
+	public String getEdfs22() {
+		return edfs22;
+	}
+
+	public void setEdfs22(String edfs22) {
+		this.edfs22 = edfs22;
 	}
 }

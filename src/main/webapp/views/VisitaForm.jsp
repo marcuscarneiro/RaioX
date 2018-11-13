@@ -226,6 +226,13 @@
 								<form:input id="sa10" name="sa10" type="text" class="form-control" path="sa10" />
 							</div>
 						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="sa11"><strong>SA11</strong> - Quantas salas possuem janelas?</label>
+							<div class="col-sm-4">
+								<form:input id="sa11" name="sa11" type="text" class="form-control" path="sa11" />
+							</div>
+						</div>
 
 						<div class="form-group">
 							<div class="col-sm-4 col-sm-offset-3">
@@ -546,6 +553,16 @@
 								3 = Superior completo.
 							</div>
 						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="bib14"><strong>BIB14</strong> - A sala possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="bib14" path="bib14" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="bib14" path="bib14" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="bib14" path="bib14" value="false" />  NÃO</div>
+						</div>
 						<!-- Textarea -->
 						<div class="form-group">
 							<label for="anotacoes2" class="col-sm-3 control-label"><strong>Anotações</strong></label>
@@ -651,6 +668,16 @@
 								0 = Em outra área.
 							</div>
 						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="inf11"><strong>INF11</strong> - A sala possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="inf11" path="inf11" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="inf11" path="inf11" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="inf11" path="inf11" value="false" />  NÃO</div>
+						</div>
 						<!-- Textarea -->
 						<div class="form-group">
 							<label for="anotacoes3" class="col-sm-3 control-label"><strong>Anotações</strong></label>
@@ -755,6 +782,16 @@
 								1 = Na área de informática;<br/>
 								0 = Em outra área.
 							</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="et11"><strong>ET11</strong> - A sala possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et11" path="et11" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et11" path="et11" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="et11" path="et11" value="false" />  NÃO</div>
 						</div>
 						<!-- Textarea -->
 						<div class="form-group">
@@ -1405,6 +1442,16 @@
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="sp9" path="sp9" value="false" />  NÃO</div>
 						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="sp10"><strong>SP10</strong> - A sala possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="sp10" path="sp10" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="sp10" path="sp10" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="sp10" path="sp10" value="false" />  NÃO</div>
+						</div>
 						<!-- Textarea -->
 						<div class="form-group">
 							<label for="anotacoes8" class="col-sm-3 control-label"><strong>Anotações</strong></label>
@@ -1613,6 +1660,46 @@
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm13" path="adm13" value="false" />  NÃO</div>
 						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="adm14"><strong>ADM14</strong> - Caso seja um espaço compartilhado, a sala possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14" path="adm14" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14" path="adm14" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14" path="adm14" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="adm14a"><strong>ADM14a</strong> - A sala da Direção possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14a" path="adm14a" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14a" path="adm14a" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14a" path="adm14a" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="adm14b"><strong>ADM14b</strong> - A sala da Secretaria possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14b" path="adm14b" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14b" path="adm14b" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14b" path="adm14b" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="adm14c"><strong>ADM14c</strong> - A sala da Coordenação possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14c" path="adm14c" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14c" path="adm14c" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="adm14c" path="adm14c" value="false" />  NÃO</div>
+						</div>
 						<!-- Textarea -->
 						<div class="form-group">
 							<label for="anotacoes9" class="col-sm-3 control-label"><strong>Anotações</strong></label>
@@ -1664,6 +1751,16 @@
 							<div class="col-sm-4">
 								<form:input id="alim3" name="alim3" type="text" class="form-control" path="alim3" />
 							</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="alim3a"><strong>ALIM3a</strong> - Caso seja um ambiente fechado, possui janelas?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim3a" path="alim3a" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim3a" path="alim3a" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim3a" path="alim3a" value="false" />  NÃO</div>
 						</div>
 						<!-- Text input-->
 						<div class="form-group">
@@ -2305,6 +2402,43 @@
 								<form:radiobutton id="edfs18g" path="edfs18g" value="" />  </div>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="edfs18g" path="edfs18g" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs19"><strong>EDFS19</strong> - Há evasão de alunos?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs19" path="edfs19" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs19" path="edfs19" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs19" path="edfs19" value="false" />  NÃO</div>
+								<div class="col-sm-8 col-sm-offset-3">Obs: Caso não tenha, pular próxima pergunta.</div>
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="edfs20"><strong>EDFS20</strong> - Se sim, quantos alunos estão ausentes?</label>
+							<div class="col-sm-4">
+								<form:input id="edfs20" name="edfs20" type="text" class="form-control" path="edfs20" />
+							</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs21"><strong>EDFS21</strong> - Se sim, foi comunicado ao Conselho Tutelar?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs21" path="edfs21" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs21" path="edfs21" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs21" path="edfs21" value="false" />  NÃO</div>
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="edfs22"><strong>EDFS22</strong> - Quantos casos foram comunicados ao Conselho Tutelar?</label>
+							<div class="col-sm-4">
+								<form:input id="edfs22" name="edfs22" type="text" class="form-control" path="edfs22" />
+							</div>
 						</div>
 						
 						<!-- Textarea -->
