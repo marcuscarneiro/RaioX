@@ -388,7 +388,7 @@
 						</div>
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="eee7"><strong>EEE7</strong> - Quantos alunos especiais COM LAUDO médico estão matriculados?</label>
+							<label class="col-sm-3 control-label" for="eee7"><strong>EEE7</strong> - Quantos alunos com deficiência COM LAUDO médico estão matriculados?</label>
 							<div class="col-sm-4">
 								<form:input id="eee7" name="eee7" type="text" class="form-control" path="eee7" />
 							</div>
@@ -400,16 +400,7 @@
 								<form:input id="eee8" name="eee8" type="text" class="form-control" path="eee8" />
 							</div>
 						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="eee9"><strong>EEE9</strong> - Os professores com formação em AEE ou psicopedagogia são:</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="eee9" path="eee9" value="fixos" />  FIXOS</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="eee9" path="eee9" value="null" />  </div>
-							<div class="col-sm-2 formradio">
-								<form:radiobutton id="eee9" path="eee9" value="itinerantes" />  ITINERANTES</div>
-						</div>
+
 						<!-- Textarea -->
 						<div class="form-group">
 							<label for="anotacoes1a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
@@ -485,16 +476,6 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="bib7"><strong>BIB7</strong> - Tem aparelho de DVD?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="bib7" path="bib7" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="bib7" path="bib7" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="bib7" path="bib7" value="false" />  NÃO</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
 							<form:label class="col-sm-3 control-label" path="bib8"><strong>BIB8</strong> - Tem aparelho de som?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="bib8" path="bib8" value="true" />  SIM</div>
@@ -512,26 +493,6 @@
 								<form:radiobutton id="bib9" path="bib9" value="null" />  </div>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="bib9" path="bib9" value="false" />  NÃO</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="bib10"><strong>BIB10</strong> - Tem Bibliotecário(a)?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="bib10" path="bib10" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="bib10" path="bib10" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="bib10" path="bib10" value="false" />  NÃO</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="bib11"><strong>BIB11</strong> - Qual a formação do(a) Bibliotecário(a)?</label>
-							<div class="col-sm-4">
-								<form:input id="bib11" name="bib11" type="text" class="form-control" path="bib11" />
-									1 = Nível médio;<br/>
-									2 = Superior incompleto;<br/>
-									3 = Superior completo.
-							</div>
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
@@ -568,121 +529,6 @@
 							<label for="anotacoes2" class="col-sm-3 control-label"><strong>Anotações</strong></label>
 							<div class="col-sm-4">
 								<form:textarea id="anotacoes2" name="anotacoes2" class="form-control" path="anotacoes2" />
-							</div>
-						</div>
-						
-						<hr>
-						<h3 style="text-align: center;">3 - MÓDULO LABORATÓRIO DE INFORMÁTICA</h3>
-						<hr>
-						
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="inf1"><strong>INF1</strong> - Existe Laboratório de Informática?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf1" path="inf1" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf1" path="inf1" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf1" path="inf1" value="false" />  NÃO</div>
-								<div class="col-sm-8 col-sm-offset-3">Obs: Caso a resposta seja não, vá para o próximo módulo.</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="inf2"><strong>INF2</strong> - É climatizado?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf2" path="inf2" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf2" path="inf2" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf2" path="inf2" value="false" />  NÃO</div>
-								<div class="col-sm-8 col-sm-offset-3">Obs: Se for climatizado, pule a próxima pergunta.</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="inf3"><strong>INF3</strong> - É bem ventilado?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf3" path="inf3" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf3" path="inf3" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf3" path="inf3" value="false" />  NÃO</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="inf4"><strong>INF4</strong> - Há suporte técnico da Prefeitura?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf4" path="inf4" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf4" path="inf4" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf4" path="inf4" value="false" />  NÃO</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="inf5"><strong>INF5</strong> - Há aulas de informática?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf5" path="inf5" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf5" path="inf5" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf5" path="inf5" value="false" />  NÃO</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="inf6"><strong>INF6</strong> - Quantos computadores há no laboratório?</label>
-							<div class="col-sm-4">
-								<form:input id="inf6" name="inf6" type="text" class="form-control" path="inf6" />
-							</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="inf7"><strong>INF7</strong> - Quantos computadores funcionam?</label>
-							<div class="col-sm-4">
-								<form:input id="inf7" name="inf7" type="text" class="form-control" path="inf7" />
-							</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="inf8"><strong>INF8</strong> - Quantos computadores tem acesso à internet?</label>
-							<div class="col-sm-4">
-								<form:input id="inf8" name="inf8" type="text" class="form-control" path="inf8" />
-							</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="inf9"><strong>INF9</strong> - Há monitor(a) / instrutor(a)?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf9" path="inf9" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf9" path="inf9" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf9" path="inf9" value="false" />  NÃO</div>
-								<div class="col-sm-8 col-sm-offset-3">Obs: Se a resposta for não, vá para o próximo módulo</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="inf10"><strong>INF10</strong> - Qual a formação do(a) Monitor(a) / Instrutor(a)?</label>
-							<div class="col-sm-4">
-								<form:input id="inf10" name="inf10" type="text" class="form-control" path="inf10" />
-								1 = Na área de informática;<br/>
-								0 = Em outra área.
-							</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="inf11"><strong>INF11</strong> - A sala possui janelas?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf11" path="inf11" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf11" path="inf11" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="inf11" path="inf11" value="false" />  NÃO</div>
-						</div>
-						<!-- Textarea -->
-						<div class="form-group">
-							<label for="anotacoes3" class="col-sm-3 control-label"><strong>Anotações</strong></label>
-							<div class="col-sm-4">
-								<form:textarea id="anotacoes3" name="anotacoes3" class="form-control" path="anotacoes3" />
 							</div>
 						</div>
 						
@@ -869,7 +715,7 @@
 						
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ace1"><strong>ACE1</strong> - Há alunos cadeirantes ou com dificuldades de locomoção?</form:label>
+							<form:label class="col-sm-3 control-label" path="ace1"><strong>ACE1</strong> - Há alunos com deficiência motora ou com dificuldades de locomoção?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ace1" path="ace1" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -879,7 +725,7 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ace2"><strong>ACE2</strong> - Há alunos surdos?</form:label>
+							<form:label class="col-sm-3 control-label" path="ace2"><strong>ACE2</strong> - Há alunos com deficiência auditiva ou deficiência da fala?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ace2" path="ace2" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -889,7 +735,7 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ace3"><strong>ACE3</strong> - Há alunos cegos ou com visão limitada?</form:label>
+							<form:label class="col-sm-3 control-label" path="ace3"><strong>ACE3</strong> - Há alunos com deficiência visual ou com visão limitada?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ace3" path="ace3" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -899,7 +745,7 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ace4"><strong>ACE4</strong> - Há alunos com problemas cognitivos ou patologias mentais?</form:label>
+							<form:label class="col-sm-3 control-label" path="ace4"><strong>ACE4</strong> - Há alunos com deficiência intelectual ou Transtorno do Espectro Autista?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ace4" path="ace4" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -929,16 +775,6 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ace7"><strong>ACE7</strong> - A escola dispõe de materiais didáticos para cegos ou surdos-mudos?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="ace7" path="ace7" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="ace7" path="ace7" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="ace7" path="ace7" value="false" />  NÃO</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
 							<form:label class="col-sm-3 control-label" path="ace8"><strong>ACE8</strong> - A escola dispõe de tutores ou intérpretes (libras)?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ace8" path="ace8" value="true" />  SIM</div>
@@ -959,7 +795,7 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ace10"><strong>ACE10</strong> - Há professores com formação em A.E.E. ou psicopedagogia para atender as crianças especiais?</form:label>
+							<form:label class="col-sm-3 control-label" path="ace10"><strong>ACE10</strong> - Há professores com formação em A.E.E. ou psicopedagogia para atender as crianças com deficiência?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ace10" path="ace10" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1094,6 +930,20 @@
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="se4" path="se4" value="false" />  NÃO</div>
 						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="eef5"><strong>EEF5</strong> - Quantidade de extintores:</label>
+							<div class="col-sm-4">
+								<form:input id="eef5" name="eef5" type="text" class="form-control" path="eef5" />
+							</div>
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="eef6"><strong>EEF6</strong> - Quantos estão fora do prazo de validade?</label>
+							<div class="col-sm-4">
+								<form:input id="eef6" name="eef6" type="text" class="form-control" path="eef6" />
+							</div>
+						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
 							<form:label class="col-sm-3 control-label" path="se5"><strong>SE5</strong> - Há infiltrações e/ou mofo?</form:label>
@@ -1116,7 +966,7 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="se7"><strong>SE7</strong> - Há risco de choque nas instalações elétricas?</form:label>
+							<form:label class="col-sm-3 control-label" path="se7"><strong>SE7</strong> - Há problemas na rede elétricas?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="se7" path="se7" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1192,20 +1042,6 @@
 								<form:radiobutton id="eef4a" path="eef4a" value="null" />  </div>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="eef4a" path="eef4a" value="false" />  NÃO</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="eef5"><strong>EEF5</strong> - Quantidade de extintores:</label>
-							<div class="col-sm-4">
-								<form:input id="eef5" name="eef5" type="text" class="form-control" path="eef5" />
-							</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="eef6"><strong>EEF6</strong> - Quantos estão fora do prazo de validade?</label>
-							<div class="col-sm-4">
-								<form:input id="eef6" name="eef6" type="text" class="form-control" path="eef6" />
-							</div>
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
@@ -1825,6 +1661,36 @@
 								<form:input id="alim12" name="alim12" type="text" class="form-control" path="alim12" />
 							</div>
 						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="alim13"><strong>ALIM13</strong> - Há infiltrações na cozinha?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim13" path="alim13" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim13" path="alim13" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim13" path="alim13" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="alim14"><strong>ALIM14</strong> - Há infiltrações no balcão da cozinha?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim14" path="alim14" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim14" path="alim14" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim14" path="alim14" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="alim15"><strong>ALIM15</strong> - A geladeira está em boas condições de uso?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim15" path="alim15" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim15" path="alim15" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="alim15" path="alim15" value="false" />  NÃO</div>
+						</div>
 						<!-- Textarea -->
 						<div class="form-group">
 							<label for="anotacoes10" class="col-sm-3 control-label"><strong>Anotações</strong></label>
@@ -1860,8 +1726,6 @@
 						<!-- CheckBox -->
 						<div class="form-group">
 							<form:label class="col-sm-3 control-label" path="em3"><strong>EM3</strong> - Qual a procedência da água?</form:label>
-							<div class="col-sm-2 formradio">
-								<form:radiobutton id="em3" path="em3" value="filtrada" />  FILTRADA</div>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="em3" path="em3" value="null" />  </div>
 							<div class="col-sm-2 formradio">
@@ -1945,6 +1809,16 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="mdf3a"><strong>MDF3a</strong> - Os livros didáticos foram entregues em número suficiente?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="mdf3a" path="mdf3a" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="mdf3a" path="mdf3a" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="mdf3a" path="mdf3a" value="false" />  NÃO</div>
+						</div>
+						<!-- CheckBox -->
+						<div class="form-group">
 							<form:label class="col-sm-3 control-label" path="mdf4"><strong>MDF4</strong> - Os alunos tem à disposição livros literários?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mdf4" path="mdf4" value="true" />  SIM</div>
@@ -1952,26 +1826,6 @@
 								<form:radiobutton id="mdf4" path="mdf4" value="null" />  </div>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mdf4" path="mdf4" value="false" />  NÃO</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mdf5"><strong>MDF5</strong> - Os alunos tem à disposição computadores?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mdf5" path="mdf5" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mdf5" path="mdf5" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mdf5" path="mdf5" value="false" />  NÃO</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mdf6"><strong>MDF6</strong> - Os alunos tem à disposição acesso à internet?</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mdf6" path="mdf6" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mdf6" path="mdf6" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mdf6" path="mdf6" value="false" />  NÃO</div>
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
@@ -1985,7 +1839,7 @@
 						</div>
 						<!-- CheckBox -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mdf8"><strong>MDF8</strong> - Os alunos tem à disposição aparelho de TV com DVD?</form:label>
+							<form:label class="col-sm-3 control-label" path="mdf8"><strong>MDF8</strong> - Os alunos tem à disposição aparelho de TV?</form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mdf8" path="mdf8" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -2112,40 +1966,6 @@
 							<label class="col-sm-3 control-label" for="edfs4o"><strong></strong>Oficinas:</label>
 							<div class="col-sm-4">
 								<form:input id="edfs4o" name="edfs4o" type="text" class="form-control" path="edfs4o" />
-							</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="edfs5"><strong>EDFS5</strong> - Escola aberta</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="edfs5" path="edfs5" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="edfs5" path="edfs5" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="edfs5" path="edfs5" value="false" />  NÃO</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="edfs5o"><strong></strong>Oficinas:</label>
-							<div class="col-sm-4">
-								<form:input id="edfs5o" name="edfs5o" type="text" class="form-control" path="edfs5o" />
-							</div>
-						</div>
-						<!-- CheckBox -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="edfs6"><strong>EDFS6</strong> - Segundo tempo</form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="edfs6" path="edfs6" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="edfs6" path="edfs6" value="null" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="edfs6" path="edfs6" value="false" />  NÃO</div>
-						</div>
-						<!-- Text input-->
-						<div class="form-group">
-							<label class="col-sm-3 control-label" for="edfs6o"><strong></strong>Oficinas:</label>
-							<div class="col-sm-4">
-								<form:input id="edfs6o" name="edfs6o" type="text" class="form-control" path="edfs6o" />
 							</div>
 						</div>
 						<!-- CheckBox -->
@@ -2403,7 +2223,6 @@
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="edfs18g" path="edfs18g" value="false" />  NÃO</div>
 						</div>
-						
 						<!-- CheckBox -->
 						<div class="form-group">
 							<form:label class="col-sm-3 control-label" path="edfs19"><strong>EDFS19</strong> - Há evasão de alunos?</form:label>
@@ -2441,11 +2260,204 @@
 							</div>
 						</div>
 						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="edfs23"><strong>EDFS23</strong> - Houve algum caso de gravidez entre as alunas nos últimos 12 meses?</form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs23" path="edfs23" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs23" path="edfs23" value="null" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="edfs23" path="edfs23" value="false" />  NÃO</div>
+						</div>
+						
 						<!-- Textarea -->
 						<div class="form-group">
-							<label for="anotacoes11a" class="col-sm-3 control-label"><strong>Anotações</strong></label>
+							<label for="anotacoes11a" class="col-sm-3 control-label"><strong>Mais informações</strong></label>
 							<div class="col-sm-4">
 								<form:textarea id="anotacoes11a" name="anotacoes11a" class="form-control" path="anotacoes11a" />
+							</div>
+						</div>
+						
+						<hr>
+						<h3 style="text-align: center;">12 - INSTALAÇÕES SANITÁRIAS</h3>
+						<hr>
+						
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1a"><strong>ISA1</strong></form:label>
+							<div class="col-sm-9 formradio"> - Marque abaixo os problemas identificados na escola</div>
+						</div>
+
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1a"><strong>Descargas quebradas</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1a" path="isa1a" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1a" path="isa1a" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1a" path="isa1a" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1b"><strong>Pias quebradas</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1b" path="isa1b" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1b" path="isa1b" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1b" path="isa1b" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1c"><strong>Torneiras quebradas</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1c" path="isa1c" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1c" path="isa1c" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1c" path="isa1c" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1d"><strong>Assentos sanitários quebrados/inexistentes</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1d" path="isa1d" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1d" path="isa1d" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1d" path="isa1d" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1e"><strong>Vasos sanitários quebrados/inexistentes</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1e" path="isa1e" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1e" path="isa1e" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1e" path="isa1e" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1f"><strong>Má higienização</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1f" path="isa1f" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1f" path="isa1f" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1f" path="isa1f" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1g"><strong>Vazamento de água</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1g" path="isa1g" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1g" path="isa1g" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1g" path="isa1g" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1h"><strong>Portas danificadas/inexistentes</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1h" path="isa1h" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1h" path="isa1h" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1h" path="isa1h" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1i"><strong>Piso danificado</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1i" path="isa1i" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1i" path="isa1i" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1i" path="isa1i" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1j"><strong>Paredes danificadas</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1j" path="isa1j" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1j" path="isa1j" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1j" path="isa1j" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1k"><strong>Retorno de esgoto</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1k" path="isa1k" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1k" path="isa1k" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1k" path="isa1k" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1l"><strong>Banheiro em quantidade insuficiente</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1l" path="isa1l" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1l" path="isa1l" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1l" path="isa1l" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1m"><strong>Infiltrações</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1m" path="isa1m" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1m" path="isa1m" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1m" path="isa1m" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1n"><strong>Ralos sem tampa</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1n" path="isa1n" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1n" path="isa1n" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1n" path="isa1n" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- CheckBox -->
+						<div class="form-group">
+							<form:label class="col-sm-3 control-label" path="isa1o"><strong>Espelhos quebrados</strong></form:label>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1o" path="isa1o" value="true" />  SIM</div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1o" path="isa1o" value="" />  </div>
+							<div class="col-sm-1 formradio">
+								<form:radiobutton id="isa1o" path="isa1o" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- Textarea -->
+						<div class="form-group">
+							<label for="anotacoes12" class="col-sm-3 control-label"><strong>Mais informações</strong></label>
+							<div class="col-sm-4">
+								<form:textarea id="anotacoes12" name="anotacoes12" class="form-control" path="anotacoes12" />
 							</div>
 						</div>
 

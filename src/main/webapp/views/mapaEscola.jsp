@@ -864,32 +864,7 @@
 													</div>
 												</td>
 											</tr>
-											
-											<tr data-toggle="collapse" data-target="#inf" class="accordion-toggle">
-												<td class="titulo-modulo">LABORATÓRIO DE INFORMÁTICA</td>
-												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
-											</tr>
-											<tr>
-												<td colspan="6" class="hiddenRow">
-													<div id="inf" class="accordian-body collapse">
-														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-															<li class="questao" id="inf1"><span>Existe Laboratório de Informática?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf2"><span>É climatizado?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf3"><span>É bem ventilado?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf4"><span>Há suporte técnico da Prefeitura?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf5"><span>Há aulas de informática?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf6"><span>Quantos computadores há no laboratório?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf7"><span>Quantos computadores funcionam?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf8"><span>Quantos computadores tem acesso à internet?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf9"><span>Há monitor(a) / instrutor(a)?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf10"><span>Qual a formação do(a) Monitor(a) / Instrutor(a)?</span><span class="questao-info"></span></li>
-															<li class="questao" id="inf11"><span>A sala possui janelas?</span><span class="questao-info"></span></li>
-															<li class="questao" id="anotacoes3"><span>Anotações</span><span class="questao-info"></span></li>
-														</ul>
-													</div>
-												</td>
-											</tr>
-											
+																						
 											<tr data-toggle="collapse" data-target="#et" class="accordion-toggle">
 												<td class="titulo-modulo">ESPAÇO TECNOLÓGICO</td>
 												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
@@ -1204,6 +1179,37 @@
 															<li class="questao" id="edfs18f"><span class="subquestao">- Hanseníase</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs18g"><span class="subquestao">- Zika</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes11a"><span>Anotações</span><span class="questao-info"></span></li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+											<tr data-toggle="collapse" data-target="#isa" class="accordion-toggle">
+												<td class="titulo-modulo">INSTALAÇÕES SANITÁRIAS</td>
+												<td class="expand-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></td>
+											</tr>
+											<tr>
+												<td colspan="6" class="hiddenRow">
+													<div id="isa" class="accordian-body collapse">
+														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+															<li class="questao">
+																<span class="subquestao-titulo">Problemas encontrados nos banheiros desta unidade</span>
+															</li>
+															<li class="questao" id="isa1a"><span class="subquestao">- Descargas quebradas</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1b"><span class="subquestao">- Pias quebradas</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1c"><span class="subquestao">- Torneiras quebradas</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1d"><span class="subquestao">- Assentos sanitários quebrados/inexistentes</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1e"><span class="subquestao">- Vasos sanitários quebrados/inexistentes</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1f"><span class="subquestao">- Má higienização</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1g"><span class="subquestao">- Vazamento de água</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1h"><span class="subquestao">- Portas danificadas/inexistentes</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1i"><span class="subquestao">- Piso danificado</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1j"><span class="subquestao">- Paredes danificadas</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1k"><span class="subquestao">- Retorno de esgoto</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1l"><span class="subquestao">- Banheiro em quantidade insuficiente</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1m"><span class="subquestao">- Infiltrações</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1n"><span class="subquestao">- Ralos sem tampa</span><span class="questao-info"></span></li>
+															<li class="questao" id="isa1o"><span class="subquestao">- Espelhos quebrados</span><span class="questao-info"></span></li>
+															<li class="questao" id="anotacoes12"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
 												</td>

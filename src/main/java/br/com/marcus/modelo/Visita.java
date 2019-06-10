@@ -389,7 +389,7 @@ public class Visita {
 
 	@Column
 	private String anotacoes9;
-
+	
 	@Column
 	private String alim1;
 
@@ -430,6 +430,15 @@ public class Visita {
 	private String alim12;
 
 	@Column
+	private String alim13;
+
+	@Column
+	private String alim14;
+
+	@Column
+	private String alim15;
+
+	@Column
 	private String anotacoes10;
 
 	@Column
@@ -443,6 +452,9 @@ public class Visita {
 
 	@Column
 	private String mdf3;
+
+	@Column
+	private String mdf3a;
 
 	@Column
 	private String mdf4;
@@ -779,9 +791,60 @@ public class Visita {
 
 	@Column
 	private String edfs22;
+
+	@Column
+	private String edfs23;
 	
 	@Column
 	private String anotacoes11a;
+
+	@Column
+	private String isa1a;
+	
+	@Column
+	private String isa1b;
+	
+	@Column
+	private String isa1c;
+	
+	@Column
+	private String isa1d;
+	
+	@Column
+	private String isa1e;
+	
+	@Column
+	private String isa1f;
+	
+	@Column
+	private String isa1g;
+	
+	@Column
+	private String isa1h;
+	
+	@Column
+	private String isa1i;
+	
+	@Column
+	private String isa1j;
+	
+	@Column
+	private String isa1k;
+	
+	@Column
+	private String isa1l;
+	
+	@Column
+	private String isa1m;
+	
+	@Column
+	private String isa1n;
+
+	@Column
+	private String isa1o;
+	
+	@Column
+	private String anotacoes12;
 
 	@Column
 	private String pub;
@@ -1866,6 +1929,30 @@ public class Visita {
 		this.alim12 = alim12;
 	}
 
+	public String getAlim13() {
+		return alim13;
+	}
+
+	public void setAlim13(String alim13) {
+		this.alim13 = alim13;
+	}
+
+	public String getAlim14() {
+		return alim14;
+	}
+
+	public void setAlim14(String alim14) {
+		this.alim14 = alim14;
+	}
+
+	public String getAlim15() {
+		return alim15;
+	}
+
+	public void setAlim15(String alim15) {
+		this.alim15 = alim15;
+	}
+
 	public String getAnotacoes10() {
 		return anotacoes10;
 	}
@@ -1904,6 +1991,14 @@ public class Visita {
 
 	public void setMdf3(String mdf3) {
 		this.mdf3 = mdf3;
+	}
+
+	public String getMdf3a() {
+		return mdf3a;
+	}
+
+	public void setMdf3a(String mdf3a) {
+		this.mdf3a = mdf3a;
 	}
 
 	public String getMdf4() {
@@ -2817,4 +2912,141 @@ public class Visita {
 	public void setEdfs22(String edfs22) {
 		this.edfs22 = edfs22;
 	}
+
+	public String getIsa1a() {
+		return isa1a;
+	}
+
+	public void setIsa1a(String isa1a) {
+		this.isa1a = isa1a;
+	}
+
+	public String getIsa1b() {
+		return isa1b;
+	}
+
+	public void setIsa1b(String isa1b) {
+		this.isa1b = isa1b;
+	}
+
+	public String getIsa1c() {
+		return isa1c;
+	}
+
+	public void setIsa1c(String isa1c) {
+		this.isa1c = isa1c;
+	}
+
+	public String getIsa1d() {
+		return isa1d;
+	}
+
+	public void setIsa1d(String isa1d) {
+		this.isa1d = isa1d;
+	}
+
+	public String getIsa1e() {
+		return isa1e;
+	}
+
+	public void setIsa1e(String isa1e) {
+		this.isa1e = isa1e;
+	}
+
+	public String getIsa1f() {
+		return isa1f;
+	}
+
+	public void setIsa1f(String isa1f) {
+		this.isa1f = isa1f;
+	}
+
+	public String getIsa1g() {
+		return isa1g;
+	}
+
+	public void setIsa1g(String isa1g) {
+		this.isa1g = isa1g;
+	}
+
+	public String getIsa1h() {
+		return isa1h;
+	}
+
+	public void setIsa1h(String isa1h) {
+		this.isa1h = isa1h;
+	}
+
+	public String getIsa1i() {
+		return isa1i;
+	}
+
+	public void setIsa1i(String isa1i) {
+		this.isa1i = isa1i;
+	}
+
+	public String getIsa1j() {
+		return isa1j;
+	}
+
+	public void setIsa1j(String isa1j) {
+		this.isa1j = isa1j;
+	}
+
+	public String getIsa1k() {
+		return isa1k;
+	}
+
+	public void setIsa1k(String isa1k) {
+		this.isa1k = isa1k;
+	}
+
+	public String getIsa1l() {
+		return isa1l;
+	}
+
+	public void setIsa1l(String isa1l) {
+		this.isa1l = isa1l;
+	}
+
+	public String getIsa1m() {
+		return isa1m;
+	}
+
+	public void setIsa1m(String isa1m) {
+		this.isa1m = isa1m;
+	}
+
+	public String getIsa1n() {
+		return isa1n;
+	}
+
+	public void setIsa1n(String isa1n) {
+		this.isa1n = isa1n;
+	}
+
+	public String getIsa1o() {
+		return isa1o;
+	}
+
+	public void setIsa1o(String isa1o) {
+		this.isa1o = isa1o;
+	}
+
+	public String getEdfs23() {
+		return edfs23;
+	}
+
+	public void setEdfs23(String edfs23) {
+		this.edfs23 = edfs23;
+	}
+
+	public String getAnotacoes12() {
+		return anotacoes12;
+	}
+
+	public void setAnotacoes12(String anotacoes12) {
+		this.anotacoes12 = anotacoes12;
+	}
+
 }

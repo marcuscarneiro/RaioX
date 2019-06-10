@@ -92,12 +92,12 @@
 						
 						<hr>
 						
-						<h3 style="text-align: center;">INFORMAÇÕES GERAIS</h3>
+						<h3 style="text-align: center;">1 - INFORMAÇÕES GERAIS</h3>
 						<hr>
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ger1"><strong>Quantos alunos estão matriculados?</strong></label>
+							<label class="col-sm-3 control-label" for="ger1"><strong>GER1</strong> - Quantos alunos estão matriculados?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ger1" name="ger1" type="number" class="form-control" path="ger1" />
 							</div>
@@ -105,14 +105,14 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ger2"><strong>Quantas salas de aula há na unidade?</strong></label>
+							<label class="col-sm-3 control-label" for="ger2"><strong>GER2</strong> - Quantas salas de aula há na unidade?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ger2" name="ger2" type="number" class="form-control" path="ger2" />
 							</div>
 						</div>
 
 						<div class="form-group">
-							<div class="col-sm-9 formradio"> - Quais turmas são oferecidas?</div>
+							<div class="col-sm-9 formradio"><strong>GER3</strong> - Quais turmas são oferecidas?</div>
 						</div>
 
 						<!-- RadioButton -->
@@ -183,7 +183,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ger4"><strong>Há deficiência no quadro de funcionários?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ger4"><strong>GER4</strong> - Há deficiência no quadro de funcionários?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ger4" path="ger4" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -209,12 +209,12 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">SALA DE AULA</h3>
+						<h3 style="text-align: center;">2 - SALA DE AULA</h3>
 						<hr>
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="sal1"><strong>Quantas salas são climatizadas?</strong></label>
+							<label class="col-sm-3 control-label" for="sal1"><strong>SAL1</strong> - Quantas salas são climatizadas?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="sal1" name="sal1" type="number" class="form-control" path="sal1" />
 							</div>
@@ -222,7 +222,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="sal2"><strong>Quantas salas possuem temperatura entre 23ºC e 26ºC?</strong></label>
+							<label class="col-sm-3 control-label" for="sal2"><strong>SAL2</strong> - Quantas salas possuem temperatura entre 23ºC e 26ºC?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="sal2" name="sal2" type="number" class="form-control" path="sal2" />
 							</div>
@@ -230,7 +230,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="sal3"><strong>Quantas salas têm iluminação abaixo de 200 ou acima de 750 Lux?</strong></label>
+							<label class="col-sm-3 control-label" for="sal3"><strong>SAL3</strong> - Quantas salas têm iluminação abaixo de 200 ou acima de 750 Lux?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="sal3" name="sal3" type="number" class="form-control" path="sal3" />
 							</div>
@@ -238,7 +238,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="sal4"><strong>Qual o aspecto de conservação do mobiliário em sala de aula? Use a escala Likert</strong></label>
+							<label class="col-sm-3 control-label" for="sal4"><strong>SAL4</strong> - Qual o aspecto de conservação do mobiliário em sala de aula? Use a escala Likert</strong></label>
 							<div class="col-sm-4">
 								<form:input id="sal4" name="sal4" type="number" class="form-control" path="sal4" />
 							</div>
@@ -253,12 +253,12 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">BERÇÁRIO</h3>
+						<h3 style="text-align: center;">3 - BERÇÁRIO</h3>
 						<hr>
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ber1"><strong>Existe berçário na unidade? (Se não, pule para o próximo módulo)</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ber1"><strong>BER1</strong> - Existe berçário na unidade? (Se não, pule para o próximo módulo)</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ber1" path="ber1" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -269,7 +269,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ber2"><strong>O berçário apresenta temperatura entre 20 e 26ºC?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ber2"><strong>BER2</strong> - O berçário apresenta temperatura entre 20 e 26ºC?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ber2" path="ber2" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -280,7 +280,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ber3"><strong>O berçário apresenta luminosidade entre 200 e 750Lux?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ber3"><strong>BER3</strong> - O berçário apresenta luminosidade entre 200 e 750Lux?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ber3" path="ber3" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -291,7 +291,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ber4"><strong>Os berços estão em quantidade suficiente e em boas condições de uso?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ber4"><strong>BER4</strong> - Os berços estão em quantidade suficiente e em boas condições de uso?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ber4" path="ber4" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -302,7 +302,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ber5"><strong>Existe lactário?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ber5"><strong>BER5</strong> - Existe lactário?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ber5" path="ber5" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -313,7 +313,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ber6"><strong>Existe fraldário?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ber6"><strong>BER6</strong> - Existe fraldário?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ber6" path="ber6" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -324,7 +324,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ber7"><strong>Existe risco de acidente no fraldário?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ber7"><strong>BER7</strong> - Existe risco de acidente no fraldário?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ber7" path="ber7" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -335,7 +335,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ber8"><strong>Há chuveiro elétrico funcionando no fraldário?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ber8"><strong>BER8</strong> - Há chuveiro elétrico funcionando no fraldário?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ber8" path="ber8" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -353,11 +353,11 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">BANHEIROS</h3>
+						<h3 style="text-align: center;">4 - BANHEIROS</h3>
 						<hr>
 
 						<div class="form-group">
-							<div class="col-sm-9 formradio">Indique os problemas identificados:</div>
+							<div class="col-sm-9 formradio"><strong>BAN1</strong> - Indique os problemas identificados:</strong></div>
 						</div>
 
 						<!-- RadioButton -->
@@ -542,11 +542,11 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">ESPAÇOS ALTERNATIVOS DE APRENDIZAGEM E LAZER</h3>
+						<h3 style="text-align: center;">5 - ESPAÇOS ALTERNATIVOS DE APRENDIZAGEM E LAZER</h3>
 						<hr>
 
 						<div class="form-group">
-							<div class="col-sm-9 formradio">Identifique os itens existentes:</div>
+							<div class="col-sm-9 formradio"><strong>EAA1</strong> - Identifique os itens existentes:</div>
 						</div>
 
 						<!-- RadioButton -->
@@ -657,12 +657,12 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">ACESSIBILIDADE E ATENDIMENTO EDUCACIONAL ESPECIALIZADO</h3>
+						<h3 style="text-align: center;">6 - ACESSIBILIDADE E ATENDIMENTO EDUCACIONAL ESPECIALIZADO</h3>
 						<hr>
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae1"><strong>Existem crianças com necessidades especiais diagnosticadas com laudo matriculadas?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae1"><strong>AAE1</strong> - Existem crianças com deficiência diagnosticadas com laudo matriculadas?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae1" path="aae1" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -673,7 +673,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae2"><strong>Se sim, todas estão acompanhadas por cuidador em sala de aula?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae2"><strong>AAE2</strong> - Se sim, todas estão acompanhadas por cuidador em sala de aula?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae2" path="aae2" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -684,7 +684,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae3"><strong>Existe professor realizando atendimento educacional especializado na unidade?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae3"><strong>AAE3</strong> - Existe professor realizando atendimento educacional especializado na unidade?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae3" path="aae3" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -694,12 +694,12 @@
 						</div>
 
 						<div class="form-group">
-							<div class="col-sm-9 formradio">Indique abaixo as necessidades especiais que englobam os alunos matriculados:</div>
+							<div class="col-sm-9 formradio"><strong>AAE4</strong> - Indique abaixo as necessidades especiais que englobam os alunos matriculados:</div>
 						</div>
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae4a"><strong>Cadeirante</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae4a"><strong>Portador de deficiência física</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae4a" path="aae4a" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -721,7 +721,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae4c"><strong>Surdez</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae4c"><strong>Deficiência auditiva</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae4c" path="aae4c" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -732,7 +732,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae4d"><strong>Baixa audição</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae4d"><strong>Audição limitada</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae4d" path="aae4d" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -743,7 +743,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae4e"><strong>Cegueira</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae4e"><strong>Deficiência visual</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae4e" path="aae4e" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -754,7 +754,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae4f"><strong>Baixa visão</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae4f"><strong>Visão limitada</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae4f" path="aae4f" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -765,7 +765,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae4g"><strong>Problemas cognitivos/patologias mentais</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae4g"><strong>Deficiência intelectual ou Transtorno do Espectro Autista</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae4g" path="aae4g" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -784,7 +784,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae5"><strong>Há rampas no acesso a TODAS as dependências?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae5"><strong>AAE5</strong> - Há rampas no acesso a TODAS as dependências?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae5" path="aae5" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -795,7 +795,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae6"><strong>Há banheiros infantis plenamente adaptados para cadeirantes?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae6"><strong>AAE6</strong> - Há banheiros infantis plenamente adaptados para cadeirantes?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae6" path="aae6" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -806,7 +806,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae7"><strong>Há banheiros adultos plenamente adaptados para cadeirantes?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae7"><strong>AAE7</strong> - Há banheiros adultos plenamente adaptados para cadeirantes?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae7" path="aae7" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -817,7 +817,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae8"><strong>Há piso tátil?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae8"><strong>AAE8</strong> - Há piso tátil?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae8" path="aae8" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -828,7 +828,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae9"><strong>Há placas indicativas em braile na entrada das diferentes dependências?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae9"><strong>AAE9</strong> - Há placas indicativas em braile na entrada das diferentes dependências?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae9" path="aae9" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -839,7 +839,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae10"><strong>Há Sala de Recursos Multifuncionais na unidade?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae10"><strong>AAE10</strong> - Há Sala de Recursos Multifuncionais na unidade?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae10" path="aae10" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -857,12 +857,12 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">SERVIÇOS ESSENCIAIS / ESTRUTURA BÁSICA</h3>
+						<h3 style="text-align: center;">7 - SERVIÇOS ESSENCIAIS / ESTRUTURA BÁSICA</h3>
 						<hr>
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see1"><strong>Há distribuição de água na instituição?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see1"><strong>SEE1</strong> - Há distribuição de água na instituição?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see1" path="see1" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -881,7 +881,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see2"><strong>A quantidade de reservatórios supre a demanda?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see2"><strong>SEE2</strong> - A quantidade de reservatórios supre a demanda?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see2" path="see2" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -900,7 +900,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see3"><strong>Foi realizada limpeza dos reservatórios nos últimos seis meses?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see3"><strong>SEE3</strong> - Foi realizada limpeza dos reservatórios nos últimos seis meses?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see3" path="see3" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -919,7 +919,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see4"><strong>Há saneamento básico na unidade?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see4"><strong>SEE4</strong> - Há saneamento básico na unidade?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see4" path="see4" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -938,7 +938,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see5"><strong>Há falhas na rede elétrica?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see5"><strong>SEE5</strong> - Há falhas na rede elétrica?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see5" path="see5" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -957,7 +957,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see6"><strong>Há extintores em condições de funcionamento?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see6"><strong>SEE6</strong> - Há extintores em condições de funcionamento?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see6" path="see6" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -976,7 +976,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see7"><strong>Há saídas de emergência desobstruídas e sinalizadas?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see7"><strong>SEE7</strong> - Há saídas de emergência desobstruídas e sinalizadas?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see7" path="see7" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -995,7 +995,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see8"><strong>Houve dedetização nos últimos seis meses?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see8"><strong>SEE8</strong> - Houve dedetização nos últimos seis meses?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see8" path="see8" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1014,7 +1014,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see9"><strong>A unidade fica localizada em área de encosta ou barreira?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see9"><strong>SEE9</strong> - A unidade fica localizada em área de encosta ou barreira?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see9" path="see9" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1033,7 +1033,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see10"><strong>A instituição é alvo de vândalos?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see10"><strong>SEE10</strong> - A instituição é alvo de vândalos?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see10" path="see10" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1052,7 +1052,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see11"><strong>Existem câmeras de segurança funcionando?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see11"><strong>SEE11</strong> - Existem câmeras de segurança funcionando?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see11" path="see11" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1071,7 +1071,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see12"><strong>Há rachaduras?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see12"><strong>SEE12</strong> - Há rachaduras?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see12" path="see12" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1090,7 +1090,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see13"><strong>Há infiltrações/mofo?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see13"><strong>SEE13</strong> - Há infiltrações/mofo?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see13" path="see13" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1109,7 +1109,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see14"><strong>Há goteiras?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see14"><strong>SEE14</strong> - Há goteiras?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see14" path="see14" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1128,7 +1128,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="see15"><strong>Há focos de água parada na unidade?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="see15"><strong>SEE15</strong> - Há focos de água parada na unidade?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="see15" path="see15" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1154,12 +1154,12 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">MATERIAIS</h3>
+						<h3 style="text-align: center;">8 - MATERIAIS</h3>
 						<hr>
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat1"><strong>Os materiais de limpeza suprem a demanda?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat1"><strong>MAT1</strong> - Os materiais de limpeza suprem a demanda?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat1" path="mat1" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1178,7 +1178,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat2"><strong>Os materiais de expediente suprem a demanda?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat2"><strong>MAT2</strong> - Os materiais de expediente suprem a demanda?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat2" path="mat2" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1197,7 +1197,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat3"><strong>Os materiais de higiene pessoal suprem a demanda?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat3"><strong>MAT3</strong> - Os materiais de higiene pessoal suprem a demanda?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat3" path="mat3" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1216,7 +1216,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat4"><strong>O enxoval supre a demanda?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat4"><strong>MAT4</strong> - O enxoval supre a demanda?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat4" path="mat4" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1235,7 +1235,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat5"><strong>Os colchonetes suprem a demanda e estão em boas condições de uso?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat5"><strong>MAT5</strong> - Os colchonetes suprem a demanda e estão em boas condições de uso?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat5" path="mat5" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1254,7 +1254,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat6"><strong>Estão sendo entregues equipamentos de proteção individual para funcionários (luvas e aventais)?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat6"><strong>MAT6</strong> - Estão sendo entregues equipamentos de proteção individual para funcionários (luvas e aventais)?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat6" path="mat6" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1273,7 +1273,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat7"><strong>Os kits escolares foram entregues em quantidade suficiente para atender à demanda?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat7"><strong>MAT7</strong> - Os kits escolares foram entregues em quantidade suficiente para atender à demanda?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat7" path="mat7" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1292,7 +1292,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat8"><strong>Os fardamentos foram distribuídos em quantidade suficiente para atender à demanda?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat8"><strong>MAT8</strong> - Os fardamentos foram distribuídos em quantidade suficiente para atender à demanda?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat8" path="mat8" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1311,7 +1311,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat9"><strong>A Prefeitura disponibiliza jogos pedagógicos?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat9"><strong>MAT9</strong> - A Prefeitura disponibiliza jogos pedagógicos?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat9" path="mat9" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1330,7 +1330,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat10"><strong>A Prefeitura envia brinquedos para as crianças?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="mat10"><strong>MAT10</strong> - A Prefeitura envia brinquedos para as crianças?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat10" path="mat10" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1348,7 +1348,7 @@
 						</div>
 
 						<div class="form-group">
-							<div class="col-sm-9 formradio">Indique abaixo os itens audiovisuais existentes e em condições de uso:</div>
+							<div class="col-sm-9 formradio"><strong>MAT11</strong> - Indique abaixo os itens audiovisuais existentes e em condições de uso:</div>
 						</div>
 
 						<!-- RadioButton -->
@@ -1360,17 +1360,6 @@
 								<form:radiobutton id="mat11a" path="mat11a" value="" />  </div>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="mat11a" path="mat11a" value="false" />  NÃO</div>
-						</div>
-
-						<!-- RadioButton -->
-						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="mat11b"><strong>Aparelho de DVD</strong></form:label>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mat11b" path="mat11b" value="true" />  SIM</div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mat11b" path="mat11b" value="" />  </div>
-							<div class="col-sm-1 formradio">
-								<form:radiobutton id="mat11b" path="mat11b" value="false" />  NÃO</div>
 						</div>
 
 						<!-- RadioButton -->
@@ -1404,7 +1393,7 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">MÓDULO ALIMENTAÇÃO</h3>
+						<h3 style="text-align: center;">9 - MÓDULO ALIMENTAÇÃO</h3>
 						<hr>
 
 						<div class="form-group">
@@ -1417,7 +1406,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali1"><strong>Onde as crianças se alimentam? </strong> 
+							<label class="col-sm-3 control-label" for="ali1"><strong>ALI1</strong> - Onde as crianças se alimentam? </strong> 
 								3 = Refeitório; 2 = Outros; 1 = Sala de Aula
 								</label>
 							<div class="col-sm-4">
@@ -1427,7 +1416,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali2"><strong>Quais as condições de iluminação? </strong>
+							<label class="col-sm-3 control-label" for="ali2"><strong>ALI2</strong> - Quais as condições de iluminação? </strong>
 								1 = entre 200 e 750 lux; 0 = -200 ou +750
 								</label>
 							<div class="col-sm-4">
@@ -1437,7 +1426,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali3"><strong>Quais as condições da ventilação?</strong></label>
+							<label class="col-sm-3 control-label" for="ali3"><strong>ALI3</strong> - Quais as condições da ventilação?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali3" name="ali3" type="number" class="form-control" path="ali3" />
 							</div>
@@ -1445,7 +1434,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali4"><strong>Quais as condições do espaço de circulação?</strong></label>
+							<label class="col-sm-3 control-label" for="ali4"><strong>ALI4</strong> - Quais as condições do espaço de circulação?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali4" name="ali4" type="number" class="form-control" path="ali4" />
 							</div>
@@ -1453,7 +1442,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali5"><strong>Quais as condições de higiene?</strong></label>
+							<label class="col-sm-3 control-label" for="ali5"><strong>ALI5</strong> - Quais as condições de higiene?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali5" name="ali5" type="number" class="form-control" path="ali5" />
 							</div>
@@ -1461,7 +1450,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali6"><strong>Quais as condições do mobiliário?</strong></label>
+							<label class="col-sm-3 control-label" for="ali6"><strong>ALI6</strong> - Quais as condições do mobiliário?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali6" name="ali6" type="number" class="form-control" path="ali6" />
 							</div>
@@ -1469,7 +1458,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali7"><strong>Quais as condições do bebedouro?</strong></label>
+							<label class="col-sm-3 control-label" for="ali7"><strong>ALI7</strong> - Quais as condições do bebedouro?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali7" name="ali7" type="number" class="form-control" path="ali7" />
 							</div>
@@ -1477,7 +1466,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali8"><strong>Quais as condições dos utensílios?</strong></label>
+							<label class="col-sm-3 control-label" for="ali8"><strong>ALI8</strong> - Quais as condições dos utensílios?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali8" name="ali8" type="number" class="form-control" path="ali8" />
 							</div>
@@ -1485,7 +1474,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali9"><strong>Os alimentos estão sendo recebidos?</strong></label>
+							<label class="col-sm-3 control-label" for="ali9"><strong>ALI9</strong> - Os alimentos estão sendo recebidos?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali9" name="ali9" type="number" class="form-control" path="ali9" />
 							</div>
@@ -1493,7 +1482,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali10"><strong>Apresentam anormalidades?</strong></label>
+							<label class="col-sm-3 control-label" for="ali10"><strong>ALI10</strong> - Apresentam anormalidades?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali10" name="ali10" type="number" class="form-control" path="ali10" />
 							</div>
@@ -1501,7 +1490,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali11"><strong>O cardápio é adequado à faixa etária atendida?</strong></label>
+							<label class="col-sm-3 control-label" for="ali11"><strong>ALI11</strong> - O cardápio é adequado à faixa etária atendida?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali11" name="ali11" type="number" class="form-control" path="ali11" />
 							</div>
@@ -1509,7 +1498,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="ali12"><strong>As amostras de alimentos para análise estão sendo recolhidas?</strong></label>
+							<label class="col-sm-3 control-label" for="ali12"><strong>ALI12</strong> - As amostras de alimentos para análise estão sendo recolhidas?</strong></label>
 							<div class="col-sm-4">
 								<form:input id="ali12" name="ali12" type="number" class="form-control" path="ali12" />
 							</div>
@@ -1517,7 +1506,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="ali13"><strong>Os eletrodomésticos estão em boas condições de uso?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="ali13"><strong>ALI13</strong> - Os eletrodomésticos estão em boas condições de uso?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="ali13" path="ali13" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1535,12 +1524,12 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">MÓDULO LAVANDERIA</h3>
+						<h3 style="text-align: center;">10 - MÓDULO LAVANDERIA</h3>
 						<hr>
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="lav1"><strong>As máquinas de lavar estão em quantidade suficiente e em boas condições de uso?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="lav1"><strong>LAV1</strong> - As máquinas de lavar estão em quantidade suficiente e em boas condições de uso?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="lav1" path="lav1" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1551,7 +1540,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="lav2"><strong>As secadoras estão em quantidade suficiente e em boas condições de uso?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="lav2"><strong>LAV2</strong> - As secadoras estão em quantidade suficiente e em boas condições de uso?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="lav2" path="lav2" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1562,7 +1551,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="lav3"><strong>Existem tanques de lavar roupas?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="lav3"><strong>LAV3</strong> - Existem tanques de lavar roupas?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="lav3" path="lav3" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1573,7 +1562,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="lav4"><strong>Existem varais?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="lav4"><strong>LAV4</strong> - Existem varais?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="lav4" path="lav4" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1584,7 +1573,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="lav5"><strong>Existem armários em quantidade suficiente e em boas condições de uso?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="lav5"><strong>LAV5</strong> - Existem armários em quantidade suficiente e em boas condições de uso?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="lav5" path="lav5" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1602,12 +1591,12 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">MÓDULO ADMINISTRATIVO</h3>
+						<h3 style="text-align: center;">11 - MÓDULO ADMINISTRATIVO</h3>
 						<hr>
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm1"><strong>Há sala de professores?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm1"><strong>ADM1</strong> - Há sala de professores?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm1" path="adm1" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1618,7 +1607,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm2"><strong>Se sim, a temperatura do ambiente está entre 20 e 26ºC?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm2"><strong>ADM2</strong> - Se sim, a temperatura do ambiente está entre 20 e 26ºC?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm2" path="adm2" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1629,7 +1618,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm3"><strong>Se sim, a luminosidade da dependência está entre 200 e 750Lux?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm3"><strong>ADM3</strong> - Se sim, a luminosidade da dependência está entre 200 e 750Lux?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm3" path="adm3" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1640,7 +1629,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm4"><strong>Direção, secretaria e coordenação funcionam na mesma sala?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm4"><strong>ADM4</strong> - Direção, secretaria e coordenação funcionam na mesma sala?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm4" path="adm4" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1651,7 +1640,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm5"><strong>Se sim, há espaço para que eles funcionem confortavelmente?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm5"><strong>ADM5</strong> - Se sim, há espaço para que eles funcionem confortavelmente?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm5" path="adm5" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1662,7 +1651,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm6"><strong>Se sim, a temperatura do ambiente está entre 20 e 26ºC?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm6"><strong>ADM6</strong> - Se sim, a temperatura do ambiente está entre 20 e 26ºC?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm6" path="adm6" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1673,7 +1662,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm7"><strong>Se sim, a luminosidade da dependência está entre 200 e 750Lux?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm7"><strong>ADM7</strong> - Se sim, a luminosidade da dependência está entre 200 e 750Lux?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm7" path="adm7" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1684,7 +1673,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm8"><strong>Se não, a sala da direção tem temperatura ambiente entre 20 e 26ºC?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm8"><strong>ADM8</strong> - Se não, a sala da direção tem temperatura ambiente entre 20 e 26ºC?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm8" path="adm8" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1695,7 +1684,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm9"><strong>Se não, a luminosidade da direção está entre 200 e 750Lux?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm9"><strong>ADM9</strong> - Se não, a luminosidade da direção está entre 200 e 750Lux?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm9" path="adm9" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1706,7 +1695,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm10"><strong>Se não, a sala da secretaria tem temperatura ambiente entre 20 e 26ºC?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm10"><strong>ADM10</strong> - Se não, a sala da secretaria tem temperatura ambiente entre 20 e 26ºC?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm10" path="adm10" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1717,7 +1706,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm11"><strong>Se não, a luminosidade da secretaria está entre 200 e 750Lux?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm11"><strong>ADM11</strong> - Se não, a luminosidade da secretaria está entre 200 e 750Lux?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm11" path="adm11" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1728,7 +1717,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm12"><strong>Se não, a sala da coordenação tem temperatura ambiente entre 20 e 26ºC?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm12"><strong>ADM12</strong> - Se não, a sala da coordenação tem temperatura ambiente entre 20 e 26ºC?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm12" path="adm12" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1739,7 +1728,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm13"><strong>Se não, a luminosidade da coordenação está entre 200 e 750Lux?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm13"><strong>ADM13</strong> - Se não, a luminosidade da coordenação está entre 200 e 750Lux?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm13" path="adm13" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1750,7 +1739,7 @@
 
 						<!-- Number input-->
 						<div class="form-group">
-							<label class="col-sm-3 control-label" for="adm14"><strong>Qual a condição do mobiliário das salas administrativas? Use a escala Likert  </strong></label>
+							<label class="col-sm-3 control-label" for="adm14"><strong>ADM14</strong> - Qual a condição do mobiliário das salas administrativas? Use a escala Likert  </strong></label>
 							<div class="col-sm-4">
 								<form:input id="adm14" name="adm14" type="number" class="form-control" path="adm14" />
 							</div>
@@ -1758,7 +1747,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm15"><strong>O corpo administrativo-pedagógico conta com computadores em condições de funcionamento?	Sim	Não</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm15"><strong>ADM15</strong> - O corpo administrativo-pedagógico conta com computadores em condições de funcionamento?	Sim	Não</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm15" path="adm15" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1769,7 +1758,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm16"><strong>A unidade dispõe de copiadora?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm16"><strong>ADM16</strong> - A unidade dispõe de copiadora?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm16" path="adm16" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1780,7 +1769,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm17"><strong>A linha telefônica da unidade funciona normalmente?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm17"><strong>ADM17</strong> - A linha telefônica da unidade funciona normalmente?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm17" path="adm17" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1791,7 +1780,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm18"><strong>O serviço de internet é garantido na instituição?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm18"><strong>ADM18</strong> - O serviço de internet é garantido na instituição?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm18" path="adm18" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1802,7 +1791,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="adm19"><strong>O diário online está sendo utilizado sem transtornos?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="adm19"><strong>ADM19</strong> - O diário online está sendo utilizado sem transtornos?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="adm19" path="adm19" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1820,12 +1809,12 @@
 						</div>
 
 						<hr>
-						<h3 style="text-align: center;">MÓDULO SAÚDE</h3>
+						<h3 style="text-align: center;">12 - MÓDULO SAÚDE</h3>
 						<hr>
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="sau1"><strong>A creche possui cópias dos cartões de vacinação das crianças?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="sau1"><strong>SAU1</strong> - A creche possui cópias dos cartões de vacinação das crianças?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="sau1" path="sau1" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1836,7 +1825,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="sau2"><strong>O posto de saúde da comunidade realiza acompanhamento médico e odontológico na unidade?	Sim	Não</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="sau2"><strong>SAU2</strong> - O posto de saúde da comunidade realiza acompanhamento médico e odontológico na unidade?	Sim	Não</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="sau2" path="sau2" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -1846,7 +1835,7 @@
 						</div>
 
 						<div class="form-group">
-							<div class="col-sm-9 formradio">Identifique os itens que correspondem a doenças que afetaram alunos e funcionários no ano corrente:</div>
+							<div class="col-sm-9 formradio"><strong>SAU3</strong> - Identifique os itens que correspondem a doenças que afetaram alunos e funcionários no ano corrente:</div>
 						</div>
 
 						<!-- RadioButton -->
