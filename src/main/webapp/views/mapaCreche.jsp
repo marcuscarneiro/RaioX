@@ -526,7 +526,7 @@
 				                <div id="acessibilidade" class="accordian-body collapse">
 				                    <ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				                        <li class="questao" id="qaae1">
-				                            <span>Existem crianças com necessidades especiais diagnosticadas com laudo matriculadas?</span>
+				                            <span>Existem crianças com deficiência diagnosticadas com laudo matriculadas?</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae2">
@@ -542,7 +542,7 @@
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae4a">
-				                            <span class="subquestao">- Cadeirante:</span>
+				                            <span class="subquestao">- Portador de deficiência física:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae4b">
@@ -550,23 +550,23 @@
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae4c">
-				                            <span class="subquestao">- Surdez:</span>
+				                            <span class="subquestao">- Deficiência auditiva:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae4d">
-				                            <span class="subquestao">- Baixa audição:</span>
+				                            <span class="subquestao">- Audição limitada:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae4e">
-				                            <span class="subquestao">- Cegueira:</span>
+				                            <span class="subquestao">- Deficiência visual:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae4f">
-				                            <span class="subquestao">- Baixa visão:</span>
+				                            <span class="subquestao">- Visão limitada:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae4g">
-				                            <span class="subquestao">- Problemas cognitivos/patologias mentais:</span>
+				                            <span class="subquestao">- Deficiência intelectual ou Transtorno do Espectro Autista:</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae4outros">
@@ -839,10 +839,6 @@
 				                        </li>
 				                        <li class="questao" id="qmat11a">
 				                            <span class="subquestao">- Aparelho de TV</span>
-				                            <span class="questao-info"></span>
-				                        </li>
-				                        <li class="questao" id="qmat11b">
-				                            <span class="subquestao">- Aparelho de DVD</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qmat11c">

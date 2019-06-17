@@ -1215,17 +1215,6 @@ function updateVistorias(vistoria){
 		$("#qmat11a .questao-info").removeClass('red-mark');
 	}
 	
-	if(vistoria.mat11b == false){
-		$("#qmat11b .questao-info").html("Não");
-		$("#qmat11b .questao-info").addClass('red-mark');
-	} else if(vistoria.mat11b == true){
-		$("#qmat11b .questao-info").html("Sim");
-		$("#qmat11b .questao-info").removeClass('red-mark');
-	} else {
-		$("#qmat11b .questao-info").html("Sem informação");
-		$("#qmat11b .questao-info").removeClass('red-mark');
-	}
-	
 	if(vistoria.mat11c == false){
 		$("#qmat11c .questao-info").html("Não");
 		$("#qmat11c .questao-info").addClass('red-mark');

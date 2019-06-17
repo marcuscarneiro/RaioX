@@ -828,9 +828,8 @@
 															<li class="questao" id="eee4"><span>Quantidade de professores readaptados</span><span class="questao-info"></span></li>
 															<li class="questao" id="eee5"><span>Quantidade de professores com dois contratos</span><span class="questao-info"></span></li>
 															<li class="questao" id="eee6"><span>Há deficiência no quadro de funcionários? Quais?</span><span class="questao-info"></span></li>
-															<li class="questao" id="eee7"><span>Quantos alunos especiais COM LAUDO médico estão matriculados?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eee7"><span>Quantos alunos com deficiência COM LAUDO médico estão matriculados?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eee8"><span>Quantas crianças estão SEM acompanhamento de cuidador/intérprete em sala de aula?</span><span class="questao-info"></span></li>
-															<li class="questao" id="eee9"><span>Os professores com formação em AEE ou psicopedagogia são:</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes1a"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -851,11 +850,8 @@
 															<li class="questao" id="bib4"><span>É bem ventilada?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib5"><span>Tem espaço para movimentação?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib6"><span>Tem televisor?</span><span class="questao-info"></span></li>
-															<li class="questao" id="bib7"><span>Tem aparelho de DVD?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib8"><span>Tem aparelho de som?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib9"><span>Tem computador com acesso à internet?</span><span class="questao-info"></span></li>
-															<li class="questao" id="bib10"><span>Tem Bibliotecário(a)?</span><span class="questao-info"></span></li>
-															<li class="questao" id="bib11"><span>Qual a formação do(a) Bibliotecário(a)?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib12"><span>Possui mediador de leitura?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib13"><span>Qual a formação do mediador(a) de leitura?</span><span class="questao-info"></span></li>
 															<li class="questao" id="bib14"><span>A sala possui janelas?</span><span class="questao-info"></span></li>
@@ -918,16 +914,15 @@
 												<td colspan="6" class="hiddenRow">
 													<div id="ace" class="accordian-body collapse">
 														<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-															<li class="questao" id="ace1"><span>Há alunos cadeirantes ou com dificuldades de locomoção?</span><span class="questao-info"></span></li>
-															<li class="questao" id="ace2"><span>Há alunos surdos?</span><span class="questao-info"></span></li>
-															<li class="questao" id="ace3"><span>Há alunos cegos ou com visão limitada?</span><span class="questao-info"></span></li>
-															<li class="questao" id="ace4"><span>Há alunos com problemas cognitivos ou patologias mentais?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace1"><span>Há alunos com deficiência motora ou com dificuldades de locomoção?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace2"><span>Há alunos com deficiência auditiva ou deficiência da fala?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace3"><span>Há alunos com deficiência visual ou com visão limitada?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace4"><span>Há alunos com deficiência intelectual ou Transtorno do Espectro Autista?</span><span class="questao-info"></span></li>
 															<li class="questao" id="ace5"><span>A escola dispõe de rampas de acesso para acessibilidade para todos os espaços dos alunos?</span><span class="questao-info"></span></li>
 															<li class="questao" id="ace6"><span>A escola dispõe de piso tátil?</span><span class="questao-info"></span></li>
-															<li class="questao" id="ace7"><span>A escola dispõe de materiais didáticos para cegos ou surdos-mudos?</span><span class="questao-info"></span></li>
 															<li class="questao" id="ace8"><span>A escola dispõe de tutores ou intérpretes (libras)?</span><span class="questao-info"></span></li>
 															<li class="questao" id="ace9"><span>Na escola há sala com recursos multifuncionais?</span><span class="questao-info"></span></li>
-															<li class="questao" id="ace10"><span>Há professores com formação em A.E.E. ou psicopedagogia para atender as crianças especiais?</span><span class="questao-info"></span></li>
+															<li class="questao" id="ace10"><span>Há professores com formação em A.E.E. ou psicopedagogia para atender as crianças com deficiência?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eac1"><span>Há placas indicativas em braile?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eac2"><span>Os banheiros estão plenamente adaptados para cadeirantes?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eac3a"><span>A área para circulação é satisfatória?</span><span class="questao-info"></span></li>
@@ -952,9 +947,11 @@
 															<li class="questao" id="se2"><span>Há saneamento básico na escola?</span><span class="questao-info"></span></li>
 															<li class="questao" id="se3"><span>Há extintores de incêndio em condições de funcionamento?</span><span class="questao-info"></span></li>
 															<li class="questao" id="se4"><span>Os funcionários sabem usar o extintor?</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef5"><span>Quantidade de extintores:</span><span class="questao-info"></span></li>
+															<li class="questao" id="eef6"><span>Quantos estão fora do prazo de validade?</span><span class="questao-info"></span></li>
 															<li class="questao" id="se5"><span>Há infiltrações e/ou mofo?</span><span class="questao-info"></span></li>
 															<li class="questao" id="se6"><span>Há rachaduras?</span><span class="questao-info"></span></li>
-															<li class="questao" id="se7"><span>Há risco de choque nas instalações elétricas?</span><span class="questao-info"></span></li>
+															<li class="questao" id="se7"><span>Há problemas na rede elétricas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes7"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -975,8 +972,6 @@
 															<li class="questao" id="eef3a"><span>Se sim, como?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eef4"><span>O prédio possui câmeras de segurança?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eef4a"><span>Elas estão funcionando?</span><span class="questao-info"></span></li>
-															<li class="questao" id="eef5"><span>Quantidade de extintores:</span><span class="questao-info"></span></li>
-															<li class="questao" id="eef6"><span>Quantos estão fora do prazo de validade?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eef7"><span>Há saídas de emergência?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eef7a"><span>Se sim, estão sinalizadas?</span><span class="questao-info"></span></li>
 															<li class="questao" id="eef8"><span>A escola fica em área de encosta ou barreira?</span><span class="questao-info"></span></li>
@@ -1077,6 +1072,9 @@
 															<li class="questao" id="alim10"><span>Apresenta anormalidades?</span><span class="questao-info"></span></li>
 															<li class="questao" id="alim11"><span>É bem aceita pelos alunos?</span><span class="questao-info"></span></li>
 															<li class="questao" id="alim12"><span>O cardápio é variado?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim13"><span>Há infiltrações na cozinha?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim14"><span>Há infiltrações no balcão da cozinha?</span><span class="questao-info"></span></li>
+															<li class="questao" id="alim15"><span>A geladeira está em boas condições de uso?</span><span class="questao-info"></span></li>
 															<li class="questao" id="anotacoes10"><span>Anotações</span><span class="questao-info"></span></li>
 														</ul>
 													</div>
@@ -1112,11 +1110,10 @@
 															<li class="questao" id="mdf2a"><span>Os alunos recebem fardamento completo?</span><span class="questao-info"></span></li>
 															<li class="questao" id="mdf2b"><span>Os alunos recebem fardamento em tamanho adequado?</span><span class="questao-info"></span></li>
 															<li class="questao" id="mdf3"><span>Os alunos tem à disposição livros didáticos?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf3a"><span>Os livros didáticos foram entregues em número suficiente?</span><span class="questao-info"></span></li>
 															<li class="questao" id="mdf4"><span>Os alunos tem à disposição livros literários?</span><span class="questao-info"></span></li>
-															<li class="questao" id="mdf5"><span>Os alunos tem à disposição computadores?</span><span class="questao-info"></span></li>
-															<li class="questao" id="mdf6"><span>Os alunos tem à disposição acesso à internet?</span><span class="questao-info"></span></li>
 															<li class="questao" id="mdf7"><span>Os alunos tem à disposição jogos/brinquedos educativos?</span><span class="questao-info"></span></li>
-															<li class="questao" id="mdf8"><span>Os alunos tem à disposição aparelho de TV com DVD?</span><span class="questao-info"></span></li>
+															<li class="questao" id="mdf8"><span>Os alunos tem à disposição aparelho de TV?</span><span class="questao-info"></span></li>
 															<li class="questao" id="mdf9"><span>Os alunos tem à disposição aparelho de som?</span><span class="questao-info"></span></li>
 															<li class="questao" id="mdf10"><span>A escola dispõe de projetor?</span><span class="questao-info"></span></li>
 															<li class="questao" id="mdf11"><span>A escola dispõe de material de artes (massas de modelar, tinta, etc.)?</span><span class="questao-info"></span></li>
@@ -1140,10 +1137,6 @@
 															<li class="questao" id="edfs3"><span>Há computadores para diário de classe?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs4"><span>Existe o programa Mais Educação?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs4o"><span>Oficinas:</span><span class="questao-info"></span></li>
-															<li class="questao" id="edfs5"><span>Existe o programa Escola Aberta?</span><span class="questao-info"></span></li>
-															<li class="questao" id="edfs5o"><span>Oficinas:</span><span class="questao-info"></span></li>
-															<li class="questao" id="edfs6"><span>Existe o programa Segundo Tempo?</span><span class="questao-info"></span></li>
-															<li class="questao" id="edfs6o"><span>Oficinas:</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs7"><span>Existe o programa de Robótica na Escola?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs7a"><span>Robótica funciona?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs7b"><span>Houve treinamento para professores?</span><span class="questao-info"></span></li>
@@ -1158,6 +1151,7 @@
 															<li class="questao" id="edfs20"><span>Se sim, quantos alunos estão ausentes?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs21"><span>Se sim, foi comunicado ao Conselho Tutelar?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs22"><span>Quantos casos foram comunicados ao Conselho Tutelar?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs23"><span>Houve algum caso de gravidez entre as alunas nos últimos 12 meses?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs13"><span>É atendido pelo PSE?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs13o"><span>Como?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs14"><span>Tem parceria com PSF?</span><span class="questao-info"></span></li>
