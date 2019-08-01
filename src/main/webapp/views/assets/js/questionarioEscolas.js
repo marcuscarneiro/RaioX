@@ -624,6 +624,7 @@ function preencheQuestionario(visita){
 	preenchePadrao('boolNaoHid','edfs21', visita.edfs21);
 	preenchePadrao('text','edfs22', visita.edfs22);
 	preenchePadrao('neutro','edfs23', visita.edfs23);
+	preenchePadrao('neutro','edfs23a', visita.edfs23a);
 	preenchePadrao('anotacao','anotacoes11a', visita.anotacoes11a);
 	preenchePadrao('invBool','isa1a', visita.isa1a);
 	preenchePadrao('invBool','isa1b', visita.isa1b);

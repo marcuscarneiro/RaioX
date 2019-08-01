@@ -578,11 +578,11 @@
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae6">
-				                            <span>Há banheiros infantis plenamente adaptados para cadeirantes?</span>
+				                            <span>Há banheiros infantis plenamente adaptados para portadores de deficiência?</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae7">
-				                            <span>Há banheiros adultos plenamente adaptados para cadeirantes?</span>
+				                            <span>Há banheiros adultos plenamente adaptados para portadores de deficiência?</span>
 				                            <span class="questao-info"></span>
 				                        </li>
 				                        <li class="questao" id="qaae8">

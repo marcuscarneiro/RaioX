@@ -1729,7 +1729,7 @@
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="em3" path="em3" value="null" />  </div>
 							<div class="col-sm-2 formradio">
-								<form:radiobutton id="em3" path="em3" value="fervida" />  FERVIDA</div>
+								<form:radiobutton id="em3" path="em3" value="filtrada" />  FILTRADA</div>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="em3" path="em3" value="null" />  </div>
 							<div class="col-sm-2 formradio">
@@ -2269,6 +2269,14 @@
 								<form:radiobutton id="edfs23" path="edfs23" value="null" />  </div>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="edfs23" path="edfs23" value="false" />  NÃO</div>
+						</div>
+						
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="edfs23a"><strong>EDFS23a</strong> - Se sim, quantos?</label>
+							<div class="col-sm-4">
+								<form:input id="edfs23a" name="edfs23a" type="text" class="form-control" path="edfs23a" />
+							</div>
 						</div>
 						
 						<!-- Textarea -->

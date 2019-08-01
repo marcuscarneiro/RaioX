@@ -1152,6 +1152,7 @@
 															<li class="questao" id="edfs21"><span>Se sim, foi comunicado ao Conselho Tutelar?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs22"><span>Quantos casos foram comunicados ao Conselho Tutelar?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs23"><span>Houve algum caso de gravidez entre as alunas nos últimos 12 meses?</span><span class="questao-info"></span></li>
+															<li class="questao" id="edfs23a"><span>Se sim, quantos?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs13"><span>É atendido pelo PSE?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs13o"><span>Como?</span><span class="questao-info"></span></li>
 															<li class="questao" id="edfs14"><span>Tem parceria com PSF?</span><span class="questao-info"></span></li>

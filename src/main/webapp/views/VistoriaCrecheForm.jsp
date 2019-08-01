@@ -795,7 +795,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae6"><strong>AAE6</strong> - Há banheiros infantis plenamente adaptados para cadeirantes?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae6"><strong>AAE6</strong> - Há banheiros infantis plenamente adaptados para portadores de deficiência?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae6" path="aae6" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">
@@ -806,7 +806,7 @@
 
 						<!-- RadioButton -->
 						<div class="form-group">
-							<form:label class="col-sm-3 control-label" path="aae7"><strong>AAE7</strong> - Há banheiros adultos plenamente adaptados para cadeirantes?</strong></form:label>
+							<form:label class="col-sm-3 control-label" path="aae7"><strong>AAE7</strong> - Há banheiros adultos plenamente adaptados para portadores de deficiência?</strong></form:label>
 							<div class="col-sm-1 formradio">
 								<form:radiobutton id="aae7" path="aae7" value="true" />  SIM</div>
 							<div class="col-sm-1 formradio">

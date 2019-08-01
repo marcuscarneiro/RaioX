@@ -794,6 +794,9 @@ public class Visita {
 
 	@Column
 	private String edfs23;
+
+	@Column
+	private String edfs23a;
 	
 	@Column
 	private String anotacoes11a;
@@ -3039,6 +3042,14 @@ public class Visita {
 
 	public void setEdfs23(String edfs23) {
 		this.edfs23 = edfs23;
+	}
+
+	public String getEdfs23a() {
+		return edfs23a;
+	}
+
+	public void setEdfs23a(String edfs23a) {
+		this.edfs23a = edfs23a;
 	}
 
 	public String getAnotacoes12() {
