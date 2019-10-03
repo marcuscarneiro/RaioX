@@ -22,6 +22,8 @@ import br.com.marcus.dao.AvaliacaoPublicaDao;
 import br.com.marcus.dao.CrecheDao;
 import br.com.marcus.dao.DadosIdebDao;
 import br.com.marcus.dao.EscolaDao;
+import br.com.marcus.dao.MedicaoCrecheDao;
+import br.com.marcus.dao.MedicaoEscolaDao;
 import br.com.marcus.dao.NotasCrecheDao;
 import br.com.marcus.dao.ProvaBrasilDao;
 import br.com.marcus.dao.RpaDao;
@@ -32,6 +34,8 @@ import br.com.marcus.dao.impl.AvaliacaoPublicaDaoImpl;
 import br.com.marcus.dao.impl.CrecheDaoImpl;
 import br.com.marcus.dao.impl.DadosIdebDaoImpl;
 import br.com.marcus.dao.impl.EscolaDaoImpl;
+import br.com.marcus.dao.impl.MedicaoCrecheDaoImpl;
+import br.com.marcus.dao.impl.MedicaoEscolaDaoImpl;
 import br.com.marcus.dao.impl.NotasCrecheDaoImpl;
 import br.com.marcus.dao.impl.ProvaBrasilDaoImpl;
 import br.com.marcus.dao.impl.RpaDaoImpl;
@@ -135,6 +139,18 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 	public VistoriaCrecheDao getVistoriaCrecheDao(SessionFactory sessionFactory) {
 		return new VistoriaCrecheDaoImpl(sessionFactory);
 	}
+
+	@Autowired
+	@Bean(name = "medicaoEscolaDao")
+	public MedicaoEscolaDao getMedicaoEscolaDao(SessionFactory sessionFactory) {
+		return new MedicaoEscolaDaoImpl(sessionFactory);
+	}
+
+	@Autowired
+	@Bean(name = "medicaoCrecheDao")
+	public MedicaoCrecheDao getMedicaoCrecheDao(SessionFactory sessionFactory) {
+		return new MedicaoCrecheDaoImpl(sessionFactory);
+	}
 	
 	@Bean
 	public CommonsMultipartResolver multipartResolver() {
@@ -153,6 +169,8 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 	    System.out.println(fotosPath);
 	    System.out.println(relatoriosPath);
   
+	    registry.addResourceHandler("/css/**").addResourceLocations("/views/assets/css/");
+	    registry.addResourceHandler("/js/**").addResourceLocations("/views/assets/js/");
 		registry.addResourceHandler("/fotos/**").addResourceLocations(fotosPath);
 		registry.addResourceHandler("/relatorios/**").addResourceLocations(relatoriosPath);
 		registry.addResourceHandler("/relatoriosCreches/**").addResourceLocations(relatoriosCrechesPath);
