@@ -522,15 +522,15 @@ function renderChartNordesteAprIni(data, id){
 
 //APRENDIZADO PORTUGUES I
 var dataNorPtIni = [
-	{city: 'Teresina', grade: 63},
-	{city: 'Fortaleza', grade: 55},
-	{city: 'Salvador', grade: 45},
-	{city: 'J. Pessoa', grade: 41},
-	{city: 'Recife', grade: 40},
-	{city: 'Maceió', grade: 38},
-	{city: 'Natal', grade: 37},
-	{city: 'São Luís', grade: 34},
-	{city: 'Aracaju', grade: 33}
+	{city: 'Teresina', grade: 75},
+	{city: 'Fortaleza', grade: 65},
+	{city: 'Salvador', grade: 55},
+	{city: 'Maceió', grade: 52},
+	{city: 'Recife', grade: 50},
+	{city: 'J. Pessoa', grade: 49},
+	{city: 'Natal', grade: 42},
+	{city: 'Aracaju', grade: 41},
+	{city: 'São Luís', grade: 36}
 ];
 
 renderChartNordesteAprIni(dataNorPtIni, 'chartAprPortI');
@@ -538,45 +538,45 @@ renderChartNordesteAprIni(dataNorPtIni, 'chartAprPortI');
 
 //APRENDIZADO PORTUGUES II
 var dataNorPtFin = [
-	{city: 'Teresina', grade: 39},
-	{city: 'Fortaleza', grade: 35},
-	{city: 'Maceió', grade: 26},
-	{city: 'Natal', grade: 25},
-	{city: 'Salvador', grade: 24},
-	{city: 'J. Pessoa', grade: 24},
-	{city: 'Aracaju', grade: 23},
-	{city: 'Recife', grade: 20},
-	{city: 'São Luís', grade: 19}
+	{city: 'Teresina', grade: 55},
+	{city: 'Fortaleza', grade: 44},
+	{city: 'Recife', grade: 33},
+	{city: 'Salvador', grade: 31},
+	{city: 'Maceió', grade: 29},
+	{city: 'J. Pessoa', grade: 28},
+	{city: 'Natal', grade: 28},
+	{city: 'Aracaju', grade: 26},
+	{city: 'São Luís', grade: 22}
 ];
 
 renderChartNordesteAprIni(dataNorPtFin, 'chartAprPortII');
 
 //APRENDIZADO MATEMATICA I
 var dataNorMtIni = [
-	{city: 'Teresina', grade: 51},
-	{city: 'Fortaleza', grade: 36},
-	{city: 'Salvador', grade: 30},
-	{city: 'Aracaju', grade: 28},
-	{city: 'J. Pessoa', grade: 25},
-	{city: 'Recife', grade: 24},
-	{city: 'Maceió', grade: 22},
-	{city: 'Natal', grade: 22},
-	{city: 'São Luís', grade: 17}
+	{city: 'Teresina', grade: 67},
+	{city: 'Fortaleza', grade: 47},
+	{city: 'Salvador', grade: 37},
+	{city: 'Maceió', grade: 36},
+	{city: 'Recife', grade: 32},
+	{city: 'J. Pessoa', grade: 31},
+	{city: 'Natal', grade: 27},
+	{city: 'Aracaju', grade: 25},
+	{city: 'São Luís', grade: 20}
 ];
 
 renderChartNordesteAprIni(dataNorMtIni, 'chartAprMatI');
 
 //APRENDIZADO MATEMATICA II
 var dataNorMtFin = [
-	{city: 'Teresina', grade: 20},
-	{city: 'Fortaleza', grade: 12},
+	{city: 'Teresina', grade: 38},
+	{city: 'Fortaleza', grade: 16},
+	{city: 'Recife', grade: 13},
 	{city: 'Natal', grade: 11},
+	{city: 'Salvador', grade: 10},
 	{city: 'Maceió', grade: 10},
+	{city: 'J. Pessoa', grade: 9},
 	{city: 'Aracaju', grade: 9},
-	{city: 'Salvador', grade: 8},
-	{city: 'J. Pessoa', grade: 7},
-	{city: 'Recife', grade: 7},
-	{city: 'São Luís', grade: 5}
+	{city: 'São Luís', grade: 6}
 ];
 
 renderChartNordesteAprIni(dataNorMtFin, 'chartAprMatII');

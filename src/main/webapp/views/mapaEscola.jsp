@@ -356,7 +356,7 @@
 					</div>
 				</div>
 				<div class="aprendizado-portugues num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<h3>Taxas de aprendizado adequado em Português (2015)</h3>
+					<h3>Taxas de aprendizado adequado em Português (2017)</h3>
 					<h4>Indica a porcentagem de alunos que aprendeu a matéria adequadamente</h4>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<span class="aprendizado-title-mob">Fundamental I (do 1º ao 5º ano)</span>
@@ -367,44 +367,44 @@
 							</li>
 							<li>
 								<span>Teresina</span>
-								<span class="cap-qtd">63%</span>
+								<span class="cap-qtd">75%</span>
 							</li>
 							<li>
 								<span>Fortaleza</span>
-								<span class="cap-qtd">55%</span>
+								<span class="cap-qtd">65%</span>
 							</li>
 							<li>
 								<span>Salvador</span>
-								<span class="cap-qtd">45%</span>
-							</li>
-							<li>
-								<span>João Pessoa</span>
-								<span class="cap-qtd">41%</span>
-							</li>
-							<li>
-								<span class="ideb-hi">Recife</span>
-								<span class="cap-qtd ideb-hi">40%</span>
+								<span class="cap-qtd">55%</span>
 							</li>
 							<li>
 								<span>Maceió</span>
-								<span class="cap-qtd">38%</span>
+								<span class="cap-qtd">52%</span>
+							</li>
+							<li>
+								<span class="ideb-hi">Recife</span>
+								<span class="cap-qtd ideb-hi">50%</span>
+							</li>
+							<li>
+								<span>João Pessoa</span>
+								<span class="cap-qtd">49%</span>
 							</li>
 							<li>
 								<span>Natal</span>
-								<span class="cap-qtd">37%</span>
-							</li>
-							<li>
-								<span>São Luís</span>
-								<span class="cap-qtd">34%</span>
+								<span class="cap-qtd">42%</span>
 							</li>
 							<li>
 								<span>Aracaju</span>
-								<span class="cap-qtd">33%</span>
+								<span class="cap-qtd">41%</span>
+							</li>
+							<li>
+								<span>São Luís</span>
+								<span class="cap-qtd">36%</span>
 							</li>
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife fica na 5ª posição no Ensino Fundamental I</span>
+						<span>Recife fica na 5ª posição no <strong>Ensino Fundamental I</strong></span>
 						<canvas id="chartAprPortI"></canvas>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -416,49 +416,49 @@
 							</li>
 							<li>
 								<span>Teresina</span>
-								<span class="cap-qtd">39%</span>
+								<span class="cap-qtd">55%</span>
 							</li>
 							<li>
 								<span>Fortaleza</span>
-								<span class="cap-qtd">35%</span>
-							</li>
-							<li>
-								<span>Maceió</span>
-								<span class="cap-qtd">26%</span>
-							</li>
-							<li>
-								<span>Natal</span>
-								<span class="cap-qtd">25%</span>
-							</li>
-							<li>
-								<span>Salvador</span>
-								<span class="cap-qtd">24%</span>
-							</li>
-							<li>
-								<span>João Pessoa</span>
-								<span class="cap-qtd">24%</span>
-							</li>
-							<li>
-								<span>Aracaju</span>
-								<span class="cap-qtd">23%</span>
+								<span class="cap-qtd">44%</span>
 							</li>
 							<li>
 								<span class="ideb-hi">Recife</span>
-								<span class="cap-qtd ideb-hi">20%</span>
+								<span class="cap-qtd ideb-hi">33%</span>
+							</li>
+							<li>
+								<span>Salvador</span>
+								<span class="cap-qtd">31%</span>
+							</li>
+							<li>
+								<span>Maceió</span>
+								<span class="cap-qtd">29%</span>
+							</li>
+							<li>
+								<span>João Pessoa</span>
+								<span class="cap-qtd">28%</span>
+							</li>
+							<li>
+								<span>Natal</span>
+								<span class="cap-qtd">28%</span>
+							</li>
+							<li>
+								<span>Aracaju</span>
+								<span class="cap-qtd">26%</span>
 							</li>
 							<li>
 								<span>São Luís</span>
-								<span class="cap-qtd">19%</span>
+								<span class="cap-qtd">22%</span>
 							</li>
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife fica na penúltima posição no Ensino Fundamental II</span>
+						<span>Em Recife, apenas um terço dos estudantes aprendeu adequadamente no <strong>Ensino Fundamental II</strong></span>
 						<canvas id="chartAprPortII"></canvas>
 					</div>
 				</div>
 				<div class="aprendizado-matematica num-div col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<h3>Taxas de aprendizado adequado em Matemática (2015)</h3>
+					<h3>Taxas de aprendizado adequado em Matemática (2017)</h3>
 					<h4>Indica a porcentagem de alunos que aprendeu a matéria adequadamente</h4>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<span class="aprendizado-title-mob">Fundamental I (do 1º ao 5º ano)</span>
@@ -469,44 +469,44 @@
 							</li>
 							<li>
 								<span>Teresina</span>
-								<span class="cap-qtd">51%</span>
+								<span class="cap-qtd">67%</span>
 							</li>
 							<li>
 								<span>Fortaleza</span>
-								<span class="cap-qtd">36%</span>
+								<span class="cap-qtd">47%</span>
 							</li>
 							<li>
 								<span>Salvador</span>
-								<span class="cap-qtd">30%</span>
-							</li>
-							<li>
-								<span>Aracaju</span>
-								<span class="cap-qtd">28%</span>
-							</li>
-							<li>
-								<span>João Pessoa</span>
-								<span class="cap-qtd">25%</span>
-							</li>
-							<li>
-								<span class="ideb-hi">Recife</span>
-								<span class="cap-qtd ideb-hi">24%</span>
+								<span class="cap-qtd">37%</span>
 							</li>
 							<li>
 								<span>Maceió</span>
-								<span class="cap-qtd">22%</span>
+								<span class="cap-qtd">36%</span>
+							</li>
+							<li>
+								<span class="ideb-hi">Recife</span>
+								<span class="cap-qtd ideb-hi">32%</span>
+							</li>
+							<li>
+								<span>João Pessoa</span>
+								<span class="cap-qtd">31%</span>
 							</li>
 							<li>
 								<span>Natal</span>
-								<span class="cap-qtd">22%</span>
+								<span class="cap-qtd">27%</span>
+							</li>
+							<li>
+								<span>Aracaju</span>
+								<span class="cap-qtd">25%</span>
 							</li>
 							<li>
 								<span>São Luís</span>
-								<span class="cap-qtd">17%</span>
+								<span class="cap-qtd">20%</span>
 							</li>
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife apresenta a 4ª pior taxa de aprendizado do Nordeste no <strong>Ensino Fundamental I</strong></span>
+						<span>Recife apresenta a 5ª pior taxa de aprendizado do Nordeste no <strong>Ensino Fundamental I</strong></span>
 						<canvas id="chartAprMatI"></canvas>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -518,44 +518,44 @@
 							</li>
 							<li>
 								<span>Teresina</span>
-								<span class="cap-qtd">20%</span>
+								<span class="cap-qtd">38%</span>
 							</li>
 							<li>
 								<span>Fortaleza</span>
-								<span class="cap-qtd">12%</span>
+								<span class="cap-qtd">16%</span>
+							</li>
+							<li>
+								<span class="ideb-hi">Recife</span>
+								<span class="cap-qtd ideb-hi">13%</span>
 							</li>
 							<li>
 								<span>Natal</span>
 								<span class="cap-qtd">11%</span>
 							</li>
 							<li>
+								<span>Salvador</span>
+								<span class="cap-qtd">10%</span>
+							</li>
+							<li>
 								<span>Maceió</span>
 								<span class="cap-qtd">10%</span>
+							</li>
+							<li>
+								<span>João Pessoa</span>
+								<span class="cap-qtd">9%</span>
 							</li>
 							<li>
 								<span>Aracaju</span>
 								<span class="cap-qtd">9%</span>
 							</li>
 							<li>
-								<span>Salvador</span>
-								<span class="cap-qtd">8%</span>
-							</li>
-							<li>
-								<span>João Pessoa</span>
-								<span class="cap-qtd">7%</span>
-							</li>
-							<li>
-								<span class="ideb-hi">Recife</span>
-								<span class="cap-qtd ideb-hi">7%</span>
-							</li>
-							<li>
 								<span>São Luís</span>
-								<span class="cap-qtd">5%</span>
+								<span class="cap-qtd">6%</span>
 							</li>
 						</ul>
 					</div>
 					<div class="cap-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
-						<span>Recife tem o 2º pior aprendizado da região Nordeste no <strong>Ensino Fundamental II</strong></span>
+						<span>Recife está na 3º posição da região Nordeste no <strong>Ensino Fundamental II</strong></span>
 						<canvas id="chartAprMatII"></canvas>
 					</div>
 				</div>
